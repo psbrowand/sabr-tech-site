@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Shield, Cpu, Menu, X, Search, ChevronDown, Zap } from 'lucide-react';
+import { Menu, X, Search, Zap } from 'lucide-react';
 import SearchBar from '../ui/SearchBar';
 
 const navItems = [
@@ -45,11 +45,18 @@ export default function Header() {
         <div className="container-site">
           <div className="flex items-center justify-between h-16">
 
-            {/* Logo */}
+            {/* Logo — bitmap mark (sword + "S" glyph) in a 10x10 tile with
+                pulsing dot, per design_handoff_news_template README §1. */}
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
               <div className="relative">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
-                  <Shield className="w-4.5 h-4.5 text-white" strokeWidth={2.5} />
+                <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg shadow-cyan-500/30 ring-1 ring-white/10">
+                  <img
+                    src="/sabr-logo.png"
+                    alt=""
+                    className="w-full h-full object-cover"
+                    width={40}
+                    height={40}
+                  />
                 </div>
                 <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
               </div>

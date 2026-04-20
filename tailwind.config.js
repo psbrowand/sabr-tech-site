@@ -4,7 +4,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand palette
+        // Surface palette — backgrounds, cards, dividers. Driven by
+        // CSS vars so runtime theme-swapping can override them without
+        // touching Tailwind's compiled output.
+        surface: {
+          base:   'var(--bg-base)',
+          raised: 'var(--bg-surface)',
+          card:   'var(--bg-card)',
+        },
+
+        // Brand palette — themeable via CSS vars (see src/index.css).
+        // These are the canonical token names going forward; prefer
+        // `bg-accent` over `bg-[#00d4ff]` or `bg-cyan-500` so a future
+        // theme flip can retint the site without a code sweep.
+        accent: {
+          DEFAULT: 'var(--accent)',
+          2:       'var(--accent-2)',
+          ink:     'var(--accent-ink)',
+        },
+        alert:     'var(--alert)',
+        highlight: 'var(--highlight)',
+
+        // Legacy palette — kept so existing `bg-navy-900`, `text-cyber-cyan`
+        // style classes still compile. New code should use the tokens
+        // above. Gradually migrating these is follow-up work.
         navy: {
           950: '#080c18',
           900: '#0d1321',
@@ -42,8 +65,8 @@ export default {
           '100%': { opacity: '1' },
         },
         glow: {
-          '0%':   { boxShadow: '0 0 15px rgba(0,212,255,0.15)' },
-          '100%': { boxShadow: '0 0 35px rgba(0,212,255,0.35)' },
+          '0%':   { boxShadow: '0 0 15px rgba(var(--accent-rgb), 0.15)' },
+          '100%': { boxShadow: '0 0 35px rgba(var(--accent-rgb), 0.35)' },
         },
         tickerScroll: {
           '0%':   { transform: 'translateX(0)' },
@@ -60,10 +83,10 @@ export default {
       },
       backgroundImage: {
         'cyber-grid': `
-          linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px)
+          linear-gradient(rgba(var(--accent-rgb), 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(var(--accent-rgb), 0.025) 1px, transparent 1px)
         `,
-        'hero-glow': 'radial-gradient(ellipse 70% 60% at 50% 0%, rgba(0,212,255,0.10), transparent 70%)',
+        'hero-glow': 'radial-gradient(ellipse 70% 60% at 50% 0%, rgba(var(--accent-rgb), 0.10), transparent 70%)',
       },
       backgroundSize: {
         'grid': '48px 48px',
