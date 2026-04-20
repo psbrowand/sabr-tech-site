@@ -8,6 +8,7 @@ import SearchBar from '../ui/SearchBar';
 
 const navItems = [
   { label: 'Tech News',      href: '/tech-news' },
+  { label: 'AI News',        href: '/ai-news' },
   { label: 'Cyber Security', href: '/cyber-security' },
   { label: 'Learning',       href: '/learning' },
   { label: 'About',          href: '/about' },

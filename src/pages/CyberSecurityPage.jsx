@@ -4,7 +4,6 @@ import { getByCategory, getBreaking } from '../data/articles';
 import ArticleCard   from '../components/articles/ArticleCard';
 import Sidebar       from '../components/sidebar/Sidebar';
 import SectionHeader from '../components/ui/SectionHeader';
-import BreakingTicker from '../components/ui/BreakingTicker';
 
 const threatTags = ['APT', 'Ransomware', 'Zero-Day', 'Phishing', 'Nation-State', 'Vulnerability', 'Malware', 'Supply Chain', 'Critical Infrastructure'];
 
@@ -14,8 +13,6 @@ export default function CyberSecurityPage() {
 
   return (
     <div>
-      <BreakingTicker />
-
       <div className="container-site py-8">
         {/* Page header */}
         <div className="relative rounded-2xl overflow-hidden mb-10 p-8 sm:p-12 bg-gradient-to-br from-[#0d1321] to-[#111827] border border-white/[0.06]">

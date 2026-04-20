@@ -24,9 +24,9 @@ export const categories = [
   },
   {
     id: "ai",
-    label: "Artificial Intelligence",
+    label: "AI News",
     shortLabel: "AI",
-    slug: "/tech-news?cat=ai",
+    slug: "/ai-news",
     color: "purple",
     colorClass: "text-purple-400 bg-purple-400/10 border-purple-400/30",
     description: "AI model releases, research breakthroughs, regulation, and the ethics of machine intelligence.",

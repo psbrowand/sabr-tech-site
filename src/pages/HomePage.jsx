@@ -14,7 +14,6 @@ import Sidebar           from '../components/sidebar/Sidebar';
 import SectionHeader     from '../components/ui/SectionHeader';
 import CategoryBadge     from '../components/ui/CategoryBadge';
 import NewsletterSignup  from '../components/newsletter/NewsletterSignup';
-import BreakingTicker    from '../components/ui/BreakingTicker';
 
 // ── Trending strip (horizontal scroll on mobile) ──────────────────────────────
 function TrendingStrip() {
@@ -209,9 +208,6 @@ export default function HomePage() {
 
   return (
     <div>
-      {/* Breaking news ticker */}
-      <BreakingTicker />
-
       <div className="container-site py-6">
         {/* Hero */}
         <section className="mb-6">

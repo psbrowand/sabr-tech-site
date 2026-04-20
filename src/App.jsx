@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 
 import Header            from './components/layout/Header';
 import Footer            from './components/layout/Footer';
+import BreakingTicker    from './components/ui/BreakingTicker';
 
 import HomePage          from './pages/HomePage';
 import TechNewsPage      from './pages/TechNewsPage';
@@ -24,6 +25,7 @@ import ContactPage       from './pages/ContactPage';
 import NewsletterPage    from './pages/NewsletterPage';
 import SearchPage        from './pages/SearchPage';
 import LearningPage      from './pages/LearningPage';
+import AINewsPage        from './pages/AINewsPage';
 import PrivacyPage       from './pages/PrivacyPage';
 import TermsPage         from './pages/TermsPage';
 import RefundPage        from './pages/RefundPage';
@@ -49,6 +51,9 @@ function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-[#080c18]">
       <Header />
+      {/* Breaking ticker sits directly below the header on every page.
+          Self-hides (returns null) when no articles have breaking:true. */}
+      <BreakingTicker />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
@@ -63,6 +68,7 @@ export default function App() {
         <Routes>
           <Route path="/"               element={<HomePage />} />
           <Route path="/tech-news"      element={<TechNewsPage />} />
+          <Route path="/ai-news"        element={<AINewsPage />} />
           <Route path="/cyber-security" element={<CyberSecurityPage />} />
           <Route path="/article/:slug"  element={<ArticlePage />} />
           <Route path="/about"          element={<AboutPage />} />
