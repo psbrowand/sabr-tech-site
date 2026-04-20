@@ -6,8 +6,9 @@
 //   inline   — flat version for embedding in article body
 //   (default) — full hero banner version
 //
-// Integration: replace handleSubmit body with your ESP API call.
-// Supported ESPs: ConvertKit, Mailchimp, Beehiiv, custom backend.
+// Wires the submit to /api/newsletter-subscribe (a Vercel serverless
+// function backed by Resend Audiences). The endpoint handles validation,
+// rate-limiting, and duplicate-signup idempotency on the server.
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState } from 'react';
 import { Mail, ArrowRight, Zap, Shield, Bell, Cpu } from 'lucide-react';
@@ -21,33 +22,31 @@ const perks = [
 export default function NewsletterSignup({ compact = false, inline = false }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const trimmed = email.trim();
     if (!trimmed) return;
     setStatus('loading');
+    setErrorMessage('');
 
-    // ── TODO: Replace with real ESP integration ──────────────────────────────
-    // Example (ConvertKit):
-    // await fetch('https://api.convertkit.com/v3/forms/FORM_ID/subscribe', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ api_key: 'YOUR_KEY', email: trimmed }),
-    // });
-    //
-    // Example (Beehiiv):
-    // await fetch('https://api.beehiiv.com/v2/publications/PUB_ID/subscriptions', {
-    //   method: 'POST',
-    //   headers: { 'Authorization': `Bearer TOKEN`, 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email: trimmed }),
-    // });
-    // ─────────────────────────────────────────────────────────────────────────
-
-    // Simulated success (replace with real async call)
-    await new Promise(r => setTimeout(r, 800));
-    setStatus('success');
-    setEmail('');
+    try {
+      const res = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || `Subscription failed (${res.status}).`);
+      }
+      setStatus('success');
+      setEmail('');
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage(err.message || 'Something went wrong. Please try again.');
+    }
   };
 
   // ── Compact (sidebar) version ─────────────────────────────────────────────
@@ -211,6 +210,10 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
               {status !== 'loading' && <ArrowRight className="w-4 h-4" />}
             </button>
           </form>
+        )}
+
+        {status === 'error' && errorMessage && (
+          <p className="text-xs text-red-400 mt-4">{errorMessage}</p>
         )}
 
         <p className="text-xs text-slate-600 mt-4">

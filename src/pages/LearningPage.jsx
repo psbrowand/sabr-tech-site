@@ -1,11 +1,16 @@
 // LearningPage.jsx — Certifications & Learning section
 import { useState } from 'react';
-import { BookOpen, Award, ExternalLink, GraduationCap, ChevronRight, Shield, Network, Server } from 'lucide-react';
+import {
+  BookOpen, Award, ExternalLink, GraduationCap, ChevronRight,
+  Shield, Network, Server, ArrowRight, Target, CheckCircle2,
+} from 'lucide-react';
 import { articles } from '../data/articles';
 import ArticleCard   from '../components/articles/ArticleCard';
 import Sidebar       from '../components/sidebar/Sidebar';
 import SectionHeader from '../components/ui/SectionHeader';
 import NewsletterSignup from '../components/newsletter/NewsletterSignup';
+
+const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
 // ── Sub-category filter definitions ──────────────────────────────────────────
 const certFilters = [
@@ -133,6 +138,68 @@ export default function LearningPage() {
 
   return (
     <div className="container-site py-8">
+
+      {/* ── SABR Learning product CTA — the umbrella's cert-prep service ── */}
+      <section className="mb-10 rounded-2xl overflow-hidden border border-cyan-500/20 bg-gradient-to-br from-[#0b1120] via-[#0d1321] to-[#111827] relative">
+        {/* Ambient glow */}
+        <div
+          className="absolute inset-0 opacity-60 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 50% 60% at 20% 0%, rgba(0,212,255,0.12), transparent 60%), radial-gradient(ellipse 40% 40% at 90% 100%, rgba(99,102,241,0.08), transparent 60%)',
+          }}
+        />
+        <div className="relative grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-6 p-6 sm:p-10">
+          <div>
+            <div className="section-label mb-3">
+              <Target className="w-3.5 h-3.5" />
+              Study with SABR Learning
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-white mb-4 leading-tight">
+              Pass your next IT cert on the first try.
+            </h2>
+            <p className="text-slate-300 max-w-xl mb-6 leading-relaxed">
+              Adaptive practice tests, spaced-repetition flashcards, and AI-guided
+              study plans for CompTIA, Cisco, Microsoft, AWS, and more. Launching
+              with six fully-polished CompTIA certifications and a growing
+              catalogue.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={`${APP_ORIGIN}/register`}
+                className="btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                Start free
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href={APP_ORIGIN}
+                className="btn-ghost"
+                target="_blank"
+                rel="noopener"
+              >
+                Explore the app
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 justify-center">
+            {[
+              'Adaptive difficulty — questions scale to your level',
+              'Spaced-repetition flashcards with confidence tracking',
+              'Realistic timed exams with performance analytics',
+              'AI study plan tuned to your weak topics',
+            ].map((line) => (
+              <div key={line} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-slate-300">{line}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Page header */}
       <div className="mb-8 pb-8 border-b border-white/[0.06]">

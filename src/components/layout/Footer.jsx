@@ -2,8 +2,10 @@
 // Footer.jsx — Site footer with links, newsletter CTA, and social placeholders
 // ─────────────────────────────────────────────────────────────────────────────
 import { Link } from 'react-router-dom';
-import { Shield, Twitter, Linkedin, Github, Rss, Zap, Mail, ArrowRight } from 'lucide-react';
+import { Twitter, Linkedin, Github, Rss, Zap, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+
+const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
 const footerLinks = {
   'News': [
@@ -13,17 +15,19 @@ const footerLinks = {
     { label: 'Space & Science', href: '/tech-news?cat=space' },
     { label: 'Learning & Certs', href: '/learning' },
   ],
+  'Services': [
+    { label: 'SABR Learning',  href: APP_ORIGIN, external: true },
+    { label: 'Discussions',    href: 'https://discussions.sabr-labs.com', external: true },
+  ],
   'Company': [
     { label: 'About Us',   href: '/about' },
     { label: 'Contact',    href: '/contact' },
     { label: 'Newsletter', href: '/newsletter' },
-    { label: 'RSS Feed',   href: '/rss' },
   ],
   'Legal': [
     { label: 'Privacy Policy',    href: '/privacy' },
     { label: 'Terms of Service',  href: '/terms' },
-    { label: 'Cookie Policy',     href: '/cookies' },
-    { label: 'Editorial Policy',  href: '/editorial' },
+    { label: 'Refund Policy',     href: '/refund' },
   ],
 };
 
@@ -38,12 +42,31 @@ export default function Footer() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Wire to ConvertKit / Mailchimp / Beehiiv API
-    if (email.trim()) {
+    const trimmed = email.trim();
+    if (!trimmed || submitting) return;
+    setSubmitting(true);
+    setError('');
+    try {
+      const res = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || `Subscription failed (${res.status}).`);
+      }
       setSubmitted(true);
       setEmail('');
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -87,11 +110,18 @@ export default function Footer() {
                       className="input-cyber pl-10"
                     />
                   </div>
-                  <button type="submit" className="btn-primary flex-shrink-0">
-                    Subscribe
-                    <ArrowRight className="w-4 h-4" />
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn-primary flex-shrink-0"
+                  >
+                    {submitting ? 'Subscribing…' : 'Subscribe'}
+                    {!submitting && <ArrowRight className="w-4 h-4" />}
                   </button>
                 </form>
+              )}
+              {error && (
+                <p className="text-xs text-red-400 mt-2 text-center lg:text-left">{error}</p>
               )}
               <p className="text-xs text-slate-600 mt-2 text-center lg:text-left">
                 Free forever. Unsubscribe anytime. No spam.
@@ -108,8 +138,14 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4 group">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                <Shield className="w-5 h-5 text-white" strokeWidth={2.5} />
+              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg shadow-cyan-500/25 ring-1 ring-white/10">
+                <img
+                  src="/sabr-logo.png"
+                  alt=""
+                  className="w-full h-full object-cover"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-white font-black text-lg tracking-tight">SABR</span>
@@ -117,7 +153,14 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-500 text-sm leading-relaxed mb-6 max-w-xs">
-              Trusted coverage of cybersecurity threats, emerging technology, AI developments, and the stories shaping our digital world.
+              Trusted coverage of cybersecurity threats, emerging technology, AI developments, and the stories shaping our digital world. Part of the SABR umbrella — alongside{' '}
+              <a
+                href={APP_ORIGIN}
+                className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
+              >
+                SABR Learning
+              </a>
+              .
             </p>
 
             {/* Social links */}
@@ -142,12 +185,22 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {links.map(link => (
                   <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-sm text-slate-500 hover:text-cyan-400 transition-colors duration-200"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        className="text-sm text-slate-500 hover:text-cyan-400 transition-colors duration-200 inline-flex items-center gap-1"
+                      >
+                        {link.label}
+                        <ExternalLink className="w-3 h-3 opacity-70" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-sm text-slate-500 hover:text-cyan-400 transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

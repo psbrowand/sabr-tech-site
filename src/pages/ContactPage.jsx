@@ -27,18 +27,36 @@ export default function ContactPage() {
     return e;
   };
 
+  const [submitError, setSubmitError] = useState('');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
+    setSubmitError('');
     setStatus('loading');
 
-    // TODO: POST to backend — e.g. a serverless function, Formspree, EmailJS, etc.
-    // await fetch('/api/contact', { method: 'POST', body: JSON.stringify(form) });
-
-    await new Promise(r => setTimeout(r, 900));
-    setStatus('success');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          subject: `[${form.type}] ${form.subject}`,
+          message: form.message,
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || `Send failed (${res.status}).`);
+      }
+      setStatus('success');
+    } catch (err) {
+      setStatus('idle');
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -143,6 +161,12 @@ export default function ContactPage() {
               {form.type === 'security' && (
                 <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 text-sm text-amber-400/80">
                   <strong className="text-amber-400">Security Disclosure:</strong> For responsible vulnerability disclosure, please include: affected vendor/product, CVE if assigned, proof-of-concept details, and your PGP key if you'd like an encrypted response. We follow a 30-day disclosure timeline by default.
+                </div>
+              )}
+
+              {submitError && (
+                <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-300">
+                  {submitError}
                 </div>
               )}
 
