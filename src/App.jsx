@@ -16,6 +16,7 @@ import Header            from './components/layout/Header';
 import Footer            from './components/layout/Footer';
 import BreakingTicker    from './components/ui/BreakingTicker';
 
+import HomePage          from './pages/HomePage';
 import LandingPage       from './pages/LandingPage';
 import TechNewsPage      from './pages/TechNewsPage';
 import CyberSecurityPage from './pages/CyberSecurityPage';
@@ -66,7 +67,8 @@ export default function App() {
       <ScrollToTop />
       <Layout>
         <Routes>
-          <Route path="/"               element={<LandingPage />} />
+          <Route path="/"               element={<HomePage />} />
+          <Route path="/landing"        element={<LandingPage />} />
           <Route path="/tech-news"      element={<TechNewsPage />} />
           <Route path="/ai-news"        element={<AINewsPage />} />
           <Route path="/cyber-security" element={<CyberSecurityPage />} />

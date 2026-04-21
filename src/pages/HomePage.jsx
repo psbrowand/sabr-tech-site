@@ -27,7 +27,7 @@ function TrendingStrip() {
       </div>
 
       {/* Mobile: horizontal scroll. sm+: even-width grid so cards align. */}
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible">
         {trending.map((a, i) => (
           <Link
             key={a.id}
