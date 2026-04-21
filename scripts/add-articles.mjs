@@ -83,16 +83,19 @@ try {
     process.exit(0);
   }
 
+  // Preserve whatever line ending the file already uses (LF or CRLF).
+  const eol = current.includes('\r\n') ? '\r\n' : '\n';
   const insertion = prepared
-    .map(({ article }) => '  ' + serializeObject(article, 1) + ',')
-    .join('\n');
+    .map(({ article }) => '  ' + serializeObject(article, 1).split('\n').join(eol) + ',')
+    .join(eol);
 
-  const marker = 'export const articles = [\n';
-  const idx = current.indexOf(marker);
-  if (idx === -1) fail(`Could not find "${marker.trim()}" in articles.js`);
-  const insertAt = idx + marker.length;
+  // Match `export const articles = [` followed by whatever line ending.
+  const markerRe = /export const articles = \[\r?\n/;
+  const m = markerRe.exec(current);
+  if (!m) fail('Could not find "export const articles = [" in articles.js');
+  const insertAt = m.index + m[0].length;
 
-  const next = current.slice(0, insertAt) + insertion + '\n' + current.slice(insertAt);
+  const next = current.slice(0, insertAt) + insertion + eol + current.slice(insertAt);
   await writeFile(ARTICLES_PATH, next, 'utf8');
 
   console.log(`[add-articles] inserted ${prepared.length} article${prepared.length === 1 ? '' : 's'}:`);
