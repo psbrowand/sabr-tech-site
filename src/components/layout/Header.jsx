@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Search, Zap, LogIn, UserPlus, LayoutDashboard, LogOut, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, Zap, LogIn, UserPlus, LayoutDashboard, LogOut, ChevronDown, Home, User, Settings } from 'lucide-react';
 import SearchBar from '../ui/SearchBar';
 import { useAuth, buildAuthReturnUrl, APP_ORIGIN } from '../../hooks/useAuth';
 
@@ -162,21 +162,44 @@ export default function Header() {
                     <ChevronDown className="w-3.5 h-3.5 text-slate-500" />
                   </button>
                   {userMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 rounded-xl border border-white/10 bg-[#0d1321] shadow-xl shadow-black/40 overflow-hidden z-50">
+                    <div className="absolute right-0 mt-2 w-60 rounded-xl border border-white/10 bg-[#0d1321] shadow-xl shadow-black/40 overflow-hidden z-50">
                       <div className="px-3 py-2.5 border-b border-white/[0.06]">
                         <p className="text-xs text-slate-200 font-semibold truncate">{user.name || 'Account'}</p>
                         <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                       </div>
-                      <a
-                        href={`${APP_ORIGIN}/dashboard`}
+                      {/* Tech-site local nav first */}
+                      <Link
+                        to="/"
                         className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
                       >
+                        <Home className="w-3.5 h-3.5" />
+                        Home page
+                      </Link>
+                      {/* Learning app quick links */}
+                      <a
+                        href={`${APP_ORIGIN}/dashboard`}
+                        className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200 border-t border-white/[0.06]"
+                      >
                         <LayoutDashboard className="w-3.5 h-3.5" />
-                        Learning dashboard
+                        Learning Command Center
+                      </a>
+                      <a
+                        href={`${APP_ORIGIN}/profile`}
+                        className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                      >
+                        <User className="w-3.5 h-3.5" />
+                        Profile
+                      </a>
+                      <a
+                        href={`${APP_ORIGIN}/settings`}
+                        className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                      >
+                        <Settings className="w-3.5 h-3.5" />
+                        Settings
                       </a>
                       <Link
                         to="/newsletter"
-                        className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                        className="flex items-center gap-2 px-3 py-2.5 text-xs text-slate-300 hover:text-white hover:bg-white/5 transition-colors duration-200 border-t border-white/[0.06]"
                       >
                         <Zap className="w-3.5 h-3.5" />
                         Newsletter
@@ -269,12 +292,33 @@ export default function Header() {
                     <p className="text-xs text-slate-300 font-semibold truncate">{user.name || 'Account'}</p>
                     <p className="text-[11px] text-slate-500 truncate">{user.email}</p>
                   </div>
+                  <Link
+                    to="/"
+                    className="px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200 inline-flex items-center gap-2"
+                  >
+                    <Home className="w-4 h-4" />
+                    Home page
+                  </Link>
                   <a
                     href={`${APP_ORIGIN}/dashboard`}
                     className="px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200 inline-flex items-center gap-2"
                   >
                     <LayoutDashboard className="w-4 h-4" />
-                    Learning dashboard
+                    Learning Command Center
+                  </a>
+                  <a
+                    href={`${APP_ORIGIN}/profile`}
+                    className="px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200 inline-flex items-center gap-2"
+                  >
+                    <User className="w-4 h-4" />
+                    Profile
+                  </a>
+                  <a
+                    href={`${APP_ORIGIN}/settings`}
+                    className="px-4 py-3 text-sm font-medium rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200 inline-flex items-center gap-2"
+                  >
+                    <Settings className="w-4 h-4" />
+                    Settings
                   </a>
                   <button
                     onClick={signOut}
