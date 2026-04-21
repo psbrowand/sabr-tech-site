@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-rss.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "rss": "node scripts/generate-rss.mjs",
+    "add-articles": "node scripts/add-articles.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

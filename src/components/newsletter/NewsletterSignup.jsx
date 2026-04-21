@@ -162,7 +162,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
         </h2>
         <p className="text-slate-400 text-base max-w-lg mx-auto mb-6">
           Breaking cyber threats, AI breakthroughs, and the biggest tech stories —
-          curated and delivered before 8am. Trusted by 40,000+ professionals.
+          curated by AI and delivered before 5 AM Eastern, every day.
         </p>
 
         {/* Perks */}

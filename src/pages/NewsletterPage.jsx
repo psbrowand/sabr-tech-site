@@ -5,10 +5,10 @@ import NewsletterSignup from '../components/newsletter/NewsletterSignup';
 const benefits = [
   { icon: Shield, title: 'Breaking Cyber Alerts',    desc: 'Critical CVEs, active threats, and incident reports as they happen — never miss a critical patch cycle.' },
   { icon: Cpu,    title: 'AI & Tech Breakthroughs',  desc: 'The most significant model releases, research papers, and product launches — explained simply and clearly.' },
-  { icon: Bell,   title: 'Daily Morning Briefing',    desc: 'One concise email every weekday before 8am. The five stories you actually need to know.' },
-  { icon: TrendingUp, title: 'Curated & Ranked',     desc: 'We read hundreds of sources so you don\'t have to. Only what genuinely matters makes the cut.' },
+  { icon: Bell,   title: 'Daily Morning Briefing',    desc: 'One concise email every day before 5 AM Eastern. The five stories you actually need to know.' },
+  { icon: TrendingUp, title: 'Curated & Ranked',     desc: 'AI reads hundreds of sources so you don\'t have to. Only what genuinely matters makes the cut.' },
   { icon: Clock,  title: '5-Minute Read',             desc: 'Designed to be read with your morning coffee. Dense with value, light on filler.' },
-  { icon: Users,  title: 'Join 40,000+ Readers',      desc: 'Security professionals, engineers, executives, and curious minds trust our daily briefing.' },
+  { icon: Users,  title: 'Cert Spotlight Daily',      desc: 'One IT certification story every day — study tips, blueprint updates, and roadmap moves.' },
 ];
 
 const sampleIssues = [
@@ -41,7 +41,7 @@ export default function NewsletterPage() {
           <span className="text-gradient-cyan">Cyber & Tech Intel</span>
         </h1>
         <p className="text-slate-400 text-xl leading-relaxed mb-8">
-          Breaking cyber threats, AI breakthroughs, and major tech stories — curated and delivered every morning before 8am. Join 40,000+ professionals who trust Sabr for their daily briefing.
+          Breaking cyber threats, AI breakthroughs, and major tech stories — curated by AI and delivered every morning before 5 AM Eastern. Free, no spam, unsubscribe in one click.
         </p>
 
         <div className="max-w-md mx-auto">
@@ -95,7 +95,7 @@ export default function NewsletterPage() {
                 ))}
               </ul>
               <p className="text-xs text-slate-600 mt-5 pt-4 border-t border-white/[0.04]">
-                + Threat of the day, CVE spotlight, and one longer analysis piece. Delivered daily, Monday–Friday.
+                + Threat of the day, CVE spotlight, and one IT certification story. Delivered every day at 4:55 AM Eastern.
               </p>
             </div>
           </div>

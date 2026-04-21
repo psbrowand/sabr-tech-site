@@ -41,3 +41,6 @@ lerna-debug.log*
 Resume-site
 
 .vercel
+
+# Daily-news routine — draft staging, not committed
+scripts/drafts/

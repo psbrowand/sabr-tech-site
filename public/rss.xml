@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sabr Cyber &amp; Tech News</title>
+    <link>https://sabr-labs.com</link>
+    <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Apr 2026 05:33:35 GMT</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2026 05:33:35 GMT</pubDate>
+    <ttl>60</ttl>
+    <item>
+      <title>GPT-5 Is Here and It&apos;s the First Model That Feels Genuinely Multimodal</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-release-capabilities</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-release-capabilities</guid>
+      <pubDate>Tue, 14 Apr 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5</category>
+      <category>Artificial Intelligence</category>
+      <category>Machine Learning</category>
+      <description>OpenAI&apos;s new flagship handles text, vision, audio, and code in one pass. The benchmarks are impressive. The deployment timeline is aggressive.</description>
+      <content:encoded><![CDATA[<p>OpenAI shipped GPT-5 this morning. The short version: one model, four modalities, and the closest thing we've seen to a system that actually reasons across them instead of stitching specialists together behind an API.</p>
+<p>The benchmark numbers OpenAI disclosed are what you'd expect — nearly 90% on MMLU, more than doubling GPT-4's score on International Mathematical Olympiad problems. Worth noting that MMLU is increasingly saturated as a test, so the real question is whether the jump shows up in the kind of messy, ambiguous work people actually want models to do.</p>
+<p>Early reads suggest it does. The tasks OpenAI is emphasizing in its rollout materials are agentic ones: multi-step engineering work, research that spans dozens of sources, tool use across APIs without human checkpoints in the middle. If that holds up in the wild, it's the capability leap that matters more than any benchmark score.</p>
+<p>The industry response was fast. Anthropic and Google DeepMind both have competing releases queued, and the calendar just got pulled forward. Nvidia traded up on the assumption that training and inference demand just got bigger.</p>
+<p>Access is tiered. ChatGPT Enterprise customers and Tier-1 API partners get the first 30 days. Safety researchers at the Alignment Forum have already pushed back on the pace, arguing red-team evaluations on a model this capable warrant more than the compressed window OpenAI ran. OpenAI hasn't adjusted the schedule.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Russia&apos;s APT29 Is Burning a Windows Zero-Day Across NATO Government Networks</title>
+      <link>https://sabr-labs.com/article/midnight-blizzard-zero-day-windows</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/midnight-blizzard-zero-day-windows</guid>
+      <pubDate>Tue, 14 Apr 2026 06:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>APT29</category>
+      <category>Zero-Day</category>
+      <category>Windows</category>
+      <category>NTLM</category>
+      <category>Nation-State</category>
+      <category>CISA</category>
+      <description>CVE-2026-21954 is an NTLM relay flaw with a CVSS of 9.8. Microsoft just patched it. CISA gave federal agencies 48 hours.</description>
+      <content:encoded><![CDATA[<p>Microsoft's Threat Intelligence Center confirmed this morning what incident responders at CrowdStrike and Mandiant had been piecing together for two weeks: APT29, the Russian SVR group also tracked as Midnight Blizzard, has been quietly burning a Windows NTLM zero-day across NATO government networks.</p>
+<p>The bug, now CVE-2026-21954, lets an unauthenticated attacker relay NTLM credentials to domain-level persistence without user interaction. Every supported version of Windows Server from 2016 through 2025 is vulnerable, along with every default-configured Windows 10 and 11 endpoint. That's most of the enterprise install base.</p>
+<p>Initial access was spearphishing — emails crafted to look like NATO internal communications. Once a single workstation clicked through, responders say the group was at domain admin in an average of seven minutes. That's fast enough that human detection is not realistic; you're relying on your EDR to catch it.</p>
+<p>CISA issued Emergency Directive ED-26-03 giving federal civilian agencies 48 hours to apply Microsoft's out-of-band patch. The directive also requires domain controller segmentation and, where operationally feasible, disabling NTLM outright. That second ask will land hard at agencies with legacy dependencies.</p>
+<p>At least 14 NATO-affiliated agencies across Eastern Europe have confirmed compromise. Three intelligence services were notified privately through the Shadowserver Foundation. If you manage a Windows environment, assume exposure until you can prove otherwise: audit NTLM authentication logs for the past 30 days, patch immediately, and review any domain admin logons that don't map to known activity.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Starship Caught Both Stages on the Same Flight. That&apos;s Never Been Done.</title>
+      <link>https://sabr-labs.com/article/spacex-starship-orbital-flight-success</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starship-orbital-flight-success</guid>
+      <pubDate>Mon, 13 Apr 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>SpaceX</category>
+      <category>Starship</category>
+      <category>Rocket</category>
+      <category>Space Exploration</category>
+      <category>Elon Musk</category>
+      <description>SpaceX pulled off a double tower catch at Starbase this morning after a full 90-minute orbital mission. Watch the footage. It looks fake.</description>
+      <content:encoded><![CDATA[<p>Early Thursday at Starbase, the Super Heavy booster came back first — caught by the Mechazilla tower arms the way it has been three times before. Then Starship came home. Relit its Raptors on a trajectory nobody was expecting, flew back, and let the same tower catch it too. Both stages. Same mission.</p>
+<p>No orbital vehicle has ever been fully recovered before. Not even close. The Shuttle orbiter landed like a glider and the boosters splashed down. Falcon 9 boosters land, but the second stage is expendable. What SpaceX did this morning changes the cost curve of getting to orbit by an order of magnitude, assuming they can do it twice.</p>
+<p>The flight itself ran 90 minutes. Apogee at 310 km. Sixty Starlink V3 satellites deployed on the first pass, which is almost incidental at this point. The Raptor relight for the return was the part nobody outside SpaceX was told about in advance.</p>
+<p>NASA cares about this in a specific way: the Artemis III lunar landing hinges on Starship delivering crew to the Moon's surface by 2028, and every flight that demonstrates reuse and reliability is a flight that makes that schedule plausible.</p>
+<p>SpaceX says the next Starship flight is 45 days out. The objective is in-orbit propellant transfer, the technology that makes everything beyond low Earth orbit possible with this vehicle. If they pull that off too, the next decade of space is going to look very different from the last one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google&apos;s Willow Chip Just Cleared the Biggest Hurdle in Quantum Computing</title>
+      <link>https://sabr-labs.com/article/google-willow-quantum-processor-breakthrough</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-willow-quantum-processor-breakthrough</guid>
+      <pubDate>Mon, 13 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>Quantum Computing</category>
+      <category>Willow</category>
+      <category>AI</category>
+      <category>Cryptography</category>
+      <description>Adding more qubits is supposed to make error rates worse. On Willow, it makes them exponentially better. That&apos;s the threshold the field has been chasing for 30 years.</description>
+      <content:encoded><![CDATA[<p>Google announced today that its 105-qubit Willow processor has crossed the error-correction threshold, meaning that when they add more physical qubits to a logical qubit, the error rate drops exponentially instead of climbing. That sentence is unremarkable until you realize it's the single hurdle that has stood between noisy-intermediate-scale quantum machines and actually-useful quantum machines for three decades.</p>
+<p>For proof-of-work, Willow ran a random circuit sampling benchmark in under five minutes. The classical supercomputer equivalent is a number so large it stops having meaning — Google cites 10 septillion years. Take the specific figure with a grain of salt (it's sensitive to which classical algorithm you compare against), but the order of magnitude is real.</p>
+<p>Hartmut Neven, who leads Quantum AI at Google, was deliberately cautious about application timelines. Willow is not factoring RSA-2048 next year. What it does is remove the biggest open scientific question from the path. Engineering a commercial quantum computer is now an engineering problem, not a physics problem.</p>
+<p>That's a meaningful distinction for cryptography. The security community has been talking about post-quantum migration on the theory that capable quantum machines are maybe 10 or 15 years out. Willow doesn't shorten that window by itself, but it confirms the window is closing, and organizations sitting on 15-year-sensitive data should be accelerating, not waiting.</p>
+<p>IBM and Microsoft responded with their own timelines. IBM is targeting its error-threshold milestone by end of year using a different architecture; Microsoft continues to bet on topological qubits. Three companies, three approaches, all suddenly credible. The race is on.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CompTIA Security+ SY0-701 Is Now Live: What&apos;s New and What Changed</title>
+      <link>https://sabr-labs.com/article/comptia-security-plus-701-new-objectives</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-security-plus-701-new-objectives</guid>
+      <pubDate>Mon, 13 Apr 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>Security+</category>
+      <category>SY0-701</category>
+      <category>Certification</category>
+      <category>Cybersecurity</category>
+      <description>The latest Security+ exam overhauls the domain structure with heavier emphasis on cloud security, zero-trust architecture, and AI-assisted threat detection.</description>
+      <content:encoded><![CDATA[<p>CompTIA officially retired the SY0-601 version of Security+ on July 31, 2024 and has been running SY0-701 as the sole active exam since then. The new version reflects a substantially updated threat landscape — candidates who studied for the old exam will find significant differences in both content and question style.</p>
+<p>The most notable structural change is a reduction from six domains to five. The new domains are: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%). The weighting signals that CompTIA views hands-on operational skills as increasingly central to the certification's value.</p>
+<p>Cloud security now permeates the entire exam rather than sitting in an isolated domain. Candidates must understand shared responsibility models, cloud-native security controls, serverless and container security, and CASB deployment — all areas that were lightly covered in SY0-601. Zero-trust architecture (ZTA) is explicitly examined for the first time, including microsegmentation, identity-centric access, and continuous verification principles.</p>
+<p>A new focus on AI and automation has been added. Candidates need to understand how machine learning is applied to SIEM correlation, endpoint detection and response (EDR), and user and entity behavior analytics (UEBA). This does not require deep AI expertise but does expect familiarity with how these tools function in a modern SOC.</p>
+<p>For study resources, CompTIA's own CertMaster Learn and CertMaster Labs remain the most closely aligned materials. Professor Messer's free SY0-701 video series has been widely praised as the best no-cost option. Jason Dion's Udemy course and Mike Chapple's official CompTIA study guide (Sybex) are the top-rated paid options. Most candidates report needing 60–90 days of dedicated study for a first attempt.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Scattered Spider Locked Up 47 Hospitals Over a Weekend. A Phone Call Started It.</title>
+      <link>https://sabr-labs.com/article/ransomware-attack-us-hospital-systems</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ransomware-attack-us-hospital-systems</guid>
+      <pubDate>Mon, 13 Apr 2026 07:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Healthcare</category>
+      <category>Scattered Spider</category>
+      <category>Black Cat</category>
+      <category>CISA</category>
+      <category>FBI</category>
+      <description>One vishing call to an IT help desk was enough to unwind MFA on an admin account. Eight petabytes encrypted. Ambulances diverted in Phoenix for six hours.</description>
+      <content:encoded><![CDATA[<p>The initial access was a phone call. Someone impersonating an IT help desk vendor got an admin at one of three regional health networks to reset MFA on a privileged account. An hour later, Scattered Spider was inside; by the end of the weekend, 47 hospitals across six states were running on paper.</p>
+<p>The payload was Black Cat (ALPHV). The group used the organization's own remote access tooling to move laterally — the kind of living-off-the-land tradecraft that makes EDR detection hard even when it's working properly. Eight petabytes of patient data and backups were encrypted before anyone realized what was happening.</p>
+<p>The ransom demand is $50 million in Monero. The FBI, CISA, and HHS are coordinating the response. Affected hospitals are using paper-based emergency procedures designed for natural disasters, not for weeks of sustained outage.</p>
+<p>The human cost is already real. Three patients had elective surgeries cancelled inside their pre-op window. Two hospitals in Phoenix diverted incoming ambulances for six hours. Claroty estimates total disruption will exceed $750 million when recovery, downtime, and regulatory exposure are added up.</p>
+<p>Senator Mark Warner's Critical Infrastructure Resilience Act, which would require hospitals to maintain offline backups, has been stalled for two years by industry lobbying. It's expected to get a Senate floor vote next month. If it doesn't pass after this, it's fair to ask what would have to happen for it to pass.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Copilot Can Now Read Your Entire Tenant. Data Governance Teams Are Already Sweating.</title>
+      <link>https://sabr-labs.com/article/microsoft-copilot-enterprise-expansion</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-copilot-enterprise-expansion</guid>
+      <pubDate>Sun, 12 Apr 2026 16:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Copilot</category>
+      <category>AI</category>
+      <category>Enterprise</category>
+      <category>Productivity</category>
+      <description>Microsoft 365&apos;s new Deep Research mode reaches across SharePoint, email, Teams, and connected CRMs to synthesize on demand. Permissions had better be right.</description>
+      <content:encoded><![CDATA[<p>Microsoft's Deep Research mode, shipping to M365 E5 customers on May 1st, does what its name implies. Ask Copilot a question and it runs asynchronous search across your SharePoint, email archives, Teams transcripts, OneDrive, and connected CRMs like Salesforce and Dynamics. Then it writes the report, with citations.</p>
+<p>The demo was impressive. A product manager got a 40-page competitive intelligence brief in eight minutes, citing 230 internal documents. That's the sales pitch.</p>
+<p>Here's the concern. Most enterprises have been living for years with the quiet truth that their permission graph is a mess. Old SharePoint sites have wide-open ACLs nobody has ever audited. Employees have access to folders they forgot existed. The risk was always latent because nobody was reading those documents. Deep Research will read them.</p>
+<p>Microsoft points to Purview sensitivity labels as the safeguard, which is true if they're applied correctly and enforced consistently. They frequently aren't. Expect the next 90 days to produce an uncomfortable wave of stories about Copilot surfacing HR records to the wrong manager or exposing M&A materials to the wrong finance analyst — not because Microsoft did anything wrong, but because the underlying permission state was already wrong.</p>
+<p>Microsoft is also rolling out Copilot Agents, which run persistent workflows — monitoring incoming email, flagging contracts for legal review, drafting customer responses. Satya Nadella called them digital coworkers. That framing is going to put pressure on every SaaS vendor without an equivalent, and that's probably the bigger product story here than Deep Research itself.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Tesla&apos;s Robotaxi Is Live in Austin. No Safety Driver, No LiDAR, 70 Cents a Mile.</title>
+      <link>https://sabr-labs.com/article/tesla-robotaxi-network-launch-austin</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-robotaxi-network-launch-austin</guid>
+      <pubDate>Sun, 12 Apr 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Tesla</category>
+      <category>Robotaxi</category>
+      <category>Autonomous Vehicles</category>
+      <category>AI</category>
+      <category>Austin</category>
+      <description>500 Model Ys running FSD across 120 square miles of Austin. Cheaper than Uber. The first real test of whether cameras alone can do this job at commercial scale.</description>
+      <content:encoded><![CDATA[<p>Tesla flipped the switch on its Austin robotaxi service this morning. 500 Model Y vehicles, no humans in them, operating inside a 120-square-mile geofence covering most of urban Austin. If you have a Tesla account, you can hail one from the app right now.</p>
+<p>The technical bet is the one Elon Musk has been making for a decade: cameras plus onboard compute, no LiDAR, no radar fusion. Waymo has spent years arguing the opposite — that robust autonomy needs redundant sensor modalities — and has the commercial track record to back it up, running 50,000 paid rides a week in San Francisco and Phoenix. Today is the start of the experiment that decides which side was right.</p>
+<p>Pricing is 70 cents a mile, which is aggressive. That's well under Uber and Lyft, and it's not a price Tesla can lose money on forever, but it signals intent: grab the market before the pricing pressure comes from competitors who can drop theirs too.</p>
+<p>Texas is the third state to allow fully driverless commercial service, after Arizona and California. Tesla is staffing a 24/7 Teleoperations Center in Palo Alto to handle edge cases remotely — which is worth calling out, because it's a tacit acknowledgment that the cars aren't fully autonomous, they're mostly autonomous with humans on call.</p>
+<p>TSLA closed up 11%. Phoenix, San Francisco, and Nashville are next on the rollout calendar, supposedly inside 12 months. That timeline has slipped before. Whether the Austin service itself runs clean — no high-profile incidents, no regulatory clawback — over the next 90 days is what matters.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CCNA 200-301 in 2026: Is It Still Worth It — And How Hard Is It Really?</title>
+      <link>https://sabr-labs.com/article/cisco-ccna-200-301-study-guide-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ccna-200-301-study-guide-2026</guid>
+      <pubDate>Sun, 12 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Cisco</category>
+      <category>CCNA</category>
+      <category>200-301</category>
+      <category>Networking</category>
+      <category>Certification</category>
+      <description>The CCNA remains the gold standard entry-level networking certification, but candidates ask whether its value holds as SD-WAN and cloud-first networking reshape the industry.</description>
+      <content:encoded><![CDATA[<p>The Cisco Certified Network Associate (CCNA) 200-301 exam remains one of the most recognized networking certifications globally, and the 2026 job market still rewards it heavily at the entry and mid-level tier. A survey of 3,000 IT hiring managers by Global Knowledge found that CCNA-certified candidates received 18% more interview callbacks than non-certified applicants for network administrator roles.</p>
+<p>The 200-301 exam covers a broad range of topics: network fundamentals, IP connectivity, IP services, security fundamentals, automation and programmability, and wireless networking. What makes the current version distinctive from its predecessors is the inclusion of network automation topics — Python basics, REST APIs, configuration management (Ansible, Puppet), and SD-WAN concepts. These topics now represent approximately 15% of the exam.</p>
+<p>The exam itself is 120 minutes, contains 90–100 questions (multiple choice, drag-and-drop, and simulations), and requires a passing score of approximately 825/1000. It is administered through Pearson VUE at testing centers or via online proctoring. The exam costs $330 USD and does not expire — the CCNA is a one-time certification with no renewal requirement, though Cisco strongly encourages continuing education.</p>
+<p>For study resources, Cisco's own Cisco U. platform (formerly Cisco Learning Network) offers official learning paths. Jeremy's IT Lab on YouTube is widely considered the best free CCNA resource available — his 200-301 full course has over 8 million views. Neil Anderson's CBT Nuggets series and Wendell Odom's Official Cert Guide (OCG) Vol. 1 and Vol. 2 are the top paid study options. Most candidates report needing 3–6 months of dedicated study.</p>
+<p>The CCNA is an excellent foundation for multiple career paths: network administration, network security (leading to CCNP Security or CompTIA Security+), cloud networking, and DevNet (Cisco's developer/automation track). It is not, however, a replacement for hands-on lab experience — candidates who only study theory consistently struggle with the simulation questions. Packet Tracer (free) and GNS3 (free) are the two dominant lab environments.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Another Critical Ivanti VPN Bug, Another Chinese APT Chewing Through the Fleet</title>
+      <link>https://sabr-labs.com/article/critical-ivanti-vpn-vulnerability</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/critical-ivanti-vpn-vulnerability</guid>
+      <pubDate>Sun, 12 Apr 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ivanti</category>
+      <category>VPN</category>
+      <category>RCE</category>
+      <category>CVE</category>
+      <category>China APT</category>
+      <category>CISA</category>
+      <description>CVE-2026-18753 is a CVSS 10.0 unauthenticated RCE via malformed SAML. Volexity and Mandiant are watching UNC5221 burn it. Patch today. Assume compromise if you didn&apos;t.</description>
+      <content:encoded><![CDATA[<p>Volexity and Mandiant jointly dropped a critical Ivanti Connect Secure disclosure this morning: CVE-2026-18753, CVSS 10.0, unauthenticated RCE via a malformed SAML assertion. Every version prior to 22.7R2.5 is vulnerable. Exploitation is active and has been for at least two weeks.</p>
+<p>Attribution is UNC5221, the same China-nexus cluster that has been camped out in Ivanti bugs since 2023. During IR engagements at three Fortune 500 companies, responders recovered a new webshell family they're calling WIREFRAME. The interesting bit: it persists through factory resets by patching Ivanti's own Integrity Checker Tool. The thing you're supposed to use to detect compromise is the thing it hides behind.</p>
+<p>Ivanti pushed an emergency patch at the same time as the disclosure and also admitted something awkward — the mitigation guidance it issued last year for a different exploit chain doesn't fully protect against this one. Customers who thought they were covered weren't.</p>
+<p>CISA added the CVE to KEV and gave federal agencies 24 hours to patch or disconnect. Shadowserver is showing roughly 24,700 internet-exposed appliances globally, with confirmed exploitation against at least 1,200 IPs as of this morning. That ratio is going to get worse through the week.</p>
+<p>If you run Ivanti: patch now. Audit VPN logs for anomalous SAML traffic going back 30 days. Run the Integrity Checker Tool, but verify its hash against the new signed version Ivanti published today — the old tool is what WIREFRAME tampers with. If your appliance was unpatched at any point in the last two weeks, assume compromise until you can prove otherwise.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Vision Pro 2 Is $2,499 and 35% Lighter. That Still Might Not Be Enough.</title>
+      <link>https://sabr-labs.com/article/apple-vision-pro-2-announcement</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-vision-pro-2-announcement</guid>
+      <pubDate>Sat, 11 Apr 2026 18:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Vision Pro</category>
+      <category>AR</category>
+      <category>VR</category>
+      <category>Spatial Computing</category>
+      <description>Apple fixed the two biggest complaints about the original headset. Pre-orders open April 25. The question is whether the market exists.</description>
+      <content:encoded><![CDATA[<p>Apple announced the Vision Pro 2 this morning at Apple Park. The two big fixes are the ones everyone asked for: 245 grams (down from 379), and $2,499 (down from $3,499). A 35% weight cut and a 37% price cut at launch is not incremental — it's an admission that V1 was priced for a market that didn't materialize.</p>
+<p>Under the hood, the interesting piece is the new R2X chip. Apple collapsed the M2 Ultra plus R1 dual-chip design from V1 into a single 3nm package with dedicated Neural Display Engines running foveated rendering in real time. Power draw is down 40%, which is how you get 3.5 hours of battery life from a smaller pack.</p>
+<p>Ambient Mode is the new software story. It's designed to let you wear the headset for ordinary computer work without the pass-through-versus-AR transitions that made V1 tiring. Whether that holds up past the 90-minute mark is something only long-form reviews will settle.</p>
+<p>The app catalog has moved. 2,000+ native visionOS apps now, including Adobe Premiere with a visionOS 3D timeline. Universal and Disney are on board for immersive content. Apple clearly wants the pitch to be entertainment-plus-prosumer, not enterprise-only.</p>
+<p>Wedbush is calling 1.5 million units in year one, five times the original. That number assumes the price cut unlocks a prosumer buyer that V1 missed. If it doesn't, Vision Pro stays a demo product with very expensive hardware. Pre-orders open April 25.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Claude Gets a 2M Token Window and Visible Thinking. The Chunking Era Ends.</title>
+      <link>https://sabr-labs.com/article/anthropic-claude-enterprise-features</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-claude-enterprise-features</guid>
+      <pubDate>Sat, 11 Apr 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>AI</category>
+      <category>Enterprise</category>
+      <category>Large Language Models</category>
+      <description>Anthropic&apos;s update fits roughly 1,500 pages in a single prompt and shows its work along the way. Two features that each matter on their own.</description>
+      <content:encoded><![CDATA[<p>Anthropic shipped a Claude update with a 2 million token context window and Extended Thinking mode turned on by default. Either one of those would be a noteworthy release; shipping them together is what kills the chunking pipelines most enterprise AI teams have been building for two years.</p>
+<p>Two million tokens is about 1,500 pages. Full codebase reviews, multi-year financial filings, entire legal contracts — the things teams have been stitching together with RAG and retrieval layers — now fit in one call. That simplifies architecture meaningfully. It also changes the cost math in ways that haven't fully shaken out.</p>
+<p>Extended Thinking is the more interesting feature long-term. The model exposes its reasoning steps as structured output blocks before giving the final answer. For compliance-sensitive deployments, especially under the EU AI Act's high-risk categorization, that kind of auditable reasoning trace moves from nice-to-have to requirement.</p>
+<p>Dario Amodei framed it as interpretability: when you can see the model working, you can catch it going off track before the output lands. Whether that's fully true or partially theater depends on how faithful the visible thinking is to the actual computation, which is an open research question.</p>
+<p>Pricing for the 2M tier is $15 per million input tokens and $75 per million output. That's in the same neighborhood as GPT-4 Turbo at comparable capability levels. Available today on the API and Claude.ai Teams and Enterprise.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>PCNSA vs. PCNSE: Which Palo Alto Networks Certification Is Right for You?</title>
+      <link>https://sabr-labs.com/article/palo-alto-pcnse-pcnsa-difference</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/palo-alto-pcnse-pcnsa-difference</guid>
+      <pubDate>Sat, 11 Apr 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Palo Alto Networks</category>
+      <category>PCNSA</category>
+      <category>PCNSE</category>
+      <category>Firewall</category>
+      <category>Certification</category>
+      <category>Network Security</category>
+      <description>Palo Alto&apos;s two primary firewall certifications serve very different career stages — here&apos;s how to choose and what the path to each looks like.</description>
+      <content:encoded><![CDATA[<p>Palo Alto Networks offers two primary firewall certifications under its PCCET → PCNSA → PCNSE progression: the Palo Alto Networks Certified Network Security Administrator (PCNSA) and the Palo Alto Networks Certified Network Security Engineer (PCNSE). Understanding the difference is essential before investing study time and exam fees.</p>
+<p>The PCNSA is the entry-to-mid-level certification. It validates that a candidate can configure, manage, and operate Palo Alto Networks Next-Generation Firewalls (NGFW) in a production environment. The exam tests App-ID, Content-ID, User-ID, Security policy construction, NAT, VPN configuration, and basic troubleshooting. It is appropriate for network administrators, security analysts, and anyone who manages PAN-OS firewalls day-to-day. The exam costs $175 and takes 80 minutes.</p>
+<p>The PCNSE is the advanced certification and validates deep expertise in designing, deploying, configuring, maintaining, and troubleshooting Palo Alto Networks solutions including Panorama (centralized management), GlobalProtect (VPN), Prisma Access, and advanced threat prevention features. It requires demonstrable hands-on experience — Palo Alto recommends at least 3 years of PAN-OS experience before attempting it. The exam costs $225 and takes 80 minutes.</p>
+<p>Both exams are version-specific — currently tied to PAN-OS 11.x. When a new major PAN-OS version is released, Palo Alto retires older exam versions within approximately 18 months. Candidates should verify which PAN-OS version their exam covers before scheduling.</p>
+<p>For study resources, Palo Alto's own Beacon learning platform (beacon.paloaltonetworks.com) offers free official learning paths for both certifications. The Palo Alto Networks Firewall 11.x Essentials (EDU-110) instructor-led course is the gold standard prep for PCNSA. For PCNSE, the EDU-220 Firewall: Troubleshooting course and EDU-311 Panorama course are strongly recommended. The PAN{OS} community study guides and the Cybrary PCNSE course are popular third-party resources.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>230 Malicious npm Packages. 2.4 Million Downloads. 11 Days Before Anyone Caught It.</title>
+      <link>https://sabr-labs.com/article/supply-chain-attack-npm-packages</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/supply-chain-attack-npm-packages</guid>
+      <pubDate>Sat, 11 Apr 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>npm</category>
+      <category>Supply Chain</category>
+      <category>JavaScript</category>
+      <category>Malware</category>
+      <category>Open Source Security</category>
+      <description>Socket found the campaign. GitHub&apos;s secret scanning caught 14,000 leaked API keys. If you run a Node build pipeline, you have audit work to do today.</description>
+      <content:encoded><![CDATA[<p>Socket published research this morning on a supply chain campaign that dropped 230 malicious packages into npm, collected 2.4 million downloads over 11 days, and shipped obfuscated payloads designed to lift environment variables, SSH keys, and cloud credentials. The most-downloaded single package, `react-core-utils`, pulled 890,000 downloads on its own.</p>
+<p>The tradecraft was a mix of typosquatting and dependency confusion. Some packages aped the exact names of legitimate private libraries, banking on the possibility that an organization's private registry wasn't properly scoped and that the public registry would win the lookup race. For a lot of orgs, that bet pays off.</p>
+<p>GitHub's automated secret scanning caught and revoked 14,000 leaked secrets within 24 hours of the packages being flagged. The bulk were AWS and GCP API keys. That's a useful data point: secret scanning worked, but only after detection, meaning the scanning is a safety net, not a prevention.</p>
+<p>Attribution is to a known cybercrime group, not a nation state. Checkmarx tied the infrastructure to the same crew that ran credential-stealing campaigns against game developers last year. They flip credentials on underground markets, which is boring but lucrative.</p>
+<p>npm's response is tighter maintainer rules: mandatory 2FA for any package with more than 1,000 weekly downloads. Useful, but it's closing a door that nation-state actors have already walked through several times. If you run Node builds in production, audit lock files against the published IOC list today, and rotate any credential that lived in a CI environment during the 11-day window.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Artemis IV&apos;s Manifest Is Locked In. It&apos;s the Most Complicated Crewed Mission Since Apollo.</title>
+      <link>https://sabr-labs.com/article/nasa-artemis-iv-moon-mission-update</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nasa-artemis-iv-moon-mission-update</guid>
+      <pubDate>Fri, 10 Apr 2026 16:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>NASA</category>
+      <category>Artemis</category>
+      <category>Moon</category>
+      <category>Lunar Gateway</category>
+      <category>Space Exploration</category>
+      <description>Three vehicles, two orbital rendezvous, a Gateway module assembly, and 96 hours of moonwalks. All on one mission. March 2028.</description>
+      <content:encoded><![CDATA[<p>NASA confirmed the Artemis IV manifest this week, and it's the mission profile that tells you how different the next lunar era will be from the last one. Apollo was a vehicle, a trip, and a return. Artemis IV is three vehicles, two rendezvous maneuvers, a Gateway station assembly, and the longest surface ops since 1972.</p>
+<p>The crew of four launches on SLS Block 1B, meets a separately-launched Gateway Power and Propulsion Element in lunar orbit, and conducts two excursions on the surface totaling 96 hours of moonwalks. That's more time on the lunar surface than Apollo 17 spent, which was the previous record, in 1972.</p>
+<p>Dr. Keisha Morgan will be the first African-American woman to walk on the Moon. Commander Col. James Hartley is a two-time ISS veteran. ESA's Thomas Reiter and JAXA's Naoko Yamada fill out the four-person crew. This is the most internationally integrated lunar landing crew NASA has ever flown.</p>
+<p>SpaceX's Starship HLS is the lander, qualified after last December's uncrewed dress rehearsal. The crew variant has upgraded life support, radiation shielding, and — notably — an elevator instead of a ladder for descent to the surface. The ladder-replacement is a small engineering detail that reflects a larger truth: Starship is physically enormous, and the walk-down distance was never going to work.</p>
+<p>Launch target is March 2028. Bill Nelson called it the most complex crewed spaceflight ever attempted, which is not hyperbole — three separate vehicles, two orbital rendezvous, and module assembly, all in the same mission, is a schedule that has many independent failure modes. Worth watching every Starship test flight between now and then.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Fortinet NSE Certification Track Explained: From NSE 1 to NSE 8</title>
+      <link>https://sabr-labs.com/article/fortinet-nse-certification-path-explained</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-nse-certification-path-explained</guid>
+      <pubDate>Fri, 10 Apr 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Fortinet</category>
+      <category>NSE</category>
+      <category>FortiGate</category>
+      <category>Certification</category>
+      <category>Network Security</category>
+      <category>Firewall</category>
+      <description>Fortinet&apos;s Network Security Expert program spans eight levels — from free awareness training to one of the hardest firewall certifications in the industry.</description>
+      <content:encoded><![CDATA[<p>Fortinet's Network Security Expert (NSE) certification program is structured as an eight-level track that progresses from broad cybersecurity awareness at the lower levels to deep FortiOS engineering expertise at the top. Unlike Cisco or Palo Alto, Fortinet makes the lower-level certifications entirely free, which has made the program one of the fastest-growing in the network security space.</p>
+<p>NSE 1 and NSE 2 are free, self-paced online courses covering general cybersecurity awareness and the threat landscape. They are primarily designed for non-technical staff but are often completed by technical professionals as a quick check-in on Fortinet's current product messaging. NSE 3 is a free course specifically about Fortinet's product portfolio and is useful orientation for anyone starting with FortiGate.</p>
+<p>NSE 4 — the FortiGate Security and FortiGate Infrastructure certification — is where serious technical learning begins. It validates the ability to configure and administer a FortiGate firewall for common enterprise security features: security policies, SSL inspection, application control, IPS, antivirus, two-factor authentication, and SD-WAN basics. This is the most widely held Fortinet certification and is frequently required for MSP and MSSP technical roles that involve FortiGate management.</p>
+<p>NSE 5 covers FortiManager and FortiAnalyzer — Fortinet's centralized management and analytics platforms. NSE 6 is a series of modular certifications covering specific products: FortiMail, FortiWeb, FortiNAC, FortiVoice, FortiSIEM, and others. Candidates choose which NSE 6 modules to complete based on their product focus. NSE 7 validates advanced troubleshooting and enterprise integration expertise.</p>
+<p>NSE 8 is the pinnacle — a two-day proctored examination combining a written exam and a hands-on practical lab that typically lasts 8 hours. Fewer than 1,000 people worldwide hold NSE 8 at any given time. It is widely considered comparable in difficulty to the Cisco CCIE. All NSE 4 through NSE 8 certifications are valid for two years and require recertification through re-examination or continuing education credits.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia, AMD, and Intel All Dropped Their Next-Gen AI Chips at Hot Chips. Here&apos;s Who Bet on What.</title>
+      <link>https://sabr-labs.com/article/ai-chip-arms-race-nvidia-amd-intel</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ai-chip-arms-race-nvidia-amd-intel</guid>
+      <pubDate>Fri, 10 Apr 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>AMD</category>
+      <category>Intel</category>
+      <category>AI Chips</category>
+      <category>GPU</category>
+      <category>Data Centers</category>
+      <description>Three different architectures, three different theories about where the bottleneck is. Nvidia still has 80% of the market. That&apos;s not changing this year.</description>
+      <content:encoded><![CDATA[<p>Hot Chips this year was unusually eventful: Nvidia, AMD, and Intel each walked out their next-generation AI accelerator architectures, and because they were presenting in the same week, the contrast between their bets is easier to read than usual.</p>
+<p>Nvidia's Blackwell Ultra is the conservative bet — keep doing what's working, do more of it. 10,240 tensor cores per GPU, 8 TB/s of HBM4 memory bandwidth, and a new NVLink-X interconnect that lets 256 GPUs behave as one logical unit. Jensen Huang demoed a 10-trillion parameter training run finishing in under 48 hours. No surprises, just scaling.</p>
+<p>AMD's MI450X is the price-performance bet. 3nm TSMC, 288 GB of HBM3e, and native FP4 training support, which cuts memory requirements 4x with small accuracy cost. AMD has always been more competitive on inference economics than on raw training performance; MI450X leans into that.</p>
+<p>Intel's Gaudi 4 is the interesting one. Intel's argument is that at genuine hyperscale, the bottleneck isn't compute — it's data movement. Gaudi 4 ships with an integrated 800GbE fabric so clusters up to 1,024 nodes don't need external networking switches. It's a bet that the shape of the problem changes at scale and that Nvidia's architecture is over-indexed on single-chip performance.</p>
+<p>Nvidia still has 80%+ of the AI accelerator market and has already pre-sold most of 2026-2027 Blackwell capacity to hyperscalers. AMD and Intel made credible technical arguments this week, but the commercial reality is that the field doesn't open up until 2028, when the current contract cycle runs out. That's the real timeline to watch.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>FBI and Europol Took Down Genesis Market 2.0. An Undercover Agent Was a Moderator for 14 Months.</title>
+      <link>https://sabr-labs.com/article/dark-web-marketplace-genesis-seized</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/dark-web-marketplace-genesis-seized</guid>
+      <pubDate>Thu, 09 Apr 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>FBI</category>
+      <category>Dark Web</category>
+      <category>Cybercrime</category>
+      <category>Europol</category>
+      <category>Credentials</category>
+      <category>Law Enforcement</category>
+      <description>42 arrests. 12 countries. 45 million compromised devices whose data was being sold for $50 each. The replacement market will show up within weeks.</description>
+      <content:encoded><![CDATA[<p>Operation Shadow Clear dropped this week: 42 arrests, infrastructure seized, 45 million compromised devices worth of data pulled offline. The target was Genesis Market 2.0, which relaunched in early 2025 after the original Genesis was taken down in Operation Cookie Monster two years prior.</p>
+<p>The product Genesis sold is worth understanding. Not stolen passwords in bulk — complete digital identities. Saved passwords, cookies, browser fingerprints, MFA tokens, session state. Everything needed to log in as you on any site you've authenticated to, without the bank's fraud detection noticing anything unusual. $50 a victim.</p>
+<p>The operators ran the platform with serious tradecraft: decentralized hosting, automatic mirror rotation, vetted invitation-only onboarding. The thing that broke it wasn't a technical flaw. It was an undercover agent embedded as a marketplace moderator for 14 months. Fourteen months of access to the admin backend is how you build a case that actually holds in court.</p>
+<p>FBI IC3 and Europol's EC3 are running a victim notification portal. If you want to check whether your data was in the seized database, that's where to go.</p>
+<p>This is the biggest criminal marketplace disruption since AlphaBay and Hansa in 2017. Digital Shadows' researchers point out what always follows these takedowns — a replacement market absorbs the displaced vendors inside of weeks. Enforcement is slow; the market is fast. Genesis 3.0 is probably already being spun up by someone. The difference law enforcement makes is not ending the market but keeping the pressure on enough that it stays fragmented and less trusted.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Cybersecurity Certificate Review: A Solid Entry Point or Just Marketing?</title>
+      <link>https://sabr-labs.com/article/google-cybersecurity-certificate-review-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-cybersecurity-certificate-review-2026</guid>
+      <pubDate>Thu, 09 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Google</category>
+      <category>Cybersecurity Certificate</category>
+      <category>Coursera</category>
+      <category>Entry Level</category>
+      <category>Certification</category>
+      <description>Google&apos;s entry-level cybersecurity certificate through Coursera has enrolled over 2 million learners — we break down what you actually learn and whether employers care.</description>
+      <content:encoded><![CDATA[<p>The Google Cybersecurity Certificate, available on Coursera and typically completable in 3–6 months at roughly 7 hours per week, has become one of the most enrolled cybersecurity training programs in the world since its 2023 launch. At approximately $49/month through Coursera (or free through Google's Career Certificates financial aid program), it is significantly more accessible than traditional bootcamps or university programs. But is it enough to get a job?</p>
+<p>The certificate covers eight courses: Foundations of Cybersecurity, Play It Safe (managing security risks), Connect and Protect (networks), Tools of the Trade (Linux and SQL), Assets Threats and Vulnerabilities, Sound the Alarm (detection and response), Automate Cybersecurity Tasks with Python, and a final capstone project. The Python module is a genuine differentiator from many entry-level programs — it provides practical scripting skills that many competing certifications skip entirely.</p>
+<p>Hands-on labs use Qwiklabs (Google Cloud Skills Boost) and a dedicated Cybersecurity Portfolio Activity framework that has learners build a document portfolio of security tasks: incident reports, vulnerability assessments, and network analysis exercises. This portfolio component addresses one of the major gaps in certification-only approaches — documented evidence of applied skills.</p>
+<p>The certificate is aligned to the CompTIA Security+ exam, and Google markets it as preparation for that exam. The alignment is real but imperfect — the Google certificate covers many of the same concepts but lacks the depth on cryptography, PKI, and identity management that Security+ tests. Candidates who want to pass Security+ should supplement with additional study materials.</p>
+<p>Employer recognition has improved substantially since launch. Google has partnerships with over 150 employers in the U.S. who have agreed to consider Google Career Certificate holders for relevant roles, including Deloitte, Mandiant (Google), and T-Mobile. The certificate is best viewed as a launchpad for an entry-level help desk or junior SOC analyst role, combined with CompTIA Security+ for candidates who want stronger market positioning.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta Put a 405B Parameter Model Into the World for Free. The API Business Just Got Harder.</title>
+      <link>https://sabr-labs.com/article/meta-llama-4-open-source-release</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-llama-4-open-source-release</guid>
+      <pubDate>Thu, 09 Apr 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Meta</category>
+      <category>Llama</category>
+      <category>Open Source</category>
+      <category>AI</category>
+      <category>LLM</category>
+      <description>Llama 4&apos;s big model holds its own against GPT-4 Turbo on most benchmarks. The 70B fits on a single 8xH100 node. Hugging Face did 2M downloads in six hours.</description>
+      <content:encoded><![CDATA[<p>Meta dropped Llama 4 over the weekend with a permissive commercial license. The 405B parameter flagship model benchmarks close to GPT-4 Turbo on coding, math, and general knowledge. The 70B version fits on a single 8xH100 node and outperforms every previous open-source release by a meaningful margin.</p>
+<p>For enterprises paying OpenAI or Anthropic API bills, this changes the calculus. The argument for closed APIs was always 'you can't self-host something that's actually competitive at the frontier.' That argument got weaker this weekend. Not gone, but weaker. Hugging Face hit 2 million downloads in the first six hours; Together AI and Fireworks had it deployed on their inference platforms before the weekend was over.</p>
+<p>Meta shipped Llama 4 Guard alongside the model — a classifier trained to flag harmful outputs — and published a red-team report. Guard's use is technically optional, which is the policy detail that mattered to the safety crowd.</p>
+<p>The safety debate is sharp and not new. Paul Christiano, formerly of OpenAI, argued that releasing frontier-capable weights removes any ability to prevent misuse by criminal actors or authoritarian governments. Yann LeCun, Meta's chief AI scientist, argued back that open research is the foundation of safe AI progress and that restricting model access is both ineffective and harmful to the broader research community. Both men have held these positions for years. Llama 4 is the point where the argument stops being abstract.</p>
+<p>The commercial implication is the one to sit with. If you can self-host a model that's 85-95% as good as the frontier closed models for a fraction of ongoing cost, a lot of what counted as AI infrastructure strategy in 2024 needs rewriting in 2026.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>LEO Satellite Internet Security: Why Your Starlink Connection Might Be Vulnerable</title>
+      <link>https://sabr-labs.com/article/satellite-internet-leo-security-risks</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/satellite-internet-leo-security-risks</guid>
+      <pubDate>Wed, 08 Apr 2026 15:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Starlink</category>
+      <category>Satellite Internet</category>
+      <category>LEO</category>
+      <category>Spoofing</category>
+      <category>Security Research</category>
+      <description>Researchers demonstrate a 12-second spoofing attack that hijacks low-earth orbit satellite signals — and the fix requires hardware changes across millions of terminals.</description>
+      <content:encoded><![CDATA[<p>Security researchers at Ruhr University Bochum demonstrated at Black Hat Europe a practical spoofing attack against Starlink user terminals that allows an attacker within 5 kilometers to intercept and inject data into a satellite Internet connection. The attack exploits an authentication gap in the DVB-S2 physical layer protocol used by virtually all LEO satellite providers.</p>
+<p>The attack requires only $300 in commercially available software-defined radio equipment and takes approximately 12 seconds to execute. Once active, the adversary-in-the-middle position allows traffic interception, DNS manipulation, and injection of malicious content into unencrypted HTTP sessions — a significant risk for maritime and aviation customers who rely on Starlink as their primary connectivity.</p>
+<p>SpaceX responded that TLS-encrypted sessions are not at risk from the attack and that Starlink terminals authenticate satellite downlinks via software in the network stack above the physical layer. The researchers countered that this assumes all traffic is TLS-encrypted, which is not the case for all IoT device traffic on Starlink-connected networks.</p>
+<p>The broader implication extends beyond Starlink to OneWeb, Amazon Kuiper, and SES O3b mPOWER networks — all of which use similar physical layer standards. ETSI, the European telecommunications standards body, confirmed it is expediting a working group to address the vulnerability in the DVB-S2X standard revision.</p>
+<p>For enterprise users of satellite broadband, security teams should ensure all traffic is routed through encrypted VPN tunnels and audit any IoT or OT devices on satellite-connected networks for unencrypted communications. A firmware mitigation is being developed by SpaceX and expected for deployment in Q3.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google&apos;s Gemini Ultra 2 Achieves Human-Level Performance on Medical Diagnosis Benchmarks</title>
+      <link>https://sabr-labs.com/article/google-gemini-ultra-2-multimodal</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-ultra-2-multimodal</guid>
+      <pubDate>Wed, 08 Apr 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>AI</category>
+      <category>Healthcare</category>
+      <category>Medical AI</category>
+      <category>DeepMind</category>
+      <description>DeepMind&apos;s flagship model correctly diagnosed 89% of clinical cases in a blinded study — outperforming board-certified physicians in radiology and pathology.</description>
+      <content:encoded><![CDATA[<p>Google DeepMind released Gemini Ultra 2, the company's most capable AI model, alongside a landmark medical study demonstrating human-level performance in clinical diagnosis tasks. In a double-blinded evaluation involving 2,400 clinical cases across radiology, pathology, dermatology, and internal medicine, Gemini Ultra 2 achieved an 89.4% accuracy rate versus 86.1% for a panel of board-certified physicians.</p>
+<p>The model's strongest performance was in radiology, where it correctly interpreted CT and MRI scans with 93.7% accuracy versus 84.2% for radiologists — and flagged incidental findings that were subsequently confirmed in follow-up imaging. In dermatology, the model correctly classified skin lesions from photography with 91.2% accuracy, comparable to dermatologists in controlled conditions.</p>
+<p>Critically, the study was conducted under rigorous clinical evaluation protocols with independent statistical review by researchers at Johns Hopkins and the University of Edinburgh who had no financial relationship with Google. The paper has been submitted to the New England Journal of Medicine.</p>
+<p>The FDA has not cleared Gemini Ultra 2 for clinical decision support. Google announced a partnership with Mayo Clinic and Cleveland Clinic to begin FDA de novo pathway submissions for specific diagnostic assistance indications — a process that typically takes 2-3 years. The company emphasized the model is intended as a physician augmentation tool, not a replacement.</p>
+<p>Gemini Ultra 2 is available via the Google AI Ultra API tier and through Vertex AI for enterprise healthcare customers. The model supports native image, text, audio, and video input and maintains a 1M token context window.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CompTIA CASP+ vs. CISSP: Which Advanced Security Cert Fits Your Career Path?</title>
+      <link>https://sabr-labs.com/article/comptia-casp-plus-vs-cissp-comparison</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-casp-plus-vs-cissp-comparison</guid>
+      <pubDate>Wed, 08 Apr 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>CASP+</category>
+      <category>CISSP</category>
+      <category>Certification</category>
+      <category>Career</category>
+      <category>Security Architecture</category>
+      <description>Both certifications target senior security professionals, but they serve fundamentally different career trajectories — technical practitioner versus security manager.</description>
+      <content:encoded><![CDATA[<p>CompTIA Advanced Security Practitioner (CASP+) and the (ISC)² Certified Information Systems Security Professional (CISSP) are two of the most respected advanced cybersecurity certifications available, and candidates often struggle to choose between them. The confusion is understandable — both target experienced professionals, both carry significant market recognition, and both validate a broad base of security knowledge. But they are designed for different career trajectories.</p>
+<p>CASP+ (CAS-004) is a practitioner certification. It validates hands-on technical skills at the expert level and is explicitly designed for security engineers, architects, and practitioners who execute technical security work rather than manage it. The exam tests enterprise security architecture, research and collaboration, integration of computing and communications security, and vulnerability management through a heavy emphasis on performance-based questions — scenarios that require candidates to configure systems, analyze logs, or identify vulnerabilities in realistic lab simulations.</p>
+<p>CISSP is a management and architecture certification. While it does require technical breadth (the Common Body of Knowledge spans 8 domains including cryptography, identity management, and security architecture), its exam questions are consistently framed from a managerial perspective. The 'best answer' on CISSP questions is almost always the option a CISO or security director would choose — prioritizing risk management, business alignment, and policy over specific technical implementation.</p>
+<p>The experience requirements differ significantly. CISSP requires 5 years of paid, full-time security work experience in at least two of its eight domains. CASP+ has no formal experience prerequisite, though CompTIA recommends 10 years of IT experience including 5 in security — this is guidance, not a barrier to sitting the exam. The investment also differs: CASP+ costs $494 per attempt; CISSP costs $699 per attempt and requires annual maintenance fees of $125.</p>
+<p>For career guidance: if you want to remain a hands-on technical contributor — senior security engineer, architect, penetration tester, or security researcher — CASP+ validates that path. If you are moving toward security management, GRC, CISO, or compliance roles, CISSP is the recognized credential for that trajectory. Many senior professionals hold both, but if choosing only one, let your intended role guide the decision.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>EU AI Act Enforcement Begins: First Three Companies Fined Under New Regime</title>
+      <link>https://sabr-labs.com/article/ai-regulation-eu-act-enforcement</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ai-regulation-eu-act-enforcement</guid>
+      <pubDate>Tue, 07 Apr 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>EU AI Act</category>
+      <category>AI Regulation</category>
+      <category>Compliance</category>
+      <category>Europe</category>
+      <category>Governance</category>
+      <description>The European AI Office issues fines totaling €47M against a facial recognition provider and two recruitment AI platforms for prohibited-use violations.</description>
+      <content:encoded><![CDATA[<p>The European AI Office issued its first enforcement actions under the EU AI Act on Monday, fining three companies a combined €47 million for deploying AI systems categorized as prohibited or high-risk without required conformity assessments or human oversight mechanisms.</p>
+<p>French facial recognition startup ClearSight AI received the largest fine of €28 million for deploying a real-time biometric identification system in public spaces without the narrow law enforcement exception required under Article 5 of the Act. The company offered its technology to 12 European municipalities for public event security without disclosing it fell within the prohibited-use category.</p>
+<p>German HR-tech firm TalentSort received a €12 million fine for using an AI-powered CV screening system that disproportionately filtered out candidates based on gender-correlated features — a violation of the Act's non-discrimination requirements for employment AI and its mandatory bias audit provisions for high-risk systems.</p>
+<p>Danish automated loan approval platform CreditNow received €7 million for failing to implement the required human review process for adverse credit decisions, which the AI Act mandates for consequential automated decision-making. The company had implemented a nominal human oversight step that investigators found was rubber-stamp approval without genuine review capability.</p>
+<p>The European AI Office said these initial enforcements are intended to signal that the Act will be applied uniformly and that grace period accommodations have ended. Companies across Europe are accelerating compliance programs, with major management consulting firms reporting 300% increases in AI compliance advisory engagements since enforcement began.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Getting Started with Juniper: The JNCIA-Junos Certification Guide for 2026</title>
+      <link>https://sabr-labs.com/article/juniper-jncia-junos-certification-guide</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/juniper-jncia-junos-certification-guide</guid>
+      <pubDate>Tue, 07 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Juniper</category>
+      <category>JNCIA</category>
+      <category>Junos</category>
+      <category>Networking</category>
+      <category>Certification</category>
+      <category>Service Provider</category>
+      <description>Juniper&apos;s associate-level Junos certification is an underrated entry point into enterprise and service provider networking — and it&apos;s cheaper than most competitors.</description>
+      <content:encoded><![CDATA[<p>The Juniper Networks Certified Associate — Junos (JNCIA-Junos) is Juniper's foundational networking certification and serves as the prerequisite for all higher-level Juniper certifications. While Cisco's CCNA dominates mindshare in the enterprise networking space, Juniper's certifications are widely valued in service provider, carrier, and large-enterprise environments where Juniper MX, QFX, and SRX hardware are prevalent.</p>
+<p>The JNCIA-Junos exam (JN0-104) tests knowledge of the Junos OS software architecture, user interface options (CLI), routing fundamentals, routing policy and firewall filters, and Junos network management. Unlike Cisco's IOS, Junos uses a hierarchical configuration structure with a clear separation between candidate configuration and active configuration — a model many engineers find more predictable and auditable once they adapt to it.</p>
+<p>The exam is 90 minutes, 65 multiple-choice questions, and costs $200 USD. Passing score is 65%. Juniper certifications are valid for 3 years. Recertification is achieved by passing a higher-level exam, passing the same exam, or passing any professional or specialist exam in the same track.</p>
+<p>Juniper offers a free self-study path through its Open Learning portal (learningportal.juniper.net), which includes the Junos Associate (JNAS) open learning course — a comprehensive set of self-paced modules that cover all exam objectives. The free Juniper vLabs environment provides access to virtual Junos devices for hands-on practice without physical hardware. CBT Nuggets and INE both offer well-regarded paid JNCIA-Junos courses.</p>
+<p>After JNCIA-Junos, the natural progression splits into tracks: JNCIS-ENT (enterprise routing and switching), JNCIS-SP (service provider), JNCIS-SEC (security, focusing on SRX firewalls), and JNCIS-DevOps (Junos automation). Each JNCIS feeds into a corresponding JNCIP (professional) and JNCIE (expert) track. The JNCIE-SP is widely considered among the most technically rigorous expert-level networking certifications available, comparable to the Cisco CCIE SP.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cyber Attack on Texas Water Utility Causes Chemical Dosing Anomaly, No Public Harm</title>
+      <link>https://sabr-labs.com/article/water-utility-ics-ot-cyberattack</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/water-utility-ics-ot-cyberattack</guid>
+      <pubDate>Tue, 07 Apr 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ICS</category>
+      <category>OT Security</category>
+      <category>Water Infrastructure</category>
+      <category>SCADA</category>
+      <category>Critical Infrastructure</category>
+      <category>CISA</category>
+      <description>A suspected nation-state actor manipulated SCADA systems at a municipal water treatment plant — the third ICS attack on U.S. critical infrastructure this year.</description>
+      <content:encoded><![CDATA[<p>The Environmental Protection Agency and FBI are investigating a cyberattack on the City of Lubbock's municipal water treatment facility that briefly disrupted automated chemical dosing controls, according to a joint advisory issued this morning. The attack, which occurred over a 4-hour window on Saturday night, was detected by plant operators who noticed anomalous pH and chlorine level readings in SCADA monitoring dashboards.</p>
+<p>Plant supervisors immediately switched to manual control and restored normal operations within 35 minutes of detection. Water quality testing conducted at 47 distribution points confirmed that water reaching customers remained within safe parameters throughout the incident. There are no public health impacts.</p>
+<p>Initial forensic analysis indicates the attackers gained access through a remote desktop protocol connection that had been left open for an IT contractor working on building management systems — a network segment that had improper firewall rules allowing lateral movement into the operational technology network.</p>
+<p>The attack is the third documented intrusion into U.S. water sector ICS this year, following incidents in Kansas City in January and Sacramento in March. Cybersecurity researchers have attributed two of the three incidents to the same infrastructure cluster assessed to be linked to a Chinese state-sponsored group focused on mapping and pre-positioning in critical infrastructure.</p>
+<p>CISA's ICS-CERT division has issued emergency guidance for all water utilities nationwide, mandating immediate audit of remote access paths into OT networks, disabling of unnecessary internet-exposed services on SCADA systems, and implementation of network segmentation between IT and OT environments. The Water ISAC is coordinating peer-to-peer IOC sharing across the sector.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Are SANS GIAC Certifications Worth the Price? An Honest Assessment</title>
+      <link>https://sabr-labs.com/article/sans-giac-certifications-worth-it</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sans-giac-certifications-worth-it</guid>
+      <pubDate>Mon, 06 Apr 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>SANS</category>
+      <category>GIAC</category>
+      <category>GCIH</category>
+      <category>GPEN</category>
+      <category>Certification</category>
+      <category>Incident Response</category>
+      <category>Penetration Testing</category>
+      <description>GIAC certifications cost three to four times more than most competitors — but for specialized offensive and defensive security roles, the premium may be justified.</description>
+      <content:encoded><![CDATA[<p>The SANS Institute's GIAC (Global Information Assurance Certification) program is widely considered the gold standard for specialized cybersecurity certifications, particularly in incident response, penetration testing, digital forensics, and industrial control systems security. They are also, consistently, among the most expensive certifications available — a single GIAC exam attempt costs $979, and the associated SANS course (strongly recommended, not required) typically runs $5,000–$8,500 for in-person or $3,000–$5,000 for on-demand.</p>
+<p>What justifies the price is specificity and depth. The GIAC Security Essentials (GSEC), GIAC Certified Incident Handler (GCIH), GIAC Certified Enterprise Defender (GCED), GIAC Penetration Tester (GPEN), and GIAC Exploit Researcher and Advanced Penetration Tester (GXPN) certifications test knowledge that is genuinely difficult to acquire through general study — they require deep understanding of how attacks work at a technical level and are built around current, practitioner-developed curriculum.</p>
+<p>The GIAC FOR508 (Advanced Incident Response, Threat Hunting, and Digital Forensics) and FOR610 (Reverse-Engineering Malware) courses and their associated certifications (GCFE, GREM) are widely cited as the best training available for those specific disciplines, period — not just among certifications, but compared to any training format. Many incident response teams and government agencies fund these specifically.</p>
+<p>The open-book exam format is distinctive and controversial. GIAC allows candidates to bring two printed reference books into the exam, which shifts the test from pure memorization to applied knowledge under time pressure. Most candidates who fail do so because they ran out of time, not because they lacked knowledge — the exams are designed to be hard even with references.</p>
+<p>The honest assessment: for most entry-to-mid-level candidates, the price is difficult to justify out of pocket. CompTIA certifications, the OSCP, or vendor certs offer better ROI at that career stage. For experienced professionals targeting specialized SOC, IR, or penetration testing roles — or whose employer will fund the training — SANS GIAC certifications are among the most credible and respected credentials available and consistently appear in job postings for senior security roles at financial institutions, government contractors, and MSSPs.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Blue Origin&apos;s New Glenn Rocket Cleared for Mars Mission Payload in 2028</title>
+      <link>https://sabr-labs.com/article/blue-origin-new-glenn-mars-mission</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/blue-origin-new-glenn-mars-mission</guid>
+      <pubDate>Mon, 06 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>Blue Origin</category>
+      <category>New Glenn</category>
+      <category>Mars</category>
+      <category>NASA</category>
+      <category>Space Exploration</category>
+      <description>Jeff Bezos&apos; rocket company secures NASA contract to deliver scientific instruments to Mars orbit — validating New Glenn as a deep space vehicle.</description>
+      <content:encoded><![CDATA[<p>Blue Origin announced today that NASA has awarded the company a $1.4 billion contract to launch the Mars Atmospheric Research Mission (MARM) payload aboard New Glenn in late 2028, marking the first time Blue Origin's heavy-lift rocket has been contracted for a deep space science mission.</p>
+<p>New Glenn has completed five consecutive successful orbital launches since its certification flight in 2025, including the delivery of a commercial communications satellite to GEO and three Kuiper broadband satellites. The Mars mission will require a significantly upgraded upper stage — the BE-3U — capable of delivering the 2,800kg MARM spacecraft on a trans-Mars injection trajectory.</p>
+<p>The MARM mission will study Martian atmospheric dust and climate patterns that affect surface conditions and human landing site selection. The mission's science team, led by researchers from the University of Colorado Boulder and JPL, will operate the spacecraft remotely from a new mission control facility at Blue Origin's Kent, Washington campus.</p>
+<p>New Glenn's selection over SpaceX's Falcon Heavy for this mission reflects NASA's policy of cultivating multiple domestic launch providers to reduce single-vendor dependency. SpaceX's Starship remains under contract for larger Mars cargo missions planned for the 2030s.</p>
+<p>Jeff Bezos, who founded Blue Origin with the explicit long-term goal of enabling human presence in space, described the contract as 'a milestone 25 years in the making.' Blue Origin is also pursuing an Artemis program lunar lander contract as it builds out New Glenn's manifest for the remainder of the decade.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AI-Powered Deepfake Voice Fraud Steals $25M from Finance Director in 4 Minutes</title>
+      <link>https://sabr-labs.com/article/phishing-ai-deepfake-ceo-fraud</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/phishing-ai-deepfake-ceo-fraud</guid>
+      <pubDate>Mon, 06 Apr 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Deepfake</category>
+      <category>BEC</category>
+      <category>Social Engineering</category>
+      <category>AI Fraud</category>
+      <category>Voice Cloning</category>
+      <description>Attackers used a real-time voice cloning model to impersonate the CEO on a live call — the most sophisticated BEC attack ever documented.</description>
+      <content:encoded><![CDATA[<p>A finance director at a Singaporean manufacturing conglomerate transferred $25 million to overseas accounts after a phone call she believed was from her CEO — but the voice was entirely generated by an AI system in real time. The incident, disclosed by cybersecurity firm Group-IB, represents a significant evolution in business email compromise (BEC) fraud beyond recorded deepfake video calls.</p>
+<p>The attack used a custom real-time voice synthesis model fine-tuned on 20 hours of the CEO's publicly available interview recordings, board presentations, and earnings calls — all freely accessible online. The model allowed attackers to respond dynamically to the victim's questions with synthesized speech indistinguishable from the real executive, maintaining a natural 4-minute conversation.</p>
+<p>The victim became suspicious only after the transaction was processed and she mentioned the call to a colleague. The CEO confirmed he had made no such call. By the time fraud alerts were raised, the funds had been routed through three intermediary accounts in the United Arab Emirates and Hong Kong.</p>
+<p>Law enforcement has frozen approximately $4.5 million across the chain. Interpol's Financial Crimes division is coordinating the investigation across four jurisdictions. The remainder of the funds are believed to have been converted to cryptocurrency.</p>
+<p>Enterprises are urgently reviewing voice authentication processes for financial wire approvals. Security vendors including Pindrop and Nuance are marketing voice liveness detection products specifically designed to flag synthetic speech. The FBI's IC3 has issued a warning to financial sector companies about the prevalence of this attack vector, which it has documented in 340 incidents totaling $180 million in losses over the past 12 months.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Samsung&apos;s 2nm Process Node: Can It Break TSMC&apos;s Stranglehold on Advanced Chips?</title>
+      <link>https://sabr-labs.com/article/samsung-galaxy-ai-chip-manufacturing</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/samsung-galaxy-ai-chip-manufacturing</guid>
+      <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Samsung</category>
+      <category>TSMC</category>
+      <category>Semiconductor</category>
+      <category>Chips</category>
+      <category>Manufacturing</category>
+      <category>AI</category>
+      <description>Samsung&apos;s GAA-FET 2nm production ramp has reached 60% yield — closing the gap with TSMC and potentially reshuffling the entire semiconductor supply chain.</description>
+      <content:encoded><![CDATA[<p>Samsung Foundry announced that its 2nm SF2 process node has reached commercial-ready yield rates, clearing a critical milestone that validates Samsung as a competitive alternative to TSMC for next-generation chip manufacturing. The achievement ends two years of yield struggles that had cost Samsung several high-profile customer relationships.</p>
+<p>TSMC currently produces the overwhelming majority of the world's most advanced logic chips, including Apple's A-series, Nvidia's GPUs, and AMD's processors. Its 2nm N2 process entered risk production last quarter. Samsung's competing SF2 uses a similar gate-all-around FET transistor architecture that offers better power efficiency than the previous FinFET generation.</p>
+<p>Two major chip design companies have placed initial volume orders with Samsung SF2, according to sources familiar with the negotiations. While names were not disclosed, analysts believe Qualcomm and Google's custom silicon division (responsible for Tensor chips) are the most likely customers given their known interest in supply chain diversification.</p>
+<p>The geopolitical implications are significant. U.S. CHIPS Act policy explicitly encourages domestic chip production and allied-nation manufacturing capacity. Samsung's Kentucky facility is scheduled to begin construction of an advanced packaging facility this year, though leading-edge logic manufacturing will remain in South Korea for the foreseeable future.</p>
+<p>For the AI chip supply chain, the ability of Samsung to compete with TSMC at 2nm provides Nvidia, AMD, and custom AI chip designers with meaningful leverage in contract negotiations and protection against the single-point-of-failure risk that a Taiwan crisis would represent for global technology.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>NIST Finalizes Post-Quantum Standards: What Organizations Must Do Now</title>
+      <link>https://sabr-labs.com/article/post-quantum-cryptography-migration-guide</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/post-quantum-cryptography-migration-guide</guid>
+      <pubDate>Sat, 04 Apr 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Post-Quantum</category>
+      <category>Cryptography</category>
+      <category>NIST</category>
+      <category>CRYSTALS-Kyber</category>
+      <category>Security Standards</category>
+      <description>With CRYSTALS-Kyber and CRYSTALS-Dilithium now standard, enterprises face a multi-year cryptographic migration that cannot wait for quantum threats to materialize.</description>
+      <content:encoded><![CDATA[<p>NIST finalized its post-quantum cryptography standards in a Federal Register publication this week, formally designating CRYSTALS-Kyber (for key encapsulation) and CRYSTALS-Dilithium (for digital signatures) as the required standards for federal systems. The finalization triggers mandatory compliance timelines for government contractors and strongly influences enterprise cryptographic strategy.</p>
+<p>The urgency stems from 'harvest now, decrypt later' attacks — a strategy where nation-state adversaries are actively collecting encrypted data today with the intention of decrypting it once sufficiently capable quantum computers are available. Security experts estimate quantum computers capable of breaking RSA-2048 are 5-15 years away, but data classified for 15+ years of confidentiality must be protected now.</p>
+<p>Migration is technically complex. TLS, SSH, PKI certificates, VPN tunnels, code signing, and hardware security modules all require updates. Many embedded systems and OT devices cannot be field-updated and will need hardware replacement. A phased migration prioritizing highest-sensitivity data channels is recommended.</p>
+<p>Major vendors are moving quickly. Cloudflare enabled hybrid PQC key exchange (combining classical ECDH with CRYSTALS-Kyber) for all TLS 1.3 connections by default. Apple added PQC support to iMessage in 2024. Google enabled hybrid PQC in Chrome 114 and is planning full Kyber support in Chrome 132.</p>
+<p>CISA's post-quantum roadmap recommends organizations complete a cryptographic inventory in 2026, prioritize critical system migration in 2027-2028, and achieve full PQC deployment by 2030. For most organizations, this represents the largest cryptographic infrastructure project since the migration from SHA-1 to SHA-256 — but with tighter stakes.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>James Webb Space Telescope Detects Dimethyl Sulfide in K2-18b Atmosphere — Possible Biosignature</title>
+      <link>https://sabr-labs.com/article/james-webb-exoplanet-atmosphere</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/james-webb-exoplanet-atmosphere</guid>
+      <pubDate>Fri, 03 Apr 2026 17:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>James Webb</category>
+      <category>Exoplanet</category>
+      <category>Astrobiology</category>
+      <category>Biosignature</category>
+      <category>K2-18b</category>
+      <category>NASA</category>
+      <description>The chemical, produced almost exclusively by biological processes on Earth, was detected in the atmosphere of a &apos;hycean world&apos; 120 light-years away.</description>
+      <content:encoded><![CDATA[<p>Astronomers using the James Webb Space Telescope have detected a signal consistent with dimethyl sulfide (DMS) in the atmosphere of the exoplanet K2-18b — a compound that, on Earth, is produced almost exclusively by marine phytoplankton and other biological organisms. While researchers are careful not to claim proof of extraterrestrial life, the detection represents the strongest biosignature candidate ever observed beyond our solar system.</p>
+<p>K2-18b is a 'hycean world' — a class of exoplanet theorized to have hydrogen-rich atmospheres above liquid water oceans — orbiting in the habitable zone of a red dwarf star 120 light-years from Earth. Webb's NIRSpec instrument detected the DMS signal through transmission spectroscopy as the planet transited its host star, measuring the subtle change in starlight filtering through the atmosphere.</p>
+<p>The detection carries significant caveats. DMS can theoretically be produced by non-biological photochemical processes under certain atmospheric conditions not well-characterized for hycean worlds. The signal strength of 3σ is suggestive but does not meet the 5σ confidence threshold that physical scientists typically require to claim a definitive detection.</p>
+<p>Cambridge University professor Nikku Madhusudhan, lead author of the study submitted to Nature Astronomy, described the finding as 'tantalizing but not conclusive.' His team is requesting additional Webb observation time in the next cycle to accumulate more transits and increase the statistical confidence of the DMS signal.</p>
+<p>The discovery has reinvigorated debates about the search for life in the universe. NASA's Habitable Worlds Observatory, currently in early development, is specifically designed to characterize Earth-like exoplanets in far greater detail than Webb allows. But for now, K2-18b becomes the most compelling astrobiological target in the known catalog of confirmed exoplanets.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Former SolarWinds CISO Convicted on Securities Fraud and Negligence Charges</title>
+      <link>https://sabr-labs.com/article/solarwinds-ciso-criminal-charges</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-ciso-criminal-charges</guid>
+      <pubDate>Thu, 02 Apr 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CISO</category>
+      <category>Securities Fraud</category>
+      <category>SolarWinds</category>
+      <category>SEC</category>
+      <category>Legal</category>
+      <category>Governance</category>
+      <description>The landmark verdict establishes personal legal liability for security leaders who misrepresent an organization&apos;s cybersecurity posture to investors.</description>
+      <content:encoded><![CDATA[<p>A federal jury in the Southern District of New York found Timothy Brown, former Chief Information Security Officer of SolarWinds, guilty on two counts of securities fraud and one count of securities negligence following a three-week trial. The verdict marks the first criminal conviction of a CISO under the SEC's expanded cybersecurity disclosure rules.</p>
+<p>The charges stemmed from statements Brown made in investor presentations and SEC filings between 2021 and 2023 claiming SolarWinds had 'industry-leading' security practices — statements prosecutors argued he knew were false given internal vulnerability reports documenting critical access control failures and unpatched systems that he had received months earlier.</p>
+<p>The prosecution presented evidence including internal Slack messages in which Brown acknowledged knowing about specific security gaps while simultaneously approving investor communications that omitted or minimized them. Prosecutors argued this constituted knowing misrepresentation of material information to investors.</p>
+<p>Brown's defense argued that security communications necessarily involve trade-offs between disclosure and operational security, and that no CISO can guarantee zero vulnerabilities. The defense also contested the causal link between the specific gaps he was aware of and the 2020 SUNBURST attack that had been attributed to the Russian SVR.</p>
+<p>The CISO community has reacted with significant alarm. Security leadership associations have called the verdict 'a criminalization of the impossible job' and warn that it will deter qualified security professionals from taking CISO roles. The SEC indicated it will pursue similar cases where it finds evidence of material misrepresentation of security posture, signaling this verdict is a precedent, not an outlier.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
