@@ -26,17 +26,18 @@ function TrendingStrip() {
         <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">Trending Now</span>
       </div>
 
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap sm:overflow-visible">
+      {/* Mobile: horizontal scroll. sm+: even-width grid so cards align. */}
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible">
         {trending.map((a, i) => (
           <Link
             key={a.id}
             to={`/article/${a.slug}`}
-            className="flex-shrink-0 sm:flex-shrink flex items-center gap-3 bg-[#111827] border border-white/[0.06] rounded-xl px-4 py-3 hover:border-amber-400/25 hover:bg-[#131d2e] transition-all duration-200 group max-w-xs sm:max-w-none"
+            className="flex-shrink-0 sm:flex-shrink-0 flex items-center gap-3 bg-[#111827] border border-white/[0.06] rounded-xl px-4 py-3 hover:border-amber-400/25 hover:bg-[#131d2e] transition-all duration-200 group w-[78vw] max-w-xs sm:w-auto sm:max-w-none min-h-[64px]"
           >
-            <span className="text-xl font-black text-slate-800 leading-none w-5 text-center flex-shrink-0">{i + 1}</span>
-            <div className="min-w-0">
+            <span className="text-xl font-black text-slate-700 leading-none w-5 text-center flex-shrink-0">{i + 1}</span>
+            <div className="min-w-0 flex-1">
               <CategoryBadge category={a.category} size="xs" asLink={false} />
-              <p className="text-xs font-semibold text-slate-300 group-hover:text-white mt-1 line-clamp-1 transition-colors duration-200">
+              <p className="text-xs font-semibold text-slate-300 group-hover:text-white mt-1 line-clamp-2 transition-colors duration-200">
                 {a.title}
               </p>
             </div>
@@ -81,13 +82,13 @@ function AISpotlight() {
         title="AI & Machine Learning"
         viewAllHref="/tech-news?cat=ai"
       />
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:items-stretch">
         {/* Large featured on left */}
         <Link
           to={`/article/${main.slug}`}
           className="lg:col-span-2 card hover-glow overflow-hidden group flex flex-col"
         >
-          <div className="relative aspect-video overflow-hidden bg-slate-800">
+          <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden bg-slate-800">
             <img
               src={main.image}
               alt={main.title}
@@ -104,8 +105,8 @@ function AISpotlight() {
           </div>
         </Link>
 
-        {/* Stack on right */}
-        <div className="flex flex-col gap-4">
+        {/* Stack on right — equal-sized cards that together match left height */}
+        <div className="grid grid-cols-1 gap-4 lg:grid-rows-2">
           {rest.map(a => (
             <ArticleCard key={a.id} article={a} variant="horizontal" />
           ))}
@@ -182,16 +183,16 @@ function CategoryNav() {
         <Link
           key={id}
           to={href}
-          className="card hover-glow flex items-center gap-3 p-4 group"
+          className="card hover-glow flex items-center gap-3 p-3 sm:p-4 group"
         >
           <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 transition-colors duration-200">
-            <Icon className={`w-4.5 h-4.5 ${color}`} />
+            <Icon className={`w-5 h-5 ${color}`} />
           </div>
-          <div>
-            <p className="text-xs font-bold text-slate-200 group-hover:text-white transition-colors">{label}</p>
-            <p className="text-[10px] text-slate-600 mt-0.5">Latest stories</p>
+          <div className="min-w-0 flex-1">
+            <p className="text-xs font-bold text-slate-200 group-hover:text-white transition-colors truncate">{label}</p>
+            <p className="text-[10px] text-slate-500 mt-0.5 truncate">Latest stories</p>
           </div>
-          <ChevronRight className="w-3.5 h-3.5 text-slate-700 ml-auto group-hover:text-slate-500 group-hover:translate-x-0.5 transition-all duration-200" />
+          <ChevronRight className="w-3.5 h-3.5 text-slate-600 ml-auto flex-shrink-0 group-hover:text-slate-400 group-hover:translate-x-0.5 transition-all duration-200" />
         </Link>
       ))}
     </div>

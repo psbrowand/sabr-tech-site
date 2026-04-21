@@ -119,7 +119,7 @@ export default function Header() {
                 className="p-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-white/5 transition-all duration-200"
                 aria-label="Toggle search"
               >
-                {searchOpen ? <X className="w-4.5 h-4.5" /> : <Search className="w-4.5 h-4.5" />}
+                {searchOpen ? <X className="w-[18px] h-[18px]" /> : <Search className="w-[18px] h-[18px]" />}
               </button>
 
               {/* Auth slot — renders nothing during the initial session
