@@ -44,3 +44,6 @@ Resume-site
 
 # Daily-news routine — draft staging, not committed
 scripts/drafts/
+
+# Claude Code
+.claude/
