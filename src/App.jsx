@@ -24,6 +24,7 @@ import ArticlePage       from './pages/ArticlePage';
 import AboutPage         from './pages/AboutPage';
 import ContactPage       from './pages/ContactPage';
 import NewsletterPage    from './pages/NewsletterPage';
+import QodPage           from './pages/QodPage';
 import SearchPage        from './pages/SearchPage';
 import LearningPage      from './pages/LearningPage';
 import AINewsPage        from './pages/AINewsPage';
@@ -76,6 +77,7 @@ export default function App() {
           <Route path="/about"          element={<AboutPage />} />
           <Route path="/contact"        element={<ContactPage />} />
           <Route path="/newsletter"     element={<NewsletterPage />} />
+          <Route path="/qod"            element={<QodPage />} />
           <Route path="/search"         element={<SearchPage />} />
           <Route path="/learning"       element={<LearningPage />} />
           <Route path="/privacy"        element={<PrivacyPage />} />
