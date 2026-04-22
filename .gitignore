@@ -46,4 +46,5 @@ Resume-site
 scripts/drafts/
 
 # Claude Code
-.claude/
+.claude/scheduled_tasks.lock
+.claude/worktrees/
