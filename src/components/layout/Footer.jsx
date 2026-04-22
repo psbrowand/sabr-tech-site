@@ -212,9 +212,14 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04]">
         <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-slate-600 text-xs text-center sm:text-left">
-            © {new Date().getFullYear()} Sabr Cyber & Tech News. All rights reserved.
-          </p>
+          {/* Copyright + brand-positioning tagline. The tagline sits inline at md+ */}
+          {/* with a middle-dot separator; below md, flex-wrap stacks the tagline */}
+          {/* under the copyright and the separator hides. Per SPEC-TICKET-001. */}
+          <div className="flex flex-wrap items-baseline justify-center sm:justify-start gap-x-3 gap-y-1 text-slate-400 text-sm">
+            <span>© {new Date().getFullYear()} Sabr Cyber & Tech News. All rights reserved.</span>
+            <span aria-hidden="true" className="hidden md:inline">·</span>
+            <span className="whitespace-nowrap">Independent coverage. No sponsors.</span>
+          </div>
           <div className="flex items-center gap-1 text-slate-700 text-xs">
             <span>Built with</span>
             <span className="text-cyan-600 mx-0.5">♦</span>
