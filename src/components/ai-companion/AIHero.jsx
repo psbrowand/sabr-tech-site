@@ -1,22 +1,15 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // AIHero.jsx — Apex homepage AI-first hero (SAB-100 / SAB-93.C1)
-//
-// Draft status: copy pending CEO belief-check on SAB-100. Currently shipping
-// Option B (citation-forward) as the safe default closest to the ticket's own
-// framing example. If the CEO picks Option A (refusal-forward) or C (show-its-
-// work), only HEADLINE/SUB strings change.
 // ─────────────────────────────────────────────────────────────────────────────
 import { ArrowRight, FileCheck2, ShieldQuestion } from 'lucide-react';
 
-// Headline / sub / supporting — isolated so CEO edits do not touch layout.
+// Headline / sub — isolated so copy edits do not touch layout.
+// Hero stays cert-generic on purpose; specific certs live in the section below.
 const HEADLINE_LINE_1 = 'An AI study companion';
 const HEADLINE_LINE_2 = 'that cites every answer.';
 
 const SUB =
-  'It quizzes you on the domains you need, rewords an explanation that didn’t land, and shows you why your pick was wrong. Every response links back to the section of the official exam objectives it came from.';
-
-const SUPPORTING =
-  'Built for working learners preparing for CompTIA Net+, Security+, and CySA+ — more certifications as we finish ingesting them.';
+  'It quizzes you on the domains you’re studying, rewords an explanation that didn’t land, and shows why your pick was wrong. Every response links to the section of the official exam objectives it came from — and when it can’t, it refuses to answer instead of guessing.';
 
 export default function AIHero() {
   return (
@@ -48,10 +41,6 @@ export default function AIHero() {
 
           <p className="mt-5 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
             {SUB}
-          </p>
-
-          <p className="mt-4 text-sm text-slate-400 leading-relaxed max-w-2xl">
-            {SUPPORTING}
           </p>
 
           {/* CTAs — both resolve safely. No pricing claims. */}

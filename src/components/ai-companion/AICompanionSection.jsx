@@ -30,7 +30,7 @@ const ENDPOINTS = [
     icon: MessageSquareText,
     kicker: '“Explain that differently.”',
     body:
-      'When a rationale doesn’t land, ask for it in plain English, as a single-sentence TL;DR, or as an analogy that connects the concept to something you already know. This is the one feature that rephrases rather than re-cites — it’s for the moment you understood the mechanism but the wording got in the way.',
+      'When a rationale doesn’t land, ask for it in simpler wording, as a single-sentence TL;DR, or as an analogy that connects the concept to something you already know. This is the one feature that rephrases rather than re-cites — it’s for the moment you understood the mechanism but the wording got in the way.',
   },
   {
     id: 'why-wrong',
@@ -164,6 +164,12 @@ export default function AICompanionSection() {
           ))}
         </ul>
       </div>
+
+      {/* Cert-scope footnote — specific names belong here, not in the hero. */}
+      <p className="mt-6 text-xs text-slate-500 leading-relaxed">
+        Supported today on CompTIA Network+, Security+, and CySA+ — more
+        certifications as we finish ingesting the official objectives.
+      </p>
     </section>
   );
 }
