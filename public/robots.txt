@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow client-only utility routes (no useful indexable content).
+Disallow: /search
+Disallow: /api/
+
+Sitemap: https://sabr-labs.com/sitemap.xml

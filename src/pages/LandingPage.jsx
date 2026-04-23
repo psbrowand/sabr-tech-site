@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import NewsletterSignup from '../components/newsletter/NewsletterSignup';
+import { track, EVENTS } from '../lib/analytics';
 
 const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
@@ -81,17 +82,19 @@ const LAUNCH_CERTS = [
 ];
 
 // ── Pricing ───────────────────────────────────────────────────────────────────
+// Prices mirror live Stripe (see learning app: src/lib/tiers.ts).
+// Annual = 10 × monthly (two months free ≈ 17% off).
 const PRICING = [
   {
     name: 'Free',
     monthlyPrice: 0,
     annualPrice: 0,
     annualNote: null,
-    desc: 'Get started with no card required.',
+    desc: 'Try it before you buy it.',
     features: [
-      '25 questions per day',
-      'Flashcard preview (read-only)',
-      'Access to 2 certifications',
+      '20 questions per day',
+      'Track 1 certification',
+      'Basic flashcard preview',
       'Community forum access',
     ],
     cta: 'Get started free',
@@ -100,61 +103,81 @@ const PRICING = [
     badge: null,
   },
   {
-    name: 'Pro',
-    monthlyPrice: 15,
+    name: 'Starter',
+    monthlyPrice: 12,
     annualPrice: 10,
     annualNote: '$120 / yr',
-    desc: 'Everything you need to pass your next cert.',
+    desc: 'Unlimited questions, pick 2 certs.',
     features: [
-      'Unlimited questions',
-      'Full flashcard tracking + SRS',
-      'All 6 launch certifications',
-      'Adaptive practice mode',
-      'Progress analytics',
-      'Community forum (badge)',
+      'Unlimited practice questions',
+      'Full flashcards with SRS tracking',
+      'Track up to 2 certifications',
+      '3 full practice exams / cert / mo',
+      'Community forum',
     ],
-    cta: 'Start free',
+    cta: 'Start Starter',
+    href: `${APP_ORIGIN}/register`,
+    highlight: false,
+    badge: null,
+  },
+  {
+    name: 'Pro',
+    monthlyPrice: 24,
+    annualPrice: 20,
+    annualNote: '$240 / yr',
+    desc: 'Everything you need to pass.',
+    features: [
+      'Everything in Starter',
+      'Track up to 4 certifications',
+      'Unlimited full practice exams',
+      'AI study companion',
+      'Advanced analytics + weak-area drill',
+      'Exam-sim (strict timed) mode',
+      'No ads',
+    ],
+    cta: 'Start Pro',
     href: `${APP_ORIGIN}/register`,
     highlight: true,
     badge: 'Most popular',
   },
   {
     name: 'Premium',
-    monthlyPrice: 22,
-    annualPrice: 15,
-    annualNote: '$180 / yr',
-    desc: 'For serious cert chasers and teams.',
+    monthlyPrice: 34,
+    annualPrice: 28,
+    annualNote: '$340 / yr',
+    desc: 'For cert stackers and teams.',
     features: [
       'Everything in Pro',
-      'AI study companion',
-      'Performance-based questions',
-      'Exam Ready score',
+      'Unlimited certifications tracked',
       'Early access to new certs',
+      'Downloadable cheat sheets + study guides',
+      'Elite profile badge',
       'Priority support',
     ],
-    cta: 'Start free',
+    cta: 'Start Premium',
     href: `${APP_ORIGIN}/register`,
     highlight: false,
     badge: null,
   },
 ];
 
-// ── Testimonial placeholders ──────────────────────────────────────────────────
-const TESTIMONIALS = [
+// ── Founder's note (early-access honesty panel) ──────────────────────────────
+// We don't have student testimonials yet — the product is in early access.
+// Rather than stage fake quotes, we lean into the founder's promise and show
+// what early users can actually expect in the first 14 days. Swap this for
+// real quotes (CERT_TESTIMONIALS below) once we have three on file.
+const FOUNDER_PROMISES = [
   {
-    quote: 'The adaptive mode figured out which Security+ domains I was weakest in after about 40 questions and wouldn\'t let me skip them. Passed on the first attempt.',
-    name: 'Review coming post-launch',
-    cert: 'CompTIA Security+',
+    title: 'First 40 questions = a baseline',
+    desc: 'Adaptive mode measures accuracy by exam domain, not just an overall %. You see your weak spots on day one, not day thirty.',
   },
   {
-    quote: 'Having flashcards and practice exams in the same app with shared progress tracking is something I didn\'t know I needed until I tried it.',
-    name: 'Review coming post-launch',
-    cert: 'CompTIA Network+',
+    title: 'Weekly exam-readiness report',
+    desc: "Every Sunday you get a single number — how close to exam-ready you are — and a plan for the week. No dashboard spelunking required.",
   },
   {
-    quote: 'The built-in forum is the sleeper feature. Found an answer to a CySA+ question I\'d been stuck on in under 10 minutes.',
-    name: 'Review coming post-launch',
-    cert: 'CompTIA CySA+',
+    title: 'If it doesn\'t click, walk away',
+    desc: '7-day money-back guarantee on every paid plan. Cancel in two clicks, full refund, no forms, no "reason" field.',
   },
 ];
 
@@ -203,6 +226,7 @@ export default function LandingPage() {
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <a
                   href={`${APP_ORIGIN}/register`}
+                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'start_for_free' })}
                   className="btn-primary text-base px-6 py-3"
                   target="_blank"
                   rel="noopener"
@@ -210,7 +234,11 @@ export default function LandingPage() {
                   Start for free
                   <ArrowRight className="w-4 h-4" />
                 </a>
-                <Link to="/learning" className="btn-ghost text-base px-6 py-3">
+                <Link
+                  to="/learning"
+                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'explore_certifications' })}
+                  className="btn-ghost text-base px-6 py-3"
+                >
                   Explore certifications
                 </Link>
               </div>
@@ -327,7 +355,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── 4. CERT SHOWCASE ── */}
-      <section className="py-20 sm:py-24 border-t border-white/[0.06]">
+      <section id="certifications" className="py-20 sm:py-24 border-t border-white/[0.06] scroll-mt-20">
         <div className="container-site">
           <FadeIn>
             <div className="text-center mb-12">
@@ -350,6 +378,7 @@ export default function LandingPage() {
               <FadeIn key={code} delay={i * 50}>
                 <a
                   href={`${APP_ORIGIN}/register`}
+                  onClick={() => track(EVENTS.CERT_CARD_CLICK, { cert_code: code, cert_name: name, vendor })}
                   target="_blank"
                   rel="noopener"
                   className={`card p-5 border ${border} hover-glow flex flex-col gap-3 group`}
@@ -393,7 +422,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── 5. PRICING ── */}
-      <section className="py-20 sm:py-24 border-t border-white/[0.06]">
+      <section id="pricing" className="py-20 sm:py-24 border-t border-white/[0.06] scroll-mt-20">
         <div className="container-site">
           <FadeIn>
             <div className="text-center mb-10">
@@ -428,14 +457,14 @@ export default function LandingPage() {
                   <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full transition-colors duration-200 ${
                     annual ? 'bg-emerald-500 text-white' : 'bg-emerald-500/20 text-emerald-400'
                   }`}>
-                    Save 33%
+                    Save 17%
                   </span>
                 </button>
               </div>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {PRICING.map(({ name, monthlyPrice, annualPrice, annualNote, desc, features, cta, href, highlight, badge }, i) => {
               const displayPrice = annual ? annualPrice : monthlyPrice;
               return (
@@ -480,6 +509,7 @@ export default function LandingPage() {
 
                     <a
                       href={href}
+                      onClick={() => track(EVENTS.PRICING_CTA_CLICK, { tier: name, billing: annual ? 'annual' : 'monthly', price_usd: displayPrice })}
                       target="_blank"
                       rel="noopener"
                       className={`text-center text-sm font-semibold py-2.5 rounded-xl transition-all duration-200 ${
@@ -507,41 +537,45 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── 6. TESTIMONIALS ── */}
+      {/* ── 6. FOUNDER'S NOTE (early-access, N=0 honest) ── */}
       <section className="py-20 sm:py-24 border-t border-white/[0.06]">
-        <div className="container-site">
+        <div className="container-site max-w-4xl">
           <FadeIn>
             <div className="text-center mb-10">
               <div className="section-label justify-center mb-4">
-                <Star className="w-3.5 h-3.5" />
-                What students say
+                <Shield className="w-3.5 h-3.5" />
+                Early access
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white">
-                Real results, real people.
+              <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                No testimonials yet &mdash; because we&rsquo;re new.
               </h2>
+              <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                We could seed this page with stock quotes and invented names. We won&rsquo;t.
+                Here&rsquo;s what we promise early students instead.
+              </p>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {TESTIMONIALS.map(({ quote, name, cert }, i) => (
-              <FadeIn key={cert} delay={i * 80}>
-                <div className="card p-6 border border-white/[0.08] hover-glow flex flex-col gap-4 h-full">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <Star key={j} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                    ))}
+            {FOUNDER_PROMISES.map(({ title, desc }, i) => (
+              <FadeIn key={title} delay={i * 80}>
+                <div className="card p-6 border border-white/[0.08] hover-glow flex flex-col gap-3 h-full">
+                  <div className="flex items-center gap-2 text-cyan-400">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider">Promise {i + 1}</span>
                   </div>
-                  <p className="text-sm text-slate-300 leading-relaxed flex-1 italic">
-                    &ldquo;{quote}&rdquo;
-                  </p>
-                  <div>
-                    <p className="text-xs font-semibold text-slate-400">{name}</p>
-                    <p className="text-[10px] text-slate-600 mt-0.5">{cert}</p>
-                  </div>
+                  <h3 className="text-base font-bold text-white leading-tight">{title}</h3>
+                  <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={280}>
+            <p className="text-center mt-8 text-xs text-slate-600">
+              Passed with us? <Link to="/contact" className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2">Tell us your story</Link> &mdash; we&rsquo;d love to feature you.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -581,6 +615,7 @@ export default function LandingPage() {
             </p>
             <a
               href={`${APP_ORIGIN}/register`}
+              onClick={() => track(EVENTS.BOTTOM_CTA_CLICK, { cta: 'create_free_account' })}
               className="btn-primary text-base px-7 py-3 inline-flex"
               target="_blank"
               rel="noopener"

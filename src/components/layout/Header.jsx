@@ -6,11 +6,15 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Search, Zap, LogIn, UserPlus, LayoutDashboard, LogOut, ChevronDown, Home, User, Settings } from 'lucide-react';
 import SearchBar from '../ui/SearchBar';
 import { useAuth, buildAuthReturnUrl, APP_ORIGIN } from '../../hooks/useAuth';
+import { track, EVENTS } from '../../lib/analytics';
 
+// Apex is now cert-prep marketing. Nav order leads with Certifications +
+// Pricing (anchor links on /), then the demoted News magazine, then the
+// certification guides page, then utility pages.
 const navItems = [
-  { label: 'Tech News',      href: '/tech-news' },
-  { label: 'AI News',        href: '/ai-news' },
-  { label: 'Cyber Security', href: '/cyber-security' },
+  { label: 'Certifications', href: '/#certifications' },
+  { label: 'Pricing',        href: '/#pricing' },
+  { label: 'News',           href: '/news' },
   { label: 'Learning',       href: '/learning' },
   { label: 'About',          href: '/about' },
   { label: 'Contact',        href: '/contact' },
@@ -88,7 +92,7 @@ export default function Header() {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-white font-black text-base tracking-tight">SABR</span>
-                <span className="text-cyan-400 font-semibold text-[10px] tracking-[0.2em] uppercase -mt-0.5">Cyber & Tech</span>
+                <span className="text-cyan-400 font-semibold text-[10px] tracking-[0.2em] uppercase -mt-0.5">Learning Labs</span>
               </div>
             </Link>
 
@@ -130,6 +134,7 @@ export default function Header() {
                 <div className="hidden sm:flex items-center gap-2">
                   <a
                     href={buildAuthReturnUrl('/login')}
+                    onClick={() => track(EVENTS.NAV_CTA_CLICK, { cta: 'sign_in' })}
                     className="text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors duration-200 inline-flex items-center gap-1.5"
                   >
                     <LogIn className="w-3.5 h-3.5" />
@@ -137,6 +142,7 @@ export default function Header() {
                   </a>
                   <a
                     href={buildAuthReturnUrl('/register')}
+                    onClick={() => track(EVENTS.NAV_CTA_CLICK, { cta: 'sign_up' })}
                     className="btn-primary text-xs px-4 py-2 gap-1.5"
                   >
                     <UserPlus className="w-3.5 h-3.5" />
