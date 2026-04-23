@@ -309,7 +309,6 @@ export default function LandingPage() {
                 ['Built-in forum',         false, false, true ],
                 ['Performance questions',  false, true,  true ],
                 ['Single subscription',    true,  false, true ],
-                ['Questions cited by source', false, true,  true ],
               ].map(([label, pocket, measure, sabr]) => (
                 <div
                   key={label}
