@@ -171,6 +171,11 @@ const TESTIMONIALS = [
     name:  'Brandon',
     cert:  'CCNA',
   },
+  {
+    quote: 'Helped me to get a solid start to my career in Cybersecurity!',
+    name:  'Alex',
+    cert:  'CompTIA Security+',
+  },
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -515,13 +520,15 @@ export default function LandingPage() {
             </div>
           </FadeIn>
 
-          {/* One deliberate centered card when there's a single quote;
-              scales into a responsive grid once we have 2+ testimonials. */}
+          {/* Layout scales with quote count so we never leave an empty grid
+              slot: 1 → centered, 2 → 2-col, 3+ → 3-col. */}
           <div
             className={
               TESTIMONIALS.length === 1
                 ? 'max-w-2xl mx-auto'
-                : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'
+                : TESTIMONIALS.length === 2
+                  ? 'grid grid-cols-1 md:grid-cols-2 gap-5'
+                  : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'
             }
           >
             {TESTIMONIALS.map(({ quote, name, cert }, i) => (
