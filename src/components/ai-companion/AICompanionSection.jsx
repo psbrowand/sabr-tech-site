@@ -165,8 +165,10 @@ export default function AICompanionSection() {
         </ul>
       </div>
 
-      {/* Cert-scope footnote — specific names belong here, not in the hero. */}
-      <p className="mt-6 text-xs text-slate-500 leading-relaxed">
+      {/* Cert-scope footnote — specific names belong here, not in the hero.
+          slate-400 (not 500) to stay at the WCAG-AA floor established by
+          846fa75 for muted text on the page bg. */}
+      <p className="mt-6 text-xs text-slate-400 leading-relaxed">
         Supported today on CompTIA Network+, Security+, and CySA+ — more
         certifications as we finish ingesting the official objectives.
       </p>

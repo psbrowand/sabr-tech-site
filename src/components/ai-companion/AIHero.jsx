@@ -68,7 +68,7 @@ export default function AIHero() {
           aria-label="Example of a cited AI answer"
         >
           <div className="flex items-center justify-between mb-4">
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
               Example: why-wrong
             </span>
             <span className="flex items-center gap-1.5 text-xs text-emerald-400">
@@ -85,7 +85,7 @@ export default function AIHero() {
           </p>
 
           <div className="rounded-lg bg-[#0d1321] border border-white/[0.04] px-4 py-3">
-            <div className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mb-1.5">
+            <div className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 mb-1.5">
               Source
             </div>
             <div className="text-xs text-slate-400 leading-relaxed">
@@ -94,7 +94,7 @@ export default function AIHero() {
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center gap-2 text-xs text-slate-500">
+          <div className="mt-4 pt-3 border-t border-white/[0.04] flex items-center gap-2 text-xs text-slate-400">
             <ShieldQuestion className="w-3.5 h-3.5" aria-hidden="true" />
             <span>If the companion can’t ground its answer, it refuses instead.</span>
           </div>
