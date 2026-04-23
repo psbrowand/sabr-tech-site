@@ -6,9 +6,269 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Apr 2026 05:33:35 GMT</lastBuildDate>
-    <pubDate>Tue, 21 Apr 2026 05:33:35 GMT</pubDate>
+    <lastBuildDate>Thu, 23 Apr 2026 16:05:38 GMT</lastBuildDate>
+    <pubDate>Thu, 23 Apr 2026 16:05:38 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>The Cisco SD-WAN Bug from Yesterday is a Textbook Security+ PBQ</title>
+      <link>https://sabr-labs.com/article/cisco-sdwan-cve-security-plus-pbq-2026-04-23</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-sdwan-cve-security-plus-pbq-2026-04-23</guid>
+      <pubDate>Thu, 23 Apr 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Security+</category>
+      <category>CompTIA</category>
+      <category>PBQ</category>
+      <category>CVE-2026-20122</category>
+      <category>Cisco</category>
+      <category>Exam Prep</category>
+      <description>Walking through CVE-2026-20122 as a SY0-701 objective 2.3 performance-based question. What the attack actually abuses, and why most candidates pick the wrong control.</description>
+      <content:encoded><![CDATA[<p>We covered the Cisco Catalyst SD-WAN Manager CVEs yesterday. Emergency Directive 26-03, three exploits under active use, federal patch deadline today. CVE-2026-20122, the file-overwrite flaw that escalates a caller to vmanage user, is also a clean Security+ performance-based question. Walking through it teaches the exam logic better than a generic textbook example of missing authorization.</p>
+<p>Here is the bug in one paragraph. A privileged API endpoint accepts a file upload from an authenticated caller. The endpoint does not check whether the caller is authorized to call it. The file gets written to a location that executes with vmanage privileges, so a lower-privilege account walks away with vmanage. The upload itself is not the security hole. The authorization check that was never wired up is.</p>
+<p>The mapping to SY0-701 objective 2.3 ("Explain various types of vulnerabilities") is where candidates slip. The objective lists a lot of bug shapes — improper input handling, unprotected APIs, privilege escalation, misconfiguration. A PBQ typically gives you the symptom and asks for two things: classify the vuln, pick the compensating control. Most candidates see "file upload" and pick input validation. Wrong answer. The OWASP API Security Top 10 pegs this as API5:2023, Broken Function Level Authorization. On the exam, the keyword cluster is "improper access control" and "privilege escalation," and the control is role-based access control on the API surface, not input sanitization.</p>
+<p>The reason input-validation is the wrong answer is worth sitting with. If you harden the parser and reject malformed uploads, the authenticated low-privilege attacker still calls the API, still uploads the file, still escalates. You stopped a different attack. This one goes through clean input.</p>
+<p>If you can describe CVE-2026-20122 in two sentences — "privileged API trusted an unauthorized caller; file upload was the side effect, not the root cause" — you can answer any PBQ that tests the same shape. The shape shows up across Sec+, CySA+ (objective 1.4 vulnerability analysis), and PenTest+ (objective 3.6 API testing). Read the CVE advisory itself, not the CVSS line. The CVSS is a score; the advisory is the story.</p>
+<p>Tomorrow's QoD will walk a related one. Try it before reading the explanation.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Four-Month-Old AI Lab with 20 Employees Just Raised Half a Billion Dollars</title>
+      <link>https://sabr-labs.com/article/recursive-superintelligence-500m-seed-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/recursive-superintelligence-500m-seed-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Funding</category>
+      <category>Recursive Superintelligence</category>
+      <category>GV</category>
+      <category>Nvidia</category>
+      <category>Startups</category>
+      <description>Recursive Superintelligence closed a $500M round at a $4B pre-money valuation, led by GV with Nvidia participating. It has been incorporated since December.</description>
+      <content:encoded><![CDATA[<p>Recursive Superintelligence, an AI startup that did not exist at the end of last year, has raised at least $500 million at a $4 billion pre-money valuation. GV led the round. Nvidia joined. Per reporting from the Financial Times, the company has been operating for roughly four months and has under two dozen employees.</p>
+<p>The headcount matters. A lab raising at this scale with twenty people is a bet on who the twenty people are, not what the product is. That is the shape of seed-stage frontier-AI fundraising now: partnerships write nine-figure checks based on pedigree and a deck, because the alternative is being shut out once capability compounds.</p>
+<p>The company's stated thesis is recursive self-improvement, meaning models that improve their own training process. That phrase has been floating around AI labs for a decade, but it takes on weight when Nvidia decides to put its balance sheet behind a specific team pursuing it. Nvidia is the one vendor in the industry with real signal on who is actually building capable systems, because everyone buys chips from them.</p>
+<p>There is no public product, no demos, no paper. Whatever Recursive Superintelligence is building will stay behind closed doors until either a research result or a capability demonstration justifies the valuation. In the meantime, the round itself is the story.</p>
+<p>Two things to watch. First, the employee count in six months. If it stays small, the thesis is a compute-and-autonomy play where a handful of researchers drive everything. If it triples, the real work is operational and this was a talent-acquisition round dressed up as a seed. Second, whether GV's involvement draws in Google's own infrastructure. That would be the quiet signal that someone at Google thinks this team is worth a hedge outside DeepMind.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Built a Less-Restricted AI Model for Security Teams. Anthropic Went the Other Direction.</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-4-cyber-anthropic-mythos-split-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-4-cyber-anthropic-mythos-split-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 14:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <category>AI Safety</category>
+      <category>GPT-5.4-Cyber</category>
+      <category>Claude Mythos</category>
+      <category>Cybersecurity</category>
+      <description>OpenAI&apos;s GPT-5.4-Cyber rolled out April 14 to thousands of verified defenders. Anthropic&apos;s Mythos went to about 40 organizations. Two labs looked at the same capability tier and drew opposite conclusions.</description>
+      <content:encoded><![CDATA[<p>Six days apart. On April 8, Anthropic confirmed its most capable model, Claude Mythos, would not be publicly released, with access restricted to roughly 40 partners under Project Glasswing. On April 14, OpenAI announced GPT-5.4-Cyber, a version of its frontier model with relaxed restrictions for legitimate security work, and rolled it out to thousands of verified defenders through a program called Trusted Access for Cyber.</p>
+<p>Read those two decisions together and the disagreement is explicit. Anthropic concluded that a model capable of autonomous vulnerability discovery and exploit chaining was too dangerous to distribute widely, regardless of the caller's stated purpose. OpenAI concluded that the right answer to dangerous capability is not scarcity, but verification — make sure the caller is who they say they are, and then let the capability serve defense at scale.</p>
+<p>Both positions have force. Anthropic's is the more conservative call, and the one that holds up if something goes wrong downstream: if a restricted-tier model gets used to automate mass-scale intrusion, the lab that shipped it to thousands of customers is the one at the hearing. OpenAI's is the more operationally honest call: attackers don't wait for approval to use AI tooling, and the defensive side of the asymmetry has been outpaced for two years. Getting capable tools into the hands of defenders at a scale that matches the threat is worth the verification overhead.</p>
+<p>The quiet part is that both companies appear to believe the underlying capability threshold has actually been crossed. Neither is shipping its best model into the public API with default safety training. Both have converged on gated-access programs tied to identity verification. The disagreement is about how wide the gate is, not whether there should be one.</p>
+<p>For security teams, the immediate question is which program your organization qualifies for and which one actually improves your defensive posture. The OpenAI program is easier to get into and covers thousands of organizations. The Anthropic program is smaller, tighter, and reportedly pairs access with direct partnership support. A third interesting question: what happens when the next tier above both of these gets built. Neither company has committed to what they'll do at that point, and the answers they give in April 2027 are going to matter more than the ones they're giving now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic Is Holding Back Its Most Capable Model. That&apos;s a First.</title>
+      <link>https://sabr-labs.com/article/anthropic-project-glasswing-claude-mythos-withheld</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-project-glasswing-claude-mythos-withheld</guid>
+      <pubDate>Tue, 21 Apr 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>AI Safety</category>
+      <category>Project Glasswing</category>
+      <category>Model Release</category>
+      <description>Claude Mythos won&apos;t ship publicly. Access is limited to select partners under Project Glasswing, citing cybersecurity risk. The frontier just developed an unshipped tier.</description>
+      <content:encoded><![CDATA[<p>Anthropic confirmed on April 7 what a March 26 internal leak had already made plain: its most capable model, internally called Claude Mythos, will not be publicly released. Access is restricted to a small number of partners under a program the company is calling Project Glasswing, with cybersecurity risk cited as the reason.</p>
+<p>This is new territory. Every frontier lab up to now — OpenAI, Google DeepMind, xAI, Meta, Anthropic itself — has shipped its most capable model to end users, with guardrails layered on top. The implicit deal was: capability is the product, and we'll moderate the dangerous edges at inference time. Project Glasswing breaks that pattern.</p>
+<p>The cybersecurity specifics Anthropic pointed to are not hand-wavy. Mythos reportedly demonstrated strong performance on autonomous exploitation chains — finding vulnerabilities, writing working exploits against them, and chaining them through multi-step intrusions without human guidance at the individual steps. That's the capability class that has kept national-security researchers nervous for two years. It's apparently here.</p>
+<p>The industry reaction will be interesting to watch. If Anthropic's competitors have models at or near this capability tier, they now face a harder decision about whether to ship theirs. If they ship and something bad happens downstream — mass-scale automated intrusion, for example — Anthropic's restraint becomes evidence at whatever hearing follows. If they don't ship, the commercial pressure of holding back a working model while Anthropic's partners extract value from theirs is significant.</p>
+<p>One thing worth flagging: the only public information we have about Mythos's actual capabilities comes from Anthropic itself and the March leak. There's no independent red-team writeup, no external benchmark report. Trust-but-verify applies as much to a company restraining a model as one releasing it.</p>
+<p>For teams building on the Claude API, this doesn't change anything today — the publicly available Claude Sonnet 4.6 and Opus 4.7 lines continue to ship and evolve. But the existence of a deliberately unshipped tier above them is the story everyone in the space is going to be chewing on for months.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>India Stood Up a Formal AI Governance Body. It Left Out the Sector Regulators.</title>
+      <link>https://sabr-labs.com/article/india-aigeg-ai-governance-sector-regulators-excluded-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/india-aigeg-ai-governance-sector-regulators-excluded-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>India</category>
+      <category>AI Governance</category>
+      <category>Regulation</category>
+      <category>MeitY</category>
+      <category>RBI</category>
+      <category>SEBI</category>
+      <description>The AI Governance and Economic Group, formed April 13, excludes RBI, SEBI, TRAI, and CCI — the regulators the country&apos;s own AI guidelines named as essential. The membership is ministers and IT officials only.</description>
+      <content:encoded><![CDATA[<p>India formed its central AI governance body, the AI Governance and Economic Group (AIGEG), on April 13. It is chaired by Union IT Minister Ashwini Vaishnaw and will coordinate AI policy across ministries. The group's purpose, per the MeitY announcement, is to serve as the country's institutional mechanism for steering national AI strategy.</p>
+<p>What is missing from the AIGEG roster is the story. The India AI Governance Guidelines, published by the same ministry earlier this year, explicitly recommended that sectoral regulators — the Reserve Bank of India, the Securities and Exchange Board of India, the Telecom Regulatory Authority, and the Competition Commission — retain domain-specific AI enforcement and participate in the central coordination mechanism. The AIGEG as constituted has none of them.</p>
+<p>Instead, membership is limited to ministers and senior officials from a handful of ministries, with a separate Technology and Policy Expert Committee (TPEC) supplying advisory input. The TPEC is an advisory body. It does not wield enforcement authority or supervisory power. That leaves the AIGEG as a purely inter-ministerial coordination forum that formally has jurisdiction over AI policy cutting across financial services, telecom, and competition, without the regulators who actually run those domains inside the tent.</p>
+<p>There are two ways to read this. The charitable reading: MeitY wanted a fast-moving body of political principals and will loop regulators in through the TPEC as needed. The less charitable reading: the sectoral regulators were excluded because a body that includes RBI and SEBI is a body where AI rules get shaped by people with statutory mandates, and MeitY wanted policy that moves on executive timelines rather than regulatory ones.</p>
+<p>The practical consequence for anyone building AI products into regulated Indian sectors is a coordination problem. If the AIGEG issues a position on financial-services AI and RBI reaches a different conclusion through its own supervisory process, the question of which one binds a regulated entity is unsettled. Indian AI governance just became more centralized on paper and more fragmented in practice.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ISC2 Quietly Cut 31 Certifications from the CISSP Experience Waiver List</title>
+      <link>https://sabr-labs.com/article/isc2-cissp-experience-waiver-list-cut-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/isc2-cissp-experience-waiver-list-cut-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>ISC2</category>
+      <category>CISSP</category>
+      <category>Certifications</category>
+      <category>Career</category>
+      <category>OSCP</category>
+      <category>GIAC</category>
+      <description>Effective April 1, CEH, CISA, CRISC, OSCP, and most GIAC credentials no longer count toward the one-year CISSP experience waiver. The new list is about half the size of the old one.</description>
+      <content:encoded><![CDATA[<p>ISC2 cut its CISSP experience-waiver list from roughly 50 credentials to 25 on April 1. The move went live with minimal marketing, and most candidates didn't notice until they went to submit. If your planned path to CISSP assumed a specific cert would shave a year off the five-year experience requirement, check the list before you file.</p>
+<p>The removed certifications include CEH, CISA, CRISC, OSCP, and most of the GIAC catalog. Only four GIAC creds survive: GICSP, GISF, GISP, and GSLC. That is a significant narrowing. OSCP and CRISC in particular were heavily used by candidates coming in from offensive security and audit backgrounds who now lose a year of waiver.</p>
+<p>What stays on the list: CompTIA Security+, CySA+, CASP+, ISC2's own SSCP and CCSP, ISACA CISM, and ISC2's concentration credentials ISSAP, ISSEP, and ISSMP. The pattern is visible once you read it. ISC2 kept the credentials that sit below CISSP in vendor hierarchies and the management-tier credentials that don't compete with CISSP directly. It trimmed the credentials that arguably prove equal-or-greater depth on specific technical domains.</p>
+<p>The reasoning ISC2 has offered privately amounts to: the waiver was being used to shortcut into CISSP by candidates who hadn't actually done five years of covered domain work. That's defensible in theory. In practice, a candidate with OSCP and two years at a red team shop arguably knows the security assessment domain better than most CISSPs do, and that person now waits an extra year to sit the exam.</p>
+<p>If you were planning to file a waiver application, the date that matters is April 1, 2026. Applications submitted before that date are grandfathered under the old list. If you already hold one of the removed credentials and can document five years of domain work, you don't need the waiver at all. Everyone else is doing the math again.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>NIST Is Giving Up on Fully Enriching Every CVE. Your Patch Management Probably Depends on That.</title>
+      <link>https://sabr-labs.com/article/nist-nvd-cve-enrichment-changes-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nist-nvd-cve-enrichment-changes-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>NIST</category>
+      <category>NVD</category>
+      <category>CVE</category>
+      <category>Vulnerability Management</category>
+      <category>CISA KEV</category>
+      <description>The National Vulnerability Database will now prioritize enrichment instead of covering everything. Teams that treated NVD as the authoritative source just got a new dependency problem.</description>
+      <content:encoded><![CDATA[<p>NIST announced this week that the National Vulnerability Database is changing how it handles CVEs — prioritizing enrichment for a subset of submissions rather than attempting full coverage. The stated driver: a 263% surge in CVE submissions between 2020 and 2025. The team simply can't keep up.</p>
+<p>If you've built your vulnerability management program on NVD data — and most organizations have, because it's been the authoritative free source for CVSS scores, CPE mappings, and structured metadata — this affects you directly.</p>
+<p>The practical consequence: some CVEs will appear in NVD with limited enrichment. No CPE match strings. No CVSS vector string. Maybe no severity at all. Your scanner or SBOM tool that joins against NVD to decide what's critical will miss things or return nulls. The gap is going to land hardest on mid-tier vendors and open-source libraries, where CNA submissions are often sparse to begin with.</p>
+<p>There's a reasonable counter-argument to make here — NVD was never going to scale linearly with CVE volume, and fully enriching every low-quality submission was diluting the signal of the serious ones. Prioritization might produce better data on the CVEs that actually matter. We'll see.</p>
+<p>What to do this week: audit where your vulnerability workflow treats NVD as a single source of truth. Cross-reference against CISA KEV, vendor advisories, and at least one commercial feed (Tenable, Qualys, Snyk, whoever you already pay) so you're not blind on any CVE that NVD deprioritizes. The days of a free, complete, structured CVE database are ending, and you need an answer for that before your next audit.</p>
+<p>One quiet note: this also puts more pressure on CISA's KEV catalog as the thing federal agencies and serious private-sector programs actually trigger patching off of. KEV is curated, conservative, and only covers actively exploited bugs — which is exactly why it's been more operationally useful than NVD for years anyway.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Everest Is Claiming Citizens Bank and Frost Bank in a Wave of Financial Sector Hits</title>
+      <link>https://sabr-labs.com/article/everest-ransomware-frost-citizens-banks-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/everest-ransomware-frost-citizens-banks-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Everest</category>
+      <category>Financial Services</category>
+      <category>Data Breach</category>
+      <category>Frost Bank</category>
+      <category>Citizens Bank</category>
+      <description>The Everest ransomware group posted both US banks to its leak site on April 20, alongside four other victims across aviation, automotive, and retail. The claimed haul includes 250,000 SSNs and 3.4 million banking records.</description>
+      <content:encoded><![CDATA[<p>The Everest ransomware group claimed two major US banks on its leak site on April 20: Frost Bank in San Antonio and Citizens Bank. Both listings went up the same day, as part of a broader batch that also names Tokoparts, Complete Aircraft Group, Umiles Group, and Nutrabio. Neither bank has confirmed the claim publicly as of this writing.</p>
+<p>Everest says it exfiltrated more than 380 GB from the financial targets. The breakdown it posted includes 250,000-plus Social Security numbers and Tax Identification Numbers, 3.4 million banking records, unencrypted credit card details, and complete employee email archives. Treat every number in a ransomware group's own public claim as a high estimate until a victim confirms, but the categories here are plausible for what a bank would actually hold.</p>
+<p>Everest's tradecraft has shifted over the last year toward initial access via infostealer logs rather than in-house intrusion capability. The group buys credentials harvested from infected employee endpoints, walks them into corporate VPNs and SaaS admin consoles, and moves laterally from there. That matters for financial-sector defenders because the entry point is not your perimeter or your EDR coverage. It is an employee's personal laptop, a contractor's reused password, or a home machine that happened to be logged into a work account when it got hit by a commodity stealer.</p>
+<p>Frost Bank and Citizens Bank are different animals. Frost is a regional bank, heavily concentrated in Texas, with a traditionally conservative technology posture. Citizens is a top-15 US bank by deposits with a far larger attack surface and a consumer base that will care loudly if the 3.4 million records figure holds up.</p>
+<p>The practical move for banking customers at either institution: enable transaction alerts, freeze credit at all three bureaus, and watch for targeted phishing that name-drops the bank to establish familiarity. Attackers know exactly which records they took and who they took them from. Expect the phishing to be specific.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Added Eight CVEs to KEV Yesterday. Three Hit Cisco SD-WAN and the Federal Deadline Is Thursday.</title>
+      <link>https://sabr-labs.com/article/cisa-kev-cisco-sdwan-manager-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisa-kev-cisco-sdwan-manager-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CISA</category>
+      <category>KEV</category>
+      <category>Cisco</category>
+      <category>SD-WAN</category>
+      <category>CVE</category>
+      <category>Emergency Directive</category>
+      <description>CVE-2026-20122, CVE-2026-20128, and CVE-2026-20133 in Cisco Catalyst SD-WAN Manager are all under active exploitation. Federal civilian agencies have until April 23 to patch or disconnect.</description>
+      <content:encoded><![CDATA[<p>CISA added eight vulnerabilities to the Known Exploited Vulnerabilities catalog on April 20. Three of them are in Cisco Catalyst SD-WAN Manager. All three are under active exploitation per CISA, and federal civilian agencies have until April 23 to patch or disconnect the affected systems under Emergency Directive 26-03.</p>
+<p>The three Cisco CVEs. CVE-2026-20122 (CVSS 5.4) allows an attacker to abuse a privileged API to upload and overwrite arbitrary files and gain vmanage user privileges. CVE-2026-20128 (CVSS 7.5) is a recoverable password storage flaw that lets an authenticated local attacker obtain DCA user credentials. CVE-2026-20133 (CVSS 6.5) is an unauthorized-access flaw that leaks sensitive information to a remote attacker.</p>
+<p>The CVSS scores look modest. The operational impact doesn't. SD-WAN Manager controls the orchestration plane for enterprise and federal branch connectivity. An attacker chaining a file-overwrite into credential disclosure into information leakage has a working path into tenant configuration, certificate material, and the underlying management layer for every managed appliance in a deployment. CISA's decision to pair the KEV additions with an emergency directive signals that the exploitation chain is being used against federal systems right now, not theoretically.</p>
+<p>The rest of the April 20 KEV batch includes vulnerabilities in PaperCut NG/MF, JetBrains TeamCity, Kentico Xperience, Quest KACE Systems Management Appliance, and Synacor Zimbra Collaboration Suite. Each one is the kind of internet-exposed enterprise middleware that ransomware affiliates live on.</p>
+<p>The April 23 deadline is two days away. If you run Cisco Catalyst SD-WAN Manager, the only question this week is whether your patch window closes before CISA's does. Inventory affected versions, apply Cisco's fixes, and rotate any credentials stored on the management nodes as if they are already burned. If patching isn't available by Thursday, disconnect the management plane from the internet until it is. The directive applies to federal agencies, but private-sector operators running the same appliance should treat the deadline as their own.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Found a 13-Year-Old RCE in Apache ActiveMQ&apos;s Management Interface</title>
+      <link>https://sabr-labs.com/article/apache-activemq-cve-2026-34197-jolokia-rce-cisa-kev</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apache-activemq-cve-2026-34197-jolokia-rce-cisa-kev</guid>
+      <pubDate>Tue, 21 Apr 2026 09:35:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Apache</category>
+      <category>ActiveMQ</category>
+      <category>CVE</category>
+      <category>RCE</category>
+      <category>CISA KEV</category>
+      <category>Java</category>
+      <description>CVE-2026-34197 abuses ActiveMQ&apos;s Jolokia JMX-HTTP bridge to execute arbitrary code — effectively without credentials on certain 6.x versions — and CISA wants federal agencies patched by April 30.</description>
+      <content:encoded><![CDATA[<p>The Jolokia management endpoint in Apache ActiveMQ has been shipping enabled by default for 13 years. CVE-2026-34197 is what happens when researchers finally pull on it.</p>
+<p>The vulnerability is a code injection flaw in the Jolokia JMX-HTTP bridge that ActiveMQ exposes for monitoring and administration. An attacker who can reach that endpoint can call the BrokerService MBean and force the broker to fetch a remote Spring XML configuration file they control. The JVM then executes it. CVSS score is 8.8, technically requiring low-privilege credentials — but that bar has a structural hole in it.</p>
+<p>On ActiveMQ versions 6.0.0 through 6.1.1, CVE-2024-32114 (a separate, widely undeployed patch) leaves the Jolokia API exposed with no authentication whatsoever. An organization that upgraded to the 6.x branch for its features but hasn't kept up with every subsequent patch is running what is functionally unauthenticated remote code execution. Default credentials (admin:admin) make it nearly as bad on many 5.x deployments where nobody has changed the defaults.</p>
+<p>Horizon3.ai disclosed the vulnerability after researchers used AI-assisted code analysis to trace the Jolokia invocation path as a viable attacker-controlled sink. A 13-year-old critical flaw sitting in a default-enabled management API, not found by prior manual audits. It's a reasonable argument for running AI-augmented code review across legacy open-source projects with large exposed attack surfaces.</p>
+<p>CISA added CVE-2026-34197 to the Known Exploited Vulnerabilities catalog and gave federal civilian agencies until April 30 to patch or disconnect affected systems. SAFE Security documented active exploitation against internet-exposed Jolokia endpoints, particularly deployments running default or no authentication.</p>
+<p>Patch to ActiveMQ 5.19.4 or 6.2.3. If patching isn't immediate, block external access to port 8161 (the admin console) at your firewall. Run a query on your IP ranges for exposed ActiveMQ instances (Shodan and Censys both index these) and assume any unpatched, internet-reachable broker with default credentials has already been touched.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Four Critical CVEs in Cisco ISE and Webex, Three of Them at CVSS 9.9</title>
+      <link>https://sabr-labs.com/article/cisco-ise-webex-critical-rce-cvss-9-9-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ise-webex-critical-rce-cvss-9-9-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>ISE</category>
+      <category>Webex</category>
+      <category>CVE</category>
+      <category>RCE</category>
+      <category>Enterprise Security</category>
+      <description>CVE-2026-20147 gives an attacker with read-only ISE admin credentials a path to root on your network access control infrastructure, and CVE-2026-20184 lets anyone impersonate Webex users without authentication.</description>
+      <content:encoded><![CDATA[<p>Three CVSS 9.9 scores in one advisory. Cisco's patch release this week for Identity Services Engine and Webex is not a routine item. CVSS 9.9 means remote code execution escalating to root with no physical interaction required, and three of the four critical vulnerabilities here reach it.</p>
+<p>CVE-2026-20147, CVE-2026-20180, and CVE-2026-20186 all stem from the same root problem: insufficient input validation in the ISE web administration interface. The authentication bar is low. An attacker needs valid ISE credentials, but read-only administrative access is enough — the kind of access a compromised help desk account or a disgruntled contractor would hold. From there, a crafted HTTP request reaches the ISE node, code runs, and the attacker escalates to root on the underlying OS. Cisco's advisory confirms the escalation path.</p>
+<p>Why that matters specifically: Cisco ISE is the network access control backbone for most large enterprise environments. It handles 802.1X authentication for every wired and wireless endpoint. Root on ISE means an attacker can manipulate which devices are allowed onto the network, issue certificates, intercept authentication flows, and pivot anywhere in the environment. Shodan queries shared by researchers show around 812 ISE appliances currently internet-exposed.</p>
+<p>CVE-2026-20184 in Webex is a separate flaw rated CVSS 9.8. It affects how the SSO integration validates certificates against Cisco's Control Hub. An unauthenticated remote attacker can impersonate any user in a Webex deployment. Cisco has patched its cloud infrastructure, but organizations using SSO must manually upload a new identity provider SAML certificate to Control Hub. That step is not automatic. If your Webex deployment uses SSO and you have not done this, user impersonation is open.</p>
+<p>Cisco has not confirmed exploitation in the wild. There are no workarounds for any of the four CVEs. Patch versions: ISE 3.1 requires patch 11; ISE 3.2 requires patch 10; ISE 3.3 requires patch 10; ISE 3.4 requires patch 6; ISE 3.5 requires patch 3. The Webex SAML certificate upload procedure is documented in Cisco's advisory for CVE-2026-20184.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pierce County Library Breach Exposed Patrons&apos; Social Security Numbers. Ask Why a Library Had Them.</title>
+      <link>https://sabr-labs.com/article/pierce-county-library-data-breach-april-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pierce-county-library-data-breach-april-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Local Government</category>
+      <category>PII</category>
+      <category>Washington</category>
+      <description>The disclosed breach window is April 15–21. Names, dates of birth, SSNs, and financial information were compromised. The real question is the data model.</description>
+      <content:encoded><![CDATA[<p>Pierce County Library System in Washington disclosed this week that an intrusion between April 15 and April 21 exposed patron records including names, dates of birth, Social Security numbers, and financial information. The library has started notifying affected patrons and offering credit monitoring.</p>
+<p>A regional library getting breached isn't, by itself, remarkable. The part worth pausing on is what was in the database to begin with.</p>
+<p>Library systems in the US historically collected very little on patrons — a card number, a name, maybe an address. The SSN-and-financial-info part crept in over the last decade as libraries started offering adjacent services: online account self-service, device lending, interlibrary loan with collections on damaged items, payment processing for fines and passport acceptance. Each expansion added a field. Nobody ever sat down and asked whether a library card holder's SSN should be retrievable by a compromised admin account two years after they last checked out a book.</p>
+<p>That's the pattern you see across local-government breaches in 2026 generally: not a failure of the perimeter, but a failure of data minimization. Retain less, expose less. It's the one piece of advice that would have changed the blast radius here.</p>
+<p>If you're a Pierce County patron, the practical move is the usual one: freeze your credit at all three bureaus, enroll in the monitoring the library is offering, and watch for targeted phishing that name-drops the library to establish familiarity. Attackers know exactly which data they stole.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Vercel&apos;s Breach Came Through a Third-Party AI Tool an Employee Clicked &apos;Allow All&apos; On</title>
+      <link>https://sabr-labs.com/article/vercel-context-ai-oauth-breach-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vercel-context-ai-oauth-breach-2026</guid>
+      <pubDate>Tue, 21 Apr 2026 09:05:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Vercel</category>
+      <category>OAuth</category>
+      <category>Supply Chain</category>
+      <category>Third-Party Risk</category>
+      <category>AI Security</category>
+      <category>Data Breach</category>
+      <description>A Vercel staffer&apos;s broad OAuth grant to Context.ai gave attackers a path from a March AWS compromise into customer environment variables, exposing API keys for crypto and fintech developers.</description>
+      <content:encoded><![CDATA[<p>One employee's 'Allow All' button. That is the entry point. On April 20th, Vercel disclosed that an attacker had accessed customer environment variables by chaining through Context.ai, a third-party AI productivity tool used internally, which had itself been breached in March via unauthorized access to its AWS environment.</p>
+<p>The attack chain is worth walking through because it reflects a pattern that will keep repeating. Context.ai offers an AI office suite that connects to Google Workspace. At least one Vercel employee authorized it using their corporate account with maximum OAuth scope. When attackers compromised Context.ai's infrastructure and obtained its stored OAuth tokens, that broad grant translated directly into control of the employee's Vercel Google Workspace account. From there, attackers pivoted into Vercel's internal environments and pulled project environment variables not flagged as 'sensitive' in the platform.</p>
+<p>Vercel's architecture separates sensitive-flagged variables into an encrypted store the attackers did not reach. What lived in the unsecured store: the things developers put into CI/CD pipelines assuming internal-only access — third-party API keys, database connection strings, service credentials. Crypto and fintech developers building on Vercel reported scrambling to rotate keys the same afternoon of disclosure. CoinDesk tracked the fallout in real time as developers cycled through their infrastructure looking for exposure.</p>
+<p>ShinyHunters posted a claim on BreachForums asking $2 million for the stolen data, then told BleepingComputer the group had nothing to do with it. Infostealers.com separately reported that the Context.ai breach originated from an infostealer infection at the company, meaning the attacker likely bought stolen credentials from a stealer log rather than breaking into Context.ai's systems directly. Vercel says the investigation is ongoing.</p>
+<p>The scope here extends well beyond Vercel. Context.ai serves hundreds of organizations. Any company whose employees authorized it with Google Workspace admin-level scope during the window of the March compromise is a potential victim of the same attack chain. Context.ai is one of thousands of AI productivity tools that have made 'connect your workspace' a core product feature, typically requesting the widest OAuth scopes the consent screen allows.</p>
+<p>Review your Google Workspace connected apps today. Pull the OAuth scope list, revoke anything with admin-level access that IT did not explicitly approve, and rotate credentials for any service whose keys might have lived in Vercel project settings. Going forward, treat every AI tool OAuth grant as a third-party vendor security review, not a convenience checkbox.</p>]]></content:encoded>
+    </item>
     <item>
       <title>GPT-5 Is Here and It&apos;s the First Model That Feels Genuinely Multimodal</title>
       <link>https://sabr-labs.com/article/openai-gpt-5-release-capabilities</link>

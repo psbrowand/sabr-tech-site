@@ -5,24 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ─── Site Meta ──────────────────────────────────────────────── -->
-    <!-- Update title, description, and og:* tags before launch -->
-    <title>Sabr Cyber & Tech News — Breaking Cybersecurity & Technology News</title>
-    <meta name="description" content="Breaking cybersecurity threats, AI breakthroughs, space launches, and major tech news. Trusted daily coverage for security professionals and technology enthusiasts." />
+    <title>Sabr Learning Labs — AI-Powered IT Cert Exam Prep (CompTIA, Cisco, AWS & more)</title>
+    <meta name="description" content="Pass your next IT certification on the first try. Adaptive practice tests, spaced-repetition flashcards, AI study companion, and a built-in forum — one subscription covers every cert. CompTIA, Cisco, Microsoft, AWS, Google Cloud and more." />
+    <meta name="keywords" content="cert exam prep, CompTIA practice test, Security+ prep, Network+ prep, A+ prep, CySA+ prep, PenTest+ prep, IT certification, adaptive learning, spaced repetition flashcards, AI study companion" />
     <meta name="theme-color" content="#080c18" />
+    <link rel="canonical" href="https://sabr-labs.com/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/sabr-logo.png" />
     <link rel="apple-touch-icon" href="/sabr-logo.png" />
 
     <!-- Open Graph -->
-    <meta property="og:title"       content="Sabr Cyber & Tech News" />
-    <meta property="og:description" content="Breaking cybersecurity threats, AI breakthroughs, and major tech news — delivered daily." />
+    <meta property="og:site_name"   content="Sabr Learning Labs" />
+    <meta property="og:title"       content="Sabr Learning Labs — AI-Powered IT Cert Exam Prep" />
+    <meta property="og:description" content="Adaptive practice, spaced-repetition flashcards, and an AI study companion for CompTIA, Cisco, AWS, Microsoft, and more. One subscription, every cert." />
     <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://sabr-labs.com/" />
+    <meta property="og:image"       content="https://sabr-labs.com/sabr-logo.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Sabr Cyber & Tech News" />
-    <meta name="twitter:description" content="Breaking cybersecurity threats, AI breakthroughs, and major tech news — delivered daily." />
+    <meta name="twitter:title"       content="Sabr Learning Labs — AI-Powered IT Cert Exam Prep" />
+    <meta name="twitter:description" content="Adaptive practice, spaced-repetition flashcards, and an AI study companion for CompTIA, Cisco, AWS, Microsoft, and more. One subscription, every cert." />
+    <meta name="twitter:image"       content="https://sabr-labs.com/sabr-logo.png" />
+
+    <!-- ─── Structured data — Organization + SoftwareApplication ─────
+         Drives Google knowledge panel + AI Overview eligibility. Keep
+         URLs absolute and offer prices in sync with the live Stripe
+         catalog (see src/lib/tiers.ts in the learning app).          -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sabr Learning Labs",
+      "url": "https://sabr-labs.com/",
+      "logo": "https://sabr-labs.com/sabr-logo.png",
+      "sameAs": ["https://app.sabr-labs.com/"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Sabr Learning Labs",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "url": "https://sabr-labs.com/",
+      "description": "Adaptive IT certification exam prep with practice tests, spaced-repetition flashcards, and an AI study companion. Covers CompTIA, Cisco, Microsoft, AWS, Google Cloud, and more.",
+      "offers": [
+        { "@type": "Offer", "name": "Free",    "price": "0",  "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Starter", "price": "12", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "12", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MON" } },
+        { "@type": "Offer", "name": "Pro",     "price": "24", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "24", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MON" } },
+        { "@type": "Offer", "name": "Premium", "price": "34", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "34", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MON" } }
+      ]
+    }
+    </script>
 
     <!-- ─── Fonts ────────────────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

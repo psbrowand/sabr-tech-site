@@ -1,12 +1,13 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// App.jsx — Sabr Cyber & Tech News
+// App.jsx — Sabr Learning Labs (apex marketing site)
 //
-// React Router v6 setup. Add new pages by:
-//   1. Creating src/pages/MyPage.jsx
-//   2. Adding <Route path="/path" element={<MyPage />} /> below
+// Route model:
+//   "/"       → LandingPage (cert-prep marketing — the product front door)
+//   "/news"   → HomePage (the cyber/tech/AI news magazine, now a subsection)
+//   Other /tech-news, /cyber-security, /ai-news category pages unchanged.
 //
-// CMS integration: replace src/data/articles.js exports with async fetches
-// from Supabase, Sanity, Strapi, or your custom backend API.
+// The news engine (Paperclip cron → articles.js) still runs; we're just
+// demoting the magazine off the homepage and putting cert-prep first.
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
@@ -32,9 +33,23 @@ import PrivacyPage       from './pages/PrivacyPage';
 import TermsPage         from './pages/TermsPage';
 import RefundPage        from './pages/RefundPage';
 
+// Scroll-on-navigation handler. Hash takes precedence — if the URL carries
+// a fragment (e.g. /#pricing) we scroll to that element instead of the top.
+// Waits one rAF so the target section is in the DOM when we look for it.
 function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]);
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace(/^#/, '');
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        else window.scrollTo({ top: 0, behavior: 'instant' });
+      });
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [pathname, hash]);
   return null;
 }
 
@@ -49,13 +64,24 @@ function NotFoundPage() {
   );
 }
 
+// Routes where the news BreakingTicker belongs. On the cert-prep marketing
+// front door (/, /landing) and on pure marketing/utility pages, the ticker
+// reads as off-brand "news site" chrome — hide it there. Inside the news
+// magazine it's still relevant context.
+const TICKER_ROUTES = new Set([
+  '/news',
+  '/tech-news',
+  '/ai-news',
+  '/cyber-security',
+]);
+
 function Layout({ children }) {
+  const { pathname } = useLocation();
+  const showTicker = TICKER_ROUTES.has(pathname) || pathname.startsWith('/article/');
   return (
     <div className="min-h-screen flex flex-col bg-[#080c18]">
       <Header />
-      {/* Breaking ticker sits directly below the header on every page.
-          Self-hides (returns null) when no articles have breaking:true. */}
-      <BreakingTicker />
+      {showTicker && <BreakingTicker />}
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
@@ -68,8 +94,11 @@ export default function App() {
       <ScrollToTop />
       <Layout>
         <Routes>
-          <Route path="/"               element={<HomePage />} />
+          {/* Apex = marketing. News magazine moved to /news. /landing kept
+              as an alias for any legacy inbound links. */}
+          <Route path="/"               element={<LandingPage />} />
           <Route path="/landing"        element={<LandingPage />} />
+          <Route path="/news"           element={<HomePage />} />
           <Route path="/tech-news"      element={<TechNewsPage />} />
           <Route path="/ai-news"        element={<AINewsPage />} />
           <Route path="/cyber-security" element={<CyberSecurityPage />} />

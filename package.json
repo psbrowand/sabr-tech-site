@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-rss.mjs",
+    "prebuild": "node scripts/generate-rss.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "rss": "node scripts/generate-rss.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "add-articles": "node scripts/add-articles.mjs"
   },
   "dependencies": {
