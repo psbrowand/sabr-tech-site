@@ -25,6 +25,51 @@
 
 export const articles = [
   {
+    id: 46,
+    slug: "cisco-sdwan-cve-security-plus-pbq-2026-04-23",
+    title: "The Cisco SD-WAN Bug from Yesterday is a Textbook Security+ PBQ",
+    summary: "Walking through CVE-2026-20122 as a SY0-701 objective 2.3 performance-based question. What the attack actually abuses, and why most candidates pick the wrong control.",
+    body: [
+      "We covered the Cisco Catalyst SD-WAN Manager CVEs yesterday. Emergency Directive 26-03, three exploits under active use, federal patch deadline today. CVE-2026-20122, the file-overwrite flaw that escalates a caller to vmanage user, is also a clean Security+ performance-based question. Walking through it teaches the exam logic better than a generic textbook example of missing authorization.",
+      "Here is the bug in one paragraph. A privileged API endpoint accepts a file upload from an authenticated caller. The endpoint does not check whether the caller is authorized to call it. The file gets written to a location that executes with vmanage privileges, so a lower-privilege account walks away with vmanage. The upload itself is not the security hole. The authorization check that was never wired up is.",
+      "The mapping to SY0-701 objective 2.3 (\"Explain various types of vulnerabilities\") is where candidates slip. The objective lists a lot of bug shapes — improper input handling, unprotected APIs, privilege escalation, misconfiguration. A PBQ typically gives you the symptom and asks for two things: classify the vuln, pick the compensating control. Most candidates see \"file upload\" and pick input validation. Wrong answer. The OWASP API Security Top 10 pegs this as API5:2023, Broken Function Level Authorization. On the exam, the keyword cluster is \"improper access control\" and \"privilege escalation,\" and the control is role-based access control on the API surface, not input sanitization.",
+      "The reason input-validation is the wrong answer is worth sitting with. If you harden the parser and reject malformed uploads, the authenticated low-privilege attacker still calls the API, still uploads the file, still escalates. You stopped a different attack. This one goes through clean input.",
+      "If you can describe CVE-2026-20122 in two sentences — \"privileged API trusted an unauthorized caller; file upload was the side effect, not the root cause\" — you can answer any PBQ that tests the same shape. The shape shows up across Sec+, CySA+ (objective 1.4 vulnerability analysis), and PenTest+ (objective 3.6 API testing). Read the CVE advisory itself, not the CVSS line. The CVSS is a score; the advisory is the story.",
+      "Tomorrow's QoD will walk a related one. Try it before reading the explanation.",
+    ],
+    category: "learning",
+    tags: ["Security+", "CompTIA", "PBQ", "CVE-2026-20122", "Cisco", "Exam Prep"],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-04-23T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CompTIA Security+ SY0-701 Objectives",
+        desc: "Official CompTIA exam objectives PDF (objective 2.3 on vulnerability types)",
+        url: "https://www.comptia.org/content/examobjectives/comptia-security-sy0-701-exam-objectives",
+      },
+      {
+        name: "OWASP API Security Top 10 — API5:2023",
+        desc: "Authoritative definition of Broken Function Level Authorization",
+        url: "https://owasp.org/API-Security/editions/2023/en/0xa5-broken-function-level-authorization/",
+      },
+      {
+        name: "Cisco Security Advisory — CVE-2026-20122",
+        desc: "Vendor advisory detailing the privileged-API file-overwrite flaw in Catalyst SD-WAN Manager",
+        url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-sdwan-manager",
+      },
+      {
+        name: "CISA Known Exploited Vulnerabilities Catalog",
+        desc: "Authoritative list of CVEs under active exploitation, including the April 20 Cisco additions",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+    ],
+  },
+  {
     id: 40,
     slug: "recursive-superintelligence-500m-seed-april-2026",
     title: "A Four-Month-Old AI Lab with 20 Employees Just Raised Half a Billion Dollars",
