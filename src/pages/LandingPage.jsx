@@ -161,23 +161,15 @@ const PRICING = [
   },
 ];
 
-// ── Founder's note (early-access honesty panel) ──────────────────────────────
-// We don't have student testimonials yet — the product is in early access.
-// Rather than stage fake quotes, we lean into the founder's promise and show
-// what early users can actually expect in the first 14 days. Swap this for
-// real quotes (CERT_TESTIMONIALS below) once we have three on file.
-const FOUNDER_PROMISES = [
+// ── Testimonials ─────────────────────────────────────────────────────────────
+// Real quotes from real students, not stock content. Add entries as they
+// come in — the section auto-switches layout between a centered single-
+// card (sparse but deliberate) and a 3-column grid (at 3+ entries).
+const TESTIMONIALS = [
   {
-    title: 'First 40 questions = a baseline',
-    desc: 'Adaptive mode measures accuracy by exam domain, not just an overall %. You see your weak spots on day one, not day thirty.',
-  },
-  {
-    title: 'Weekly exam-readiness report',
-    desc: "Every Sunday you get a single number — how close to exam-ready you are — and a plan for the week. No dashboard spelunking required.",
-  },
-  {
-    title: 'If it doesn\'t click, walk away',
-    desc: '7-day money-back guarantee on every paid plan. Cancel in two clicks, full refund, no forms, no "reason" field.',
+    quote: "By far the greatest way to gauge my readiness for a Cert Exam I've seen.",
+    name:  'Brandon',
+    cert:  'CCNA',
   },
 ];
 
@@ -508,36 +500,46 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── 6. FOUNDER'S NOTE (early-access, N=0 honest) ── */}
+      {/* ── 6. TESTIMONIALS ── */}
       <section className="py-20 sm:py-24 border-t border-white/[0.06]">
-        <div className="container-site max-w-4xl">
+        <div className="container-site max-w-5xl">
           <FadeIn>
             <div className="text-center mb-10">
               <div className="section-label justify-center mb-4">
-                <Shield className="w-3.5 h-3.5" />
-                Early access
+                <Star className="w-3.5 h-3.5" />
+                What students say
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                No testimonials yet &mdash; because we&rsquo;re new.
+              <h2 className="text-3xl sm:text-4xl font-black text-white">
+                Early students, real words.
               </h2>
-              <p className="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                We could seed this page with stock quotes and invented names. We won&rsquo;t.
-                Here&rsquo;s what we promise early students instead.
-              </p>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {FOUNDER_PROMISES.map(({ title, desc }, i) => (
-              <FadeIn key={title} delay={i * 80}>
-                <div className="card p-6 border border-white/[0.08] hover-glow flex flex-col gap-3 h-full">
-                  <div className="flex items-center gap-2 text-cyan-400">
-                    <CheckCircle2 className="w-4 h-4" />
-                    <span className="text-[10px] font-bold uppercase tracking-wider">Promise {i + 1}</span>
+          {/* One deliberate centered card when there's a single quote;
+              scales into a responsive grid once we have 2+ testimonials. */}
+          <div
+            className={
+              TESTIMONIALS.length === 1
+                ? 'max-w-2xl mx-auto'
+                : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'
+            }
+          >
+            {TESTIMONIALS.map(({ quote, name, cert }, i) => (
+              <FadeIn key={`${name}-${cert}`} delay={i * 80}>
+                <figure className="card p-8 border border-white/[0.08] hover-glow flex flex-col gap-5 h-full">
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    ))}
                   </div>
-                  <h3 className="text-base font-bold text-white leading-tight">{title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
-                </div>
+                  <blockquote className="text-lg text-slate-200 leading-relaxed flex-1">
+                    &ldquo;{quote}&rdquo;
+                  </blockquote>
+                  <figcaption>
+                    <p className="text-sm font-semibold text-white">{name}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">{cert}</p>
+                  </figcaption>
+                </figure>
               </FadeIn>
             ))}
           </div>
