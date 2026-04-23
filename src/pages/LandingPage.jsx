@@ -322,45 +322,6 @@ export default function LandingPage() {
             ))}
           </div>
 
-          {/* competition comparison strip.
-              "Others" value is tri-state across the cert-prep market:
-                'yes'     = common across mainstream competitors
-                'partial' = offered by some but not all
-                'no'      = not offered by any mainstream competitor
-              Keeps the comparison honest without naming specific brands. */}
-          <FadeIn delay={280}>
-            <div className="mt-10 rounded-2xl border border-white/[0.06] bg-[#0d1321] overflow-hidden">
-              <div className="grid grid-cols-3 text-center text-xs font-semibold text-slate-500 uppercase tracking-wide border-b border-white/[0.06] px-4 py-3">
-                <span className="text-left">Feature</span>
-                <span>Others</span>
-                <span className="text-cyan-400">Sabr</span>
-              </div>
-              {[
-                ['Adaptive practice',          'partial', true],
-                ['Flashcards + MCQs',          'partial', true],
-                ['Built-in forum',             'no',      true],
-                ['Performance questions',      'partial', true],
-                ['Single subscription',        'partial', true],
-                ['Questions cited by source',  'partial', true],
-              ].map(([label, others, sabr]) => (
-                <div
-                  key={label}
-                  className="grid grid-cols-3 text-center text-xs px-4 py-3 border-b border-white/[0.04] last:border-0"
-                >
-                  <span className="text-left text-slate-400">{label}</span>
-                  <span>
-                    {others === 'yes'     ? '✓'
-                      : others === 'partial' ? <span className="text-slate-500" title="Offered by some but not all">~</span>
-                      : <span className="text-slate-700">—</span>}
-                  </span>
-                  <span className="text-cyan-400 font-bold">{sabr ? '✓' : '—'}</span>
-                </div>
-              ))}
-              <div className="px-4 py-2.5 text-center text-[10px] text-slate-600 border-t border-white/[0.04]">
-                ✓ yes &nbsp;·&nbsp; ~ offered by some &nbsp;·&nbsp; — not offered
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
