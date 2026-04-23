@@ -2,23 +2,37 @@
 // Header.jsx — Sticky top navigation bar
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState, useEffect, useRef } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Search, Zap, LogIn, UserPlus, LayoutDashboard, LogOut, ChevronDown, Home, User, Settings } from 'lucide-react';
 import SearchBar from '../ui/SearchBar';
 import { useAuth, buildAuthReturnUrl, APP_ORIGIN } from '../../hooks/useAuth';
 import { track, EVENTS } from '../../lib/analytics';
 
-// Apex is now cert-prep marketing. Nav order leads with Certifications +
-// Pricing (anchor links on /), then the demoted News magazine, then the
-// certification guides page, then utility pages.
+// Apex is now cert-prep marketing. "Home" is the marketing landing, the
+// former /learning (certification guides) is surfaced as "Certifications"
+// since that's what it actually is.
 const navItems = [
-  { label: 'Certifications', href: '/#certifications' },
+  { label: 'Home',           href: '/' },
   { label: 'Pricing',        href: '/#pricing' },
   { label: 'News',           href: '/news' },
-  { label: 'Learning',       href: '/learning' },
+  { label: 'Certifications', href: '/learning' },
   { label: 'About',          href: '/about' },
   { label: 'Contact',        href: '/contact' },
 ];
+
+// Active-state helper. React Router's NavLink only compares pathname, so
+// two links with the same pathname but different hashes (e.g. "/" vs
+// "/#pricing") were both lighting up on "/". We compare pathname AND
+// hash so each nav item highlights only on its own destination.
+function splitHref(href) {
+  const i = href.indexOf('#');
+  return i === -1 ? { pathname: href, hash: '' } : { pathname: href.slice(0, i), hash: href.slice(i) };
+}
+function isNavItemActive(href, location) {
+  const target = splitHref(href);
+  const currentHash = location.hash || '';
+  return target.pathname === location.pathname && target.hash === currentHash;
+}
 
 export default function Header() {
   const [scrolled, setScrolled]       = useState(false);
@@ -98,21 +112,22 @@ export default function Header() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-0.5">
-              {navItems.map(item => (
-                <NavLink
-                  key={item.href}
-                  to={item.href}
-                  className={({ isActive }) =>
-                    `px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive
+              {navItems.map(item => {
+                const active = isNavItemActive(item.href, location);
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                      active
                         ? 'text-cyan-400 bg-cyan-400/10'
                         : 'text-slate-400 hover:text-slate-200 hover:bg-white/5'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Right actions */}
@@ -248,21 +263,22 @@ export default function Header() {
         {mobileOpen && (
           <div className="md:hidden bg-[#0d1321] border-t border-white/[0.06] animate-fade-in">
             <nav className="container-site py-4 flex flex-col gap-1">
-              {navItems.map(item => (
-                <NavLink
-                  key={item.href}
-                  to={item.href}
-                  className={({ isActive }) =>
-                    `px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
-                      isActive
+              {navItems.map(item => {
+                const active = isNavItemActive(item.href, location);
+                return (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className={`px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
+                      active
                         ? 'text-cyan-400 bg-cyan-400/10'
                         : 'text-slate-300 hover:text-white hover:bg-white/5'
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <Link
                 to="/newsletter"
                 className="mt-2 btn-primary justify-center"
