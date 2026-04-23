@@ -209,6 +209,26 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Transparency row — honest-disclosure line for the SABR Learning
+          citations rollout. Pulled out of the Legal column so it reads as
+          a product commitment, not a footnote. Remove after 2026-05-14
+          once the backfill closes and every practice question cites its
+          source. (SAB-97) */}
+      <div className="border-t border-white/[0.04]">
+        <div className="container-site py-4">
+          <p className="text-xs text-slate-500 text-center">
+            Citations rolling out across all SABR Learning questions by May 14, 2026.{' '}
+            <a
+              href={`${APP_ORIGIN}/about/citations`}
+              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2"
+            >
+              How we&rsquo;re doing it
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-white/[0.04]">
         <div className="container-site py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
