@@ -14,6 +14,8 @@ import Sidebar           from '../components/sidebar/Sidebar';
 import SectionHeader     from '../components/ui/SectionHeader';
 import CategoryBadge     from '../components/ui/CategoryBadge';
 import NewsletterSignup  from '../components/newsletter/NewsletterSignup';
+import AIHero            from '../components/ai-companion/AIHero';
+import AICompanionSection from '../components/ai-companion/AICompanionSection';
 
 // ── Trending strip (horizontal scroll on mobile) ──────────────────────────────
 function TrendingStrip() {
@@ -210,8 +212,17 @@ export default function HomePage() {
   return (
     <div>
       <div className="container-site py-6">
-        {/* Hero */}
-        <section className="mb-6">
+        {/* AI Study Companion hero (SAB-100 / SAB-93.C1) */}
+        <AIHero />
+
+        {/* AI Companion section — explains the three endpoints.
+            Anchor target for the hero's "See how it works" CTA. */}
+        <AICompanionSection />
+
+        <div className="section-divider" />
+
+        {/* Featured news hero — demoted from the top but still prominent. */}
+        <section className="mt-6 mb-6">
           <HeroCard article={hero} />
         </section>
 
