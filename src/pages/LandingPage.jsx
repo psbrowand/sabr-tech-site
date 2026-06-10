@@ -75,6 +75,7 @@ const FEATURES = [
 
 // ── Launch certifications ─────────────────────────────────────────────────────
 const LAUNCH_CERTS = [
+  { code: '200-301',  name: 'CCNA',       questions: 100, vendor: 'Cisco',   accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
   { code: '220-1201', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
   { code: '220-1202', name: 'A+ Core 2',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
   { code: 'N10-009',  name: 'Network+',   questions: 100, vendor: 'CompTIA', accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
@@ -454,11 +455,12 @@ export default function LandingPage() {
                 Launch catalog
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                6 fully-polished certifications at launch.
+                Cisco CCNA + the CompTIA core six, fully loaded.
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
-                100 curated MCQs + 120 flashcards each. More certifications shipping
-                monthly — browse the full catalog in the app.
+                100+ curated MCQs and 120+ flashcards each, cited to the official
+                exam objectives — and CCNA pairs with graded labs in the network
+                simulator. 12 certifications active, more shipping monthly.
               </p>
             </div>
           </FadeIn>
