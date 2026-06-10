@@ -6,9 +6,127 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Apr 2026 16:05:38 GMT</lastBuildDate>
-    <pubDate>Thu, 23 Apr 2026 16:05:38 GMT</pubDate>
+    <lastBuildDate>Wed, 10 Jun 2026 20:29:42 GMT</lastBuildDate>
+    <pubDate>Wed, 10 Jun 2026 20:29:42 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CCNA v2.0 Lands February 2027: Troubleshooting Is Back and AI Is In</title>
+      <link>https://sabr-labs.com/article/ccna-v2-2027-what-changes</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ccna-v2-2027-what-changes</guid>
+      <pubDate>Wed, 10 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CCNA</category>
+      <category>Cisco</category>
+      <category>Certification</category>
+      <category>Networking</category>
+      <category>Exam Prep</category>
+      <description>Cisco&apos;s refreshed 200-301 v2.0 exam puts the troubleshoot verb on more than a quarter of its topics, adds an AI section, and trims six domains down to five.</description>
+      <content:encoded><![CDATA[<p>Cisco has set the date: CCNA 200-301 version 2.0 goes live on February 3, 2027. The current v1.1 exam stays valid right up until the cutover, so every candidate studying today has a decision to make.</p>
+<p>The headline change is troubleshooting. In the v2.0 blueprint, 28% of exam topics use the verb 'troubleshoot,' and that's a bigger deal than it sounds. Troubleshooting essentially vanished from the CCNA in the 2020 revision and stayed gone through v1.1. For six years you could pass by knowing how things are configured. Starting next February, Cisco wants to know whether you can figure out why they're broken.</p>
+<p>There's also a new AI section covering prompt construction and foundational AI security concepts. Before you roll your eyes, it's a small slice of the blueprint, and it reflects what's actually showing up in network operations tooling. The domain structure consolidates from six domains to five, the exam stays 120 minutes, and a pass still earns the same CCNA certification.</p>
+<p>So: rush v1.1 or wait for v2.0? If you're months into prep, finish on v1.1 before February 2027. Your study materials match the live exam, the certification you earn is identical, and nobody's resume distinguishes which blueprint version they passed. If you're starting from zero in late 2026, it gets closer; you may be better served studying toward v2.0 since the skills it tests are the ones interviews actually probe.</p>
+<p>Either way, the troubleshooting shift changes how you should study more than what you should study. You can't flashcard your way through 'troubleshoot OSPF adjacency.' You need broken configs and time on a CLI, whether that's a simulator, rented rack time, or used gear off eBay. Candidates who built their prep on reading will feel this revision. Candidates who built it on labs won't notice much difference, which is presumably Cisco's point.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple&apos;s New Siri Runs on Google&apos;s Model, and Apple Said So Out Loud</title>
+      <link>https://sabr-labs.com/article/apple-wwdc-2026-siri-ai-gemini</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-wwdc-2026-siri-ai-gemini</guid>
+      <pubDate>Wed, 10 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>WWDC</category>
+      <category>Siri</category>
+      <category>Google Gemini</category>
+      <category>iOS 27</category>
+      <description>At WWDC 2026 Apple rebranded its assistant as Siri AI, confirmed it runs a custom Gemini model in Apple&apos;s data centers, and opened iOS 27 to rival chatbots.</description>
+      <content:encoded><![CDATA[<p>The most consequential thing Apple said at WWDC on June 8 was an admission: the long-promised Siri overhaul is finally here, it's called Siri AI, and the intelligence underneath is a custom version of Google's Gemini.</p>
+<p>The arrangement, reportedly worth about a billion dollars a year to Google, runs Gemini-based models inside Apple's own data centers behind Private Cloud Compute, with on-device processing handling what it can. Apple gets a frontier model without having trained one; Google gets paid and gets its model onto the most valuable install base in consumer tech. Both companies know exactly what this echoes, because they've run the same play with search for fifteen years.</p>
+<p>The assistant itself finally does what was promised in 2024: cross-app actions, on-screen awareness, and personal context, plus a dedicated Siri app that keeps conversation history and works on iPad and Mac. Demos looked fluid, though WWDC demos always do. The original Apple Intelligence Siri was announced two years ago and partially shipped late; skepticism until this is on real devices is earned.</p>
+<p>The quieter announcement may matter more. In iOS 27, Apple is opening Siri's handoff mechanism beyond ChatGPT so users can route requests to other chatbots, with Claude and Gemini named in early reporting. Apple is positioning itself as the aggregation point for AI assistants rather than a competitor to any of them, which is a strong position to retreat to when you've conceded the model race.</p>
+<p>The rest of the keynote was a platform tour: iOS 27, macOS 27 Golden Gate, and the usual cadence across watchOS, tvOS, and visionOS, with Liquid Glass refinements and AI woven through the system apps rather than headlined.</p>
+<p>Strip the privacy framing and the shape of the deal is plain: Apple is now a distribution channel for someone else's intelligence, and it's betting the customer relationship is worth more than the model. With search, that bet paid roughly twenty billion dollars a year. The difference is that nobody asked their search engine to know everything about them.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Files for Its IPO. The Math Underneath Is the Real Story</title>
+      <link>https://sabr-labs.com/article/openai-confidential-ipo-filing</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-confidential-ipo-filing</guid>
+      <pubDate>Wed, 10 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>IPO</category>
+      <category>AI Economics</category>
+      <category>Anthropic</category>
+      <category>Wall Street</category>
+      <description>OpenAI confirmed a confidential S-1 targeting a September debut at $730 to $850 billion, while reportedly losing more than a dollar for every dollar it earns.</description>
+      <content:encoded><![CDATA[<p>OpenAI confirmed on June 8 that it has confidentially filed for a US IPO, targeting a debut as soon as September at a valuation between $730 and $850 billion. The S-1 reportedly went to the SEC around May 22; the public only heard about it once the company chose to say so.</p>
+<p>Goldman Sachs, Morgan Stanley, and JPMorgan are leading the offering, and some analysts are already talking past the filing range toward a trillion-dollar print. That would make it the largest tech IPO ever by a wide margin.</p>
+<p>Hold that number next to this one: OpenAI was generating about $2 billion in monthly revenue as of March, but an analysis of its recent financials found it lost roughly $1.22 for every dollar it earned in the quarter. The revenue curve is extraordinary. So is the burn. An IPO at this moment reads less like a victory lap and more like the logical next step for a company whose appetite for compute has outgrown what private markets can comfortably feed it.</p>
+<p>The timing isn't happening in a vacuum. Anthropic filed for its own IPO on June 1 at a reported $965 billion valuation, SpaceX is in the pipeline, and Bloomberg now tallies the AI IPO queue at $3.6 trillion in combined paper value. Two frontier labs going public in the same half-year means public markets, not private mega-rounds, are about to set the price of the AI boom for the first time.</p>
+<p>One more wrinkle: the confirmation landed hours after Apple's WWDC keynote, where the new Siri was revealed to run on Google's Gemini. OpenAI's ChatGPT handoff deal made it the default AI brand on the iPhone; that exclusivity is now visibly eroding right as the company asks the public to price its consumer moat.</p>
+<p>The S-1 will eventually become public, and with it the first audited look at OpenAI's actual economics: real margins, real compute obligations, real revenue concentration. Every claim about AI economics to date has been sourced from leaks and investor decks. The prospectus is where the story has to survive an auditor.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Critical Veeam Flaw Lets Any Domain User Run Code on Your Backup Server</title>
+      <link>https://sabr-labs.com/article/veeam-backup-rce-cve-2026-44963</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/veeam-backup-rce-cve-2026-44963</guid>
+      <pubDate>Wed, 10 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Veeam</category>
+      <category>Vulnerability</category>
+      <category>Ransomware</category>
+      <category>Backups</category>
+      <category>CVE</category>
+      <description>CVE-2026-44963 (CVSS 9.4) gives any low-privilege domain account remote code execution on domain-joined Veeam Backup &amp; Replication v12 servers; the fix shipped June 9.</description>
+      <content:encoded><![CDATA[<p>Any domain account, including the intern's, can now potentially execute code on the server that holds your backups. That's the short version of CVE-2026-44963, a critical flaw in Veeam Backup & Replication that scored 9.4 on CVSS v4.</p>
+<p>The vulnerability affects version 12.3.2.4465 and every earlier v12 build. Veeam shipped the fix in 12.3.2.4854 on June 9, documented in KB4696. Version 13 isn't affected thanks to architectural changes, which is a quiet argument for the upgrade if you've been putting it off. The bug was found and reported by Sina Kheirkhah of watchTowr.</p>
+<p>There's one important catch: only domain-joined backup servers are exposed. Veeam's own hardening guidance has said for years that backup infrastructure should live outside Active Directory, in a workgroup, precisely so a compromised domain doesn't take the backups down with it. Plenty of shops domain-join anyway because it makes management easier. This CVE is the bill for that convenience.</p>
+<p>Why this one deserves your attention over the average critical: ransomware crews go after backup infrastructure first, before they encrypt anything, because organizations with intact backups don't pay. A reliable path from any low-privilege domain account to code execution on the Veeam server is exactly the primitive those playbooks are built around. No exploitation has been reported yet, but patch-diffing starts the moment a fix ships, and Veeam flaws have historically gone from patch to active exploitation within weeks.</p>
+<p>Patch to 12.3.2.4854 now, and if your backup server is domain-joined, treat this as the prompt to fix that too. The patch closes this CVE. Pulling the server out of the domain closes the next one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>June Patch Tuesday: 200 Fixes, Six Zero-Days, and a Bug Bounty Protest</title>
+      <link>https://sabr-labs.com/article/microsoft-june-2026-patch-tuesday-200-flaws</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-june-2026-patch-tuesday-200-flaws</guid>
+      <pubDate>Wed, 10 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Patch Tuesday</category>
+      <category>Microsoft</category>
+      <category>Zero-Day</category>
+      <category>Exchange</category>
+      <category>BitLocker</category>
+      <description>Microsoft&apos;s June update patches an actively exploited Exchange spoofing flaw plus five publicly disclosed zero-days, several of them dropped by a group protesting how Redmond runs its bounty program.</description>
+      <content:encoded><![CDATA[<p>Two hundred vulnerabilities, 33 of them critical, six zero-days, and one of those already being used in attacks. Microsoft's June Patch Tuesday is one of the largest of the year, and the story behind several of the zero-days is messier than the usual coordinated-disclosure routine.</p>
+<p>Patch the Exchange flaw first. CVE-2026-42897, a spoofing vulnerability in Exchange Server, is the only bug in the batch confirmed to be actively exploited. If you still run on-prem Exchange, you already know the drill: it remains one of the most reliably attacked products in enterprise IT, and a spoofing primitive there tends to be the first link in a phishing or mailbox-takeover chain.</p>
+<p>Five more zero-days were publicly disclosed before patches existed, and most of them trace to a group calling itself Nightmare Eclipse, which dropped GreenPlasma (CVE-2026-45586, a Windows CTFMON privilege escalation), the YellowKey BitLocker bypass (CVE-2026-45585), and Mini-Plasma in protest of how Microsoft handles its bug bounty and disclosure programs. Whatever you think of the tactic, it worked as pressure: all of them got fixed this cycle.</p>
+<p>The remaining disclosures came through more conventional channels. Researchers at Calif.io documented an HTTP/2 Bomb denial-of-service flaw in HTTP.sys (CVE-2026-49160), and Jonas Lykkegaard published a second BitLocker bypass dubbed bitskrieg (CVE-2026-50507). Two separate BitLocker bypasses in one month is worth pausing on if your threat model includes lost or stolen laptops, since both undermine the assumption that disk encryption protects a powered-off machine.</p>
+<p>The oddest entry is CVE-2020-17103, a Windows Cloud Files Mini Filter Driver flaw that Google Project Zero's James Forshaw originally reported in September 2020. It carries a 2020 CVE number and is only now getting a patch. Microsoft hasn't explained the five-and-a-half-year gap.</p>
+<p>For prioritization: Exchange first, then the BitLocker bypasses on any fleet with mobile hardware, then work through the criticals. Twenty-eight of the 33 critical-rated bugs are remote code execution, and the elevation-of-privilege pile (65 bugs this month) is what attackers chain after initial access. The protest angle makes good copy, but the patching order is the part that matters by Friday.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Worm Built for AI Coding Tools Took Down 73 Microsoft GitHub Repos</title>
+      <link>https://sabr-labs.com/article/miasma-worm-microsoft-github-repos</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/miasma-worm-microsoft-github-repos</guid>
+      <pubDate>Wed, 10 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>Malware</category>
+      <category>GitHub</category>
+      <category>Microsoft</category>
+      <category>AI Coding Tools</category>
+      <description>The Miasma worm planted credential-stealing payloads that fire when a repo is opened in Claude Code, Cursor, or VS Code, forcing GitHub to disable 73 official Microsoft repositories.</description>
+      <content:encoded><![CDATA[<p>It took GitHub 105 seconds to pull 73 of Microsoft's own repositories offline. The infection that forced the takedown had been spreading for more than two weeks before anyone hit the kill switch.</p>
+<p>On June 5, GitHub disabled repositories across four official Microsoft organizations: Azure, Azure-Samples, MicrosoftDocs, and Microsoft itself. The trigger was a malicious commit pushed to Azure/durabletask through a previously compromised contributor account. The commit planted configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. The worm doesn't attack the code you ship. It attacks the tools you write it with.</p>
+<p>The malware, dubbed Miasma, is assessed to be a variant of the Mini Shai-Hulud worm that the TeamPCP group publicly released in mid-May. The chain traces back to May 19, when the durabletask package on PyPI (Microsoft's Azure Durable Task SDK) was compromised. Three malicious versions went live within 35 minutes, published using GitHub Actions secrets the attackers had already stolen.</p>
+<p>This is the uncomfortable part: agentic coding tools are designed to read and act on repository configuration automatically. Hooks, instruction files, and tool manifests get parsed and executed as a feature. The old supply chain model assumed a human would at least glance at the code before running it. The new one assumes your AI assistant will open whatever it's pointed at, and Miasma was written by someone who understood that perfectly.</p>
+<p>Microsoft has restored some of the repositories while keeping others offline as the investigation continues, and this is reportedly the second time Miasma has hit the company's GitHub presence. Neither Microsoft nor GitHub has published a full accounting of which repos carried the payload and for how long, which makes it hard for downstream teams to know whether they were exposed.</p>
+<p>If you or your tooling touched Microsoft's GitHub orgs or the durabletask package since mid-May, rotate credentials now, especially GitHub tokens and cloud keys that live in your environment. Then look at the agent-facing config of every repo you clone before you let an AI tool loose in it. That file your assistant helpfully reads on startup is now an execution vector.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The Cisco SD-WAN Bug from Yesterday is a Textbook Security+ PBQ</title>
       <link>https://sabr-labs.com/article/cisco-sdwan-cve-security-plus-pbq-2026-04-23</link>
@@ -870,46 +988,6 @@
 <p>Migration is technically complex. TLS, SSH, PKI certificates, VPN tunnels, code signing, and hardware security modules all require updates. Many embedded systems and OT devices cannot be field-updated and will need hardware replacement. A phased migration prioritizing highest-sensitivity data channels is recommended.</p>
 <p>Major vendors are moving quickly. Cloudflare enabled hybrid PQC key exchange (combining classical ECDH with CRYSTALS-Kyber) for all TLS 1.3 connections by default. Apple added PQC support to iMessage in 2024. Google enabled hybrid PQC in Chrome 114 and is planning full Kyber support in Chrome 132.</p>
 <p>CISA's post-quantum roadmap recommends organizations complete a cryptographic inventory in 2026, prioritize critical system migration in 2027-2028, and achieve full PQC deployment by 2030. For most organizations, this represents the largest cryptographic infrastructure project since the migration from SHA-1 to SHA-256 — but with tighter stakes.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>James Webb Space Telescope Detects Dimethyl Sulfide in K2-18b Atmosphere — Possible Biosignature</title>
-      <link>https://sabr-labs.com/article/james-webb-exoplanet-atmosphere</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/james-webb-exoplanet-atmosphere</guid>
-      <pubDate>Fri, 03 Apr 2026 17:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>James Webb</category>
-      <category>Exoplanet</category>
-      <category>Astrobiology</category>
-      <category>Biosignature</category>
-      <category>K2-18b</category>
-      <category>NASA</category>
-      <description>The chemical, produced almost exclusively by biological processes on Earth, was detected in the atmosphere of a &apos;hycean world&apos; 120 light-years away.</description>
-      <content:encoded><![CDATA[<p>Astronomers using the James Webb Space Telescope have detected a signal consistent with dimethyl sulfide (DMS) in the atmosphere of the exoplanet K2-18b — a compound that, on Earth, is produced almost exclusively by marine phytoplankton and other biological organisms. While researchers are careful not to claim proof of extraterrestrial life, the detection represents the strongest biosignature candidate ever observed beyond our solar system.</p>
-<p>K2-18b is a 'hycean world' — a class of exoplanet theorized to have hydrogen-rich atmospheres above liquid water oceans — orbiting in the habitable zone of a red dwarf star 120 light-years from Earth. Webb's NIRSpec instrument detected the DMS signal through transmission spectroscopy as the planet transited its host star, measuring the subtle change in starlight filtering through the atmosphere.</p>
-<p>The detection carries significant caveats. DMS can theoretically be produced by non-biological photochemical processes under certain atmospheric conditions not well-characterized for hycean worlds. The signal strength of 3σ is suggestive but does not meet the 5σ confidence threshold that physical scientists typically require to claim a definitive detection.</p>
-<p>Cambridge University professor Nikku Madhusudhan, lead author of the study submitted to Nature Astronomy, described the finding as 'tantalizing but not conclusive.' His team is requesting additional Webb observation time in the next cycle to accumulate more transits and increase the statistical confidence of the DMS signal.</p>
-<p>The discovery has reinvigorated debates about the search for life in the universe. NASA's Habitable Worlds Observatory, currently in early development, is specifically designed to characterize Earth-like exoplanets in far greater detail than Webb allows. But for now, K2-18b becomes the most compelling astrobiological target in the known catalog of confirmed exoplanets.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Former SolarWinds CISO Convicted on Securities Fraud and Negligence Charges</title>
-      <link>https://sabr-labs.com/article/solarwinds-ciso-criminal-charges</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-ciso-criminal-charges</guid>
-      <pubDate>Thu, 02 Apr 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CISO</category>
-      <category>Securities Fraud</category>
-      <category>SolarWinds</category>
-      <category>SEC</category>
-      <category>Legal</category>
-      <category>Governance</category>
-      <description>The landmark verdict establishes personal legal liability for security leaders who misrepresent an organization&apos;s cybersecurity posture to investors.</description>
-      <content:encoded><![CDATA[<p>A federal jury in the Southern District of New York found Timothy Brown, former Chief Information Security Officer of SolarWinds, guilty on two counts of securities fraud and one count of securities negligence following a three-week trial. The verdict marks the first criminal conviction of a CISO under the SEC's expanded cybersecurity disclosure rules.</p>
-<p>The charges stemmed from statements Brown made in investor presentations and SEC filings between 2021 and 2023 claiming SolarWinds had 'industry-leading' security practices — statements prosecutors argued he knew were false given internal vulnerability reports documenting critical access control failures and unpatched systems that he had received months earlier.</p>
-<p>The prosecution presented evidence including internal Slack messages in which Brown acknowledged knowing about specific security gaps while simultaneously approving investor communications that omitted or minimized them. Prosecutors argued this constituted knowing misrepresentation of material information to investors.</p>
-<p>Brown's defense argued that security communications necessarily involve trade-offs between disclosure and operational security, and that no CISO can guarantee zero vulnerabilities. The defense also contested the causal link between the specific gaps he was aware of and the 2020 SUNBURST attack that had been attributed to the Russian SVR.</p>
-<p>The CISO community has reacted with significant alarm. Security leadership associations have called the verdict 'a criminalization of the impossible job' and warn that it will deter qualified security professionals from taking CISO roles. The SEC indicated it will pursue similar cases where it finds evidence of material misrepresentation of security posture, signaling this verdict is a precedent, not an outlier.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
