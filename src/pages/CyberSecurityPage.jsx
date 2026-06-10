@@ -4,10 +4,16 @@ import { getByCategory, getBreaking } from '../data/articles';
 import ArticleCard   from '../components/articles/ArticleCard';
 import Sidebar       from '../components/sidebar/Sidebar';
 import SectionHeader from '../components/ui/SectionHeader';
+import { useSeo }    from '../lib/useSeo';
 
 const threatTags = ['APT', 'Ransomware', 'Zero-Day', 'Phishing', 'Nation-State', 'Vulnerability', 'Malware', 'Supply Chain', 'Critical Infrastructure'];
 
 export default function CyberSecurityPage() {
+  useSeo({
+    title: 'Cybersecurity News | Sabr Learning Labs',
+    description: 'Incidents, CVEs, patches, and threat activity, reported with the details practitioners need: affected versions, exploitation status, and fixes.',
+  });
+
   const cyberArticles = getByCategory('cyber');
   const breaking      = getBreaking();
 

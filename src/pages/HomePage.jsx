@@ -14,6 +14,7 @@ import Sidebar           from '../components/sidebar/Sidebar';
 import SectionHeader     from '../components/ui/SectionHeader';
 import CategoryBadge     from '../components/ui/CategoryBadge';
 import NewsletterSignup  from '../components/newsletter/NewsletterSignup';
+import { useSeo }        from '../lib/useSeo';
 
 // ── Trending strip (horizontal scroll on mobile) ──────────────────────────────
 function TrendingStrip() {
@@ -201,6 +202,11 @@ function CategoryNav() {
 
 // ── Main HomePage ─────────────────────────────────────────────────────────────
 export default function HomePage() {
+  useSeo({
+    title: 'Cyber & Tech News | Sabr Learning Labs',
+    description: 'Daily cyber, tech, and AI news written for working IT people: incidents, CVEs, vendor moves, and certification changes, with sources cited.',
+  });
+
   const featured = getFeatured();
   const hero     = featured[0] || getLatest(1)[0];
   const latestTech  = getByCategory('tech').slice(0, 3);

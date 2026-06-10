@@ -5,6 +5,7 @@ import { getByCategory } from '../data/articles';
 import ArticleCard   from '../components/articles/ArticleCard';
 import Sidebar       from '../components/sidebar/Sidebar';
 import SectionHeader from '../components/ui/SectionHeader';
+import { useSeo }    from '../lib/useSeo';
 
 const aiTags = [
   'LLMs', 'Model Releases', 'Agents', 'Alignment', 'Regulation',
@@ -12,6 +13,11 @@ const aiTags = [
 ];
 
 export default function AINewsPage() {
+  useSeo({
+    title: 'AI News | Sabr Learning Labs',
+    description: 'AI news without the hype: model releases, benchmarks in context, and what actually changes for people who build and run systems.',
+  });
+
   const aiArticles = getByCategory('ai');
   const sorted = [...aiArticles].sort(
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)

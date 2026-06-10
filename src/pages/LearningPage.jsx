@@ -9,6 +9,7 @@ import ArticleCard   from '../components/articles/ArticleCard';
 import Sidebar       from '../components/sidebar/Sidebar';
 import SectionHeader from '../components/ui/SectionHeader';
 import NewsletterSignup from '../components/newsletter/NewsletterSignup';
+import { useSeo }       from '../lib/useSeo';
 
 const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
@@ -153,6 +154,11 @@ const careerPaths = [
 
 // ── Main LearningPage ─────────────────────────────────────────────────────────
 export default function LearningPage() {
+  useSeo({
+    title: 'IT Certification Guides & Study Advice | Sabr Learning Labs',
+    description: 'Honest, practical guidance on IT certifications: which certs are worth it, how hard the exams really are, and how to study for CompTIA, Cisco, Aruba, Juniper, and more.',
+  });
+
   const [activeFilter, setActiveFilter] = useState(null);
 
   const learningArticles = articles.filter(a => a.category === 'learning');

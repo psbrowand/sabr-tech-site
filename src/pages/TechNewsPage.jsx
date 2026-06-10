@@ -6,6 +6,7 @@ import ArticleCard    from '../components/articles/ArticleCard';
 import Sidebar        from '../components/sidebar/Sidebar';
 import SectionHeader  from '../components/ui/SectionHeader';
 import CategoryBadge  from '../components/ui/CategoryBadge';
+import { useSeo }     from '../lib/useSeo';
 
 const subCats = [
   { id: null,    label: 'All Tech',  icon: Cpu    },
@@ -14,6 +15,11 @@ const subCats = [
 ];
 
 export default function TechNewsPage() {
+  useSeo({
+    title: 'Tech News | Sabr Learning Labs',
+    description: 'Product launches and industry moves that matter to IT professionals: what shipped, what changed, and what it means for the category.',
+  });
+
   const [params] = useSearchParams();
   const cat = params.get('cat') || null;
 

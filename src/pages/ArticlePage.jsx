@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 
 import { articles, getRelated } from '../data/articles';
+import { useSeo }               from '../lib/useSeo';
 import { formatDate }           from '../components/ui/TimeAgo';
 import CategoryBadge            from '../components/ui/CategoryBadge';
 import RelatedArticles          from '../components/articles/RelatedArticles';
@@ -77,6 +78,14 @@ export default function ArticlePage() {
   const navigate  = useNavigate();
 
   const article = articles.find(a => a.slug === slug);
+
+  // Keeps title/description/canonical correct on client-side navigation;
+  // first loads get the same values prerendered into the HTML at build time.
+  useSeo({
+    title: article ? `${article.title} | Sabr Cyber & Tech News` : 'Article Not Found | Sabr Learning Labs',
+    description: article?.summary,
+    canonical: article ? `https://sabr-labs.com/article/${article.slug}` : undefined,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
