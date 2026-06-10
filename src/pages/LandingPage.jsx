@@ -75,8 +75,8 @@ const FEATURES = [
 
 // ── Launch certifications ─────────────────────────────────────────────────────
 const LAUNCH_CERTS = [
-  { code: '220-1101', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
-  { code: '220-1102', name: 'A+ Core 2',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
+  { code: '220-1201', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
+  { code: '220-1202', name: 'A+ Core 2',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
   { code: 'N10-009',  name: 'Network+',   questions: 100, vendor: 'CompTIA', accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
   { code: 'SY0-701',  name: 'Security+',  questions: 100, vendor: 'CompTIA', accent: 'text-emerald-400',border: 'border-emerald-400/20',bg: 'bg-emerald-400/8' },
   { code: 'CS0-003',  name: 'CySA+',      questions: 100, vendor: 'CompTIA', accent: 'text-violet-400', border: 'border-violet-400/20', bg: 'bg-violet-400/8' },
@@ -134,8 +134,7 @@ const PRICING = [
       'Unlimited full practice exams',
       'Conversational AI tutor + AI Lab Tutor',
       'Network Sandbox — free-build simulator',
-      'Early access to new certs',
-      'Downloadable cheat sheets + study guides',
+      'AI quiz builder (generative)',
       'Elite profile badge',
     ],
     cta: 'Start free trial',
