@@ -31,6 +31,8 @@ const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com
 const VENDORS = [
   { name: 'CompTIA',     color: '#ef4444' },
   { name: 'Cisco',       color: '#1d7bb5' },
+  { name: 'HPE Aruba',   color: '#f6821f' },
+  { name: 'Juniper',     color: '#84b135' },
   { name: 'AWS',         color: '#f59e0b' },
   { name: 'Microsoft',   color: '#0ea5e9' },
   { name: 'Google Cloud',color: '#3b82f6' },
@@ -76,6 +78,8 @@ const FEATURES = [
 // ── Launch certifications ─────────────────────────────────────────────────────
 const LAUNCH_CERTS = [
   { code: '200-301',  name: 'CCNA',       questions: 100, vendor: 'Cisco',   accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
+  { code: 'HPE6-A86', name: 'Aruba Switching Associate', questions: 100, vendor: 'HPE Aruba', accent: 'text-orange-400', border: 'border-orange-400/20', bg: 'bg-orange-400/8' },
+  { code: 'JN0-106',  name: 'JNCIA-Junos', questions: 100, vendor: 'Juniper', accent: 'text-lime-400',  border: 'border-lime-400/20',  bg: 'bg-lime-400/8' },
   { code: '220-1201', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
   { code: '220-1202', name: 'A+ Core 2',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
   { code: 'N10-009',  name: 'Network+',   questions: 100, vendor: 'CompTIA', accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
@@ -455,12 +459,12 @@ export default function LandingPage() {
                 Launch catalog
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
-                Cisco CCNA + the CompTIA core six, fully loaded.
+                Cisco, Aruba, Juniper + the CompTIA core six.
               </h2>
               <p className="text-slate-400 max-w-xl mx-auto">
                 100+ curated MCQs and 120+ flashcards each, cited to the official
-                exam objectives — and CCNA pairs with graded labs in the network
-                simulator. 12 certifications active, more shipping monthly.
+                exam objectives — and the networking certs pair with graded labs
+                in the simulator. 16 certifications active, more shipping monthly.
               </p>
             </div>
           </FadeIn>
