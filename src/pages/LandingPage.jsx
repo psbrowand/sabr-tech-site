@@ -4,8 +4,9 @@
 //   1. Hero — headline + primary/secondary CTAs
 //   2. Trust bar — cert vendor logos
 //   3. Features — 4 adaptive-learning differentiators
+//   3.5 Network Labs — simulator showcase (terminal mockup + objectives strip)
 //   4. Cert showcase — Hero 6 launch certifications
-//   5. Pricing — monthly/annual toggle with 3 tiers
+//   5. Pricing — monthly/annual toggle, 3 tiers mirroring live Stripe Ladder M
 //   6. Testimonials — placeholder cards (fill with real quotes post-launch)
 //   7. Lead capture — newsletter signup via Resend
 //
@@ -18,6 +19,7 @@ import { Link } from 'react-router-dom';
 import {
   ArrowRight, Target, BookOpen, Users, BarChart3,
   CheckCircle2, Star, ChevronRight, Shield, Zap,
+  Network, TerminalSquare, Wrench, Sparkles,
 } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import NewsletterSignup from '../components/newsletter/NewsletterSignup';
@@ -82,79 +84,61 @@ const LAUNCH_CERTS = [
 ];
 
 // ── Pricing ───────────────────────────────────────────────────────────────────
-// Prices mirror live Stripe (see learning app: src/lib/tiers.ts).
-// Annual = 10 × monthly (two months free ≈ 17% off).
+// Prices mirror live Stripe (learning app: src/lib/tiers.ts — Ladder M).
+// Annual = 10 × monthly (two months free ≈ 17% off). Every plan starts
+// with a 7-day free trial; there is no permanent free tier.
 const PRICING = [
   {
-    name: 'Free',
-    monthlyPrice: 0,
-    annualPrice: 0,
-    annualNote: null,
-    desc: 'Try it before you buy it.',
-    features: [
-      '20 questions per day',
-      'Track 1 certification',
-      'Basic flashcard preview',
-      'Community forum access',
-    ],
-    cta: 'Get started free',
-    href: `${APP_ORIGIN}/register`,
-    highlight: false,
-    badge: null,
-  },
-  {
     name: 'Starter',
-    monthlyPrice: 12,
-    annualPrice: 10,
-    annualNote: '$120 / yr',
-    desc: 'Unlimited questions, pick 2 certs.',
+    monthlyPrice: 15,
+    annualTotal: 150,
+    desc: 'Everything you need to pass.',
     features: [
       'Unlimited practice questions',
-      'Full flashcards with SRS tracking',
-      'Track up to 2 certifications',
-      '3 full practice exams / cert / mo',
+      'Unlimited certifications tracked',
+      'Full flashcards with spaced repetition',
+      'Graded network labs (Aruba, Cisco, Network+)',
+      '3 full practice exams / cert / month',
+      'Timed exam-sim mode',
       'Community forum',
     ],
-    cta: 'Start Starter',
+    cta: 'Start free trial',
     href: `${APP_ORIGIN}/register`,
     highlight: false,
     badge: null,
   },
   {
     name: 'Pro',
-    monthlyPrice: 24,
-    annualPrice: 20,
-    annualNote: '$240 / yr',
-    desc: 'Everything you need to pass.',
+    monthlyPrice: 29,
+    annualTotal: 290,
+    desc: 'Add AI and deep analytics.',
     features: [
       'Everything in Starter',
-      'Track up to 4 certifications',
-      'Unlimited full practice exams',
-      'AI study companion',
+      '10 full practice exams / cert / month',
+      'AI study companion (why-wrong + explain)',
       'Advanced analytics + weak-area drill',
-      'Exam-sim (strict timed) mode',
       'No ads',
     ],
-    cta: 'Start Pro',
+    cta: 'Start free trial',
     href: `${APP_ORIGIN}/register`,
     highlight: true,
     badge: 'Most popular',
   },
   {
     name: 'Premium',
-    monthlyPrice: 34,
-    annualPrice: 28,
-    annualNote: '$340 / yr',
-    desc: 'For cert stackers and teams.',
+    monthlyPrice: 49,
+    annualTotal: 490,
+    desc: 'The full toolkit, no limits.',
     features: [
       'Everything in Pro',
-      'Unlimited certifications tracked',
+      'Unlimited full practice exams',
+      'Conversational AI tutor + AI Lab Tutor',
+      'Network Sandbox — free-build simulator',
       'Early access to new certs',
       'Downloadable cheat sheets + study guides',
       'Elite profile badge',
-      'Priority support',
     ],
-    cta: 'Start Premium',
+    cta: 'Start free trial',
     href: `${APP_ORIGIN}/register`,
     highlight: false,
     badge: null,
@@ -200,8 +184,8 @@ export default function LandingPage() {
           <div className="max-w-3xl mx-auto text-center">
             <FadeIn>
               <div className="section-label justify-center mb-6">
-                <Shield className="w-3.5 h-3.5" />
-                Now in early access — 6 CompTIA certifications
+                <Network className="w-3.5 h-3.5" />
+                New — hands-on network labs, right in your browser
               </div>
             </FadeIn>
 
@@ -214,8 +198,9 @@ export default function LandingPage() {
 
             <FadeIn delay={160}>
               <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-                Adaptive practice, spaced-repetition flashcards, and a built-in community
-                forum — all in one subscription. Study smarter, not longer.
+                Adaptive practice, spaced-repetition flashcards, hands-on network labs
+                in a real CLI simulator, and a built-in community forum — all in one
+                subscription. Study smarter, not longer.
               </p>
             </FadeIn>
 
@@ -223,12 +208,12 @@ export default function LandingPage() {
               <div className="flex flex-wrap items-center justify-center gap-3">
                 <a
                   href={`${APP_ORIGIN}/register`}
-                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'start_for_free' })}
+                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'start_free_trial' })}
                   className="btn-primary text-base px-6 py-3"
                   target="_blank"
                   rel="noopener"
                 >
-                  Start for free
+                  Start your free trial
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
@@ -240,7 +225,7 @@ export default function LandingPage() {
                 </Link>
               </div>
               <p className="mt-4 text-xs text-slate-600">
-                No credit card required. Free plan available.
+                7-day free trial on every plan. Cancel anytime.
               </p>
             </FadeIn>
           </div>
@@ -249,10 +234,10 @@ export default function LandingPage() {
           <FadeIn delay={320}>
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
               {[
-                { value: '6',    label: 'Launch certs'  },
+                { value: '6',    label: 'Launch certs'   },
                 { value: '100+', label: 'Questions each' },
-                { value: '120+', label: 'Flashcards each'},
-                { value: '$0',   label: 'To start'       },
+                { value: '21',   label: 'Hands-on labs'  },
+                { value: '7-day',label: 'Free trial'     },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
                   <p className="text-2xl font-black text-white">{value}</p>
@@ -319,6 +304,144 @@ export default function LandingPage() {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* ── 3.5 NETWORK LABS ── */}
+      <section id="labs" className="py-20 sm:py-24 border-t border-white/[0.06] scroll-mt-20 relative overflow-hidden">
+        {/* ambient glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(ellipse 50% 40% at 80% 20%, rgba(0,212,255,0.07) 0%, transparent 60%)',
+          }}
+        />
+        <div className="container-site relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* copy */}
+            <div>
+              <FadeIn>
+                <div className="section-label mb-4">
+                  <TerminalSquare className="w-3.5 h-3.5" />
+                  Network Labs — new
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
+                  Don&rsquo;t just memorize networks.{' '}
+                  <span className="text-gradient-cyan">Build them.</span>
+                </h2>
+                <p className="text-slate-400 leading-relaxed mb-6">
+                  21 graded, hands-on labs in a full network simulator that runs
+                  entirely in your browser — real Aruba CX and Cisco IOS command
+                  lines, live topology views, and objectives that check themselves
+                  the moment your config works. No downloads, no VMs, no
+                  Windows-only desktop apps.
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={100}>
+                <ul className="space-y-3.5 mb-8">
+                  {[
+                    {
+                      icon: CheckCircle2,
+                      accent: 'text-emerald-400',
+                      text: 'Graded objectives — ping works, trunk carries the VLAN, OSPF reaches Full — checked live against the simulation as you type.',
+                    },
+                    {
+                      icon: Wrench,
+                      accent: 'text-amber-400',
+                      text: 'Help-desk troubleshooting scenarios for CCNA, Network+, and Aruba tracks: find the planted fault, fix it, watch the objectives flip green.',
+                    },
+                    {
+                      icon: Sparkles,
+                      accent: 'text-cyan-400',
+                      text: 'Premium adds the open Network Sandbox — free-build with every device — and an AI Lab Tutor that sees your live lab and coaches without spoiling the answer.',
+                    },
+                  ].map(({ icon: Icon, accent, text }) => (
+                    <li key={text} className="flex items-start gap-3">
+                      <Icon className={`w-4 h-4 mt-1 flex-shrink-0 ${accent}`} />
+                      <span className="text-sm text-slate-400 leading-relaxed">{text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </FadeIn>
+
+              <FadeIn delay={180}>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href={`${APP_ORIGIN}/network-labs`}
+                    onClick={() => track(EVENTS.LABS_CTA_CLICK, { cta: 'explore_labs' })}
+                    className="btn-primary px-6 py-3"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Explore Network Labs
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={`${APP_ORIGIN}/register`}
+                    onClick={() => track(EVENTS.LABS_CTA_CLICK, { cta: 'labs_free_trial' })}
+                    className="btn-ghost px-6 py-3"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Try a lab free
+                  </a>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* terminal mockup */}
+            <FadeIn delay={140}>
+              <div className="card border border-cyan-400/20 overflow-hidden shadow-2xl shadow-cyan-500/5">
+                {/* window chrome */}
+                <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06] bg-white/[0.02]">
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-400/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400/60" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/60" />
+                  <span className="ml-3 text-xs text-slate-500 font-mono">sw1 — Aruba CX 6300M</span>
+                  <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-cyan-400">Live lab</span>
+                </div>
+                {/* terminal body */}
+                <div className="p-5 font-mono text-[13px] leading-relaxed bg-[#0a0f1c]">
+                  <p className="text-slate-500">sw1# configure</p>
+                  <p className="text-slate-500">sw1(config)# interface 1/1/8</p>
+                  <p className="text-slate-300">sw1(config-if)# vlan trunk allowed 10,20</p>
+                  <p className="text-slate-300">
+                    sw1(config-if)# <span className="animate-pulse text-cyan-400">▍</span>
+                  </p>
+                </div>
+                {/* objectives strip */}
+                <div className="px-5 py-4 border-t border-white/[0.06] bg-white/[0.02] space-y-2">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">
+                    Objectives — graded live
+                  </p>
+                  {[
+                    { ok: true,  text: 'Trunk carries VLAN 10 across the link' },
+                    { ok: true,  text: 'h1 can ping h3 (10.0.10.20)' },
+                    { ok: false, text: 'h1 cannot reach VLAN 20 (isolation)' },
+                  ].map(({ ok, text }) => (
+                    <div key={text} className="flex items-center gap-2.5">
+                      <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-black ${
+                        ok ? 'bg-emerald-400/15 text-emerald-400' : 'bg-white/[0.06] text-slate-600'
+                      }`}>
+                        {ok ? '✓' : '·'}
+                      </span>
+                      <span className={`text-xs ${ok ? 'text-slate-300' : 'text-slate-500'}`}>{text}</span>
+                    </div>
+                  ))}
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs text-slate-500">2 of 3 passing</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+                      Score updates live
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+          </div>
         </div>
       </section>
 
@@ -432,9 +555,9 @@ export default function LandingPage() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {PRICING.map(({ name, monthlyPrice, annualPrice, annualNote, desc, features, cta, href, highlight, badge }, i) => {
-              const displayPrice = annual ? annualPrice : monthlyPrice;
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {PRICING.map(({ name, monthlyPrice, annualTotal, desc, features, cta, href, highlight, badge }, i) => {
+              const displayPrice = annual ? annualTotal : monthlyPrice;
               return (
                 <FadeIn key={name} delay={i * 80}>
                   <div className={`card p-6 border flex flex-col h-full relative ${
@@ -457,13 +580,11 @@ export default function LandingPage() {
                         <span className="text-4xl font-black text-white">
                           ${displayPrice}
                         </span>
-                        {displayPrice > 0 && (
-                          <span className="text-slate-500 text-sm mb-1">/ mo</span>
-                        )}
+                        <span className="text-slate-500 text-sm mb-1">{annual ? '/ yr' : '/ mo'}</span>
                       </div>
-                      {annual && annualNote && (
-                        <p className="text-xs text-slate-600 mt-1">Billed {annualNote}</p>
-                      )}
+                      <p className="text-xs text-slate-600 mt-1">
+                        {annual ? 'Two months free vs monthly' : `or $${annualTotal} / yr (two months free)`}
+                      </p>
                     </div>
 
                     <ul className="space-y-2.5 mb-6 flex-1">
@@ -496,7 +617,8 @@ export default function LandingPage() {
 
           <FadeIn delay={280}>
             <p className="text-center mt-6 text-xs text-slate-600">
-              All plans include a 7-day money-back guarantee.
+              Every plan starts with a 7-day free trial — cancel anytime before it
+              ends and you won&rsquo;t be charged.
               <Link to="/refund" className="ml-1.5 text-slate-500 hover:text-slate-400 underline underline-offset-2">
                 Refund policy
               </Link>
@@ -591,16 +713,17 @@ export default function LandingPage() {
               Ready to start?
             </h2>
             <p className="text-slate-400 mb-8 max-w-md mx-auto text-sm">
-              Free plan. No credit card. Your first practice session is four clicks away.
+              7-day free trial on every plan. Your first practice session — or
+              your first network lab — is four clicks away.
             </p>
             <a
               href={`${APP_ORIGIN}/register`}
-              onClick={() => track(EVENTS.BOTTOM_CTA_CLICK, { cta: 'create_free_account' })}
+              onClick={() => track(EVENTS.BOTTOM_CTA_CLICK, { cta: 'start_free_trial' })}
               className="btn-primary text-base px-7 py-3 inline-flex"
               target="_blank"
               rel="noopener"
             >
-              Create free account
+              Start your free trial
               <ArrowRight className="w-4 h-4" />
             </a>
           </FadeIn>

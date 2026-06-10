@@ -13,6 +13,7 @@ import { track, EVENTS } from '../../lib/analytics';
 // since that's what it actually is.
 const navItems = [
   { label: 'Home',           href: '/' },
+  { label: 'Network Labs',   href: '/#labs' },
   { label: 'Pricing',        href: '/#pricing' },
   { label: 'News',           href: '/news' },
   { label: 'Certifications', href: '/learning' },
