@@ -221,11 +221,11 @@ export default function LandingPage() {
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <Link
-                  to="/learning"
-                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'explore_certifications' })}
+                  to="/try"
+                  onClick={() => track(EVENTS.HERO_CTA_CLICK, { cta: 'try_free_lab' })}
                   className="btn-ghost text-base px-6 py-3"
                 >
-                  Explore certifications
+                  Try a lab free — no signup
                 </Link>
               </div>
               <p className="mt-4 text-xs text-slate-600">

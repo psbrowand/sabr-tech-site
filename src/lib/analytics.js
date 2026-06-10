@@ -21,13 +21,19 @@
 import { track as vercelTrack } from '@vercel/analytics';
 
 export const EVENTS = {
-  NAV_CTA_CLICK:     'nav_cta_click',
-  HERO_CTA_CLICK:    'hero_cta_click',
-  CERT_CARD_CLICK:   'cert_card_click',
-  LABS_CTA_CLICK:    'labs_cta_click',
-  PRICING_CTA_CLICK: 'pricing_cta_click',
-  BOTTOM_CTA_CLICK:  'bottom_cta_click',
-  NEWSLETTER_SUBMIT: 'newsletter_submit',
+  NAV_CTA_CLICK:       'nav_cta_click',
+  HERO_CTA_CLICK:      'hero_cta_click',
+  CERT_CARD_CLICK:     'cert_card_click',
+  LABS_CTA_CLICK:      'labs_cta_click',
+  PRICING_CTA_CLICK:   'pricing_cta_click',
+  BOTTOM_CTA_CLICK:    'bottom_cta_click',
+  NEWSLETTER_SUBMIT:   'newsletter_submit',
+  // Free no-signup demo lab (/try) — the top-of-funnel conversion path.
+  DEMO_LAB_VIEW:       'demo_lab_view',
+  DEMO_LAB_STARTED:    'demo_lab_started',
+  DEMO_LAB_COMPLETED:  'demo_lab_completed',
+  DEMO_LAB_CTA_CLICK:  'demo_lab_cta_click',
+  COMPARE_CTA_CLICK:   'compare_cta_click',
 };
 
 // Vercel Analytics allows properties of type string | number | boolean | null.

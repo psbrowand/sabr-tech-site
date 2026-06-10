@@ -19,6 +19,7 @@ import BreakingTicker    from './components/ui/BreakingTicker';
 
 import HomePage          from './pages/HomePage';
 import LandingPage       from './pages/LandingPage';
+import DemoLabPage       from './pages/DemoLabPage';
 import TechNewsPage      from './pages/TechNewsPage';
 import CyberSecurityPage from './pages/CyberSecurityPage';
 import ArticlePage       from './pages/ArticlePage';
@@ -98,6 +99,9 @@ export default function App() {
               as an alias for any legacy inbound links. */}
           <Route path="/"               element={<LandingPage />} />
           <Route path="/landing"        element={<LandingPage />} />
+          {/* Free no-signup demo lab — top-of-funnel. /demo aliases /try. */}
+          <Route path="/try"            element={<DemoLabPage />} />
+          <Route path="/demo"           element={<DemoLabPage />} />
           <Route path="/news"           element={<HomePage />} />
           <Route path="/tech-news"      element={<TechNewsPage />} />
           <Route path="/ai-news"        element={<AINewsPage />} />
