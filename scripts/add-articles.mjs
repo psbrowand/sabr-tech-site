@@ -83,19 +83,30 @@ try {
     process.exit(0);
   }
 
+  // Retire stale homepage flags on the existing dataset before inserting,
+  // so the daily routine never leaves last week's story pinned as the hero
+  // or scrolling in the breaking ticker.
+  const newFeatured = prepared.some(({ article }) => article.featured);
+  const { src: demoted, changes } = demoteStaleFlags(current, { newFeatured, now: Date.now() });
+  const working = demoted;
+  if (changes.length > 0) {
+    console.log(`[add-articles] demoted ${changes.length} stale flag${changes.length === 1 ? '' : 's'} on existing articles:`);
+    for (const c of changes) console.log(`  • ${c}`);
+  }
+
   // Preserve whatever line ending the file already uses (LF or CRLF).
-  const eol = current.includes('\r\n') ? '\r\n' : '\n';
+  const eol = working.includes('\r\n') ? '\r\n' : '\n';
   const insertion = prepared
     .map(({ article }) => '  ' + serializeObject(article, 1).split('\n').join(eol) + ',')
     .join(eol);
 
   // Match `export const articles = [` followed by whatever line ending.
   const markerRe = /export const articles = \[\r?\n/;
-  const m = markerRe.exec(current);
+  const m = markerRe.exec(working);
   if (!m) fail('Could not find "export const articles = [" in articles.js');
   const insertAt = m.index + m[0].length;
 
-  const next = current.slice(0, insertAt) + insertion + eol + current.slice(insertAt);
+  const next = working.slice(0, insertAt) + insertion + eol + working.slice(insertAt);
   await writeFile(ARTICLES_PATH, next, 'utf8');
 
   console.log(`[add-articles] inserted ${prepared.length} article${prepared.length === 1 ? '' : 's'}:`);
@@ -119,15 +130,21 @@ async function loadDrafts(input) {
       .sort();
     for (const name of entries) {
       const full = join(abs, name);
-      const parsed = JSON.parse(await readFile(full, 'utf8'));
+      const parsed = JSON.parse(stripBom(await readFile(full, 'utf8')));
       pushParsed(drafts, parsed, name);
     }
   } else {
-    const parsed = JSON.parse(await readFile(abs, 'utf8'));
+    const parsed = JSON.parse(stripBom(await readFile(abs, 'utf8')));
     pushParsed(drafts, parsed, input);
   }
 
   return drafts;
+}
+
+// Windows editors and PowerShell's utf8 encoding prepend a BOM, which
+// JSON.parse rejects. Strip it so draft provenance doesn't matter.
+function stripBom(s) {
+  return s.charCodeAt(0) === 0xfeff ? s.slice(1) : s;
 }
 
 function pushParsed(out, parsed, sourceLabel) {
@@ -142,6 +159,43 @@ function pushParsed(out, parsed, sourceLabel) {
   } else {
     fail(`${sourceLabel}: expected an object or array of objects`);
   }
+}
+
+// Flip stale `featured`/`trending`/`breaking: true` flags to false on the
+// EXISTING dataset (runs before insertion, so new articles are untouched).
+// Rules: featured demotes only when a new featured article is arriving;
+// breaking expires 48h after its article's publishedAt; trending after 7
+// days. Relies on the serializer's key order (publishedAt precedes the
+// flags inside every article object) to attribute each flag to its article.
+function demoteStaleFlags(src, { newFeatured, now }) {
+  const changes = [];
+  const flagRe = /\b(featured|trending|breaking): true\b/g;
+  const parts = [];
+  let last = 0;
+  let m;
+  while ((m = flagRe.exec(src)) !== null) {
+    const flag = m[1];
+    const prefix = src.slice(0, m.index);
+    const pubIdx = prefix.lastIndexOf('publishedAt:');
+    const pubMatch = pubIdx >= 0
+      ? prefix.slice(pubIdx).match(/publishedAt:\s*["']([^"']+)["']/)
+      : null;
+    const published = pubMatch ? Date.parse(pubMatch[1]) : NaN;
+    const ageHours = (now - published) / 3_600_000;
+
+    let demote = false;
+    if (flag === 'featured') demote = newFeatured;
+    else if (flag === 'breaking') demote = Number.isNaN(ageHours) || ageHours > 48;
+    else if (flag === 'trending') demote = Number.isNaN(ageHours) || ageHours > 7 * 24;
+
+    if (demote) {
+      parts.push(src.slice(last, m.index), `${flag}: false`);
+      last = m.index + m[0].length;
+      changes.push(`${flag} → false (article published ${pubMatch ? pubMatch[1] : 'unknown'})`);
+    }
+  }
+  parts.push(src.slice(last));
+  return { src: parts.join(''), changes };
 }
 
 function scanArticles(src) {
