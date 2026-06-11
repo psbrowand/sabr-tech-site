@@ -18,6 +18,9 @@ const footerLinks = {
   'Services': [
     { label: 'SABR Learning',  href: APP_ORIGIN, external: true },
     { label: 'Discussions',    href: 'https://discussions.sabr-labs.com', external: true },
+    { label: 'Try a Free Lab', href: '/try' },
+    { label: 'vs Boson NetSim',   href: '/compare/boson-netsim-alternative' },
+    { label: 'vs Packet Tracer',  href: '/compare/packet-tracer-alternative' },
   ],
   'Company': [
     { label: 'About Us',   href: '/about' },

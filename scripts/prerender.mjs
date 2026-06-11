@@ -120,6 +120,18 @@ async function main() {
         'Run a real graded network simulator lab in your browser right now. Bring an interface back to life on an Aruba switch — free, no account required.',
     },
     {
+      path: '/compare/boson-netsim-alternative',
+      title: 'Boson NetSim Alternative — Multi-Vendor Network Labs in Your Browser | Sabr Learning Labs',
+      description:
+        'Comparing Boson NetSim and Sabr Learning Labs for cert prep? An honest, factual side-by-side: vendors covered, pricing model, what each subscription includes, and who each tool actually fits.',
+    },
+    {
+      path: '/compare/packet-tracer-alternative',
+      title: 'Cisco Packet Tracer Alternative — Graded Multi-Vendor Labs, No Install | Sabr Learning Labs',
+      description:
+        'Packet Tracer vs Sabr Learning Labs, honestly compared: install and account requirements, vendor coverage, lab grading, and when the free Cisco tool is genuinely the right call.',
+    },
+    {
       path: '/news',
       title: 'Cyber & Tech News | Sabr Learning Labs',
       description: DESC_NEWS,

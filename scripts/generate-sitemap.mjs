@@ -61,6 +61,8 @@ async function main() {
   const staticRoutes = [
     { loc: `${SITE_URL}/`,                  priority: '1.0', changefreq: 'daily' },
     { loc: `${SITE_URL}/try`,               priority: '0.9', changefreq: 'weekly' },
+    { loc: `${SITE_URL}/compare/boson-netsim-alternative`,  priority: '0.7', changefreq: 'monthly' },
+    { loc: `${SITE_URL}/compare/packet-tracer-alternative`, priority: '0.7', changefreq: 'monthly' },
     { loc: `${SITE_URL}/#certifications`,   priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE_URL}/#pricing`,          priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE_URL}/learning`,          priority: '0.8', changefreq: 'weekly' },
