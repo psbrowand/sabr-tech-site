@@ -25,6 +25,217 @@
 
 export const articles = [
   {
+    id: 53,
+    slug: "spacex-ipo-nasdaq-debut-june-2026",
+    title: "SpaceX Prices the Largest IPO Ever, Debuts on Nasdaq Tomorrow",
+    summary: "SpaceX set its IPO at $135 a share, a $1.77 trillion valuation that raises about $75 billion and makes it the seventh-biggest US company before it has even started trading.",
+    body: [
+      "Seventy-five billion dollars. That's what SpaceX is set to raise when shares start trading on the Nasdaq tomorrow under the ticker SPCX, in what will be the largest initial public offering ever recorded.",
+      "SpaceX priced the offering at $135 a share and is selling about 555.6 million shares. At that price the company is valued at roughly $1.77 trillion, more than triple the size of Alibaba's 2014 listing, the previous record for a US debut. SpaceX would immediately rank as the seventh-largest US company by market cap, sitting above Tesla, Musk's other big holding, which is worth around $1.6 trillion.",
+      "The thing going public isn't just rockets. Musk merged SpaceX with his AI company xAI in February in a deal that valued the combined business at $1.25 trillion, so the shares cover three operations at once: the launch business, the Starlink satellite-internet network, and the xAI unit behind the Grok models. Anyone buying SPCX is buying all of it in a single ticket.",
+      "Musk will hold over 82% of the voting power after the offering. Public shareholders get the upside and almost no say in how the company is run. That arrangement has become standard for founder-led tech listings, but the gap here is wide even by that bar.",
+      "Starlink is the part carrying the valuation. Recurring subscription revenue across millions of terminals is the closest thing SpaceX has to a predictable cash machine, and it's what lets bankers justify a number that would be hard to defend for a launch company alone. The rocket side is still capital-hungry, and Starship's reusable economics look promising but aren't yet proven at the flight cadence the model assumes.",
+      "For index funds, the debut creates an immediate headache. A company this size joining public markets means trillions in passively managed money will have to buy SPCX whether the managers love the price or not. Plenty of retail investors will own a slice of SpaceX by tomorrow afternoon without ever choosing to.",
+    ],
+    category: "tech",
+    tags: ["SpaceX", "IPO", "Starlink", "xAI", "Nasdaq", "Elon Musk"],
+    image: "https://images.unsplash.com/photo-1516849677043-ef67c9557e16?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-11T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Fortune",
+        desc: "SpaceX reveals share price, count, and $1.77T valuation",
+        url: "https://fortune.com/2026/06/03/spacex-ipo-share-price-index-funds-valuation-public/",
+      },
+      {
+        name: "CNBC",
+        desc: "SpaceX targets $135 IPO price, roadshow details",
+        url: "https://www.cnbc.com/2026/06/03/spacex-ipo-stock-price-roadshow-musk.html",
+      },
+      {
+        name: "Capital.com",
+        desc: "Background on the SpaceX IPO timeline and structure",
+        url: "https://capital.com/en-int/learn/ipo/spacex-ipo",
+      },
+    ],
+  },
+  {
+    id: 54,
+    slug: "microsoft-defender-rogueplanet-zero-day-system-june-2026",
+    title: "Researcher Drops 'RoguePlanet' Defender Zero-Day Hours After Patch Tuesday",
+    summary: "A working exploit called RoguePlanet escalates a local user to SYSTEM on fully patched Windows 10 and 11 through a Microsoft Defender race condition, and there's no fix yet.",
+    body: [
+      "Hours after Microsoft shipped its June Patch Tuesday this week, a researcher published a working exploit for a Defender bug Microsoft hasn't patched at all.",
+      "The exploit, called RoguePlanet, abuses a race condition in Microsoft Defender's quarantine pipeline to escalate a local user to SYSTEM, the highest privilege level on Windows. The researcher, who goes by Nightmare Eclipse, says it works on fully patched Windows 10 and Windows 11. There's no CVE assigned and no fix available.",
+      "This is local privilege escalation, not remote code execution, so an attacker needs a foothold on the machine first. But that's exactly the second stage of most intrusions: phish a user, land as a low-privilege account, then climb. A reliable SYSTEM escalation that survives a fully updated Defender install is the kind of primitive ransomware crews and access brokers pay real money for.",
+      "RoguePlanet isn't this researcher's first drop. Microsoft has already patched a run of Defender bugs Nightmare Eclipse disclosed: RedSun (CVE-2026-41091, fixed out-of-band on May 21 and later added to CISA's known-exploited list), UnDefend (CVE-2026-45498), and BlueHammer (CVE-2026-33825), all reported as exploited in the wild before patches landed.",
+      "The researcher has been blunt about the motive. Nightmare Eclipse frames the public drops as a response to how Microsoft handled earlier reports, citing a disclosure process that let bugs sit and a working relationship that went bad. Whatever the rights and wrongs, the practical result is that defenders are learning about a SYSTEM-level Defender flaw from exploit code instead of an advisory.",
+      "Microsoft hadn't issued guidance as of this writing. Until it does, the usual containment holds: tighten local admin rights, watch for odd Defender child processes spawning with SYSTEM privileges, and treat any machine an attacker can already touch as a machine they can own. If exploitation picks up, expect an out-of-band patch rather than a wait for July.",
+    ],
+    category: "cyber",
+    tags: [
+      "Microsoft Defender",
+      "Zero-Day",
+      "Windows",
+      "Privilege Escalation",
+      "Patch Tuesday",
+    ],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-11T09:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "BleepingComputer",
+        desc: "Original report on the RoguePlanet exploit and the researcher",
+        url: "https://www.bleepingcomputer.com/news/microsoft/microsoft-defender-rogueplanet-zero-day-grants-system-privileges/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "RoguePlanet grants SYSTEM on updated Windows",
+        url: "https://thehackernews.com/2026/06/microsoft-defender-rogueplanet-zero-day.html",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Details on the released Windows zero-day exploit",
+        url: "https://www.securityweek.com/new-windows-zero-day-exploit-rogueplanet-released/",
+      },
+      {
+        name: "CISA KEV",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+    ],
+  },
+  {
+    id: 55,
+    slug: "solarwinds-serv-u-cve-2026-28318-kev-exploited",
+    title: "CISA: Patch the Actively Exploited SolarWinds Serv-U Flaw by June 19",
+    summary: "CVE-2026-28318 lets an unauthenticated attacker crash SolarWinds Serv-U with a single crafted POST request, and CISA has set a June 19 deadline to fix it.",
+    body: [
+      "SolarWinds is back on CISA's exploited-vulnerabilities list, this time for a flaw that lets an unauthenticated attacker knock its Serv-U file-transfer server offline with a single crafted request.",
+      "CVE-2026-28318 is an uncontrolled resource consumption bug. A remote attacker with no credentials can trigger it by sending an HTTP POST request carrying a Content-Encoding: deflate header, which forces Serv-U to chew through resources until the service crashes. Every version up to and including 15.5.4 is affected. SolarWinds fixed it in Serv-U 15.5.4 Hotfix 1.",
+      "It's a denial-of-service bug, not remote code execution, so nobody is stealing files through this one directly. But Serv-U is managed file-transfer software, the kind of appliance that sits at the edge of a network moving sensitive data between partners. Knocking it down on demand is disruptive on its own, and DoS against file-transfer gear has a habit of being either a precursor or a distraction.",
+      "CISA added the bug to its Known Exploited Vulnerabilities catalog on June 5 and gave federal civilian agencies until June 19 to patch. That window is nearly shut. A KEV listing isn't theoretical: CISA only adds bugs it has evidence are being used in real attacks.",
+      "Serv-U has been here before. The same product showed up in CISA's catalog for a path-traversal flaw in 2024 and a remote-code-execution bug in 2021 that was tied to state-linked activity. For software whose entire job is to sit exposed and move files, that's a track record worth weighing when you decide how fast to act.",
+      "If you run Serv-U, get to 15.5.4 Hotfix 1. If you can't patch right away, SolarWinds and CISA point to the same stopgaps: put the service behind a WAF or firewall so only known addresses can reach it, and block POST requests that include a content-encoding header. Neither is a real substitute for the fix.",
+    ],
+    category: "cyber",
+    tags: ["SolarWinds", "Serv-U", "CISA KEV", "CVE", "Denial of Service"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-11T10:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Help Net Security",
+        desc: "Report on the actively exploited Serv-U DoS flaw",
+        url: "https://www.helpnetsecurity.com/2026/06/08/cisa-patch-actively-exploited-solarwinds-serv-u-dos-vulnerability-cve-2026-28318/",
+      },
+      {
+        name: "CISA KEV",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "Cybersecurity News",
+        desc: "Coverage of the Serv-U vulnerability and patch",
+        url: "https://cybersecuritynews.com/cisa-solarwinds-serv-u-vulnerability/",
+      },
+    ],
+  },
+  {
+    id: 56,
+    slug: "openai-oracle-cloud-universal-credits-june-2026",
+    title: "OpenAI Models Are Coming to Oracle Cloud's Prepaid Credits",
+    summary: "Oracle Cloud customers will soon be able to spend their existing Universal Credits on OpenAI's models and Codex, turning a procurement headache into a budgeting line item.",
+    body: [
+      "OpenAI wants to sell its models to companies that never signed up for OpenAI. Its new deal with Oracle is how.",
+      "Under the partnership, Oracle Cloud Infrastructure customers will be able to spend their existing Oracle Universal Credits, the prepaid cloud commitments many enterprises already buy in bulk, on OpenAI's frontier models and its Codex coding agent. The models will be offered through the OCI Marketplace, and OpenAI says access arrives in the coming weeks.",
+      "There's no new model here and no new capability. What's new is the procurement path. For a large company, the friction in adopting OpenAI usually isn't technical; it's the legal and purchasing overhead of onboarding another vendor. Letting teams draw down a cloud commitment they already signed off on removes a step that quietly kills plenty of pilots before they start.",
+      "The two companies are already deep in business together. Oracle is one of the main compute providers behind OpenAI's data-center buildout, the Stargate effort, so wiring OpenAI's models into Oracle's marketplace is the customer-facing other half of an infrastructure deal that was mostly about who rents whom servers. This turns that plumbing into a sales channel.",
+      "It also tightens the knot. Every credit an Oracle customer spends on GPT through OCI is a credit they don't spend on a competing model, and it deepens the dependency between one cloud and one model vendor. Convenient for buyers today, and worth remembering the next time someone argues the AI market is still wide open.",
+      "For engineers the practical read is simple. If your shop runs on Oracle Cloud, getting GPT-class models and Codex into a project is about to be a budgeting question instead of a procurement project. That's a smaller change than a new model, and for a lot of teams it will matter more.",
+    ],
+    category: "ai",
+    tags: ["OpenAI", "Oracle", "Codex", "Enterprise AI", "Cloud"],
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-11T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "OpenAI",
+        desc: "Official announcement of OpenAI models on Oracle Cloud",
+        url: "https://openai.com/index/openai-on-oracle-cloud/",
+      },
+      {
+        name: "StartupHub.ai",
+        desc: "Coverage of the OpenAI and Oracle Cloud partnership",
+        url: "https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-teams-up-with-oracle-cloud",
+      },
+      {
+        name: "IT Brief",
+        desc: "OpenAI and Oracle to offer models on OCI Marketplace",
+        url: "https://itbrief.co.nz/story/openai-oracle-to-offer-models-on-oci-marketplace",
+      },
+    ],
+  },
+  {
+    id: 57,
+    slug: "comptia-cysa-plus-v4-cs0-004-june-2026",
+    title: "CompTIA CySA+ V4 Lands June 23: Sit the Old Exam or Wait?",
+    summary: "CompTIA's analyst cert gets a refresh on June 23 with new AI governance, cloud, and threat-hunting content, and if you're mid-prep you have a real decision to make.",
+    body: [
+      "If you're studying for CySA+ right now, you've got a decision to make: sit the current exam before it ages out, or wait for the new one.",
+      "CompTIA launches CySA+ V4, exam code CS0-004, on June 23. The current version, CS0-003, stays available for a while after that. CompTIA usually runs about six months of overlap before retiring an old exam, though it hasn't put a firm retirement date on CS0-003 yet. Both versions carry the same name and certify the same thing; only the objectives differ.",
+      "V4 keeps the four-domain structure but reweights and modernizes it. The domains are Security Operations (34%), Vulnerability Management (26%), Incident Response and Management (24%), and Reporting and Communication (16%). The new material is where the cert catches up to the actual job: more cloud, a real emphasis on threat hunting, expanded identity and access management, and a fresh block on AI use cases, the risks they bring, and governance. Format is up to 85 questions in 165 minutes, with a passing score of 750 on a 100-to-900 scale.",
+      "Here's the practical call. If you're within a few weeks of testing and your material is built around CS0-003, finish what you started and sit the current exam. There's no penalty for holding a cert earned on the older objectives; it's the same credential on your resume. If you're earlier in your prep, or you work somewhere cloud-heavy or AI-adjacent, the V4 objectives map better to what you'll actually be doing, and that's worth waiting a few weeks for.",
+      "CySA+ is CompTIA's analyst cert, a step past Security+ and aimed at people doing detection, triage, and response rather than general security awareness. The V4 additions push it toward the SOC reality of 2026: cloud telemetry, hunting instead of waiting on alerts, and working out what to do when half your tooling suddenly has an AI feature bolted on. If that's the chair you sit in, or want to, the refresh is aimed at you.",
+      "One thing not to overthink, but to plan around: test-prep churn. New exam versions always arrive before the third-party practice questions and courses fully catch up. If you go for CS0-004 in its first month, lean on CompTIA's own objectives document over a hastily updated cram deck, and expect the AI and cloud sections to be the thinnest part of any third-party prep until the market fills them in.",
+    ],
+    category: "learning",
+    tags: ["CompTIA", "CySA+", "Certification", "Blue Team", "SOC"],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-11T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CompTIA",
+        desc: "Official CySA+ (Cybersecurity Analyst) certification page",
+        url: "https://www.comptia.org/certifications/cybersecurity-analyst",
+      },
+      {
+        name: "Get Certified 4 Less",
+        desc: "Breakdown of CySA+ V4 (CS0-004) launch date and changes",
+        url: "https://getcertified4less.com/blogs/default-blog/comptia-cysa-v4-cs0-004-coming-june-2026",
+      },
+      {
+        name: "CompTIA Exam Objectives",
+        desc: "Source for the official CS0-004 domain weights and format",
+        url: "https://www.comptia.org/training/resources/exam-objectives",
+      },
+    ],
+  },
+  {
     id: 47,
     slug: "miasma-worm-microsoft-github-repos",
     title: "A Worm Built for AI Coding Tools Took Down 73 Microsoft GitHub Repos",
@@ -43,7 +254,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-06-10T08:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -292,7 +503,7 @@ export const articles = [
     publishedAt: "2026-04-23T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -336,7 +547,7 @@ export const articles = [
     publishedAt: "2026-04-21T15:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -375,7 +586,7 @@ export const articles = [
     publishedAt: "2026-04-21T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -426,7 +637,7 @@ export const articles = [
     publishedAt: "2026-04-21T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -470,7 +681,7 @@ export const articles = [
     publishedAt: "2026-04-21T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -514,7 +725,7 @@ export const articles = [
     publishedAt: "2026-04-21T13:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -565,7 +776,7 @@ export const articles = [
     publishedAt: "2026-04-21T14:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -609,7 +820,7 @@ export const articles = [
     publishedAt: "2026-04-21T09:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -644,7 +855,7 @@ export const articles = [
     publishedAt: "2026-04-21T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -684,7 +895,7 @@ export const articles = [
     publishedAt: "2026-04-21T14:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -719,7 +930,7 @@ export const articles = [
     publishedAt: "2026-04-21T09:05:00Z",
     readingTime: 4,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       { name: "Vercel Security Bulletin", desc: "Vercel's official disclosure of the April 2026 security incident", url: "https://vercel.com/kb/bulletin/vercel-april-2026-security-incident" },
@@ -747,7 +958,7 @@ export const articles = [
     publishedAt: "2026-04-21T09:20:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       { name: "Cisco Security Advisory ISE RCE", desc: "Cisco's official advisory for the ISE remote code execution vulnerabilities", url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ise-rce-traversal-8bYndVrZ" },
@@ -776,7 +987,7 @@ export const articles = [
     publishedAt: "2026-04-21T09:35:00Z",
     readingTime: 4,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       { name: "Horizon3.ai — CVE-2026-34197", desc: "Horizon3.ai's technical disclosure of the ActiveMQ Jolokia RCE", url: "https://horizon3.ai/attack-research/disclosures/cve-2026-34197-activemq-rce-jolokia/" },

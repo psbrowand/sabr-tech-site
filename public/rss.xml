@@ -6,9 +6,110 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 17:00:59 GMT</lastBuildDate>
-    <pubDate>Thu, 11 Jun 2026 17:00:59 GMT</pubDate>
+    <lastBuildDate>Thu, 11 Jun 2026 17:33:58 GMT</lastBuildDate>
+    <pubDate>Thu, 11 Jun 2026 17:33:58 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CompTIA CySA+ V4 Lands June 23: Sit the Old Exam or Wait?</title>
+      <link>https://sabr-labs.com/article/comptia-cysa-plus-v4-cs0-004-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-cysa-plus-v4-cs0-004-june-2026</guid>
+      <pubDate>Thu, 11 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>CySA+</category>
+      <category>Certification</category>
+      <category>Blue Team</category>
+      <category>SOC</category>
+      <description>CompTIA&apos;s analyst cert gets a refresh on June 23 with new AI governance, cloud, and threat-hunting content, and if you&apos;re mid-prep you have a real decision to make.</description>
+      <content:encoded><![CDATA[<p>If you're studying for CySA+ right now, you've got a decision to make: sit the current exam before it ages out, or wait for the new one.</p>
+<p>CompTIA launches CySA+ V4, exam code CS0-004, on June 23. The current version, CS0-003, stays available for a while after that. CompTIA usually runs about six months of overlap before retiring an old exam, though it hasn't put a firm retirement date on CS0-003 yet. Both versions carry the same name and certify the same thing; only the objectives differ.</p>
+<p>V4 keeps the four-domain structure but reweights and modernizes it. The domains are Security Operations (34%), Vulnerability Management (26%), Incident Response and Management (24%), and Reporting and Communication (16%). The new material is where the cert catches up to the actual job: more cloud, a real emphasis on threat hunting, expanded identity and access management, and a fresh block on AI use cases, the risks they bring, and governance. Format is up to 85 questions in 165 minutes, with a passing score of 750 on a 100-to-900 scale.</p>
+<p>Here's the practical call. If you're within a few weeks of testing and your material is built around CS0-003, finish what you started and sit the current exam. There's no penalty for holding a cert earned on the older objectives; it's the same credential on your resume. If you're earlier in your prep, or you work somewhere cloud-heavy or AI-adjacent, the V4 objectives map better to what you'll actually be doing, and that's worth waiting a few weeks for.</p>
+<p>CySA+ is CompTIA's analyst cert, a step past Security+ and aimed at people doing detection, triage, and response rather than general security awareness. The V4 additions push it toward the SOC reality of 2026: cloud telemetry, hunting instead of waiting on alerts, and working out what to do when half your tooling suddenly has an AI feature bolted on. If that's the chair you sit in, or want to, the refresh is aimed at you.</p>
+<p>One thing not to overthink, but to plan around: test-prep churn. New exam versions always arrive before the third-party practice questions and courses fully catch up. If you go for CS0-004 in its first month, lean on CompTIA's own objectives document over a hastily updated cram deck, and expect the AI and cloud sections to be the thinnest part of any third-party prep until the market fills them in.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Models Are Coming to Oracle Cloud&apos;s Prepaid Credits</title>
+      <link>https://sabr-labs.com/article/openai-oracle-cloud-universal-credits-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-oracle-cloud-universal-credits-june-2026</guid>
+      <pubDate>Thu, 11 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>Oracle</category>
+      <category>Codex</category>
+      <category>Enterprise AI</category>
+      <category>Cloud</category>
+      <description>Oracle Cloud customers will soon be able to spend their existing Universal Credits on OpenAI&apos;s models and Codex, turning a procurement headache into a budgeting line item.</description>
+      <content:encoded><![CDATA[<p>OpenAI wants to sell its models to companies that never signed up for OpenAI. Its new deal with Oracle is how.</p>
+<p>Under the partnership, Oracle Cloud Infrastructure customers will be able to spend their existing Oracle Universal Credits, the prepaid cloud commitments many enterprises already buy in bulk, on OpenAI's frontier models and its Codex coding agent. The models will be offered through the OCI Marketplace, and OpenAI says access arrives in the coming weeks.</p>
+<p>There's no new model here and no new capability. What's new is the procurement path. For a large company, the friction in adopting OpenAI usually isn't technical; it's the legal and purchasing overhead of onboarding another vendor. Letting teams draw down a cloud commitment they already signed off on removes a step that quietly kills plenty of pilots before they start.</p>
+<p>The two companies are already deep in business together. Oracle is one of the main compute providers behind OpenAI's data-center buildout, the Stargate effort, so wiring OpenAI's models into Oracle's marketplace is the customer-facing other half of an infrastructure deal that was mostly about who rents whom servers. This turns that plumbing into a sales channel.</p>
+<p>It also tightens the knot. Every credit an Oracle customer spends on GPT through OCI is a credit they don't spend on a competing model, and it deepens the dependency between one cloud and one model vendor. Convenient for buyers today, and worth remembering the next time someone argues the AI market is still wide open.</p>
+<p>For engineers the practical read is simple. If your shop runs on Oracle Cloud, getting GPT-class models and Codex into a project is about to be a budgeting question instead of a procurement project. That's a smaller change than a new model, and for a lot of teams it will matter more.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA: Patch the Actively Exploited SolarWinds Serv-U Flaw by June 19</title>
+      <link>https://sabr-labs.com/article/solarwinds-serv-u-cve-2026-28318-kev-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-serv-u-cve-2026-28318-kev-exploited</guid>
+      <pubDate>Thu, 11 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SolarWinds</category>
+      <category>Serv-U</category>
+      <category>CISA KEV</category>
+      <category>CVE</category>
+      <category>Denial of Service</category>
+      <description>CVE-2026-28318 lets an unauthenticated attacker crash SolarWinds Serv-U with a single crafted POST request, and CISA has set a June 19 deadline to fix it.</description>
+      <content:encoded><![CDATA[<p>SolarWinds is back on CISA's exploited-vulnerabilities list, this time for a flaw that lets an unauthenticated attacker knock its Serv-U file-transfer server offline with a single crafted request.</p>
+<p>CVE-2026-28318 is an uncontrolled resource consumption bug. A remote attacker with no credentials can trigger it by sending an HTTP POST request carrying a Content-Encoding: deflate header, which forces Serv-U to chew through resources until the service crashes. Every version up to and including 15.5.4 is affected. SolarWinds fixed it in Serv-U 15.5.4 Hotfix 1.</p>
+<p>It's a denial-of-service bug, not remote code execution, so nobody is stealing files through this one directly. But Serv-U is managed file-transfer software, the kind of appliance that sits at the edge of a network moving sensitive data between partners. Knocking it down on demand is disruptive on its own, and DoS against file-transfer gear has a habit of being either a precursor or a distraction.</p>
+<p>CISA added the bug to its Known Exploited Vulnerabilities catalog on June 5 and gave federal civilian agencies until June 19 to patch. That window is nearly shut. A KEV listing isn't theoretical: CISA only adds bugs it has evidence are being used in real attacks.</p>
+<p>Serv-U has been here before. The same product showed up in CISA's catalog for a path-traversal flaw in 2024 and a remote-code-execution bug in 2021 that was tied to state-linked activity. For software whose entire job is to sit exposed and move files, that's a track record worth weighing when you decide how fast to act.</p>
+<p>If you run Serv-U, get to 15.5.4 Hotfix 1. If you can't patch right away, SolarWinds and CISA point to the same stopgaps: put the service behind a WAF or firewall so only known addresses can reach it, and block POST requests that include a content-encoding header. Neither is a real substitute for the fix.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Researcher Drops &apos;RoguePlanet&apos; Defender Zero-Day Hours After Patch Tuesday</title>
+      <link>https://sabr-labs.com/article/microsoft-defender-rogueplanet-zero-day-system-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-rogueplanet-zero-day-system-june-2026</guid>
+      <pubDate>Thu, 11 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft Defender</category>
+      <category>Zero-Day</category>
+      <category>Windows</category>
+      <category>Privilege Escalation</category>
+      <category>Patch Tuesday</category>
+      <description>A working exploit called RoguePlanet escalates a local user to SYSTEM on fully patched Windows 10 and 11 through a Microsoft Defender race condition, and there&apos;s no fix yet.</description>
+      <content:encoded><![CDATA[<p>Hours after Microsoft shipped its June Patch Tuesday this week, a researcher published a working exploit for a Defender bug Microsoft hasn't patched at all.</p>
+<p>The exploit, called RoguePlanet, abuses a race condition in Microsoft Defender's quarantine pipeline to escalate a local user to SYSTEM, the highest privilege level on Windows. The researcher, who goes by Nightmare Eclipse, says it works on fully patched Windows 10 and Windows 11. There's no CVE assigned and no fix available.</p>
+<p>This is local privilege escalation, not remote code execution, so an attacker needs a foothold on the machine first. But that's exactly the second stage of most intrusions: phish a user, land as a low-privilege account, then climb. A reliable SYSTEM escalation that survives a fully updated Defender install is the kind of primitive ransomware crews and access brokers pay real money for.</p>
+<p>RoguePlanet isn't this researcher's first drop. Microsoft has already patched a run of Defender bugs Nightmare Eclipse disclosed: RedSun (CVE-2026-41091, fixed out-of-band on May 21 and later added to CISA's known-exploited list), UnDefend (CVE-2026-45498), and BlueHammer (CVE-2026-33825), all reported as exploited in the wild before patches landed.</p>
+<p>The researcher has been blunt about the motive. Nightmare Eclipse frames the public drops as a response to how Microsoft handled earlier reports, citing a disclosure process that let bugs sit and a working relationship that went bad. Whatever the rights and wrongs, the practical result is that defenders are learning about a SYSTEM-level Defender flaw from exploit code instead of an advisory.</p>
+<p>Microsoft hadn't issued guidance as of this writing. Until it does, the usual containment holds: tighten local admin rights, watch for odd Defender child processes spawning with SYSTEM privileges, and treat any machine an attacker can already touch as a machine they can own. If exploitation picks up, expect an out-of-band patch rather than a wait for July.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SpaceX Prices the Largest IPO Ever, Debuts on Nasdaq Tomorrow</title>
+      <link>https://sabr-labs.com/article/spacex-ipo-nasdaq-debut-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-ipo-nasdaq-debut-june-2026</guid>
+      <pubDate>Thu, 11 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SpaceX</category>
+      <category>IPO</category>
+      <category>Starlink</category>
+      <category>xAI</category>
+      <category>Nasdaq</category>
+      <category>Elon Musk</category>
+      <description>SpaceX set its IPO at $135 a share, a $1.77 trillion valuation that raises about $75 billion and makes it the seventh-biggest US company before it has even started trading.</description>
+      <content:encoded><![CDATA[<p>Seventy-five billion dollars. That's what SpaceX is set to raise when shares start trading on the Nasdaq tomorrow under the ticker SPCX, in what will be the largest initial public offering ever recorded.</p>
+<p>SpaceX priced the offering at $135 a share and is selling about 555.6 million shares. At that price the company is valued at roughly $1.77 trillion, more than triple the size of Alibaba's 2014 listing, the previous record for a US debut. SpaceX would immediately rank as the seventh-largest US company by market cap, sitting above Tesla, Musk's other big holding, which is worth around $1.6 trillion.</p>
+<p>The thing going public isn't just rockets. Musk merged SpaceX with his AI company xAI in February in a deal that valued the combined business at $1.25 trillion, so the shares cover three operations at once: the launch business, the Starlink satellite-internet network, and the xAI unit behind the Grok models. Anyone buying SPCX is buying all of it in a single ticket.</p>
+<p>Musk will hold over 82% of the voting power after the offering. Public shareholders get the upside and almost no say in how the company is run. That arrangement has become standard for founder-led tech listings, but the gap here is wide even by that bar.</p>
+<p>Starlink is the part carrying the valuation. Recurring subscription revenue across millions of terminals is the closest thing SpaceX has to a predictable cash machine, and it's what lets bankers justify a number that would be hard to defend for a launch company alone. The rocket side is still capital-hungry, and Starship's reusable economics look promising but aren't yet proven at the flight cadence the model assumes.</p>
+<p>For index funds, the debut creates an immediate headache. A company this size joining public markets means trillions in passively managed money will have to buy SPCX whether the managers love the price or not. Plenty of retail investors will own a slice of SpaceX by tomorrow afternoon without ever choosing to.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CCNA v2.0 Lands February 2027: Troubleshooting Is Back and AI Is In</title>
       <link>https://sabr-labs.com/article/ccna-v2-2027-what-changes</link>
@@ -890,104 +991,6 @@
 <p>Initial forensic analysis indicates the attackers gained access through a remote desktop protocol connection that had been left open for an IT contractor working on building management systems — a network segment that had improper firewall rules allowing lateral movement into the operational technology network.</p>
 <p>The attack is the third documented intrusion into U.S. water sector ICS this year, following incidents in Kansas City in January and Sacramento in March. Cybersecurity researchers have attributed two of the three incidents to the same infrastructure cluster assessed to be linked to a Chinese state-sponsored group focused on mapping and pre-positioning in critical infrastructure.</p>
 <p>CISA's ICS-CERT division has issued emergency guidance for all water utilities nationwide, mandating immediate audit of remote access paths into OT networks, disabling of unnecessary internet-exposed services on SCADA systems, and implementation of network segmentation between IT and OT environments. The Water ISAC is coordinating peer-to-peer IOC sharing across the sector.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Are SANS GIAC Certifications Worth the Price? An Honest Assessment</title>
-      <link>https://sabr-labs.com/article/sans-giac-certifications-worth-it</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sans-giac-certifications-worth-it</guid>
-      <pubDate>Mon, 06 Apr 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>SANS</category>
-      <category>GIAC</category>
-      <category>GCIH</category>
-      <category>GPEN</category>
-      <category>Certification</category>
-      <category>Incident Response</category>
-      <category>Penetration Testing</category>
-      <description>GIAC certifications cost three to four times more than most competitors — but for specialized offensive and defensive security roles, the premium may be justified.</description>
-      <content:encoded><![CDATA[<p>The SANS Institute's GIAC (Global Information Assurance Certification) program is widely considered the gold standard for specialized cybersecurity certifications, particularly in incident response, penetration testing, digital forensics, and industrial control systems security. They are also, consistently, among the most expensive certifications available — a single GIAC exam attempt costs $979, and the associated SANS course (strongly recommended, not required) typically runs $5,000–$8,500 for in-person or $3,000–$5,000 for on-demand.</p>
-<p>What justifies the price is specificity and depth. The GIAC Security Essentials (GSEC), GIAC Certified Incident Handler (GCIH), GIAC Certified Enterprise Defender (GCED), GIAC Penetration Tester (GPEN), and GIAC Exploit Researcher and Advanced Penetration Tester (GXPN) certifications test knowledge that is genuinely difficult to acquire through general study — they require deep understanding of how attacks work at a technical level and are built around current, practitioner-developed curriculum.</p>
-<p>The GIAC FOR508 (Advanced Incident Response, Threat Hunting, and Digital Forensics) and FOR610 (Reverse-Engineering Malware) courses and their associated certifications (GCFE, GREM) are widely cited as the best training available for those specific disciplines, period — not just among certifications, but compared to any training format. Many incident response teams and government agencies fund these specifically.</p>
-<p>The open-book exam format is distinctive and controversial. GIAC allows candidates to bring two printed reference books into the exam, which shifts the test from pure memorization to applied knowledge under time pressure. Most candidates who fail do so because they ran out of time, not because they lacked knowledge — the exams are designed to be hard even with references.</p>
-<p>The honest assessment: for most entry-to-mid-level candidates, the price is difficult to justify out of pocket. CompTIA certifications, the OSCP, or vendor certs offer better ROI at that career stage. For experienced professionals targeting specialized SOC, IR, or penetration testing roles — or whose employer will fund the training — SANS GIAC certifications are among the most credible and respected credentials available and consistently appear in job postings for senior security roles at financial institutions, government contractors, and MSSPs.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Blue Origin&apos;s New Glenn Rocket Cleared for Mars Mission Payload in 2028</title>
-      <link>https://sabr-labs.com/article/blue-origin-new-glenn-mars-mission</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/blue-origin-new-glenn-mars-mission</guid>
-      <pubDate>Mon, 06 Apr 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>Blue Origin</category>
-      <category>New Glenn</category>
-      <category>Mars</category>
-      <category>NASA</category>
-      <category>Space Exploration</category>
-      <description>Jeff Bezos&apos; rocket company secures NASA contract to deliver scientific instruments to Mars orbit — validating New Glenn as a deep space vehicle.</description>
-      <content:encoded><![CDATA[<p>Blue Origin announced today that NASA has awarded the company a $1.4 billion contract to launch the Mars Atmospheric Research Mission (MARM) payload aboard New Glenn in late 2028, marking the first time Blue Origin's heavy-lift rocket has been contracted for a deep space science mission.</p>
-<p>New Glenn has completed five consecutive successful orbital launches since its certification flight in 2025, including the delivery of a commercial communications satellite to GEO and three Kuiper broadband satellites. The Mars mission will require a significantly upgraded upper stage — the BE-3U — capable of delivering the 2,800kg MARM spacecraft on a trans-Mars injection trajectory.</p>
-<p>The MARM mission will study Martian atmospheric dust and climate patterns that affect surface conditions and human landing site selection. The mission's science team, led by researchers from the University of Colorado Boulder and JPL, will operate the spacecraft remotely from a new mission control facility at Blue Origin's Kent, Washington campus.</p>
-<p>New Glenn's selection over SpaceX's Falcon Heavy for this mission reflects NASA's policy of cultivating multiple domestic launch providers to reduce single-vendor dependency. SpaceX's Starship remains under contract for larger Mars cargo missions planned for the 2030s.</p>
-<p>Jeff Bezos, who founded Blue Origin with the explicit long-term goal of enabling human presence in space, described the contract as 'a milestone 25 years in the making.' Blue Origin is also pursuing an Artemis program lunar lander contract as it builds out New Glenn's manifest for the remainder of the decade.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI-Powered Deepfake Voice Fraud Steals $25M from Finance Director in 4 Minutes</title>
-      <link>https://sabr-labs.com/article/phishing-ai-deepfake-ceo-fraud</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/phishing-ai-deepfake-ceo-fraud</guid>
-      <pubDate>Mon, 06 Apr 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Deepfake</category>
-      <category>BEC</category>
-      <category>Social Engineering</category>
-      <category>AI Fraud</category>
-      <category>Voice Cloning</category>
-      <description>Attackers used a real-time voice cloning model to impersonate the CEO on a live call — the most sophisticated BEC attack ever documented.</description>
-      <content:encoded><![CDATA[<p>A finance director at a Singaporean manufacturing conglomerate transferred $25 million to overseas accounts after a phone call she believed was from her CEO — but the voice was entirely generated by an AI system in real time. The incident, disclosed by cybersecurity firm Group-IB, represents a significant evolution in business email compromise (BEC) fraud beyond recorded deepfake video calls.</p>
-<p>The attack used a custom real-time voice synthesis model fine-tuned on 20 hours of the CEO's publicly available interview recordings, board presentations, and earnings calls — all freely accessible online. The model allowed attackers to respond dynamically to the victim's questions with synthesized speech indistinguishable from the real executive, maintaining a natural 4-minute conversation.</p>
-<p>The victim became suspicious only after the transaction was processed and she mentioned the call to a colleague. The CEO confirmed he had made no such call. By the time fraud alerts were raised, the funds had been routed through three intermediary accounts in the United Arab Emirates and Hong Kong.</p>
-<p>Law enforcement has frozen approximately $4.5 million across the chain. Interpol's Financial Crimes division is coordinating the investigation across four jurisdictions. The remainder of the funds are believed to have been converted to cryptocurrency.</p>
-<p>Enterprises are urgently reviewing voice authentication processes for financial wire approvals. Security vendors including Pindrop and Nuance are marketing voice liveness detection products specifically designed to flag synthetic speech. The FBI's IC3 has issued a warning to financial sector companies about the prevalence of this attack vector, which it has documented in 340 incidents totaling $180 million in losses over the past 12 months.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Samsung&apos;s 2nm Process Node: Can It Break TSMC&apos;s Stranglehold on Advanced Chips?</title>
-      <link>https://sabr-labs.com/article/samsung-galaxy-ai-chip-manufacturing</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/samsung-galaxy-ai-chip-manufacturing</guid>
-      <pubDate>Sun, 05 Apr 2026 16:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Samsung</category>
-      <category>TSMC</category>
-      <category>Semiconductor</category>
-      <category>Chips</category>
-      <category>Manufacturing</category>
-      <category>AI</category>
-      <description>Samsung&apos;s GAA-FET 2nm production ramp has reached 60% yield — closing the gap with TSMC and potentially reshuffling the entire semiconductor supply chain.</description>
-      <content:encoded><![CDATA[<p>Samsung Foundry announced that its 2nm SF2 process node has reached commercial-ready yield rates, clearing a critical milestone that validates Samsung as a competitive alternative to TSMC for next-generation chip manufacturing. The achievement ends two years of yield struggles that had cost Samsung several high-profile customer relationships.</p>
-<p>TSMC currently produces the overwhelming majority of the world's most advanced logic chips, including Apple's A-series, Nvidia's GPUs, and AMD's processors. Its 2nm N2 process entered risk production last quarter. Samsung's competing SF2 uses a similar gate-all-around FET transistor architecture that offers better power efficiency than the previous FinFET generation.</p>
-<p>Two major chip design companies have placed initial volume orders with Samsung SF2, according to sources familiar with the negotiations. While names were not disclosed, analysts believe Qualcomm and Google's custom silicon division (responsible for Tensor chips) are the most likely customers given their known interest in supply chain diversification.</p>
-<p>The geopolitical implications are significant. U.S. CHIPS Act policy explicitly encourages domestic chip production and allied-nation manufacturing capacity. Samsung's Kentucky facility is scheduled to begin construction of an advanced packaging facility this year, though leading-edge logic manufacturing will remain in South Korea for the foreseeable future.</p>
-<p>For the AI chip supply chain, the ability of Samsung to compete with TSMC at 2nm provides Nvidia, AMD, and custom AI chip designers with meaningful leverage in contract negotiations and protection against the single-point-of-failure risk that a Taiwan crisis would represent for global technology.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>NIST Finalizes Post-Quantum Standards: What Organizations Must Do Now</title>
-      <link>https://sabr-labs.com/article/post-quantum-cryptography-migration-guide</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/post-quantum-cryptography-migration-guide</guid>
-      <pubDate>Sat, 04 Apr 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Post-Quantum</category>
-      <category>Cryptography</category>
-      <category>NIST</category>
-      <category>CRYSTALS-Kyber</category>
-      <category>Security Standards</category>
-      <description>With CRYSTALS-Kyber and CRYSTALS-Dilithium now standard, enterprises face a multi-year cryptographic migration that cannot wait for quantum threats to materialize.</description>
-      <content:encoded><![CDATA[<p>NIST finalized its post-quantum cryptography standards in a Federal Register publication this week, formally designating CRYSTALS-Kyber (for key encapsulation) and CRYSTALS-Dilithium (for digital signatures) as the required standards for federal systems. The finalization triggers mandatory compliance timelines for government contractors and strongly influences enterprise cryptographic strategy.</p>
-<p>The urgency stems from 'harvest now, decrypt later' attacks — a strategy where nation-state adversaries are actively collecting encrypted data today with the intention of decrypting it once sufficiently capable quantum computers are available. Security experts estimate quantum computers capable of breaking RSA-2048 are 5-15 years away, but data classified for 15+ years of confidentiality must be protected now.</p>
-<p>Migration is technically complex. TLS, SSH, PKI certificates, VPN tunnels, code signing, and hardware security modules all require updates. Many embedded systems and OT devices cannot be field-updated and will need hardware replacement. A phased migration prioritizing highest-sensitivity data channels is recommended.</p>
-<p>Major vendors are moving quickly. Cloudflare enabled hybrid PQC key exchange (combining classical ECDH with CRYSTALS-Kyber) for all TLS 1.3 connections by default. Apple added PQC support to iMessage in 2024. Google enabled hybrid PQC in Chrome 114 and is planning full Kyber support in Chrome 132.</p>
-<p>CISA's post-quantum roadmap recommends organizations complete a cryptographic inventory in 2026, prioritize critical system migration in 2027-2028, and achieve full PQC deployment by 2030. For most organizations, this represents the largest cryptographic infrastructure project since the migration from SHA-1 to SHA-256 — but with tighter stakes.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
