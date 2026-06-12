@@ -6,9 +6,110 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jun 2026 17:33:58 GMT</lastBuildDate>
-    <pubDate>Thu, 11 Jun 2026 17:33:58 GMT</pubDate>
+    <lastBuildDate>Fri, 12 Jun 2026 13:16:54 GMT</lastBuildDate>
+    <pubDate>Fri, 12 Jun 2026 13:16:54 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>KKR and Nvidia Put $10B Into a Company to Fix Stalled AI Data Centers</title>
+      <link>https://sabr-labs.com/article/kkr-helix-digital-infrastructure-ai-data-centers-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/kkr-helix-digital-infrastructure-ai-data-centers-june-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>KKR</category>
+      <category>Nvidia</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>Vistra</category>
+      <category>Adam Selipsky</category>
+      <description>KKR, Nvidia, Vistra, and Kuwait&apos;s sovereign fund launched Helix Digital Infrastructure with more than $10 billion to build the power and data centers hyperscalers keep announcing but failing to deliver.</description>
+      <content:encoded><![CDATA[<p>There's a gap between the data centers companies announce and the ones that actually come online. KKR just put more than $10 billion behind closing it.</p>
+<p>On June 11, KKR, Nvidia, Vistra, and the Kuwait Investment Authority launched Helix Digital Infrastructure, a company built to finance and deliver AI infrastructure for hyperscale customers. The pitch is integration: bundle data center capacity, power, connectivity, and the services around them into one package, instead of making a hyperscaler stitch those pieces together itself. Nvidia comes in as the strategic technology partner, and Vistra as the preferred power supplier.</p>
+<p>Running it is Adam Selipsky, who used to be CEO of Amazon Web Services. He isn't pretending the buildout is going smoothly. By his account, more than a quarter of announced data center projects aren't getting delivered, and Helix exists to attack that delivery gap rather than to add another splashy capacity number to the pile.</p>
+<p>Selipsky's point about undelivered projects is the honest part of an otherwise familiar story. The constraint on AI infrastructure stopped being chips a while ago and became power, permits, and the ability to actually finish construction. Money keeps pouring in regardless. KKR's $10 billion lands the same week Amazon reportedly lined up $17.5 billion in bank loans and Google signed a compute deal with SpaceX worth about $920 million a month. A lot of capital is chasing the same scarce megawatts.</p>
+<p>For everyone who isn't a hyperscaler, this is the plumbing of the AI boom getting financialized. Whether Helix delivers faster than the projects Selipsky is criticizing is the thing to watch. The capital is clearly available. Turning it into powered, online racks is the part that keeps slipping.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Built Its Own Frontier Models. The Target Is OpenAI&apos;s Bill.</title>
+      <link>https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</guid>
+      <pubDate>Fri, 12 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Microsoft</category>
+      <category>MAI</category>
+      <category>Artificial Intelligence</category>
+      <category>OpenAI</category>
+      <category>Azure</category>
+      <category>LLM</category>
+      <description>Microsoft&apos;s seven new in-house MAI models, led by the reasoning model MAI-Thinking-1, are built to run on Azure without licensing fees, and the strategy matters more than the benchmarks.</description>
+      <content:encoded><![CDATA[<p>Microsoft spent years reselling OpenAI's models as its own AI products. At Build this month it showed the alternative it's been building quietly: seven models trained in-house, headlined by MAI-Thinking-1, its first reasoning model.</p>
+<p>MAI-Thinking-1 is a sparse mixture-of-experts model with about 35 billion active parameters out of roughly a trillion total, and a 256,000-token context window. Microsoft says it was trained on commercially licensed data with no distillation from third-party models, OpenAI's included. Alongside it: MAI-Code-1-Flash, a small 5-billion-parameter coding model headed into VS Code and GitHub Copilot, plus image, transcription, and voice models.</p>
+<p>The benchmark line Microsoft is pushing is that in blind human comparisons MAI-Thinking-1 was preferred over Anthropic's Claude Sonnet 4.6 and held its own against Claude Opus 4.6 on SWE Bench Pro coding tasks. Take that the way you take any vendor's own evals: directionally interesting, not independent proof. "Preferred in blind tests we ran" is a claim, not a leaderboard.</p>
+<p>The benchmarks aren't the point anyway. The point is the bill. Every time Microsoft serves an OpenAI model, it pays for that model. Running its own models on Azure cuts the royalty out, and Satya Nadella framed the shift as moving from "consuming a frontier model to fully participating at the frontier." For developers, the promised payoff is lower per-token pricing. For Microsoft, it's options in a partnership that has grown lopsided, and room to negotiate the next OpenAI deal from a stronger position.</p>
+<p>None of this means Microsoft is dropping OpenAI. GPT models still sit at the center of Copilot, and Microsoft has every reason to keep that relationship going. But a company that can credibly run its own frontier-class models is a different kind of partner than one that can't. That's the message Build was really sending.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Exploiting a Netlogon Bug That Owns Domain Controllers</title>
+      <link>https://sabr-labs.com/article/windows-netlogon-cve-2026-41089-domain-controller-rce-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/windows-netlogon-cve-2026-41089-domain-controller-rce-exploited</guid>
+      <pubDate>Fri, 12 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Windows Server</category>
+      <category>Netlogon</category>
+      <category>CVE-2026-41089</category>
+      <category>Active Directory</category>
+      <category>Domain Controller</category>
+      <description>CVE-2026-41089, a 9.8-rated unauthenticated Netlogon flaw Microsoft patched in May, is now under active exploitation against domain controllers, and Belgium&apos;s cyber agency is sounding louder alarms than Redmond.</description>
+      <content:encoded><![CDATA[<p>Microsoft patched it in May. Attackers are using it now. CVE-2026-41089 is a critical hole in the Windows Netlogon service, and the gap between the fix and the exploitation is exactly where unpatched domain controllers live.</p>
+<p>The flaw is a stack-based buffer overflow in how Netlogon handles inbound RPC requests. A crafted packet with a malformed length field writes past the buffer and overwrites the return address on the stack. Because the Netlogon RPC interface is exposed on every domain controller by design, no authentication is needed to reach the vulnerable code. It carries a 9.8 CVSS score and affects Windows Server from 2012 through 2025.</p>
+<p>Successful exploitation runs code inside the LSASS process on a domain controller. In practical terms, that's the whole Active Directory forest. Whoever lands this owns the directory that authenticates everything else.</p>
+<p>What makes this one notable is who's doing the warning. Belgium's Centre for Cybersecurity confirmed active exploitation on June 1 and told organizations to treat it as an emergency, roughly three weeks after Microsoft's May Patch Tuesday shipped the fix. The CCB's messaging has been blunter and more urgent than Microsoft's own, and there's been visible friction between the two over how the bug was communicated. When a national CSIRT is shouting louder than the vendor, that tells you how seriously to take it.</p>
+<p>If your domain controllers aren't on the May 2026 cumulative update, that's the job for today. Netlogon RPC can't simply be firewalled off internally without breaking authentication, so patching is the real fix, not network controls. Confirm every DC is current, and review logs for unusual Netlogon RPC traffic and LSASS crashes that could mark a failed exploit attempt.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Perfect-10 Ivanti Sentry Bug Is Already Backdooring Gateways</title>
+      <link>https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ivanti</category>
+      <category>Ivanti Sentry</category>
+      <category>CVE-2026-10520</category>
+      <category>CISA KEV</category>
+      <category>Command Injection</category>
+      <category>Zero-Day</category>
+      <description>CVE-2026-10520, an unauthenticated command-injection flaw in Ivanti Sentry rated a maximum 10.0, is under active exploitation, and CISA gave federal agencies until June 14 to patch.</description>
+      <content:encoded><![CDATA[<p>A CVSS score of 10.0 is rare. Ivanti Sentry just earned one, and attackers were on it within a day.</p>
+<p>Ivanti's June 9 advisory covers two bugs. CVE-2026-10520 is an OS command injection flaw that lets an unauthenticated remote attacker run code as root, and it sits at the maximum 10.0 severity. The second, CVE-2026-10523, is an authentication bypass at 9.9 that lets an attacker create their own admin accounts. Either one alone is bad. Chained, they hand over the box.</p>
+<p>Sentry is the gateway that brokers access between mobile devices and an organization's internal mail and app servers, so it's exposed on purpose and it sits in a trusted spot on the network. That's the worst combination for a pre-auth root flaw. Affected versions are 10.5.1, 10.6.1, 10.7.0 and earlier; the fixes are in 10.5.2, 10.6.2, and 10.7.1.</p>
+<p>This isn't theoretical. After watchTowr published a proof-of-concept, the Shadowserver Foundation started seeing exploitation attempts and confirmed backdoored gateways within 24 hours. CISA added CVE-2026-10520 to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies just three days to patch, with a deadline of June 14.</p>
+<p>Three days is CISA's way of saying this is on fire. Patch to the fixed releases now. If your Sentry was internet-facing and unpatched at any point this week, don't just patch and move on. Assume compromise, look for new admin accounts and unexpected processes running as root, and rotate any credentials that gateway could reach.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ShinyHunters Hit 100+ Orgs Through an Oracle PeopleSoft Zero-Day</title>
+      <link>https://sabr-labs.com/article/oracle-peoplesoft-cve-2026-35273-shinyhunters-universities-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-peoplesoft-cve-2026-35273-shinyhunters-universities-june-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>PeopleSoft</category>
+      <category>ShinyHunters</category>
+      <category>Zero-Day</category>
+      <category>CVE-2026-35273</category>
+      <category>Data Breach</category>
+      <description>Oracle&apos;s out-of-band alert for CVE-2026-35273, a 9.8-rated unauthenticated RCE in PeopleSoft PeopleTools, lands after ShinyHunters had already used it to breach more than 100 organizations, most of them universities.</description>
+      <content:encoded><![CDATA[<p>More than a hundred organizations got breached before the vendor said a word. That's the shape of the Oracle PeopleSoft attack that came to light this week.</p>
+<p>On June 10 Oracle put out an out-of-band Security Alert for CVE-2026-35273, a flaw in PeopleSoft Enterprise PeopleTools versions 8.61 and 8.62. It's rated 9.8 on the CVSS scale: remote code execution, no authentication, no user interaction. An attacker who can reach the server over HTTP can run code on it. Because the attacks started before the alert went out, this was a true zero-day.</p>
+<p>Google's Threat Intelligence Group and Mandiant tied the campaign to UNC6240, the crew that operates under the ShinyHunters name. They tracked the activity between May 27 and June 9, and the stolen data started showing up on the group's leak site on June 9. By the attackers' own count the campaign hit more than 100 organizations. Sixty-eight percent of the victims were in higher education, most of them in the United States.</p>
+<p>The tradecraft is worth a look. The attackers stood up MeshCentral remote-management servers dressed up to look like legitimate cloud endpoints, registered a lookalike domain, and pushed a custom script to spread across networks and deface systems. This wasn't a smash-and-grab. It was a staged extortion operation that treated PeopleSoft as the front door to HR and student records.</p>
+<p>There's a catch buried in Oracle's response. The alert points customers to a patch document, but that document sits behind a support login, so it isn't obvious to outsiders whether a full fix is even shipping yet. Oracle's headline guidance is mitigation: disable the Environment Management Hub service, or remove the PSEMHUB application entirely on single-server setups. Telling customers to rip out a component is not the same as handing them a patch.</p>
+<p>If you run PeopleSoft, treat any internet-facing instance as suspect. Apply Oracle's mitigations now, hunt for unfamiliar MeshCentral agents and outbound connections to odd domains, and assume the EMHub component is the path attackers will try first. Education IT teams especially should check today, because that's where the attackers spent most of their time.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CompTIA CySA+ V4 Lands June 23: Sit the Old Exam or Wait?</title>
       <link>https://sabr-labs.com/article/comptia-cysa-plus-v4-cs0-004-june-2026</link>
@@ -892,105 +993,6 @@
 <p>SpaceX responded that TLS-encrypted sessions are not at risk from the attack and that Starlink terminals authenticate satellite downlinks via software in the network stack above the physical layer. The researchers countered that this assumes all traffic is TLS-encrypted, which is not the case for all IoT device traffic on Starlink-connected networks.</p>
 <p>The broader implication extends beyond Starlink to OneWeb, Amazon Kuiper, and SES O3b mPOWER networks — all of which use similar physical layer standards. ETSI, the European telecommunications standards body, confirmed it is expediting a working group to address the vulnerability in the DVB-S2X standard revision.</p>
 <p>For enterprise users of satellite broadband, security teams should ensure all traffic is routed through encrypted VPN tunnels and audit any IoT or OT devices on satellite-connected networks for unencrypted communications. A firmware mitigation is being developed by SpaceX and expected for deployment in Q3.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Gemini Ultra 2 Achieves Human-Level Performance on Medical Diagnosis Benchmarks</title>
-      <link>https://sabr-labs.com/article/google-gemini-ultra-2-multimodal</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-ultra-2-multimodal</guid>
-      <pubDate>Wed, 08 Apr 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>AI</category>
-      <category>Healthcare</category>
-      <category>Medical AI</category>
-      <category>DeepMind</category>
-      <description>DeepMind&apos;s flagship model correctly diagnosed 89% of clinical cases in a blinded study — outperforming board-certified physicians in radiology and pathology.</description>
-      <content:encoded><![CDATA[<p>Google DeepMind released Gemini Ultra 2, the company's most capable AI model, alongside a landmark medical study demonstrating human-level performance in clinical diagnosis tasks. In a double-blinded evaluation involving 2,400 clinical cases across radiology, pathology, dermatology, and internal medicine, Gemini Ultra 2 achieved an 89.4% accuracy rate versus 86.1% for a panel of board-certified physicians.</p>
-<p>The model's strongest performance was in radiology, where it correctly interpreted CT and MRI scans with 93.7% accuracy versus 84.2% for radiologists — and flagged incidental findings that were subsequently confirmed in follow-up imaging. In dermatology, the model correctly classified skin lesions from photography with 91.2% accuracy, comparable to dermatologists in controlled conditions.</p>
-<p>Critically, the study was conducted under rigorous clinical evaluation protocols with independent statistical review by researchers at Johns Hopkins and the University of Edinburgh who had no financial relationship with Google. The paper has been submitted to the New England Journal of Medicine.</p>
-<p>The FDA has not cleared Gemini Ultra 2 for clinical decision support. Google announced a partnership with Mayo Clinic and Cleveland Clinic to begin FDA de novo pathway submissions for specific diagnostic assistance indications — a process that typically takes 2-3 years. The company emphasized the model is intended as a physician augmentation tool, not a replacement.</p>
-<p>Gemini Ultra 2 is available via the Google AI Ultra API tier and through Vertex AI for enterprise healthcare customers. The model supports native image, text, audio, and video input and maintains a 1M token context window.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA CASP+ vs. CISSP: Which Advanced Security Cert Fits Your Career Path?</title>
-      <link>https://sabr-labs.com/article/comptia-casp-plus-vs-cissp-comparison</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-casp-plus-vs-cissp-comparison</guid>
-      <pubDate>Wed, 08 Apr 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>CASP+</category>
-      <category>CISSP</category>
-      <category>Certification</category>
-      <category>Career</category>
-      <category>Security Architecture</category>
-      <description>Both certifications target senior security professionals, but they serve fundamentally different career trajectories — technical practitioner versus security manager.</description>
-      <content:encoded><![CDATA[<p>CompTIA Advanced Security Practitioner (CASP+) and the (ISC)² Certified Information Systems Security Professional (CISSP) are two of the most respected advanced cybersecurity certifications available, and candidates often struggle to choose between them. The confusion is understandable — both target experienced professionals, both carry significant market recognition, and both validate a broad base of security knowledge. But they are designed for different career trajectories.</p>
-<p>CASP+ (CAS-004) is a practitioner certification. It validates hands-on technical skills at the expert level and is explicitly designed for security engineers, architects, and practitioners who execute technical security work rather than manage it. The exam tests enterprise security architecture, research and collaboration, integration of computing and communications security, and vulnerability management through a heavy emphasis on performance-based questions — scenarios that require candidates to configure systems, analyze logs, or identify vulnerabilities in realistic lab simulations.</p>
-<p>CISSP is a management and architecture certification. While it does require technical breadth (the Common Body of Knowledge spans 8 domains including cryptography, identity management, and security architecture), its exam questions are consistently framed from a managerial perspective. The 'best answer' on CISSP questions is almost always the option a CISO or security director would choose — prioritizing risk management, business alignment, and policy over specific technical implementation.</p>
-<p>The experience requirements differ significantly. CISSP requires 5 years of paid, full-time security work experience in at least two of its eight domains. CASP+ has no formal experience prerequisite, though CompTIA recommends 10 years of IT experience including 5 in security — this is guidance, not a barrier to sitting the exam. The investment also differs: CASP+ costs $494 per attempt; CISSP costs $699 per attempt and requires annual maintenance fees of $125.</p>
-<p>For career guidance: if you want to remain a hands-on technical contributor — senior security engineer, architect, penetration tester, or security researcher — CASP+ validates that path. If you are moving toward security management, GRC, CISO, or compliance roles, CISSP is the recognized credential for that trajectory. Many senior professionals hold both, but if choosing only one, let your intended role guide the decision.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>EU AI Act Enforcement Begins: First Three Companies Fined Under New Regime</title>
-      <link>https://sabr-labs.com/article/ai-regulation-eu-act-enforcement</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ai-regulation-eu-act-enforcement</guid>
-      <pubDate>Tue, 07 Apr 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>EU AI Act</category>
-      <category>AI Regulation</category>
-      <category>Compliance</category>
-      <category>Europe</category>
-      <category>Governance</category>
-      <description>The European AI Office issues fines totaling €47M against a facial recognition provider and two recruitment AI platforms for prohibited-use violations.</description>
-      <content:encoded><![CDATA[<p>The European AI Office issued its first enforcement actions under the EU AI Act on Monday, fining three companies a combined €47 million for deploying AI systems categorized as prohibited or high-risk without required conformity assessments or human oversight mechanisms.</p>
-<p>French facial recognition startup ClearSight AI received the largest fine of €28 million for deploying a real-time biometric identification system in public spaces without the narrow law enforcement exception required under Article 5 of the Act. The company offered its technology to 12 European municipalities for public event security without disclosing it fell within the prohibited-use category.</p>
-<p>German HR-tech firm TalentSort received a €12 million fine for using an AI-powered CV screening system that disproportionately filtered out candidates based on gender-correlated features — a violation of the Act's non-discrimination requirements for employment AI and its mandatory bias audit provisions for high-risk systems.</p>
-<p>Danish automated loan approval platform CreditNow received €7 million for failing to implement the required human review process for adverse credit decisions, which the AI Act mandates for consequential automated decision-making. The company had implemented a nominal human oversight step that investigators found was rubber-stamp approval without genuine review capability.</p>
-<p>The European AI Office said these initial enforcements are intended to signal that the Act will be applied uniformly and that grace period accommodations have ended. Companies across Europe are accelerating compliance programs, with major management consulting firms reporting 300% increases in AI compliance advisory engagements since enforcement began.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Getting Started with Juniper: The JNCIA-Junos Certification Guide for 2026</title>
-      <link>https://sabr-labs.com/article/juniper-jncia-junos-certification-guide</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/juniper-jncia-junos-certification-guide</guid>
-      <pubDate>Tue, 07 Apr 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Juniper</category>
-      <category>JNCIA</category>
-      <category>Junos</category>
-      <category>Networking</category>
-      <category>Certification</category>
-      <category>Service Provider</category>
-      <description>Juniper&apos;s associate-level Junos certification is an underrated entry point into enterprise and service provider networking — and it&apos;s cheaper than most competitors.</description>
-      <content:encoded><![CDATA[<p>The Juniper Networks Certified Associate — Junos (JNCIA-Junos) is Juniper's foundational networking certification and serves as the prerequisite for all higher-level Juniper certifications. While Cisco's CCNA dominates mindshare in the enterprise networking space, Juniper's certifications are widely valued in service provider, carrier, and large-enterprise environments where Juniper MX, QFX, and SRX hardware are prevalent.</p>
-<p>The JNCIA-Junos exam (JN0-104) tests knowledge of the Junos OS software architecture, user interface options (CLI), routing fundamentals, routing policy and firewall filters, and Junos network management. Unlike Cisco's IOS, Junos uses a hierarchical configuration structure with a clear separation between candidate configuration and active configuration — a model many engineers find more predictable and auditable once they adapt to it.</p>
-<p>The exam is 90 minutes, 65 multiple-choice questions, and costs $200 USD. Passing score is 65%. Juniper certifications are valid for 3 years. Recertification is achieved by passing a higher-level exam, passing the same exam, or passing any professional or specialist exam in the same track.</p>
-<p>Juniper offers a free self-study path through its Open Learning portal (learningportal.juniper.net), which includes the Junos Associate (JNAS) open learning course — a comprehensive set of self-paced modules that cover all exam objectives. The free Juniper vLabs environment provides access to virtual Junos devices for hands-on practice without physical hardware. CBT Nuggets and INE both offer well-regarded paid JNCIA-Junos courses.</p>
-<p>After JNCIA-Junos, the natural progression splits into tracks: JNCIS-ENT (enterprise routing and switching), JNCIS-SP (service provider), JNCIS-SEC (security, focusing on SRX firewalls), and JNCIS-DevOps (Junos automation). Each JNCIS feeds into a corresponding JNCIP (professional) and JNCIE (expert) track. The JNCIE-SP is widely considered among the most technically rigorous expert-level networking certifications available, comparable to the Cisco CCIE SP.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cyber Attack on Texas Water Utility Causes Chemical Dosing Anomaly, No Public Harm</title>
-      <link>https://sabr-labs.com/article/water-utility-ics-ot-cyberattack</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/water-utility-ics-ot-cyberattack</guid>
-      <pubDate>Tue, 07 Apr 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ICS</category>
-      <category>OT Security</category>
-      <category>Water Infrastructure</category>
-      <category>SCADA</category>
-      <category>Critical Infrastructure</category>
-      <category>CISA</category>
-      <description>A suspected nation-state actor manipulated SCADA systems at a municipal water treatment plant — the third ICS attack on U.S. critical infrastructure this year.</description>
-      <content:encoded><![CDATA[<p>The Environmental Protection Agency and FBI are investigating a cyberattack on the City of Lubbock's municipal water treatment facility that briefly disrupted automated chemical dosing controls, according to a joint advisory issued this morning. The attack, which occurred over a 4-hour window on Saturday night, was detected by plant operators who noticed anomalous pH and chlorine level readings in SCADA monitoring dashboards.</p>
-<p>Plant supervisors immediately switched to manual control and restored normal operations within 35 minutes of detection. Water quality testing conducted at 47 distribution points confirmed that water reaching customers remained within safe parameters throughout the incident. There are no public health impacts.</p>
-<p>Initial forensic analysis indicates the attackers gained access through a remote desktop protocol connection that had been left open for an IT contractor working on building management systems — a network segment that had improper firewall rules allowing lateral movement into the operational technology network.</p>
-<p>The attack is the third documented intrusion into U.S. water sector ICS this year, following incidents in Kansas City in January and Sacramento in March. Cybersecurity researchers have attributed two of the three incidents to the same infrastructure cluster assessed to be linked to a Chinese state-sponsored group focused on mapping and pre-positioning in critical infrastructure.</p>
-<p>CISA's ICS-CERT division has issued emergency guidance for all water utilities nationwide, mandating immediate audit of remote access paths into OT networks, disabling of unnecessary internet-exposed services on SCADA systems, and implementation of network segmentation between IT and OT environments. The Water ISAC is coordinating peer-to-peer IOC sharing across the sector.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
