@@ -2,111 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sabr-labs.com/</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/try</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/compare/boson-netsim-alternative</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/compare/packet-tracer-alternative</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/#certifications</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/#pricing</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/learning</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/news</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/tech-news</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/ai-news</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/cyber-security</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/qod</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/newsletter</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/about</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/contact</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/privacy</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/terms</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/refund</loc>
-    <lastmod>2026-06-12T13:16:54.700Z</lastmod>
+    <lastmod>2026-06-13T04:39:51.268Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/comptia-a-plus-worth-it-2026-220-1201-1202</loc>
+    <lastmod>2026-06-12T08:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/comptia-network-plus-n10-009-worth-it-how-hard-2026</loc>
+    <lastmod>2026-06-12T09:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/aws-solutions-architect-associate-saa-c03-worth-it-2026</loc>
+    <lastmod>2026-06-12T10:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/comptia-security-plus-sy0-701-worth-it-honest-2026</loc>
+    <lastmod>2026-06-12T11:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/article/oracle-peoplesoft-cve-2026-35273-shinyhunters-universities-june-2026</loc>

@@ -34,11 +34,11 @@ const footerLinks = {
   ],
 };
 
+// Only links we can actually honor are shown — dead "#" social icons read
+// as a half-built site. RSS is real; social handles get added here once the
+// accounts exist.
 const socialLinks = [
-  { icon: Twitter,  label: 'Twitter / X', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn',     href: '#' },
-  { icon: Github,   label: 'GitHub',       href: '#' },
-  { icon: Rss,      label: 'RSS Feed',     href: '#' },
+  { icon: Rss, label: 'RSS Feed', href: '/rss.xml' },
 ];
 
 export default function Footer() {

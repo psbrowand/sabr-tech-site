@@ -34,6 +34,9 @@ export const EVENTS = {
   DEMO_LAB_COMPLETED:  'demo_lab_completed',
   DEMO_LAB_CTA_CLICK:  'demo_lab_cta_click',
   COMPARE_CTA_CLICK:   'compare_cta_click',
+  // End-of-article → product CTA. The conversion bridge from buyer-intent
+  // content (esp. learning articles) into the app/free trial.
+  ARTICLE_CTA_CLICK:   'article_cta_click',
 };
 
 // Vercel Analytics allows properties of type string | number | boolean | null.

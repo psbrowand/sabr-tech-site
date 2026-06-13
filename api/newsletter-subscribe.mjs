@@ -24,7 +24,13 @@ export default async function handler(req, res) {
   const apiKey = process.env.BEEHIIV_API_KEY;
   const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
   if (!apiKey || !publicationId) {
-    return res.status(500).json({ error: 'Newsletter is not configured yet.' });
+    // Config gap (missing BEEHIIV_API_KEY / BEEHIIV_PUBLICATION_ID on this
+    // Vercel project). Return a graceful, honest message instead of a 500 so
+    // the on-page form doesn't read as broken to visitors.
+    console.error('[newsletter-subscribe] BEEHIIV env not configured — signup skipped');
+    return res
+      .status(503)
+      .json({ error: 'Newsletter signups are opening soon — check back shortly.' });
   }
 
   let body = req.body;

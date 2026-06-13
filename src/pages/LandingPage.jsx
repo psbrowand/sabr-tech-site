@@ -195,16 +195,16 @@ export default function LandingPage() {
 
             <FadeIn delay={80}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-6">
-                Get exam-ready{' '}
+                Pass your next IT cert,{' '}
                 <span className="text-gradient-cyan">faster</span>.
               </h1>
             </FadeIn>
 
             <FadeIn delay={160}>
               <p className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-                Adaptive practice, spaced-repetition flashcards, hands-on network labs
-                in a real CLI simulator, and a built-in community forum — all in one
-                subscription. Study smarter, not longer.
+                One subscription covers every cert you&apos;re chasing — adaptive
+                question banks, spaced-repetition flashcards, and hands-on labs in a
+                real CLI simulator that grades your config live. From $15/mo.
               </p>
             </FadeIn>
 
@@ -238,9 +238,9 @@ export default function LandingPage() {
           <FadeIn delay={320}>
             <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
               {[
-                { value: '6',    label: 'Launch certs'   },
+                { value: '17',   label: 'Certifications' },
                 { value: '100+', label: 'Questions each' },
-                { value: '21',   label: 'Hands-on labs'  },
+                { value: '24',   label: 'Hands-on labs'  },
                 { value: '7-day',label: 'Free trial'     },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center">
@@ -336,7 +336,7 @@ export default function LandingPage() {
                   <span className="text-gradient-cyan">Build them.</span>
                 </h2>
                 <p className="text-slate-400 leading-relaxed mb-6">
-                  21 graded, hands-on labs in a full network simulator that runs
+                  24 graded, hands-on labs in a full network simulator that runs
                   entirely in your browser — real Aruba CX and Cisco IOS command
                   lines, live topology views, and objectives that check themselves
                   the moment your config works. No downloads, no VMs, no
@@ -464,7 +464,7 @@ export default function LandingPage() {
               <p className="text-slate-400 max-w-xl mx-auto">
                 100+ curated MCQs and 120+ flashcards each, cited to the official
                 exam objectives — and the networking certs pair with graded labs
-                in the simulator. 16 certifications active, more shipping monthly.
+                in the simulator. 17 certifications active, more shipping monthly.
               </p>
             </div>
           </FadeIn>

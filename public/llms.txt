@@ -1,0 +1,22 @@
+# Sabr Learning Labs
+
+> Sabr Learning Labs is an IT certification exam-prep platform. One subscription covers every cert: adaptive practice questions, spaced-repetition flashcards, performance-based questions, and hands-on network labs that run a real CLI simulator in the browser and grade your configuration live. Covers CompTIA, Cisco, Aruba (HPE), Juniper, AWS, Microsoft Azure, Google Cloud, and ISC2.
+
+## Key pages
+- [Home](https://sabr-labs.com/): what Sabr Learning Labs is, pricing ($15/$29/$49 per month), and how it works.
+- [Try a free lab](https://sabr-labs.com/try): run a real graded network lab in the browser with no signup.
+- [Certification guides](https://sabr-labs.com/learning): honest "is it worth it / how hard is it" guides for IT certifications.
+- [News](https://sabr-labs.com/news): daily cybersecurity, tech, and AI news for IT professionals.
+- [Cyber Security](https://sabr-labs.com/cyber-security), [Tech](https://sabr-labs.com/tech-news), [AI](https://sabr-labs.com/ai-news): category news.
+
+## The product (app)
+- [Start practicing](https://app.sabr-labs.com): the training app — practice exams, flashcards, graded labs, AI study tools. 7-day free trial.
+- [Certification catalog](https://app.sabr-labs.com/browse): all certifications with topic breakdowns and question counts.
+
+## Comparisons
+- [vs Boson NetSim](https://sabr-labs.com/compare/boson-netsim-alternative)
+- [vs Cisco Packet Tracer](https://sabr-labs.com/compare/packet-tracer-alternative)
+
+## Notes
+- Content is original editorial; sources are cited on each article for verification.
+- Certifications covered include: CompTIA A+, Network+, Security+, CySA+, PenTest+; Cisco CCNA; Aruba HPE6-A85 / HPE6-A86; Juniper JNCIA-Junos (JN0-106); AWS Solutions Architect Associate and Developer Associate; Microsoft Azure Administrator (AZ-104); Google Cloud Associate Cloud Engineer; ISC2 Certified in Cybersecurity.

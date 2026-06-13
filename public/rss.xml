@@ -6,8 +6,8 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2026 13:16:54 GMT</lastBuildDate>
-    <pubDate>Fri, 12 Jun 2026 13:16:54 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jun 2026 04:39:51 GMT</lastBuildDate>
+    <pubDate>Sat, 13 Jun 2026 04:39:51 GMT</pubDate>
     <ttl>60</ttl>
     <item>
       <title>KKR and Nvidia Put $10B Into a Company to Fix Stalled AI Data Centers</title>
@@ -30,6 +30,28 @@
 <p>For everyone who isn't a hyperscaler, this is the plumbing of the AI boom getting financialized. Whether Helix delivers faster than the projects Selipsky is criticizing is the thing to watch. The capital is clearly available. Turning it into powered, online racks is the part that keeps slipping.</p>]]></content:encoded>
     </item>
     <item>
+      <title>Is Security+ Worth It in 2026? An Honest Look at the SY0-701</title>
+      <link>https://sabr-labs.com/article/comptia-security-plus-sy0-701-worth-it-honest-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-security-plus-sy0-701-worth-it-honest-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>Security+</category>
+      <category>SY0-701</category>
+      <category>Cybersecurity</category>
+      <category>Certification</category>
+      <category>SOC</category>
+      <description>Security+ is the most-requested entry cybersecurity cert and a DoD baseline requirement, but it opens doors rather than handing you a six-figure analyst salary on day one.</description>
+      <content:encoded><![CDATA[<p>Security+ is the cert that gets oversold in both directions. One camp treats it as a golden ticket into a $125,000 security analyst job. The other dismisses it as a memorization test that proves nothing. Both are wrong, and the truth in between is genuinely good news: Security+ is the single most reliable way to get past a hiring filter for an entry-level security role, and that's a meaningful thing to buy for a few hundred dollars.</p>
+<p>The current exam is SY0-701, and it's been the only active version since CompTIA retired SY0-601 in July 2024. It runs up to 90 questions in 90 minutes, including performance-based questions, and you need 750 out of 900 to pass. Retail pricing in the US sits around $425 for a single voucher. There's no formal prerequisite, though CompTIA suggests Network+ and a couple of years of IT experience first, and that background genuinely makes the exam easier.</p>
+<p>The content is organized into five domains: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%). The weighting toward operations and threats reflects what the cert is really for: showing you can function in a SOC or a security-adjacent IT role, not that you can write policy from scratch.</p>
+<p>Now the salary question, handled honestly. The Bureau of Labor Statistics reports a 2024 median wage of $124,910 for information security analysts, with employment projected to grow 29% through 2034 and roughly 16,000 openings a year. That growth is real and it's why the cert is in demand. But that median reflects experienced analysts, not someone who just passed Security+. A fresh Security+ holder is typically looking at the bottom of that range or a notch below it, in roles like junior SOC analyst, security administrator, or an IT job with security duties. The cert points you up that ladder; it doesn't teleport you to the top of it.</p>
+<p>There's one advantage that's easy to undersell: Security+ is an approved baseline certification under the US Department of Defense's workforce requirements (DoD 8140/8570). For a large set of government and defense-contractor roles, holding it isn't a nice-to-have, it's a checkbox you cannot be hired without. If that's the world you're aiming at, the worth-it question is already answered.</p>
+<p>How hard is it? Moderate, and the difficulty is specific. The volume of terminology is large, and the performance-based questions reward people who've actually configured something over people who've only read about it. The other trap is CompTIA's question style, which loves asking for the "best" answer among several that are all defensible. Knowing the definition isn't enough; you have to know which control fits which scenario.</p>
+<p>Which points at how to study. Professor Messer's free SY0-701 series remains the backbone most people build on, paired with a paid course if you want structure. But the candidates who pass on the first try are the ones who drill performance-based scenarios and run a question bank hard enough to expose the gap between "I recognize this term" and "I know when to use it." Hands-on practice and realistic question reps are what close that gap, far more than rereading a study guide. For an entry security cert in 2026, Security+ is worth it. Just buy it for what it is: the door, not the room.</p>]]></content:encoded>
+    </item>
+    <item>
       <title>Microsoft Built Its Own Frontier Models. The Target Is OpenAI&apos;s Bill.</title>
       <link>https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</link>
       <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</guid>
@@ -48,6 +70,28 @@
 <p>The benchmark line Microsoft is pushing is that in blind human comparisons MAI-Thinking-1 was preferred over Anthropic's Claude Sonnet 4.6 and held its own against Claude Opus 4.6 on SWE Bench Pro coding tasks. Take that the way you take any vendor's own evals: directionally interesting, not independent proof. "Preferred in blind tests we ran" is a claim, not a leaderboard.</p>
 <p>The benchmarks aren't the point anyway. The point is the bill. Every time Microsoft serves an OpenAI model, it pays for that model. Running its own models on Azure cuts the royalty out, and Satya Nadella framed the shift as moving from "consuming a frontier model to fully participating at the frontier." For developers, the promised payoff is lower per-token pricing. For Microsoft, it's options in a partnership that has grown lopsided, and room to negotiate the next OpenAI deal from a stronger position.</p>
 <p>None of this means Microsoft is dropping OpenAI. GPT models still sit at the center of Copilot, and Microsoft has every reason to keep that relationship going. But a company that can credibly run its own frontier-class models is a different kind of partner than one that can't. That's the message Build was really sending.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Is the AWS Solutions Architect Associate (SAA-C03) Worth It?</title>
+      <link>https://sabr-labs.com/article/aws-solutions-architect-associate-saa-c03-worth-it-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/aws-solutions-architect-associate-saa-c03-worth-it-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>AWS</category>
+      <category>Solutions Architect</category>
+      <category>SAA-C03</category>
+      <category>Cloud</category>
+      <category>Certification</category>
+      <category>Cloud Career</category>
+      <description>The SAA-C03 is the most-requested cloud cert in job postings, but it rewards people who already know AWS and quietly punishes those treating it as a first step.</description>
+      <content:encoded><![CDATA[<p>The AWS Solutions Architect Associate is the cloud cert that shows up most in job postings, and that alone makes it worth taking seriously. But there's a trap baked into how people approach it. They see "associate" in the name and assume it's a beginner cert. It isn't. The SAA-C03 assumes you already understand how AWS services fit together, and it tests your judgment about which one to reach for, not whether you can define them.</p>
+<p>The exam specifics: 65 questions in 130 minutes, of which 50 are scored and 15 are unscored items AWS uses to trial future questions. You need a scaled score of 720 out of 1,000 to pass, and it costs $150 in the US. There's no hard prerequisite, but AWS recommends about a year of hands-on experience, and that recommendation is doing more work than it looks.</p>
+<p>Four domains, and the weighting tells the story: Design Secure Architectures (30%), Design Resilient Architectures (26%), Design High-Performing Architectures (24%), and Design Cost-Optimized Architectures (20%). Every domain is the word "design." That's the whole exam in one observation. You're not being asked what S3 is. You're being asked, given a scenario with latency targets, a budget, and a compliance constraint, which storage class and which architecture you'd choose. The questions are little case studies, often two or three plausible-looking answers deep.</p>
+<p>That design framing is also why it's harder than the question count suggests. Two answers will usually be technically correct and one will be the right call for the scenario's actual priority, whether that's cost, durability, or recovery time. You can't pattern-match your way through that. You have to genuinely understand the tradeoffs between, say, Multi-AZ and read replicas, or when a NAT gateway beats a NAT instance. This is where pure flashcard study falls apart.</p>
+<p>The payoff is real and it's the strongest of any cert in this group. The SAA shows up in a large share of cloud job listings, and aggregated salary data from sites like ZipRecruiter and Glassdoor puts cloud roles tied to it well into six figures, commonly in the $140,000-plus range for people with a couple of years of experience. Those are aggregator numbers rather than a government statistic, so read them as the shape of the market, not a guarantee. The direction is not in doubt: cloud architecture pays, and this cert is the recognized entry ticket.</p>
+<p>Here's the honest catch for career-changers. If you have zero AWS exposure, going straight for the SAA is a slog, and many people would be better served starting with the Cloud Practitioner to build vocabulary first, then coming back. The fastest path through the SAA for anyone runs through the console: spin up the services the exam covers, break them, watch the bill, see what fails over and what doesn't. Pair that with scenario-style practice questions in the weeks before the exam, because the test's whole personality is scenarios, and reading documentation does not prepare you for the judgment calls the way actually building does.</p>
+<p>Worth it? For anyone serious about cloud work, yes, clearly. Just go in with the right expectation: this is a cert that confirms experience rather than substitutes for it. Earn it after you've put your hands on AWS, not before, and it does exactly what you want a cert to do.</p>]]></content:encoded>
     </item>
     <item>
       <title>Attackers Are Exploiting a Netlogon Bug That Owns Domain Controllers</title>
@@ -70,6 +114,28 @@
 <p>If your domain controllers aren't on the May 2026 cumulative update, that's the job for today. Netlogon RPC can't simply be firewalled off internally without breaking authentication, so patching is the real fix, not network controls. Confirm every DC is current, and review logs for unusual Netlogon RPC traffic and LSASS crashes that could mark a failed exploit attempt.</p>]]></content:encoded>
     </item>
     <item>
+      <title>Network+ in 2026: Is It Worth It and How Hard Is the N10-009?</title>
+      <link>https://sabr-labs.com/article/comptia-network-plus-n10-009-worth-it-how-hard-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-network-plus-n10-009-worth-it-how-hard-2026</guid>
+      <pubDate>Fri, 12 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>Network+</category>
+      <category>N10-009</category>
+      <category>Networking</category>
+      <category>Certification</category>
+      <category>IT Career</category>
+      <description>Network+ sits in an awkward spot between A+ and CCNA, so the real question is whether the N10-009 earns a place in your path or whether you should jump to Cisco instead.</description>
+      <content:encoded><![CDATA[<p>Network+ has an identity problem, and pretending otherwise does no one any favors. It's vendor-neutral networking knowledge that nobody disputes is useful, sitting directly underneath Cisco's CCNA, which carries more weight with employers and costs about the same. So the honest framing for 2026 isn't "is Network+ good" (it is) but "is Network+ the right next step for you, or are you about to pay for a cert you'll outgrow in a year?"</p>
+<p>Here are the facts on the current exam. The code is N10-009, and it replaced N10-008 when that retired in December 2024. It runs up to 90 questions in 90 minutes, mixing multiple choice with performance-based questions, and you need 720 out of 900 to pass. The retail price is $369 in the US. CompTIA recommends A+ first plus around nine to twelve months of hands-on networking experience, though plenty of people sit it earlier than that.</p>
+<p>The exam splits into five domains: Networking Fundamentals (23%), Network Implementations (20%), Network Operations (19%), Network Security (14%), and Network Troubleshooting (24%). Note where the weight sits. Troubleshooting and fundamentals together are nearly half the exam, and that tells you what CompTIA is actually testing: not whether you can recite the OSI model, but whether you can reason through why a host can't reach a server.</p>
+<p>How hard is it? Harder than A+, easier than CCNA. The conceptual load is real this time. Subnetting alone defeats more candidates than anything else on the exam, and you cannot fake your way through it. If binary math and CIDR notation make your eyes glaze, that's the wall you have to climb before you sit this. The good news is that subnetting is a learnable mechanical skill, not a talent, and a week of deliberate practice gets most people from lost to fluent.</p>
+<p>Where Network+ pays off is the role it points at. The Bureau of Labor Statistics puts the 2024 median for network and computer systems administrators around $97,000, well above the help desk tier A+ targets. Network+ is the credential that signals you're ready to step from support into administration. It's also DoD-approved for certain baseline roles, which matters if you're aiming at government or contractor work.</p>
+<p>The study reality mirrors the exam's troubleshooting bias. Reading about VLANs and routing teaches you the words; configuring them teaches you the cert. The candidates who pass cleanly are the ones who spend real time in a lab simulating the networks they're being tested on, then drill a question bank to surface the subnetting and port-number gaps they didn't know they had. Theory-only studiers consistently underestimate the performance-based questions and pay for it on test day.</p>
+<p>So: worth it, with a caveat. If you want vendor-neutral fundamentals or you need the DoD approval, Network+ is a clean, defensible choice. If your goal is squarely network engineering and you're comfortable committing, the CCNA covers similar ground with more market pull for the same money, and you can skip a step. Network+ is the safer, broader bet. CCNA is the more ambitious one. Neither is wrong; just be honest with yourself about which you're making.</p>]]></content:encoded>
+    </item>
+    <item>
       <title>A Perfect-10 Ivanti Sentry Bug Is Already Backdooring Gateways</title>
       <link>https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</link>
       <guid isPermaLink="true">https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</guid>
@@ -88,6 +154,28 @@
 <p>Sentry is the gateway that brokers access between mobile devices and an organization's internal mail and app servers, so it's exposed on purpose and it sits in a trusted spot on the network. That's the worst combination for a pre-auth root flaw. Affected versions are 10.5.1, 10.6.1, 10.7.0 and earlier; the fixes are in 10.5.2, 10.6.2, and 10.7.1.</p>
 <p>This isn't theoretical. After watchTowr published a proof-of-concept, the Shadowserver Foundation started seeing exploitation attempts and confirmed backdoored gateways within 24 hours. CISA added CVE-2026-10520 to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies just three days to patch, with a deadline of June 14.</p>
 <p>Three days is CISA's way of saying this is on fire. Patch to the fixed releases now. If your Sentry was internet-facing and unpatched at any point this week, don't just patch and move on. Assume compromise, look for new admin accounts and unexpected processes running as root, and rotate any credentials that gateway could reach.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Is CompTIA A+ Worth It in 2026? An Honest Look at the 220-1201 and 1202</title>
+      <link>https://sabr-labs.com/article/comptia-a-plus-worth-it-2026-220-1201-1202</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-a-plus-worth-it-2026-220-1201-1202</guid>
+      <pubDate>Fri, 12 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>A+</category>
+      <category>220-1201</category>
+      <category>220-1202</category>
+      <category>Certification</category>
+      <category>IT Career</category>
+      <description>A+ is two exams, real money, and a slow on-ramp into IT, so here&apos;s who it actually pays off for and who should skip straight past it.</description>
+      <content:encoded><![CDATA[<p>A+ is the cert people argue about most, and the argument is usually framed wrong. The question isn't whether A+ is respected (it's fine) or whether it's hard (it isn't, really). The question is whether you're the person it's built for. If you've never held an IT job and need something on your resume that says you can fix a laptop and not break the network, A+ does that job better than anything else. If you already work a help desk, it's mostly a box to check for HR.</p>
+<p>The current version is two exams, not one. Core 1 (220-1201) and Core 2 (220-1202) both launched in March 2025 and replaced the older 1101/1102 pair, which CompTIA retired in September 2025. You need to pass both to earn the cert. Each exam runs up to 90 questions in 90 minutes. Core 1 wants 675 out of 900 to pass; Core 2 wants 700. Core 1 covers hardware, networking basics, mobile devices, and virtualization and cloud concepts. Core 2 is the software half: operating systems, security fundamentals, troubleshooting, and operational procedures.</p>
+<p>Now the part nobody likes. At CompTIA's retail pricing each exam runs around $250 in the US, so you're looking at roughly $500 to sit both, before any study materials. That's the real sticker shock of A+, and it's worth saying plainly: this is the most expensive entry-level cert relative to the salary it points you toward.</p>
+<p>Because where A+ lands you is the entry of the entry level. The Bureau of Labor Statistics puts the 2024 median wage for computer user support specialists around $60,000 and computer network support specialists around $73,000. A+ is the credential that gets you in the door for the first of those, the help desk and desktop support roles where you'll spend a year or two before moving up. Treat it as a starting line, not a destination.</p>
+<p>How hard is it? The content is broad rather than deep. There's a lot of it (printers, RAM types, Windows recovery, common malware, cable standards) but very little of it is conceptually difficult. The thing that trips people up is breadth plus the performance-based questions, where you have to actually do something in a simulated environment rather than pick an answer. People who only memorize acronyms get wrecked by those. People who've physically opened a machine and clicked around an OS sail through them.</p>
+<p>That's the honest study advice for A+: stop reading and start touching things. Build a cheap PC or tear down an old one. Run a Windows install in a VM, break it, fix it. The candidates who pass comfortably are the ones who pair a video course with real hands-on reps and a question bank to find their weak spots before exam day, not the ones who read a 1,200-page book cover to cover. The terminology sticks far better once you've watched it happen in front of you.</p>
+<p>So is it worth it in 2026? If you're switching careers into IT with nothing else to show, yes, and pairing it with Network+ or Security+ within the year is the move that actually changes your pay. If you already have a year of help desk under your belt, your time and money are better spent skipping ahead. A+ proves you can start. It was never meant to prove more than that.</p>]]></content:encoded>
     </item>
     <item>
       <title>ShinyHunters Hit 100+ Orgs Through an Oracle PeopleSoft Zero-Day</title>
@@ -678,7 +766,7 @@
       <category>Certification</category>
       <category>Cybersecurity</category>
       <description>The latest Security+ exam overhauls the domain structure with heavier emphasis on cloud security, zero-trust architecture, and AI-assisted threat detection.</description>
-      <content:encoded><![CDATA[<p>CompTIA officially retired the SY0-601 version of Security+ on July 31, 2024 and has been running SY0-701 as the sole active exam since then. The new version reflects a substantially updated threat landscape — candidates who studied for the old exam will find significant differences in both content and question style.</p>
+      <content:encoded><![CDATA[<p>CompTIA officially retired the SY0-601 version of Security+ on July 31, 2024 and has been running SY0-701 as the sole active exam since then. The new version reflects a substantially updated threat environment — candidates who studied for the old exam will find significant differences in both content and question style.</p>
 <p>The most notable structural change is a reduction from six domains to five. The new domains are: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%). The weighting signals that CompTIA views hands-on operational skills as increasingly central to the certification's value.</p>
 <p>Cloud security now permeates the entire exam rather than sitting in an isolated domain. Candidates must understand shared responsibility models, cloud-native security controls, serverless and container security, and CASB deployment — all areas that were lightly covered in SY0-601. Zero-trust architecture (ZTA) is explicitly examined for the first time, including microsegmentation, identity-centric access, and continuous verification principles.</p>
 <p>A new focus on AI and automation has been added. Candidates need to understand how machine learning is applied to SIEM correlation, endpoint detection and response (EDR), and user and entity behavior analytics (UEBA). This does not require deep AI expertise but does expect familiarity with how these tools function in a modern SOC.</p>
@@ -755,7 +843,7 @@
       <category>Networking</category>
       <category>Certification</category>
       <description>The CCNA remains the gold standard entry-level networking certification, but candidates ask whether its value holds as SD-WAN and cloud-first networking reshape the industry.</description>
-      <content:encoded><![CDATA[<p>The Cisco Certified Network Associate (CCNA) 200-301 exam remains one of the most recognized networking certifications globally, and the 2026 job market still rewards it heavily at the entry and mid-level tier. A survey of 3,000 IT hiring managers by Global Knowledge found that CCNA-certified candidates received 18% more interview callbacks than non-certified applicants for network administrator roles.</p>
+      <content:encoded><![CDATA[<p>The Cisco Certified Network Associate (CCNA) 200-301 exam remains one of the most recognized networking certifications globally, and the 2026 job market still rewards it at the entry and mid-level tier. Browse entry- and mid-level network job postings and you'll see it named by employers as often as any networking cert out there — that name recognition is the practical reason it holds its value.</p>
 <p>The 200-301 exam covers a broad range of topics: network fundamentals, IP connectivity, IP services, security fundamentals, automation and programmability, and wireless networking. What makes the current version distinctive from its predecessors is the inclusion of network automation topics — Python basics, REST APIs, configuration management (Ansible, Puppet), and SD-WAN concepts. These topics now represent approximately 15% of the exam.</p>
 <p>The exam itself is 120 minutes, contains 90–100 questions (multiple choice, drag-and-drop, and simulations), and requires a passing score of approximately 825/1000. It is administered through Pearson VUE at testing centers or via online proctoring. The exam costs $330 USD and does not expire — the CCNA is a one-time certification with no renewal requirement, though Cisco strongly encourages continuing education.</p>
 <p>For study resources, Cisco's own Cisco U. platform (formerly Cisco Learning Network) offers official learning paths. Jeremy's IT Lab on YouTube is widely considered the best free CCNA resource available — his 200-301 full course has over 8 million views. Neil Anderson's CBT Nuggets series and Wendell Odom's Official Cert Guide (OCG) Vol. 1 and Vol. 2 are the top paid study options. Most candidates report needing 3–6 months of dedicated study.</p>
@@ -892,7 +980,7 @@
       <category>Firewall</category>
       <description>Fortinet&apos;s Network Security Expert program spans eight levels — from free awareness training to one of the hardest firewall certifications in the industry.</description>
       <content:encoded><![CDATA[<p>Fortinet's Network Security Expert (NSE) certification program is structured as an eight-level track that progresses from broad cybersecurity awareness at the lower levels to deep FortiOS engineering expertise at the top. Unlike Cisco or Palo Alto, Fortinet makes the lower-level certifications entirely free, which has made the program one of the fastest-growing in the network security space.</p>
-<p>NSE 1 and NSE 2 are free, self-paced online courses covering general cybersecurity awareness and the threat landscape. They are primarily designed for non-technical staff but are often completed by technical professionals as a quick check-in on Fortinet's current product messaging. NSE 3 is a free course specifically about Fortinet's product portfolio and is useful orientation for anyone starting with FortiGate.</p>
+<p>NSE 1 and NSE 2 are free, self-paced online courses covering general cybersecurity awareness and the threat environment. They are primarily designed for non-technical staff but are often completed by technical professionals as a quick check-in on Fortinet's current product messaging. NSE 3 is a free course specifically about Fortinet's product portfolio and is useful orientation for anyone starting with FortiGate.</p>
 <p>NSE 4 — the FortiGate Security and FortiGate Infrastructure certification — is where serious technical learning begins. It validates the ability to configure and administer a FortiGate firewall for common enterprise security features: security policies, SSL inspection, application control, IPS, antivirus, two-factor authentication, and SD-WAN basics. This is the most widely held Fortinet certification and is frequently required for MSP and MSSP technical roles that involve FortiGate management.</p>
 <p>NSE 5 covers FortiManager and FortiAnalyzer — Fortinet's centralized management and analytics platforms. NSE 6 is a series of modular certifications covering specific products: FortiMail, FortiWeb, FortiNAC, FortiVoice, FortiSIEM, and others. Candidates choose which NSE 6 modules to complete based on their product focus. NSE 7 validates advanced troubleshooting and enterprise integration expertise.</p>
 <p>NSE 8 is the pinnacle — a two-day proctored examination combining a written exam and a hands-on practical lab that typically lasts 8 hours. Fewer than 1,000 people worldwide hold NSE 8 at any given time. It is widely considered comparable in difficulty to the Cisco CCIE. All NSE 4 through NSE 8 certifications are valid for two years and require recertification through re-examination or continuing education credits.</p>]]></content:encoded>
@@ -916,83 +1004,6 @@
 <p>AMD's MI450X is the price-performance bet. 3nm TSMC, 288 GB of HBM3e, and native FP4 training support, which cuts memory requirements 4x with small accuracy cost. AMD has always been more competitive on inference economics than on raw training performance; MI450X leans into that.</p>
 <p>Intel's Gaudi 4 is the interesting one. Intel's argument is that at genuine hyperscale, the bottleneck isn't compute — it's data movement. Gaudi 4 ships with an integrated 800GbE fabric so clusters up to 1,024 nodes don't need external networking switches. It's a bet that the shape of the problem changes at scale and that Nvidia's architecture is over-indexed on single-chip performance.</p>
 <p>Nvidia still has 80%+ of the AI accelerator market and has already pre-sold most of 2026-2027 Blackwell capacity to hyperscalers. AMD and Intel made credible technical arguments this week, but the commercial reality is that the field doesn't open up until 2028, when the current contract cycle runs out. That's the real timeline to watch.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FBI and Europol Took Down Genesis Market 2.0. An Undercover Agent Was a Moderator for 14 Months.</title>
-      <link>https://sabr-labs.com/article/dark-web-marketplace-genesis-seized</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/dark-web-marketplace-genesis-seized</guid>
-      <pubDate>Thu, 09 Apr 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>FBI</category>
-      <category>Dark Web</category>
-      <category>Cybercrime</category>
-      <category>Europol</category>
-      <category>Credentials</category>
-      <category>Law Enforcement</category>
-      <description>42 arrests. 12 countries. 45 million compromised devices whose data was being sold for $50 each. The replacement market will show up within weeks.</description>
-      <content:encoded><![CDATA[<p>Operation Shadow Clear dropped this week: 42 arrests, infrastructure seized, 45 million compromised devices worth of data pulled offline. The target was Genesis Market 2.0, which relaunched in early 2025 after the original Genesis was taken down in Operation Cookie Monster two years prior.</p>
-<p>The product Genesis sold is worth understanding. Not stolen passwords in bulk — complete digital identities. Saved passwords, cookies, browser fingerprints, MFA tokens, session state. Everything needed to log in as you on any site you've authenticated to, without the bank's fraud detection noticing anything unusual. $50 a victim.</p>
-<p>The operators ran the platform with serious tradecraft: decentralized hosting, automatic mirror rotation, vetted invitation-only onboarding. The thing that broke it wasn't a technical flaw. It was an undercover agent embedded as a marketplace moderator for 14 months. Fourteen months of access to the admin backend is how you build a case that actually holds in court.</p>
-<p>FBI IC3 and Europol's EC3 are running a victim notification portal. If you want to check whether your data was in the seized database, that's where to go.</p>
-<p>This is the biggest criminal marketplace disruption since AlphaBay and Hansa in 2017. Digital Shadows' researchers point out what always follows these takedowns — a replacement market absorbs the displaced vendors inside of weeks. Enforcement is slow; the market is fast. Genesis 3.0 is probably already being spun up by someone. The difference law enforcement makes is not ending the market but keeping the pressure on enough that it stays fragmented and less trusted.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Cybersecurity Certificate Review: A Solid Entry Point or Just Marketing?</title>
-      <link>https://sabr-labs.com/article/google-cybersecurity-certificate-review-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-cybersecurity-certificate-review-2026</guid>
-      <pubDate>Thu, 09 Apr 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Google</category>
-      <category>Cybersecurity Certificate</category>
-      <category>Coursera</category>
-      <category>Entry Level</category>
-      <category>Certification</category>
-      <description>Google&apos;s entry-level cybersecurity certificate through Coursera has enrolled over 2 million learners — we break down what you actually learn and whether employers care.</description>
-      <content:encoded><![CDATA[<p>The Google Cybersecurity Certificate, available on Coursera and typically completable in 3–6 months at roughly 7 hours per week, has become one of the most enrolled cybersecurity training programs in the world since its 2023 launch. At approximately $49/month through Coursera (or free through Google's Career Certificates financial aid program), it is significantly more accessible than traditional bootcamps or university programs. But is it enough to get a job?</p>
-<p>The certificate covers eight courses: Foundations of Cybersecurity, Play It Safe (managing security risks), Connect and Protect (networks), Tools of the Trade (Linux and SQL), Assets Threats and Vulnerabilities, Sound the Alarm (detection and response), Automate Cybersecurity Tasks with Python, and a final capstone project. The Python module is a genuine differentiator from many entry-level programs — it provides practical scripting skills that many competing certifications skip entirely.</p>
-<p>Hands-on labs use Qwiklabs (Google Cloud Skills Boost) and a dedicated Cybersecurity Portfolio Activity framework that has learners build a document portfolio of security tasks: incident reports, vulnerability assessments, and network analysis exercises. This portfolio component addresses one of the major gaps in certification-only approaches — documented evidence of applied skills.</p>
-<p>The certificate is aligned to the CompTIA Security+ exam, and Google markets it as preparation for that exam. The alignment is real but imperfect — the Google certificate covers many of the same concepts but lacks the depth on cryptography, PKI, and identity management that Security+ tests. Candidates who want to pass Security+ should supplement with additional study materials.</p>
-<p>Employer recognition has improved substantially since launch. Google has partnerships with over 150 employers in the U.S. who have agreed to consider Google Career Certificate holders for relevant roles, including Deloitte, Mandiant (Google), and T-Mobile. The certificate is best viewed as a launchpad for an entry-level help desk or junior SOC analyst role, combined with CompTIA Security+ for candidates who want stronger market positioning.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta Put a 405B Parameter Model Into the World for Free. The API Business Just Got Harder.</title>
-      <link>https://sabr-labs.com/article/meta-llama-4-open-source-release</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-llama-4-open-source-release</guid>
-      <pubDate>Thu, 09 Apr 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>Llama</category>
-      <category>Open Source</category>
-      <category>AI</category>
-      <category>LLM</category>
-      <description>Llama 4&apos;s big model holds its own against GPT-4 Turbo on most benchmarks. The 70B fits on a single 8xH100 node. Hugging Face did 2M downloads in six hours.</description>
-      <content:encoded><![CDATA[<p>Meta dropped Llama 4 over the weekend with a permissive commercial license. The 405B parameter flagship model benchmarks close to GPT-4 Turbo on coding, math, and general knowledge. The 70B version fits on a single 8xH100 node and outperforms every previous open-source release by a meaningful margin.</p>
-<p>For enterprises paying OpenAI or Anthropic API bills, this changes the calculus. The argument for closed APIs was always 'you can't self-host something that's actually competitive at the frontier.' That argument got weaker this weekend. Not gone, but weaker. Hugging Face hit 2 million downloads in the first six hours; Together AI and Fireworks had it deployed on their inference platforms before the weekend was over.</p>
-<p>Meta shipped Llama 4 Guard alongside the model — a classifier trained to flag harmful outputs — and published a red-team report. Guard's use is technically optional, which is the policy detail that mattered to the safety crowd.</p>
-<p>The safety debate is sharp and not new. Paul Christiano, formerly of OpenAI, argued that releasing frontier-capable weights removes any ability to prevent misuse by criminal actors or authoritarian governments. Yann LeCun, Meta's chief AI scientist, argued back that open research is the foundation of safe AI progress and that restricting model access is both ineffective and harmful to the broader research community. Both men have held these positions for years. Llama 4 is the point where the argument stops being abstract.</p>
-<p>The commercial implication is the one to sit with. If you can self-host a model that's 85-95% as good as the frontier closed models for a fraction of ongoing cost, a lot of what counted as AI infrastructure strategy in 2024 needs rewriting in 2026.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>LEO Satellite Internet Security: Why Your Starlink Connection Might Be Vulnerable</title>
-      <link>https://sabr-labs.com/article/satellite-internet-leo-security-risks</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/satellite-internet-leo-security-risks</guid>
-      <pubDate>Wed, 08 Apr 2026 15:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Starlink</category>
-      <category>Satellite Internet</category>
-      <category>LEO</category>
-      <category>Spoofing</category>
-      <category>Security Research</category>
-      <description>Researchers demonstrate a 12-second spoofing attack that hijacks low-earth orbit satellite signals — and the fix requires hardware changes across millions of terminals.</description>
-      <content:encoded><![CDATA[<p>Security researchers at Ruhr University Bochum demonstrated at Black Hat Europe a practical spoofing attack against Starlink user terminals that allows an attacker within 5 kilometers to intercept and inject data into a satellite Internet connection. The attack exploits an authentication gap in the DVB-S2 physical layer protocol used by virtually all LEO satellite providers.</p>
-<p>The attack requires only $300 in commercially available software-defined radio equipment and takes approximately 12 seconds to execute. Once active, the adversary-in-the-middle position allows traffic interception, DNS manipulation, and injection of malicious content into unencrypted HTTP sessions — a significant risk for maritime and aviation customers who rely on Starlink as their primary connectivity.</p>
-<p>SpaceX responded that TLS-encrypted sessions are not at risk from the attack and that Starlink terminals authenticate satellite downlinks via software in the network stack above the physical layer. The researchers countered that this assumes all traffic is TLS-encrypted, which is not the case for all IoT device traffic on Starlink-connected networks.</p>
-<p>The broader implication extends beyond Starlink to OneWeb, Amazon Kuiper, and SES O3b mPOWER networks — all of which use similar physical layer standards. ETSI, the European telecommunications standards body, confirmed it is expediting a working group to address the vulnerability in the DVB-S2X standard revision.</p>
-<p>For enterprise users of satellite broadband, security teams should ensure all traffic is routed through encrypted VPN tunnels and audit any IoT or OT devices on satellite-connected networks for unencrypted communications. A firmware mitigation is being developed by SpaceX and expected for deployment in Q3.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

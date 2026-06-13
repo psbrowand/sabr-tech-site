@@ -13,7 +13,7 @@ import { useSeo }               from '../lib/useSeo';
 import { formatDate }           from '../components/ui/TimeAgo';
 import CategoryBadge            from '../components/ui/CategoryBadge';
 import RelatedArticles          from '../components/articles/RelatedArticles';
-import CommentSection           from '../components/comments/CommentSection';
+import ArticleProductCTA        from '../components/articles/ArticleProductCTA';
 import NewsletterSignup         from '../components/newsletter/NewsletterSignup';
 import ArticleCard              from '../components/articles/ArticleCard';
 
@@ -186,6 +186,9 @@ export default function ArticlePage() {
             ))}
           </div>
 
+          {/* Product CTA — peak-attention conversion bridge into the app. */}
+          <ArticleProductCTA article={article} />
+
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-8 pt-6 border-t border-white/[0.06]">
             <Tag className="w-3.5 h-3.5 text-slate-600 mt-1 flex-shrink-0" />
@@ -245,8 +248,6 @@ export default function ArticlePage() {
             <NewsletterSignup inline />
           </div>
 
-          {/* Comments */}
-          <CommentSection articleSlug={article.slug} />
 
           {/* Related articles */}
           <RelatedArticles articles={related} />
