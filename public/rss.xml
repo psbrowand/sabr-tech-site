@@ -6,9 +6,129 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2026 04:39:51 GMT</lastBuildDate>
-    <pubDate>Sat, 13 Jun 2026 04:39:51 GMT</pubDate>
+    <lastBuildDate>Sat, 13 Jun 2026 16:51:24 GMT</lastBuildDate>
+    <pubDate>Sat, 13 Jun 2026 16:51:24 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>SpaceX Pops 19% on Its First Day, and MSCI Is Already Adding It</title>
+      <link>https://sabr-labs.com/article/spacex-spcx-trading-debut-msci-index-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-spcx-trading-debut-msci-index-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SpaceX</category>
+      <category>IPO</category>
+      <category>Nasdaq</category>
+      <category>MSCI</category>
+      <category>Stocks</category>
+      <category>Starlink</category>
+      <description>SpaceX closed its first day on the Nasdaq up 19% at $160.95, and as of June 13 MSCI&apos;s early-inclusion rules pull SPCX into its large-cap indexes barely a day after the record $75 billion IPO.</description>
+      <content:encoded><![CDATA[<p>$160.95. That is where SpaceX closed its first day as a public company, up about 19 percent from a $135 IPO price, trading on the Nasdaq under the ticker SPCX.</p>
+<p>The mechanics behind that number are staggering even by recent standards. SpaceX sold roughly 555.6 million shares and raised around $75 billion, the largest initial public offering on record. The stock opened near $150, ran past a 30 percent gain at one intraday point, and briefly carried a valuation above $2.2 trillion. On paper, the debut also made Elon Musk the world's first trillionaire.</p>
+<p>The reason this is news on June 13 rather than just yesterday's pop is MSCI. Under its early-inclusion methodology, MSCI adds a newly listed company of this size to its large-cap indexes almost immediately, a day after listing rather than waiting for the usual quarterly review. That forces every fund tracking those indexes to buy SPCX whether they have a view on it or not.</p>
+<p>Which is the part worth sitting with. A 19 percent first-day jump is usually read as a triumph, but it also means the offering was priced below what the market would bear, and the company left money on the table that went to first-day buyers instead. And index inclusion is mechanical demand, not a judgment on the business. Passive funds are buying because the rules say to, not because anyone ran the numbers on a launch company whose cash flows are lumpy and whose capital appetite is enormous.</p>
+<p>What justifies a two-trillion-dollar tag is not the IPO mechanics. It is Starship cadence and Starlink revenue, the two lines that have to keep climbing for this valuation to look like anything other than enthusiasm. The stock now trades on both, in public, every day. That is the actual change here.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>France&apos;s Sovereign Messenger Tchap Breached, 73,000 Accounts Exposed</title>
+      <link>https://sabr-labs.com/article/tchap-france-government-messaging-breach-73000-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tchap-france-government-messaging-breach-73000-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>France</category>
+      <category>Tchap</category>
+      <category>Government</category>
+      <category>Matrix</category>
+      <category>Social Engineering</category>
+      <description>A hijacked account led to a breach of Tchap, France&apos;s Matrix-based government messenger, exposing data tied to 73,000 public-sector users and more than 640,000 messages.</description>
+      <content:encoded><![CDATA[<p>Tchap was France's answer to depending on foreign chat apps for government work. This week it got breached.</p>
+<p>French authorities confirmed a security incident dated June 7, and the agency that runs the platform, DINUM, says fewer than 9 percent of registered users were affected. The attacker tells a bigger story: claims of 73,000 exposed accounts, more than 640,000 messages, and roughly 13.5GB of documents and media exfiltrated. The entry point was not some exotic exploit. It was social engineering against a single user account, after which the attacker says they reached hardcoded LDAP credentials and pulled data from there.</p>
+<p>What got exposed, by the official account, came from public discussions: usernames, email addresses, profile images, and the government organizations users belong to. Private chats are said to have stayed protected, since Tchap runs on the end-to-end encrypted Matrix protocol. Investigators are still reviewing exactly what the attacker could reach, which is the polite way of saying the "private chats are safe" line is provisional.</p>
+<p>There is an irony here that is hard to ignore. Tchap launched in 2018 as a joint project of DINUM and the national cybersecurity agency ANSSI, built on Matrix specifically so that French public-sector communications would not run through American or other foreign platforms. It is a sovereignty project, and it was undone by a hijacked account and credentials hardcoded somewhere they should never have been.</p>
+<p>Even granting that message bodies held, the metadata alone matters for a government. Who works at which ministry, who talks to whom, which email maps to which official: that is exactly the kind of mapping a foreign intelligence service would pay for. The encryption did its job on content. The breach still handed over the shape of the organization.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Fake Error Report Can Make Your Coding Agent Run Malicious Code</title>
+      <link>https://sabr-labs.com/article/agentjacking-ai-coding-agents-sentry-mcp-injection-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/agentjacking-ai-coding-agents-sentry-mcp-injection-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Agents</category>
+      <category>Prompt Injection</category>
+      <category>MCP</category>
+      <category>Sentry</category>
+      <category>Claude Code</category>
+      <category>AppSec</category>
+      <description>Tenet Security&apos;s &apos;Agentjacking&apos; shows how a poisoned Sentry error event can trick Claude Code, Cursor, and Codex into running attacker-supplied commands, with an 85% success rate in testing.</description>
+      <content:encoded><![CDATA[<p>The error report your AI agent reads to fix a bug can be the attack. That is the uncomfortable idea behind Agentjacking, a technique published this week by Tenet Security.</p>
+<p>Here is the mechanism. Sentry is the error-tracking tool a huge number of teams already run, and it now exposes an MCP server so coding agents can pull error details and propose fixes. Tenet found that an attacker can inject crafted text into a Sentry error event, and when the agent reads that event through the MCP server, it cannot tell the attacker's instructions apart from Sentry's own remediation guidance. The agent treats the injected commands as a legitimate next step and runs them. It is indirect prompt injection, weaponized through a tool developers already trust.</p>
+<p>The numbers are the part that should bother you. Tenet says it hijacked Claude Code, Cursor, and Codex with an 85 percent success rate in controlled tests, and it identified 2,388 exposed organizations, ranging from a company worth a quarter-trillion dollars down to solo developers and, awkwardly, a cloud-security vendor.</p>
+<p>The detail that breaks the usual reassurances: the agents ran the attacker's code even when explicitly told to ignore it, and endpoint detection, firewalls, and prompt-level guardrails all missed it. The standard mitigation story for prompt injection has been some version of "instruct the model not to comply," and this is a clean demonstration that the instruction does not hold when the malicious input arrives dressed as trusted tool output.</p>
+<p>This is the structural tension in agentic tooling. The autonomy that lets an agent read your errors and fix them is the same autonomy that lets injected instructions act on your machine, and every MCP connection widens the set of places that poison can come from. Treating tool output as trusted is the bug, and right now most setups do exactly that.</p>
+<p>If you run coding agents against real systems, scope their permissions hard, sandbox anything they execute, and stop letting them auto-run proposed commands against production. The safe default is to treat everything an agent reads from an external source as untrusted input, including the error reports it was built to help with.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Police Seize AudiA6, the Mixer That Washed $380M for Ransomware Crews</title>
+      <link>https://sabr-labs.com/article/audia6-crypto-laundering-takedown-europol-doj-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/audia6-crypto-laundering-takedown-europol-doj-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Cryptocurrency</category>
+      <category>Money Laundering</category>
+      <category>Europol</category>
+      <category>DOJ</category>
+      <category>Law Enforcement</category>
+      <description>An international operation led by Europol and the US DOJ dismantled AudiA6, a crypto-laundering service that cleaned more than $380 million for ransomware gangs and arrested two of its alleged operators in Georgia.</description>
+      <content:encoded><![CDATA[<p>A service that promised to launder dirty cryptocurrency and return it clean in about an hour, for a cut of 3 to 10 percent, is offline. Two of its alleged operators are now in custody in Georgia.</p>
+<p>The takedown of AudiA6 came on June 10, run jointly by the US Department of Justice, the Secret Service, and Europol. Investigators say the platform operated as a central laundering hub from 2022 to 2025 and moved more than $380 million, roughly 336 million euros, for criminal clients. The coordinated action seized 25 domains, pulled more than 30 servers offline, confiscated over 80 vehicles and several properties in Georgia, and froze around 692,000 euros in crypto. The two administrators arrested hold Ukrainian and Russian nationality.</p>
+<p>Ransomware gets the headlines, but cashing out is the part that actually constrains it. Encrypting a hospital is easy. Turning the ransom into spendable money without getting traced is the hard problem, and services like AudiA6 are the plumbing that solves it. Europol says the operation has been linked to more than 15 separate ransomware investigations, which is the real measure of what just got disrupted.</p>
+<p>Worth being clear-eyed about what this does and does not accomplish. Domain seizures are reversible, and mixer operators rebrand and resurface with depressing regularity. What raises the cost is the arrests and the asset seizures, the part where running this business stops being anonymous and starts being a prison sentence. That is the difference between knocking over a storefront and actually deterring the trade.</p>
+<p>For defenders, the takeaway is less about any single service and more about the pressure on the cash-out layer. Every laundering pipeline that gets dismantled makes the economics of ransomware a little worse, which is slow, unglamorous progress, and the only kind that lasts.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Patches a Chrome V8 Zero-Day That&apos;s Already Being Exploited</title>
+      <link>https://sabr-labs.com/article/chrome-v8-zero-day-cve-2026-11645-exploited-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-v8-zero-day-cve-2026-11645-exploited-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Google Chrome</category>
+      <category>V8</category>
+      <category>CVE-2026-11645</category>
+      <category>Zero-Day</category>
+      <category>Browser Security</category>
+      <description>Chrome 149.0.7827.102 fixes CVE-2026-11645, an actively exploited out-of-bounds bug in the V8 engine that lets a malicious web page run code inside the browser sandbox.</description>
+      <content:encoded><![CDATA[<p>Every Chrome user has an update waiting, and this one is not optional. Google pushed a fix on June 8 for CVE-2026-11645, a flaw in V8 that attackers are already using against real targets.</p>
+<p>V8 is the engine that runs JavaScript and WebAssembly on every page Chrome loads, which is what makes a bug here serious. This one is an out-of-bounds memory access rated 8.8, and a crafted HTML page is enough to trigger code execution inside the browser sandbox. A user does not have to download anything. Visiting the wrong page is the whole exploit.</p>
+<p>The flaw was reported on April 27 by a researcher credited as 303f06e3, who collected a $55,000 bounty for it. That leaves a gap of roughly six weeks between the report and the public fix, which is normal for a complex engine bug but worth noticing given that exploitation was happening in that window. The patch ships in Chrome 149.0.7827.102 and .103 for Windows and macOS, and .102 for Linux.</p>
+<p>Google is holding back the technical detail on the exploit until most users have updated, which is standard practice and also a tell that the bug is being used in ways the team does not want to advertise. A sandbox-contained flaw is not full system compromise on its own, but these rarely travel alone. They get chained with a sandbox escape, and then it is a different conversation. CISA added the CVE to its exploited-vulnerabilities catalog on June 9.</p>
+<p>The action here is boring and immediate. Open your version page, confirm you are on 149.0.7827.102 or later, and restart the browser to apply it. If you manage a fleet, push the update through policy rather than trusting users to relaunch on their own.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Check Point VPN Zero-Day Under Attack Since May, Now in CISA&apos;s KEV</title>
+      <link>https://sabr-labs.com/article/check-point-vpn-zero-day-cve-2026-50751-qilin-kev-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-vpn-zero-day-cve-2026-50751-qilin-kev-june-2026</guid>
+      <pubDate>Sat, 13 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Check Point</category>
+      <category>VPN</category>
+      <category>CVE-2026-50751</category>
+      <category>Zero-Day</category>
+      <category>Qilin</category>
+      <category>Ransomware</category>
+      <description>CVE-2026-50751, a 9.3-rated authentication bypass in Check Point&apos;s Remote Access VPN, has been exploited since early May, with at least one intrusion tied to a Qilin ransomware affiliate.</description>
+      <content:encoded><![CDATA[<p>An attacker can open a VPN session into a Check Point gateway without a valid password. That is the whole problem with CVE-2026-50751, and it has been happening in the wild since May 7.</p>
+<p>The flaw carries a CVSS score of 9.3 and is classified as improper authentication. It lives in the IKEv1 key-exchange logic, and it lets an unauthenticated attacker establish a session as though they had legitimate credentials. It affects Remote Access VPN, Mobile Access, and the Spark Firewall line across nine version branches, from R80.20.x up through R82.10. If you run a Check Point gateway exposed to the internet, the odds are good you are in scope.</p>
+<p>Rapid7's researchers confirmed two intrusions with high confidence and tied at least one of them, with medium confidence, to an affiliate of the Qilin ransomware operation. Check Point's own framing calls the campaign limited, several dozen organizations so far. That number is doing a lot of work. A perimeter VPN that hands out authenticated sessions is exactly the front door a ransomware crew wants, and "several dozen" is a snapshot, not a ceiling. Once a reliable exploit circulates, limited campaigns stop being limited.</p>
+<p>Check Point has shipped hotfixes, and CISA added the bug to its Known Exploited Vulnerabilities catalog in early June with a federal remediation deadline attached. That KEV listing is the part defenders should read as a clock, not a footnote: it means the government has seen enough real exploitation to compel agencies to patch.</p>
+<p>If you operate these gateways, apply the hotfix now and treat any internet-facing instance as potentially already touched. Hunt for VPN sessions you cannot account for, new or unexpected administrative activity, and the usual post-access tradecraft that precedes a ransomware deployment. Patching closes the door. It does not tell you whether someone already walked through it.</p>]]></content:encoded>
+    </item>
     <item>
       <title>KKR and Nvidia Put $10B Into a Company to Fix Stalled AI Data Centers</title>
       <link>https://sabr-labs.com/article/kkr-helix-digital-infrastructure-ai-data-centers-june-2026</link>
@@ -887,123 +1007,6 @@
 <p>Ambient Mode is the new software story. It's designed to let you wear the headset for ordinary computer work without the pass-through-versus-AR transitions that made V1 tiring. Whether that holds up past the 90-minute mark is something only long-form reviews will settle.</p>
 <p>The app catalog has moved. 2,000+ native visionOS apps now, including Adobe Premiere with a visionOS 3D timeline. Universal and Disney are on board for immersive content. Apple clearly wants the pitch to be entertainment-plus-prosumer, not enterprise-only.</p>
 <p>Wedbush is calling 1.5 million units in year one, five times the original. That number assumes the price cut unlocks a prosumer buyer that V1 missed. If it doesn't, Vision Pro stays a demo product with very expensive hardware. Pre-orders open April 25.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Claude Gets a 2M Token Window and Visible Thinking. The Chunking Era Ends.</title>
-      <link>https://sabr-labs.com/article/anthropic-claude-enterprise-features</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-claude-enterprise-features</guid>
-      <pubDate>Sat, 11 Apr 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>AI</category>
-      <category>Enterprise</category>
-      <category>Large Language Models</category>
-      <description>Anthropic&apos;s update fits roughly 1,500 pages in a single prompt and shows its work along the way. Two features that each matter on their own.</description>
-      <content:encoded><![CDATA[<p>Anthropic shipped a Claude update with a 2 million token context window and Extended Thinking mode turned on by default. Either one of those would be a noteworthy release; shipping them together is what kills the chunking pipelines most enterprise AI teams have been building for two years.</p>
-<p>Two million tokens is about 1,500 pages. Full codebase reviews, multi-year financial filings, entire legal contracts — the things teams have been stitching together with RAG and retrieval layers — now fit in one call. That simplifies architecture meaningfully. It also changes the cost math in ways that haven't fully shaken out.</p>
-<p>Extended Thinking is the more interesting feature long-term. The model exposes its reasoning steps as structured output blocks before giving the final answer. For compliance-sensitive deployments, especially under the EU AI Act's high-risk categorization, that kind of auditable reasoning trace moves from nice-to-have to requirement.</p>
-<p>Dario Amodei framed it as interpretability: when you can see the model working, you can catch it going off track before the output lands. Whether that's fully true or partially theater depends on how faithful the visible thinking is to the actual computation, which is an open research question.</p>
-<p>Pricing for the 2M tier is $15 per million input tokens and $75 per million output. That's in the same neighborhood as GPT-4 Turbo at comparable capability levels. Available today on the API and Claude.ai Teams and Enterprise.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>PCNSA vs. PCNSE: Which Palo Alto Networks Certification Is Right for You?</title>
-      <link>https://sabr-labs.com/article/palo-alto-pcnse-pcnsa-difference</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/palo-alto-pcnse-pcnsa-difference</guid>
-      <pubDate>Sat, 11 Apr 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Palo Alto Networks</category>
-      <category>PCNSA</category>
-      <category>PCNSE</category>
-      <category>Firewall</category>
-      <category>Certification</category>
-      <category>Network Security</category>
-      <description>Palo Alto&apos;s two primary firewall certifications serve very different career stages — here&apos;s how to choose and what the path to each looks like.</description>
-      <content:encoded><![CDATA[<p>Palo Alto Networks offers two primary firewall certifications under its PCCET → PCNSA → PCNSE progression: the Palo Alto Networks Certified Network Security Administrator (PCNSA) and the Palo Alto Networks Certified Network Security Engineer (PCNSE). Understanding the difference is essential before investing study time and exam fees.</p>
-<p>The PCNSA is the entry-to-mid-level certification. It validates that a candidate can configure, manage, and operate Palo Alto Networks Next-Generation Firewalls (NGFW) in a production environment. The exam tests App-ID, Content-ID, User-ID, Security policy construction, NAT, VPN configuration, and basic troubleshooting. It is appropriate for network administrators, security analysts, and anyone who manages PAN-OS firewalls day-to-day. The exam costs $175 and takes 80 minutes.</p>
-<p>The PCNSE is the advanced certification and validates deep expertise in designing, deploying, configuring, maintaining, and troubleshooting Palo Alto Networks solutions including Panorama (centralized management), GlobalProtect (VPN), Prisma Access, and advanced threat prevention features. It requires demonstrable hands-on experience — Palo Alto recommends at least 3 years of PAN-OS experience before attempting it. The exam costs $225 and takes 80 minutes.</p>
-<p>Both exams are version-specific — currently tied to PAN-OS 11.x. When a new major PAN-OS version is released, Palo Alto retires older exam versions within approximately 18 months. Candidates should verify which PAN-OS version their exam covers before scheduling.</p>
-<p>For study resources, Palo Alto's own Beacon learning platform (beacon.paloaltonetworks.com) offers free official learning paths for both certifications. The Palo Alto Networks Firewall 11.x Essentials (EDU-110) instructor-led course is the gold standard prep for PCNSA. For PCNSE, the EDU-220 Firewall: Troubleshooting course and EDU-311 Panorama course are strongly recommended. The PAN{OS} community study guides and the Cybrary PCNSE course are popular third-party resources.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>230 Malicious npm Packages. 2.4 Million Downloads. 11 Days Before Anyone Caught It.</title>
-      <link>https://sabr-labs.com/article/supply-chain-attack-npm-packages</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/supply-chain-attack-npm-packages</guid>
-      <pubDate>Sat, 11 Apr 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>npm</category>
-      <category>Supply Chain</category>
-      <category>JavaScript</category>
-      <category>Malware</category>
-      <category>Open Source Security</category>
-      <description>Socket found the campaign. GitHub&apos;s secret scanning caught 14,000 leaked API keys. If you run a Node build pipeline, you have audit work to do today.</description>
-      <content:encoded><![CDATA[<p>Socket published research this morning on a supply chain campaign that dropped 230 malicious packages into npm, collected 2.4 million downloads over 11 days, and shipped obfuscated payloads designed to lift environment variables, SSH keys, and cloud credentials. The most-downloaded single package, `react-core-utils`, pulled 890,000 downloads on its own.</p>
-<p>The tradecraft was a mix of typosquatting and dependency confusion. Some packages aped the exact names of legitimate private libraries, banking on the possibility that an organization's private registry wasn't properly scoped and that the public registry would win the lookup race. For a lot of orgs, that bet pays off.</p>
-<p>GitHub's automated secret scanning caught and revoked 14,000 leaked secrets within 24 hours of the packages being flagged. The bulk were AWS and GCP API keys. That's a useful data point: secret scanning worked, but only after detection, meaning the scanning is a safety net, not a prevention.</p>
-<p>Attribution is to a known cybercrime group, not a nation state. Checkmarx tied the infrastructure to the same crew that ran credential-stealing campaigns against game developers last year. They flip credentials on underground markets, which is boring but lucrative.</p>
-<p>npm's response is tighter maintainer rules: mandatory 2FA for any package with more than 1,000 weekly downloads. Useful, but it's closing a door that nation-state actors have already walked through several times. If you run Node builds in production, audit lock files against the published IOC list today, and rotate any credential that lived in a CI environment during the 11-day window.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Artemis IV&apos;s Manifest Is Locked In. It&apos;s the Most Complicated Crewed Mission Since Apollo.</title>
-      <link>https://sabr-labs.com/article/nasa-artemis-iv-moon-mission-update</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nasa-artemis-iv-moon-mission-update</guid>
-      <pubDate>Fri, 10 Apr 2026 16:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>NASA</category>
-      <category>Artemis</category>
-      <category>Moon</category>
-      <category>Lunar Gateway</category>
-      <category>Space Exploration</category>
-      <description>Three vehicles, two orbital rendezvous, a Gateway module assembly, and 96 hours of moonwalks. All on one mission. March 2028.</description>
-      <content:encoded><![CDATA[<p>NASA confirmed the Artemis IV manifest this week, and it's the mission profile that tells you how different the next lunar era will be from the last one. Apollo was a vehicle, a trip, and a return. Artemis IV is three vehicles, two rendezvous maneuvers, a Gateway station assembly, and the longest surface ops since 1972.</p>
-<p>The crew of four launches on SLS Block 1B, meets a separately-launched Gateway Power and Propulsion Element in lunar orbit, and conducts two excursions on the surface totaling 96 hours of moonwalks. That's more time on the lunar surface than Apollo 17 spent, which was the previous record, in 1972.</p>
-<p>Dr. Keisha Morgan will be the first African-American woman to walk on the Moon. Commander Col. James Hartley is a two-time ISS veteran. ESA's Thomas Reiter and JAXA's Naoko Yamada fill out the four-person crew. This is the most internationally integrated lunar landing crew NASA has ever flown.</p>
-<p>SpaceX's Starship HLS is the lander, qualified after last December's uncrewed dress rehearsal. The crew variant has upgraded life support, radiation shielding, and — notably — an elevator instead of a ladder for descent to the surface. The ladder-replacement is a small engineering detail that reflects a larger truth: Starship is physically enormous, and the walk-down distance was never going to work.</p>
-<p>Launch target is March 2028. Bill Nelson called it the most complex crewed spaceflight ever attempted, which is not hyperbole — three separate vehicles, two orbital rendezvous, and module assembly, all in the same mission, is a schedule that has many independent failure modes. Worth watching every Starship test flight between now and then.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The Fortinet NSE Certification Track Explained: From NSE 1 to NSE 8</title>
-      <link>https://sabr-labs.com/article/fortinet-nse-certification-path-explained</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-nse-certification-path-explained</guid>
-      <pubDate>Fri, 10 Apr 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Fortinet</category>
-      <category>NSE</category>
-      <category>FortiGate</category>
-      <category>Certification</category>
-      <category>Network Security</category>
-      <category>Firewall</category>
-      <description>Fortinet&apos;s Network Security Expert program spans eight levels — from free awareness training to one of the hardest firewall certifications in the industry.</description>
-      <content:encoded><![CDATA[<p>Fortinet's Network Security Expert (NSE) certification program is structured as an eight-level track that progresses from broad cybersecurity awareness at the lower levels to deep FortiOS engineering expertise at the top. Unlike Cisco or Palo Alto, Fortinet makes the lower-level certifications entirely free, which has made the program one of the fastest-growing in the network security space.</p>
-<p>NSE 1 and NSE 2 are free, self-paced online courses covering general cybersecurity awareness and the threat environment. They are primarily designed for non-technical staff but are often completed by technical professionals as a quick check-in on Fortinet's current product messaging. NSE 3 is a free course specifically about Fortinet's product portfolio and is useful orientation for anyone starting with FortiGate.</p>
-<p>NSE 4 — the FortiGate Security and FortiGate Infrastructure certification — is where serious technical learning begins. It validates the ability to configure and administer a FortiGate firewall for common enterprise security features: security policies, SSL inspection, application control, IPS, antivirus, two-factor authentication, and SD-WAN basics. This is the most widely held Fortinet certification and is frequently required for MSP and MSSP technical roles that involve FortiGate management.</p>
-<p>NSE 5 covers FortiManager and FortiAnalyzer — Fortinet's centralized management and analytics platforms. NSE 6 is a series of modular certifications covering specific products: FortiMail, FortiWeb, FortiNAC, FortiVoice, FortiSIEM, and others. Candidates choose which NSE 6 modules to complete based on their product focus. NSE 7 validates advanced troubleshooting and enterprise integration expertise.</p>
-<p>NSE 8 is the pinnacle — a two-day proctored examination combining a written exam and a hands-on practical lab that typically lasts 8 hours. Fewer than 1,000 people worldwide hold NSE 8 at any given time. It is widely considered comparable in difficulty to the Cisco CCIE. All NSE 4 through NSE 8 certifications are valid for two years and require recertification through re-examination or continuing education credits.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia, AMD, and Intel All Dropped Their Next-Gen AI Chips at Hot Chips. Here&apos;s Who Bet on What.</title>
-      <link>https://sabr-labs.com/article/ai-chip-arms-race-nvidia-amd-intel</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ai-chip-arms-race-nvidia-amd-intel</guid>
-      <pubDate>Fri, 10 Apr 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>AMD</category>
-      <category>Intel</category>
-      <category>AI Chips</category>
-      <category>GPU</category>
-      <category>Data Centers</category>
-      <description>Three different architectures, three different theories about where the bottleneck is. Nvidia still has 80% of the market. That&apos;s not changing this year.</description>
-      <content:encoded><![CDATA[<p>Hot Chips this year was unusually eventful: Nvidia, AMD, and Intel each walked out their next-generation AI accelerator architectures, and because they were presenting in the same week, the contrast between their bets is easier to read than usual.</p>
-<p>Nvidia's Blackwell Ultra is the conservative bet — keep doing what's working, do more of it. 10,240 tensor cores per GPU, 8 TB/s of HBM4 memory bandwidth, and a new NVLink-X interconnect that lets 256 GPUs behave as one logical unit. Jensen Huang demoed a 10-trillion parameter training run finishing in under 48 hours. No surprises, just scaling.</p>
-<p>AMD's MI450X is the price-performance bet. 3nm TSMC, 288 GB of HBM3e, and native FP4 training support, which cuts memory requirements 4x with small accuracy cost. AMD has always been more competitive on inference economics than on raw training performance; MI450X leans into that.</p>
-<p>Intel's Gaudi 4 is the interesting one. Intel's argument is that at genuine hyperscale, the bottleneck isn't compute — it's data movement. Gaudi 4 ships with an integrated 800GbE fabric so clusters up to 1,024 nodes don't need external networking switches. It's a bet that the shape of the problem changes at scale and that Nvidia's architecture is over-indexed on single-chip performance.</p>
-<p>Nvidia still has 80%+ of the AI accelerator market and has already pre-sold most of 2026-2027 Blackwell capacity to hyperscalers. AMD and Intel made credible technical arguments this week, but the commercial reality is that the field doesn't open up until 2028, when the current contract cycle runs out. That's the real timeline to watch.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
