@@ -6,9 +6,132 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jun 2026 13:15:20 GMT</lastBuildDate>
-    <pubDate>Sun, 14 Jun 2026 13:15:20 GMT</pubDate>
+    <lastBuildDate>Mon, 15 Jun 2026 13:17:50 GMT</lastBuildDate>
+    <pubDate>Mon, 15 Jun 2026 13:17:50 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>152 Chrome Wallpaper Extensions Faked Google Search Traffic for Ad Cash</title>
+      <link>https://sabr-labs.com/article/chrome-wallpaper-extensions-fake-search-traffic</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-wallpaper-extensions-fake-search-traffic</guid>
+      <pubDate>Mon, 15 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Chrome</category>
+      <category>Browser Extensions</category>
+      <category>Adware</category>
+      <category>Ad Fraud</category>
+      <category>Socket</category>
+      <category>Google</category>
+      <description>Socket found a family of 152 new-tab wallpaper extensions, built from one codebase across 38 accounts, that logged users and laundered fake organic search clicks into Google&apos;s ad network.</description>
+      <content:encoded><![CDATA[<p>Socket's threat research team has pulled the lid off a tidy little ad-fraud operation hiding inside the Chrome Web Store: 152 "live wallpaper" extensions, all built from a single codebase, spread across 38 publisher accounts and three brands to look like unrelated products. Together they report around 105,000 users.</p>
+<p>These are new-tab extensions, the kind that replace your blank tab with an anime, football, or car wallpaper. Behind the picture, they generate visits and dress them up as legitimate Google organic search traffic, the goal being to inflate ad revenue on the back end. The fake clicks pollute the analytics that advertisers and Google itself rely on to tell real interest from manufactured noise.</p>
+<p>They also collect, despite promising they don't. Socket found the extensions logging IP addresses, ISP, click counts, and referrer data, then sharing it with Google AdSense, DoubleClick, and unnamed third-party ad partners. The store listings claimed no data collection.</p>
+<p>None of this is dramatic malware, and that's sort of the point. There's no ransomware, no credential theft, just parasitic adware that rides a single template cloned 152 ways and slips past review because each copy looks like a harmless wallpaper app from a different small developer. It's a reminder that the Chrome Web Store's volume problem isn't only about the scary stuff.</p>
+<p>If you've got a wallpaper or new-tab extension you don't remember vetting, this is a good moment to open your extensions list and clear it out. The three brands to watch for trace back to tabplugins.com, yowgames.com, and chromewallpaper.com, the last of which redirects to owhit.com.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Moves Private Cloud Compute Onto Google Cloud and Nvidia GPUs</title>
+      <link>https://sabr-labs.com/article/apple-private-cloud-compute-google-cloud-nvidia</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-private-cloud-compute-google-cloud-nvidia</guid>
+      <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Private Cloud Compute</category>
+      <category>Google Cloud</category>
+      <category>Nvidia</category>
+      <category>Confidential Computing</category>
+      <category>Apple Intelligence</category>
+      <description>For the first time Apple is running its privacy-focused AI cloud outside its own data centers, leaning on Nvidia confidential computing and Google&apos;s Titan chips to keep the guarantees intact.</description>
+      <content:encoded><![CDATA[<p>When Apple built Private Cloud Compute, the whole pitch was that it ran only on Apple silicon, inside Apple's own buildings, with cryptographic guarantees that not even Apple could peek at your data. At WWDC, that story changed. Apple is extending Private Cloud Compute to Google Cloud, running on Nvidia Blackwell GPUs, the first time it has placed the service in someone else's data center.</p>
+<p>The reason is demand. Apple Intelligence is moving toward heavier agentic tool-use and multi-step reasoning, and those workloads need more capacity than Apple's own server fleet can supply on the timeline customers expect. So Apple is renting it, and the engineering challenge becomes keeping the privacy promise on hardware it doesn't own.</p>
+<p>The answer is a stack of confidential-computing parts. Nvidia's Blackwell GPUs run in a confidential mode, Intel processors add Trust Domain Extensions, and Google's Titan security chip anchors the host. Together they're meant to create an encrypted pathway through the machine so that no one, including Google as the operator, can read data while it's being processed.</p>
+<p>It's a genuinely interesting bit of engineering, and also a meaningful shift in who you have to trust. The original PCC pitch was elegant precisely because the trust boundary was small: Apple's chips, Apple's racks, end of list. The new version asks you to trust that Nvidia's confidential mode, Intel's TDX, and Google's Titan all hold, and that Apple's attestation can prove it. Apple argues the hardware guarantees are what matter, not whose logo is on the building. That's a defensible position. It's also a bigger surface to verify.</p>
+<p>The rollout is gradual, with full operational capacity expected by the end of summer. Apple has said more technical detail is coming at the Confidential Computing Summit later this month, and that's the thing worth reading closely, because the entire claim rises or falls on whether the attestation chain actually does what the marketing says.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia&apos;s RTX Spark Puts a Grace-Blackwell Superchip in Laptops</title>
+      <link>https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-laptop-superchip</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-laptop-superchip</guid>
+      <pubDate>Mon, 15 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>RTX Spark</category>
+      <category>Microsoft</category>
+      <category>Windows</category>
+      <category>AI PC</category>
+      <category>Computex</category>
+      <description>Nvidia&apos;s first PC superchip pairs an Arm Grace CPU with a Blackwell GPU to run large models locally, shipping this fall in laptops from Dell, HP, Lenovo, and Microsoft.</description>
+      <content:encoded><![CDATA[<p>Nvidia spent a decade selling the data center its picks and shovels. Now it wants the laptop too. At Computex, Jensen Huang unveiled RTX Spark, the company's first superchip aimed squarely at Windows PCs, built with Microsoft and a clear goal of running AI agents on the device instead of in someone else's cloud.</p>
+<p>The silicon is the headline. RTX Spark fuses a 20-core Arm-based Grace CPU, designed for power efficiency with MediaTek, to a Blackwell RTX GPU with 6,144 CUDA cores, linked by Nvidia's NVLink-C2C interconnect. Nvidia quotes 1 petaflop of AI performance and up to 128GB of unified memory, enough, it says, to run a 120-billion-parameter model with a million-token context window locally on a 3-pound laptop.</p>
+<p>Microsoft's part is the half people will skip past and shouldn't. Running capable models and autonomous agents directly on the machine raises an obvious question: what stops a misbehaving agent from doing damage? Microsoft says it's adding new Windows security primitives for agent containment and policy, plus native agent experiences reachable from the taskbar, with a Surface Laptop Ultra in the launch lineup.</p>
+<p>The competitive message wasn't subtle. By building a system-on-chip for PCs, Nvidia is now elbowing into territory owned by AMD, Intel, and Qualcomm, and all three slid after the keynote. Huang's pitch is that Nvidia should own every layer of the AI stack, from the hyperscaler rack down to the thing in your bag.</p>
+<p>Hold the applause until fall, though. The on-device AI laptop has been promised before, and the hard questions are the boring ones: thermals and battery life in a 14mm chassis, and whether anyone actually needs a 120-billion-parameter model running locally when a good cloud call is faster and cheaper. The first RTX Spark machines from ASUS, Dell, HP, Lenovo, Microsoft, and MSI arrive this fall. That's when the spec sheet meets a real workload.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>WordPress Plugins From Awesome Motive Served Backdoors to 1M+ Sites</title>
+      <link>https://sabr-labs.com/article/awesome-motive-wordpress-plugin-cdn-backdoor</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/awesome-motive-wordpress-plugin-cdn-backdoor</guid>
+      <pubDate>Mon, 15 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>Supply Chain</category>
+      <category>Awesome Motive</category>
+      <category>OptinMonster</category>
+      <category>PushEngage</category>
+      <category>Backdoor</category>
+      <description>Tampered CDN scripts for OptinMonster, TrustPulse, and PushEngage quietly created rogue admin accounts on sites running the plugins before the files were cleaned up.</description>
+      <content:encoded><![CDATA[<p>More than a million WordPress sites spent part of last weekend serving a backdoor to themselves, and the plugin code on disk looked perfectly clean the whole time.</p>
+<p>The security firm Sansec traced a supply-chain attack to Awesome Motive, the company behind three widely installed plugins: OptinMonster, TrustPulse, and PushEngage. Attackers slipped malicious JavaScript into the legitimate files Awesome Motive serves from its own CDN, which means every site embedding those scripts pulled the poisoned version without changing a thing locally.</p>
+<p>The payload was patient. It waited for a logged-in administrator to load a page, then created a hidden backdoor admin account, installed a self-concealing plugin to maintain access, and shipped the new credentials off to tidio.cc, a lookalike of the real tidio.com. No admin login during the window, no compromise. One admin login, full takeover.</p>
+<p>The exposure window was mercifully narrow for two of the three. Sansec says the malicious code first appeared in the OptinMonster and TrustPulse files at 22:17 UTC on June 12 and was gone by 22:42, about 25 minutes. PushEngage was the laggard: its SDK kept serving the injected code from some CDN edges until June 14, so sites leaning on that one had a much longer exposure.</p>
+<p>Short window or not, the design is what makes this nasty. Because the tampering happened on the CDN and not in the plugin you installed, a normal file-integrity check against your own WordPress directory would have shown nothing wrong. The attack lived entirely in the script your visitors' and admins' browsers fetched.</p>
+<p>If you run any of the three, go hunting now. Look for an admin user named developer_api1 tied to customer1usx@gmail.com, any unexpected dev_xxxxxx accounts, and two rogue plugins that hid themselves under the names Content Delivery Helper and Database Optimizer. Finding any of those means you were caught in the window, and you should treat the site as compromised.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Palo Alto Confirms Attackers Are Bypassing GlobalProtect VPN Logins</title>
+      <link>https://sabr-labs.com/article/panos-globalprotect-auth-bypass-cve-2026-0257</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/panos-globalprotect-auth-bypass-cve-2026-0257</guid>
+      <pubDate>Mon, 15 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Palo Alto Networks</category>
+      <category>PAN-OS</category>
+      <category>GlobalProtect</category>
+      <category>CVE-2026-0257</category>
+      <category>VPN</category>
+      <category>CISA KEV</category>
+      <description>CVE-2026-0257 lets attackers skip GlobalProtect authentication and open their own VPN sessions, and Palo Alto says exploitation started in mid-May and is still ongoing.</description>
+      <content:encoded><![CDATA[<p>Palo Alto Networks has confirmed that attackers are actively exploiting an authentication bypass in PAN-OS GlobalProtect, the VPN component that sits at the front door of a huge number of corporate networks.</p>
+<p>The flaw, CVE-2026-0257, carries a CVSS score of 7.8. It affects the GlobalProtect portal and gateway when authentication override cookies are enabled, and it lets an attacker skip the login step entirely and stand up an unauthorized VPN session. That's not a privilege bug buried deep in a system. It's a way onto the network without credentials.</p>
+<p>According to Palo Alto's Unit 42, the first activity showed up on May 17 and the attacks have stayed limited, hitting a small portion of the devices the attackers probed. The company hasn't attributed the campaign to a named group, and says it hasn't seen post-access behavior or lateral movement yet.</p>
+<p>"Yet" is doing a lot of work in that sentence. A 7.8 doesn't have the shock value of a perfect 10, but an unauthenticated way onto a VPN concentrator is exactly the foothold ransomware affiliates and access brokers shop for. The reason there's no lateral movement on record may simply be that the people exploiting it are still early, or selling the access rather than using it.</p>
+<p>Palo Alto published indicators to hunt with: nine IP addresses, five host names and MAC values, and a set of hard-coded proof-of-concept client configuration values that show up in the malicious sessions. If you run GlobalProtect, that's your starting point.</p>
+<p>CISA added this one to its Known Exploited Vulnerabilities catalog with a federal mitigation deadline of June 1, which has already passed. If your portals are still unpatched, pull the GlobalProtect logs, check them against the published indicators, and apply the fix before you assume you weren't in the small portion that got hit.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A US Export Order Made Anthropic Shut Off Fable 5 for Everyone</title>
+      <link>https://sabr-labs.com/article/anthropic-export-order-fable-mythos-suspended</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-export-order-fable-mythos-suspended</guid>
+      <pubDate>Mon, 15 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Export Controls</category>
+      <category>Commerce Department</category>
+      <category>Fable 5</category>
+      <category>AI Policy</category>
+      <category>National Security</category>
+      <description>A Commerce Department directive bars foreign nationals from Anthropic&apos;s two newest models, and because the company can&apos;t verify everyone&apos;s nationality, it switched both off for all customers.</description>
+      <content:encoded><![CDATA[<p>At 5:21pm Eastern on Friday, Anthropic received a letter from the Commerce Department telling it to cut off access to its two newest models, Fable 5 and Mythos 5, for any foreign national anywhere in the world. That includes people outside the United States, people inside it on visas, and Anthropic's own foreign-national employees.</p>
+<p>The directive was signed by Commerce Secretary Howard Lutnick and written with the department's Bureau of Industry and Security, the same office that polices semiconductor exports to China. It invokes national security authorities and treats access to a hosted AI model the way export law has long treated shipping a controlled chip across a border.</p>
+<p>Here's the practical problem. Anthropic doesn't ask every API caller and chat user for a passport, and it can't reliably verify nationality at the scale these models run. So the only way to guarantee no foreign national touches Fable 5 or Mythos 5 was to turn both off for all customers. Fable 5 had only been public since June 9. Mythos 5 is the restricted, government-adjacent cybersecurity variant. Both went dark days later.</p>
+<p>The government's stated reason is a jailbreak. Officials believe someone found a way to bypass Fable 5's safety guardrails, and that was enough to trigger the order. Anthropic says it was shown a demonstration of the technique and walked away unimpressed: it identified a small number of previously known, minor vulnerabilities that looked relatively simple to address. In other words, the company says the thing that justified shutting down a frontier model for the entire planet was a bug class it already knew about.</p>
+<p>That gap is the story. Export controls have so far targeted the things that are hard to reproduce, the advanced chips and the raw model weights. Reaching into a live, already-public consumer product and ordering it switched off for non-citizens is a different and much blunter instrument. If the precedent holds, any US lab's flagship model is one Commerce letter away from going offline, and the trigger can be a vulnerability the lab considers routine.</p>
+<p>Anthropic says it's complying while it seeks clarity on scope and duration. Watch two things: whether the company gets a narrower path that lets US customers keep access without a global kill switch, and whether OpenAI, Google, and the others quietly game out what they'd do if the same letter landed on their desk.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Theker Raises $85M for Factory Robots That Don&apos;t Specialize</title>
       <link>https://sabr-labs.com/article/theker-robotics-85m-series-a-ai-factory-robots-june-2026</link>
@@ -897,121 +1020,6 @@
 <p>ShinyHunters posted a claim on BreachForums asking $2 million for the stolen data, then told BleepingComputer the group had nothing to do with it. Infostealers.com separately reported that the Context.ai breach originated from an infostealer infection at the company, meaning the attacker likely bought stolen credentials from a stealer log rather than breaking into Context.ai's systems directly. Vercel says the investigation is ongoing.</p>
 <p>The scope here extends well beyond Vercel. Context.ai serves hundreds of organizations. Any company whose employees authorized it with Google Workspace admin-level scope during the window of the March compromise is a potential victim of the same attack chain. Context.ai is one of thousands of AI productivity tools that have made 'connect your workspace' a core product feature, typically requesting the widest OAuth scopes the consent screen allows.</p>
 <p>Review your Google Workspace connected apps today. Pull the OAuth scope list, revoke anything with admin-level access that IT did not explicitly approve, and rotate credentials for any service whose keys might have lived in Vercel project settings. Going forward, treat every AI tool OAuth grant as a third-party vendor security review, not a convenience checkbox.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5 Is Here and It&apos;s the First Model That Feels Genuinely Multimodal</title>
-      <link>https://sabr-labs.com/article/openai-gpt-5-release-capabilities</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-release-capabilities</guid>
-      <pubDate>Tue, 14 Apr 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>GPT-5</category>
-      <category>Artificial Intelligence</category>
-      <category>Machine Learning</category>
-      <description>OpenAI&apos;s new flagship handles text, vision, audio, and code in one pass. The benchmarks are impressive. The deployment timeline is aggressive.</description>
-      <content:encoded><![CDATA[<p>OpenAI shipped GPT-5 this morning. The short version: one model, four modalities, and the closest thing we've seen to a system that actually reasons across them instead of stitching specialists together behind an API.</p>
-<p>The benchmark numbers OpenAI disclosed are what you'd expect — nearly 90% on MMLU, more than doubling GPT-4's score on International Mathematical Olympiad problems. Worth noting that MMLU is increasingly saturated as a test, so the real question is whether the jump shows up in the kind of messy, ambiguous work people actually want models to do.</p>
-<p>Early reads suggest it does. The tasks OpenAI is emphasizing in its rollout materials are agentic ones: multi-step engineering work, research that spans dozens of sources, tool use across APIs without human checkpoints in the middle. If that holds up in the wild, it's the capability leap that matters more than any benchmark score.</p>
-<p>The industry response was fast. Anthropic and Google DeepMind both have competing releases queued, and the calendar just got pulled forward. Nvidia traded up on the assumption that training and inference demand just got bigger.</p>
-<p>Access is tiered. ChatGPT Enterprise customers and Tier-1 API partners get the first 30 days. Safety researchers at the Alignment Forum have already pushed back on the pace, arguing red-team evaluations on a model this capable warrant more than the compressed window OpenAI ran. OpenAI hasn't adjusted the schedule.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Russia&apos;s APT29 Is Burning a Windows Zero-Day Across NATO Government Networks</title>
-      <link>https://sabr-labs.com/article/midnight-blizzard-zero-day-windows</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/midnight-blizzard-zero-day-windows</guid>
-      <pubDate>Tue, 14 Apr 2026 06:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>APT29</category>
-      <category>Zero-Day</category>
-      <category>Windows</category>
-      <category>NTLM</category>
-      <category>Nation-State</category>
-      <category>CISA</category>
-      <description>CVE-2026-21954 is an NTLM relay flaw with a CVSS of 9.8. Microsoft just patched it. CISA gave federal agencies 48 hours.</description>
-      <content:encoded><![CDATA[<p>Microsoft's Threat Intelligence Center confirmed this morning what incident responders at CrowdStrike and Mandiant had been piecing together for two weeks: APT29, the Russian SVR group also tracked as Midnight Blizzard, has been quietly burning a Windows NTLM zero-day across NATO government networks.</p>
-<p>The bug, now CVE-2026-21954, lets an unauthenticated attacker relay NTLM credentials to domain-level persistence without user interaction. Every supported version of Windows Server from 2016 through 2025 is vulnerable, along with every default-configured Windows 10 and 11 endpoint. That's most of the enterprise install base.</p>
-<p>Initial access was spearphishing — emails crafted to look like NATO internal communications. Once a single workstation clicked through, responders say the group was at domain admin in an average of seven minutes. That's fast enough that human detection is not realistic; you're relying on your EDR to catch it.</p>
-<p>CISA issued Emergency Directive ED-26-03 giving federal civilian agencies 48 hours to apply Microsoft's out-of-band patch. The directive also requires domain controller segmentation and, where operationally feasible, disabling NTLM outright. That second ask will land hard at agencies with legacy dependencies.</p>
-<p>At least 14 NATO-affiliated agencies across Eastern Europe have confirmed compromise. Three intelligence services were notified privately through the Shadowserver Foundation. If you manage a Windows environment, assume exposure until you can prove otherwise: audit NTLM authentication logs for the past 30 days, patch immediately, and review any domain admin logons that don't map to known activity.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Starship Caught Both Stages on the Same Flight. That&apos;s Never Been Done.</title>
-      <link>https://sabr-labs.com/article/spacex-starship-orbital-flight-success</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starship-orbital-flight-success</guid>
-      <pubDate>Mon, 13 Apr 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>SpaceX</category>
-      <category>Starship</category>
-      <category>Rocket</category>
-      <category>Space Exploration</category>
-      <category>Elon Musk</category>
-      <description>SpaceX pulled off a double tower catch at Starbase this morning after a full 90-minute orbital mission. Watch the footage. It looks fake.</description>
-      <content:encoded><![CDATA[<p>Early Thursday at Starbase, the Super Heavy booster came back first — caught by the Mechazilla tower arms the way it has been three times before. Then Starship came home. Relit its Raptors on a trajectory nobody was expecting, flew back, and let the same tower catch it too. Both stages. Same mission.</p>
-<p>No orbital vehicle has ever been fully recovered before. Not even close. The Shuttle orbiter landed like a glider and the boosters splashed down. Falcon 9 boosters land, but the second stage is expendable. What SpaceX did this morning changes the cost curve of getting to orbit by an order of magnitude, assuming they can do it twice.</p>
-<p>The flight itself ran 90 minutes. Apogee at 310 km. Sixty Starlink V3 satellites deployed on the first pass, which is almost incidental at this point. The Raptor relight for the return was the part nobody outside SpaceX was told about in advance.</p>
-<p>NASA cares about this in a specific way: the Artemis III lunar landing hinges on Starship delivering crew to the Moon's surface by 2028, and every flight that demonstrates reuse and reliability is a flight that makes that schedule plausible.</p>
-<p>SpaceX says the next Starship flight is 45 days out. The objective is in-orbit propellant transfer, the technology that makes everything beyond low Earth orbit possible with this vehicle. If they pull that off too, the next decade of space is going to look very different from the last one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Willow Chip Just Cleared the Biggest Hurdle in Quantum Computing</title>
-      <link>https://sabr-labs.com/article/google-willow-quantum-processor-breakthrough</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-willow-quantum-processor-breakthrough</guid>
-      <pubDate>Mon, 13 Apr 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>Quantum Computing</category>
-      <category>Willow</category>
-      <category>AI</category>
-      <category>Cryptography</category>
-      <description>Adding more qubits is supposed to make error rates worse. On Willow, it makes them exponentially better. That&apos;s the threshold the field has been chasing for 30 years.</description>
-      <content:encoded><![CDATA[<p>Google announced today that its 105-qubit Willow processor has crossed the error-correction threshold, meaning that when they add more physical qubits to a logical qubit, the error rate drops exponentially instead of climbing. That sentence is unremarkable until you realize it's the single hurdle that has stood between noisy-intermediate-scale quantum machines and actually-useful quantum machines for three decades.</p>
-<p>For proof-of-work, Willow ran a random circuit sampling benchmark in under five minutes. The classical supercomputer equivalent is a number so large it stops having meaning — Google cites 10 septillion years. Take the specific figure with a grain of salt (it's sensitive to which classical algorithm you compare against), but the order of magnitude is real.</p>
-<p>Hartmut Neven, who leads Quantum AI at Google, was deliberately cautious about application timelines. Willow is not factoring RSA-2048 next year. What it does is remove the biggest open scientific question from the path. Engineering a commercial quantum computer is now an engineering problem, not a physics problem.</p>
-<p>That's a meaningful distinction for cryptography. The security community has been talking about post-quantum migration on the theory that capable quantum machines are maybe 10 or 15 years out. Willow doesn't shorten that window by itself, but it confirms the window is closing, and organizations sitting on 15-year-sensitive data should be accelerating, not waiting.</p>
-<p>IBM and Microsoft responded with their own timelines. IBM is targeting its error-threshold milestone by end of year using a different architecture; Microsoft continues to bet on topological qubits. Three companies, three approaches, all suddenly credible. The race is on.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA Security+ SY0-701 Is Now Live: What&apos;s New and What Changed</title>
-      <link>https://sabr-labs.com/article/comptia-security-plus-701-new-objectives</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-security-plus-701-new-objectives</guid>
-      <pubDate>Mon, 13 Apr 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>Security+</category>
-      <category>SY0-701</category>
-      <category>Certification</category>
-      <category>Cybersecurity</category>
-      <description>The latest Security+ exam overhauls the domain structure with heavier emphasis on cloud security, zero-trust architecture, and AI-assisted threat detection.</description>
-      <content:encoded><![CDATA[<p>CompTIA officially retired the SY0-601 version of Security+ on July 31, 2024 and has been running SY0-701 as the sole active exam since then. The new version reflects a substantially updated threat environment — candidates who studied for the old exam will find significant differences in both content and question style.</p>
-<p>The most notable structural change is a reduction from six domains to five. The new domains are: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%). The weighting signals that CompTIA views hands-on operational skills as increasingly central to the certification's value.</p>
-<p>Cloud security now permeates the entire exam rather than sitting in an isolated domain. Candidates must understand shared responsibility models, cloud-native security controls, serverless and container security, and CASB deployment — all areas that were lightly covered in SY0-601. Zero-trust architecture (ZTA) is explicitly examined for the first time, including microsegmentation, identity-centric access, and continuous verification principles.</p>
-<p>A new focus on AI and automation has been added. Candidates need to understand how machine learning is applied to SIEM correlation, endpoint detection and response (EDR), and user and entity behavior analytics (UEBA). This does not require deep AI expertise but does expect familiarity with how these tools function in a modern SOC.</p>
-<p>For study resources, CompTIA's own CertMaster Learn and CertMaster Labs remain the most closely aligned materials. Professor Messer's free SY0-701 video series has been widely praised as the best no-cost option. Jason Dion's Udemy course and Mike Chapple's official CompTIA study guide (Sybex) are the top-rated paid options. Most candidates report needing 60–90 days of dedicated study for a first attempt.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Scattered Spider Locked Up 47 Hospitals Over a Weekend. A Phone Call Started It.</title>
-      <link>https://sabr-labs.com/article/ransomware-attack-us-hospital-systems</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ransomware-attack-us-hospital-systems</guid>
-      <pubDate>Mon, 13 Apr 2026 07:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Healthcare</category>
-      <category>Scattered Spider</category>
-      <category>Black Cat</category>
-      <category>CISA</category>
-      <category>FBI</category>
-      <description>One vishing call to an IT help desk was enough to unwind MFA on an admin account. Eight petabytes encrypted. Ambulances diverted in Phoenix for six hours.</description>
-      <content:encoded><![CDATA[<p>The initial access was a phone call. Someone impersonating an IT help desk vendor got an admin at one of three regional health networks to reset MFA on a privileged account. An hour later, Scattered Spider was inside; by the end of the weekend, 47 hospitals across six states were running on paper.</p>
-<p>The payload was Black Cat (ALPHV). The group used the organization's own remote access tooling to move laterally — the kind of living-off-the-land tradecraft that makes EDR detection hard even when it's working properly. Eight petabytes of patient data and backups were encrypted before anyone realized what was happening.</p>
-<p>The ransom demand is $50 million in Monero. The FBI, CISA, and HHS are coordinating the response. Affected hospitals are using paper-based emergency procedures designed for natural disasters, not for weeks of sustained outage.</p>
-<p>The human cost is already real. Three patients had elective surgeries cancelled inside their pre-op window. Two hospitals in Phoenix diverted incoming ambulances for six hours. Claroty estimates total disruption will exceed $750 million when recovery, downtime, and regulatory exposure are added up.</p>
-<p>Senator Mark Warner's Critical Infrastructure Resilience Act, which would require hospitals to maintain offline backups, has been stalled for two years by industry lobbying. It's expected to get a Senate floor vote next month. If it doesn't pass after this, it's fair to ask what would have to happen for it to pass.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
