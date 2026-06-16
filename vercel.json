@@ -4,6 +4,17 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.sabr-labs.com" }],
+      "destination": "https://sabr-labs.com/$1",
+      "permanent": true
+    },
+    { "source": "/demo", "destination": "/try", "permanent": true },
+    { "source": "/landing", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|rss\\.xml|robots\\.txt|sitemap\\.xml|assets/).*)",

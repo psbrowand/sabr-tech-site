@@ -8,8 +8,12 @@
 //
 // Priority model:
 //   1.0  →  /                (marketing front door)
-//   0.9  →  /#certifications, /#pricing (anchor scroll on /)
+//   0.9  →  /try             (free no-signup demo lab)
 //   0.8  →  /learning, /news (primary sections)
+//
+// NOTE: on-page anchors like /#certifications and /#pricing are deliberately
+// NOT listed — Google strips the fragment and treats them as duplicates of /,
+// which surfaces as "Alternate page with proper canonical tag" in Search Console.
 //   0.7  →  /tech-news, /ai-news, /cyber-security
 //   0.6  →  /article/:slug   (individual posts)
 //   0.4  →  /about, /contact, /newsletter, /qod
@@ -63,8 +67,6 @@ async function main() {
     { loc: `${SITE_URL}/try`,               priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE_URL}/compare/boson-netsim-alternative`,  priority: '0.7', changefreq: 'monthly' },
     { loc: `${SITE_URL}/compare/packet-tracer-alternative`, priority: '0.7', changefreq: 'monthly' },
-    { loc: `${SITE_URL}/#certifications`,   priority: '0.9', changefreq: 'weekly' },
-    { loc: `${SITE_URL}/#pricing`,          priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE_URL}/learning`,          priority: '0.8', changefreq: 'weekly' },
     { loc: `${SITE_URL}/news`,              priority: '0.8', changefreq: 'daily'  },
     { loc: `${SITE_URL}/tech-news`,         priority: '0.7', changefreq: 'daily'  },

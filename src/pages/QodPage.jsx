@@ -86,7 +86,7 @@ export default function QodPage() {
         Free daily IT cert question. Pick your answer below — no account
         needed. Make it a habit?{' '}
         <a
-          href={`${APP_ORIGIN}/signup?source=qod`}
+          href={`${APP_ORIGIN}/register?source=qod`}
           className="text-cyan-400 hover:underline"
         >
           Create a free Sabr account
@@ -164,7 +164,7 @@ export default function QodPage() {
               {result.explanation}
             </p>
             <a
-              href={`${APP_ORIGIN}/signup?source=qod`}
+              href={`${APP_ORIGIN}/register?source=qod`}
               className="btn-primary mt-4 inline-block"
             >
               Get tomorrow's tailored to your weakest topic →
