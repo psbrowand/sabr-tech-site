@@ -6,9 +6,130 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jun 2026 13:28:12 GMT</lastBuildDate>
-    <pubDate>Wed, 17 Jun 2026 13:28:12 GMT</pubDate>
+    <lastBuildDate>Thu, 18 Jun 2026 13:15:36 GMT</lastBuildDate>
+    <pubDate>Thu, 18 Jun 2026 13:15:36 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco&apos;s New DevNet AI Infrastructure Exam Hits Beta This Month</title>
+      <link>https://sabr-labs.com/article/cisco-devnet-ai-infrastructure-beta-exam-300-920-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-devnet-ai-infrastructure-beta-exam-300-920-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 11:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Cisco</category>
+      <category>DevNet</category>
+      <category>AI Infrastructure</category>
+      <category>Certifications</category>
+      <category>300-920</category>
+      <category>Network Automation</category>
+      <description>Cisco opened the beta for a DevNet Specialist exam in AI Infrastructure (300-920 DNAAIOPS) aimed at automation engineers running AI networking gear, with general availability expected in Q3.</description>
+      <content:encoded><![CDATA[<p>Cisco is adding a certification for the people who automate AI networking gear. The DevNet Specialist - AI Infrastructure exam, code 300-920 DNAAIOPS, is in beta this month for candidates in the US through Pearson VUE test centers, with early registration going at a discounted rate. Cisco expects the full cert to reach general availability in the third quarter.</p>
+<p>It's aimed at network developers and automation engineers working with Cisco's AI portfolio: hardware built on its Silicon One chips, Meraki AI analytics, and the orchestration around them. The exam sits in the DevNet specialist track, which means it assumes you already know how to automate infrastructure and layers the AI-specific piece on top. This is not a first cert.</p>
+<p>The timing is part of a pattern. Cisco announced CCNA v2.0 on May 20, with the blueprint shifting hard toward troubleshooting and adding a section on AI's role in network operations. CCNP Enterprise and Security got updated blueprints with zero-trust folded in. Cisco is threading AI through the whole ladder, from associate up to specialist, and this exam is the AI-infrastructure rung.</p>
+<p>Here's the honest read on a beta. The upside is a cheaper exam and a real certification once it's scored. The downside is that you study against objectives that can still shift, with almost no third-party material to lean on yet. If you need a credential on your record this quarter, a beta with no study guides isn't the move. If you already run Cisco AI-networking gear and want to be early on a cert that's likely to matter, sitting the beta is a reasonable bet.</p>
+<p>Whether it becomes a must-have comes down to one thing: whether employers start writing it into job postings. That's what separates a useful specialist cert from a logo nobody asks for. GA is expected in Q3, so the picture gets clearer soon. Worth watching, worth maybe beta-testing if it's your stack, not yet worth rearranging your study plan around.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s New Life-Science Benchmark Stumps Every Model It Tested</title>
+      <link>https://sabr-labs.com/article/openai-lifescibench-benchmark-life-science-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-lifescibench-benchmark-life-science-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 10:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>LifeSciBench</category>
+      <category>AI Benchmarks</category>
+      <category>Life Sciences</category>
+      <category>GPT-5</category>
+      <category>Drug Discovery</category>
+      <description>OpenAI released LifeSciBench, a 750-task benchmark for real biology research work graded by expert rubrics, and even the best model clears only about one task in three.</description>
+      <content:encoded><![CDATA[<p>OpenAI put out a benchmark on June 17 that its own models flunk. LifeSciBench is 750 tasks built by working scientists to mirror real life-science research, spread across seven biological domains and seven workflows, each task pairing a prompt, supporting artifacts, and a grading rubric. The headline result is refreshingly humble: the strongest model OpenAI tested passes roughly one task in three.</p>
+<p>The construction is the interesting part. OpenAI says it pulled in 173 scientists with industry experience to author and review the tasks, which is a different exercise from scraping exam questions. Alongside the benchmark, OpenAI and the startup Molecule.one showed a near-autonomous "AI chemist" running on GPT-5.4 that improved a real drug-making reaction, the kind of concrete result the benchmark is meant to contextualize.</p>
+<p>In a beat that usually runs on hype, a one-in-three pass rate is the honest number, and OpenAI publishing it deserves some credit. It's a counterweight to the steady drip of "AI is about to cure disease" marketing. Actual research is judgment under messy, incomplete conditions, and a benchmark that says models miss two-thirds of the time describes that reality better than another leaderboard victory lap.</p>
+<p>Keep one eyebrow up, though. This is OpenAI grading a benchmark OpenAI built, on rubrics OpenAI commissioned. Vendor-published benchmarks have a long history of flattering the vendor's own models, and the independent re-runs always tell you more than the launch post. The 173-scientist provenance helps, but it doesn't make the scoring neutral.</p>
+<p>If you're in biotech and weighing AI for research work, LifeSciBench is a more grounded yardstick than a polished demo, and that alone makes it useful. The figure worth remembering isn't the AI-chemist headline. It's the two tasks in three that the best models still get wrong.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GitHub Is So Swamped by AI Agents That Microsoft Is Renting AWS</title>
+      <link>https://sabr-labs.com/article/microsoft-github-aws-ai-agent-capacity-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-github-aws-ai-agent-capacity-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>GitHub</category>
+      <category>Microsoft</category>
+      <category>AWS</category>
+      <category>AI Agents</category>
+      <category>Cloud Infrastructure</category>
+      <category>Azure</category>
+      <description>Microsoft confirmed it&apos;s routing GitHub burst workloads to Amazon&apos;s cloud after AI coding agents pushed the platform past the uptime its enterprise customers pay for.</description>
+      <content:encoded><![CDATA[<p>Microsoft owns GitHub. Microsoft owns Azure. And this week Microsoft confirmed it's paying Amazon to keep GitHub running. That's the headline, and it tells you how badly AI coding agents have outrun the infrastructure built for human developers.</p>
+<p>The numbers behind the decision are blunt. GitHub is now handling roughly 275 million commits a week, took nine outages in May, and saw June availability drop below the 99.9% uptime its enterprise contracts promise. The platform processed about a billion commits in all of 2025. Executives have reportedly talked about a 2026 run rate as high as 14 billion. The single sharpest figure is 17 million AI-agent pull requests in one month, a sustained machine-speed load against services sized for people who sleep.</p>
+<p>Under the arrangement reported June 16, Microsoft will push a chunk of GitHub's burst compute and storage, specifically Actions runners and Codespaces, onto AWS. The opening deal covers 150 megawatts of capacity, somewhere around 30,000 NVIDIA H200-class GPUs, with an option to double inside two years. A company handing workloads to its biggest cloud rival is not a routine procurement choice. It's a tell.</p>
+<p>The deeper problem is that agent traffic doesn't behave like human traffic. It's continuous, correlated, and never idles, so the capacity models everyone built around developers logging off at night simply don't forecast it. One of the best-resourced infrastructure teams on the planet got caught anyway.</p>
+<p>This is the first big infrastructure bill for the agentic-coding boom landing in public, and it's worth more than the novelty of Microsoft calling Amazon. If Azure can't absorb GitHub's agent load, the quiet assumption a lot of teams are making, that their own CI and build systems scale linearly as they bolt on more agents, deserves a hard second look before the invoice shows up.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Three Bugs Chain to Full Takeover of LiteLLM AI Gateways</title>
+      <link>https://sabr-labs.com/article/litellm-ai-gateway-takeover-cve-chain-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/litellm-ai-gateway-takeover-cve-chain-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>LiteLLM</category>
+      <category>AI Security</category>
+      <category>CVE-2026-47101</category>
+      <category>Privilege Escalation</category>
+      <category>RCE</category>
+      <category>AI Gateway</category>
+      <description>Researchers chained three LiteLLM flaws that let any low-privilege user climb to admin and run code on the gateway, exposing every provider key and prompt it handles.</description>
+      <content:encoded><![CDATA[<p>On June 15, Obsidian Security published a chain that turns an ordinary user on a LiteLLM proxy into the equivalent of root on the box. The full chain rates CVSS 9.9. LiteLLM is one of the more popular open-source AI gateways, the thing teams put in front of OpenAI, Anthropic, and other providers to centralize keys, routing, and spend.</p>
+<p>The chain runs in three moves. CVE-2026-47101 is an authorization bypass: when a regular user mints a virtual API key, LiteLLM stores the caller-supplied list of allowed routes without checking it against the user's role. CVE-2026-47102 is the privilege escalation, an endpoint that lets users edit their own record without restricting which fields they can touch, so an attacker simply sets their own role to proxy_admin. CVE-2026-40217 is the sandbox escape, a Custom Code Guardrail that ran admin-supplied Python through exec() with no real source filtering.</p>
+<p>Why this hurts more than a typical web app bug: an AI gateway is a key vault by another name. Take it over and you get every provider key it holds, the secrets that decrypt its stored credentials, and every prompt and response that has passed through it. That's the whole organization's model access, plus whatever sensitive data was riding in those prompts.</p>
+<p>This is also not LiteLLM's only recent problem. CVE-2026-42271, a separate bug in its MCP machinery that let callers spawn subprocesses through the gateway, was exploited in the wild and added to CISA's KEV catalog earlier this month. The project keeps surfacing because AI gateways are new, privileged plumbing that very few teams have gotten around to threat-modeling.</p>
+<p>The fix set landed in LiteLLM v1.83.14-stable. Upgrade, then assume the gateway's secrets are burned: rotate every provider key it held, and tighten who is allowed to mint virtual keys in the first place. A gateway that anyone with an account can escalate through isn't a control, it's a single point of failure with your model budget attached.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Flags an Exploited LiteSpeed cPanel Bug That Hands Out Root</title>
+      <link>https://sabr-labs.com/article/litespeed-cpanel-cve-2026-48172-root-kev-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/litespeed-cpanel-cve-2026-48172-root-kev-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>LiteSpeed</category>
+      <category>cPanel</category>
+      <category>CVE-2026-48172</category>
+      <category>CISA KEV</category>
+      <category>Privilege Escalation</category>
+      <category>Web Hosting</category>
+      <description>CISA added CVE-2026-48172, a symlink-following flaw in LiteSpeed&apos;s cPanel plugin that escalates low-privilege hosting accounts to root, to its exploited-vulnerabilities catalog with a June 18 federal deadline.</description>
+      <content:encoded><![CDATA[<p>A user with nothing more than FTP or web-shell access on a shared host can ride a symlink straight to root. CISA added CVE-2026-48172, a flaw in LiteSpeed's cPanel plugin, to its Known Exploited Vulnerabilities catalog on June 16, with federal agencies given until June 18 to patch under Binding Operational Directive 26-04. That three-day window is CISA's way of saying this is already being used.</p>
+<p>The bug is a UNIX symlink-following weakness. On shared hosting servers running CloudLinux with CageFS, the isolation that's supposed to keep one tenant boxed into their own account, an attacker can abuse symlink handling to escape that box and execute as root. LiteSpeed shipped the fix in user-end cPanel plugin v2.4.8 (and a matching WHM plugin update) earlier in June. Every version before that is exposed.</p>
+<p>Shared hosting is what makes this nasty. One root compromise on a multi-tenant box doesn't hit one site, it hits every site on the server. LiteSpeed and cPanel together run a huge slice of the budget and reseller hosting market, so the blast radius here is measured in neighbors, not in a single victim.</p>
+<p>This is also the second cPanel-plugin flaw CISA has flagged as exploited in recent weeks. Hosting control-panel plugins are a recurring soft spot: they run with high privilege, they sit on internet-facing servers, and the operators who install them often forget they're a moving part that needs patching.</p>
+<p>If you run servers, get the LiteSpeed plugin to 2.4.8 or later today and hunt for symlink abuse and unexpected root processes while you're in there. If you're a customer on managed shared hosting, you can't patch this yourself, so ask your provider one direct question: what version of the LiteSpeed cPanel plugin is on my server, and when did you update it?</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>BlueNoroff Tied to Backdoor in 144 Mastra AI npm Packages</title>
+      <link>https://sabr-labs.com/article/mastra-npm-supply-chain-easy-day-js-bluenoroff-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mastra-npm-supply-chain-easy-day-js-bluenoroff-june-2026</guid>
+      <pubDate>Thu, 18 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain Attack</category>
+      <category>npm</category>
+      <category>Mastra</category>
+      <category>BlueNoroff</category>
+      <category>North Korea</category>
+      <category>Infostealer</category>
+      <description>A hijacked contributor account pushed a backdoored dependency into 144 packages of the Mastra AI framework, and researchers tie the payload to the North Korean crew BlueNoroff.</description>
+      <content:encoded><![CDATA[<p>In an 88-minute window early on June 17, an attacker republished 142 packages under the @mastra npm scope, each carrying one quiet addition: a dependency called easy-day-js, a typosquat of the popular dayjs date library. Counting a couple of related packages, 144 were backdoored. Mastra is an open-source framework for building AI apps in JavaScript and TypeScript, and its scope pulls more than 1.1 million downloads a week.</p>
+<p>The malicious easy-day-js did the damage on install. Its latest version shipped an obfuscated postinstall dropper that pulled a second-stage payload from attacker servers, ran it, then deleted itself to wipe the trail. The payload is a cross-platform infostealer. Any developer workstation, CI runner, or build system that installed an @mastra/* package after June 16 should be treated as compromised. The single highest-impact package, @mastra/core, alone sees roughly 918,000 weekly downloads.</p>
+<p>The way in was boring, which is usually how these go. The attacker controlled a hijacked contributor account whose publishing access to the @mastra scope had never been revoked. No clever exploit, just a stale credential with rights nobody pulled.</p>
+<p>Snyk and Orca both link the tradecraft to Sapphire Sleet, the cluster also tracked as BlueNoroff, a North Korean group with a long record of targeting developers and stealing cryptocurrency. That attribution is an assessment based on payload behavior, not a confession, so hold it loosely. But if it holds, this stops being opportunistic credential theft and becomes a nation-state campaign aimed squarely at AI tooling.</p>
+<p>That target choice is the part worth sitting with. Attackers aren't breaking into the app anymore, they're poisoning the dependency the app trusts. AI frameworks are an especially fat target because the people using them install fast, wire up agents that run code, and rarely audit a transitive dependency that showed up overnight. The trust you extend to a package scope is the trust an attacker inherits.</p>
+<p>If you build on Mastra, assume exposure and act like it. Check your lockfiles and installed tree for easy-day-js, rebuild any machine that pulled an affected package, and rotate every credential, token, and provider key those machines could touch. Then go disable install scripts you don't need, because a postinstall hook that runs arbitrary code on npm install is the door this walked through.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CompTIA&apos;s New SecOT+ Bets on OT Security as Its Own Career Track</title>
       <link>https://sabr-labs.com/article/comptia-secot-plus-ot-security-certification-2026</link>
@@ -903,125 +1024,6 @@
 <p>The timing isn't happening in a vacuum. Anthropic filed for its own IPO on June 1 at a reported $965 billion valuation, SpaceX is in the pipeline, and Bloomberg now tallies the AI IPO queue at $3.6 trillion in combined paper value. Two frontier labs going public in the same half-year means public markets, not private mega-rounds, are about to set the price of the AI boom for the first time.</p>
 <p>One more wrinkle: the confirmation landed hours after Apple's WWDC keynote, where the new Siri was revealed to run on Google's Gemini. OpenAI's ChatGPT handoff deal made it the default AI brand on the iPhone; that exclusivity is now visibly eroding right as the company asks the public to price its consumer moat.</p>
 <p>The S-1 will eventually become public, and with it the first audited look at OpenAI's actual economics: real margins, real compute obligations, real revenue concentration. Every claim about AI economics to date has been sourced from leaks and investor decks. The prospectus is where the story has to survive an auditor.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Critical Veeam Flaw Lets Any Domain User Run Code on Your Backup Server</title>
-      <link>https://sabr-labs.com/article/veeam-backup-rce-cve-2026-44963</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/veeam-backup-rce-cve-2026-44963</guid>
-      <pubDate>Wed, 10 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Veeam</category>
-      <category>Vulnerability</category>
-      <category>Ransomware</category>
-      <category>Backups</category>
-      <category>CVE</category>
-      <description>CVE-2026-44963 (CVSS 9.4) gives any low-privilege domain account remote code execution on domain-joined Veeam Backup &amp; Replication v12 servers; the fix shipped June 9.</description>
-      <content:encoded><![CDATA[<p>Any domain account, including the intern's, can now potentially execute code on the server that holds your backups. That's the short version of CVE-2026-44963, a critical flaw in Veeam Backup & Replication that scored 9.4 on CVSS v4.</p>
-<p>The vulnerability affects version 12.3.2.4465 and every earlier v12 build. Veeam shipped the fix in 12.3.2.4854 on June 9, documented in KB4696. Version 13 isn't affected thanks to architectural changes, which is a quiet argument for the upgrade if you've been putting it off. The bug was found and reported by Sina Kheirkhah of watchTowr.</p>
-<p>There's one important catch: only domain-joined backup servers are exposed. Veeam's own hardening guidance has said for years that backup infrastructure should live outside Active Directory, in a workgroup, precisely so a compromised domain doesn't take the backups down with it. Plenty of shops domain-join anyway because it makes management easier. This CVE is the bill for that convenience.</p>
-<p>Why this one deserves your attention over the average critical: ransomware crews go after backup infrastructure first, before they encrypt anything, because organizations with intact backups don't pay. A reliable path from any low-privilege domain account to code execution on the Veeam server is exactly the primitive those playbooks are built around. No exploitation has been reported yet, but patch-diffing starts the moment a fix ships, and Veeam flaws have historically gone from patch to active exploitation within weeks.</p>
-<p>Patch to 12.3.2.4854 now, and if your backup server is domain-joined, treat this as the prompt to fix that too. The patch closes this CVE. Pulling the server out of the domain closes the next one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>June Patch Tuesday: 200 Fixes, Six Zero-Days, and a Bug Bounty Protest</title>
-      <link>https://sabr-labs.com/article/microsoft-june-2026-patch-tuesday-200-flaws</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-june-2026-patch-tuesday-200-flaws</guid>
-      <pubDate>Wed, 10 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Patch Tuesday</category>
-      <category>Microsoft</category>
-      <category>Zero-Day</category>
-      <category>Exchange</category>
-      <category>BitLocker</category>
-      <description>Microsoft&apos;s June update patches an actively exploited Exchange spoofing flaw plus five publicly disclosed zero-days, several of them dropped by a group protesting how Redmond runs its bounty program.</description>
-      <content:encoded><![CDATA[<p>Two hundred vulnerabilities, 33 of them critical, six zero-days, and one of those already being used in attacks. Microsoft's June Patch Tuesday is one of the largest of the year, and the story behind several of the zero-days is messier than the usual coordinated-disclosure routine.</p>
-<p>Patch the Exchange flaw first. CVE-2026-42897, a spoofing vulnerability in Exchange Server, is the only bug in the batch confirmed to be actively exploited. If you still run on-prem Exchange, you already know the drill: it remains one of the most reliably attacked products in enterprise IT, and a spoofing primitive there tends to be the first link in a phishing or mailbox-takeover chain.</p>
-<p>Five more zero-days were publicly disclosed before patches existed, and most of them trace to a group calling itself Nightmare Eclipse, which dropped GreenPlasma (CVE-2026-45586, a Windows CTFMON privilege escalation), the YellowKey BitLocker bypass (CVE-2026-45585), and Mini-Plasma in protest of how Microsoft handles its bug bounty and disclosure programs. Whatever you think of the tactic, it worked as pressure: all of them got fixed this cycle.</p>
-<p>The remaining disclosures came through more conventional channels. Researchers at Calif.io documented an HTTP/2 Bomb denial-of-service flaw in HTTP.sys (CVE-2026-49160), and Jonas Lykkegaard published a second BitLocker bypass dubbed bitskrieg (CVE-2026-50507). Two separate BitLocker bypasses in one month is worth pausing on if your threat model includes lost or stolen laptops, since both undermine the assumption that disk encryption protects a powered-off machine.</p>
-<p>The oddest entry is CVE-2020-17103, a Windows Cloud Files Mini Filter Driver flaw that Google Project Zero's James Forshaw originally reported in September 2020. It carries a 2020 CVE number and is only now getting a patch. Microsoft hasn't explained the five-and-a-half-year gap.</p>
-<p>For prioritization: Exchange first, then the BitLocker bypasses on any fleet with mobile hardware, then work through the criticals. Twenty-eight of the 33 critical-rated bugs are remote code execution, and the elevation-of-privilege pile (65 bugs this month) is what attackers chain after initial access. The protest angle makes good copy, but the patching order is the part that matters by Friday.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Worm Built for AI Coding Tools Took Down 73 Microsoft GitHub Repos</title>
-      <link>https://sabr-labs.com/article/miasma-worm-microsoft-github-repos</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/miasma-worm-microsoft-github-repos</guid>
-      <pubDate>Wed, 10 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>Malware</category>
-      <category>GitHub</category>
-      <category>Microsoft</category>
-      <category>AI Coding Tools</category>
-      <description>The Miasma worm planted credential-stealing payloads that fire when a repo is opened in Claude Code, Cursor, or VS Code, forcing GitHub to disable 73 official Microsoft repositories.</description>
-      <content:encoded><![CDATA[<p>It took GitHub 105 seconds to pull 73 of Microsoft's own repositories offline. The infection that forced the takedown had been spreading for more than two weeks before anyone hit the kill switch.</p>
-<p>On June 5, GitHub disabled repositories across four official Microsoft organizations: Azure, Azure-Samples, MicrosoftDocs, and Microsoft itself. The trigger was a malicious commit pushed to Azure/durabletask through a previously compromised contributor account. The commit planted configuration files that execute a credential-harvesting payload the moment a developer opens the repository in Claude Code, Gemini CLI, Cursor, or VS Code. The worm doesn't attack the code you ship. It attacks the tools you write it with.</p>
-<p>The malware, dubbed Miasma, is assessed to be a variant of the Mini Shai-Hulud worm that the TeamPCP group publicly released in mid-May. The chain traces back to May 19, when the durabletask package on PyPI (Microsoft's Azure Durable Task SDK) was compromised. Three malicious versions went live within 35 minutes, published using GitHub Actions secrets the attackers had already stolen.</p>
-<p>This is the uncomfortable part: agentic coding tools are designed to read and act on repository configuration automatically. Hooks, instruction files, and tool manifests get parsed and executed as a feature. The old supply chain model assumed a human would at least glance at the code before running it. The new one assumes your AI assistant will open whatever it's pointed at, and Miasma was written by someone who understood that perfectly.</p>
-<p>Microsoft has restored some of the repositories while keeping others offline as the investigation continues, and this is reportedly the second time Miasma has hit the company's GitHub presence. Neither Microsoft nor GitHub has published a full accounting of which repos carried the payload and for how long, which makes it hard for downstream teams to know whether they were exposed.</p>
-<p>If you or your tooling touched Microsoft's GitHub orgs or the durabletask package since mid-May, rotate credentials now, especially GitHub tokens and cloud keys that live in your environment. Then look at the agent-facing config of every repo you clone before you let an AI tool loose in it. That file your assistant helpfully reads on startup is now an execution vector.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The Cisco SD-WAN Bug from Yesterday is a Textbook Security+ PBQ</title>
-      <link>https://sabr-labs.com/article/cisco-sdwan-cve-security-plus-pbq-2026-04-23</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-sdwan-cve-security-plus-pbq-2026-04-23</guid>
-      <pubDate>Thu, 23 Apr 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Security+</category>
-      <category>CompTIA</category>
-      <category>PBQ</category>
-      <category>CVE-2026-20122</category>
-      <category>Cisco</category>
-      <category>Exam Prep</category>
-      <description>Walking through CVE-2026-20122 as a SY0-701 objective 2.3 performance-based question. What the attack actually abuses, and why most candidates pick the wrong control.</description>
-      <content:encoded><![CDATA[<p>We covered the Cisco Catalyst SD-WAN Manager CVEs yesterday. Emergency Directive 26-03, three exploits under active use, federal patch deadline today. CVE-2026-20122, the file-overwrite flaw that escalates a caller to vmanage user, is also a clean Security+ performance-based question. Walking through it teaches the exam logic better than a generic textbook example of missing authorization.</p>
-<p>Here is the bug in one paragraph. A privileged API endpoint accepts a file upload from an authenticated caller. The endpoint does not check whether the caller is authorized to call it. The file gets written to a location that executes with vmanage privileges, so a lower-privilege account walks away with vmanage. The upload itself is not the security hole. The authorization check that was never wired up is.</p>
-<p>The mapping to SY0-701 objective 2.3 ("Explain various types of vulnerabilities") is where candidates slip. The objective lists a lot of bug shapes — improper input handling, unprotected APIs, privilege escalation, misconfiguration. A PBQ typically gives you the symptom and asks for two things: classify the vuln, pick the compensating control. Most candidates see "file upload" and pick input validation. Wrong answer. The OWASP API Security Top 10 pegs this as API5:2023, Broken Function Level Authorization. On the exam, the keyword cluster is "improper access control" and "privilege escalation," and the control is role-based access control on the API surface, not input sanitization.</p>
-<p>The reason input-validation is the wrong answer is worth sitting with. If you harden the parser and reject malformed uploads, the authenticated low-privilege attacker still calls the API, still uploads the file, still escalates. You stopped a different attack. This one goes through clean input.</p>
-<p>If you can describe CVE-2026-20122 in two sentences — "privileged API trusted an unauthorized caller; file upload was the side effect, not the root cause" — you can answer any PBQ that tests the same shape. The shape shows up across Sec+, CySA+ (objective 1.4 vulnerability analysis), and PenTest+ (objective 3.6 API testing). Read the CVE advisory itself, not the CVSS line. The CVSS is a score; the advisory is the story.</p>
-<p>Tomorrow's QoD will walk a related one. Try it before reading the explanation.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Four-Month-Old AI Lab with 20 Employees Just Raised Half a Billion Dollars</title>
-      <link>https://sabr-labs.com/article/recursive-superintelligence-500m-seed-april-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/recursive-superintelligence-500m-seed-april-2026</guid>
-      <pubDate>Tue, 21 Apr 2026 15:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Funding</category>
-      <category>Recursive Superintelligence</category>
-      <category>GV</category>
-      <category>Nvidia</category>
-      <category>Startups</category>
-      <description>Recursive Superintelligence closed a $500M round at a $4B pre-money valuation, led by GV with Nvidia participating. It has been incorporated since December.</description>
-      <content:encoded><![CDATA[<p>Recursive Superintelligence, an AI startup that did not exist at the end of last year, has raised at least $500 million at a $4 billion pre-money valuation. GV led the round. Nvidia joined. Per reporting from the Financial Times, the company has been operating for roughly four months and has under two dozen employees.</p>
-<p>The headcount matters. A lab raising at this scale with twenty people is a bet on who the twenty people are, not what the product is. That is the shape of seed-stage frontier-AI fundraising now: partnerships write nine-figure checks based on pedigree and a deck, because the alternative is being shut out once capability compounds.</p>
-<p>The company's stated thesis is recursive self-improvement, meaning models that improve their own training process. That phrase has been floating around AI labs for a decade, but it takes on weight when Nvidia decides to put its balance sheet behind a specific team pursuing it. Nvidia is the one vendor in the industry with real signal on who is actually building capable systems, because everyone buys chips from them.</p>
-<p>There is no public product, no demos, no paper. Whatever Recursive Superintelligence is building will stay behind closed doors until either a research result or a capability demonstration justifies the valuation. In the meantime, the round itself is the story.</p>
-<p>Two things to watch. First, the employee count in six months. If it stays small, the thesis is a compute-and-autonomy play where a handful of researchers drive everything. If it triples, the real work is operational and this was a talent-acquisition round dressed up as a seed. Second, whether GV's involvement draws in Google's own infrastructure. That would be the quiet signal that someone at Google thinks this team is worth a hedge outside DeepMind.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Built a Less-Restricted AI Model for Security Teams. Anthropic Went the Other Direction.</title>
-      <link>https://sabr-labs.com/article/openai-gpt-5-4-cyber-anthropic-mythos-split-april-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-4-cyber-anthropic-mythos-split-april-2026</guid>
-      <pubDate>Tue, 21 Apr 2026 14:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <category>AI Safety</category>
-      <category>GPT-5.4-Cyber</category>
-      <category>Claude Mythos</category>
-      <category>Cybersecurity</category>
-      <description>OpenAI&apos;s GPT-5.4-Cyber rolled out April 14 to thousands of verified defenders. Anthropic&apos;s Mythos went to about 40 organizations. Two labs looked at the same capability tier and drew opposite conclusions.</description>
-      <content:encoded><![CDATA[<p>Six days apart. On April 8, Anthropic confirmed its most capable model, Claude Mythos, would not be publicly released, with access restricted to roughly 40 partners under Project Glasswing. On April 14, OpenAI announced GPT-5.4-Cyber, a version of its frontier model with relaxed restrictions for legitimate security work, and rolled it out to thousands of verified defenders through a program called Trusted Access for Cyber.</p>
-<p>Read those two decisions together and the disagreement is explicit. Anthropic concluded that a model capable of autonomous vulnerability discovery and exploit chaining was too dangerous to distribute widely, regardless of the caller's stated purpose. OpenAI concluded that the right answer to dangerous capability is not scarcity, but verification — make sure the caller is who they say they are, and then let the capability serve defense at scale.</p>
-<p>Both positions have force. Anthropic's is the more conservative call, and the one that holds up if something goes wrong downstream: if a restricted-tier model gets used to automate mass-scale intrusion, the lab that shipped it to thousands of customers is the one at the hearing. OpenAI's is the more operationally honest call: attackers don't wait for approval to use AI tooling, and the defensive side of the asymmetry has been outpaced for two years. Getting capable tools into the hands of defenders at a scale that matches the threat is worth the verification overhead.</p>
-<p>The quiet part is that both companies appear to believe the underlying capability threshold has actually been crossed. Neither is shipping its best model into the public API with default safety training. Both have converged on gated-access programs tied to identity verification. The disagreement is about how wide the gate is, not whether there should be one.</p>
-<p>For security teams, the immediate question is which program your organization qualifies for and which one actually improves your defensive posture. The OpenAI program is easier to get into and covers thousands of organizations. The Anthropic program is smaller, tighter, and reportedly pairs access with direct partnership support. A third interesting question: what happens when the next tier above both of these gets built. Neither company has committed to what they'll do at that point, and the answers they give in April 2027 are going to matter more than the ones they're giving now.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
