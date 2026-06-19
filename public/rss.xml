@@ -6,9 +6,110 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Jun 2026 13:15:36 GMT</lastBuildDate>
-    <pubDate>Thu, 18 Jun 2026 13:15:36 GMT</pubDate>
+    <lastBuildDate>Fri, 19 Jun 2026 17:32:10 GMT</lastBuildDate>
+    <pubDate>Fri, 19 Jun 2026 17:32:10 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Apple Patches a Beats Bug That Could Turn Earbuds Into a Wiretap</title>
+      <link>https://sabr-labs.com/article/apple-beats-studio-buds-airoha-eavesdrop-cve-2025-20701-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-beats-studio-buds-airoha-eavesdrop-cve-2025-20701-june-2026</guid>
+      <pubDate>Fri, 19 Jun 2026 12:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Apple</category>
+      <category>Beats</category>
+      <category>Bluetooth</category>
+      <category>Airoha</category>
+      <category>CVE-2025-20701</category>
+      <category>Firmware</category>
+      <description>Apple pushed firmware 1B211 to fix a high-severity Beats Studio Buds flaw that let someone in Bluetooth range impersonate a paired phone and listen through the microphone.</description>
+      <content:encoded><![CDATA[<p>Your earbuds will pair with the wrong phone if it asks the right way. That, stripped down, is the bug Apple just fixed in the Beats Studio Buds. It's tracked as CVE-2025-20701, rated 8.8, and it's an incorrect-authorization flaw in the Airoha Bluetooth audio chip software the buds run on.</p>
+<p>The practical version: an attacker within Bluetooth range can impersonate a previously paired device and connect to a bud that's still seeking its phone, then listen through the bud's microphone. No tap on the wire, no malware on your handset. Just radio proximity and a chip that trusted the wrong handshake.</p>
+<p>Apple's fix ships as Beats Firmware Update 1B211, and it installs the quiet way, automatically, when the buds are near a paired iPhone, iPad, or Mac. If you own a set, the useful move is simply to keep them next to your phone for a while so the update actually lands.</p>
+<p>The wider problem is that this isn't really a Beats problem. The flaw lives in Airoha's SDK, and Airoha silicon sits inside audio gear from Sony, Bose, JBL, Marshall, and Jabra. Apple shipped a patch quickly. Whether the rest of those vendors push firmware as cleanly is uneven, and a lot of cheaper headphones never get a security update at all.</p>
+<p>Don't panic over it. The attack is range-limited and needs a bud actively hunting for a connection, so this is not mass surveillance. It's a clean reminder that the little wireless chip you never think about runs firmware, and that firmware has authentication bugs like everything else. If you use non-Apple earbuds on an Airoha chip, go check whether your maker has a fix waiting.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Qualcomm Reportedly in Talks to Buy Tenstorrent for Up to $10B</title>
+      <link>https://sabr-labs.com/article/qualcomm-tenstorrent-acquisition-ai-chips-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/qualcomm-tenstorrent-acquisition-ai-chips-june-2026</guid>
+      <pubDate>Fri, 19 Jun 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Qualcomm</category>
+      <category>Tenstorrent</category>
+      <category>AI Chips</category>
+      <category>Jim Keller</category>
+      <category>RISC-V</category>
+      <category>Acquisition</category>
+      <description>Qualcomm is reportedly negotiating to acquire Jim Keller&apos;s AI-chip startup Tenstorrent for $8 to $10 billion, a bet on data-center inference against Nvidia.</description>
+      <content:encoded><![CDATA[<p>Qualcomm wants back into the data center, and according to The Information it's willing to pay up to $10 billion to get there. The reported target is Tenstorrent, the AI-chip startup run by Jim Keller, with talks valuing the deal somewhere between $8 and $10 billion.</p>
+<p>Keller is the reason people pay attention. He's the chip architect behind AMD's Zen cores, early Apple A-series silicon, and a stint on Tesla's Autopilot hardware. Tenstorrent, which he's led since 2016, builds AI accelerators on open RISC-V designs and pitches them as more efficient than GPUs for specific inference workloads. The company was last valued around $2.6 billion in a December 2024 round, so $8 to $10 billion is a steep markup on a short timeline.</p>
+<p>It also fits a pattern. Qualcomm has spent the past year trying to be more than a phone-modem company, and recently agreed to buy Alphawave for data-center connectivity. Bolting Tenstorrent on top reads like an attempt to assemble a full data-center AI stack rather than buy a single part.</p>
+<p>Two cautions before anyone calls it done. First, this is still a rumor: Tenstorrent declined to comment and Qualcomm said it doesn't comment on rumors, and chip-startup deals love performance-based earn-outs that move the real price around. Second, buying silicon doesn't buy you Nvidia's software hold. CUDA is the moat, and a RISC-V accelerator with a thinner toolchain has to win developers it can't acquire.</p>
+<p>What the deal would say about the category is the interesting part. The money is moving toward inference and custom accelerators, which is exactly where Nvidia looks less untouchable than it does in training. Whether Qualcomm is the company to exploit that gap is a separate question from whether the gap exists.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AI Surfaced 18 Rare-Disease Diagnoses Doctors Had Missed</title>
+      <link>https://sabr-labs.com/article/openai-o3-rare-disease-diagnosis-boston-childrens-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-o3-rare-disease-diagnosis-boston-childrens-june-2026</guid>
+      <pubDate>Fri, 19 Jun 2026 10:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>Healthcare AI</category>
+      <category>Rare Disease</category>
+      <category>Boston Children&apos;s Hospital</category>
+      <category>Diagnosis</category>
+      <category>NEJM AI</category>
+      <description>A Boston Children&apos;s, Harvard and OpenAI study reran 376 unsolved cases through OpenAI&apos;s o3 and turned up 18 diagnoses that human specialists later confirmed.</description>
+      <content:encoded><![CDATA[<p>Eighteen children who had been stuck without a diagnosis now have one, after researchers fed their cold cases back through an AI model. The study, published June 18 in NEJM AI, came out of Boston Children's Hospital, Harvard, and OpenAI. They took 376 de-identified cases that specialists had already worked and failed to solve, and reanalyzed them with OpenAI's o3 Deep Research.</p>
+<p>The model flagged leads. Clinicians then ran those leads through normal testing and review, and confirmed 18 new diagnoses: ten neurodevelopmental conditions, four neuromuscular disorders, two children who had died suddenly, and two cases of early childhood psychosis. That works out to a 4.8% additional diagnostic yield on cases that were supposed to be exhausted.</p>
+<p>Read the mechanics carefully, because the headline writes itself wrong. The AI did not diagnose anyone. Every diagnosis was made by physicians through established clinical confirmation. What the model did was generate candidates a busy specialist hadn't gotten to, on cases that had already eaten enormous human effort. That's a real and useful job. It's also a narrower claim than 'AI diagnoses rare disease,' which is how a lot of coverage will frame it.</p>
+<p>Keep this separate from the consumer pitch landing the same week. OpenAI also talked up health improvements in GPT-5.5 Instant for free ChatGPT users, around urgent-care recognition and asking better follow-up questions. That's a chatbot getting more careful. This study is a research tool doing a second pass on hard cases under supervision. Conflating the two is how hype gets manufactured.</p>
+<p>The honest takeaway is the modest one. On a stack of cases human experts couldn't crack, a model added a few more answers when a doctor stayed in the loop to check its work. Nearly five percent of unsolvable cases becoming solvable is worth a lot to the families in that five percent. It is not the same as the model replacing the people who confirmed it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>F5 Ships Out-of-Band Patches for Two Critical NGINX Flaws</title>
+      <link>https://sabr-labs.com/article/f5-nginx-cve-2026-42530-42055-http3-http2-rce-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/f5-nginx-cve-2026-42530-42055-http3-http2-rce-june-2026</guid>
+      <pubDate>Fri, 19 Jun 2026 09:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>F5</category>
+      <category>NGINX</category>
+      <category>CVE-2026-42530</category>
+      <category>CVE-2026-42055</category>
+      <category>HTTP/3</category>
+      <category>Patch</category>
+      <description>F5 released emergency fixes for two NGINX bugs rated 9.2, including an HTTP/3 use-after-free, that let unauthenticated attackers crash worker processes and potentially run code.</description>
+      <content:encoded><![CDATA[<p>Two NGINX vulnerabilities rated CVSS 9.2 just got out-of-band patches, which is F5's way of telling you not to wait for the regular cycle. Both are reachable by a remote, unauthenticated attacker, and both sit in the HTTP request-handling path that high-traffic sites lean on hardest.</p>
+<p>The first, CVE-2026-42530, is a use-after-free in the HTTP/3 QUIC module. An attacker reopens a QPACK encoder stream through a crafted HTTP/3 session and forces the worker process to restart, which is a denial of service on its own. F5 says code execution is possible on systems where ASLR is disabled or where the attacker can bypass it. It affects NGINX Open Source 1.31.0 and 1.31.1 (fixed in 1.31.2), plus NGINX Gateway Fabric and the Ingress Controller in their respective ranges.</p>
+<p>The second, CVE-2026-42055, is a heap buffer overflow in the HTTP/2 proxy and gRPC handling, same 9.2 score. It only triggers under a specific config: proxy_http_version set to 2, ignore_invalid_headers turned off, and large_client_header_buffers above 2MB. That narrows the exposed population, but plenty of reverse-proxy setups match it. It hits NGINX Plus 37.0.0 to 37.0.1 and Open Source 1.30.0 through 1.30.2.</p>
+<p>Nobody has reported active exploitation yet. Don't read too much comfort into that. F5's own advisory notes that similar NGINX flaws have been picked up by attackers within days, pointing to CVE-2026-42945 as a recent example that went from patch to exploitation fast.</p>
+<p>If you can't patch this hour, you can buy time. For the HTTP/3 bug, drop quic from your listen directives to take the QUIC path out of play. For the HTTP/2 bug, check whether your config actually hits all three conditions before you panic, then fix it. The honest read here is that the RCE caveat keeps most hardened boxes in denial-of-service territory, and a downed edge proxy is still your site going dark.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>FortiBleed: Credentials for 74,000 Fortinet Firewalls Are Loose</title>
+      <link>https://sabr-labs.com/article/fortibleed-fortinet-firewall-credential-leak-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fortibleed-fortinet-firewall-credential-leak-june-2026</guid>
+      <pubDate>Fri, 19 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Fortinet</category>
+      <category>FortiGate</category>
+      <category>Credential Theft</category>
+      <category>SSL VPN</category>
+      <category>FortiBleed</category>
+      <category>Active Directory</category>
+      <description>A still-running campaign dubbed FortiBleed has exposed admin and VPN credentials for nearly 74,000 Fortinet firewalls across 194 countries, and the attacker&apos;s servers keep adding victims.</description>
+      <content:encoded><![CDATA[<p>Nearly 74,000 Fortinet firewalls have had their credentials harvested, and the people who did it haven't stopped. Researcher Volodymyr Diachenko found the haul exposed on a cybercriminal server in mid-June and disclosed it over the weekend. The dataset covers 73,932 unique Fortinet firewall and SSL VPN URLs tied to roughly 21,632 domains in 194 countries. Someone named it FortiBleed, and the name fits.</p>
+<p>Here's how the credentials got out. Russian-speaking operators intercepted SSL VPN authentication hashes from devices still storing passwords with older SHA-256, then cracked them on a 45-GPU cluster running Hashtopolis. Cracked passwords became the keys to walk into Active Directory. The crew folded old breach data together with fresh brute force at industrial scale: by one count, 1.16 billion credential attempts against more than 320,000 FortiGate targets.</p>
+<p>This is the part that should bother you. It isn't one CVE you patch and forget. It's weak password hashing plus credential reuse plus a VPN appliance sitting on the open internet, which is the exact combination that turns a firewall into an entry point instead of a wall.</p>
+<p>The victim list is not a list of stragglers. Samsung, Siemens, Foxconn, Oracle, Accenture, DHL and Infosys show up in it, alongside government agencies and critical infrastructure operators. At least four organizations were fully compromised, including a Turkish NATO defense contractor whose classified documents were exfiltrated. Fortinet itself appears in the data.</p>
+<p>Treat this as an active incident, because it is. The attacker infrastructure is still online and new entries are still being added, so a clean lookup today is not a guarantee for tomorrow. Diachenko and others point defenders to Hudson Rock's exposure checker as a first step.</p>
+<p>If your domain is in there, assume compromise and move. Upgrade FortiOS to the current release, rotate every credential those devices could reach, turn on multi-factor authentication for VPN access, and force a re-hash to the stronger PBKDF2 storage so a stolen hash isn't a crackable one. A firewall you can't trust the passwords on is not doing the job you bought it for.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Cisco&apos;s New DevNet AI Infrastructure Exam Hits Beta This Month</title>
       <link>https://sabr-labs.com/article/cisco-devnet-ai-infrastructure-beta-exam-300-920-june-2026</link>
@@ -924,106 +1025,6 @@
 <p>CISA added the bug to its Known Exploited Vulnerabilities catalog on June 5 and gave federal civilian agencies until June 19 to patch. That window is nearly shut. A KEV listing isn't theoretical: CISA only adds bugs it has evidence are being used in real attacks.</p>
 <p>Serv-U has been here before. The same product showed up in CISA's catalog for a path-traversal flaw in 2024 and a remote-code-execution bug in 2021 that was tied to state-linked activity. For software whose entire job is to sit exposed and move files, that's a track record worth weighing when you decide how fast to act.</p>
 <p>If you run Serv-U, get to 15.5.4 Hotfix 1. If you can't patch right away, SolarWinds and CISA point to the same stopgaps: put the service behind a WAF or firewall so only known addresses can reach it, and block POST requests that include a content-encoding header. Neither is a real substitute for the fix.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Researcher Drops &apos;RoguePlanet&apos; Defender Zero-Day Hours After Patch Tuesday</title>
-      <link>https://sabr-labs.com/article/microsoft-defender-rogueplanet-zero-day-system-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-rogueplanet-zero-day-system-june-2026</guid>
-      <pubDate>Thu, 11 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft Defender</category>
-      <category>Zero-Day</category>
-      <category>Windows</category>
-      <category>Privilege Escalation</category>
-      <category>Patch Tuesday</category>
-      <description>A working exploit called RoguePlanet escalates a local user to SYSTEM on fully patched Windows 10 and 11 through a Microsoft Defender race condition, and there&apos;s no fix yet.</description>
-      <content:encoded><![CDATA[<p>Hours after Microsoft shipped its June Patch Tuesday this week, a researcher published a working exploit for a Defender bug Microsoft hasn't patched at all.</p>
-<p>The exploit, called RoguePlanet, abuses a race condition in Microsoft Defender's quarantine pipeline to escalate a local user to SYSTEM, the highest privilege level on Windows. The researcher, who goes by Nightmare Eclipse, says it works on fully patched Windows 10 and Windows 11. There's no CVE assigned and no fix available.</p>
-<p>This is local privilege escalation, not remote code execution, so an attacker needs a foothold on the machine first. But that's exactly the second stage of most intrusions: phish a user, land as a low-privilege account, then climb. A reliable SYSTEM escalation that survives a fully updated Defender install is the kind of primitive ransomware crews and access brokers pay real money for.</p>
-<p>RoguePlanet isn't this researcher's first drop. Microsoft has already patched a run of Defender bugs Nightmare Eclipse disclosed: RedSun (CVE-2026-41091, fixed out-of-band on May 21 and later added to CISA's known-exploited list), UnDefend (CVE-2026-45498), and BlueHammer (CVE-2026-33825), all reported as exploited in the wild before patches landed.</p>
-<p>The researcher has been blunt about the motive. Nightmare Eclipse frames the public drops as a response to how Microsoft handled earlier reports, citing a disclosure process that let bugs sit and a working relationship that went bad. Whatever the rights and wrongs, the practical result is that defenders are learning about a SYSTEM-level Defender flaw from exploit code instead of an advisory.</p>
-<p>Microsoft hadn't issued guidance as of this writing. Until it does, the usual containment holds: tighten local admin rights, watch for odd Defender child processes spawning with SYSTEM privileges, and treat any machine an attacker can already touch as a machine they can own. If exploitation picks up, expect an out-of-band patch rather than a wait for July.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX Prices the Largest IPO Ever, Debuts on Nasdaq Tomorrow</title>
-      <link>https://sabr-labs.com/article/spacex-ipo-nasdaq-debut-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-ipo-nasdaq-debut-june-2026</guid>
-      <pubDate>Thu, 11 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SpaceX</category>
-      <category>IPO</category>
-      <category>Starlink</category>
-      <category>xAI</category>
-      <category>Nasdaq</category>
-      <category>Elon Musk</category>
-      <description>SpaceX set its IPO at $135 a share, a $1.77 trillion valuation that raises about $75 billion and makes it the seventh-biggest US company before it has even started trading.</description>
-      <content:encoded><![CDATA[<p>Seventy-five billion dollars. That's what SpaceX is set to raise when shares start trading on the Nasdaq tomorrow under the ticker SPCX, in what will be the largest initial public offering ever recorded.</p>
-<p>SpaceX priced the offering at $135 a share and is selling about 555.6 million shares. At that price the company is valued at roughly $1.77 trillion, more than triple the size of Alibaba's 2014 listing, the previous record for a US debut. SpaceX would immediately rank as the seventh-largest US company by market cap, sitting above Tesla, Musk's other big holding, which is worth around $1.6 trillion.</p>
-<p>The thing going public isn't just rockets. Musk merged SpaceX with his AI company xAI in February in a deal that valued the combined business at $1.25 trillion, so the shares cover three operations at once: the launch business, the Starlink satellite-internet network, and the xAI unit behind the Grok models. Anyone buying SPCX is buying all of it in a single ticket.</p>
-<p>Musk will hold over 82% of the voting power after the offering. Public shareholders get the upside and almost no say in how the company is run. That arrangement has become standard for founder-led tech listings, but the gap here is wide even by that bar.</p>
-<p>Starlink is the part carrying the valuation. Recurring subscription revenue across millions of terminals is the closest thing SpaceX has to a predictable cash machine, and it's what lets bankers justify a number that would be hard to defend for a launch company alone. The rocket side is still capital-hungry, and Starship's reusable economics look promising but aren't yet proven at the flight cadence the model assumes.</p>
-<p>For index funds, the debut creates an immediate headache. A company this size joining public markets means trillions in passively managed money will have to buy SPCX whether the managers love the price or not. Plenty of retail investors will own a slice of SpaceX by tomorrow afternoon without ever choosing to.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CCNA v2.0 Lands February 2027: Troubleshooting Is Back and AI Is In</title>
-      <link>https://sabr-labs.com/article/ccna-v2-2027-what-changes</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ccna-v2-2027-what-changes</guid>
-      <pubDate>Wed, 10 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CCNA</category>
-      <category>Cisco</category>
-      <category>Certification</category>
-      <category>Networking</category>
-      <category>Exam Prep</category>
-      <description>Cisco&apos;s refreshed 200-301 v2.0 exam puts the troubleshoot verb on more than a quarter of its topics, adds an AI section, and trims six domains down to five.</description>
-      <content:encoded><![CDATA[<p>Cisco has set the date: CCNA 200-301 version 2.0 goes live on February 3, 2027. The current v1.1 exam stays valid right up until the cutover, so every candidate studying today has a decision to make.</p>
-<p>The headline change is troubleshooting. In the v2.0 blueprint, 28% of exam topics use the verb 'troubleshoot,' and that's a bigger deal than it sounds. Troubleshooting essentially vanished from the CCNA in the 2020 revision and stayed gone through v1.1. For six years you could pass by knowing how things are configured. Starting next February, Cisco wants to know whether you can figure out why they're broken.</p>
-<p>There's also a new AI section covering prompt construction and foundational AI security concepts. Before you roll your eyes, it's a small slice of the blueprint, and it reflects what's actually showing up in network operations tooling. The domain structure consolidates from six domains to five, the exam stays 120 minutes, and a pass still earns the same CCNA certification.</p>
-<p>So: rush v1.1 or wait for v2.0? If you're months into prep, finish on v1.1 before February 2027. Your study materials match the live exam, the certification you earn is identical, and nobody's resume distinguishes which blueprint version they passed. If you're starting from zero in late 2026, it gets closer; you may be better served studying toward v2.0 since the skills it tests are the ones interviews actually probe.</p>
-<p>Either way, the troubleshooting shift changes how you should study more than what you should study. You can't flashcard your way through 'troubleshoot OSPF adjacency.' You need broken configs and time on a CLI, whether that's a simulator, rented rack time, or used gear off eBay. Candidates who built their prep on reading will feel this revision. Candidates who built it on labs won't notice much difference, which is presumably Cisco's point.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple&apos;s New Siri Runs on Google&apos;s Model, and Apple Said So Out Loud</title>
-      <link>https://sabr-labs.com/article/apple-wwdc-2026-siri-ai-gemini</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-wwdc-2026-siri-ai-gemini</guid>
-      <pubDate>Wed, 10 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>WWDC</category>
-      <category>Siri</category>
-      <category>Google Gemini</category>
-      <category>iOS 27</category>
-      <description>At WWDC 2026 Apple rebranded its assistant as Siri AI, confirmed it runs a custom Gemini model in Apple&apos;s data centers, and opened iOS 27 to rival chatbots.</description>
-      <content:encoded><![CDATA[<p>The most consequential thing Apple said at WWDC on June 8 was an admission: the long-promised Siri overhaul is finally here, it's called Siri AI, and the intelligence underneath is a custom version of Google's Gemini.</p>
-<p>The arrangement, reportedly worth about a billion dollars a year to Google, runs Gemini-based models inside Apple's own data centers behind Private Cloud Compute, with on-device processing handling what it can. Apple gets a frontier model without having trained one; Google gets paid and gets its model onto the most valuable install base in consumer tech. Both companies know exactly what this echoes, because they've run the same play with search for fifteen years.</p>
-<p>The assistant itself finally does what was promised in 2024: cross-app actions, on-screen awareness, and personal context, plus a dedicated Siri app that keeps conversation history and works on iPad and Mac. Demos looked fluid, though WWDC demos always do. The original Apple Intelligence Siri was announced two years ago and partially shipped late; skepticism until this is on real devices is earned.</p>
-<p>The quieter announcement may matter more. In iOS 27, Apple is opening Siri's handoff mechanism beyond ChatGPT so users can route requests to other chatbots, with Claude and Gemini named in early reporting. Apple is positioning itself as the aggregation point for AI assistants rather than a competitor to any of them, which is a strong position to retreat to when you've conceded the model race.</p>
-<p>The rest of the keynote was a platform tour: iOS 27, macOS 27 Golden Gate, and the usual cadence across watchOS, tvOS, and visionOS, with Liquid Glass refinements and AI woven through the system apps rather than headlined.</p>
-<p>Strip the privacy framing and the shape of the deal is plain: Apple is now a distribution channel for someone else's intelligence, and it's betting the customer relationship is worth more than the model. With search, that bet paid roughly twenty billion dollars a year. The difference is that nobody asked their search engine to know everything about them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Files for Its IPO. The Math Underneath Is the Real Story</title>
-      <link>https://sabr-labs.com/article/openai-confidential-ipo-filing</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-confidential-ipo-filing</guid>
-      <pubDate>Wed, 10 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>IPO</category>
-      <category>AI Economics</category>
-      <category>Anthropic</category>
-      <category>Wall Street</category>
-      <description>OpenAI confirmed a confidential S-1 targeting a September debut at $730 to $850 billion, while reportedly losing more than a dollar for every dollar it earns.</description>
-      <content:encoded><![CDATA[<p>OpenAI confirmed on June 8 that it has confidentially filed for a US IPO, targeting a debut as soon as September at a valuation between $730 and $850 billion. The S-1 reportedly went to the SEC around May 22; the public only heard about it once the company chose to say so.</p>
-<p>Goldman Sachs, Morgan Stanley, and JPMorgan are leading the offering, and some analysts are already talking past the filing range toward a trillion-dollar print. That would make it the largest tech IPO ever by a wide margin.</p>
-<p>Hold that number next to this one: OpenAI was generating about $2 billion in monthly revenue as of March, but an analysis of its recent financials found it lost roughly $1.22 for every dollar it earned in the quarter. The revenue curve is extraordinary. So is the burn. An IPO at this moment reads less like a victory lap and more like the logical next step for a company whose appetite for compute has outgrown what private markets can comfortably feed it.</p>
-<p>The timing isn't happening in a vacuum. Anthropic filed for its own IPO on June 1 at a reported $965 billion valuation, SpaceX is in the pipeline, and Bloomberg now tallies the AI IPO queue at $3.6 trillion in combined paper value. Two frontier labs going public in the same half-year means public markets, not private mega-rounds, are about to set the price of the AI boom for the first time.</p>
-<p>One more wrinkle: the confirmation landed hours after Apple's WWDC keynote, where the new Siri was revealed to run on Google's Gemini. OpenAI's ChatGPT handoff deal made it the default AI brand on the iPhone; that exclusivity is now visibly eroding right as the company asks the public to price its consumer moat.</p>
-<p>The S-1 will eventually become public, and with it the first audited look at OpenAI's actual economics: real margins, real compute obligations, real revenue concentration. Every claim about AI economics to date has been sourced from leaks and investor decks. The prospectus is where the story has to survive an auditor.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
