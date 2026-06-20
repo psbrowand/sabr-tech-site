@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jun 2026 17:32:10 GMT</lastBuildDate>
-    <pubDate>Fri, 19 Jun 2026 17:32:10 GMT</pubDate>
+    <lastBuildDate>Sat, 20 Jun 2026 13:17:02 GMT</lastBuildDate>
+    <pubDate>Sat, 20 Jun 2026 13:17:02 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Unpatchable usbliter8 Exploit Cracks Apple A12 and A13 Boot ROM</title>
+      <link>https://sabr-labs.com/article/apple-usbliter8-securerom-a12-a13-unpatchable-bootrom-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-usbliter8-securerom-a12-a13-unpatchable-bootrom-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Apple</category>
+      <category>iPhone</category>
+      <category>Exploit</category>
+      <category>Hardware Security</category>
+      <category>Jailbreak</category>
+      <description>Researchers at Paradigm Shift published a SecureROM exploit that Apple can&apos;t patch in software, reaching every iPhone XS, XR, and 11.</description>
+      <content:encoded><![CDATA[<p>On June 18 a team at Paradigm Shift dropped working code that runs inside the SecureROM of Apple's A12 and A13 chips. Apple cannot fix it with a software update, because the flaw lives in read-only code burned into the silicon at the factory. Every iPhone XS, XS Max, XR, and iPhone 11 carries it, along with the iPhone SE 2nd gen, several iPads, the Apple Watch Series 4 and 5, and the HomePod mini.</p>
+<p>The bug sits in the Synopsys DWC2 USB controller. On these chips the USB DART runs in bypass mode, which lets a malformed transfer overwrite the wrong region of SRAM and hand the attacker control of the boot process. From there usbliter8 gets arbitrary code execution at EL1 inside SecureROM, can demote the device out of production mode, and can boot unsigned iBoot images. The researchers tag a successful run with a 'PWND:[usbliter8]' marker, which is the kind of detail that tells you this is real and not a press release.</p>
+<p>This is not a remote attack, and that matters. Pulling it off needs the phone in your hands, in DFU mode, wired to a dedicated RP2350 microcontroller board. With that rig the exploit finishes in under two seconds, before Apple's signed boot chain ever loads.</p>
+<p>It's the obvious successor to checkm8, the 2019 boot ROM exploit that stopped at the A11. usbliter8 carries the same class of attack one chip generation forward. As of this week there's no CVE, no CVSS score, no Apple advisory, and no reported use in the wild. Paradigm Shift says it coordinated the disclosure with Apple Product Security first, which is the right call given that nothing on the software side can close the hole.</p>
+<p>Worth being precise about the blast radius: a boot ROM exploit is not a master key to your data. usbliter8 owns the application processor's startup, not the Secure Enclave, so it doesn't crack a strong passcode or the encryption keys derived from it. What it does enable is persistent tethered jailbreaks, forensic boot of seized devices, and evil-maid scenarios where someone with physical custody can run modified software on the phone.</p>
+<p>If you still carry an A12 or A13 device with sensitive data on it, the threat model just shifted toward physical seizure. Use a strong alphanumeric passcode, not a four-digit PIN, and treat a lost or confiscated phone as compromised at the boot level. The hardware will carry this flaw for as long as it stays in service, and the iPhone 11 in particular is still everywhere.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Operation Endgame Seizes SocGholish Servers, Cleans 14,971 Sites</title>
+      <link>https://sabr-labs.com/article/socgholish-operation-endgame-takedown-14971-wordpress-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/socgholish-operation-endgame-takedown-14971-wordpress-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Malware</category>
+      <category>WordPress</category>
+      <category>Law Enforcement</category>
+      <category>Ransomware</category>
+      <category>Europol</category>
+      <description>A four-country police action knocked out 106 SocGholish servers and scrubbed nearly 15,000 hacked WordPress sites feeding the fake-update malware.</description>
+      <content:encoded><![CDATA[<p>Law enforcement spent this week pulling the rug out from under SocGholish. On June 18, agencies from the Netherlands, Canada, the United States, and Germany, coordinated through Europol under the Operation Endgame banner, seized 106 servers and 101 domains tied to the malware and remotely cleaned infections from 14,971 compromised WordPress sites.</p>
+<p>If you don't know SocGholish by name, you've probably seen its work. It's the 'FakeUpdates' network: hacked WordPress sites that pop a convincing browser-update prompt, and the file you download is the first stage of an intrusion. It's been running since 2017, operated by the actor tracked as TA569, with downstream ties to the Russian cybercriminal outfit Evil Corp. The fake update is the front door; ransomware and data theft tend to be what walks through it.</p>
+<p>The scale here is the part worth sitting with. In May, ShadowServer counted more than 1.44 million compromised WordPress sites available to SocGholish operators. Against that number, 14,971 cleaned sites is a dent, not a kill.</p>
+<p>Takedowns like this disrupt; they rarely end anything. Operation Endgame has become a recurring banner for these coordinated strikes, and the crews behind initial-access malware are practiced at standing infrastructure back up. Seizing 106 servers and a hundred domains in one move still forces a costly rebuild, and the public sinkholing gives defenders a clean window to find and fix infections before the network reconstitutes.</p>
+<p>For anyone running WordPress, this is the moment to look at your own install. Patch core and plugins, scan for injected JavaScript that serves those update lures, and pull anything you don't actively use. A site that's quietly part of a malware network is also a site that's one bad day from being the entry point into your own environment.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gravity SMTP WordPress Flaw Leaks API Keys, Now Under Active Attack</title>
+      <link>https://sabr-labs.com/article/gravity-smtp-cve-2026-4020-wordpress-api-key-exposure-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gravity-smtp-cve-2026-4020-wordpress-api-key-exposure-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>CVE</category>
+      <category>Vulnerability</category>
+      <category>API Security</category>
+      <category>Web Security</category>
+      <description>An unauthenticated endpoint in the Gravity SMTP plugin hands attackers the API keys and OAuth tokens for connected email services, and they&apos;re scanning for it at scale.</description>
+      <content:encoded><![CDATA[<p>Wordfence says it has blocked more than 17 million attempts against a single WordPress plugin bug, and that number tells you everything about where attacker attention is right now. The flaw is CVE-2026-4020 in Gravity SMTP, a plugin that routes WordPress mail through external providers.</p>
+<p>The mistake is the kind that makes security people wince. Gravity SMTP registers a REST endpoint at /wp-json/gravitysmtp/v1/tests/mock-data with a permission_callback that just returns true, unconditionally. No auth, no capability check. Anyone who can reach the site can hit it.</p>
+<p>What comes back is the sensitive part. The endpoint can expose API keys, secrets, and OAuth tokens for whatever email service the site has wired up, including Amazon SES, Google, Mailjet, Resend, and Zoho, plus a readout of installed plugins, themes, and version numbers. Hand an attacker a live SES key and they have a sending platform on your dime and your domain's reputation.</p>
+<p>The flaw affects every version up to and including 2.1.4 and was fixed in 2.1.5, which shipped back in March. The exploitation curve has only steepened since: CrowdSec tracked 412 distinct attacking IPs by early June, and this week brought fresh reports of the bug being actively worked.</p>
+<p>Updating to 2.1.5 closes the door, but it does not undo a theft that already happened. If your site ran a vulnerable version while internet-facing, assume the connected credentials leaked. Patch, then rotate every API key and OAuth token for the email integrations Gravity SMTP touched. Patching alone is a half-fix when the secret is already gone.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Snap Opens Preorders for $2,195 Standalone Specs AR Glasses</title>
+      <link>https://sabr-labs.com/article/snap-specs-ar-glasses-2195-standalone-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/snap-specs-ar-glasses-2195-standalone-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Snap</category>
+      <category>AR</category>
+      <category>Wearables</category>
+      <category>Qualcomm</category>
+      <category>Hardware</category>
+      <description>Snap&apos;s consumer Specs ship this fall with no phone, no tether, and a price that makes clear who they&apos;re actually for.</description>
+      <content:encoded><![CDATA[<p>Snap pulled the cover off its consumer Specs at the Augmented World Expo in Long Beach on June 16, and preorders are open now. The headline number is $2,195, with a refundable $200 deposit to hold a unit. They ship this fall in the US, UK, and France, with nothing announced beyond those three markets yet.</p>
+<p>The genuine achievement is that they're fully standalone. No phone in your pocket doing the work, no puck on a lanyard, no tether. Dual Qualcomm chips run navigation, AI, and shared experiences on the glasses themselves, which is the hard engineering problem everyone in this category has been circling. Snap says roughly $3 billion of R&D went into getting here.</p>
+<p>It also beats Apple, Meta, and Google to a true standalone consumer AR product. That's a real first, and Snap earned the bragging rights.</p>
+<p>Now the honest part. At $2,195 this is not a consumer device in any normal sense of the word, whatever the marketing says. It's a developer and early-adopter kit with a refined design and a consumer label stapled on. Snap has been here before, sitting on unsold Spectacles inventory it had to write down, and pricing this high is partly a hedge against making the same bet at scale twice.</p>
+<p>What makes it interesting anyway is that the standalone milestone is independent of the price. The thing that was supposed to be years out, all-day AR with no phone doing the heavy lifting, is shipping this fall to anyone willing to pay. Whether the category becomes a mass market depends on the next device at a third of the cost, not this one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google&apos;s First Smart Speaker in Six Years Ships June 25 for $99</title>
+      <link>https://sabr-labs.com/article/google-home-speaker-gemini-99-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-home-speaker-gemini-99-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>Smart Home</category>
+      <category>Hardware</category>
+      <category>AI Assistants</category>
+      <description>The new Google Home Speaker puts Gemini at the center of the living room, and the bet is on the assistant rather than the hardware.</description>
+      <content:encoded><![CDATA[<p>Google is back in the smart-speaker business after a long absence. The new Google Home Speaker is up for preorder at $99.99 and ships June 25, the company's first new speaker since the Nest Audio landed in 2020.</p>
+<p>The pitch is Gemini for Home. Instead of the old call-and-response of asking Assistant for a timer, the speaker is built for natural, multi-step conversation, the kind where you can follow up without re-stating the whole request. It does 360-degree sound, adds an underglow light ring that shows when it's listening, processing, or answering, and can pair with the Google TV Streamer for home-theater audio.</p>
+<p>Google first teased this hardware in October alongside the Pixel 10 line, then sat on it for months. The reason it gave is worth noting: it wanted to push Gemini out to its existing speakers and shake out the bugs before putting new hardware in people's homes. The new launch also comes as Google quietly discontinues two older speakers.</p>
+<p>Six years is a long time to leave a product line idle, and the gap says something about how much the assistant matters more than the box it lives in. Amazon is rebuilding Alexa around its Nova models, Apple is reworking Siri, and Google is doing the same with Gemini. The hardware is a vessel; the competition is over whose assistant you'll actually want to talk to all day.</p>
+<p>At a hundred bucks, the speaker isn't the gamble. Gemini for Home is. If the conversational layer holds up in a real kitchen with kids talking over each other, Google has a reason to be back. If it stumbles the way voice assistants have for a decade, the underglow ring won't save it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>MiniMax M3 Open Weights Land, Claiming a Coding Edge on GPT-5.5</title>
+      <link>https://sabr-labs.com/article/minimax-m3-open-weights-frontier-coding-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/minimax-m3-open-weights-frontier-coding-june-2026</guid>
+      <pubDate>Sat, 20 Jun 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>MiniMax</category>
+      <category>Open Weights</category>
+      <category>LLM</category>
+      <category>Coding</category>
+      <category>Benchmarks</category>
+      <description>The Shanghai lab&apos;s open-weight M3 posts a strong SWE-Bench number and a 1M-token context, but the benchmarks are vendor-run and the real draw is that you can self-host it.</description>
+      <content:encoded><![CDATA[<p>MiniMax, the Shanghai AI lab, has put the weights for its M3 model on Hugging Face, following the June 1 launch. The claim is ambitious: a single open-weight model that combines frontier-level coding, a one-million-token context window, and native image and video understanding.</p>
+<p>The numbers MiniMax is leading with are real numbers, with a real asterisk. M3 scores 59% on SWE-Bench Pro, which the company says edges out both OpenAI's GPT-5.5 and Google's Gemini 3.1 Pro on that software-engineering test. It posts 66% on Terminal-Bench 2.1 and 83.5 on BrowseComp. The asterisk is that these are vendor-run results, and at the June 1 launch the weights weren't even out yet, so nobody outside MiniMax could check them.</p>
+<p>Put the score next to a neutral yardstick and the picture cools a little. On the Artificial Analysis Intelligence Index, M3 lands at 55, which is good but sits below the very top of the field even if the SWE-Bench figure holds up on independent evals. A strong result on one coding benchmark is not the same as a frontier model across the board, and the AI beat is full of launches that blur the two on purpose.</p>
+<p>The more interesting story isn't the benchmark, it's the distribution. M3 is open-weight, and that lands at a pointed moment. With US export controls tangling up access to American frontier models, weights you can download and run on your own hardware are something no export order can reach. MiniMax has been explicit that self-hosted weights are the selling point.</p>
+<p>If you build agents, the move is simple: pull M3 and run your own harness against it. The June 1 marketing told you what MiniMax wants you to believe. Your own SWE-Bench run on your own tasks will tell you whether the 59% means anything for the work you actually do.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Apple Patches a Beats Bug That Could Turn Earbuds Into a Wiretap</title>
       <link>https://sabr-labs.com/article/apple-beats-studio-buds-airoha-eavesdrop-cve-2025-20701-june-2026</link>
@@ -902,129 +1017,6 @@
 <p>Where Network+ pays off is the role it points at. The Bureau of Labor Statistics puts the 2024 median for network and computer systems administrators around $97,000, well above the help desk tier A+ targets. Network+ is the credential that signals you're ready to step from support into administration. It's also DoD-approved for certain baseline roles, which matters if you're aiming at government or contractor work.</p>
 <p>The study reality mirrors the exam's troubleshooting bias. Reading about VLANs and routing teaches you the words; configuring them teaches you the cert. The candidates who pass cleanly are the ones who spend real time in a lab simulating the networks they're being tested on, then drill a question bank to surface the subnetting and port-number gaps they didn't know they had. Theory-only studiers consistently underestimate the performance-based questions and pay for it on test day.</p>
 <p>So: worth it, with a caveat. If you want vendor-neutral fundamentals or you need the DoD approval, Network+ is a clean, defensible choice. If your goal is squarely network engineering and you're comfortable committing, the CCNA covers similar ground with more market pull for the same money, and you can skip a step. Network+ is the safer, broader bet. CCNA is the more ambitious one. Neither is wrong; just be honest with yourself about which you're making.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Perfect-10 Ivanti Sentry Bug Is Already Backdooring Gateways</title>
-      <link>https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ivanti-sentry-cve-2026-10520-cvss-10-kev-june-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ivanti</category>
-      <category>Ivanti Sentry</category>
-      <category>CVE-2026-10520</category>
-      <category>CISA KEV</category>
-      <category>Command Injection</category>
-      <category>Zero-Day</category>
-      <description>CVE-2026-10520, an unauthenticated command-injection flaw in Ivanti Sentry rated a maximum 10.0, is under active exploitation, and CISA gave federal agencies until June 14 to patch.</description>
-      <content:encoded><![CDATA[<p>A CVSS score of 10.0 is rare. Ivanti Sentry just earned one, and attackers were on it within a day.</p>
-<p>Ivanti's June 9 advisory covers two bugs. CVE-2026-10520 is an OS command injection flaw that lets an unauthenticated remote attacker run code as root, and it sits at the maximum 10.0 severity. The second, CVE-2026-10523, is an authentication bypass at 9.9 that lets an attacker create their own admin accounts. Either one alone is bad. Chained, they hand over the box.</p>
-<p>Sentry is the gateway that brokers access between mobile devices and an organization's internal mail and app servers, so it's exposed on purpose and it sits in a trusted spot on the network. That's the worst combination for a pre-auth root flaw. Affected versions are 10.5.1, 10.6.1, 10.7.0 and earlier; the fixes are in 10.5.2, 10.6.2, and 10.7.1.</p>
-<p>This isn't theoretical. After watchTowr published a proof-of-concept, the Shadowserver Foundation started seeing exploitation attempts and confirmed backdoored gateways within 24 hours. CISA added CVE-2026-10520 to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies just three days to patch, with a deadline of June 14.</p>
-<p>Three days is CISA's way of saying this is on fire. Patch to the fixed releases now. If your Sentry was internet-facing and unpatched at any point this week, don't just patch and move on. Assume compromise, look for new admin accounts and unexpected processes running as root, and rotate any credentials that gateway could reach.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Is CompTIA A+ Worth It in 2026? An Honest Look at the 220-1201 and 1202</title>
-      <link>https://sabr-labs.com/article/comptia-a-plus-worth-it-2026-220-1201-1202</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-a-plus-worth-it-2026-220-1201-1202</guid>
-      <pubDate>Fri, 12 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>A+</category>
-      <category>220-1201</category>
-      <category>220-1202</category>
-      <category>Certification</category>
-      <category>IT Career</category>
-      <description>A+ is two exams, real money, and a slow on-ramp into IT, so here&apos;s who it actually pays off for and who should skip straight past it.</description>
-      <content:encoded><![CDATA[<p>A+ is the cert people argue about most, and the argument is usually framed wrong. The question isn't whether A+ is respected (it's fine) or whether it's hard (it isn't, really). The question is whether you're the person it's built for. If you've never held an IT job and need something on your resume that says you can fix a laptop and not break the network, A+ does that job better than anything else. If you already work a help desk, it's mostly a box to check for HR.</p>
-<p>The current version is two exams, not one. Core 1 (220-1201) and Core 2 (220-1202) both launched in March 2025 and replaced the older 1101/1102 pair, which CompTIA retired in September 2025. You need to pass both to earn the cert. Each exam runs up to 90 questions in 90 minutes. Core 1 wants 675 out of 900 to pass; Core 2 wants 700. Core 1 covers hardware, networking basics, mobile devices, and virtualization and cloud concepts. Core 2 is the software half: operating systems, security fundamentals, troubleshooting, and operational procedures.</p>
-<p>Now the part nobody likes. At CompTIA's retail pricing each exam runs around $250 in the US, so you're looking at roughly $500 to sit both, before any study materials. That's the real sticker shock of A+, and it's worth saying plainly: this is the most expensive entry-level cert relative to the salary it points you toward.</p>
-<p>Because where A+ lands you is the entry of the entry level. The Bureau of Labor Statistics puts the 2024 median wage for computer user support specialists around $60,000 and computer network support specialists around $73,000. A+ is the credential that gets you in the door for the first of those, the help desk and desktop support roles where you'll spend a year or two before moving up. Treat it as a starting line, not a destination.</p>
-<p>How hard is it? The content is broad rather than deep. There's a lot of it (printers, RAM types, Windows recovery, common malware, cable standards) but very little of it is conceptually difficult. The thing that trips people up is breadth plus the performance-based questions, where you have to actually do something in a simulated environment rather than pick an answer. People who only memorize acronyms get wrecked by those. People who've physically opened a machine and clicked around an OS sail through them.</p>
-<p>That's the honest study advice for A+: stop reading and start touching things. Build a cheap PC or tear down an old one. Run a Windows install in a VM, break it, fix it. The candidates who pass comfortably are the ones who pair a video course with real hands-on reps and a question bank to find their weak spots before exam day, not the ones who read a 1,200-page book cover to cover. The terminology sticks far better once you've watched it happen in front of you.</p>
-<p>So is it worth it in 2026? If you're switching careers into IT with nothing else to show, yes, and pairing it with Network+ or Security+ within the year is the move that actually changes your pay. If you already have a year of help desk under your belt, your time and money are better spent skipping ahead. A+ proves you can start. It was never meant to prove more than that.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ShinyHunters Hit 100+ Orgs Through an Oracle PeopleSoft Zero-Day</title>
-      <link>https://sabr-labs.com/article/oracle-peoplesoft-cve-2026-35273-shinyhunters-universities-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-peoplesoft-cve-2026-35273-shinyhunters-universities-june-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>PeopleSoft</category>
-      <category>ShinyHunters</category>
-      <category>Zero-Day</category>
-      <category>CVE-2026-35273</category>
-      <category>Data Breach</category>
-      <description>Oracle&apos;s out-of-band alert for CVE-2026-35273, a 9.8-rated unauthenticated RCE in PeopleSoft PeopleTools, lands after ShinyHunters had already used it to breach more than 100 organizations, most of them universities.</description>
-      <content:encoded><![CDATA[<p>More than a hundred organizations got breached before the vendor said a word. That's the shape of the Oracle PeopleSoft attack that came to light this week.</p>
-<p>On June 10 Oracle put out an out-of-band Security Alert for CVE-2026-35273, a flaw in PeopleSoft Enterprise PeopleTools versions 8.61 and 8.62. It's rated 9.8 on the CVSS scale: remote code execution, no authentication, no user interaction. An attacker who can reach the server over HTTP can run code on it. Because the attacks started before the alert went out, this was a true zero-day.</p>
-<p>Google's Threat Intelligence Group and Mandiant tied the campaign to UNC6240, the crew that operates under the ShinyHunters name. They tracked the activity between May 27 and June 9, and the stolen data started showing up on the group's leak site on June 9. By the attackers' own count the campaign hit more than 100 organizations. Sixty-eight percent of the victims were in higher education, most of them in the United States.</p>
-<p>The tradecraft is worth a look. The attackers stood up MeshCentral remote-management servers dressed up to look like legitimate cloud endpoints, registered a lookalike domain, and pushed a custom script to spread across networks and deface systems. This wasn't a smash-and-grab. It was a staged extortion operation that treated PeopleSoft as the front door to HR and student records.</p>
-<p>There's a catch buried in Oracle's response. The alert points customers to a patch document, but that document sits behind a support login, so it isn't obvious to outsiders whether a full fix is even shipping yet. Oracle's headline guidance is mitigation: disable the Environment Management Hub service, or remove the PSEMHUB application entirely on single-server setups. Telling customers to rip out a component is not the same as handing them a patch.</p>
-<p>If you run PeopleSoft, treat any internet-facing instance as suspect. Apply Oracle's mitigations now, hunt for unfamiliar MeshCentral agents and outbound connections to odd domains, and assume the EMHub component is the path attackers will try first. Education IT teams especially should check today, because that's where the attackers spent most of their time.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA CySA+ V4 Lands June 23: Sit the Old Exam or Wait?</title>
-      <link>https://sabr-labs.com/article/comptia-cysa-plus-v4-cs0-004-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-cysa-plus-v4-cs0-004-june-2026</guid>
-      <pubDate>Thu, 11 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>CySA+</category>
-      <category>Certification</category>
-      <category>Blue Team</category>
-      <category>SOC</category>
-      <description>CompTIA&apos;s analyst cert gets a refresh on June 23 with new AI governance, cloud, and threat-hunting content, and if you&apos;re mid-prep you have a real decision to make.</description>
-      <content:encoded><![CDATA[<p>If you're studying for CySA+ right now, you've got a decision to make: sit the current exam before it ages out, or wait for the new one.</p>
-<p>CompTIA launches CySA+ V4, exam code CS0-004, on June 23. The current version, CS0-003, stays available for a while after that. CompTIA usually runs about six months of overlap before retiring an old exam, though it hasn't put a firm retirement date on CS0-003 yet. Both versions carry the same name and certify the same thing; only the objectives differ.</p>
-<p>V4 keeps the four-domain structure but reweights and modernizes it. The domains are Security Operations (34%), Vulnerability Management (26%), Incident Response and Management (24%), and Reporting and Communication (16%). The new material is where the cert catches up to the actual job: more cloud, a real emphasis on threat hunting, expanded identity and access management, and a fresh block on AI use cases, the risks they bring, and governance. Format is up to 85 questions in 165 minutes, with a passing score of 750 on a 100-to-900 scale.</p>
-<p>Here's the practical call. If you're within a few weeks of testing and your material is built around CS0-003, finish what you started and sit the current exam. There's no penalty for holding a cert earned on the older objectives; it's the same credential on your resume. If you're earlier in your prep, or you work somewhere cloud-heavy or AI-adjacent, the V4 objectives map better to what you'll actually be doing, and that's worth waiting a few weeks for.</p>
-<p>CySA+ is CompTIA's analyst cert, a step past Security+ and aimed at people doing detection, triage, and response rather than general security awareness. The V4 additions push it toward the SOC reality of 2026: cloud telemetry, hunting instead of waiting on alerts, and working out what to do when half your tooling suddenly has an AI feature bolted on. If that's the chair you sit in, or want to, the refresh is aimed at you.</p>
-<p>One thing not to overthink, but to plan around: test-prep churn. New exam versions always arrive before the third-party practice questions and courses fully catch up. If you go for CS0-004 in its first month, lean on CompTIA's own objectives document over a hastily updated cram deck, and expect the AI and cloud sections to be the thinnest part of any third-party prep until the market fills them in.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Models Are Coming to Oracle Cloud&apos;s Prepaid Credits</title>
-      <link>https://sabr-labs.com/article/openai-oracle-cloud-universal-credits-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-oracle-cloud-universal-credits-june-2026</guid>
-      <pubDate>Thu, 11 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Oracle</category>
-      <category>Codex</category>
-      <category>Enterprise AI</category>
-      <category>Cloud</category>
-      <description>Oracle Cloud customers will soon be able to spend their existing Universal Credits on OpenAI&apos;s models and Codex, turning a procurement headache into a budgeting line item.</description>
-      <content:encoded><![CDATA[<p>OpenAI wants to sell its models to companies that never signed up for OpenAI. Its new deal with Oracle is how.</p>
-<p>Under the partnership, Oracle Cloud Infrastructure customers will be able to spend their existing Oracle Universal Credits, the prepaid cloud commitments many enterprises already buy in bulk, on OpenAI's frontier models and its Codex coding agent. The models will be offered through the OCI Marketplace, and OpenAI says access arrives in the coming weeks.</p>
-<p>There's no new model here and no new capability. What's new is the procurement path. For a large company, the friction in adopting OpenAI usually isn't technical; it's the legal and purchasing overhead of onboarding another vendor. Letting teams draw down a cloud commitment they already signed off on removes a step that quietly kills plenty of pilots before they start.</p>
-<p>The two companies are already deep in business together. Oracle is one of the main compute providers behind OpenAI's data-center buildout, the Stargate effort, so wiring OpenAI's models into Oracle's marketplace is the customer-facing other half of an infrastructure deal that was mostly about who rents whom servers. This turns that plumbing into a sales channel.</p>
-<p>It also tightens the knot. Every credit an Oracle customer spends on GPT through OCI is a credit they don't spend on a competing model, and it deepens the dependency between one cloud and one model vendor. Convenient for buyers today, and worth remembering the next time someone argues the AI market is still wide open.</p>
-<p>For engineers the practical read is simple. If your shop runs on Oracle Cloud, getting GPT-class models and Codex into a project is about to be a budgeting question instead of a procurement project. That's a smaller change than a new model, and for a lot of teams it will matter more.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA: Patch the Actively Exploited SolarWinds Serv-U Flaw by June 19</title>
-      <link>https://sabr-labs.com/article/solarwinds-serv-u-cve-2026-28318-kev-exploited</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-serv-u-cve-2026-28318-kev-exploited</guid>
-      <pubDate>Thu, 11 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SolarWinds</category>
-      <category>Serv-U</category>
-      <category>CISA KEV</category>
-      <category>CVE</category>
-      <category>Denial of Service</category>
-      <description>CVE-2026-28318 lets an unauthenticated attacker crash SolarWinds Serv-U with a single crafted POST request, and CISA has set a June 19 deadline to fix it.</description>
-      <content:encoded><![CDATA[<p>SolarWinds is back on CISA's exploited-vulnerabilities list, this time for a flaw that lets an unauthenticated attacker knock its Serv-U file-transfer server offline with a single crafted request.</p>
-<p>CVE-2026-28318 is an uncontrolled resource consumption bug. A remote attacker with no credentials can trigger it by sending an HTTP POST request carrying a Content-Encoding: deflate header, which forces Serv-U to chew through resources until the service crashes. Every version up to and including 15.5.4 is affected. SolarWinds fixed it in Serv-U 15.5.4 Hotfix 1.</p>
-<p>It's a denial-of-service bug, not remote code execution, so nobody is stealing files through this one directly. But Serv-U is managed file-transfer software, the kind of appliance that sits at the edge of a network moving sensitive data between partners. Knocking it down on demand is disruptive on its own, and DoS against file-transfer gear has a habit of being either a precursor or a distraction.</p>
-<p>CISA added the bug to its Known Exploited Vulnerabilities catalog on June 5 and gave federal civilian agencies until June 19 to patch. That window is nearly shut. A KEV listing isn't theoretical: CISA only adds bugs it has evidence are being used in real attacks.</p>
-<p>Serv-U has been here before. The same product showed up in CISA's catalog for a path-traversal flaw in 2024 and a remote-code-execution bug in 2021 that was tied to state-linked activity. For software whose entire job is to sit exposed and move files, that's a track record worth weighing when you decide how fast to act.</p>
-<p>If you run Serv-U, get to 15.5.4 Hotfix 1. If you can't patch right away, SolarWinds and CISA point to the same stopgaps: put the service behind a WAF or firewall so only known addresses can reach it, and block POST requests that include a content-encoding header. Neither is a real substitute for the fix.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
