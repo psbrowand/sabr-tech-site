@@ -6,9 +6,127 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2026 13:17:02 GMT</lastBuildDate>
-    <pubDate>Sat, 20 Jun 2026 13:17:02 GMT</pubDate>
+    <lastBuildDate>Sun, 21 Jun 2026 13:19:32 GMT</lastBuildDate>
+    <pubDate>Sun, 21 Jun 2026 13:19:32 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>FERC Orders All Six US Grid Operators to Rewrite Data-Center Hookup Rules</title>
+      <link>https://sabr-labs.com/article/ferc-grid-operators-data-center-interconnection-orders-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ferc-grid-operators-data-center-interconnection-orders-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 14:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>FERC</category>
+      <category>Energy</category>
+      <category>AI Infrastructure</category>
+      <category>Policy</category>
+      <description>FERC issued show-cause orders to PJM, MISO, SPP, CAISO, ISO-NE, and NYISO, giving them 60 days to defend or rewrite how AI data centers connect to the grid.</description>
+      <content:encoded><![CDATA[<p>Federal regulators just put the entire US power grid on notice over data centers. On June 18, the Federal Energy Regulatory Commission issued show-cause orders to all six jurisdictional grid operators, telling each one to defend the rules it uses for connecting enormous new electrical loads, or rewrite them.</p>
+<p>The orders go to PJM, MISO, SPP, CAISO, ISO-NE, and NYISO, carried on a unanimous Commission vote under Section 206 of the Federal Power Act. They land in dockets EL26-67 through EL26-72. Between them, those operators run the grid for roughly 200 million Americans across more than 30 states and DC, about two-thirds of the country's electricity demand.</p>
+<p>The clock is short. Operators have 60 days to answer FERC's briefing questions and 30 days to file informational reports on whether they actually have enough generation lined up to keep the system reliable as these loads arrive. FERC staff reviewed more than 3,500 pages of comments before issuing the orders, and the action builds on a December 2025 co-location order in PJM and SPP's earlier work on high-impact large loads.</p>
+<p>FERC organized its demands around five reform areas: faster transmission-service processes, preventing cost-shifts onto ordinary ratepayers, how to treat co-located and behind-the-meter generation, flexible-load service options, and the study process for generation that sits right next to a giant load. That fourth one matters more than it sounds. A data center that can throttle its own draw during grid stress is a very different animal from one that can't.</p>
+<p>This is the AI buildout running into physics. The companies racing to stand up gigawatt-scale data centers want grid connections immediately, and the interconnection queues were never designed for single loads this big showing up this fast. Something had to give, and FERC decided it would rather set the terms now than clean up a reliability mess or a ratepayer revolt later.</p>
+<p>The real fight underneath all this is who pays. Building transmission and generation to feed a hyperscaler's campus costs billions, and if that cost lands in everyone's monthly bill, the politics get ugly quickly. Watch what the operators file in 60 days. If the proposals push more of the cost onto the data centers themselves, that's the signal FERC actually meant it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Klue Breach Lets Icarus Group Steal Salesforce Data From Security Firms</title>
+      <link>https://sabr-labs.com/article/klue-oauth-breach-icarus-salesforce-data-theft-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/klue-oauth-breach-icarus-salesforce-data-theft-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Salesforce</category>
+      <category>OAuth</category>
+      <category>Supply Chain</category>
+      <category>Extortion</category>
+      <description>A poisoned update inside competitive-intel vendor Klue let the Icarus extortion group harvest OAuth tokens and steal Salesforce data from customers including Huntress, ReliaQuest, and Recorded Future.</description>
+      <content:encoded><![CDATA[<p>Klue, the competitive-intelligence tool a lot of sales teams plug straight into their CRM, spotted unauthorized activity in its integration infrastructure on June 12. By the time the picture was clear this week, the attackers had pushed a malicious code update through Klue's own backend, scraped the OAuth tokens that connect Klue to its customers, and walked those tokens straight into Salesforce.</p>
+<p>The foothold was depressingly ordinary. According to the incident writeups, the attackers got in through a dormant but still-active legacy credential, created for a prototype integration and never revoked. From there they had enough access to ship a backend update that quietly collected the tokens linking Klue to everyone who used it.</p>
+<p>Once that was understood, Klue pulled its integrations with Salesforce, HubSpot, SharePoint, Zoom, Gong, Chorus, Clari, Google Drive, and Slack. Salesforce separately disabled the Klue Battlecards app on its side. The data that actually left was CRM data: business contacts, sales communications, price quotes, account records, and the competitive-intel reports Klue exists to produce. Klue says its threat-intel data, customer telemetry, passwords, payment cards, and engineering systems were not touched.</p>
+<p>The victim list is the part that stings. Huntress, ReliaQuest, Recorded Future, Tanium, Jamf, Sprout Social, Gong, and Insurity have all been named as affected, and several of them are security companies that sell exactly the kind of monitoring that's supposed to catch this. Huntress and ReliaQuest, to their credit, published their own breach investigations rather than wait to be outed.</p>
+<p>The Icarus extortion group, which surfaced around April, claimed responsibility and is now leaning on victims through extortion emails and a leak site. If the pattern feels familiar, it should. This is the same play that drove the Salesloft and Drift wave: don't bother breaching the big, well-defended company, breach the small SaaS tool it trusted, and let the OAuth tokens handle the lateral movement for you.</p>
+<p>That's the uncomfortable lesson here. Every third-party app you connect to Salesforce is a key to your data sitting in someone else's building, and you're trusting that building's security as much as your own. A dormant credential at a mid-size vendor turned into stolen records at a row of household-name security firms.</p>
+<p>If you run Salesforce and bolt third-party apps onto it, this is the week to audit which OAuth grants are still live, revoke the ones nobody uses anymore, and assume any token issued to a breached vendor is now in someone else's hands. Rotate first, ask questions after.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Trump Says Apple Will Build Chips With Intel; Neither Company Confirms</title>
+      <link>https://sabr-labs.com/article/trump-apple-intel-us-chip-claim-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/trump-apple-intel-us-chip-claim-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Intel</category>
+      <category>Semiconductors</category>
+      <category>Manufacturing</category>
+      <category>Markets</category>
+      <description>President Trump claimed Apple agreed to design and build chips with Intel in the US, sending Intel up about 10%, though neither Apple nor Intel has confirmed any deal.</description>
+      <content:encoded><![CDATA[<p>President Trump said on June 18 that Apple has agreed to work with Intel to design and build chips in America. Intel stock jumped about 10.5% on the news, climbing to $133.82. There's one problem worth leading with: neither Apple nor Intel will confirm that any such deal exists.</p>
+<p>Apple didn't comment at all. Intel declined to comment on what it called a potential Apple-Intel agreement, which is the corporate phrasing companies use when they're not going to confirm a thing but don't want to flatly deny it either. So the only named source for a market-moving claim about two of the biggest companies in tech is the president's social media account.</p>
+<p>The analysts filled in the rest. Wedbush's Dan Ives framed it as a preliminary deal following more than a year of talks, with the logic being that Apple wants to reduce how much it leans on TSMC for manufacturing. Some go further and float Apple's M7 chip running on Intel's 18A-P process with volume production around late 2027. That's speculation stacked on top of an unconfirmed claim, and it's worth labeling as such.</p>
+<p>There's politics baked into this one. The US government took a 10% stake in Intel last August, so an administration talking up Intel's prospects is also, in a real sense, talking up a position it holds. That doesn't make the claim false. It does mean the messenger has a stake in the stock that just rose 10%.</p>
+<p>Treat this as exactly what it is for now: a claim that moved a major stock double digits before either company at the center of it would stand behind a single word. If a real Apple-Intel manufacturing deal is coming, Apple and Intel are perfectly capable of saying so themselves. Until one of them does, the only confirmed fact here is the stock chart.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Texas Parks Breach Exposes 3 Million Hunting License Holders&apos; IDs</title>
+      <link>https://sabr-labs.com/article/texas-parks-wildlife-3-million-license-breach-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/texas-parks-wildlife-3-million-license-breach-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Texas</category>
+      <category>Third-Party Risk</category>
+      <category>Identity Theft</category>
+      <category>Government</category>
+      <description>A compromise of Texas Parks &amp; Wildlife&apos;s third-party license vendor exposed driver&apos;s license and passport details for more than 3 million hunting and fishing license holders.</description>
+      <content:encoded><![CDATA[<p>Three million Texans who bought a hunting or fishing license now have their driver's license and passport details in someone else's hands. Texas Parks and Wildlife disclosed the breach on June 18, putting the number at 3,087,721 license holders, all of it flowing through a compromise of the third-party vendor that runs the agency's license-sales system.</p>
+<p>The exposed data covers driver's license information, passport numbers, email addresses, phone numbers, and home addresses. What's notably absent is almost as important as what's there: no Social Security numbers, no dates of birth, and no financial or credit-card data. That narrows the fraud options, though passport numbers are nothing to wave off.</p>
+<p>The timeline has a familiar gap. TPWD says it detected the incident on May 13 and notified Texas Cyber Command, then went public on June 18. Five weeks between detection and disclosure is on the faster end of how these tend to go, but it's still over a month in which affected people had no idea their passport number was loose.</p>
+<p>The agency is careful to say its own systems weren't breached, the unnamed vendor's were. That's accurate and also cold comfort to the people affected, who never chose the vendor and can't audit it. When you outsource license sales, you outsource the breach risk too, and the public still reads it as a state agency losing their data.</p>
+<p>Affected license holders are being offered a year of free credit monitoring and the standard advice to set a credit freeze or fraud alert. The piece worth actually caring about is the passport number, which credit monitoring does nothing for. If yours was in this dataset, it's a good moment to know how you'd spot a passport used in your name, because that's the exposure a free monitoring year won't cover.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Open Elasticsearch Server Exposed 24 Billion Stolen Credential Records</title>
+      <link>https://sabr-labs.com/article/infostealer-24-billion-credential-database-exposed-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/infostealer-24-billion-credential-database-exposed-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Infostealer</category>
+      <category>Credentials</category>
+      <category>Data Leak</category>
+      <category>MFA</category>
+      <category>Exposed Database</category>
+      <description>Researchers found an unsecured 8.3 TB database of 24 billion records, mostly infostealer logs, with a subset that paired stolen logins to CVE IDs and ready-made exploit repos.</description>
+      <content:encoded><![CDATA[<p>Twenty-four billion records, 8.3 terabytes, sitting on an Elasticsearch cluster with no password on it. Cybernews researchers found the trove exposed on June 12 and traced it to a breach-monitoring operation that reportedly left it open during a migration. The data is now offline.</p>
+<p>Most of it is infostealer logs, the output of malware that scrapes everything useful off an infected machine: passwords, session cookies and tokens that can sail right past multi-factor authentication, browser autofill data, device fingerprints, and crypto wallet details. It was aggregated from roughly 36 sources, including Telegram channels and older breach compilations stitched together into one searchable pile.</p>
+<p>The detail that sets this dump apart sits in a small subset, around 17,000 records. There, someone paired more than 9,500 CVE IDs and their descriptions with links to GitHub exploit repositories. In other words, the dataset didn't just hold stolen credentials, it enriched them with live exploit intel so an attacker could line up which targets to hit and with what.</p>
+<p>Keep the headline number in perspective, though. Twenty-four billion records is not twenty-four billion people. It's a heap of overlapping, re-aggregated dumps, heavy on duplicates and recycled data, and the count balloons fast when you merge 36 sources that already share entries. The exposure is real; the scariness of the raw figure is partly an artifact of how these collections get built.</p>
+<p>The practical response is the boring one that actually works. Use unique passwords stored in a manager so one stolen login doesn't unlock ten accounts, turn on MFA everywhere, ideally the phishing-resistant kind, and take session-token theft seriously as a way around your second factor. If a service supports it, kill old sessions and rotate tokens on a schedule rather than waiting for a reason.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Critical Veeam Backup Flaw Lets Any Domain User Seize the Backup Server</title>
+      <link>https://sabr-labs.com/article/veeam-backup-replication-cve-2026-44963-rce-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/veeam-backup-replication-cve-2026-44963-rce-june-2026</guid>
+      <pubDate>Sun, 21 Jun 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Veeam</category>
+      <category>CVE</category>
+      <category>Backup</category>
+      <category>Remote Code Execution</category>
+      <category>Ransomware</category>
+      <description>CVE-2026-44963 carries a CVSS 9.4 and gives any low-privileged domain user remote code execution on domain-joined Veeam Backup &amp; Replication servers up to build 12.3.2.4465.</description>
+      <content:encoded><![CDATA[<p>Veeam patched a critical hole in Backup & Replication this month, and it's the kind that should move backup admins to the front of the patch queue. CVE-2026-44963 lets any low-privileged domain user run arbitrary code on the backup server and take it over completely.</p>
+<p>The bug carries a CVSS v4 score of 9.4. It affects every Backup & Replication build in the v12 line up to and including 12.3.2.4465, and the fix arrives in 12.3.2.4854. Version 13, which reworked the underlying architecture, isn't affected.</p>
+<p>There's an important asterisk. The attack only works when the backup server is joined to a Windows domain. Veeam's own hardening guidance has told customers for years to run Backup & Replication in a workgroup, isolated from the production domain, and shops that followed it sit outside the blast radius. Plenty of shops didn't.</p>
+<p>Here's why this rates more attention than the average authenticated RCE: the backup server is the first thing a ransomware crew goes after. Encrypt the production estate, delete or corrupt the backups, and you've taken away the victim's only path that doesn't run through the ransom payment. A low-privileged domain account that turns into full control of that server is exactly the pivot attackers dream about.</p>
+<p>The flaw was found by Sina Kheirkhah of watchTowr and disclosed alongside the June 9 patch. No in-the-wild exploitation has been reported yet, but Veeam is warning that diffing the patch into a working exploit is the obvious next move, and backup servers are a target worth the effort.</p>
+<p>Patch to 12.3.2.4854. If you can't move on it immediately, the standing advice is the mitigation: get the backup server off the production domain and into a workgroup, the way Veeam told you to set it up in the first place.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Unpatchable usbliter8 Exploit Cracks Apple A12 and A13 Boot ROM</title>
       <link>https://sabr-labs.com/article/apple-usbliter8-securerom-a12-a13-unpatchable-bootrom-june-2026</link>
@@ -891,132 +1009,6 @@
 <p>Rapid7's researchers confirmed two intrusions with high confidence and tied at least one of them, with medium confidence, to an affiliate of the Qilin ransomware operation. Check Point's own framing calls the campaign limited, several dozen organizations so far. That number is doing a lot of work. A perimeter VPN that hands out authenticated sessions is exactly the front door a ransomware crew wants, and "several dozen" is a snapshot, not a ceiling. Once a reliable exploit circulates, limited campaigns stop being limited.</p>
 <p>Check Point has shipped hotfixes, and CISA added the bug to its Known Exploited Vulnerabilities catalog in early June with a federal remediation deadline attached. That KEV listing is the part defenders should read as a clock, not a footnote: it means the government has seen enough real exploitation to compel agencies to patch.</p>
 <p>If you operate these gateways, apply the hotfix now and treat any internet-facing instance as potentially already touched. Hunt for VPN sessions you cannot account for, new or unexpected administrative activity, and the usual post-access tradecraft that precedes a ransomware deployment. Patching closes the door. It does not tell you whether someone already walked through it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>KKR and Nvidia Put $10B Into a Company to Fix Stalled AI Data Centers</title>
-      <link>https://sabr-labs.com/article/kkr-helix-digital-infrastructure-ai-data-centers-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/kkr-helix-digital-infrastructure-ai-data-centers-june-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>KKR</category>
-      <category>Nvidia</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>Vistra</category>
-      <category>Adam Selipsky</category>
-      <description>KKR, Nvidia, Vistra, and Kuwait&apos;s sovereign fund launched Helix Digital Infrastructure with more than $10 billion to build the power and data centers hyperscalers keep announcing but failing to deliver.</description>
-      <content:encoded><![CDATA[<p>There's a gap between the data centers companies announce and the ones that actually come online. KKR just put more than $10 billion behind closing it.</p>
-<p>On June 11, KKR, Nvidia, Vistra, and the Kuwait Investment Authority launched Helix Digital Infrastructure, a company built to finance and deliver AI infrastructure for hyperscale customers. The pitch is integration: bundle data center capacity, power, connectivity, and the services around them into one package, instead of making a hyperscaler stitch those pieces together itself. Nvidia comes in as the strategic technology partner, and Vistra as the preferred power supplier.</p>
-<p>Running it is Adam Selipsky, who used to be CEO of Amazon Web Services. He isn't pretending the buildout is going smoothly. By his account, more than a quarter of announced data center projects aren't getting delivered, and Helix exists to attack that delivery gap rather than to add another splashy capacity number to the pile.</p>
-<p>Selipsky's point about undelivered projects is the honest part of an otherwise familiar story. The constraint on AI infrastructure stopped being chips a while ago and became power, permits, and the ability to actually finish construction. Money keeps pouring in regardless. KKR's $10 billion lands the same week Amazon reportedly lined up $17.5 billion in bank loans and Google signed a compute deal with SpaceX worth about $920 million a month. A lot of capital is chasing the same scarce megawatts.</p>
-<p>For everyone who isn't a hyperscaler, this is the plumbing of the AI boom getting financialized. Whether Helix delivers faster than the projects Selipsky is criticizing is the thing to watch. The capital is clearly available. Turning it into powered, online racks is the part that keeps slipping.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Is Security+ Worth It in 2026? An Honest Look at the SY0-701</title>
-      <link>https://sabr-labs.com/article/comptia-security-plus-sy0-701-worth-it-honest-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-security-plus-sy0-701-worth-it-honest-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>Security+</category>
-      <category>SY0-701</category>
-      <category>Cybersecurity</category>
-      <category>Certification</category>
-      <category>SOC</category>
-      <description>Security+ is the most-requested entry cybersecurity cert and a DoD baseline requirement, but it opens doors rather than handing you a six-figure analyst salary on day one.</description>
-      <content:encoded><![CDATA[<p>Security+ is the cert that gets oversold in both directions. One camp treats it as a golden ticket into a $125,000 security analyst job. The other dismisses it as a memorization test that proves nothing. Both are wrong, and the truth in between is genuinely good news: Security+ is the single most reliable way to get past a hiring filter for an entry-level security role, and that's a meaningful thing to buy for a few hundred dollars.</p>
-<p>The current exam is SY0-701, and it's been the only active version since CompTIA retired SY0-601 in July 2024. It runs up to 90 questions in 90 minutes, including performance-based questions, and you need 750 out of 900 to pass. Retail pricing in the US sits around $425 for a single voucher. There's no formal prerequisite, though CompTIA suggests Network+ and a couple of years of IT experience first, and that background genuinely makes the exam easier.</p>
-<p>The content is organized into five domains: General Security Concepts (12%), Threats, Vulnerabilities, and Mitigations (22%), Security Architecture (18%), Security Operations (28%), and Security Program Management and Oversight (20%). The weighting toward operations and threats reflects what the cert is really for: showing you can function in a SOC or a security-adjacent IT role, not that you can write policy from scratch.</p>
-<p>Now the salary question, handled honestly. The Bureau of Labor Statistics reports a 2024 median wage of $124,910 for information security analysts, with employment projected to grow 29% through 2034 and roughly 16,000 openings a year. That growth is real and it's why the cert is in demand. But that median reflects experienced analysts, not someone who just passed Security+. A fresh Security+ holder is typically looking at the bottom of that range or a notch below it, in roles like junior SOC analyst, security administrator, or an IT job with security duties. The cert points you up that ladder; it doesn't teleport you to the top of it.</p>
-<p>There's one advantage that's easy to undersell: Security+ is an approved baseline certification under the US Department of Defense's workforce requirements (DoD 8140/8570). For a large set of government and defense-contractor roles, holding it isn't a nice-to-have, it's a checkbox you cannot be hired without. If that's the world you're aiming at, the worth-it question is already answered.</p>
-<p>How hard is it? Moderate, and the difficulty is specific. The volume of terminology is large, and the performance-based questions reward people who've actually configured something over people who've only read about it. The other trap is CompTIA's question style, which loves asking for the "best" answer among several that are all defensible. Knowing the definition isn't enough; you have to know which control fits which scenario.</p>
-<p>Which points at how to study. Professor Messer's free SY0-701 series remains the backbone most people build on, paired with a paid course if you want structure. But the candidates who pass on the first try are the ones who drill performance-based scenarios and run a question bank hard enough to expose the gap between "I recognize this term" and "I know when to use it." Hands-on practice and realistic question reps are what close that gap, far more than rereading a study guide. For an entry security cert in 2026, Security+ is worth it. Just buy it for what it is: the door, not the room.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Built Its Own Frontier Models. The Target Is OpenAI&apos;s Bill.</title>
-      <link>https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-mai-models-build-2026-openai-independence</guid>
-      <pubDate>Fri, 12 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Microsoft</category>
-      <category>MAI</category>
-      <category>Artificial Intelligence</category>
-      <category>OpenAI</category>
-      <category>Azure</category>
-      <category>LLM</category>
-      <description>Microsoft&apos;s seven new in-house MAI models, led by the reasoning model MAI-Thinking-1, are built to run on Azure without licensing fees, and the strategy matters more than the benchmarks.</description>
-      <content:encoded><![CDATA[<p>Microsoft spent years reselling OpenAI's models as its own AI products. At Build this month it showed the alternative it's been building quietly: seven models trained in-house, headlined by MAI-Thinking-1, its first reasoning model.</p>
-<p>MAI-Thinking-1 is a sparse mixture-of-experts model with about 35 billion active parameters out of roughly a trillion total, and a 256,000-token context window. Microsoft says it was trained on commercially licensed data with no distillation from third-party models, OpenAI's included. Alongside it: MAI-Code-1-Flash, a small 5-billion-parameter coding model headed into VS Code and GitHub Copilot, plus image, transcription, and voice models.</p>
-<p>The benchmark line Microsoft is pushing is that in blind human comparisons MAI-Thinking-1 was preferred over Anthropic's Claude Sonnet 4.6 and held its own against Claude Opus 4.6 on SWE Bench Pro coding tasks. Take that the way you take any vendor's own evals: directionally interesting, not independent proof. "Preferred in blind tests we ran" is a claim, not a leaderboard.</p>
-<p>The benchmarks aren't the point anyway. The point is the bill. Every time Microsoft serves an OpenAI model, it pays for that model. Running its own models on Azure cuts the royalty out, and Satya Nadella framed the shift as moving from "consuming a frontier model to fully participating at the frontier." For developers, the promised payoff is lower per-token pricing. For Microsoft, it's options in a partnership that has grown lopsided, and room to negotiate the next OpenAI deal from a stronger position.</p>
-<p>None of this means Microsoft is dropping OpenAI. GPT models still sit at the center of Copilot, and Microsoft has every reason to keep that relationship going. But a company that can credibly run its own frontier-class models is a different kind of partner than one that can't. That's the message Build was really sending.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Is the AWS Solutions Architect Associate (SAA-C03) Worth It?</title>
-      <link>https://sabr-labs.com/article/aws-solutions-architect-associate-saa-c03-worth-it-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/aws-solutions-architect-associate-saa-c03-worth-it-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>AWS</category>
-      <category>Solutions Architect</category>
-      <category>SAA-C03</category>
-      <category>Cloud</category>
-      <category>Certification</category>
-      <category>Cloud Career</category>
-      <description>The SAA-C03 is the most-requested cloud cert in job postings, but it rewards people who already know AWS and quietly punishes those treating it as a first step.</description>
-      <content:encoded><![CDATA[<p>The AWS Solutions Architect Associate is the cloud cert that shows up most in job postings, and that alone makes it worth taking seriously. But there's a trap baked into how people approach it. They see "associate" in the name and assume it's a beginner cert. It isn't. The SAA-C03 assumes you already understand how AWS services fit together, and it tests your judgment about which one to reach for, not whether you can define them.</p>
-<p>The exam specifics: 65 questions in 130 minutes, of which 50 are scored and 15 are unscored items AWS uses to trial future questions. You need a scaled score of 720 out of 1,000 to pass, and it costs $150 in the US. There's no hard prerequisite, but AWS recommends about a year of hands-on experience, and that recommendation is doing more work than it looks.</p>
-<p>Four domains, and the weighting tells the story: Design Secure Architectures (30%), Design Resilient Architectures (26%), Design High-Performing Architectures (24%), and Design Cost-Optimized Architectures (20%). Every domain is the word "design." That's the whole exam in one observation. You're not being asked what S3 is. You're being asked, given a scenario with latency targets, a budget, and a compliance constraint, which storage class and which architecture you'd choose. The questions are little case studies, often two or three plausible-looking answers deep.</p>
-<p>That design framing is also why it's harder than the question count suggests. Two answers will usually be technically correct and one will be the right call for the scenario's actual priority, whether that's cost, durability, or recovery time. You can't pattern-match your way through that. You have to genuinely understand the tradeoffs between, say, Multi-AZ and read replicas, or when a NAT gateway beats a NAT instance. This is where pure flashcard study falls apart.</p>
-<p>The payoff is real and it's the strongest of any cert in this group. The SAA shows up in a large share of cloud job listings, and aggregated salary data from sites like ZipRecruiter and Glassdoor puts cloud roles tied to it well into six figures, commonly in the $140,000-plus range for people with a couple of years of experience. Those are aggregator numbers rather than a government statistic, so read them as the shape of the market, not a guarantee. The direction is not in doubt: cloud architecture pays, and this cert is the recognized entry ticket.</p>
-<p>Here's the honest catch for career-changers. If you have zero AWS exposure, going straight for the SAA is a slog, and many people would be better served starting with the Cloud Practitioner to build vocabulary first, then coming back. The fastest path through the SAA for anyone runs through the console: spin up the services the exam covers, break them, watch the bill, see what fails over and what doesn't. Pair that with scenario-style practice questions in the weeks before the exam, because the test's whole personality is scenarios, and reading documentation does not prepare you for the judgment calls the way actually building does.</p>
-<p>Worth it? For anyone serious about cloud work, yes, clearly. Just go in with the right expectation: this is a cert that confirms experience rather than substitutes for it. Earn it after you've put your hands on AWS, not before, and it does exactly what you want a cert to do.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Exploiting a Netlogon Bug That Owns Domain Controllers</title>
-      <link>https://sabr-labs.com/article/windows-netlogon-cve-2026-41089-domain-controller-rce-exploited</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/windows-netlogon-cve-2026-41089-domain-controller-rce-exploited</guid>
-      <pubDate>Fri, 12 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Windows Server</category>
-      <category>Netlogon</category>
-      <category>CVE-2026-41089</category>
-      <category>Active Directory</category>
-      <category>Domain Controller</category>
-      <description>CVE-2026-41089, a 9.8-rated unauthenticated Netlogon flaw Microsoft patched in May, is now under active exploitation against domain controllers, and Belgium&apos;s cyber agency is sounding louder alarms than Redmond.</description>
-      <content:encoded><![CDATA[<p>Microsoft patched it in May. Attackers are using it now. CVE-2026-41089 is a critical hole in the Windows Netlogon service, and the gap between the fix and the exploitation is exactly where unpatched domain controllers live.</p>
-<p>The flaw is a stack-based buffer overflow in how Netlogon handles inbound RPC requests. A crafted packet with a malformed length field writes past the buffer and overwrites the return address on the stack. Because the Netlogon RPC interface is exposed on every domain controller by design, no authentication is needed to reach the vulnerable code. It carries a 9.8 CVSS score and affects Windows Server from 2012 through 2025.</p>
-<p>Successful exploitation runs code inside the LSASS process on a domain controller. In practical terms, that's the whole Active Directory forest. Whoever lands this owns the directory that authenticates everything else.</p>
-<p>What makes this one notable is who's doing the warning. Belgium's Centre for Cybersecurity confirmed active exploitation on June 1 and told organizations to treat it as an emergency, roughly three weeks after Microsoft's May Patch Tuesday shipped the fix. The CCB's messaging has been blunter and more urgent than Microsoft's own, and there's been visible friction between the two over how the bug was communicated. When a national CSIRT is shouting louder than the vendor, that tells you how seriously to take it.</p>
-<p>If your domain controllers aren't on the May 2026 cumulative update, that's the job for today. Netlogon RPC can't simply be firewalled off internally without breaking authentication, so patching is the real fix, not network controls. Confirm every DC is current, and review logs for unusual Netlogon RPC traffic and LSASS crashes that could mark a failed exploit attempt.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Network+ in 2026: Is It Worth It and How Hard Is the N10-009?</title>
-      <link>https://sabr-labs.com/article/comptia-network-plus-n10-009-worth-it-how-hard-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-network-plus-n10-009-worth-it-how-hard-2026</guid>
-      <pubDate>Fri, 12 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>Network+</category>
-      <category>N10-009</category>
-      <category>Networking</category>
-      <category>Certification</category>
-      <category>IT Career</category>
-      <description>Network+ sits in an awkward spot between A+ and CCNA, so the real question is whether the N10-009 earns a place in your path or whether you should jump to Cisco instead.</description>
-      <content:encoded><![CDATA[<p>Network+ has an identity problem, and pretending otherwise does no one any favors. It's vendor-neutral networking knowledge that nobody disputes is useful, sitting directly underneath Cisco's CCNA, which carries more weight with employers and costs about the same. So the honest framing for 2026 isn't "is Network+ good" (it is) but "is Network+ the right next step for you, or are you about to pay for a cert you'll outgrow in a year?"</p>
-<p>Here are the facts on the current exam. The code is N10-009, and it replaced N10-008 when that retired in December 2024. It runs up to 90 questions in 90 minutes, mixing multiple choice with performance-based questions, and you need 720 out of 900 to pass. The retail price is $369 in the US. CompTIA recommends A+ first plus around nine to twelve months of hands-on networking experience, though plenty of people sit it earlier than that.</p>
-<p>The exam splits into five domains: Networking Fundamentals (23%), Network Implementations (20%), Network Operations (19%), Network Security (14%), and Network Troubleshooting (24%). Note where the weight sits. Troubleshooting and fundamentals together are nearly half the exam, and that tells you what CompTIA is actually testing: not whether you can recite the OSI model, but whether you can reason through why a host can't reach a server.</p>
-<p>How hard is it? Harder than A+, easier than CCNA. The conceptual load is real this time. Subnetting alone defeats more candidates than anything else on the exam, and you cannot fake your way through it. If binary math and CIDR notation make your eyes glaze, that's the wall you have to climb before you sit this. The good news is that subnetting is a learnable mechanical skill, not a talent, and a week of deliberate practice gets most people from lost to fluent.</p>
-<p>Where Network+ pays off is the role it points at. The Bureau of Labor Statistics puts the 2024 median for network and computer systems administrators around $97,000, well above the help desk tier A+ targets. Network+ is the credential that signals you're ready to step from support into administration. It's also DoD-approved for certain baseline roles, which matters if you're aiming at government or contractor work.</p>
-<p>The study reality mirrors the exam's troubleshooting bias. Reading about VLANs and routing teaches you the words; configuring them teaches you the cert. The candidates who pass cleanly are the ones who spend real time in a lab simulating the networks they're being tested on, then drill a question bank to surface the subnetting and port-number gaps they didn't know they had. Theory-only studiers consistently underestimate the performance-based questions and pay for it on test day.</p>
-<p>So: worth it, with a caveat. If you want vendor-neutral fundamentals or you need the DoD approval, Network+ is a clean, defensible choice. If your goal is squarely network engineering and you're comfortable committing, the CCNA covers similar ground with more market pull for the same money, and you can skip a step. Network+ is the safer, broader bet. CCNA is the more ambitious one. Neither is wrong; just be honest with yourself about which you're making.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
