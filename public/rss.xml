@@ -6,9 +6,109 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jun 2026 13:19:32 GMT</lastBuildDate>
-    <pubDate>Sun, 21 Jun 2026 13:19:32 GMT</pubDate>
+    <lastBuildDate>Mon, 22 Jun 2026 13:17:15 GMT</lastBuildDate>
+    <pubDate>Mon, 22 Jun 2026 13:17:15 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>New Prinz Eugen Ransomware Skips the Note and Goes for Your Newest Files</title>
+      <link>https://sabr-labs.com/article/prinz-eugen-ransomware-recent-files-no-note-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/prinz-eugen-ransomware-recent-files-no-note-june-2026</guid>
+      <pubDate>Mon, 22 Jun 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>RDP</category>
+      <category>RMM</category>
+      <category>Malware</category>
+      <category>Extortion</category>
+      <description>A Go-based encryptor spotted this month encrypts recently modified files first and drops no ransom note, keeping the extortion off the victim&apos;s machine and out of automated detection.</description>
+      <content:encoded><![CDATA[<p>Most ransomware wants you to know it's there. Prinz Eugen doesn't leave a note.</p>
+<p>The new strain, detailed this week, is a Go-based encryptor with two deliberate quirks. First, it goes after the most recently modified files before anything else, and when files share a timestamp it works through them alphabetically. That's not laziness, it's targeting: the files you touched today are the ones you actually need, so encrypting them first maximizes the pain per minute the malware is running.</p>
+<p>Second, and more telling, the encryptor has no code to drop a ransom note or change the desktop wallpaper. None. That's a choice organized crews make on purpose. Keeping the demand off the victim's machine cuts the forensic trail and means automated tooling watching for the classic README-HOW-TO-DECRYPT.txt never fires. The extortion happens out of band instead, over email, phone, or a dark-web portal, where it's harder to catch and harder to study.</p>
+<p>The operators are hands-on. Initial access looks like stolen RDP credentials, after which a human logs in, leans on legitimate remote monitoring and management tools and other living-off-the-land tricks to move around, then manually runs the payload, a file named servertool.exe. There's no spray-and-pray here. Someone is at the keyboard.</p>
+<p>It's early. Researchers have tied at least five organizations to Prinz Eugen so far, and in one reported case the attacker asked for a single bitcoin and was turned down. Small numbers, but the tradecraft is mature, and the no-note approach suggests people who've run this kind of operation before.</p>
+<p>The defensive takeaways are the boring ones that keep mattering: lock down RDP behind MFA or a VPN, watch for RMM tools showing up where they don't belong, and keep offline backups that an encryptor running at keyboard speed can't reach. If your alerting leans on spotting a ransom note, this is a reminder that the note is optional and the encryption isn't.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>US Hands SandboxAQ $500M to Find Replacements for Chipmaking&apos;s Worst Chemicals</title>
+      <link>https://sabr-labs.com/article/sandboxaq-500-million-chips-award-pfas-materials-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sandboxaq-500-million-chips-award-pfas-materials-june-2026</guid>
+      <pubDate>Mon, 22 Jun 2026 12:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>CHIPS Act</category>
+      <category>SandboxAQ</category>
+      <category>PFAS</category>
+      <category>Materials Science</category>
+      <description>The CHIPS R&amp;D award funds an AI-driven hunt for PFAS-free process chemicals, rare-earth-free magnets, and other materials the US currently sources from abroad, and the government takes an equity stake in return.</description>
+      <content:encoded><![CDATA[<p>The chips in your phone, your car, and the data center training your favorite model all depend on a class of chemicals nobody has figured out how to replace at scale. The US Department of Commerce is now betting half a billion dollars that an AI company can fix that.</p>
+<p>On June 17, SandboxAQ signed a definitive agreement with Commerce's CHIPS R&D office for a $500 million award. The money targets a specific anxiety: the materials and chemistries that semiconductor manufacturing can't run without are largely controlled by foreign suppliers, and a tariff dispute or an export ban could choke domestic fabs that otherwise look self-sufficient on paper.</p>
+<p>The work splits into four buckets. The headline one is PFAS, the "forever chemicals" that show up across chip fabrication as heat-transfer fluids, lubricants, insulating coatings, and surface treatments. They're under regulatory pressure for good environmental reasons, and there's no compliant substitute available in volume today. The other three are catalysts, rare-earth-free magnets, and battery systems. SandboxAQ plans to run all of it through its AI materials-discovery platform, which is the part that earned it the Nvidia backing it likes to mention.</p>
+<p>Worth slowing down on one detail: the government is taking an equity stake in SandboxAQ as part of this deal. CHIPS money started life as grants. Increasingly it comes with the public buying a piece of the company. Whether that's prudent stewardship of taxpayer dollars or an awkward new role for the state depends on your politics, but it's a real shift in how this program operates, and it's worth watching as more awards land.</p>
+<p>The honest caveat is that this is research funding, not a product. AI-guided materials discovery has produced genuine wins, but the gap between "the model proposed a promising molecule" and "a fab swapped out its coolant" is measured in years of validation, qualification, and scale-up. The check is real. A PFAS-free fab is still a hypothesis.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AutoJack: One Web Page Can Make an AI Agent Run Code on Your Box</title>
+      <link>https://sabr-labs.com/article/autojack-ai-agent-autogen-studio-localhost-rce-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/autojack-ai-agent-autogen-studio-localhost-rce-june-2026</guid>
+      <pubDate>Mon, 22 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Agents</category>
+      <category>Microsoft</category>
+      <category>MCP</category>
+      <category>AutoGen</category>
+      <category>RCE</category>
+      <description>Microsoft&apos;s exploit chain shows how a malicious page, read by a browsing agent in AutoGen Studio, reaches a local service and spawns arbitrary processes on the host.</description>
+      <content:encoded><![CDATA[<p>Point an AI browsing agent at the wrong web page and, in the right setup, that page can run commands on the machine the agent lives on. Microsoft's Defender Security Research Team published the chain on June 18 and named it AutoJack.</p>
+<p>The target is AutoGen Studio, the open-source prototyping interface for Microsoft's AutoGen agent framework. The problem is a local Model Context Protocol WebSocket that the studio exposes. When a browsing agent loads attacker-controlled content, that content can reach the local socket and ask it to spawn a process. No malware download, no user click past pointing the agent at a page.</p>
+<p>What makes it work is three small mistakes stacked on top of each other. The socket only trusted connections from localhost, which sounds safe until you remember the browsing agent is running on localhost, so anything it loads inherits that trusted identity and sails through the check. The authentication middleware skipped MCP paths on the assumption that the handler downstream would verify tokens, and the handler never did, so the socket accepted unauthenticated connections no matter how auth was configured. And the endpoint took a command straight out of a request parameter and ran it, with no allowlist on what was allowed to launch.</p>
+<p>Each of those is a familiar bug on its own. The lesson of AutoJack is what they become together once you put an autonomous agent in the middle. The whole security model of "only localhost can talk to this" quietly breaks the moment the thing on localhost is a program that fetches and acts on untrusted input from the open web. The agent is the confused deputy, and it's a deputy with a shell.</p>
+<p>There's some good news on blast radius. The vulnerable WebSocket surface never made it into a published PyPI release, so people who installed AutoGen Studio the normal way aren't exposed to this exact chain. Two pre-release builds, 0.4.3.dev1 and 0.4.3.dev2, did ship the flawed handler and are still sitting on PyPI unyanked, so anyone who grabbed a dev build should not be running it. The maintainers hardened the main branch in commit b047730: the handler no longer reads the command from the URL, parameters live server-side behind a one-time session ID, and MCP routes now go through the normal authentication path.</p>
+<p>Treat this as a preview, not a one-off. Every agent framework racing to add a browsing tool and a local control plane is building the same shape of exposure: untrusted content on one side, a privileged local service on the other, and an eager model in between connecting them. If you're standing up agents that browse, assume any page they read is hostile, and keep the local services they can reach behind real authentication that doesn't trust localhost just because it's local.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AryStinger Botnet Turns Decade-Old D-Link Routers Into Proxies</title>
+      <link>https://sabr-labs.com/article/arystinger-botnet-dlink-qnap-routers-proxy-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/arystinger-botnet-dlink-qnap-routers-proxy-june-2026</guid>
+      <pubDate>Mon, 22 Jun 2026 09:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Botnet</category>
+      <category>D-Link</category>
+      <category>IoT</category>
+      <category>Proxy</category>
+      <category>QNAP</category>
+      <description>Qianxin XLab says a previously undocumented malware family has hijacked more than 4,000 aging D-Link and QNAP devices using flaws as old as 2013, building a proxy and reconnaissance network.</description>
+      <content:encoded><![CDATA[<p>Some of the routers feeding this botnet shipped before the first Apple Watch. AryStinger, a malware family that researchers at Qianxin XLab documented for the first time on June 17, has compromised more than 4,000 outdated routers and NAS boxes and turned them into relays for someone else's traffic.</p>
+<p>The targets tell the story. AryStinger goes after D-Link DIR-850L and DIR-818LW routers built on Realtek's RTL819X chips, hardware that was current somewhere around 2012 to 2015 and has been out of support for years. The bugs it exploits are just as old: CVE-2013-3307 and CVE-2016-5681 alongside a newer flaw, CVE-2025-11837. Nothing here is a clever zero-day. It's a sweep of gear that should have been retired and quietly wasn't.</p>
+<p>Once it lands, the malware converts the device into what XLab calls an executor: a remotely controlled node that can scan, proxy, tunnel, and run commands on the attacker's behalf. It can also rewrite DNS settings, hijack a user's browsing, and sit on the wire watching traffic flow in and out. A compromised home or small-office router isn't just a stepping stone here. It's a listening post.</p>
+<p>Geography is lopsided. Almost half of the infections sit in South Korea, with China accounting for roughly another third, then a long tail through Sweden, Malaysia, and Singapore. XLab also found two flavors of the malware: a C-based build that hits the old routers, and a Go-based version aimed at NAS systems that, for now, has a much smaller footprint.</p>
+<p>There's a timing detail worth noting. AryStinger's operators started spreading it one day after law enforcement disrupted the AVrecon proxy botnet, and XLab's first detection lands back in March. That's the proxy-botnet market working exactly the way it always does: take one operation down, and the demand for residential exit nodes just routes to the next one.</p>
+<p>If you've got a D-Link router from the mid-2010s still doing duty somewhere, this is the nudge to pull it. There is no patch coming for hardware this old, and the only real fix is a device the vendor still supports. Check your DNS settings while you're at it, because that's one of the first things AryStinger changes.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gentlemen Ransomware Built Its Own EDR-Killer, and It&apos;s Fast</title>
+      <link>https://sabr-labs.com/article/gentlekiller-the-gentlemen-raas-edr-killer-byovd-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gentlekiller-the-gentlemen-raas-edr-killer-byovd-june-2026</guid>
+      <pubDate>Mon, 22 Jun 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>EDR</category>
+      <category>BYOVD</category>
+      <category>ESET</category>
+      <category>FortiGate</category>
+      <description>ESET says the Gentlemen RaaS now ships affiliates a custom toolkit, GentleKiller, that disables 400-plus processes across 48 security products by abusing vulnerable kernel drivers.</description>
+      <content:encoded><![CDATA[<p>Most ransomware crews rent their EDR-killers from someone else. The Gentlemen built their own, and according to ESET research published this week, it's better than what they could have bought.</p>
+<p>The toolkit is called GentleKiller, and the Gentlemen ransomware-as-a-service operation hands it to vetted affiliates as part of the package. It targets more than 400 processes belonging to 48 separate security products, which covers basically every endpoint agent a defender is likely to be running. It ships in at least eight variants, each one impersonating a different legitimate application and each one loading a different vulnerable or outright malicious kernel driver to do its work.</p>
+<p>That technique, bring-your-own-vulnerable-driver, isn't new. What's new is the speed. ESET found that the Gentlemen fold freshly published BYOVD proof-of-concept code into GentleKiller within days of it hitting GitHub. Tools named UnknownKiller and PoisonKiller went from public research to production tooling in the gang's hands almost immediately. Most RaaS operators sit on public exploits for weeks or months before they bother to weaponize them. This crew runs a development pipeline that keeps pace with the security researchers publishing the bugs.</p>
+<p>Their targeting is unusual too. Instead of the usual fixation on US victims, the Gentlemen go after organizations in Southeast Asia, South America, and Western Europe, and they pick targets less by geography than by exposure. The common thread in their intrusions is a misconfigured FortiGate sitting on the edge. Find the soft firewall, get in, then let GentleKiller clear the room before the encryptor runs.</p>
+<p>A data leak from inside the operation back in May confirmed what researchers suspected: the operators actively build, maintain, and distribute the EDR-killer suite themselves rather than reselling someone else's. One tracker puts the group's victim count at 478. That's a real operation, not a side project.</p>
+<p>The uncomfortable part for defenders is that a kernel driver Windows trusts is a kernel driver an attacker can abuse, and Microsoft's vulnerable-driver blocklist has never kept up with the pace of new signed-but-broken drivers entering the wild. If your entire detection strategy lives in one EDR agent running in user space, a tool like GentleKiller is designed specifically to turn it off before you ever see an alert.</p>
+<p>If you run FortiGate at the perimeter, audit the configuration now, because that's the door this group keeps walking through. And if you can enforce Microsoft's vulnerable-driver blocklist and watch for driver loads that have no business happening on your endpoints, do it. The encryptor is the loud part. GentleKiller is the quiet part that happens first.</p>]]></content:encoded>
+    </item>
     <item>
       <title>FERC Orders All Six US Grid Operators to Rewrite Data-Center Hookup Rules</title>
       <link>https://sabr-labs.com/article/ferc-grid-operators-data-center-interconnection-orders-june-2026</link>
@@ -909,106 +1009,6 @@
 <p>The reason this is news on June 13 rather than just yesterday's pop is MSCI. Under its early-inclusion methodology, MSCI adds a newly listed company of this size to its large-cap indexes almost immediately, a day after listing rather than waiting for the usual quarterly review. That forces every fund tracking those indexes to buy SPCX whether they have a view on it or not.</p>
 <p>Which is the part worth sitting with. A 19 percent first-day jump is usually read as a triumph, but it also means the offering was priced below what the market would bear, and the company left money on the table that went to first-day buyers instead. And index inclusion is mechanical demand, not a judgment on the business. Passive funds are buying because the rules say to, not because anyone ran the numbers on a launch company whose cash flows are lumpy and whose capital appetite is enormous.</p>
 <p>What justifies a two-trillion-dollar tag is not the IPO mechanics. It is Starship cadence and Starlink revenue, the two lines that have to keep climbing for this valuation to look like anything other than enthusiasm. The stock now trades on both, in public, every day. That is the actual change here.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>France&apos;s Sovereign Messenger Tchap Breached, 73,000 Accounts Exposed</title>
-      <link>https://sabr-labs.com/article/tchap-france-government-messaging-breach-73000-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/tchap-france-government-messaging-breach-73000-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>France</category>
-      <category>Tchap</category>
-      <category>Government</category>
-      <category>Matrix</category>
-      <category>Social Engineering</category>
-      <description>A hijacked account led to a breach of Tchap, France&apos;s Matrix-based government messenger, exposing data tied to 73,000 public-sector users and more than 640,000 messages.</description>
-      <content:encoded><![CDATA[<p>Tchap was France's answer to depending on foreign chat apps for government work. This week it got breached.</p>
-<p>French authorities confirmed a security incident dated June 7, and the agency that runs the platform, DINUM, says fewer than 9 percent of registered users were affected. The attacker tells a bigger story: claims of 73,000 exposed accounts, more than 640,000 messages, and roughly 13.5GB of documents and media exfiltrated. The entry point was not some exotic exploit. It was social engineering against a single user account, after which the attacker says they reached hardcoded LDAP credentials and pulled data from there.</p>
-<p>What got exposed, by the official account, came from public discussions: usernames, email addresses, profile images, and the government organizations users belong to. Private chats are said to have stayed protected, since Tchap runs on the end-to-end encrypted Matrix protocol. Investigators are still reviewing exactly what the attacker could reach, which is the polite way of saying the "private chats are safe" line is provisional.</p>
-<p>There is an irony here that is hard to ignore. Tchap launched in 2018 as a joint project of DINUM and the national cybersecurity agency ANSSI, built on Matrix specifically so that French public-sector communications would not run through American or other foreign platforms. It is a sovereignty project, and it was undone by a hijacked account and credentials hardcoded somewhere they should never have been.</p>
-<p>Even granting that message bodies held, the metadata alone matters for a government. Who works at which ministry, who talks to whom, which email maps to which official: that is exactly the kind of mapping a foreign intelligence service would pay for. The encryption did its job on content. The breach still handed over the shape of the organization.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Fake Error Report Can Make Your Coding Agent Run Malicious Code</title>
-      <link>https://sabr-labs.com/article/agentjacking-ai-coding-agents-sentry-mcp-injection-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/agentjacking-ai-coding-agents-sentry-mcp-injection-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Agents</category>
-      <category>Prompt Injection</category>
-      <category>MCP</category>
-      <category>Sentry</category>
-      <category>Claude Code</category>
-      <category>AppSec</category>
-      <description>Tenet Security&apos;s &apos;Agentjacking&apos; shows how a poisoned Sentry error event can trick Claude Code, Cursor, and Codex into running attacker-supplied commands, with an 85% success rate in testing.</description>
-      <content:encoded><![CDATA[<p>The error report your AI agent reads to fix a bug can be the attack. That is the uncomfortable idea behind Agentjacking, a technique published this week by Tenet Security.</p>
-<p>Here is the mechanism. Sentry is the error-tracking tool a huge number of teams already run, and it now exposes an MCP server so coding agents can pull error details and propose fixes. Tenet found that an attacker can inject crafted text into a Sentry error event, and when the agent reads that event through the MCP server, it cannot tell the attacker's instructions apart from Sentry's own remediation guidance. The agent treats the injected commands as a legitimate next step and runs them. It is indirect prompt injection, weaponized through a tool developers already trust.</p>
-<p>The numbers are the part that should bother you. Tenet says it hijacked Claude Code, Cursor, and Codex with an 85 percent success rate in controlled tests, and it identified 2,388 exposed organizations, ranging from a company worth a quarter-trillion dollars down to solo developers and, awkwardly, a cloud-security vendor.</p>
-<p>The detail that breaks the usual reassurances: the agents ran the attacker's code even when explicitly told to ignore it, and endpoint detection, firewalls, and prompt-level guardrails all missed it. The standard mitigation story for prompt injection has been some version of "instruct the model not to comply," and this is a clean demonstration that the instruction does not hold when the malicious input arrives dressed as trusted tool output.</p>
-<p>This is the structural tension in agentic tooling. The autonomy that lets an agent read your errors and fix them is the same autonomy that lets injected instructions act on your machine, and every MCP connection widens the set of places that poison can come from. Treating tool output as trusted is the bug, and right now most setups do exactly that.</p>
-<p>If you run coding agents against real systems, scope their permissions hard, sandbox anything they execute, and stop letting them auto-run proposed commands against production. The safe default is to treat everything an agent reads from an external source as untrusted input, including the error reports it was built to help with.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Police Seize AudiA6, the Mixer That Washed $380M for Ransomware Crews</title>
-      <link>https://sabr-labs.com/article/audia6-crypto-laundering-takedown-europol-doj-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/audia6-crypto-laundering-takedown-europol-doj-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Cryptocurrency</category>
-      <category>Money Laundering</category>
-      <category>Europol</category>
-      <category>DOJ</category>
-      <category>Law Enforcement</category>
-      <description>An international operation led by Europol and the US DOJ dismantled AudiA6, a crypto-laundering service that cleaned more than $380 million for ransomware gangs and arrested two of its alleged operators in Georgia.</description>
-      <content:encoded><![CDATA[<p>A service that promised to launder dirty cryptocurrency and return it clean in about an hour, for a cut of 3 to 10 percent, is offline. Two of its alleged operators are now in custody in Georgia.</p>
-<p>The takedown of AudiA6 came on June 10, run jointly by the US Department of Justice, the Secret Service, and Europol. Investigators say the platform operated as a central laundering hub from 2022 to 2025 and moved more than $380 million, roughly 336 million euros, for criminal clients. The coordinated action seized 25 domains, pulled more than 30 servers offline, confiscated over 80 vehicles and several properties in Georgia, and froze around 692,000 euros in crypto. The two administrators arrested hold Ukrainian and Russian nationality.</p>
-<p>Ransomware gets the headlines, but cashing out is the part that actually constrains it. Encrypting a hospital is easy. Turning the ransom into spendable money without getting traced is the hard problem, and services like AudiA6 are the plumbing that solves it. Europol says the operation has been linked to more than 15 separate ransomware investigations, which is the real measure of what just got disrupted.</p>
-<p>Worth being clear-eyed about what this does and does not accomplish. Domain seizures are reversible, and mixer operators rebrand and resurface with depressing regularity. What raises the cost is the arrests and the asset seizures, the part where running this business stops being anonymous and starts being a prison sentence. That is the difference between knocking over a storefront and actually deterring the trade.</p>
-<p>For defenders, the takeaway is less about any single service and more about the pressure on the cash-out layer. Every laundering pipeline that gets dismantled makes the economics of ransomware a little worse, which is slow, unglamorous progress, and the only kind that lasts.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Patches a Chrome V8 Zero-Day That&apos;s Already Being Exploited</title>
-      <link>https://sabr-labs.com/article/chrome-v8-zero-day-cve-2026-11645-exploited-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-v8-zero-day-cve-2026-11645-exploited-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Google Chrome</category>
-      <category>V8</category>
-      <category>CVE-2026-11645</category>
-      <category>Zero-Day</category>
-      <category>Browser Security</category>
-      <description>Chrome 149.0.7827.102 fixes CVE-2026-11645, an actively exploited out-of-bounds bug in the V8 engine that lets a malicious web page run code inside the browser sandbox.</description>
-      <content:encoded><![CDATA[<p>Every Chrome user has an update waiting, and this one is not optional. Google pushed a fix on June 8 for CVE-2026-11645, a flaw in V8 that attackers are already using against real targets.</p>
-<p>V8 is the engine that runs JavaScript and WebAssembly on every page Chrome loads, which is what makes a bug here serious. This one is an out-of-bounds memory access rated 8.8, and a crafted HTML page is enough to trigger code execution inside the browser sandbox. A user does not have to download anything. Visiting the wrong page is the whole exploit.</p>
-<p>The flaw was reported on April 27 by a researcher credited as 303f06e3, who collected a $55,000 bounty for it. That leaves a gap of roughly six weeks between the report and the public fix, which is normal for a complex engine bug but worth noticing given that exploitation was happening in that window. The patch ships in Chrome 149.0.7827.102 and .103 for Windows and macOS, and .102 for Linux.</p>
-<p>Google is holding back the technical detail on the exploit until most users have updated, which is standard practice and also a tell that the bug is being used in ways the team does not want to advertise. A sandbox-contained flaw is not full system compromise on its own, but these rarely travel alone. They get chained with a sandbox escape, and then it is a different conversation. CISA added the CVE to its exploited-vulnerabilities catalog on June 9.</p>
-<p>The action here is boring and immediate. Open your version page, confirm you are on 149.0.7827.102 or later, and restart the browser to apply it. If you manage a fleet, push the update through policy rather than trusting users to relaunch on their own.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Check Point VPN Zero-Day Under Attack Since May, Now in CISA&apos;s KEV</title>
-      <link>https://sabr-labs.com/article/check-point-vpn-zero-day-cve-2026-50751-qilin-kev-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-vpn-zero-day-cve-2026-50751-qilin-kev-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Check Point</category>
-      <category>VPN</category>
-      <category>CVE-2026-50751</category>
-      <category>Zero-Day</category>
-      <category>Qilin</category>
-      <category>Ransomware</category>
-      <description>CVE-2026-50751, a 9.3-rated authentication bypass in Check Point&apos;s Remote Access VPN, has been exploited since early May, with at least one intrusion tied to a Qilin ransomware affiliate.</description>
-      <content:encoded><![CDATA[<p>An attacker can open a VPN session into a Check Point gateway without a valid password. That is the whole problem with CVE-2026-50751, and it has been happening in the wild since May 7.</p>
-<p>The flaw carries a CVSS score of 9.3 and is classified as improper authentication. It lives in the IKEv1 key-exchange logic, and it lets an unauthenticated attacker establish a session as though they had legitimate credentials. It affects Remote Access VPN, Mobile Access, and the Spark Firewall line across nine version branches, from R80.20.x up through R82.10. If you run a Check Point gateway exposed to the internet, the odds are good you are in scope.</p>
-<p>Rapid7's researchers confirmed two intrusions with high confidence and tied at least one of them, with medium confidence, to an affiliate of the Qilin ransomware operation. Check Point's own framing calls the campaign limited, several dozen organizations so far. That number is doing a lot of work. A perimeter VPN that hands out authenticated sessions is exactly the front door a ransomware crew wants, and "several dozen" is a snapshot, not a ceiling. Once a reliable exploit circulates, limited campaigns stop being limited.</p>
-<p>Check Point has shipped hotfixes, and CISA added the bug to its Known Exploited Vulnerabilities catalog in early June with a federal remediation deadline attached. That KEV listing is the part defenders should read as a clock, not a footnote: it means the government has seen enough real exploitation to compel agencies to patch.</p>
-<p>If you operate these gateways, apply the hotfix now and treat any internet-facing instance as potentially already touched. Hunt for VPN sessions you cannot account for, new or unexpected administrative activity, and the usual post-access tradecraft that precedes a ransomware deployment. Patching closes the door. It does not tell you whether someone already walked through it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
