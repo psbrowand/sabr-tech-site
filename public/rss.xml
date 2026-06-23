@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Jun 2026 13:17:15 GMT</lastBuildDate>
-    <pubDate>Mon, 22 Jun 2026 13:17:15 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Jun 2026 14:40:35 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Jun 2026 14:40:35 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A Refrigerator-Sized Robot Will Try to Save a Falling NASA Telescope</title>
+      <link>https://sabr-labs.com/article/katalyst-link-swift-telescope-rescue-pegasus-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/katalyst-link-swift-telescope-rescue-pegasus-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>NASA</category>
+      <category>Swift</category>
+      <category>Katalyst</category>
+      <category>Satellite Servicing</category>
+      <category>Pegasus</category>
+      <description>Katalyst&apos;s Link tug launches June 27 on the last-ever Pegasus XL rocket to grab the decaying Swift observatory with robotic arms and boost it back to a safe orbit.</description>
+      <content:encoded><![CDATA[<p>Swift has roughly a 90% chance of falling out of the sky before the end of the year. NASA's plan to stop that involves a refrigerator-sized robot and the last Pegasus rocket that will ever fly.</p>
+<p>The Neil Gehrels Swift Observatory has been up there since November 2004, hunting gamma-ray bursts and doing it well past its design life. After 21 years, its low orbit has started decaying fast, pushed along by a stretch of heavy solar activity that's thickened the upper atmosphere and added drag. Left alone, it faces an uncontrolled reentry, the kind where nobody gets to choose where the pieces come down.</p>
+<p>Enter Katalyst Space Technologies, an Arizona company that won a $30 million task order back in September 2025 with a plan NASA officials politely called technically and programmatically plausible. Their spacecraft is named Link, it's about the size of a refrigerator and roughly twice as heavy, and it carries three robotic arms tipped with LiDAR sensors. The job is to fly up, find Swift, grab a telescope that was never built to be grabbed, and gently push it back toward its original 600-kilometer altitude.</p>
+<p>The ride up is its own piece of history. Liftoff is set for June 27 aboard the final Pegasus XL, Northrop Grumman's air-launched booster that gets dropped from a carrier plane before lighting its motor. The drop happens over the equatorial water near Kwajalein Atoll in the Marshall Islands, and the rocket has to thread Link into Swift's orbital plane at a 20.6-degree inclination. After this one, the Pegasus is retired for good.</p>
+<p>What makes this worth watching isn't just the save. It's the precedent. Swift was designed in the 1990s with no docking port, no grapple fixture, nothing meant to be serviced by another spacecraft. If a commercial tug can latch onto hardware like that and add years to its life, the math on every aging satellite in orbit changes. The rehearsals have gone well. The real thing is a robot trying to catch a tumbling telescope on the first try, and it gets exactly one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Oracle Ships 245 Fixes, and Fusion Middleware Takes the Worst of It</title>
+      <link>https://sabr-labs.com/article/oracle-june-2026-cspu-fusion-middleware-cve-2026-21992-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-june-2026-cspu-fusion-middleware-cve-2026-21992-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 12:05:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>Patch Management</category>
+      <category>Fusion Middleware</category>
+      <category>CVE-2026-21992</category>
+      <category>RCE</category>
+      <description>Oracle&apos;s June Critical Security Patch Update covers 243 CVEs across 245 fixes, with Fusion Middleware getting 106 of them, including an unauthenticated remote code execution flaw in Identity Manager.</description>
+      <content:encoded><![CDATA[<p>Two hundred forty-three CVEs in a single drop. Oracle's June update is the kind of release that quietly ruins a patch team's month, and this one is heavier than most.</p>
+<p>The Critical Security Patch Update covers those 243 unique CVEs across 245 fixes, and just under half, 122 of them, carry a critical severity rating. Fusion Middleware ate the largest slice by a wide margin: 106 patches, more than 43% of the entire release. A lot of those are the worst kind, remotely exploitable without any authentication, which is the combination that turns a patch advisory into a weekend.</p>
+<p>The one to flag is CVE-2026-21992, an unauthenticated remote code execution bug in Oracle Identity Manager and Oracle Web Services Manager. It lives in the OIM REST WebServices component and hits versions 12.2.1.4.0 and 14.1.2.1.0. An identity-management server is precisely where you don't want a no-credentials RCE, because it sits at the center of who gets access to everything else.</p>
+<p>There's a reason this release has urgency behind it rather than the usual quarterly shrug. The same cycle addresses CVE-2026-35273, a PeopleSoft flaw that Google's Threat Intelligence Group and Mandiant confirmed was already exploited in the wild as a zero-day by the extortion crew ShinyHunters, tracked as UNC6240. That campaign hit more than 100 organizations, with the bulk of the damage in higher education. When an attacker is already through the door on one Oracle product, the rest of the patch list stops looking optional.</p>
+<p>Oracle moved to a monthly security cadence earlier this year, and the volume shows what that actually means in practice: more frequent releases that are still enormous. Prioritize the unauthenticated remote bugs first, Identity Manager included, and don't let the sheer length of the list become an excuse to defer the handful that an attacker can reach from the open internet.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>WhatsApp Campaign Pushes VBScript That Installs ManageEngine RMM</title>
+      <link>https://sabr-labs.com/article/whatsapp-vbscript-manageengine-rmm-campaign-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/whatsapp-vbscript-manageengine-rmm-campaign-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 11:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WhatsApp</category>
+      <category>Malware</category>
+      <category>RMM</category>
+      <category>Kaspersky</category>
+      <category>Social Engineering</category>
+      <description>Kaspersky says an unattributed actor is hijacking WhatsApp accounts to send fake invoice VBS files that quietly install legitimate remote-management software on victims&apos; machines.</description>
+      <content:encoded><![CDATA[<p>The attachment looks like an invoice. Open it, and a script quietly turns your own machine into something someone else can log into whenever they want.</p>
+<p>Kaspersky's Securelist team documented an active campaign this month spreading malicious VBScript files through WhatsApp direct messages. The attackers compromise real WhatsApp accounts and use them to send the files, which arrive dressed up as business and financial documents from someone the recipient may actually know. Victims are spread across Malaysia, Brazil, India, Mexico, Singapore, the UK, Spain, Taiwan, Australia, Russia, and Vietnam, with Malaysia taking the heaviest share.</p>
+<p>Run the script and it kicks off a multi-stage chain. One stage tries to weaken Windows User Account Control. Another pulls down a ZIP archive containing the installer for a legitimate remote monitoring and management tool, ManageEngine's RMM, and sets it up on the host. There's no exotic malware here and that's the point. The attacker installs a real admin tool that endpoint products are inclined to trust, then uses it for hands-on access. It's the same living-off-trusted-software pattern that has made RMM abuse one of the harder intrusions to spot.</p>
+<p>Attribution is thin and Kaspersky is careful about it. The campaign isn't tied to a named group. The one thread investigators pulled is an infrastructure overlap, the IP 202.61.160.201, which has shown up in prior activity linked to Gh0st RAT and ValleyRAT, both associated with Chinese-speaking operators. That's a lead, not a conclusion, and it's worth keeping in that lane.</p>
+<p>The defensive read is simple and slightly old-fashioned. A document arriving over WhatsApp is still a document from the internet, and a .vbs file has no business being one. Block script execution where you can, watch for RMM tools appearing on machines that never had them, and treat an unexpected ManageEngine install on an endpoint as an incident rather than an IT mystery.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Squidbleed: A 29-Year-Old Squid Proxy Bug Leaks Cleartext Traffic</title>
+      <link>https://sabr-labs.com/article/squidbleed-squid-proxy-cve-2026-47729-heap-overread-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/squidbleed-squid-proxy-cve-2026-47729-heap-overread-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 10:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Squid</category>
+      <category>Vulnerability</category>
+      <category>Proxy</category>
+      <category>CVE-2026-47729</category>
+      <category>Heartbleed</category>
+      <description>A heap over-read in Squid&apos;s FTP gateway, tracked as CVE-2026-47729, can leak other users&apos; HTTP headers, cookies, and session tokens to anyone who can make the proxy fetch a malicious directory listing.</description>
+      <content:encoded><![CDATA[<p>The bug shipped in January 1997. It survived three decades of releases, code reviews, and independent security audits, and nobody noticed until this month.</p>
+<p>Researchers are calling it Squidbleed, CVE-2026-47729, and the comparison to Heartbleed is earned. It's a heap buffer over-read in Squid Proxy's FTP gateway. When an attacker's FTP server sends a directory listing line that ends right after the timestamp, a strchr call walks past the buffer and treats the terminating null as part of the search. The result is that raw heap memory gets handed back to whoever asked, and that memory can contain other users' HTTP Authorization headers, cookies, and live session tokens.</p>
+<p>Here's who should care. The damage is worst in shared proxy setups, which is to say corporate networks, schools, and public Wi-Fi, anywhere a crowd of people share one Squid instance. Most traffic is HTTPS, which the proxy passes through as an opaque CONNECT tunnel and never sees, so the exposure is really cleartext HTTP and any place the proxy terminates TLS. The attacker also needs the proxy to reach an FTP server they control on port 21. That's a real constraint, but in a lot of default corporate egress, outbound FTP is exactly the kind of thing nobody got around to blocking.</p>
+<p>The patch story got messy fast. Early reporting said Squid 7.6 carried the fix. It doesn't. Maintainer Amos Jeffries posted a correction confirming the real CVE-2026-47729 patch is slated for 7.7, which means anyone who upgraded to 7.6 thinking they were covered is not. If you moved to 7.6 on that assumption, you have homework.</p>
+<p>There's a cleaner fix available right now, and it costs nothing. Disable FTP gateway support. Every major browser dropped native FTP years ago, so legitimate FTP traffic through a corporate or campus proxy in 2026 is close to nonexistent, and turning the feature off removes this entire bug class instead of just this one CVE. Do that today and patch to 7.7 when it lands.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Wants Its AI to Patch Open Source, Not Just Find the Bugs</title>
+      <link>https://sabr-labs.com/article/openai-daybreak-patch-the-planet-gpt-5-5-cyber-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-daybreak-patch-the-planet-gpt-5-5-cyber-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>Open Source</category>
+      <category>Vulnerability Management</category>
+      <category>GPT-5.5-Cyber</category>
+      <category>Daybreak</category>
+      <description>OpenAI expanded its Daybreak program on June 22 with Patch the Planet, a Codex Security plugin, a vendor partner program, and the full release of GPT-5.5-Cyber scoring 85.6% on CyberGym.</description>
+      <content:encoded><![CDATA[<p>Finding bugs is the easy part now. The harder, more thankless work is writing the fix and convincing an overworked open-source maintainer to merge it. That's the gap OpenAI is aiming at with the expanded version of its Daybreak cybersecurity program.</p>
+<p>The centerpiece is Patch the Planet, an initiative built with Trail of Bits and run alongside HackerOne and Calif. The idea is to fund expert researchers, hand them Codex Security and OpenAI's models, and point them straight at the maintainers of the projects everything else depends on. More than 30 projects have signed up so far, with early names including cURL, the Go project, Python, Sigstore, and pyca/cryptography. If you've ever traced a CVE down to a library maintained by one exhausted volunteer, you understand why this is where the leverage actually is.</p>
+<p>OpenAI also pushed GPT-5.5-Cyber to a full release, replacing a preview that had been gated to permissive use. The company put its CyberGym score at 85.6%, up from 81.8% for the standard GPT-5.5. Worth knowing what that number is and isn't: CyberGym measures how well a model reproduces and exploits known vulnerability classes in a controlled benchmark. A high score says the model is good at the kind of bug-hunting the benchmark contains. It does not say the model is safe to wire into your pipeline, and it definitely doesn't capture the messy part, which is everything that happens after a finding lands in a real repo.</p>
+<p>There's a commercial layer too. The new Daybreak Cyber Partner Program lets vendors fold GPT-5.5 with Trusted Access into the products they sell, with Accenture, Cisco, CrowdStrike, IBM, Okta, Palo Alto Networks, and Wiz as launch partners. That's most of the enterprise security shelf signing on at once.</p>
+<p>The timing is hard to ignore. The same day this shipped, the Five Eyes agencies named GPT-5.5-Cyber as an example of a model lowering the barrier to offensive hacking. OpenAI's whole framing is that defenders should get there first, and Patch the Planet is the most concrete version of that argument anyone has put real money behind. The open question is the one no benchmark answers: whether AI that's this good at finding and fixing bugs helps the maintainers more than it helps the people targeting them.</p>
+<p>If you maintain something on that list of 30-plus projects, the practical move is to read the patches these researchers send as carefully as you'd read any drive-by pull request. A good patch from a good tool is still a patch you own once you merge it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Five Eyes Warns AI Will Supercharge Hacking in Months, Not Years</title>
+      <link>https://sabr-labs.com/article/five-eyes-frontier-ai-cyber-warning-months-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/five-eyes-frontier-ai-cyber-warning-months-june-2026</guid>
+      <pubDate>Tue, 23 Jun 2026 08:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>AI</category>
+      <category>Five Eyes</category>
+      <category>Threat Intelligence</category>
+      <category>Phishing</category>
+      <category>GPT-5.5-Cyber</category>
+      <description>The cyber agencies of the US, UK, Canada, Australia, and New Zealand issued a rare joint warning that frontier models like GPT-5.5-Cyber and Claude Mythos will reshape offensive hacking on a timeline measured in months.</description>
+      <content:encoded><![CDATA[<p>Months, not years. That's the timeline the Five Eyes intelligence agencies put on AI rewriting offensive hacking, in a joint briefing that landed Monday and left very little room to argue.</p>
+<p>The cyber chiefs of the United States, United Kingdom, Canada, Australia, and New Zealand don't issue joint statements often, and they almost never name vendor products when they do. This one did. The brief says frontier models are expected to exceed current industry expectations and transform both offensive and defensive cyber operations, and it puts the window at months rather than years.</p>
+<p>The specifics are what make it land. The agencies pointed at OpenAI's GPT-5.5-Cyber and Anthropic's Mythos by name as examples of models already lowering the technical barrier to attacks. They flagged conversational models being used to write phishing at industrial scale, with automated systems scraping public social profiles to produce flawless, targeted lures that don't trip the usual reader's instinct that something is off. None of that is theoretical. It's a description of what's already shipping.</p>
+<p>There's an awkward overlap worth saying out loud. The warning went out the same day OpenAI publicly expanded the very program built around GPT-5.5-Cyber, the model the Five Eyes just held up as a risk. The official answer to AI-powered offense is AI-powered defense, and the brief leans on that: use the models to find weaknesses sooner and respond faster. That's a real strategy. It's also the same strategy that gives the offense its tooling, so calling it a clean fix is generous.</p>
+<p>For anyone running a security program, the practical takeaways are unglamorous and correct. The agencies told leaders to actually assess their own readiness, fund the basics before chasing AI defense products, give their security leads real authority instead of a title, and assume the phishing they see next quarter will be better written than the phishing they caught last quarter.</p>
+<p>The honest read here is that the alliance is trying to move budgets before the curve does. Whether that works depends on whether boards treat a joint Five Eyes brief as a fire alarm or as more noise from people who are paid to worry.</p>]]></content:encoded>
+    </item>
     <item>
       <title>New Prinz Eugen Ransomware Skips the Note and Goes for Your Newest Files</title>
       <link>https://sabr-labs.com/article/prinz-eugen-ransomware-recent-files-no-note-june-2026</link>
@@ -888,127 +1004,6 @@
 <p>The government's stated reason is a jailbreak. Officials believe someone found a way to bypass Fable 5's safety guardrails, and that was enough to trigger the order. Anthropic says it was shown a demonstration of the technique and walked away unimpressed: it identified a small number of previously known, minor vulnerabilities that looked relatively simple to address. In other words, the company says the thing that justified shutting down a frontier model for the entire planet was a bug class it already knew about.</p>
 <p>That gap is the story. Export controls have so far targeted the things that are hard to reproduce, the advanced chips and the raw model weights. Reaching into a live, already-public consumer product and ordering it switched off for non-citizens is a different and much blunter instrument. If the precedent holds, any US lab's flagship model is one Commerce letter away from going offline, and the trigger can be a vulnerability the lab considers routine.</p>
 <p>Anthropic says it's complying while it seeks clarity on scope and duration. Watch two things: whether the company gets a narrower path that lets US customers keep access without a global kill switch, and whether OpenAI, Google, and the others quietly game out what they'd do if the same letter landed on their desk.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Theker Raises $85M for Factory Robots That Don&apos;t Specialize</title>
-      <link>https://sabr-labs.com/article/theker-robotics-85m-series-a-ai-factory-robots-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/theker-robotics-85m-series-a-ai-factory-robots-june-2026</guid>
-      <pubDate>Sun, 14 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Theker</category>
-      <category>Robotics</category>
-      <category>Series A</category>
-      <category>Funding</category>
-      <category>Industrial Automation</category>
-      <category>Barcelona</category>
-      <description>The Barcelona startup closed what it calls Europe&apos;s largest robotics Series A to build AI-native factory robots that deploy in days and keep learning on the line.</description>
-      <content:encoded><![CDATA[<p>Theker, a four-year-old Barcelona startup, has raised $85 million (about €73 million) to build factory robots that aren't built for any one task. The company calls it the largest robotics Series A ever in Europe, and the investor list backs up the ambition.</p>
-<p>CRV led the round, with Samsung, LVMH, Cathay Innovation, 20VC, Henkel Ventures, Korelya, and Bright Pixel Capital joining. A few of those are firsts: Samsung's first investment in a Spanish company, LVMH's first bet on a Spanish startup, and CRV's first deal in Spain. When a luxury house and a chip-and-appliance giant write checks into the same industrial-robotics round, the pitch is landing across very different factory floors.</p>
-<p>Theker was founded in 2022 by Jiaqiang Ye Zhu and Carla Gomez Cano, and its argument is a direct shot at how industrial robots have worked for decades. Traditional arms are rigid and task-specific, expensive to reprogram every time a production line changes. Theker's pitch is AI-native generalist robots that deploy in days and keep learning while they run, adapting to the messiness of a real plant instead of demanding the plant adapt to them.</p>
-<p>That's also the claim to watch. "Generalist robot that learns on the job" is the line half the robotics and humanoid field is selling right now, and the demo always looks great. The proof is whether tier-one industrial operators run these things in production at scale, not in a staged cell. Theker says the money goes toward exactly that: more deployments with large operators, deeper work on its own AI and robotics stack, and hiring across software, electronics, mechanical engineering, and field deployment.</p>
-<p>Either way, an $85 million Series A out of Barcelona is a real signal about where serious robotics money is going, and that it isn't all flowing to the usual hubs in the US and China.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Passes OpenAI in US Business AI Adoption, Ramp Data Shows</title>
-      <link>https://sabr-labs.com/article/anthropic-overtakes-openai-business-adoption-ramp-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-overtakes-openai-business-adoption-ramp-june-2026</guid>
-      <pubDate>Sun, 14 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
-      <category>Ramp</category>
-      <category>Enterprise AI</category>
-      <category>AI Adoption</category>
-      <category>Claude</category>
-      <description>Ramp&apos;s spend-based index puts Anthropic at roughly 41% of US businesses with paid AI subscriptions in June, ahead of an OpenAI that has gone flat.</description>
-      <content:encoded><![CDATA[<p>For the first time, more US businesses are paying Anthropic than OpenAI. That's the headline from the Ramp AI Index, and the June reading widens a gap that first appeared in April.</p>
-<p>The numbers: Anthropic reached about 41% of US businesses with paid AI subscriptions in June, while OpenAI held roughly flat. The crossover happened in April, when Anthropic climbed to 34.4% and OpenAI slipped to 32.3%. Pull back further and the trajectory is the real story. Anthropic sat at 0.03% of businesses in mid-2023, reached 7.94% by April 2025, and then more than quadrupled over the following year.</p>
-<p>What makes this worth more than the usual adoption press release is where the data comes from. The Ramp AI Index is built on actual corporate-card and invoice payments flowing through Ramp's customer base, not a survey asking executives which model they like. Real dollars are harder to fake than sentiment.</p>
-<p>They're also narrower than they look. This measures the share of businesses with a paid subscription, not revenue, not seat counts, not consumer usage where OpenAI still dominates. Ramp's customer base skews toward startups and smaller companies, exactly the buyers who adopt developer-friendly tools first, so the index reads as a leading indicator more than a full market census. A win on "number of businesses paying" is real, but it isn't the same as a win on money.</p>
-<p>VentureBeat noted three threats that could erase the lead, and the caution is fair: pricing pressure, a strong model release from a competitor, and enterprise procurement cycles that move slowly can all reverse a trend built largely on early adopters. For now, though, the company that spent years as the safety-focused underdog is the one businesses are putting on the card.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Langflow Path-Traversal Bug Is Under Attack on Exposed AI Servers</title>
-      <link>https://sabr-labs.com/article/langflow-cve-2026-5027-path-traversal-muddywater-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/langflow-cve-2026-5027-path-traversal-muddywater-june-2026</guid>
-      <pubDate>Sun, 14 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Langflow</category>
-      <category>CVE-2026-5027</category>
-      <category>Path Traversal</category>
-      <category>MuddyWater</category>
-      <category>AI Security</category>
-      <category>RCE</category>
-      <description>CVE-2026-5027 lets attackers write files anywhere on a Langflow host through an unsanitized upload endpoint, and researchers have tied the activity to Iran&apos;s MuddyWater.</description>
-      <content:encoded><![CDATA[<p>Roughly 7,000 Langflow instances sit exposed on the public internet, most of them in North America, and attackers are working through them. CVE-2026-5027 is a path-traversal flaw in the popular open-source AI workflow builder, and it's being exploited in the wild.</p>
-<p>The mechanics are mundane in the way the worst bugs often are. The POST /api/v2/files endpoint doesn't sanitize the filename it receives in multipart form data, so an attacker can stuff ../ sequences into that field and write files wherever they want on the host. Arbitrary file write is rarely the end goal; it's the on-ramp. From there you get remote code execution, persistence, credential theft, and the ability to quietly rewrite the AI workflows the platform exists to run. The flaw rates 8.8.</p>
-<p>Threat intelligence has linked the exploitation to MuddyWater, a group assessed to operate on behalf of Iran. Treat that attribution as the analysts present it, with confidence but not certainty. The more useful takeaway is who's bothering: when a state-aligned crew starts sweeping a specific tool, it means that tool has become infrastructure worth targeting, and AI development platforms are now squarely in that bucket.</p>
-<p>Langflow has shipped a fix in version 1.10.0, but exploitation was already running before broad patching, which is the recurring pattern with anything internet-facing and convenient to stand up. Plenty of those 7,000 instances were spun up fast by developers who never meant to leave them reachable.</p>
-<p>If you run Langflow, upgrade to 1.10.0 now, and the harder question is whether it should be on the open internet at all. Put it behind authentication and a VPN or reverse proxy, check the host for files that shouldn't be there, and assume an exposed-and-unpatched instance may already be compromised.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco SD-WAN Manager Bug Is Being Exploited and Has No Patch Yet</title>
-      <link>https://sabr-labs.com/article/cisco-catalyst-sdwan-manager-cve-2026-20245-exploited-no-patch-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-catalyst-sdwan-manager-cve-2026-20245-exploited-no-patch-june-2026</guid>
-      <pubDate>Sun, 14 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>SD-WAN</category>
-      <category>CVE-2026-20245</category>
-      <category>CISA KEV</category>
-      <category>Command Injection</category>
-      <category>Networking</category>
-      <description>CISA added CVE-2026-20245, a root-level command injection flaw in Cisco Catalyst SD-WAN Manager, to its exploited-vulnerabilities catalog while a dedicated fix is still pending.</description>
-      <content:encoded><![CDATA[<p>Cisco's Catalyst SD-WAN Manager, the console that pushes configuration to entire SD-WAN fabrics, has a command injection flaw that attackers are already using. CISA added CVE-2026-20245 to its Known Exploited Vulnerabilities catalog on June 9, and as of that listing there was no dedicated patch.</p>
-<p>The bug rates 7.8 on CVSS, which undersells it. It stems from insufficient validation of user-supplied input in the CLI, and it lets an attacker run arbitrary commands as root. The product, formerly known as vManage, is affected across On-Prem, Cloud-Pro, Cloud Managed, and FedRAMP deployments. Cisco describes the observed activity as limited, with some cases resulting in configuration changes pushed down to edge devices.</p>
-<p>That last detail is the whole story. A 7.8 that requires an authenticated foothold sounds like a contained problem until you remember what this box does. Root on the controller that programs every branch router is the kind of access that turns one compromised account into quiet control over the network it manages. Config changes to edge devices are not a side effect; they're the payoff.</p>
-<p>Google Mandiant researchers Chester Sng, Pete Boonyakarn, and Logeswaran Nadarajan found and reported the flaw. Cisco's interim guidance points operators to the releases that addressed an earlier vManage bug, CVE-2026-20182, which shipped on May 14, and to watch /var/log/scripts.log for signs of exploitation.</p>
-<p>If you run SD-WAN Manager, restrict access to the management plane to known administrators, get on the May releases if you aren't already, and start hunting in scripts.log now rather than after the dedicated fix lands. A KEV entry with no patch is CISA telling you the clock started before the vendor finished.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Splunk Patches a 9.8 Pre-Auth RCE Hiding in Its Postgres Sidecar</title>
-      <link>https://sabr-labs.com/article/splunk-enterprise-cve-2026-20253-preauth-rce-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/splunk-enterprise-cve-2026-20253-preauth-rce-june-2026</guid>
-      <pubDate>Sun, 14 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Splunk</category>
-      <category>CVE-2026-20253</category>
-      <category>RCE</category>
-      <category>SIEM</category>
-      <category>Vulnerability</category>
-      <category>PostgreSQL</category>
-      <description>CVE-2026-20253 lets an unauthenticated attacker create or overwrite files on a Splunk Enterprise host through an unprotected PostgreSQL endpoint, and from there reach code execution.</description>
-      <content:encoded><![CDATA[<p>One HTTP request to the right endpoint, no credentials required, and an attacker can create or truncate files on a Splunk Enterprise box. That is the heart of CVE-2026-20253, and it sits inside a product whose entire job is to watch everything else for signs of trouble.</p>
-<p>The flaw carries a CVSS score of 9.8. It lives in a PostgreSQL sidecar service that ships with Splunk Enterprise, exposing two HTTP endpoints (/v1/postgres/recovery/backup and /v1/postgres/recovery/restore) with no authentication in front of them. Those endpoints were meant to be internal, but Splunk's main web application proxies through to them, which puts the whole thing one reachable hop from the internet. An attacker who can write arbitrary files on the host has a short, well-worn path to remote code execution.</p>
-<p>Who's exposed depends on how you run it. The sidecar was introduced in version 10, so anything on the 10.x line and up is in scope. Researchers at Orca Security, who reported the chain, flagged AWS-hosted deployments as the worst case because the sidecar is installed and enabled by default there. On-prem Windows installs are less immediately exposed since the service often isn't installed or running, but "less exposed" is not "safe," and you should confirm rather than assume.</p>
-<p>Splunk disclosed this alongside three other high-severity bugs and shipped fixes in 10.4.0, 10.2.4, and 10.0.7. The upgrade math is simple: 10.0.0 through 10.0.6 land on 10.0.7, and 10.2.0 through 10.2.3 land on 10.2.4.</p>
-<p>There's a particular irony in a SIEM platform being the unauthenticated entry point, and it's worth sitting with. Security tooling tends to run with broad access to logs, credentials, and the rest of the estate, which makes it a high-value target precisely because it's trusted. A pre-auth file write here isn't just one server; it's a server that can see a lot of others.</p>
-<p>If you operate Splunk Enterprise on 10.x, upgrade now, and treat any internet-reachable instance as a priority. Check whether the PostgreSQL sidecar is enabled, restrict access to the management interfaces, and review your hosts for unexpected files or processes that predate the patch.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX Pops 19% on Its First Day, and MSCI Is Already Adding It</title>
-      <link>https://sabr-labs.com/article/spacex-spcx-trading-debut-msci-index-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-spcx-trading-debut-msci-index-june-2026</guid>
-      <pubDate>Sat, 13 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SpaceX</category>
-      <category>IPO</category>
-      <category>Nasdaq</category>
-      <category>MSCI</category>
-      <category>Stocks</category>
-      <category>Starlink</category>
-      <description>SpaceX closed its first day on the Nasdaq up 19% at $160.95, and as of June 13 MSCI&apos;s early-inclusion rules pull SPCX into its large-cap indexes barely a day after the record $75 billion IPO.</description>
-      <content:encoded><![CDATA[<p>$160.95. That is where SpaceX closed its first day as a public company, up about 19 percent from a $135 IPO price, trading on the Nasdaq under the ticker SPCX.</p>
-<p>The mechanics behind that number are staggering even by recent standards. SpaceX sold roughly 555.6 million shares and raised around $75 billion, the largest initial public offering on record. The stock opened near $150, ran past a 30 percent gain at one intraday point, and briefly carried a valuation above $2.2 trillion. On paper, the debut also made Elon Musk the world's first trillionaire.</p>
-<p>The reason this is news on June 13 rather than just yesterday's pop is MSCI. Under its early-inclusion methodology, MSCI adds a newly listed company of this size to its large-cap indexes almost immediately, a day after listing rather than waiting for the usual quarterly review. That forces every fund tracking those indexes to buy SPCX whether they have a view on it or not.</p>
-<p>Which is the part worth sitting with. A 19 percent first-day jump is usually read as a triumph, but it also means the offering was priced below what the market would bear, and the company left money on the table that went to first-day buyers instead. And index inclusion is mechanical demand, not a judgment on the business. Passive funds are buying because the rules say to, not because anyone ran the numbers on a launch company whose cash flows are lumpy and whose capital appetite is enormous.</p>
-<p>What justifies a two-trillion-dollar tag is not the IPO mechanics. It is Starship cadence and Starlink revenue, the two lines that have to keep climbing for this valuation to look like anything other than enthusiasm. The stock now trades on both, in public, every day. That is the actual change here.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
