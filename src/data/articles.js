@@ -25,6 +25,267 @@
 
 export const articles = [
   {
+    id: 128,
+    slug: "cisco-unified-cm-cve-2026-20230-webshells-exploited-june-2026",
+    title: "Cisco Unified CM Flaw Now Dropping Webshells After Public Exploit",
+    summary: "Attackers are exploiting CVE-2026-20230, an SSRF bug in Cisco Unified Communications Manager, to write files and plant webshells that survive the patch.",
+    body: [
+      "The patch came out three weeks ago. The exploitation started last weekend, and it's the kind that doesn't go away once you finally install the fix.",
+      "CVE-2026-20230 is a server-side request forgery flaw in Cisco Unified Communications Manager, the system that runs enterprise phone and conferencing infrastructure. Cisco shipped fixes on June 3 and rated it 8.6. The root cause is improper input validation on certain HTTP requests, which lets an attacker abuse the WebDialer component with file:// payloads to write arbitrary files to the underlying OS. From there, the path to root is short.",
+      "Threat intelligence firm Defused logged the first real-world attempts over the weekend after exploit details went public. The early activity was reconnaissance: a single IP writing a harmless marker file, /tmp/cve-2026-20230-test.txt, to find vulnerable boxes. That's the polite knock before the door comes off. Honeypots have since seen automated sweeps over Tor dropping webshells, with the observed chain standing up a rogue Apache Axis service to get command execution.",
+      "There's one condition that keeps this from being a five-alarm fire for everyone. Exploitation needs the WebDialer service enabled, and it's off by default. So a shop that never turned it on isn't exposed through this path. A shop that did is, and click-to-call WebDialer is common enough in large Cisco voice deployments that plenty of orgs qualify.",
+      "Here's the part worth sitting with: patching does not evict an attacker who already wrote a webshell. The fix closes the SSRF door. It does nothing about the persistence someone may have dropped behind it last weekend. If your Unified CM had WebDialer on and you patched late, you patched a house someone may have already keyed.",
+      "Concrete next steps. Update to the fixed Unified CM release if you haven't. Check whether WebDialer is actually enabled in your deployment and turn it off where it isn't needed. Then go hunt: look for unexpected files written outside normal paths, any Apache Axis service you didn't deploy, and outbound connections to Tor exit nodes from a voice appliance that has no business talking to them.",
+    ],
+    category: "cyber",
+    tags: ["Cisco", "SSRF", "Unified CM", "Webshell", "Active Exploitation"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T08:10:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Help Net Security",
+        desc: "Details on the webshell chain and rogue Apache Axis deployment",
+        url: "https://www.helpnetsecurity.com/2026/06/24/cisco-unified-cm-flaw-exploited-to-drop-webshells-cve-2026-20230/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Reporting on active exploitation and the file:// write technique",
+        url: "https://www.bleepingcomputer.com/news/security/cisco-unified-cm-sme-flaw-cve-2026-20230-now-exploited-in-attacks/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of the patch and public proof-of-concept",
+        url: "https://thehackernews.com/2026/06/cisco-patches-cve-2026-20230-in-unified.html",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Confirmation of in-the-wild exploitation",
+        url: "https://www.securityweek.com/hackers-exploiting-cisco-unified-cm-vulnerability/",
+      },
+    ],
+  },
+  {
+    id: 129,
+    slug: "lantronix-eds5000-cve-2025-67038-kev-exploited-june-2026",
+    title: "CISA Flags Lantronix EDS5000 Bug as Exploited, Patch Due Friday",
+    summary: "A 9.8-severity command injection in Lantronix EDS5000 serial-to-ethernet devices is under active attack, and CISA gave federal agencies until June 26 to fix it.",
+    body: [
+      "The attacker doesn't need a valid login. The username they fail with is the payload.",
+      "CVE-2025-67038 is a command injection flaw rated 9.8 in the Lantronix EDS5000, and the bug lives somewhere unglamorous: the code that logs a failed authentication. The device's HTTP RPC module takes the username from a failed login attempt and drops it straight into a shell command without sanitizing it first. Feed it a crafted username and you get arbitrary OS commands running as root. No credentials required, because failing the login is the whole point.",
+      "What makes this one matter is where these boxes sit. The EDS5000 is a serial-to-ethernet converter, the kind of gear that bridges old industrial and OT equipment to a network so it can be managed remotely. They live in the quiet corners of plant and facility networks, often installed years ago and rarely touched since. Nobody is watching them, and almost nobody patches them on a schedule.",
+      "CISA added the flaw to its Known Exploited Vulnerabilities catalog on June 23, one of four it listed that day. The batch also included max-severity flaws in Ubiquiti UniFi OS, so this wasn't an isolated alert. Federal Civilian Executive Branch agencies were given until June 26 to patch or pull the affected devices.",
+      "Lantronix has a fix, version 2.2.0.0R1. The catch is that applying it means someone has to know the device exists, find it, and update firmware on a box that may not have been logged into since it was racked. If you run OT, the move today is to inventory anything Lantronix on your network, get these segmented away from anything that can reach the internet, and schedule the upgrade rather than hoping the device is too obscure to notice. Attackers scanning for 9.8s do not share that assumption.",
+    ],
+    category: "cyber",
+    tags: ["CISA", "KEV", "Lantronix", "OT Security", "Command Injection"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T08:25:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "CISA Alert",
+        desc: "Official notice adding four flaws, including Lantronix, to the KEV catalog",
+        url: "https://www.cisa.gov/news-events/alerts/2026/06/23/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "CISA KEV Catalog",
+        desc: "Authoritative list of CVEs confirmed under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Technical breakdown of the username-to-shell command injection",
+        url: "https://thehackernews.com/2026/06/cisa-warns-critical-lantronix-eds5000.html",
+      },
+      {
+        name: "Security Affairs",
+        desc: "Coverage of the Lantronix and Ubiquiti KEV additions",
+        url: "https://securityaffairs.com/194142/security/u-s-cisa-adds-ubiquiti-unifi-os-and-lantronix-eds5000-plugin-flaws-to-its-known-exploited-vulnerabilities-catalog.html",
+      },
+    ],
+  },
+  {
+    id: 130,
+    slug: "google-ai-researchers-departures-anthropic-openai-june-2026",
+    title: "Google Keeps Losing Its Top AI Researchers to Anthropic and OpenAI",
+    summary: "Two more Gemini researchers are headed to Anthropic, the latest in a run of senior departures that now includes a Nobel laureate and a Transformer co-author.",
+    body: [
+      "Jonas Adler and Alexander Pritzel, both of whom worked on Google's Gemini models, are leaving for Anthropic. That's the new item, reported June 24. The pattern around it is the actual story.",
+      "In the same stretch of days, two of the biggest names in the field walked out the door. Noam Shazeer, a Gemini co-lead and one of the co-authors of \"Attention Is All You Need,\" the paper that introduced the Transformer, said on June 18 he's going to OpenAI. The next day, John Jumper, who led AlphaFold at DeepMind and shared the 2024 Nobel Prize in Chemistry for it, announced he's joining Anthropic after nearly nine years.",
+      "Shazeer's exit stings in a particular way. Google paid a reported $2.7 billion in 2024 to license Character.AI's technology and bring him back into the fold. Two years later he's gone, and the check did not buy lasting loyalty.",
+      "Why the one-way traffic? The simplest read is equity. OpenAI and Anthropic are both circling public offerings, and pre-IPO stock is a recruiting lever a mature company can't easily match with refreshed grants. For a senior researcher who already has money, the upside of getting in before the bell rings is the thing that moves them.",
+      "The skeptical caveat is real: individual researcher moves are noisy. One departure rarely makes or breaks a model, and Google still ships Gemini at the frontier. But direction matters more than any single name, and right now the direction is consistent. When the people who built your flagship keep choosing the same two competitors, that's not noise, that's a retention problem with a clear address.",
+      "Investors noticed. Alphabet slid around 5 to 6 percent on June 22, with analysts tying part of the move to questions about whether Google can hold onto the talent that got it this far.",
+    ],
+    category: "ai",
+    tags: ["Google", "Anthropic", "OpenAI", "AI Talent", "DeepMind"],
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T09:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "TechCrunch",
+        desc: "Reporting on Adler and Pritzel leaving Google for Anthropic",
+        url: "https://techcrunch.com/2026/06/24/ai-researchers-continue-to-leave-google-for-its-rivals/",
+      },
+      {
+        name: "Fortune",
+        desc: "Analysis of the DeepMind departures and what they mean for Google",
+        url: "https://fortune.com/2026/06/23/google-deepmind-ai-researcher-departures-raise-doubts-about-ability-to-win-the-ai-race-shazeer-jumper-eye-on-ai/",
+      },
+      {
+        name: "Bloomberg",
+        desc: "Report that Google is poised to lose two more high-profile AI staffers",
+        url: "https://www.bloomberg.com/news/articles/2026-06-24/google-poised-to-lose-two-more-high-profile-ai-staffers-to-anthropic",
+      },
+      {
+        name: "Search Engine Journal",
+        desc: "Coverage of Shazeer to OpenAI and Jumper to Anthropic",
+        url: "https://www.searchenginejournal.com/google-loses-two-top-ai-researchers-to-openai-anthropic/580201/",
+      },
+    ],
+  },
+  {
+    id: 131,
+    slug: "qualcomm-modular-acquisition-cuda-nvidia-june-2026",
+    title: "Qualcomm Buys Modular for $3.9B to Chip at Nvidia's CUDA Lock-In",
+    summary: "Qualcomm's all-stock deal for Modular targets the software moat that keeps AI developers tied to Nvidia hardware, not the silicon itself.",
+    body: [
+      "Qualcomm's biggest AI bet this year isn't a chip. It's a compiler.",
+      "The company agreed to buy Modular in an all-stock deal worth about $3.92 billion, expected to close in the second half of 2026. Modular is a four-year-old software startup founded by Chris Lattner and Tim Davis, two engineers who met at Google. It builds the Mojo programming language and the MAX inference engine, and the pitch is simple to say and hard to deliver: write your AI code once and run it across chips from different vendors without rewriting it for each one.",
+      "That pitch aims directly at the thing that actually protects Nvidia. The hardware is fast, but the real moat is CUDA, the software layer that everything in AI is written against. Once your models and tooling assume CUDA, moving to another vendor's silicon means rewriting the parts that matter, and most teams won't. Break that dependency and a Qualcomm or an AMD chip stops being a science project and starts being a real option.",
+      "Worth keeping expectations grounded. The graveyard of CUDA alternatives is not empty, and \"portable across any accelerator\" has been promised before by people with good engineers and good intentions. The hard part was never the demo. It's getting enough developers to trust the abstraction that the network effect flips. Qualcomm is buying a credible team and a head start, not a finished win.",
+      "For Qualcomm the deal fits a larger push past phones, into PCs, automotive, and data center infrastructure. Owning a software layer that doesn't care whose chip runs underneath is a smart place to plant a flag if you're the one trying to sell the other chip. Whether developers show up is the only question that counts, and that answer comes later.",
+    ],
+    category: "tech",
+    tags: ["Qualcomm", "Modular", "Nvidia", "CUDA", "AI Chips"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Tech Startups",
+        desc: "Reporting on the $4 billion deal and the CUDA challenge",
+        url: "https://techstartups.com/2026/06/24/qualcomm-acquires-ai-startup-modular-in-4-billion-deal-to-challenge-nvidias-cuda-dominance/",
+      },
+      {
+        name: "AI Business",
+        desc: "Detail on Modular's MAX engine and Mojo language",
+        url: "https://aibusiness.com/generative-ai/qualcomm-acquire-ai-platform-developer-modular",
+      },
+      {
+        name: "TechTimes",
+        desc: "Coverage of the deal structure and Nvidia software moat",
+        url: "https://www.techtimes.com/articles/318921/20260624/qualcomm-reportedly-nears-4-billion-modular-deal-attack-nvidia-software-moat.htm",
+      },
+    ],
+  },
+  {
+    id: 132,
+    slug: "ai-chip-stock-selloff-capex-june-2026",
+    title: "Chip Stocks Shed $1.3 Trillion as Investors Question AI Spending",
+    summary: "A two-day rout knocked the Nasdaq down 2.2% as the market started asking for returns on the year's $452 billion in AI capital spending.",
+    body: [
+      "One point three trillion dollars. That's how much market value semiconductor stocks gave back in the selloff that ran through June 24.",
+      "The Nasdaq Composite dropped 2.21% to 25,587 and the S&P 500 fell 1.44%. The pain wasn't evenly spread. Micron tumbled 13% before clawing some of it back, Alphabet slid 6 to 10% across two sessions, and Amazon shed 4%. When memory and the hyperscalers move together like that, it isn't a single bad earnings print. It's sentiment turning.",
+      "And the sentiment that turned is specific. For two years the market rewarded any company willing to spend big on AI, no questions asked. That reflex is fading. Combined 2026 capital spending across Microsoft, Alphabet, Amazon, and Meta has now passed $452 billion, and institutional investors are starting to ask the obvious question: where's the revenue that justifies it? Wanting proof of return instead of a roadmap is a healthy instinct. It's also a painful one when the whole sector is priced for the roadmap.",
+      "The Federal Reserve added to the mood. Investors who came into the year expecting rate cuts by mid-2026 are recalibrating, because inflation stayed stickier and the economy stayed stronger than the cut-by-summer thesis needed.",
+      "The case for calm is that this looks like a valuation reset, not a thesis breaking. Strategists pointed out that S&P 500 tech earnings are still projected to climb more than 22% this year, which is not the profile of a sector falling apart. The real question underneath the selloff isn't whether AI is real. It's whether the spending math works at the multiples these stocks were carrying, and that's a question a few hundred billion in capex makes harder to wave off.",
+    ],
+    category: "tech",
+    tags: ["Markets", "Semiconductors", "AI Capex", "Nasdaq", "Micron"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T10:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Market coverage for June 24, including index and chip stock moves",
+        url: "https://www.cnbc.com/2026/06/23/stock-market-today-live-updates.html",
+      },
+      {
+        name: "CNBC",
+        desc: "June 23 session showing the tech selloff deepening",
+        url: "https://www.cnbc.com/2026/06/22/stock-market-today-live-updates.html",
+      },
+      {
+        name: "Investing.com",
+        desc: "Analysis arguing the chip selloff runs deeper than AI alone",
+        url: "https://www.investing.com/analysis/the-chip-selloff-is-not-just-about-ai-theres-a-bigger-problem-under-the-hood-200682649",
+      },
+      {
+        name: "Yahoo Finance",
+        desc: "Coverage of the broad semiconductor sector sell-off",
+        url: "https://finance.yahoo.com/markets/stocks/articles/ai-chip-stocks-hit-sector-125000306.html",
+      },
+    ],
+  },
+  {
+    id: 133,
+    slug: "spacex-starfall-cargo-return-capsule-demo-june-2026",
+    title: "SpaceX Tests Starfall, a Disk-Shaped Capsule to Return Cargo From Orbit",
+    summary: "The uncrewed June 23 demo flew SpaceX's new reentry vehicle, built for in-space manufacturing and rapid cargo return.",
+    body: [
+      "It looks like a flying saucer, and that's not a jab at the design. Starfall is a disk: roughly 10 feet across and barely 2.5 feet tall, a shape SpaceX picked on purpose.",
+      "The first demonstration flight lifted off June 23 at 6:53 AM EDT from Space Launch Complex 40 at Cape Canaveral, riding a Falcon 9. The capsule was uncrewed, deployed a little after 10 AM ET, and SpaceX reported no anomalies. After demonstrating controlled flight, it was set to splash down in the Pacific.",
+      "The vehicle is small and dense. About 3.1 meters in diameter, 0.75 meters tall, around 2,100 kilograms, and able to carry roughly 2,200 pounds of payload. SpaceX is pitching two jobs for it. One is routine, affordable access to microgravity and vacuum for scientific research and in-space manufacturing, the sort of thing companies have wanted cheaply for years. The other is point-to-point delivery of critical cargo through space on fast timelines.",
+      "That second use is where the interest gets quieter and more pointed. Cargo delivered anywhere on Earth in under an hour, by way of orbit, is an idea with obvious military logistics appeal, and SpaceX has said very little about the specifics. A few outlets reached for the word \"secretive,\" and the reticence is doing some of that work.",
+      "Why the disk shape matters: a wide, flat body sheds reentry heat across a large surface instead of concentrating it on a narrow nose, which can make a returning capsule simpler and cheaper to fly back intact. That's the actual engineering bet here, and a single demo splashdown is a long way from a routine service. But this was the test you run to find out whether the bet holds, and the first one flew clean.",
+    ],
+    category: "space",
+    tags: ["SpaceX", "Starfall", "Reentry", "Microgravity", "Falcon 9"],
+    image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-25T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "SpaceX",
+        desc: "Official Starfall demo mission page",
+        url: "https://www.spacex.com/launches/starfalldemo",
+      },
+      {
+        name: "NASASpaceflight",
+        desc: "Technical coverage of the Starfall demonstration flight",
+        url: "https://www.nasaspaceflight.com/2026/06/starfall-demo/",
+      },
+      {
+        name: "Space.com",
+        desc: "Background on the Starfall return capsule and its purpose",
+        url: "https://www.space.com/space-exploration/launches-spacecraft/what-is-starfall-a-look-at-spacexs-mysterious-new-return-capsule",
+      },
+      {
+        name: "Via Satellite",
+        desc: "Report on the microgravity lab demo launch",
+        url: "https://www.satellitetoday.com/launch/2026/06/23/spacex-launches-new-microgravity-lab-demo-starfall/",
+      },
+    ],
+  },
+  {
     id: 122,
     slug: "five-eyes-frontier-ai-cyber-warning-months-june-2026",
     title: "Five Eyes Warns AI Will Supercharge Hacking in Months, Not Years",
@@ -43,9 +304,9 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-06-23T08:15:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CBS News",
@@ -184,7 +445,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: false,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Securelist",
@@ -318,7 +579,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Help Net Security",
@@ -363,7 +624,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "BleepingComputer",
@@ -1276,7 +1537,7 @@ export const articles = [
     publishedAt: "2026-06-18T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1327,7 +1588,7 @@ export const articles = [
     publishedAt: "2026-06-18T08:40:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1422,7 +1683,7 @@ export const articles = [
     publishedAt: "2026-06-18T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1473,7 +1734,7 @@ export const articles = [
     publishedAt: "2026-06-18T10:40:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1576,7 +1837,7 @@ export const articles = [
     publishedAt: "2026-06-17T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1620,7 +1881,7 @@ export const articles = [
     publishedAt: "2026-06-17T08:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1664,7 +1925,7 @@ export const articles = [
     publishedAt: "2026-06-17T09:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1709,7 +1970,7 @@ export const articles = [
     publishedAt: "2026-06-17T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

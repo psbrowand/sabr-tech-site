@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 14:40:35 GMT</lastBuildDate>
-    <pubDate>Tue, 23 Jun 2026 14:40:35 GMT</pubDate>
+    <lastBuildDate>Thu, 25 Jun 2026 13:15:16 GMT</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2026 13:15:16 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>SpaceX Tests Starfall, a Disk-Shaped Capsule to Return Cargo From Orbit</title>
+      <link>https://sabr-labs.com/article/spacex-starfall-cargo-return-capsule-demo-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starfall-cargo-return-capsule-demo-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>SpaceX</category>
+      <category>Starfall</category>
+      <category>Reentry</category>
+      <category>Microgravity</category>
+      <category>Falcon 9</category>
+      <description>The uncrewed June 23 demo flew SpaceX&apos;s new reentry vehicle, built for in-space manufacturing and rapid cargo return.</description>
+      <content:encoded><![CDATA[<p>It looks like a flying saucer, and that's not a jab at the design. Starfall is a disk: roughly 10 feet across and barely 2.5 feet tall, a shape SpaceX picked on purpose.</p>
+<p>The first demonstration flight lifted off June 23 at 6:53 AM EDT from Space Launch Complex 40 at Cape Canaveral, riding a Falcon 9. The capsule was uncrewed, deployed a little after 10 AM ET, and SpaceX reported no anomalies. After demonstrating controlled flight, it was set to splash down in the Pacific.</p>
+<p>The vehicle is small and dense. About 3.1 meters in diameter, 0.75 meters tall, around 2,100 kilograms, and able to carry roughly 2,200 pounds of payload. SpaceX is pitching two jobs for it. One is routine, affordable access to microgravity and vacuum for scientific research and in-space manufacturing, the sort of thing companies have wanted cheaply for years. The other is point-to-point delivery of critical cargo through space on fast timelines.</p>
+<p>That second use is where the interest gets quieter and more pointed. Cargo delivered anywhere on Earth in under an hour, by way of orbit, is an idea with obvious military logistics appeal, and SpaceX has said very little about the specifics. A few outlets reached for the word "secretive," and the reticence is doing some of that work.</p>
+<p>Why the disk shape matters: a wide, flat body sheds reentry heat across a large surface instead of concentrating it on a narrow nose, which can make a returning capsule simpler and cheaper to fly back intact. That's the actual engineering bet here, and a single demo splashdown is a long way from a routine service. But this was the test you run to find out whether the bet holds, and the first one flew clean.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Chip Stocks Shed $1.3 Trillion as Investors Question AI Spending</title>
+      <link>https://sabr-labs.com/article/ai-chip-stock-selloff-capex-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ai-chip-stock-selloff-capex-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Markets</category>
+      <category>Semiconductors</category>
+      <category>AI Capex</category>
+      <category>Nasdaq</category>
+      <category>Micron</category>
+      <description>A two-day rout knocked the Nasdaq down 2.2% as the market started asking for returns on the year&apos;s $452 billion in AI capital spending.</description>
+      <content:encoded><![CDATA[<p>One point three trillion dollars. That's how much market value semiconductor stocks gave back in the selloff that ran through June 24.</p>
+<p>The Nasdaq Composite dropped 2.21% to 25,587 and the S&P 500 fell 1.44%. The pain wasn't evenly spread. Micron tumbled 13% before clawing some of it back, Alphabet slid 6 to 10% across two sessions, and Amazon shed 4%. When memory and the hyperscalers move together like that, it isn't a single bad earnings print. It's sentiment turning.</p>
+<p>And the sentiment that turned is specific. For two years the market rewarded any company willing to spend big on AI, no questions asked. That reflex is fading. Combined 2026 capital spending across Microsoft, Alphabet, Amazon, and Meta has now passed $452 billion, and institutional investors are starting to ask the obvious question: where's the revenue that justifies it? Wanting proof of return instead of a roadmap is a healthy instinct. It's also a painful one when the whole sector is priced for the roadmap.</p>
+<p>The Federal Reserve added to the mood. Investors who came into the year expecting rate cuts by mid-2026 are recalibrating, because inflation stayed stickier and the economy stayed stronger than the cut-by-summer thesis needed.</p>
+<p>The case for calm is that this looks like a valuation reset, not a thesis breaking. Strategists pointed out that S&P 500 tech earnings are still projected to climb more than 22% this year, which is not the profile of a sector falling apart. The real question underneath the selloff isn't whether AI is real. It's whether the spending math works at the multiples these stocks were carrying, and that's a question a few hundred billion in capex makes harder to wave off.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Qualcomm Buys Modular for $3.9B to Chip at Nvidia&apos;s CUDA Lock-In</title>
+      <link>https://sabr-labs.com/article/qualcomm-modular-acquisition-cuda-nvidia-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/qualcomm-modular-acquisition-cuda-nvidia-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Qualcomm</category>
+      <category>Modular</category>
+      <category>Nvidia</category>
+      <category>CUDA</category>
+      <category>AI Chips</category>
+      <description>Qualcomm&apos;s all-stock deal for Modular targets the software moat that keeps AI developers tied to Nvidia hardware, not the silicon itself.</description>
+      <content:encoded><![CDATA[<p>Qualcomm's biggest AI bet this year isn't a chip. It's a compiler.</p>
+<p>The company agreed to buy Modular in an all-stock deal worth about $3.92 billion, expected to close in the second half of 2026. Modular is a four-year-old software startup founded by Chris Lattner and Tim Davis, two engineers who met at Google. It builds the Mojo programming language and the MAX inference engine, and the pitch is simple to say and hard to deliver: write your AI code once and run it across chips from different vendors without rewriting it for each one.</p>
+<p>That pitch aims directly at the thing that actually protects Nvidia. The hardware is fast, but the real moat is CUDA, the software layer that everything in AI is written against. Once your models and tooling assume CUDA, moving to another vendor's silicon means rewriting the parts that matter, and most teams won't. Break that dependency and a Qualcomm or an AMD chip stops being a science project and starts being a real option.</p>
+<p>Worth keeping expectations grounded. The graveyard of CUDA alternatives is not empty, and "portable across any accelerator" has been promised before by people with good engineers and good intentions. The hard part was never the demo. It's getting enough developers to trust the abstraction that the network effect flips. Qualcomm is buying a credible team and a head start, not a finished win.</p>
+<p>For Qualcomm the deal fits a larger push past phones, into PCs, automotive, and data center infrastructure. Owning a software layer that doesn't care whose chip runs underneath is a smart place to plant a flag if you're the one trying to sell the other chip. Whether developers show up is the only question that counts, and that answer comes later.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Keeps Losing Its Top AI Researchers to Anthropic and OpenAI</title>
+      <link>https://sabr-labs.com/article/google-ai-researchers-departures-anthropic-openai-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-ai-researchers-departures-anthropic-openai-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Anthropic</category>
+      <category>OpenAI</category>
+      <category>AI Talent</category>
+      <category>DeepMind</category>
+      <description>Two more Gemini researchers are headed to Anthropic, the latest in a run of senior departures that now includes a Nobel laureate and a Transformer co-author.</description>
+      <content:encoded><![CDATA[<p>Jonas Adler and Alexander Pritzel, both of whom worked on Google's Gemini models, are leaving for Anthropic. That's the new item, reported June 24. The pattern around it is the actual story.</p>
+<p>In the same stretch of days, two of the biggest names in the field walked out the door. Noam Shazeer, a Gemini co-lead and one of the co-authors of "Attention Is All You Need," the paper that introduced the Transformer, said on June 18 he's going to OpenAI. The next day, John Jumper, who led AlphaFold at DeepMind and shared the 2024 Nobel Prize in Chemistry for it, announced he's joining Anthropic after nearly nine years.</p>
+<p>Shazeer's exit stings in a particular way. Google paid a reported $2.7 billion in 2024 to license Character.AI's technology and bring him back into the fold. Two years later he's gone, and the check did not buy lasting loyalty.</p>
+<p>Why the one-way traffic? The simplest read is equity. OpenAI and Anthropic are both circling public offerings, and pre-IPO stock is a recruiting lever a mature company can't easily match with refreshed grants. For a senior researcher who already has money, the upside of getting in before the bell rings is the thing that moves them.</p>
+<p>The skeptical caveat is real: individual researcher moves are noisy. One departure rarely makes or breaks a model, and Google still ships Gemini at the frontier. But direction matters more than any single name, and right now the direction is consistent. When the people who built your flagship keep choosing the same two competitors, that's not noise, that's a retention problem with a clear address.</p>
+<p>Investors noticed. Alphabet slid around 5 to 6 percent on June 22, with analysts tying part of the move to questions about whether Google can hold onto the talent that got it this far.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Flags Lantronix EDS5000 Bug as Exploited, Patch Due Friday</title>
+      <link>https://sabr-labs.com/article/lantronix-eds5000-cve-2025-67038-kev-exploited-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/lantronix-eds5000-cve-2025-67038-kev-exploited-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 08:25:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CISA</category>
+      <category>KEV</category>
+      <category>Lantronix</category>
+      <category>OT Security</category>
+      <category>Command Injection</category>
+      <description>A 9.8-severity command injection in Lantronix EDS5000 serial-to-ethernet devices is under active attack, and CISA gave federal agencies until June 26 to fix it.</description>
+      <content:encoded><![CDATA[<p>The attacker doesn't need a valid login. The username they fail with is the payload.</p>
+<p>CVE-2025-67038 is a command injection flaw rated 9.8 in the Lantronix EDS5000, and the bug lives somewhere unglamorous: the code that logs a failed authentication. The device's HTTP RPC module takes the username from a failed login attempt and drops it straight into a shell command without sanitizing it first. Feed it a crafted username and you get arbitrary OS commands running as root. No credentials required, because failing the login is the whole point.</p>
+<p>What makes this one matter is where these boxes sit. The EDS5000 is a serial-to-ethernet converter, the kind of gear that bridges old industrial and OT equipment to a network so it can be managed remotely. They live in the quiet corners of plant and facility networks, often installed years ago and rarely touched since. Nobody is watching them, and almost nobody patches them on a schedule.</p>
+<p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on June 23, one of four it listed that day. The batch also included max-severity flaws in Ubiquiti UniFi OS, so this wasn't an isolated alert. Federal Civilian Executive Branch agencies were given until June 26 to patch or pull the affected devices.</p>
+<p>Lantronix has a fix, version 2.2.0.0R1. The catch is that applying it means someone has to know the device exists, find it, and update firmware on a box that may not have been logged into since it was racked. If you run OT, the move today is to inventory anything Lantronix on your network, get these segmented away from anything that can reach the internet, and schedule the upgrade rather than hoping the device is too obscure to notice. Attackers scanning for 9.8s do not share that assumption.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cisco Unified CM Flaw Now Dropping Webshells After Public Exploit</title>
+      <link>https://sabr-labs.com/article/cisco-unified-cm-cve-2026-20230-webshells-exploited-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-unified-cm-cve-2026-20230-webshells-exploited-june-2026</guid>
+      <pubDate>Thu, 25 Jun 2026 08:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>SSRF</category>
+      <category>Unified CM</category>
+      <category>Webshell</category>
+      <category>Active Exploitation</category>
+      <description>Attackers are exploiting CVE-2026-20230, an SSRF bug in Cisco Unified Communications Manager, to write files and plant webshells that survive the patch.</description>
+      <content:encoded><![CDATA[<p>The patch came out three weeks ago. The exploitation started last weekend, and it's the kind that doesn't go away once you finally install the fix.</p>
+<p>CVE-2026-20230 is a server-side request forgery flaw in Cisco Unified Communications Manager, the system that runs enterprise phone and conferencing infrastructure. Cisco shipped fixes on June 3 and rated it 8.6. The root cause is improper input validation on certain HTTP requests, which lets an attacker abuse the WebDialer component with file:// payloads to write arbitrary files to the underlying OS. From there, the path to root is short.</p>
+<p>Threat intelligence firm Defused logged the first real-world attempts over the weekend after exploit details went public. The early activity was reconnaissance: a single IP writing a harmless marker file, /tmp/cve-2026-20230-test.txt, to find vulnerable boxes. That's the polite knock before the door comes off. Honeypots have since seen automated sweeps over Tor dropping webshells, with the observed chain standing up a rogue Apache Axis service to get command execution.</p>
+<p>There's one condition that keeps this from being a five-alarm fire for everyone. Exploitation needs the WebDialer service enabled, and it's off by default. So a shop that never turned it on isn't exposed through this path. A shop that did is, and click-to-call WebDialer is common enough in large Cisco voice deployments that plenty of orgs qualify.</p>
+<p>Here's the part worth sitting with: patching does not evict an attacker who already wrote a webshell. The fix closes the SSRF door. It does nothing about the persistence someone may have dropped behind it last weekend. If your Unified CM had WebDialer on and you patched late, you patched a house someone may have already keyed.</p>
+<p>Concrete next steps. Update to the fixed Unified CM release if you haven't. Check whether WebDialer is actually enabled in your deployment and turn it off where it isn't needed. Then go hunt: look for unexpected files written outside normal paths, any Apache Axis service you didn't deploy, and outbound connections to Tor exit nodes from a voice appliance that has no business talking to them.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A Refrigerator-Sized Robot Will Try to Save a Falling NASA Telescope</title>
       <link>https://sabr-labs.com/article/katalyst-link-swift-telescope-rescue-pegasus-june-2026</link>
@@ -881,129 +997,6 @@
 <p>SpaceX merged with Musk's AI company xAI in February, so Grok and a rocket company already share a balance sheet. Adding Cursor puts a developer-facing AI product alongside them and gives Cursor access to the compute xAI has been stockpiling. The strategic logic is that whoever owns the tools developers live in all day owns a chunk of how software gets built.</p>
 <p>It's also a reminder of how concentrated this is getting. A launch company now owns a frontier AI lab and the editor a lot of engineers type into. The deal is all stock, which means SpaceX is spending paper that's only worth $60 billion because the market currently says it is. SpaceX's own Nasdaq debut valued it north of $2 trillion and raised $86 billion, so there's plenty of paper to spend.</p>
 <p>Watch whether Cursor stays neutral on which models it serves. Right now it routes to Claude, GPT, and others depending on what the user picks. Once xAI is under the same roof there's an obvious incentive to nudge people toward Grok, and developers will notice fast if the default starts to feel less like a choice.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>152 Chrome Wallpaper Extensions Faked Google Search Traffic for Ad Cash</title>
-      <link>https://sabr-labs.com/article/chrome-wallpaper-extensions-fake-search-traffic</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-wallpaper-extensions-fake-search-traffic</guid>
-      <pubDate>Mon, 15 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Chrome</category>
-      <category>Browser Extensions</category>
-      <category>Adware</category>
-      <category>Ad Fraud</category>
-      <category>Socket</category>
-      <category>Google</category>
-      <description>Socket found a family of 152 new-tab wallpaper extensions, built from one codebase across 38 accounts, that logged users and laundered fake organic search clicks into Google&apos;s ad network.</description>
-      <content:encoded><![CDATA[<p>Socket's threat research team has pulled the lid off a tidy little ad-fraud operation hiding inside the Chrome Web Store: 152 "live wallpaper" extensions, all built from a single codebase, spread across 38 publisher accounts and three brands to look like unrelated products. Together they report around 105,000 users.</p>
-<p>These are new-tab extensions, the kind that replace your blank tab with an anime, football, or car wallpaper. Behind the picture, they generate visits and dress them up as legitimate Google organic search traffic, the goal being to inflate ad revenue on the back end. The fake clicks pollute the analytics that advertisers and Google itself rely on to tell real interest from manufactured noise.</p>
-<p>They also collect, despite promising they don't. Socket found the extensions logging IP addresses, ISP, click counts, and referrer data, then sharing it with Google AdSense, DoubleClick, and unnamed third-party ad partners. The store listings claimed no data collection.</p>
-<p>None of this is dramatic malware, and that's sort of the point. There's no ransomware, no credential theft, just parasitic adware that rides a single template cloned 152 ways and slips past review because each copy looks like a harmless wallpaper app from a different small developer. It's a reminder that the Chrome Web Store's volume problem isn't only about the scary stuff.</p>
-<p>If you've got a wallpaper or new-tab extension you don't remember vetting, this is a good moment to open your extensions list and clear it out. The three brands to watch for trace back to tabplugins.com, yowgames.com, and chromewallpaper.com, the last of which redirects to owhit.com.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Moves Private Cloud Compute Onto Google Cloud and Nvidia GPUs</title>
-      <link>https://sabr-labs.com/article/apple-private-cloud-compute-google-cloud-nvidia</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-private-cloud-compute-google-cloud-nvidia</guid>
-      <pubDate>Mon, 15 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Private Cloud Compute</category>
-      <category>Google Cloud</category>
-      <category>Nvidia</category>
-      <category>Confidential Computing</category>
-      <category>Apple Intelligence</category>
-      <description>For the first time Apple is running its privacy-focused AI cloud outside its own data centers, leaning on Nvidia confidential computing and Google&apos;s Titan chips to keep the guarantees intact.</description>
-      <content:encoded><![CDATA[<p>When Apple built Private Cloud Compute, the whole pitch was that it ran only on Apple silicon, inside Apple's own buildings, with cryptographic guarantees that not even Apple could peek at your data. At WWDC, that story changed. Apple is extending Private Cloud Compute to Google Cloud, running on Nvidia Blackwell GPUs, the first time it has placed the service in someone else's data center.</p>
-<p>The reason is demand. Apple Intelligence is moving toward heavier agentic tool-use and multi-step reasoning, and those workloads need more capacity than Apple's own server fleet can supply on the timeline customers expect. So Apple is renting it, and the engineering challenge becomes keeping the privacy promise on hardware it doesn't own.</p>
-<p>The answer is a stack of confidential-computing parts. Nvidia's Blackwell GPUs run in a confidential mode, Intel processors add Trust Domain Extensions, and Google's Titan security chip anchors the host. Together they're meant to create an encrypted pathway through the machine so that no one, including Google as the operator, can read data while it's being processed.</p>
-<p>It's a genuinely interesting bit of engineering, and also a meaningful shift in who you have to trust. The original PCC pitch was elegant precisely because the trust boundary was small: Apple's chips, Apple's racks, end of list. The new version asks you to trust that Nvidia's confidential mode, Intel's TDX, and Google's Titan all hold, and that Apple's attestation can prove it. Apple argues the hardware guarantees are what matter, not whose logo is on the building. That's a defensible position. It's also a bigger surface to verify.</p>
-<p>The rollout is gradual, with full operational capacity expected by the end of summer. Apple has said more technical detail is coming at the Confidential Computing Summit later this month, and that's the thing worth reading closely, because the entire claim rises or falls on whether the attestation chain actually does what the marketing says.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia&apos;s RTX Spark Puts a Grace-Blackwell Superchip in Laptops</title>
-      <link>https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-laptop-superchip</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-laptop-superchip</guid>
-      <pubDate>Mon, 15 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>RTX Spark</category>
-      <category>Microsoft</category>
-      <category>Windows</category>
-      <category>AI PC</category>
-      <category>Computex</category>
-      <description>Nvidia&apos;s first PC superchip pairs an Arm Grace CPU with a Blackwell GPU to run large models locally, shipping this fall in laptops from Dell, HP, Lenovo, and Microsoft.</description>
-      <content:encoded><![CDATA[<p>Nvidia spent a decade selling the data center its picks and shovels. Now it wants the laptop too. At Computex, Jensen Huang unveiled RTX Spark, the company's first superchip aimed squarely at Windows PCs, built with Microsoft and a clear goal of running AI agents on the device instead of in someone else's cloud.</p>
-<p>The silicon is the headline. RTX Spark fuses a 20-core Arm-based Grace CPU, designed for power efficiency with MediaTek, to a Blackwell RTX GPU with 6,144 CUDA cores, linked by Nvidia's NVLink-C2C interconnect. Nvidia quotes 1 petaflop of AI performance and up to 128GB of unified memory, enough, it says, to run a 120-billion-parameter model with a million-token context window locally on a 3-pound laptop.</p>
-<p>Microsoft's part is the half people will skip past and shouldn't. Running capable models and autonomous agents directly on the machine raises an obvious question: what stops a misbehaving agent from doing damage? Microsoft says it's adding new Windows security primitives for agent containment and policy, plus native agent experiences reachable from the taskbar, with a Surface Laptop Ultra in the launch lineup.</p>
-<p>The competitive message wasn't subtle. By building a system-on-chip for PCs, Nvidia is now elbowing into territory owned by AMD, Intel, and Qualcomm, and all three slid after the keynote. Huang's pitch is that Nvidia should own every layer of the AI stack, from the hyperscaler rack down to the thing in your bag.</p>
-<p>Hold the applause until fall, though. The on-device AI laptop has been promised before, and the hard questions are the boring ones: thermals and battery life in a 14mm chassis, and whether anyone actually needs a 120-billion-parameter model running locally when a good cloud call is faster and cheaper. The first RTX Spark machines from ASUS, Dell, HP, Lenovo, Microsoft, and MSI arrive this fall. That's when the spec sheet meets a real workload.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>WordPress Plugins From Awesome Motive Served Backdoors to 1M+ Sites</title>
-      <link>https://sabr-labs.com/article/awesome-motive-wordpress-plugin-cdn-backdoor</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/awesome-motive-wordpress-plugin-cdn-backdoor</guid>
-      <pubDate>Mon, 15 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>Supply Chain</category>
-      <category>Awesome Motive</category>
-      <category>OptinMonster</category>
-      <category>PushEngage</category>
-      <category>Backdoor</category>
-      <description>Tampered CDN scripts for OptinMonster, TrustPulse, and PushEngage quietly created rogue admin accounts on sites running the plugins before the files were cleaned up.</description>
-      <content:encoded><![CDATA[<p>More than a million WordPress sites spent part of last weekend serving a backdoor to themselves, and the plugin code on disk looked perfectly clean the whole time.</p>
-<p>The security firm Sansec traced a supply-chain attack to Awesome Motive, the company behind three widely installed plugins: OptinMonster, TrustPulse, and PushEngage. Attackers slipped malicious JavaScript into the legitimate files Awesome Motive serves from its own CDN, which means every site embedding those scripts pulled the poisoned version without changing a thing locally.</p>
-<p>The payload was patient. It waited for a logged-in administrator to load a page, then created a hidden backdoor admin account, installed a self-concealing plugin to maintain access, and shipped the new credentials off to tidio.cc, a lookalike of the real tidio.com. No admin login during the window, no compromise. One admin login, full takeover.</p>
-<p>The exposure window was mercifully narrow for two of the three. Sansec says the malicious code first appeared in the OptinMonster and TrustPulse files at 22:17 UTC on June 12 and was gone by 22:42, about 25 minutes. PushEngage was the laggard: its SDK kept serving the injected code from some CDN edges until June 14, so sites leaning on that one had a much longer exposure.</p>
-<p>Short window or not, the design is what makes this nasty. Because the tampering happened on the CDN and not in the plugin you installed, a normal file-integrity check against your own WordPress directory would have shown nothing wrong. The attack lived entirely in the script your visitors' and admins' browsers fetched.</p>
-<p>If you run any of the three, go hunting now. Look for an admin user named developer_api1 tied to customer1usx@gmail.com, any unexpected dev_xxxxxx accounts, and two rogue plugins that hid themselves under the names Content Delivery Helper and Database Optimizer. Finding any of those means you were caught in the window, and you should treat the site as compromised.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Palo Alto Confirms Attackers Are Bypassing GlobalProtect VPN Logins</title>
-      <link>https://sabr-labs.com/article/panos-globalprotect-auth-bypass-cve-2026-0257</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/panos-globalprotect-auth-bypass-cve-2026-0257</guid>
-      <pubDate>Mon, 15 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Palo Alto Networks</category>
-      <category>PAN-OS</category>
-      <category>GlobalProtect</category>
-      <category>CVE-2026-0257</category>
-      <category>VPN</category>
-      <category>CISA KEV</category>
-      <description>CVE-2026-0257 lets attackers skip GlobalProtect authentication and open their own VPN sessions, and Palo Alto says exploitation started in mid-May and is still ongoing.</description>
-      <content:encoded><![CDATA[<p>Palo Alto Networks has confirmed that attackers are actively exploiting an authentication bypass in PAN-OS GlobalProtect, the VPN component that sits at the front door of a huge number of corporate networks.</p>
-<p>The flaw, CVE-2026-0257, carries a CVSS score of 7.8. It affects the GlobalProtect portal and gateway when authentication override cookies are enabled, and it lets an attacker skip the login step entirely and stand up an unauthorized VPN session. That's not a privilege bug buried deep in a system. It's a way onto the network without credentials.</p>
-<p>According to Palo Alto's Unit 42, the first activity showed up on May 17 and the attacks have stayed limited, hitting a small portion of the devices the attackers probed. The company hasn't attributed the campaign to a named group, and says it hasn't seen post-access behavior or lateral movement yet.</p>
-<p>"Yet" is doing a lot of work in that sentence. A 7.8 doesn't have the shock value of a perfect 10, but an unauthenticated way onto a VPN concentrator is exactly the foothold ransomware affiliates and access brokers shop for. The reason there's no lateral movement on record may simply be that the people exploiting it are still early, or selling the access rather than using it.</p>
-<p>Palo Alto published indicators to hunt with: nine IP addresses, five host names and MAC values, and a set of hard-coded proof-of-concept client configuration values that show up in the malicious sessions. If you run GlobalProtect, that's your starting point.</p>
-<p>CISA added this one to its Known Exploited Vulnerabilities catalog with a federal mitigation deadline of June 1, which has already passed. If your portals are still unpatched, pull the GlobalProtect logs, check them against the published indicators, and apply the fix before you assume you weren't in the small portion that got hit.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A US Export Order Made Anthropic Shut Off Fable 5 for Everyone</title>
-      <link>https://sabr-labs.com/article/anthropic-export-order-fable-mythos-suspended</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-export-order-fable-mythos-suspended</guid>
-      <pubDate>Mon, 15 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Export Controls</category>
-      <category>Commerce Department</category>
-      <category>Fable 5</category>
-      <category>AI Policy</category>
-      <category>National Security</category>
-      <description>A Commerce Department directive bars foreign nationals from Anthropic&apos;s two newest models, and because the company can&apos;t verify everyone&apos;s nationality, it switched both off for all customers.</description>
-      <content:encoded><![CDATA[<p>At 5:21pm Eastern on Friday, Anthropic received a letter from the Commerce Department telling it to cut off access to its two newest models, Fable 5 and Mythos 5, for any foreign national anywhere in the world. That includes people outside the United States, people inside it on visas, and Anthropic's own foreign-national employees.</p>
-<p>The directive was signed by Commerce Secretary Howard Lutnick and written with the department's Bureau of Industry and Security, the same office that polices semiconductor exports to China. It invokes national security authorities and treats access to a hosted AI model the way export law has long treated shipping a controlled chip across a border.</p>
-<p>Here's the practical problem. Anthropic doesn't ask every API caller and chat user for a passport, and it can't reliably verify nationality at the scale these models run. So the only way to guarantee no foreign national touches Fable 5 or Mythos 5 was to turn both off for all customers. Fable 5 had only been public since June 9. Mythos 5 is the restricted, government-adjacent cybersecurity variant. Both went dark days later.</p>
-<p>The government's stated reason is a jailbreak. Officials believe someone found a way to bypass Fable 5's safety guardrails, and that was enough to trigger the order. Anthropic says it was shown a demonstration of the technique and walked away unimpressed: it identified a small number of previously known, minor vulnerabilities that looked relatively simple to address. In other words, the company says the thing that justified shutting down a frontier model for the entire planet was a bug class it already knew about.</p>
-<p>That gap is the story. Export controls have so far targeted the things that are hard to reproduce, the advanced chips and the raw model weights. Reaching into a live, already-public consumer product and ordering it switched off for non-citizens is a different and much blunter instrument. If the precedent holds, any US lab's flagship model is one Commerce letter away from going offline, and the trigger can be a vulnerability the lab considers routine.</p>
-<p>Anthropic says it's complying while it seeks clarity on scope and duration. Watch two things: whether the company gets a narrower path that lets US customers keep access without a global kill switch, and whether OpenAI, Google, and the others quietly game out what they'd do if the same letter landed on their desk.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
