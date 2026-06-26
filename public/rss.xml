@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2026 13:15:16 GMT</lastBuildDate>
-    <pubDate>Thu, 25 Jun 2026 13:15:16 GMT</pubDate>
+    <lastBuildDate>Fri, 26 Jun 2026 13:14:31 GMT</lastBuildDate>
+    <pubDate>Fri, 26 Jun 2026 13:14:31 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CISA Adds PTC Windchill RCE to KEV as Webshells Land on PLM Servers</title>
+      <link>https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CVE-2026-12569</category>
+      <category>PTC Windchill</category>
+      <category>FlexPLM</category>
+      <category>CISA KEV</category>
+      <category>Remote Code Execution</category>
+      <description>CVE-2026-12569 is a CVSS 10.0 deserialization bug in Windchill and FlexPLM, and CISA confirmed active exploitation by adding it to the KEV catalog on June 25.</description>
+      <content:encoded><![CDATA[<p>A perfect-10 remote code execution bug in PTC's Windchill and FlexPLM product lifecycle management suites is being exploited in the wild, and CISA added CVE-2026-12569 to its Known Exploited Vulnerabilities catalog on June 25. Federal agencies now have a hard deadline to patch, and everyone else should treat that date as their own.</p>
+<p>The flaw is an unsafe deserialization of untrusted data, the kind of bug that turns a web request into arbitrary code on the server. No authentication is required. PTC rates it CVSS 10.0, Germany's BSI issued its own critical warning, and the affected footprint includes Windchill's PDMLink module and FlexPLM, the systems that hold a manufacturer's CAD files, bills of materials, and product specs.</p>
+<p>What makes this one worth your attention is who runs Windchill. It's the engineering backbone for aerospace, automotive, industrial, and defense suppliers. A webshell on a PLM server isn't a nuisance, it's a window into the design data of whatever the company makes.</p>
+<p>And webshells are exactly what's showing up. PTC's advisory describes attackers naming their webshells with 16 lowercase hex characters, so defenders should hunt for any POST request to a path matching /Windchill/login/[16 hex chars].jsp. The intruders also send a custom HTTP header, X-windchill-req, which has no legitimate use in the product. PTC first published indicators on June 18 and has since added more, which tells you the activity is ongoing rather than a single burst.</p>
+<p>If you run Windchill or FlexPLM, the order of operations is straightforward. Apply PTC's patch, then go looking for the IOCs, because a patch closes the door but doesn't evict anyone already inside. Check your logs for those JSP paths and the X-windchill-req header going back at least to mid-June, and assume any internet-facing instance was a target.</p>
+<p>PLM platforms rarely make the security headlines that VPNs and firewalls do, which is part of why they're attractive. They sit deep in the network, they're trusted, and they're often patched on a sleepy enterprise-software cadence. A CVSS 10 with confirmed exploitation should reset that cadence.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Three Perfect-10 UniFi OS Bugs Chain to Root, Now Exploited in the Wild</title>
+      <link>https://sabr-labs.com/article/ubiquiti-unifi-os-cve-2026-34908-34909-34910-kev-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ubiquiti-unifi-os-cve-2026-34908-34909-34910-kev-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ubiquiti</category>
+      <category>UniFi OS</category>
+      <category>CVE-2026-34910</category>
+      <category>CISA KEV</category>
+      <category>Network Security</category>
+      <description>CISA added CVE-2026-34908, -34909, and -34910 to the KEV catalog on June 23 after researchers caught live attacks against Ubiquiti&apos;s UniFi OS devices.</description>
+      <content:encoded><![CDATA[<p>Ubiquiti gear is everywhere, from home labs to small-business racks to the network closets of companies that should know better, and three CVSS 10 flaws in UniFi OS just moved from theoretical to actively exploited. CISA added all three to its Known Exploited Vulnerabilities catalog on June 23.</p>
+<p>The three bugs work as a chain. CVE-2026-34908 is an improper access control issue that lets a remote attacker make unauthorized changes to a device. CVE-2026-34909 is a path traversal flaw for reaching and tampering with files on the underlying OS, including the ones tied to local accounts. CVE-2026-34910 is an input validation weakness that allows command injection over the network. Stitch them together and an unauthenticated attacker gets to root.</p>
+<p>The blast radius is the whole UniFi family. Cloud Gateways, Network controllers, Protect NVRs, Access hubs, and Talk appliances all run UniFi OS, so a single unpatched box can hand over the keys to camera feeds, door controls, and the network itself.</p>
+<p>Ubiquiti shipped fixes on May 21 in Security Advisory Bulletin 064. Roughly a month later, exploitation caught up. Researchers at PwnDefend reported live attacks landing within days of the advisory, and honeypots are seeing opportunistic probes, which is the usual pattern once a perfect-10 with a public advisory is sitting unpatched on the open internet.</p>
+<p>Patch now if you haven't. Then ask the harder question: why is the management interface reachable from the internet at all? UniFi consoles should sit behind a VPN or Ubiquiti's own remote access, not exposed on a public IP. The patch fixes these three CVEs. It does nothing for the next one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Mandiant: Cisco SD-WAN Zero-Day Was Exploited Months Before the Patch</title>
+      <link>https://sabr-labs.com/article/cisco-catalyst-sd-wan-cve-2026-20245-zero-day-mandiant-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-catalyst-sd-wan-cve-2026-20245-zero-day-mandiant-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>SD-WAN</category>
+      <category>CVE-2026-20245</category>
+      <category>Zero-Day</category>
+      <category>Mandiant</category>
+      <description>Attackers abused CVE-2026-20245 in Cisco Catalyst SD-WAN Manager as a zero-day for months, planting a rogue root account before Cisco shipped a fix on June 12.</description>
+      <content:encoded><![CDATA[<p>An attacker uploaded a file called evil_tenant.csv to a Cisco SD-WAN Manager, escalated to root, and created a hidden account named 'troot' with full shell access. Then they did it months before Cisco knew the bug existed.</p>
+<p>That's the picture Mandiant painted this week in its analysis of CVE-2026-20245, a flaw in Cisco Catalyst SD-WAN that the company patched on June 12. The vulnerability carries a CVSS score of 7.8 and lets an authenticated local attacker run arbitrary commands with elevated privileges by feeding the system a malicious CSV file the software fails to validate properly.</p>
+<p>The 7.8 rating undersells the operational damage. Catalyst SD-WAN Manager, formerly vManage, is the brain of the network: it pushes policy and config to the SD-WAN Controllers and Validators that steer traffic across an organization's sites. Root on that box is root on the network's control plane.</p>
+<p>Mandiant tracked two distinct windows of activity, one running from late 2025 into January 2026 and another in March. In both, the attacker first changed the default admin credentials, then exploited the CSV-parsing flaw to escalate and drop the 'troot' account. That tradecraft, plus the patience to sit on a zero-day for months, points to an actor with a specific objective rather than a smash-and-grab crew.</p>
+<p>The uncomfortable part is the timeline. A bug rated medium-high on the CVSS scale was a working zero-day in someone's toolkit for the better part of half a year, against appliances that sit at the center of enterprise networks. If you run Catalyst SD-WAN Manager, patching is step one. Step two is going through your admin accounts and config-change logs for anything you don't recognize, because the fix doesn't remove a user the attacker already created.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s First Chip Is Here: Jalapeño, Built by Broadcom, Aimed at Nvidia</title>
+      <link>https://sabr-labs.com/article/openai-broadcom-jalapeno-first-custom-inference-chip-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-broadcom-jalapeno-first-custom-inference-chip-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>OpenAI</category>
+      <category>Broadcom</category>
+      <category>AI Chips</category>
+      <category>Jalapeño</category>
+      <category>Semiconductors</category>
+      <description>OpenAI and Broadcom revealed Jalapeño, a custom inference ASIC OpenAI says it designed to serve its own models, with first deployment targeted for late 2026.</description>
+      <content:encoded><![CDATA[<p>OpenAI now has its own silicon. On June 24 the company and Broadcom unveiled Jalapeño, a custom accelerator built specifically to run inference for OpenAI's models, and the first chip in what the two say will be a multi-generation hardware program.</p>
+<p>Inference is the part of the AI business that never stops costing money. Training a model is a one-time spend; serving it to hundreds of millions of ChatGPT users is a bill that arrives every second of every day, most of it paid to Nvidia. A chip designed around OpenAI's own serving patterns is a direct attempt to take that line item in-house.</p>
+<p>The technical claims are aggressive. Jalapeño is a reticle-sized ASIC fabricated on a 3-nanometer process, and OpenAI says it went from initial design to manufacturing tape-out in nine months, which the companies call the fastest advanced-ASIC cycle yet. OpenAI also says it used its own models to speed up the design work, and that early engineering samples are already running real workloads in the lab, including a GPT-5.3 Codex variant, at production frequency and power.</p>
+<p>OpenAI claims performance per watt 'substantially better' than current state-of-the-art parts. Treat that the way you'd treat any first-silicon benchmark from the team that built it: the number that matters is the one an independent lab measures on a shipping chip, not the one in the launch post.</p>
+<p>The structure of the deal is as interesting as the chip. Broadcom handles the silicon implementation and networking, Celestica builds the boards, racks, and systems, and OpenAI gets to point its enormous inference demand at hardware it controls. The companies are targeting initial deployment by the end of 2026, scaling toward gigawatt-class data centers in the years after.</p>
+<p>Custom inference chips are not a new idea. Google has run TPUs for a decade, Amazon has Trainium and Inferentia, and Microsoft has its own Maia parts. What's new is OpenAI, the single largest buyer of Nvidia compute on the planet, deciding it would rather build than keep renting. If Jalapeño hits even most of its targets, that's the more consequential story than any benchmark.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Quantum Computing Inc. Buys a Real Fab in $73M NHanced Deal</title>
+      <link>https://sabr-labs.com/article/quantum-computing-inc-nhanced-semiconductors-acquisition-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/quantum-computing-inc-nhanced-semiconductors-acquisition-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Quantum Computing</category>
+      <category>Semiconductors</category>
+      <category>NHanced</category>
+      <category>Acquisitions</category>
+      <category>Manufacturing</category>
+      <description>QCi closed its $73.1 million acquisition of NHanced Semiconductors on June 23, adding chip packaging and fabrication to a company long criticized for thin revenue.</description>
+      <content:encoded><![CDATA[<p>Quantum Computing Inc. closed a $73.1 million acquisition of NHanced Semiconductors on June 23, picking up something the company has been accused of lacking for years: an actual manufacturing operation.</p>
+<p>NHanced brings semiconductor and nanophotonics fabrication, advanced packaging expertise, and a team of engineers who build things. QCi frames the deal as its move from research and prototyping toward scalable commercial production, which is a polite way of saying the company would like to ship products instead of press releases.</p>
+<p>That framing matters because QCi sits in the most hype-saturated corner of the market. Quantum-computing stocks have ridden waves of enthusiasm that rarely line up with shipped, revenue-generating hardware, and QCi in particular has drawn skeptics who question how much of its valuation rests on real technology versus narrative. Buying a fab with packaging capability is a harder thing to wave away than a roadmap slide.</p>
+<p>It's also not a magic fix. Owning a fabrication and packaging operation lowers QCi's dependence on outside foundries and gives it control over how its photonic chips get built, but integration is where these deals usually stall. The test isn't the press release on closing day. It's whether NHanced's lines are turning out QCi parts that customers pay for a year from now.</p>
+<p>For anyone watching the broader quantum buildout, the interesting signal is the direction. Several quantum firms have spent 2026 acquiring fabrication and packaging capability rather than licensing it, which suggests the field is grinding toward the unglamorous manufacturing problems that decide whether any of this becomes a product.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GPT-5 Pro Cracked a T-Cell Puzzle That Stumped a Lab for Three Years</title>
+      <link>https://sabr-labs.com/article/gpt-5-pro-immunology-t-cell-mystery-unutmaz-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gpt-5-pro-immunology-t-cell-mystery-unutmaz-june-2026</guid>
+      <pubDate>Fri, 26 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5</category>
+      <category>AI in Science</category>
+      <category>Immunology</category>
+      <category>Research</category>
+      <description>Immunologist Derya Unutmaz says GPT-5 Pro produced a mechanistic answer to a question his lab had chased since 2022, and OpenAI is leaning hard on the story.</description>
+      <content:encoded><![CDATA[<p>An immunologist fed three years of stuck data into GPT-5 Pro and got back an explanation his entire lab had missed. That's the claim Derya Unutmaz, a researcher at The Jackson Laboratory for Genomic Medicine, made this week, and OpenAI put it front and center on June 24.</p>
+<p>The puzzle was a real one in T-cell biology: how does glucose metabolism shape the way T cells develop and specialize? Unutmaz's lab had been circling the question since 2022. According to his account, GPT-5 Pro worked through the dataset and proposed a mechanism, that deoxyglucose blocks the protein IL-2, which would explain why it pushes T cells toward the inflammatory Th17 phenotype.</p>
+<p>The detail that makes this harder to dismiss as fancy autocomplete is the second result. Unutmaz says the model also correctly predicted the outcome of unpublished experiments involving CD8+ T cells killing lymphoma cells. If the data wasn't in any training corpus, the model couldn't have simply retrieved the answer, which is the usual deflation for stories like this.</p>
+<p>So this is more interesting than the average benchmark win. It's also a single anecdote, told by an enthusiastic user, amplified by the company that sells the product. None of that makes it false. It does mean the honest framing is 'a domain expert used a very strong model to accelerate a hypothesis and then validated it himself,' not 'AI did science.'</p>
+<p>That distinction is the whole game right now. A model that generates a sharp, testable hypothesis from messy data is genuinely useful to a working scientist, and Unutmaz is clearly a believer. The work that turns a hypothesis into a result still happens at the bench, run by people who know which answers are worth chasing. Keep both halves of that sentence in view when the next 'AI solved it' headline lands.</p>]]></content:encoded>
+    </item>
     <item>
       <title>SpaceX Tests Starfall, a Disk-Shaped Capsule to Return Cargo From Orbit</title>
       <link>https://sabr-labs.com/article/spacex-starfall-cargo-return-capsule-demo-june-2026</link>
@@ -873,130 +989,6 @@
 <p>ShinyHunters isn't ransomware in the encrypt-your-files sense. The group steals data and charges to not publish it, which means there's no malware to find on your servers after the fact, just an inbox demand and a countdown. Over the past year it's been tied to a long run of corporate thefts, and it was the name behind the wave of attacks that hit companies through their Salesforce, Salesloft, Snowflake, and Oracle environments.</p>
 <p>Kodak hasn't said how the data got out, and neither has ShinyHunters. But the group's recent playbook leans on third-party SaaS platforms rather than busting through a corporate firewall: stolen OAuth tokens, social-engineered support reps, and over-permissioned integrations. If that's what happened here, the lesson isn't about Kodak's perimeter. It's about every connected app that quietly holds a copy of your customer list.</p>
 <p>The June 18 deadline is the thing to watch. If Kodak doesn't pay, expect the records to land on the leak site and the real scope to become clear from the data itself rather than from either party's statement. If you're a Kodak customer, the smart move is the boring one: assume your details are in the dump, watch for targeted phishing that references real account info, and don't trust any 'Kodak security' email that shows up with a link this week.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepSeek Closes $7.4 Billion First Raise With a Founder-Control Catch</title>
-      <link>https://sabr-labs.com/article/deepseek-funding-7-4-billion-50-billion-valuation-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-funding-7-4-billion-50-billion-valuation-june-2026</guid>
-      <pubDate>Wed, 17 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>DeepSeek</category>
-      <category>AI Funding</category>
-      <category>Liang Wenfeng</category>
-      <category>China AI</category>
-      <category>Venture Capital</category>
-      <category>Tencent</category>
-      <description>DeepSeek raised about $7.4 billion at a valuation north of $50 billion in its first outside round, but investors had to accept a five-year lockup, no voting rights, and a structure that keeps founder Liang Wenfeng firmly in control.</description>
-      <content:encoded><![CDATA[<p>Liang Wenfeng put roughly $3 billion of his own money into DeepSeek's first outside funding round, then got everyone else to accept terms they'd normally laugh out of the room. The Chinese AI lab closed the round this week at about $7.4 billion (50 billion yuan), valuing the company somewhere between $52 and $59 billion depending on whose reporting you trust.</p>
-<p>Here's the catch that makes this round unusual. Outside investors don't get to put money into DeepSeek directly. They have to route it through a limited partnership that Liang himself manages, accept a five-year lockup, and give up voting rights entirely. The one investor exempt from all of that is China's National AI Industry Investment Fund, which got a direct stake with its voting power intact.</p>
-<p>Tencent led with $1.4 billion. CATL, the battery giant, put in $700 million. JD.com, NetEase, and IDG Capital each kicked in around $420 million. Liang's own $3 billion is the controlling share, which is the whole point: he raised a fortune without handing over the keys.</p>
-<p>DeepSeek spent the last year and a half as the company that rattled the American AI trade. Its open-weight models matched frontier performance at a fraction of the training cost, and it pulled that off without the latest Nvidia chips, which is exactly the thing Washington's export controls were supposed to prevent. A $50 billion-plus valuation says the market now treats it as China's answer to OpenAI and Anthropic rather than a one-time scare.</p>
-<p>The deal structure is worth sitting with, though. A five-year lockup with no votes is the kind of term you accept when you're more afraid of missing the deal than of the terms themselves. It also says something about how China wants its AI champion governed: founder-controlled, state-fund-blessed, and insulated from the quarterly pressure that pushes Western labs toward shipping product. Whether that produces better models or just a more comfortable Liang is the open question.</p>
-<p>For everyone building on DeepSeek's open weights, the practical news is simpler. The lab now has billions in fresh capital and a controlling founder who answers to almost no one. That usually means more models, faster, and fewer people in the room who can say no.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA Raised Its Exam Prices Again, and Security+ Now Costs $439</title>
-      <link>https://sabr-labs.com/article/comptia-exam-price-increase-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-exam-price-increase-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>Certification</category>
-      <category>Exam Pricing</category>
-      <category>Security+</category>
-      <category>A+</category>
-      <category>IT Career</category>
-      <description>CompTIA bumped prices on most of its certification exams in late May, with Security+ now $439 and a full A+ running close to $550, though the increases themselves are small.</description>
-      <content:encoded><![CDATA[<p>CompTIA raised the price of most of its certification exams on May 29, and if you've been putting off scheduling, the increase is already live. The good news is that it's modest. The annoying news is that it stacks on top of an already-pricey ladder of exams.</p>
-<p>Per CompTIA's own pricing, Security+ went from $425 to $439. The same $14 bump hit CySA+ and PenTest+, which now sit at $439 as well. Network+, Cloud+, and Linux+ each moved from $390 to $399. A+ rose to $274 per exam, and since A+ requires two exams, the real cost of the cert is closer to $550 once you sit both. The entry-level Tech+ went from $125 to $129.</p>
-<p>These aren't shocking jumps. We're talking four to fourteen dollars per exam. CompTIA tends to adjust pricing roughly every 18 months, so this is the schedule doing its thing rather than a sudden cash grab. But it's a reminder that the sticker price on an exam is only part of what certifying actually costs you.</p>
-<p>Here's what the price tables don't show. A single attempt is rarely the whole story. Factor in study materials, a practice-exam subscription, and the very real chance you retake at least one exam, and a cert that lists at $439 can run you well past $600 by the time you pass. The exam fee is the floor, not the ceiling.</p>
-<p>If you already know you're testing soon, two things help. Vouchers bought through training resellers still sell at the old, lower rates while existing stock lasts, so a Security+ voucher can be had below the new $439. And CompTIA runs bundle pricing that pairs the exam with official study tools, which is worth the arithmetic if you were going to buy materials anyway. Either way, lock in the voucher before you book the seat.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Met the White House to Get Its Models Back. It Didn&apos;t Work.</title>
-      <link>https://sabr-labs.com/article/anthropic-trump-meeting-fable-mythos-offline-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-trump-meeting-fable-mythos-offline-june-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Fable 5</category>
-      <category>Mythos 5</category>
-      <category>Export Controls</category>
-      <category>Trump Administration</category>
-      <category>AI Policy</category>
-      <description>Anthropic&apos;s leaders sat down with Trump administration officials on Monday to reverse the export order that took Fable 5 and Mythos 5 offline, and walked out without a resolution.</description>
-      <content:encoded><![CDATA[<p>Anthropic's senior leadership went to Washington on Monday to win back access to its two newest models. They left without it. The meeting was meant to resolve the export-control directive that landed Friday and forced the company to shut off Fable 5 and Mythos 5 for every customer, and as of Monday night the models were still dark.</p>
-<p>The directive cited national security authorities and ordered Anthropic to block access to both models for any foreign national, anywhere. Because Anthropic can't verify the nationality of everyone using its products, the only way to comply was to switch the models off for all customers, the US ones included.</p>
-<p>The more revealing detail to surface this week is why the relationship soured. Reporting from Axios frames the standoff less as a clean security dispute and more as a breakdown in communication, with administration officials privately complaining that Anthropic has been hard to work with and failed to honor a recent cyber executive order. The trigger, in other words, may have been as much about friction as about any specific technical risk.</p>
-<p>Anthropic continues to call the whole thing a misunderstanding and says it's working to restore access as fast as it can. That's a careful line. It avoids picking a fight with the government holding the off switch while signaling to customers that the company doesn't think it did anything wrong.</p>
-<p>Not everyone in Washington is treating this as routine. The ranking Democrat on the House Science Committee called the administration's treatment of Anthropic an attack, which tells you the export order is already a partisan object rather than a quiet regulatory matter. That's the uncomfortable part for any US lab watching this unfold. If a flagship model can be pulled offline over a relationship gone bad and then turned into a political football, the rules aren't really about the technology.</p>
-<p>The thing to watch now is whether Anthropic gets a narrower carve-out that lets US customers back in without a global shutoff, and how long 'as soon as possible' actually takes. Every day the models stay off is a day enterprise buyers spend thinking about how much they want to depend on a vendor that can be switched off by a letter.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ShinyHunters Claims 61 Million Stolen Sysco Records, Sets June 18 Deadline</title>
-      <link>https://sabr-labs.com/article/sysco-shinyhunters-61m-salesforce-extortion-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sysco-shinyhunters-61m-salesforce-extortion-june-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Sysco</category>
-      <category>ShinyHunters</category>
-      <category>Salesforce</category>
-      <category>Data Extortion</category>
-      <category>Qilin</category>
-      <category>Data Breach</category>
-      <description>The extortion crew ShinyHunters says it stole 61 million Salesforce records from food-distribution giant Sysco and threatens to leak them by June 18, the company&apos;s second extortion threat in weeks.</description>
-      <content:encoded><![CDATA[<p>Sysco, the largest food distributor in the United States, is being squeezed by extortionists for the second time in weeks. The group ShinyHunters listed the company on its leak site over the weekend and claims to be holding 61 million Salesforce records, with a leak deadline of June 18.</p>
-<p>By ShinyHunters' own account the haul spans several Salesforce tables and includes customer data and personal information, employee records, and other internal corporate files. None of that is independently confirmed, and extortion crews routinely inflate both the size and the sensitivity of what they're sitting on. But Sysco is a Fortune 100 company with a vast customer book, so the raw numbers are at least plausible.</p>
-<p>ShinyHunters has spent 2026 working its way through corporate Salesforce instances, hitting one big name after another. The pattern usually involves social-engineering a path into a company's Salesforce environment, bulk-exporting records, then circling back to extort. Sysco is the latest entry on a list that keeps growing.</p>
-<p>What makes the situation worse is that this is the second crew at the door. Just weeks ago the Qilin ransomware gang threatened the company with stolen data running from 2021 through 2026: product pricing lists, delivery invoices, tax documents. Two separate extortion threats in quick succession either means Sysco was breached twice or that access to its data has been changing hands.</p>
-<p>The June 18 deadline is theater as much as threat. Leak sites set countdowns to manufacture urgency and pressure a quiet payment before anything goes public. Whether Sysco pays, ignores it, or has already engaged the attackers is the part nobody outside the company knows. What's worth watching is whether the Salesforce data turns out to be real, and how much of it touches Sysco's restaurant and retail customers, who would inherit the fraud risk that comes with leaked contact and pricing data.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Now Exploiting Three Critical FortiSandbox Bugs</title>
-      <link>https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-25089-exploited-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-25089-exploited-june-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Fortinet</category>
-      <category>FortiSandbox</category>
-      <category>CVE-2026-25089</category>
-      <category>RCE</category>
-      <category>Command Injection</category>
-      <category>CISA KEV</category>
-      <description>Fortinet&apos;s FortiSandbox is under active attack through three critical command-injection flaws that let unauthenticated attackers run code remotely, two months after the patches shipped.</description>
-      <content:encoded><![CDATA[<p>Three critical vulnerabilities in Fortinet's FortiSandbox went from patched-but-quiet to actively exploited this week. Threat intelligence firm Defused reported seeing attacks against multiple FortiSandbox flaws inside a single 24-hour window, and the activity was still live as of Tuesday.</p>
-<p>The bugs are CVE-2026-39813, CVE-2026-39808, and CVE-2026-25089, all rated critical. The worst of them, CVE-2026-25089, is an OS command injection issue carrying a CVSS score of 9.8. It lets an unauthenticated attacker send a crafted HTTP request and execute arbitrary commands on the appliance. No login, no user interaction, low complexity. That's the whole unpleasant package.</p>
-<p>FortiSandbox is the box that's supposed to detonate suspicious files in isolation and tell you whether they're malware. Turning the malware-analysis appliance itself into the entry point is the kind of irony attackers love, because security gear sits deep in the network and tends to be trusted by everything around it.</p>
-<p>Fortinet shipped fixes for all three back on April 14. So this is another case of a patch existing for two months while the appliances stayed exposed long enough for someone to weaponize the gap. There's a faulty proof-of-concept for CVE-2026-25089 floating around and working exploits are still limited, but 'limited' has a short shelf life once attacks are confirmed in the wild.</p>
-<p>Fortinet gear has a long rap sheet. CISA's catalog of known-exploited vulnerabilities now tracks 26 Fortinet flaws abused in attacks, and ransomware crews have used 13 of them. Internet-facing devices from Fortinet, Ivanti, Palo Alto, and the rest have become the front door of choice precisely because they're reachable and slow to patch.</p>
-<p>If you run FortiSandbox, treat the April update as urgent rather than done-whenever. Upgrade to the fixed versions, pull the appliance's logs, and check for command execution you can't account for. An unauthenticated way to run code on a trusted security appliance is exactly the foothold that turns into a much worse Monday.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX Is Buying Cursor&apos;s Maker for $60 Billion in All-Stock Deal</title>
-      <link>https://sabr-labs.com/article/spacex-cursor-anysphere-60b-acquisition-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-cursor-anysphere-60b-acquisition-june-2026</guid>
-      <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SpaceX</category>
-      <category>Cursor</category>
-      <category>Anysphere</category>
-      <category>xAI</category>
-      <category>M&amp;A</category>
-      <category>AI Coding</category>
-      <description>SpaceX agreed to acquire Anysphere, the company behind the Cursor coding tool, in an all-stock deal valued near $60 billion, folding a fast-growing AI developer platform into Elon Musk&apos;s expanding empire.</description>
-      <content:encoded><![CDATA[<p>SpaceX agreed on Monday to buy Anysphere, the startup behind the AI coding tool Cursor, in an all-stock deal that values Cursor at roughly $60 billion. Cursor's shareholders will be paid in SpaceX Class A stock, and the companies expect the merger to close in the third quarter.</p>
-<p>This didn't come out of nowhere. SpaceX secured an option back in April that let it either buy Cursor at this price or pay $10 billion for a partnership instead. It chose to buy.</p>
-<p>Cursor has become one of the few AI products with revenue to match the hype. Its annual recurring revenue has crossed $4 billion, which is the kind of number that explains a $60 billion price tag for a company most people outside software have never heard of.</p>
-<p>SpaceX merged with Musk's AI company xAI in February, so Grok and a rocket company already share a balance sheet. Adding Cursor puts a developer-facing AI product alongside them and gives Cursor access to the compute xAI has been stockpiling. The strategic logic is that whoever owns the tools developers live in all day owns a chunk of how software gets built.</p>
-<p>It's also a reminder of how concentrated this is getting. A launch company now owns a frontier AI lab and the editor a lot of engineers type into. The deal is all stock, which means SpaceX is spending paper that's only worth $60 billion because the market currently says it is. SpaceX's own Nasdaq debut valued it north of $2 trillion and raised $86 billion, so there's plenty of paper to spend.</p>
-<p>Watch whether Cursor stays neutral on which models it serves. Right now it routes to Claude, GPT, and others depending on what the user picks. Once xAI is under the same roof there's an obvious incentive to nudge people toward Grok, and developers will notice fast if the default starts to feel less like a choice.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
