@@ -25,6 +25,221 @@
 
 export const articles = [
   {
+    id: 140,
+    slug: "miasma-npm-worm-leo-rstreams-supply-chain-june-2026",
+    title: "Self-Spreading Miasma Worm Poisons 20+ npm Packages in Seconds",
+    summary: "A hijacked maintainer account pushed credential-stealing updates to Leo Platform and RStreams packages, and the malware republishes itself to spread.",
+    body: [
+      "The whole thing took under three seconds. Late on June 24, an attacker who had taken over the npm maintainer account \"czirker\" pushed poisoned updates to more than 20 packages used by the Leo Platform and RStreams data-streaming projects. There was no human at the keyboard timing it. The publish run was fully automated, which is how you compromise two dozen package versions faster than most people can read a single changelog.",
+      "Microsoft Threat Intelligence flagged the campaign, with extra technical analysis from Sonatype. The malware family is called Miasma, and it does two things well. First, it hunts for secrets: AWS, Azure and GCP credentials, GitHub tokens, Kubernetes secrets, HashiCorp Vault access, 1Password data, and the victim's own npm publishing tokens. Second, and this is the part that makes it dangerous, it uses those stolen npm tokens to republish itself into more packages. It's a worm. Steal a maintainer's keys, ship a tainted version under their name, harvest the next maintainer's keys, repeat.",
+      "If that pattern sounds familiar, it should. Miasma is the same lineage as the Shai-Hulud self-propagating npm attacks, and a \"mini Shai-Hulud\" toolkit went public on GitHub earlier this month, lowering the bar for anyone who wants to run this play. Miasma also showed up at the start of June in the @redhat-cloud-services compromise, where a hijacked Red Hat employee GitHub account was used to push malicious orphan commits into RedHatInsights repositories, poisoning around 32 packages that pulled roughly 80,000 weekly downloads between them.",
+      "The uncomfortable detail in the Red Hat case was that the malicious commits bypassed code review entirely. The June 24 round skips review too, because once an attacker holds a publishing token, npm just accepts the upload. Two-factor authentication on the human login doesn't help when the token is what's being abused.",
+      "For anyone shipping software, the move is the boring one that works: pin dependencies to known-good versions, turn on npm's granular access tokens with the shortest viable lifetime, and audit your lockfile for any package that updated in the last few days across the Leo Platform or RStreams trees. If a build pulled a poisoned version, treat every credential that touched that build host as burned and rotate it. The worm's entire business model is the credentials you didn't rotate fast enough.",
+    ],
+    category: "cyber",
+    tags: ["Supply Chain", "npm", "Malware", "Credential Theft", "DevSecOps"],
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-28T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Microsoft Security Blog",
+        desc: "Microsoft Threat Intelligence reporting on the Miasma npm campaign",
+        url: "https://www.microsoft.com/en-us/security/blog/",
+      },
+      {
+        name: "The Register",
+        desc: "Coverage of the Leo Platform/RStreams poisoning and czirker account compromise",
+        url: "https://www.theregister.com/security/2026/06/26/miasma-campaign-poisons-20-plus-npm-packages-hunts-for-developer-secrets/",
+      },
+      {
+        name: "Red Hat RHSB-2026-006",
+        desc: "Red Hat advisory on the earlier @redhat-cloud-services npm compromise",
+        url: "https://access.redhat.com/security/vulnerabilities/RHSB-2026-006",
+      },
+      {
+        name: "Wiz Blog",
+        desc: "Technical analysis of the Miasma supply-chain attack on Red Hat npm packages",
+        url: "https://www.wiz.io/blog/miasma-supply-chain-attack-targeting-redhat-npm-packages",
+      },
+    ],
+  },
+  {
+    id: 141,
+    slug: "shinyhunters-oracle-peoplesoft-cve-2026-35273-higher-ed-june-2026",
+    title: "ShinyHunters Hit 100+ PeopleSoft Servers Through an Oracle Zero-Day",
+    summary: "CVE-2026-35273 let attackers run code on PeopleSoft with no login, and Mandiant says two-thirds of the affected organizations are universities.",
+    body: [
+      "The calling card was a file named README-IF-YOU-SEE-THIS-YOUVE-BEEN-HACKED.TXT, dropped into PeopleSoft directories after the attackers had already taken what they came for. The crew behind it is ShinyHunters, and the way in was CVE-2026-35273, a remote code execution flaw in Oracle PeopleSoft Enterprise PeopleTools rated 9.8 out of 10. No login required, no user interaction, just network access over HTTP to a vulnerable instance.",
+      "The bug lives in the Updates Environment Management component, the piece behind the Environment Management Hub known as PSEMHUB. Mandiant dated the activity to a window between May 27 and June 9. Oracle didn't publish its out-of-band advisory until June 10, which means it was a true zero-day the entire time attackers were working through it.",
+      "Mandiant, now part of Google, notified more than 100 organizations whose internet-facing endpoints matched the vulnerable fingerprint. Roughly 68 percent of them are in higher education, most in the United States. Some blocked the activity in time. Others were compromised and watched their data land on the ShinyHunters leak site, with the University of Nottingham among the first confirmed victims.",
+      "The post-exploitation work was unglamorous and effective. After landing on a PeopleSoft host, the attackers sprayed a hardcoded list of usernames and passwords over SSH to reach other internal machines, compressed stolen data with zstd, and shipped it out over an SSH connection to the server hosting a public mirror of their leak site. Nothing here is exotic. It's a known group running a clean playbook against a class of systems that universities and large enterprises run wide open for staff and student self-service.",
+      "If you run PeopleSoft, the PeopleTools patch from Oracle's June 10 alert is the floor, not the ceiling. Assume anything reachable before you patched may already be compromised, hunt for that marker file and unexpected SSH activity between PeopleSoft hosts, and reset the credentials that were sitting on those servers. The leak-site postings are still trickling out, so the list of named victims isn't final.",
+    ],
+    category: "cyber",
+    tags: ["Oracle", "PeopleSoft", "Zero-Day", "ShinyHunters", "Data Breach"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-28T08:40:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Oracle Security Alerts",
+        desc: "Oracle's out-of-band advisory addressing the PeopleSoft PeopleTools flaw",
+        url: "https://www.oracle.com/security-alerts/",
+      },
+      {
+        name: "Google Cloud (Mandiant)",
+        desc: "Mandiant threat-intelligence analysis of ShinyHunters targeting the education sector",
+        url: "https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-targets-education-sector-oracle-exploit",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Reporting on the PeopleSoft zero-day campaign against universities",
+        url: "https://thehackernews.com/2026/06/shinyhunters-exploits-oracle-peoplesoft.html",
+      },
+      {
+        name: "Rapid7",
+        desc: "Technical write-up on active exploitation of CVE-2026-35273",
+        url: "https://www.rapid7.com/blog/post/etr-active-exploitation-of-oracle-peoplesoft-zero-day-cve-2026-35273/",
+      },
+    ],
+  },
+  {
+    id: 142,
+    slug: "chrome-fifth-zero-day-cve-2026-11645-v8-june-2026",
+    title: "Google Patches Its Fifth Chrome Zero-Day of 2026, Already Exploited",
+    summary: "CVE-2026-11645 is an out-of-bounds memory bug in Chrome's V8 engine that attackers were exploiting before the fix shipped.",
+    body: [
+      "Five. That's how many actively exploited Chrome zero-days Google has patched since January, and the count is only half the year. The latest is CVE-2026-11645, an out-of-bounds memory access in V8, the JavaScript and WebAssembly engine that does the heavy lifting on every page you open. Google says plainly that it is \"aware that an exploit for CVE-2026-11645 exists in the wild.\"",
+      "An out-of-bounds bug in V8 is the kind attackers like because it's reachable from a web page. A crafted site corrupts memory inside the engine and, chained with the right follow-on, becomes code running in the browser's context. The flaw is rated high severity, with a CVSS of 8.8 in the public scoring. The fix lands in Chrome 149.0.7827.102 for Windows and Linux and 149.0.7827.103 for Mac.",
+      "An anonymous researcher reported the bug to Google a couple of weeks before the patch shipped, reportedly earning a five-figure bounty. The faster turnaround between a private report and an in-the-wild exploit is becoming the pattern, and it isn't an accident. Google and Microsoft have both pointed to AI-assisted vulnerability discovery as a reason patch volumes keep climbing. Microsoft's June update alone topped 200 CVEs. More eyes, human and machine, on the same memory-safety bugs means more of them surface at once.",
+      "This isn't a Chrome-only problem either. Edge, Brave, Opera and Vivaldi all ride on Chromium and inherit V8, so they're exposed until each ships the same fix. If you maintain any of those in a fleet, they're on your list too.",
+      "Updating takes ten seconds and most people skip it anyway. Open the menu, go to Help, click About Google Chrome, and let it pull the update, then hit Relaunch. The fix does nothing sitting in a tab you never restarted.",
+    ],
+    category: "cyber",
+    tags: ["Google Chrome", "Zero-Day", "Browser Security", "V8", "Patch"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-28T09:20:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Chrome Releases",
+        desc: "Google's official stable channel update announcing the CVE-2026-11645 fix",
+        url: "https://chromereleases.googleblog.com/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Reporting on the actively exploited Chrome V8 zero-day",
+        url: "https://www.helpnetsecurity.com/2026/06/09/google-chrome-zero-day-cve-2026-11645/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Coverage noting this is the fifth exploited Chrome zero-day of 2026",
+        url: "https://www.bleepingcomputer.com/news/security/google-patches-fifth-chrome-zero-day-bug-exploited-in-attacks-this-year/",
+      },
+      {
+        name: "CISA Known Exploited Vulnerabilities Catalog",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+    ],
+  },
+  {
+    id: 143,
+    slug: "glm-5-2-zhipu-open-weight-frontier-china-june-2026",
+    title: "Zhipu's GLM-5.2 Is the First Open-Weight Model That Feels Frontier",
+    summary: "China's Zhipu shipped MIT-licensed weights that land within a point of Claude Opus on an agentic benchmark at roughly a fifth of the price.",
+    body: [
+      "For two years the open-weight crowd has had to settle for \"good enough.\" GLM-5.2, from the Chinese lab Zhipu, is the model that stops the apologizing. Released under a full MIT license on June 17, it scores within about a point of Anthropic's Claude Opus 4.8 on a widely cited agentic benchmark, and it does it at roughly a fifth of the cost. Practitioners who've actually run it, not just read the chart, keep describing it the same way: the first open model that feels plausibly frontier in daily use.",
+      "The numbers behind that have texture. It's a mixture-of-experts model, 744 billion total parameters with 40 billion active per token, and the context window has been stretched to one million tokens. On Artificial Analysis's Intelligence Index, GLM-5.2 lands at 51, ahead of MiniMax-M3 and DeepSeek V4 Pro at 44 and Kimi K2.6 at 43. That ordering matters less than the gap it closes: the best open model is now trading blows with the closed ones rather than chasing them by a generation.",
+      "The price is the headline for anyone running real workloads. Through a host like OpenRouter, GLM-5.2 runs around $1.40 per million input tokens and $4.40 per million output. GPT-5.5 sits at roughly $5 and $30. Claude Opus is near $5 and $25. When a model is one-fifth the cost and a rounding error behind on quality, the math starts making the decision for you.",
+      "There's a real distinction worth keeping straight, though. Open weights mean you can download GLM-5.2 and run it on your own hardware, where your data never leaves your network. Calling Zhipu's hosted API is a different deal, and sending sensitive prompts to a Chinese-operated endpoint carries the data-governance questions you'd expect. The benchmark wins are also benchmark wins. A score of 51 doesn't tell you how it handles your codebase or your weird internal tooling, and the only way to know is to try it.",
+      "The timing stings for the US labs. CNBC framed it bluntly this week: Zhipu is closing in while OpenAI and Anthropic are partly held back by Washington's release controls. A capable model you can host yourself, license freely, and run cheap is exactly the thing that erodes a premium API's pricing power. That pressure is already showing up in how companies budget for AI.",
+    ],
+    category: "ai",
+    tags: ["Open Weights", "Zhipu", "GLM", "China", "LLM"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-28T10:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Z.ai (Zhipu)",
+        desc: "The lab's own release materials and model weights for GLM-5.2",
+        url: "https://z.ai/",
+      },
+      {
+        name: "CNBC",
+        desc: "Reporting on Zhipu closing the gap with US frontier labs",
+        url: "https://www.cnbc.com/2026/06/26/china-zhipu-z-ai-open-source-anthropic-openai.html",
+      },
+      {
+        name: "Artificial Analysis",
+        desc: "Independent Intelligence Index benchmarking placing GLM-5.2 against peers",
+        url: "https://artificialanalysis.ai/",
+      },
+      {
+        name: "TechTimes",
+        desc: "Coverage of GLM-5.2 open-weights release and the API data-risk caveat",
+        url: "https://www.techtimes.com/articles/318543/20260617/glm-52-open-weights-live-top-coding-benchmark-api-use-carries-china-data-risk.htm",
+      },
+    ],
+  },
+  {
+    id: 144,
+    slug: "ai-tokenmaxxing-efficiency-enterprise-spend-june-2026",
+    title: "The 'Tokenmaxxing' Era Is Ending as Companies Rein In AI Bills",
+    summary: "Enterprises that told staff to burn as many tokens as possible are now demanding ROI, and some are routing traffic to cheaper models.",
+    body: [
+      "Uber went through its entire annual AI budget in four months. The company's CTO, Praveen Neppalli Naga, told The Information as much earlier this year, and the response was the tell: Uber put spending tiers on some AI tools, starting at a $1,500-per-month base, with employees having to request anything above that. When a company that size starts metering token use like an overage plan, the mood has shifted.",
+      "The thing that's ending has a name. \"Tokenmaxxing\" was the brief period where employers told developers to use as much AI as humanly possible and treated raw token consumption as a stand-in for productivity. More tokens meant more innovation, supposedly. For a year that logic held, because the spending was a land grab and nobody wanted to be the team that under-invested.",
+      "Now the same leaders want receipts. Tighter controls, clearer return on investment, and cheaper alternatives where the expensive model isn't earning its keep. The most pointed example: the CEO of the AI startup Lindy moved all of his company's traffic off Anthropic's Claude and onto DeepSeek, the cheaper Chinese open-weight option, and watched the cost curve fall off a cliff. That's not a rounding-error saving. That's a different bill.",
+      "The timing is awkward for the two biggest labs. OpenAI and Anthropic both filed confidentially for what could be historic IPOs in early June, right as their largest enterprise customers start asking why the monthly invoice keeps climbing. Models like Zhipu's GLM-5.2 and DeepSeek give those customers a credible threat to walk, and a credible threat is all you need to renegotiate.",
+      "None of this means demand for AI is shrinking. It means the era of unmetered, ROI-optional spending is over, and the providers that win the next phase will be the ones whose pricing survives a CFO actually reading the line items.",
+    ],
+    category: "tech",
+    tags: ["AI Spending", "Enterprise IT", "OpenAI", "Anthropic", "FinOps"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-28T10:40:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Reporting on enterprises shifting from tokenmaxxing to efficiency",
+        url: "https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html",
+      },
+      {
+        name: "TechCrunch",
+        desc: "Analysis of the changing competitive picture beyond Anthropic vs. OpenAI",
+        url: "https://techcrunch.com/2026/06/26/its-not-about-anthropic-vs-openai-anymore/",
+      },
+      {
+        name: "The Information",
+        desc: "Original reporting on Uber's AI budget overrun",
+        url: "https://www.theinformation.com/",
+      },
+    ],
+  },
+  {
     id: 134,
     slug: "ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026",
     title: "CISA Adds PTC Windchill RCE to KEV as Webshells Land on PLM Servers",
@@ -49,7 +264,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-06-26T13:30:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -308,7 +523,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Help Net Security",
@@ -352,7 +567,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA Alert",
@@ -1151,7 +1366,7 @@ export const articles = [
     publishedAt: "2026-06-21T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1229,7 +1444,7 @@ export const articles = [
     publishedAt: "2026-06-21T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1268,7 +1483,7 @@ export const articles = [
     publishedAt: "2026-06-21T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1352,7 +1567,7 @@ export const articles = [
     publishedAt: "2026-06-20T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1396,7 +1611,7 @@ export const articles = [
     publishedAt: "2026-06-20T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1440,7 +1655,7 @@ export const articles = [
     publishedAt: "2026-06-20T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1484,7 +1699,7 @@ export const articles = [
     publishedAt: "2026-06-20T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

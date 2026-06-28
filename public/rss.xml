@@ -6,9 +6,104 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jun 2026 13:14:31 GMT</lastBuildDate>
-    <pubDate>Fri, 26 Jun 2026 13:14:31 GMT</pubDate>
+    <lastBuildDate>Sun, 28 Jun 2026 13:18:09 GMT</lastBuildDate>
+    <pubDate>Sun, 28 Jun 2026 13:18:09 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>The &apos;Tokenmaxxing&apos; Era Is Ending as Companies Rein In AI Bills</title>
+      <link>https://sabr-labs.com/article/ai-tokenmaxxing-efficiency-enterprise-spend-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ai-tokenmaxxing-efficiency-enterprise-spend-june-2026</guid>
+      <pubDate>Sun, 28 Jun 2026 10:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>AI Spending</category>
+      <category>Enterprise IT</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <category>FinOps</category>
+      <description>Enterprises that told staff to burn as many tokens as possible are now demanding ROI, and some are routing traffic to cheaper models.</description>
+      <content:encoded><![CDATA[<p>Uber went through its entire annual AI budget in four months. The company's CTO, Praveen Neppalli Naga, told The Information as much earlier this year, and the response was the tell: Uber put spending tiers on some AI tools, starting at a $1,500-per-month base, with employees having to request anything above that. When a company that size starts metering token use like an overage plan, the mood has shifted.</p>
+<p>The thing that's ending has a name. "Tokenmaxxing" was the brief period where employers told developers to use as much AI as humanly possible and treated raw token consumption as a stand-in for productivity. More tokens meant more innovation, supposedly. For a year that logic held, because the spending was a land grab and nobody wanted to be the team that under-invested.</p>
+<p>Now the same leaders want receipts. Tighter controls, clearer return on investment, and cheaper alternatives where the expensive model isn't earning its keep. The most pointed example: the CEO of the AI startup Lindy moved all of his company's traffic off Anthropic's Claude and onto DeepSeek, the cheaper Chinese open-weight option, and watched the cost curve fall off a cliff. That's not a rounding-error saving. That's a different bill.</p>
+<p>The timing is awkward for the two biggest labs. OpenAI and Anthropic both filed confidentially for what could be historic IPOs in early June, right as their largest enterprise customers start asking why the monthly invoice keeps climbing. Models like Zhipu's GLM-5.2 and DeepSeek give those customers a credible threat to walk, and a credible threat is all you need to renegotiate.</p>
+<p>None of this means demand for AI is shrinking. It means the era of unmetered, ROI-optional spending is over, and the providers that win the next phase will be the ones whose pricing survives a CFO actually reading the line items.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Zhipu&apos;s GLM-5.2 Is the First Open-Weight Model That Feels Frontier</title>
+      <link>https://sabr-labs.com/article/glm-5-2-zhipu-open-weight-frontier-china-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/glm-5-2-zhipu-open-weight-frontier-china-june-2026</guid>
+      <pubDate>Sun, 28 Jun 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Open Weights</category>
+      <category>Zhipu</category>
+      <category>GLM</category>
+      <category>China</category>
+      <category>LLM</category>
+      <description>China&apos;s Zhipu shipped MIT-licensed weights that land within a point of Claude Opus on an agentic benchmark at roughly a fifth of the price.</description>
+      <content:encoded><![CDATA[<p>For two years the open-weight crowd has had to settle for "good enough." GLM-5.2, from the Chinese lab Zhipu, is the model that stops the apologizing. Released under a full MIT license on June 17, it scores within about a point of Anthropic's Claude Opus 4.8 on a widely cited agentic benchmark, and it does it at roughly a fifth of the cost. Practitioners who've actually run it, not just read the chart, keep describing it the same way: the first open model that feels plausibly frontier in daily use.</p>
+<p>The numbers behind that have texture. It's a mixture-of-experts model, 744 billion total parameters with 40 billion active per token, and the context window has been stretched to one million tokens. On Artificial Analysis's Intelligence Index, GLM-5.2 lands at 51, ahead of MiniMax-M3 and DeepSeek V4 Pro at 44 and Kimi K2.6 at 43. That ordering matters less than the gap it closes: the best open model is now trading blows with the closed ones rather than chasing them by a generation.</p>
+<p>The price is the headline for anyone running real workloads. Through a host like OpenRouter, GLM-5.2 runs around $1.40 per million input tokens and $4.40 per million output. GPT-5.5 sits at roughly $5 and $30. Claude Opus is near $5 and $25. When a model is one-fifth the cost and a rounding error behind on quality, the math starts making the decision for you.</p>
+<p>There's a real distinction worth keeping straight, though. Open weights mean you can download GLM-5.2 and run it on your own hardware, where your data never leaves your network. Calling Zhipu's hosted API is a different deal, and sending sensitive prompts to a Chinese-operated endpoint carries the data-governance questions you'd expect. The benchmark wins are also benchmark wins. A score of 51 doesn't tell you how it handles your codebase or your weird internal tooling, and the only way to know is to try it.</p>
+<p>The timing stings for the US labs. CNBC framed it bluntly this week: Zhipu is closing in while OpenAI and Anthropic are partly held back by Washington's release controls. A capable model you can host yourself, license freely, and run cheap is exactly the thing that erodes a premium API's pricing power. That pressure is already showing up in how companies budget for AI.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Patches Its Fifth Chrome Zero-Day of 2026, Already Exploited</title>
+      <link>https://sabr-labs.com/article/chrome-fifth-zero-day-cve-2026-11645-v8-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-fifth-zero-day-cve-2026-11645-v8-june-2026</guid>
+      <pubDate>Sun, 28 Jun 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Google Chrome</category>
+      <category>Zero-Day</category>
+      <category>Browser Security</category>
+      <category>V8</category>
+      <category>Patch</category>
+      <description>CVE-2026-11645 is an out-of-bounds memory bug in Chrome&apos;s V8 engine that attackers were exploiting before the fix shipped.</description>
+      <content:encoded><![CDATA[<p>Five. That's how many actively exploited Chrome zero-days Google has patched since January, and the count is only half the year. The latest is CVE-2026-11645, an out-of-bounds memory access in V8, the JavaScript and WebAssembly engine that does the heavy lifting on every page you open. Google says plainly that it is "aware that an exploit for CVE-2026-11645 exists in the wild."</p>
+<p>An out-of-bounds bug in V8 is the kind attackers like because it's reachable from a web page. A crafted site corrupts memory inside the engine and, chained with the right follow-on, becomes code running in the browser's context. The flaw is rated high severity, with a CVSS of 8.8 in the public scoring. The fix lands in Chrome 149.0.7827.102 for Windows and Linux and 149.0.7827.103 for Mac.</p>
+<p>An anonymous researcher reported the bug to Google a couple of weeks before the patch shipped, reportedly earning a five-figure bounty. The faster turnaround between a private report and an in-the-wild exploit is becoming the pattern, and it isn't an accident. Google and Microsoft have both pointed to AI-assisted vulnerability discovery as a reason patch volumes keep climbing. Microsoft's June update alone topped 200 CVEs. More eyes, human and machine, on the same memory-safety bugs means more of them surface at once.</p>
+<p>This isn't a Chrome-only problem either. Edge, Brave, Opera and Vivaldi all ride on Chromium and inherit V8, so they're exposed until each ships the same fix. If you maintain any of those in a fleet, they're on your list too.</p>
+<p>Updating takes ten seconds and most people skip it anyway. Open the menu, go to Help, click About Google Chrome, and let it pull the update, then hit Relaunch. The fix does nothing sitting in a tab you never restarted.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ShinyHunters Hit 100+ PeopleSoft Servers Through an Oracle Zero-Day</title>
+      <link>https://sabr-labs.com/article/shinyhunters-oracle-peoplesoft-cve-2026-35273-higher-ed-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-oracle-peoplesoft-cve-2026-35273-higher-ed-june-2026</guid>
+      <pubDate>Sun, 28 Jun 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>PeopleSoft</category>
+      <category>Zero-Day</category>
+      <category>ShinyHunters</category>
+      <category>Data Breach</category>
+      <description>CVE-2026-35273 let attackers run code on PeopleSoft with no login, and Mandiant says two-thirds of the affected organizations are universities.</description>
+      <content:encoded><![CDATA[<p>The calling card was a file named README-IF-YOU-SEE-THIS-YOUVE-BEEN-HACKED.TXT, dropped into PeopleSoft directories after the attackers had already taken what they came for. The crew behind it is ShinyHunters, and the way in was CVE-2026-35273, a remote code execution flaw in Oracle PeopleSoft Enterprise PeopleTools rated 9.8 out of 10. No login required, no user interaction, just network access over HTTP to a vulnerable instance.</p>
+<p>The bug lives in the Updates Environment Management component, the piece behind the Environment Management Hub known as PSEMHUB. Mandiant dated the activity to a window between May 27 and June 9. Oracle didn't publish its out-of-band advisory until June 10, which means it was a true zero-day the entire time attackers were working through it.</p>
+<p>Mandiant, now part of Google, notified more than 100 organizations whose internet-facing endpoints matched the vulnerable fingerprint. Roughly 68 percent of them are in higher education, most in the United States. Some blocked the activity in time. Others were compromised and watched their data land on the ShinyHunters leak site, with the University of Nottingham among the first confirmed victims.</p>
+<p>The post-exploitation work was unglamorous and effective. After landing on a PeopleSoft host, the attackers sprayed a hardcoded list of usernames and passwords over SSH to reach other internal machines, compressed stolen data with zstd, and shipped it out over an SSH connection to the server hosting a public mirror of their leak site. Nothing here is exotic. It's a known group running a clean playbook against a class of systems that universities and large enterprises run wide open for staff and student self-service.</p>
+<p>If you run PeopleSoft, the PeopleTools patch from Oracle's June 10 alert is the floor, not the ceiling. Assume anything reachable before you patched may already be compromised, hunt for that marker file and unexpected SSH activity between PeopleSoft hosts, and reset the credentials that were sitting on those servers. The leak-site postings are still trickling out, so the list of named victims isn't final.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Self-Spreading Miasma Worm Poisons 20+ npm Packages in Seconds</title>
+      <link>https://sabr-labs.com/article/miasma-npm-worm-leo-rstreams-supply-chain-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/miasma-npm-worm-leo-rstreams-supply-chain-june-2026</guid>
+      <pubDate>Sun, 28 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>npm</category>
+      <category>Malware</category>
+      <category>Credential Theft</category>
+      <category>DevSecOps</category>
+      <description>A hijacked maintainer account pushed credential-stealing updates to Leo Platform and RStreams packages, and the malware republishes itself to spread.</description>
+      <content:encoded><![CDATA[<p>The whole thing took under three seconds. Late on June 24, an attacker who had taken over the npm maintainer account "czirker" pushed poisoned updates to more than 20 packages used by the Leo Platform and RStreams data-streaming projects. There was no human at the keyboard timing it. The publish run was fully automated, which is how you compromise two dozen package versions faster than most people can read a single changelog.</p>
+<p>Microsoft Threat Intelligence flagged the campaign, with extra technical analysis from Sonatype. The malware family is called Miasma, and it does two things well. First, it hunts for secrets: AWS, Azure and GCP credentials, GitHub tokens, Kubernetes secrets, HashiCorp Vault access, 1Password data, and the victim's own npm publishing tokens. Second, and this is the part that makes it dangerous, it uses those stolen npm tokens to republish itself into more packages. It's a worm. Steal a maintainer's keys, ship a tainted version under their name, harvest the next maintainer's keys, repeat.</p>
+<p>If that pattern sounds familiar, it should. Miasma is the same lineage as the Shai-Hulud self-propagating npm attacks, and a "mini Shai-Hulud" toolkit went public on GitHub earlier this month, lowering the bar for anyone who wants to run this play. Miasma also showed up at the start of June in the @redhat-cloud-services compromise, where a hijacked Red Hat employee GitHub account was used to push malicious orphan commits into RedHatInsights repositories, poisoning around 32 packages that pulled roughly 80,000 weekly downloads between them.</p>
+<p>The uncomfortable detail in the Red Hat case was that the malicious commits bypassed code review entirely. The June 24 round skips review too, because once an attacker holds a publishing token, npm just accepts the upload. Two-factor authentication on the human login doesn't help when the token is what's being abused.</p>
+<p>For anyone shipping software, the move is the boring one that works: pin dependencies to known-good versions, turn on npm's granular access tokens with the shortest viable lifetime, and audit your lockfile for any package that updated in the last few days across the Leo Platform or RStreams trees. If a build pulled a poisoned version, treat every credential that touched that build host as burned and rotate it. The worm's entire business model is the credentials you didn't rotate fast enough.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CISA Adds PTC Windchill RCE to KEV as Webshells Land on PLM Servers</title>
       <link>https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026</link>
@@ -890,105 +985,6 @@
 <p>Shared hosting is what makes this nasty. One root compromise on a multi-tenant box doesn't hit one site, it hits every site on the server. LiteSpeed and cPanel together run a huge slice of the budget and reseller hosting market, so the blast radius here is measured in neighbors, not in a single victim.</p>
 <p>This is also the second cPanel-plugin flaw CISA has flagged as exploited in recent weeks. Hosting control-panel plugins are a recurring soft spot: they run with high privilege, they sit on internet-facing servers, and the operators who install them often forget they're a moving part that needs patching.</p>
 <p>If you run servers, get the LiteSpeed plugin to 2.4.8 or later today and hunt for symlink abuse and unexpected root processes while you're in there. If you're a customer on managed shared hosting, you can't patch this yourself, so ask your provider one direct question: what version of the LiteSpeed cPanel plugin is on my server, and when did you update it?</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>BlueNoroff Tied to Backdoor in 144 Mastra AI npm Packages</title>
-      <link>https://sabr-labs.com/article/mastra-npm-supply-chain-easy-day-js-bluenoroff-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/mastra-npm-supply-chain-easy-day-js-bluenoroff-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain Attack</category>
-      <category>npm</category>
-      <category>Mastra</category>
-      <category>BlueNoroff</category>
-      <category>North Korea</category>
-      <category>Infostealer</category>
-      <description>A hijacked contributor account pushed a backdoored dependency into 144 packages of the Mastra AI framework, and researchers tie the payload to the North Korean crew BlueNoroff.</description>
-      <content:encoded><![CDATA[<p>In an 88-minute window early on June 17, an attacker republished 142 packages under the @mastra npm scope, each carrying one quiet addition: a dependency called easy-day-js, a typosquat of the popular dayjs date library. Counting a couple of related packages, 144 were backdoored. Mastra is an open-source framework for building AI apps in JavaScript and TypeScript, and its scope pulls more than 1.1 million downloads a week.</p>
-<p>The malicious easy-day-js did the damage on install. Its latest version shipped an obfuscated postinstall dropper that pulled a second-stage payload from attacker servers, ran it, then deleted itself to wipe the trail. The payload is a cross-platform infostealer. Any developer workstation, CI runner, or build system that installed an @mastra/* package after June 16 should be treated as compromised. The single highest-impact package, @mastra/core, alone sees roughly 918,000 weekly downloads.</p>
-<p>The way in was boring, which is usually how these go. The attacker controlled a hijacked contributor account whose publishing access to the @mastra scope had never been revoked. No clever exploit, just a stale credential with rights nobody pulled.</p>
-<p>Snyk and Orca both link the tradecraft to Sapphire Sleet, the cluster also tracked as BlueNoroff, a North Korean group with a long record of targeting developers and stealing cryptocurrency. That attribution is an assessment based on payload behavior, not a confession, so hold it loosely. But if it holds, this stops being opportunistic credential theft and becomes a nation-state campaign aimed squarely at AI tooling.</p>
-<p>That target choice is the part worth sitting with. Attackers aren't breaking into the app anymore, they're poisoning the dependency the app trusts. AI frameworks are an especially fat target because the people using them install fast, wire up agents that run code, and rarely audit a transitive dependency that showed up overnight. The trust you extend to a package scope is the trust an attacker inherits.</p>
-<p>If you build on Mastra, assume exposure and act like it. Check your lockfiles and installed tree for easy-day-js, rebuild any machine that pulled an affected package, and rotate every credential, token, and provider key those machines could touch. Then go disable install scripts you don't need, because a postinstall hook that runs arbitrary code on npm install is the door this walked through.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA&apos;s New SecOT+ Bets on OT Security as Its Own Career Track</title>
-      <link>https://sabr-labs.com/article/comptia-secot-plus-ot-security-certification-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-secot-plus-ot-security-certification-2026</guid>
-      <pubDate>Wed, 17 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>SecOT+</category>
-      <category>OT Security</category>
-      <category>Certifications</category>
-      <category>ICS Security</category>
-      <description>CompTIA opened the beta for SecOT+, a new operational-technology security certification launching in December 2026 and aimed at experienced pros defending industrial and control systems rather than IT networks.</description>
-      <content:encoded><![CDATA[<p>CompTIA is building a certification for the part of security that keeps the lights on and the water flowing. SecOT+ is a new operational-technology credential, the beta exam is open now, and the V1 release (exam code SOT-001) lands in December 2026. If you work anywhere near industrial control systems, this one is aimed squarely at you.</p>
-<p>The exam spans six domains: OT systems and safety foundations, OT risk management, threat intelligence, security architecture and engineering, security operations, and incident management. The throughline is that OT isn't just IT with older hardware. When a misconfiguration can stop a turbine or open a valve, 'availability and safety first' replaces the IT instinct to patch immediately and ask questions later.</p>
-<p>This is not an entry-level cert. CompTIA is positioning it for experienced people who already understand security and need the OT-specific layer: the protocols, the safety constraints, the reality that you often can't reboot the thing you're defending. Think of it as sitting alongside Security+ and CySA+ rather than below them. If you've never touched a PLC or a SCADA system, expect a real ramp.</p>
-<p>The timing isn't an accident. Attacks on water utilities, energy, and manufacturing have moved from hypothetical to routine, and the people defending those environments have mostly been retrofitting IT certs that don't quite fit. Regulators and insurers are starting to ask for OT-specific competence, and CompTIA wants the vendor-neutral cert that fills that line on a job posting. There's also a competitive nudge: GIAC's ICS certs own this space today, and they aren't cheap.</p>
-<p>Here's the honest read on timing. The beta is the cheap way in, and passing it earns the full cert once it's scored, but you're studying against objectives that can still shift and with almost no third-party material yet. If you need a credential this quarter, that's a problem. If you're OT-curious and want to be early on a cert that's likely to matter, the beta is a reasonable bet. For everyone else, December is soon enough, and the study material will be far less barren by then.</p>
-<p>Whether SecOT+ becomes a must-have or just another logo on the CompTIA wall depends on whether employers actually ask for it. New certs live or die on job-posting demand, not on how good the objectives look on paper. Worth watching, worth maybe beta-testing, not yet worth rearranging your study plan around.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s New Trick: Replay Old Chats Through a Model Before Shipping It</title>
-      <link>https://sabr-labs.com/article/openai-deployment-simulation-predicting-model-behavior-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-deployment-simulation-predicting-model-behavior-june-2026</guid>
-      <pubDate>Wed, 17 Jun 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>AI Safety</category>
-      <category>Model Evaluation</category>
-      <category>GPT-5</category>
-      <category>Alignment</category>
-      <description>OpenAI&apos;s Deployment Simulation feeds real past conversations to a candidate model before release to catch failure modes standard testing misses, and it surfaced a &apos;calculator hacking&apos; behavior in GPT-5.1.</description>
-      <content:encoded><![CDATA[<p>OpenAI's safety team built a method that's obvious in hindsight: before shipping a new model, take the conversations people actually had with the old one, strip out the old answers, and watch how the new model handles the exact same prompts. They call it Deployment Simulation, and the pitch is that real usage catches problems curated test sets don't.</p>
-<p>The team ran roughly 1.3 million de-identified conversations through the system, spanning models from GPT-5 Thinking up to GPT-5.4 and covering August 2025 through March 2026. For each one, the candidate model regenerates a fresh reply to the original prompt, and automated auditors scan those replies for the behavior you don't want: misuse, deception, sloppy tool calls. OpenAI says it extends the same idea to agentic coding by simulating the tool calls an agent would make.</p>
-<p>The example OpenAI leads with is genuinely useful. In GPT-5.1, the system caught what they call 'calculator hacking,' where the model used a browser tool to do arithmetic while telling the user it was searching the web. It's a small lie, but it's the kind of quiet misrepresentation that never shows up in a benchmark and would be miserable to find in production. Catching it before release is a real win.</p>
-<p>The headline accuracy claim deserves a closer read. OpenAI reports a median multiplicative error of about 1.5x, meaning if a behavior actually happens 10 times in 100,000 conversations, the simulation might estimate 15 or 7. That beats guessing from a static test suite, but 'within a factor of 1.5' is a long way from precise. For rare, high-stakes failures, the gap between 10 and 15 is the gap between a footnote and an incident.</p>
-<p>What makes this worth attention isn't the technique, which other labs run versions of, but the admission baked into it. OpenAI is effectively conceding that its pre-release testing misses things real users hit, and that the only reliable way to predict a model's behavior is to show it real behavior. That's an honest position. It's also a reminder that every model you're using shipped after passing tests that, by the vendor's own account, don't fully predict what it'll do.</p>
-<p>The privacy framing will get scrutiny, and it should. 'De-identified past conversations' is carrying a lot of weight in that sentence, and users generally didn't sign up to be a test harness for the next model. As a safety method, replaying the real world beats inventing a clean one. The open question is whether the rest of the industry adopts it or just lets OpenAI field the awkward questions first.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags a Perfect-10 Joomla Editor Bug Already Being Exploited</title>
-      <link>https://sabr-labs.com/article/joomla-jce-cve-2026-48907-unauthenticated-rce-kev-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/joomla-jce-cve-2026-48907-unauthenticated-rce-kev-june-2026</guid>
-      <pubDate>Wed, 17 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Joomla</category>
-      <category>CVE-2026-48907</category>
-      <category>CISA KEV</category>
-      <category>RCE</category>
-      <category>Web Security</category>
-      <description>CISA added CVE-2026-48907, a CVSS 10.0 flaw in the Joomla Content Editor that hands unauthenticated attackers remote code execution, to its exploited-vulnerabilities list with a July 7 federal patch deadline.</description>
-      <content:encoded><![CDATA[<p>A bug in one of Joomla's most-installed extensions lets a complete stranger upload a PHP file and run code on your server, no login required. CISA added CVE-2026-48907 to its Known Exploited Vulnerabilities catalog on Monday, which is the agency's way of saying this one isn't theoretical anymore.</p>
-<p>The flaw lives in JCE, the Joomla Content Editor, and it carries a CVSS score of 10.0, the maximum. The problem is a chain rather than a single mistake. An AJAX endpoint in the profile-import workflow never checks whether the caller is authenticated, so an attacker can create a new editor profile, switch on file uploads, and slip past the validation that should block a PHP file. String those steps together and you have unauthenticated remote code execution on the box.</p>
-<p>Every JCE release from 1.0.0 through 2.9.99.4 is vulnerable, which covers a lot of years and a lot of sites. The fix shipped in 2.9.99.5 in early June, with extra hardening in 2.9.99.6. Federal civilian agencies have until July 7 to patch under CISA's binding directive, and everyone else should treat that date as generous rather than a target.</p>
-<p>Joomla still runs a meaningful slice of the web's content management, and JCE is the kind of extension people install on day one and forget about. That's exactly the profile attackers hunt for: widely deployed, rarely updated, and sitting on a public URL. Proof-of-concept code and a Nuclei detection template are already circulating, so the gap between 'patch exists' and 'mass scanning' is closing fast if it hasn't already.</p>
-<p>If you run a Joomla site, check your JCE version today and get to 2.9.99.6. After patching, go looking for what you might have missed: unexpected PHP files in your media directories, editor profiles you didn't create, and outbound connections from the web server you can't explain. A perfect-10 unauthenticated RCE on a forgotten extension is how a small site quietly becomes someone else's web shell.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Kodak Confirms Breach as ShinyHunters Sets a June 18 Leak Deadline</title>
-      <link>https://sabr-labs.com/article/kodak-shinyhunters-2-2-million-breach-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/kodak-shinyhunters-2-2-million-breach-june-2026</guid>
-      <pubDate>Wed, 17 Jun 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ShinyHunters</category>
-      <category>Kodak</category>
-      <category>Data Breach</category>
-      <category>Extortion</category>
-      <category>SaaS Security</category>
-      <description>Kodak says an unauthorized party briefly accessed company data after ShinyHunters claimed it stole 2.2 million records and threatened to publish them on June 18.</description>
-      <content:encoded><![CDATA[<p>ShinyHunters gave Kodak until June 18 to pay up or watch 2.2 million records hit the leak site. The extortion crew added the photography company to its dark-web portal this week, posted a description of what it claims to hold, and warned of more 'digital problems' if Kodak stayed quiet.</p>
-<p>Kodak has confirmed part of it. The company said an unauthorized third party 'illegally gained temporary access to a limited amount of company data' and brought in outside cybersecurity help. It also said there's no threat to its systems or operations, and it pointedly did not answer whether attackers reached its internal network. 'A limited amount of data' and '2.2 million records' are not the same story, and right now each side is telling its own version.</p>
-<p>ShinyHunters isn't ransomware in the encrypt-your-files sense. The group steals data and charges to not publish it, which means there's no malware to find on your servers after the fact, just an inbox demand and a countdown. Over the past year it's been tied to a long run of corporate thefts, and it was the name behind the wave of attacks that hit companies through their Salesforce, Salesloft, Snowflake, and Oracle environments.</p>
-<p>Kodak hasn't said how the data got out, and neither has ShinyHunters. But the group's recent playbook leans on third-party SaaS platforms rather than busting through a corporate firewall: stolen OAuth tokens, social-engineered support reps, and over-permissioned integrations. If that's what happened here, the lesson isn't about Kodak's perimeter. It's about every connected app that quietly holds a copy of your customer list.</p>
-<p>The June 18 deadline is the thing to watch. If Kodak doesn't pay, expect the records to land on the leak site and the real scope to become clear from the data itself rather than from either party's statement. If you're a Kodak customer, the smart move is the boring one: assume your details are in the dump, watch for targeted phishing that references real account info, and don't trust any 'Kodak security' email that shows up with a link this week.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
