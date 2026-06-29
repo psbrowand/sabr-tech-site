@@ -6,9 +6,101 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Jun 2026 13:18:09 GMT</lastBuildDate>
-    <pubDate>Sun, 28 Jun 2026 13:18:09 GMT</pubDate>
+    <lastBuildDate>Mon, 29 Jun 2026 13:16:26 GMT</lastBuildDate>
+    <pubDate>Mon, 29 Jun 2026 13:16:26 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Mistral&apos;s OCR 4 Bets Document Extraction Is a Product, Not a Model</title>
+      <link>https://sabr-labs.com/article/mistral-ocr-4-document-extraction-enterprise-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mistral-ocr-4-document-extraction-enterprise-2026</guid>
+      <pubDate>Mon, 29 Jun 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Mistral</category>
+      <category>OCR</category>
+      <category>Document AI</category>
+      <category>Enterprise AI</category>
+      <category>Open Weights</category>
+      <description>Mistral shipped OCR 4 as a managed enterprise service with per-page pricing, a notable turn for a company best known for open weights.</description>
+      <content:encoded><![CDATA[<p>Mistral built its reputation handing out open-weight models. OCR 4, its new document extraction release, goes the other way. It's a commercial product with per-page pricing, sold as a managed service rather than a checkpoint you download and run yourself.</p>
+<p>The pitch is structure, not just text. OCR 4 returns bounding boxes, per-element confidence scores, and block classification that separates a table from a heading from a paragraph, and it's offered both through an API and as a self-hosted deployment for companies that can't send sensitive documents to someone else's cloud. That second option is the concession to the open-weight crowd Mistral grew up with.</p>
+<p>It's worth being clear-eyed about what this is. Pulling characters off a page is close to solved; the hard, unglamorous work is producing structured output reliable enough that a human doesn't have to recheck every field. Confidence scores are Mistral's answer to that, and they're the feature to scrutinize, because the review burden is what kills most document-AI projects before they pay for themselves.</p>
+<p>The interesting tension is strategic. Mistral is now playing both sides of the document-AI split: open weights for teams that want to self-host and parse on their own terms, and a managed, metered product for teams that want a vendor to own the accuracy. Whether enterprises pay per page for that, or push the open option until the bills get uncomfortable, is the question OCR 4 is really testing.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia&apos;s RTX Spark Brings a Grace-Blackwell Superchip to Windows PCs</title>
+      <link>https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-windows-pc-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-windows-pc-2026</guid>
+      <pubDate>Mon, 29 Jun 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>Chips</category>
+      <category>PC Hardware</category>
+      <category>AI Hardware</category>
+      <category>Grace Blackwell</category>
+      <description>Nvidia&apos;s RTX Spark pairs a 20-core Grace CPU with a Blackwell RTX GPU for a petaflop of local AI, and it ships this fall in machines from Dell, HP, Lenovo and Microsoft.</description>
+      <content:encoded><![CDATA[<p>Nvidia spent years selling the chips that train AI in data centers. At GTC Taipei on June 1 it revealed the part meant to run AI on your desk. RTX Spark packages a 20-core Nvidia Grace CPU, co-designed with MediaTek, alongside a Blackwell RTX GPU, the two linked over NVLink-C2C in a single module.</p>
+<p>The specs are aimed squarely at local inference. Nvidia quotes one petaflop of AI performance, up to 128GB of unified memory, and enough headroom to run a 120-billion-parameter model with a one-million-token context window without leaving the machine. The GPU side carries 6,144 CUDA cores and fifth-generation Tensor Cores with FP4 precision.</p>
+<p>What makes this more than a spec sheet is whose turf it's on. RTX Spark is Nvidia stepping down into the PC processor market that Intel, AMD, and Qualcomm have split among themselves. The market noticed immediately; shares of all three slipped after the unveiling. Nvidia owning the GPU was old news. Nvidia owning the whole system-on-chip in a consumer laptop is the shift.</p>
+<p>The honest caveat is that none of this is buyable yet. RTX Spark is slated for fall in PCs from ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI, with Acer and Gigabyte to follow. Until those ship and someone runs a 120B model on a laptop on battery, the petaflop is a keynote number. Worth watching, not yet worth believing.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Device Code Phishing Went From Spy Tool to Off-the-Shelf Kit</title>
+      <link>https://sabr-labs.com/article/device-code-phishing-spy-tool-to-commodity-kit-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/device-code-phishing-spy-tool-to-commodity-kit-2026</guid>
+      <pubDate>Mon, 29 Jun 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Phishing</category>
+      <category>Identity</category>
+      <category>MFA Bypass</category>
+      <category>OAuth</category>
+      <category>Threat Intelligence</category>
+      <description>A technique that was Russian-state tradecraft 18 months ago now ships in commodity phishing kits, and detections have climbed sharply through 2026.</description>
+      <content:encoded><![CDATA[<p>Huntress logged a roughly 14-fold jump in device code phishing over the first four months of 2026 compared with the back half of 2025. Six months in, researchers are tracking around 18 distinct kits in circulation and a 37x rise in detections. The technique used to be associated with a handful of Russian-linked espionage campaigns. Now anyone with a subscription can run it.</p>
+<p>The appeal is that it sidesteps the things defenders rely on. In a device code flow, the attacker kicks off a legitimate OAuth login on the real vendor's site, then sends the target a genuine login page and a short code to enter. The victim authenticates on the actual service, against actual MFA, and approves the code. The attacker walks away with the session tokens. There's no fake domain to flag and no password to capture, which is exactly why it slides past defenses tuned for those signals.</p>
+<p>The shift to commodity is the real story. Tycoon2FA, an established adversary-in-the-middle kit, added device code phishing to its menu, and its operator started selling the capability as a service after an infrastructure disruption in February. Kits like EvilTokens, Kali365, Ghost Hub, and Cyb3r are now doing the heavy lifting on landing pages. Crews that were running AiTM phishing are pivoting wholesale.</p>
+<p>Because the prize is a stolen token rather than a stolen password, a password reset does nothing to evict the attacker. The defenses that bite are conditional access policies that block or constrain the device code grant, phishing-resistant FIDO2 keys, and alerting on token issuance from unexpected locations. If your identity provider lets you disable the device code flow for users who don't need it, that's the cheapest win on the board.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Threatens a Researcher Over Two Unpatched Defender Bugs</title>
+      <link>https://sabr-labs.com/article/microsoft-defender-redsun-undefend-unpatched-researcher-threat-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-redsun-undefend-unpatched-researcher-threat-2026</guid>
+      <pubDate>Mon, 29 Jun 2026 08:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft Defender</category>
+      <category>Privilege Escalation</category>
+      <category>Zero-Day</category>
+      <category>Vulnerability Disclosure</category>
+      <category>Windows</category>
+      <description>RedSun and UnDefend turn Windows Defender into a path to SYSTEM and still have no fix, while the researcher who disclosed them says Microsoft threatened them instead of patching.</description>
+      <content:encoded><![CDATA[<p>Three local privilege escalation techniques have a common ingredient: Windows Defender itself. They're named BlueHammer, RedSun, and UnDefend, and the unifying trick is abusing Defender's own privileged file operations to climb from a normal user to SYSTEM. The security tool becomes the way in.</p>
+<p>Microsoft already shipped a fix for one of them. BlueHammer, tracked as CVE-2026-33825, is a time-of-check to time-of-use race in Defender's remediation engine; it was patched in April Patch Tuesday. From SYSTEM, the same exploit chain can dump and decrypt the SAM database and reset local passwords. The other two are the problem. RedSun abuses Defender's cloud file rollback, which restores a flagged file without validating where it writes, letting an attacker redirect that write into a privileged directory. UnDefend quietly degrades Defender's update mechanism so the gap stays open. Both are still unpatched, and Huntress says all three have been used in real attacks, with intrusions starting from stolen VPN credentials.</p>
+<p>Here's the ugly part. The three exploits were published as working proof-of-concept code by an anonymous researcher using the handles Chaotic Eclipse and Nightmare Eclipse, explicitly as a protest. Their account is that Microsoft's Security Response Center mishandled the reports, threatened them, and disabled their accounts rather than coordinating a fix. Microsoft hasn't disputed the threat allegation in public.</p>
+<p>Drop the question of who behaved worse and the operational picture is bad either way. Two flaws that hand attackers SYSTEM on fully updated Windows 10, 11, and Server are sitting in the open with public exploit code and no patch. The dispute that produced that situation is exactly the kind of standoff coordinated disclosure exists to prevent.</p>
+<p>Until fixes land, treat Defender's privileged operations as attack surface rather than a backstop. Restrict who can manipulate quarantine and rollback paths, watch for binaries appearing in user directories, and alert on tunneling tools beaconing out. A vendor that answers a bug report with a lawyer instead of a patch teaches the next researcher to skip the report and go straight to publishing. That lesson costs everyone.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>KDDI Breach Puts Up to 14.2 Million ISP Email Logins at Risk</title>
+      <link>https://sabr-labs.com/article/kddi-breach-14-million-isp-email-logins-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/kddi-breach-14-million-isp-email-logins-2026</guid>
+      <pubDate>Mon, 29 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>KDDI</category>
+      <category>Japan</category>
+      <category>ISP</category>
+      <category>Credentials</category>
+      <description>A flaw in third-party software inside KDDI&apos;s shared email platform exposed addresses and passwords for as many as 14.2 million accounts across six Japanese ISPs.</description>
+      <content:encoded><![CDATA[<p>Fourteen point two million email logins. That's the ceiling on what a single intrusion at Japanese telecom KDDI may have exposed, and the reason it reached so far is the part worth sitting with: most of those accounts don't carry the KDDI name.</p>
+<p>KDDI says it detected unauthorized access on June 17 in an email system it operates on behalf of other providers. Both addresses and passwords are in scope. The affected brands span six internet service providers riding on that one backend: STNet, KDDI Web Communications, JCOM, Chubu Telecommunications, Nifty, and Biglobe. A customer of any of them could be exposed without ever having signed up with KDDI directly.</p>
+<p>The root cause, per KDDI, was a vulnerability in third-party software used in the email platform. The company hasn't named the product. What the incident really illustrates is consolidation risk. When six consumer ISPs share one mail backend, a single bug in one dependency becomes a breach across all six brands at once. That's efficient until the day it isn't.</p>
+<p>KDDI says it has modified the affected system, is working with the impacted ISPs to notify users, and is cooperating with Japan's Personal Information Protection Commission and the Ministry of Internal Affairs and Communications. The 14.2 million figure is an upper bound on accounts that could be affected, not a confirmed count of compromised credentials. The investigation is ongoing.</p>
+<p>If you hold mail at any of those six providers, change the password now and change it anywhere you reused it. Email passwords are reset-everything passwords. Whoever has them can pivot into every account that uses that address for recovery, which is the real reason a mail breach is worse than the headline number suggests.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The &apos;Tokenmaxxing&apos; Era Is Ending as Companies Rein In AI Bills</title>
       <link>https://sabr-labs.com/article/ai-tokenmaxxing-efficiency-enterprise-spend-june-2026</link>
@@ -885,106 +977,6 @@
 <p>The victim list is not a list of stragglers. Samsung, Siemens, Foxconn, Oracle, Accenture, DHL and Infosys show up in it, alongside government agencies and critical infrastructure operators. At least four organizations were fully compromised, including a Turkish NATO defense contractor whose classified documents were exfiltrated. Fortinet itself appears in the data.</p>
 <p>Treat this as an active incident, because it is. The attacker infrastructure is still online and new entries are still being added, so a clean lookup today is not a guarantee for tomorrow. Diachenko and others point defenders to Hudson Rock's exposure checker as a first step.</p>
 <p>If your domain is in there, assume compromise and move. Upgrade FortiOS to the current release, rotate every credential those devices could reach, turn on multi-factor authentication for VPN access, and force a re-hash to the stronger PBKDF2 storage so a stolen hash isn't a crackable one. A firewall you can't trust the passwords on is not doing the job you bought it for.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco&apos;s New DevNet AI Infrastructure Exam Hits Beta This Month</title>
-      <link>https://sabr-labs.com/article/cisco-devnet-ai-infrastructure-beta-exam-300-920-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-devnet-ai-infrastructure-beta-exam-300-920-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 11:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>DevNet</category>
-      <category>AI Infrastructure</category>
-      <category>Certifications</category>
-      <category>300-920</category>
-      <category>Network Automation</category>
-      <description>Cisco opened the beta for a DevNet Specialist exam in AI Infrastructure (300-920 DNAAIOPS) aimed at automation engineers running AI networking gear, with general availability expected in Q3.</description>
-      <content:encoded><![CDATA[<p>Cisco is adding a certification for the people who automate AI networking gear. The DevNet Specialist - AI Infrastructure exam, code 300-920 DNAAIOPS, is in beta this month for candidates in the US through Pearson VUE test centers, with early registration going at a discounted rate. Cisco expects the full cert to reach general availability in the third quarter.</p>
-<p>It's aimed at network developers and automation engineers working with Cisco's AI portfolio: hardware built on its Silicon One chips, Meraki AI analytics, and the orchestration around them. The exam sits in the DevNet specialist track, which means it assumes you already know how to automate infrastructure and layers the AI-specific piece on top. This is not a first cert.</p>
-<p>The timing is part of a pattern. Cisco announced CCNA v2.0 on May 20, with the blueprint shifting hard toward troubleshooting and adding a section on AI's role in network operations. CCNP Enterprise and Security got updated blueprints with zero-trust folded in. Cisco is threading AI through the whole ladder, from associate up to specialist, and this exam is the AI-infrastructure rung.</p>
-<p>Here's the honest read on a beta. The upside is a cheaper exam and a real certification once it's scored. The downside is that you study against objectives that can still shift, with almost no third-party material to lean on yet. If you need a credential on your record this quarter, a beta with no study guides isn't the move. If you already run Cisco AI-networking gear and want to be early on a cert that's likely to matter, sitting the beta is a reasonable bet.</p>
-<p>Whether it becomes a must-have comes down to one thing: whether employers start writing it into job postings. That's what separates a useful specialist cert from a logo nobody asks for. GA is expected in Q3, so the picture gets clearer soon. Worth watching, worth maybe beta-testing if it's your stack, not yet worth rearranging your study plan around.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s New Life-Science Benchmark Stumps Every Model It Tested</title>
-      <link>https://sabr-labs.com/article/openai-lifescibench-benchmark-life-science-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-lifescibench-benchmark-life-science-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 10:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>LifeSciBench</category>
-      <category>AI Benchmarks</category>
-      <category>Life Sciences</category>
-      <category>GPT-5</category>
-      <category>Drug Discovery</category>
-      <description>OpenAI released LifeSciBench, a 750-task benchmark for real biology research work graded by expert rubrics, and even the best model clears only about one task in three.</description>
-      <content:encoded><![CDATA[<p>OpenAI put out a benchmark on June 17 that its own models flunk. LifeSciBench is 750 tasks built by working scientists to mirror real life-science research, spread across seven biological domains and seven workflows, each task pairing a prompt, supporting artifacts, and a grading rubric. The headline result is refreshingly humble: the strongest model OpenAI tested passes roughly one task in three.</p>
-<p>The construction is the interesting part. OpenAI says it pulled in 173 scientists with industry experience to author and review the tasks, which is a different exercise from scraping exam questions. Alongside the benchmark, OpenAI and the startup Molecule.one showed a near-autonomous "AI chemist" running on GPT-5.4 that improved a real drug-making reaction, the kind of concrete result the benchmark is meant to contextualize.</p>
-<p>In a beat that usually runs on hype, a one-in-three pass rate is the honest number, and OpenAI publishing it deserves some credit. It's a counterweight to the steady drip of "AI is about to cure disease" marketing. Actual research is judgment under messy, incomplete conditions, and a benchmark that says models miss two-thirds of the time describes that reality better than another leaderboard victory lap.</p>
-<p>Keep one eyebrow up, though. This is OpenAI grading a benchmark OpenAI built, on rubrics OpenAI commissioned. Vendor-published benchmarks have a long history of flattering the vendor's own models, and the independent re-runs always tell you more than the launch post. The 173-scientist provenance helps, but it doesn't make the scoring neutral.</p>
-<p>If you're in biotech and weighing AI for research work, LifeSciBench is a more grounded yardstick than a polished demo, and that alone makes it useful. The figure worth remembering isn't the AI-chemist headline. It's the two tasks in three that the best models still get wrong.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GitHub Is So Swamped by AI Agents That Microsoft Is Renting AWS</title>
-      <link>https://sabr-labs.com/article/microsoft-github-aws-ai-agent-capacity-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-github-aws-ai-agent-capacity-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>GitHub</category>
-      <category>Microsoft</category>
-      <category>AWS</category>
-      <category>AI Agents</category>
-      <category>Cloud Infrastructure</category>
-      <category>Azure</category>
-      <description>Microsoft confirmed it&apos;s routing GitHub burst workloads to Amazon&apos;s cloud after AI coding agents pushed the platform past the uptime its enterprise customers pay for.</description>
-      <content:encoded><![CDATA[<p>Microsoft owns GitHub. Microsoft owns Azure. And this week Microsoft confirmed it's paying Amazon to keep GitHub running. That's the headline, and it tells you how badly AI coding agents have outrun the infrastructure built for human developers.</p>
-<p>The numbers behind the decision are blunt. GitHub is now handling roughly 275 million commits a week, took nine outages in May, and saw June availability drop below the 99.9% uptime its enterprise contracts promise. The platform processed about a billion commits in all of 2025. Executives have reportedly talked about a 2026 run rate as high as 14 billion. The single sharpest figure is 17 million AI-agent pull requests in one month, a sustained machine-speed load against services sized for people who sleep.</p>
-<p>Under the arrangement reported June 16, Microsoft will push a chunk of GitHub's burst compute and storage, specifically Actions runners and Codespaces, onto AWS. The opening deal covers 150 megawatts of capacity, somewhere around 30,000 NVIDIA H200-class GPUs, with an option to double inside two years. A company handing workloads to its biggest cloud rival is not a routine procurement choice. It's a tell.</p>
-<p>The deeper problem is that agent traffic doesn't behave like human traffic. It's continuous, correlated, and never idles, so the capacity models everyone built around developers logging off at night simply don't forecast it. One of the best-resourced infrastructure teams on the planet got caught anyway.</p>
-<p>This is the first big infrastructure bill for the agentic-coding boom landing in public, and it's worth more than the novelty of Microsoft calling Amazon. If Azure can't absorb GitHub's agent load, the quiet assumption a lot of teams are making, that their own CI and build systems scale linearly as they bolt on more agents, deserves a hard second look before the invoice shows up.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Three Bugs Chain to Full Takeover of LiteLLM AI Gateways</title>
-      <link>https://sabr-labs.com/article/litellm-ai-gateway-takeover-cve-chain-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/litellm-ai-gateway-takeover-cve-chain-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 09:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>LiteLLM</category>
-      <category>AI Security</category>
-      <category>CVE-2026-47101</category>
-      <category>Privilege Escalation</category>
-      <category>RCE</category>
-      <category>AI Gateway</category>
-      <description>Researchers chained three LiteLLM flaws that let any low-privilege user climb to admin and run code on the gateway, exposing every provider key and prompt it handles.</description>
-      <content:encoded><![CDATA[<p>On June 15, Obsidian Security published a chain that turns an ordinary user on a LiteLLM proxy into the equivalent of root on the box. The full chain rates CVSS 9.9. LiteLLM is one of the more popular open-source AI gateways, the thing teams put in front of OpenAI, Anthropic, and other providers to centralize keys, routing, and spend.</p>
-<p>The chain runs in three moves. CVE-2026-47101 is an authorization bypass: when a regular user mints a virtual API key, LiteLLM stores the caller-supplied list of allowed routes without checking it against the user's role. CVE-2026-47102 is the privilege escalation, an endpoint that lets users edit their own record without restricting which fields they can touch, so an attacker simply sets their own role to proxy_admin. CVE-2026-40217 is the sandbox escape, a Custom Code Guardrail that ran admin-supplied Python through exec() with no real source filtering.</p>
-<p>Why this hurts more than a typical web app bug: an AI gateway is a key vault by another name. Take it over and you get every provider key it holds, the secrets that decrypt its stored credentials, and every prompt and response that has passed through it. That's the whole organization's model access, plus whatever sensitive data was riding in those prompts.</p>
-<p>This is also not LiteLLM's only recent problem. CVE-2026-42271, a separate bug in its MCP machinery that let callers spawn subprocesses through the gateway, was exploited in the wild and added to CISA's KEV catalog earlier this month. The project keeps surfacing because AI gateways are new, privileged plumbing that very few teams have gotten around to threat-modeling.</p>
-<p>The fix set landed in LiteLLM v1.83.14-stable. Upgrade, then assume the gateway's secrets are burned: rotate every provider key it held, and tighten who is allowed to mint virtual keys in the first place. A gateway that anyone with an account can escalate through isn't a control, it's a single point of failure with your model budget attached.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags an Exploited LiteSpeed cPanel Bug That Hands Out Root</title>
-      <link>https://sabr-labs.com/article/litespeed-cpanel-cve-2026-48172-root-kev-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/litespeed-cpanel-cve-2026-48172-root-kev-june-2026</guid>
-      <pubDate>Thu, 18 Jun 2026 08:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>LiteSpeed</category>
-      <category>cPanel</category>
-      <category>CVE-2026-48172</category>
-      <category>CISA KEV</category>
-      <category>Privilege Escalation</category>
-      <category>Web Hosting</category>
-      <description>CISA added CVE-2026-48172, a symlink-following flaw in LiteSpeed&apos;s cPanel plugin that escalates low-privilege hosting accounts to root, to its exploited-vulnerabilities catalog with a June 18 federal deadline.</description>
-      <content:encoded><![CDATA[<p>A user with nothing more than FTP or web-shell access on a shared host can ride a symlink straight to root. CISA added CVE-2026-48172, a flaw in LiteSpeed's cPanel plugin, to its Known Exploited Vulnerabilities catalog on June 16, with federal agencies given until June 18 to patch under Binding Operational Directive 26-04. That three-day window is CISA's way of saying this is already being used.</p>
-<p>The bug is a UNIX symlink-following weakness. On shared hosting servers running CloudLinux with CageFS, the isolation that's supposed to keep one tenant boxed into their own account, an attacker can abuse symlink handling to escape that box and execute as root. LiteSpeed shipped the fix in user-end cPanel plugin v2.4.8 (and a matching WHM plugin update) earlier in June. Every version before that is exposed.</p>
-<p>Shared hosting is what makes this nasty. One root compromise on a multi-tenant box doesn't hit one site, it hits every site on the server. LiteSpeed and cPanel together run a huge slice of the budget and reseller hosting market, so the blast radius here is measured in neighbors, not in a single victim.</p>
-<p>This is also the second cPanel-plugin flaw CISA has flagged as exploited in recent weeks. Hosting control-panel plugins are a recurring soft spot: they run with high privilege, they sit on internet-facing servers, and the operators who install them often forget they're a moving part that needs patching.</p>
-<p>If you run servers, get the LiteSpeed plugin to 2.4.8 or later today and hunt for symlink abuse and unexpected root processes while you're in there. If you're a customer on managed shared hosting, you can't patch this yourself, so ask your provider one direct question: what version of the LiteSpeed cPanel plugin is on my server, and when did you update it?</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

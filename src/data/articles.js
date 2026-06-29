@@ -25,6 +25,219 @@
 
 export const articles = [
   {
+    id: 145,
+    slug: "kddi-breach-14-million-isp-email-logins-2026",
+    title: "KDDI Breach Puts Up to 14.2 Million ISP Email Logins at Risk",
+    summary: "A flaw in third-party software inside KDDI's shared email platform exposed addresses and passwords for as many as 14.2 million accounts across six Japanese ISPs.",
+    body: [
+      "Fourteen point two million email logins. That's the ceiling on what a single intrusion at Japanese telecom KDDI may have exposed, and the reason it reached so far is the part worth sitting with: most of those accounts don't carry the KDDI name.",
+      "KDDI says it detected unauthorized access on June 17 in an email system it operates on behalf of other providers. Both addresses and passwords are in scope. The affected brands span six internet service providers riding on that one backend: STNet, KDDI Web Communications, JCOM, Chubu Telecommunications, Nifty, and Biglobe. A customer of any of them could be exposed without ever having signed up with KDDI directly.",
+      "The root cause, per KDDI, was a vulnerability in third-party software used in the email platform. The company hasn't named the product. What the incident really illustrates is consolidation risk. When six consumer ISPs share one mail backend, a single bug in one dependency becomes a breach across all six brands at once. That's efficient until the day it isn't.",
+      "KDDI says it has modified the affected system, is working with the impacted ISPs to notify users, and is cooperating with Japan's Personal Information Protection Commission and the Ministry of Internal Affairs and Communications. The 14.2 million figure is an upper bound on accounts that could be affected, not a confirmed count of compromised credentials. The investigation is ongoing.",
+      "If you hold mail at any of those six providers, change the password now and change it anywhere you reused it. Email passwords are reset-everything passwords. Whoever has them can pivot into every account that uses that address for recovery, which is the real reason a mail breach is worse than the headline number suggests.",
+    ],
+    category: "cyber",
+    tags: ["Data Breach", "KDDI", "Japan", "ISP", "Credentials"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-29T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "The Japan Times",
+        desc: "Coverage of the KDDI cyberattack and exposure estimate",
+        url: "https://www.japantimes.co.jp/business/2026/06/24/companies/kddi-data-breach-cyberattack/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Reporting on the 14.2M logins across six ISPs",
+        url: "https://www.bleepingcomputer.com/news/security/data-breach-exposes-up-to-142-million-email-logins-at-six-isps/",
+      },
+      {
+        name: "Security Affairs",
+        desc: "Breach scope and affected provider list",
+        url: "https://securityaffairs.com/194387/data-breach/kddi-data-breach-impacts-up-to-14-2-million-email-accounts-at-six-isps.html",
+      },
+      {
+        name: "The Cyber Express",
+        desc: "Timeline and regulatory response detail",
+        url: "https://thecyberexpress.com/kddi-data-breach-14-million-email-leak-2026/",
+      },
+    ],
+  },
+  {
+    id: 146,
+    slug: "microsoft-defender-redsun-undefend-unpatched-researcher-threat-2026",
+    title: "Microsoft Threatens a Researcher Over Two Unpatched Defender Bugs",
+    summary: "RedSun and UnDefend turn Windows Defender into a path to SYSTEM and still have no fix, while the researcher who disclosed them says Microsoft threatened them instead of patching.",
+    body: [
+      "Three local privilege escalation techniques have a common ingredient: Windows Defender itself. They're named BlueHammer, RedSun, and UnDefend, and the unifying trick is abusing Defender's own privileged file operations to climb from a normal user to SYSTEM. The security tool becomes the way in.",
+      "Microsoft already shipped a fix for one of them. BlueHammer, tracked as CVE-2026-33825, is a time-of-check to time-of-use race in Defender's remediation engine; it was patched in April Patch Tuesday. From SYSTEM, the same exploit chain can dump and decrypt the SAM database and reset local passwords. The other two are the problem. RedSun abuses Defender's cloud file rollback, which restores a flagged file without validating where it writes, letting an attacker redirect that write into a privileged directory. UnDefend quietly degrades Defender's update mechanism so the gap stays open. Both are still unpatched, and Huntress says all three have been used in real attacks, with intrusions starting from stolen VPN credentials.",
+      "Here's the ugly part. The three exploits were published as working proof-of-concept code by an anonymous researcher using the handles Chaotic Eclipse and Nightmare Eclipse, explicitly as a protest. Their account is that Microsoft's Security Response Center mishandled the reports, threatened them, and disabled their accounts rather than coordinating a fix. Microsoft hasn't disputed the threat allegation in public.",
+      "Drop the question of who behaved worse and the operational picture is bad either way. Two flaws that hand attackers SYSTEM on fully updated Windows 10, 11, and Server are sitting in the open with public exploit code and no patch. The dispute that produced that situation is exactly the kind of standoff coordinated disclosure exists to prevent.",
+      "Until fixes land, treat Defender's privileged operations as attack surface rather than a backstop. Restrict who can manipulate quarantine and rollback paths, watch for binaries appearing in user directories, and alert on tunneling tools beaconing out. A vendor that answers a bug report with a lawyer instead of a patch teaches the next researcher to skip the report and go straight to publishing. That lesson costs everyone.",
+    ],
+    category: "cyber",
+    tags: [
+      "Microsoft Defender",
+      "Privilege Escalation",
+      "Zero-Day",
+      "Vulnerability Disclosure",
+      "Windows",
+    ],
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-29T08:45:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "SOCRadar",
+        desc: "Technical breakdown of all three Defender zero-days",
+        url: "https://socradar.io/blog/bluehammer-redsun-undefend-windows-defender-0days/",
+      },
+      {
+        name: "Picus Security",
+        desc: "CVE-2026-33825 (BlueHammer) analysis and patch detail",
+        url: "https://www.picussecurity.com/resource/blog/bluehammer-redsun-windows-defender-cve-2026-33825-zero-day-vulnerability-explained",
+      },
+      {
+        name: "Vectra AI",
+        desc: "Reporting on in-the-wild exploitation of the chain",
+        url: "https://www.vectra.ai/blog/when-the-defender-becomes-the-door-bluehammer-redsun-and-undefend-in-the-wild",
+      },
+      {
+        name: "NVD",
+        desc: "Official record for CVE-2026-33825",
+        url: "https://nvd.nist.gov/vuln/detail/CVE-2026-33825",
+      },
+    ],
+  },
+  {
+    id: 147,
+    slug: "device-code-phishing-spy-tool-to-commodity-kit-2026",
+    title: "Device Code Phishing Went From Spy Tool to Off-the-Shelf Kit",
+    summary: "A technique that was Russian-state tradecraft 18 months ago now ships in commodity phishing kits, and detections have climbed sharply through 2026.",
+    body: [
+      "Huntress logged a roughly 14-fold jump in device code phishing over the first four months of 2026 compared with the back half of 2025. Six months in, researchers are tracking around 18 distinct kits in circulation and a 37x rise in detections. The technique used to be associated with a handful of Russian-linked espionage campaigns. Now anyone with a subscription can run it.",
+      "The appeal is that it sidesteps the things defenders rely on. In a device code flow, the attacker kicks off a legitimate OAuth login on the real vendor's site, then sends the target a genuine login page and a short code to enter. The victim authenticates on the actual service, against actual MFA, and approves the code. The attacker walks away with the session tokens. There's no fake domain to flag and no password to capture, which is exactly why it slides past defenses tuned for those signals.",
+      "The shift to commodity is the real story. Tycoon2FA, an established adversary-in-the-middle kit, added device code phishing to its menu, and its operator started selling the capability as a service after an infrastructure disruption in February. Kits like EvilTokens, Kali365, Ghost Hub, and Cyb3r are now doing the heavy lifting on landing pages. Crews that were running AiTM phishing are pivoting wholesale.",
+      "Because the prize is a stolen token rather than a stolen password, a password reset does nothing to evict the attacker. The defenses that bite are conditional access policies that block or constrain the device code grant, phishing-resistant FIDO2 keys, and alerting on token issuance from unexpected locations. If your identity provider lets you disable the device code flow for users who don't need it, that's the cheapest win on the board.",
+    ],
+    category: "cyber",
+    tags: ["Phishing", "Identity", "MFA Bypass", "OAuth", "Threat Intelligence"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-29T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "BleepingComputer",
+        desc: "Report on the 37x detection surge and new kits",
+        url: "https://www.bleepingcomputer.com/news/security/device-code-phishing-attacks-surge-37x-as-new-kits-spread-online/",
+      },
+      {
+        name: "Push Security",
+        desc: "Research analyzing the 2026 rise in device code phishing",
+        url: "https://pushsecurity.com/blog/device-code-phishing/",
+      },
+      {
+        name: "Axios",
+        desc: "Coverage of Huntress data on the year-over-year spike",
+        url: "https://www.axios.com/2026/06/23/ai-automation-phishing-emails-hackers",
+      },
+      {
+        name: "Proofpoint",
+        desc: "Background on device code phishing as identity takeover",
+        url: "https://www.proofpoint.com/us/blog/threat-insight/device-code-phishing-evolution-identity-takeover",
+      },
+    ],
+  },
+  {
+    id: 148,
+    slug: "nvidia-rtx-spark-grace-blackwell-windows-pc-2026",
+    title: "Nvidia's RTX Spark Brings a Grace-Blackwell Superchip to Windows PCs",
+    summary: "Nvidia's RTX Spark pairs a 20-core Grace CPU with a Blackwell RTX GPU for a petaflop of local AI, and it ships this fall in machines from Dell, HP, Lenovo and Microsoft.",
+    body: [
+      "Nvidia spent years selling the chips that train AI in data centers. At GTC Taipei on June 1 it revealed the part meant to run AI on your desk. RTX Spark packages a 20-core Nvidia Grace CPU, co-designed with MediaTek, alongside a Blackwell RTX GPU, the two linked over NVLink-C2C in a single module.",
+      "The specs are aimed squarely at local inference. Nvidia quotes one petaflop of AI performance, up to 128GB of unified memory, and enough headroom to run a 120-billion-parameter model with a one-million-token context window without leaving the machine. The GPU side carries 6,144 CUDA cores and fifth-generation Tensor Cores with FP4 precision.",
+      "What makes this more than a spec sheet is whose turf it's on. RTX Spark is Nvidia stepping down into the PC processor market that Intel, AMD, and Qualcomm have split among themselves. The market noticed immediately; shares of all three slipped after the unveiling. Nvidia owning the GPU was old news. Nvidia owning the whole system-on-chip in a consumer laptop is the shift.",
+      "The honest caveat is that none of this is buyable yet. RTX Spark is slated for fall in PCs from ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI, with Acer and Gigabyte to follow. Until those ship and someone runs a 120B model on a laptop on battery, the petaflop is a keynote number. Worth watching, not yet worth believing.",
+    ],
+    category: "tech",
+    tags: ["Nvidia", "Chips", "PC Hardware", "AI Hardware", "Grace Blackwell"],
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-29T10:15:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "NVIDIA Newsroom",
+        desc: "Official RTX Spark announcement and specifications",
+        url: "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Microsoft-Reinvent-Windows-PCs-for-the-Age-of-Personal-AI/default.aspx",
+      },
+      {
+        name: "CNBC",
+        desc: "Reporting on Nvidia's move into PC chips and OEM lineup",
+        url: "https://www.cnbc.com/2026/05/31/nvidias-new-chip-to-power-fresh-line-of-windows-laptops-by-dell-hp.html",
+      },
+      {
+        name: "TechCrunch",
+        desc: "Analysis of Nvidia targeting the CPU market",
+        url: "https://techcrunch.com/2026/06/01/nvidia-chases-200b-cpu-market-with-ai-agent-pcs-from-microsoft-dell-and-hp/",
+      },
+    ],
+  },
+  {
+    id: 149,
+    slug: "mistral-ocr-4-document-extraction-enterprise-2026",
+    title: "Mistral's OCR 4 Bets Document Extraction Is a Product, Not a Model",
+    summary: "Mistral shipped OCR 4 as a managed enterprise service with per-page pricing, a notable turn for a company best known for open weights.",
+    body: [
+      "Mistral built its reputation handing out open-weight models. OCR 4, its new document extraction release, goes the other way. It's a commercial product with per-page pricing, sold as a managed service rather than a checkpoint you download and run yourself.",
+      "The pitch is structure, not just text. OCR 4 returns bounding boxes, per-element confidence scores, and block classification that separates a table from a heading from a paragraph, and it's offered both through an API and as a self-hosted deployment for companies that can't send sensitive documents to someone else's cloud. That second option is the concession to the open-weight crowd Mistral grew up with.",
+      "It's worth being clear-eyed about what this is. Pulling characters off a page is close to solved; the hard, unglamorous work is producing structured output reliable enough that a human doesn't have to recheck every field. Confidence scores are Mistral's answer to that, and they're the feature to scrutinize, because the review burden is what kills most document-AI projects before they pay for themselves.",
+      "The interesting tension is strategic. Mistral is now playing both sides of the document-AI split: open weights for teams that want to self-host and parse on their own terms, and a managed, metered product for teams that want a vendor to own the accuracy. Whether enterprises pay per page for that, or push the open option until the bills get uncomfortable, is the question OCR 4 is really testing.",
+    ],
+    category: "ai",
+    tags: ["Mistral", "OCR", "Document AI", "Enterprise AI", "Open Weights"],
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-06-29T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "VentureBeat",
+        desc: "Coverage of the OCR 4 launch and feature set",
+        url: "https://venturebeat.com/data/mistral-launches-ocr-4-turning-document-extraction-into-a-full-enterprise-ai-play",
+      },
+      {
+        name: "LLM-Stats",
+        desc: "June 2026 model and product release tracker",
+        url: "https://llm-stats.com/llm-updates",
+      },
+      {
+        name: "AI Release Tracker",
+        desc: "Mistral release history and product list",
+        url: "https://aireleasetracker.com/company/mistral",
+      },
+    ],
+  },
+  {
     id: 140,
     slug: "miasma-npm-worm-leo-rstreams-supply-chain-june-2026",
     title: "Self-Spreading Miasma Worm Poisons 20+ npm Packages in Seconds",
@@ -42,7 +255,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-06-28T08:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -266,7 +479,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "PTC Trust Center Advisory",
@@ -1056,7 +1269,7 @@ export const articles = [
     publishedAt: "2026-06-22T08:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1101,7 +1314,7 @@ export const articles = [
     publishedAt: "2026-06-22T09:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1146,7 +1359,7 @@ export const articles = [
     publishedAt: "2026-06-22T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1190,7 +1403,7 @@ export const articles = [
     publishedAt: "2026-06-22T12:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1321,7 +1534,7 @@ export const articles = [
     publishedAt: "2026-06-21T14:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
