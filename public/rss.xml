@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jun 2026 13:16:26 GMT</lastBuildDate>
-    <pubDate>Mon, 29 Jun 2026 13:16:26 GMT</pubDate>
+    <lastBuildDate>Tue, 30 Jun 2026 16:19:06 GMT</lastBuildDate>
+    <pubDate>Tue, 30 Jun 2026 16:19:06 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>OpenAI Will Only Sell GPT-5.6 Sol to Trump-Approved Customers</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-trump-approved-customers-export-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-sol-trump-approved-customers-export-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5.6 Sol</category>
+      <category>AI Regulation</category>
+      <category>Export Controls</category>
+      <category>Anthropic</category>
+      <description>OpenAI is restricting its new GPT-5.6 Sol model to buyers vetted by the Trump administration, as Washington&apos;s cybersecurity review of frontier AI hardens into a gatekeeping regime.</description>
+      <content:encoded><![CDATA[<p>OpenAI said Friday that its newest model, GPT-5.6 Sol, will be available only to customers the Trump administration approves. Read that again. A private frontier lab is letting the federal government decide who is allowed to buy its product. That arrangement did not exist a year ago.</p>
+<p>OpenAI is not alone in it. Anthropic said roughly the same week that the administration had cleared a limited release of its strongest cybersecurity model, two weeks after the Commerce Department effectively banned it outright. Both of the country's leading labs are now shipping their best models through the same government turnstile.</p>
+<p>The stated reason is cyber capability. Officials grew alarmed after Anthropic warned earlier this year that its Mythos model was good enough at finding software flaws that it could be turned into a weapon against critical networks. Once a vendor says the quiet part out loud, the regulators have to act on it, and a vetting process for who gets access to the most capable models is what that action looks like.</p>
+<p>Strip away the security framing and this is industrial policy. Approval lists are how governments pick winners and losers, and a model rationed by federal sign-off is a strange thing to put in an S-1. Both OpenAI and Anthropic have been circling public offerings, and explaining to investors that your flagship product ships only to a government-approved customer roster is not the growth story either of them wanted to tell.</p>
+<p>The harder problem is that controls only bite if the capability is scarce. China's GLM-5.2 has been measured matching Anthropic on cybersecurity tasks, and it ships as open weights anyone can download. Watch two things from here: who actually lands on the approved list, and whether an open-weight model that nobody controls makes the whole regime academic.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Onsemi&apos;s $7 Billion Synaptics Deal Is a Bet on Edge AI Silicon</title>
+      <link>https://sabr-labs.com/article/onsemi-synaptics-7-billion-edge-ai-acquisition-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/onsemi-synaptics-7-billion-edge-ai-acquisition-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Onsemi</category>
+      <category>Synaptics</category>
+      <category>Semiconductors</category>
+      <category>Edge AI</category>
+      <category>Acquisition</category>
+      <description>Onsemi is buying Synaptics in an all-stock deal worth about $7 billion, its largest ever, to push deeper into edge AI, robotics, and connected-device chips.</description>
+      <content:encoded><![CDATA[<p>Onsemi agreed on June 25 to buy Synaptics in an all-stock transaction worth roughly $7 billion, the biggest acquisition in the chipmaker's history. The terms set a fixed exchange ratio of 1.35 onsemi shares for each Synaptics share, about a 19% premium on the recent average price.</p>
+<p>The fit is more logical than most chip mergers. Onsemi's strength is power, analog, and sensing silicon. Synaptics brings touch, audio, wireless connectivity, and a line of low-power edge AI processors. Bolt them together and onsemi gets a fuller stack for what it's calling physical AI, the chips that let robots, vehicles, and connected devices sense and act without phoning home to a data center.</p>
+<p>Onsemi says the deal widens the markets it can chase by $30 billion, to a total addressable $243 billion by 2030, with $200 million in annual synergies inside 18 months of closing. Those are the buyer's own projections, and the gap between a slide-deck total addressable market and actual revenue is where a lot of semiconductor acquisitions quietly underperform.</p>
+<p>Paying entirely in stock keeps cash on the balance sheet but dilutes existing onsemi holders, a tell that management would rather conserve money than spend it at this point in the cycle. The deal is expected to close in mid-2027, and large cross-border chip mergers now move through a gauntlet of regulators, China's included, that can stretch timelines and attach conditions.</p>
+<p>Edge AI has been the promised next leg of growth for the analog and sensing vendors for a while. Onsemi just made its largest bet that this is the year it starts paying.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Rocket Lab Buys Iridium for $8 Billion to Take On Starlink</title>
+      <link>https://sabr-labs.com/article/rocket-lab-iridium-8-billion-acquisition-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/rocket-lab-iridium-8-billion-acquisition-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Rocket Lab</category>
+      <category>Iridium</category>
+      <category>Satellites</category>
+      <category>Acquisition</category>
+      <category>Space</category>
+      <description>Rocket Lab is acquiring Iridium&apos;s 66-satellite network, licensed L-band spectrum, and 2.55 million subscribers in an $8 billion cash-and-stock deal to become a full-stack space company.</description>
+      <content:encoded><![CDATA[<p>Rocket Lab spent years as the company that builds rockets and small satellites for other people. As of June 29, it wants to own the constellation too. Rocket Lab agreed to acquire Iridium Communications for about $8 billion, paying $54 per share split evenly between cash and Rocket Lab stock, a roughly 24% premium to where Iridium last traded.</p>
+<p>What Rocket Lab is actually buying is operational. Iridium runs a 66-satellite low-Earth-orbit network that already works, plus globally licensed L-band spectrum and a subscriber base north of 2.55 million across government, defense, aviation, and maritime customers. Spectrum that's already licensed worldwide is close to impossible to assemble from scratch, and that, more than the hardware, is the prize.</p>
+<p>The pitch is vertical integration: one company that designs, builds, launches, and operates its own constellations instead of stitching that chain together across vendors. It puts Rocket Lab in more direct competition with SpaceX and Starlink, and the L-band angle also feeds the growing defense appetite for positioning and timing that doesn't depend on GPS.</p>
+<p>The skeptical read is worth holding onto. Rocket Lab is very good at launch and at manufacturing small satellites. It has never run a global subscription communications network with millions of paying customers, and operating one is a different muscle than building the parts. Integrating Iridium's network, its 500-plus partners, and its billing relationships is where deals like this tend to get hard.</p>
+<p>The transaction is expected to close in mid-2027, pending Iridium shareholder and regulatory approval. That's a long runway, and a lot can shift in the satellite market before the ink dries.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DirtyClone Hands Any Local User Root on Unpatched Linux Boxes</title>
+      <link>https://sabr-labs.com/article/dirtyclone-linux-kernel-cve-2026-43503-root-lpe-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/dirtyclone-linux-kernel-cve-2026-43503-root-lpe-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 11:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Linux Kernel</category>
+      <category>Privilege Escalation</category>
+      <category>DirtyClone</category>
+      <category>JFrog</category>
+      <category>Exploit</category>
+      <description>JFrog published a working exploit for CVE-2026-43503, a Linux kernel flaw that turns an unprivileged shell into root by abusing how the network stack clones packets.</description>
+      <content:encoded><![CDATA[<p>JFrog Security Research published the full exploit chain for CVE-2026-43503 on June 25, and the part that matters is that it works. Any unprivileged local user can ride this flaw straight to root. The researchers named it DirtyClone, and it's the latest member of a kernel bug family that keeps producing variants.</p>
+<p>The technique is the same one that powered DirtyFrag and Fragnesia before it: trick the kernel into treating read-only, file-backed page-cache memory as if it were a writable network buffer. The bug lives in how socket buffers reference shared page-cache memory, and it gets weaponized through in-place cryptographic transforms in subsystems like XFRM/IPsec or RxRPC. Different packet path, same root cause.</p>
+<p>Here's the uncomfortable part. The fix has been in the Linux mainline since May 21, but a mainline patch does you no good until your distribution ships it, and many haven't. Debian and Fedora are vulnerable in their default configurations because they enable unprivileged user namespaces. Ubuntu 24.04 and later have partial AppArmor mitigations and are still listed as affected.</p>
+<p>Local privilege escalation sounds less scary than remote code execution until you remember where Linux actually runs. Multi-tenant servers, Kubernetes nodes, CI/CD runners, container hosts. In all of those, an attacker who already has an unprivileged foothold and a reliable path to root has effectively won. A public, working PoC just handed them the second half.</p>
+<p>There's a one-line mitigation while you wait for your distro: set kernel.unprivileged_userns_clone=0, which cuts off this entire family's escalation path. That it keeps working as the fix for variant after variant raises a fair question about whether unprivileged user namespaces are worth leaving on by default at all.</p>
+<p>Patch when your distribution ships the update. Until then, turn the namespaces off where you can.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Oracle E-Business Suite Flaw Is Under Attack a Month After the Fix</title>
+      <link>https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-active-exploitation-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-active-exploitation-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 09:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>E-Business Suite</category>
+      <category>Active Exploitation</category>
+      <category>ERP Security</category>
+      <category>CVE</category>
+      <description>Attackers are exploiting CVE-2026-46817, a CVSS 9.8 flaw in Oracle Payments, to take over E-Business Suite instances that never applied May&apos;s patch.</description>
+      <content:encoded><![CDATA[<p>The first sign someone was using the new Oracle bug came from a honeypot. Over the weekend of June 27, Defused Cyber watched an attacker exploit CVE-2026-46817 against its E-Business Suite decoys, the first confirmed in-the-wild use of a flaw Oracle had already patched.</p>
+<p>The vulnerability sits in the File Transmission component of Oracle Payments. It scores a 9.8, and the reason it's that high is simple: an unauthenticated attacker with nothing more than HTTP access can take over a vulnerable instance through a low-complexity attack. No credentials, no user interaction. It affects Oracle Payments versions 12.2.3 through 12.2.15.</p>
+<p>Oracle shipped the fix in its May Critical Security Patch Update, released May 28. That means the patch has been sitting available for a month while exploitation only kicked off now. The window between a vendor disclosing a flaw and attackers operationalizing it keeps shrinking, but the window between disclosure and customers actually patching never seems to.</p>
+<p>E-Business Suite is the kind of target that rewards patience. It's the ERP backbone for finance, procurement, and payments at a lot of large organizations, which means it holds exactly the data that makes extortion pay. Anyone who watched the mass E-Business Suite campaign tear through unpatched instances last year already knows how this movie ends if the patch doesn't get applied.</p>
+<p>There's no public proof-of-concept yet and no prior exploitation history, so the people hitting this had to find the path themselves, which usually signals a more capable operator rather than a spray-and-pray crowd. If you run E-Business Suite, the May CSPU is not optional anymore. Apply it, then check your Payments module exposure and your logs for unexpected File Transmission activity.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SimpleHelp&apos;s CVSS 10 Auth Bypass Is Dropping Djinn Stealer</title>
+      <link>https://sabr-labs.com/article/simplehelp-oidc-auth-bypass-cve-2026-48558-djinn-stealer-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/simplehelp-oidc-auth-bypass-cve-2026-48558-djinn-stealer-june-2026</guid>
+      <pubDate>Tue, 30 Jun 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SimpleHelp</category>
+      <category>CISA KEV</category>
+      <category>Authentication Bypass</category>
+      <category>Infostealer</category>
+      <category>RMM</category>
+      <description>CISA added the SimpleHelp OIDC authentication bypass to its exploited list after attackers used it to forge technician sessions and deploy a cross-platform infostealer.</description>
+      <content:encoded><![CDATA[<p>The remote-support software that IT teams install to log into other people's machines is now the way in. CISA added CVE-2026-48558, an authentication bypass in SimpleHelp, to its Known Exploited Vulnerabilities catalog on June 29 after researchers caught it being used to push malware through internet-facing servers. It carries a CVSS score of 10. There is no higher number.</p>
+<p>The flaw lives in SimpleHelp's OpenID Connect login flow. When OIDC is configured, the server accepts identity tokens without verifying their cryptographic signature. So an unauthenticated attacker can forge a token, stuff it with whatever identity claims they want, and walk away with a fully authenticated technician session. From there they control the remote-support server and everything it can reach.</p>
+<p>Horizon3.ai disclosed the bug publicly on June 12, two-plus weeks before CISA confirmed real-world abuse. By the time it landed on the KEV list, attackers were already using it to plant a two-stage payload.</p>
+<p>Stage one is a loader the researchers call TaskWeaver, delivered as a heavily obfuscated single-line Node.js file masquerading as jquery.js. It fingerprints the host, embeds an RSA public key, and pulls down a payload tailored to what it finds. Stage two is Djinn Stealer, which reuses the same obfuscation framework and the identical RSA key. Djinn runs on Windows, macOS, and Linux, and it goes after credentials from cloud consoles, source control, package registries, AI coding assistants, browsers, SSH keys, and crypto wallets.</p>
+<p>Remote management and monitoring tools keep ending up at the center of these incidents for a reason. They run with high privilege, they're exposed to the internet by design, and defenders treat their traffic as trusted. SimpleHelp has been here before, with a separate set of flaws that drew CISA attention in 2025. The vendor patches, the install base lags, and attackers walk through the gap.</p>
+<p>Federal agencies have 14 days to remediate under Binding Operational Directive 22-01. Everyone else should patch now and not wait on the clock. If your SimpleHelp box was internet-facing with OIDC enabled, assume a session could have been forged already: rotate technician credentials, pull the logs, and hunt for jquery.js and stray node.exe activity before you call it clean.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Mistral&apos;s OCR 4 Bets Document Extraction Is a Product, Not a Model</title>
       <link>https://sabr-labs.com/article/mistral-ocr-4-document-extraction-enterprise-2026</link>
@@ -857,126 +973,6 @@
 <p>Google first teased this hardware in October alongside the Pixel 10 line, then sat on it for months. The reason it gave is worth noting: it wanted to push Gemini out to its existing speakers and shake out the bugs before putting new hardware in people's homes. The new launch also comes as Google quietly discontinues two older speakers.</p>
 <p>Six years is a long time to leave a product line idle, and the gap says something about how much the assistant matters more than the box it lives in. Amazon is rebuilding Alexa around its Nova models, Apple is reworking Siri, and Google is doing the same with Gemini. The hardware is a vessel; the competition is over whose assistant you'll actually want to talk to all day.</p>
 <p>At a hundred bucks, the speaker isn't the gamble. Gemini for Home is. If the conversational layer holds up in a real kitchen with kids talking over each other, Google has a reason to be back. If it stumbles the way voice assistants have for a decade, the underglow ring won't save it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>MiniMax M3 Open Weights Land, Claiming a Coding Edge on GPT-5.5</title>
-      <link>https://sabr-labs.com/article/minimax-m3-open-weights-frontier-coding-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/minimax-m3-open-weights-frontier-coding-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>MiniMax</category>
-      <category>Open Weights</category>
-      <category>LLM</category>
-      <category>Coding</category>
-      <category>Benchmarks</category>
-      <description>The Shanghai lab&apos;s open-weight M3 posts a strong SWE-Bench number and a 1M-token context, but the benchmarks are vendor-run and the real draw is that you can self-host it.</description>
-      <content:encoded><![CDATA[<p>MiniMax, the Shanghai AI lab, has put the weights for its M3 model on Hugging Face, following the June 1 launch. The claim is ambitious: a single open-weight model that combines frontier-level coding, a one-million-token context window, and native image and video understanding.</p>
-<p>The numbers MiniMax is leading with are real numbers, with a real asterisk. M3 scores 59% on SWE-Bench Pro, which the company says edges out both OpenAI's GPT-5.5 and Google's Gemini 3.1 Pro on that software-engineering test. It posts 66% on Terminal-Bench 2.1 and 83.5 on BrowseComp. The asterisk is that these are vendor-run results, and at the June 1 launch the weights weren't even out yet, so nobody outside MiniMax could check them.</p>
-<p>Put the score next to a neutral yardstick and the picture cools a little. On the Artificial Analysis Intelligence Index, M3 lands at 55, which is good but sits below the very top of the field even if the SWE-Bench figure holds up on independent evals. A strong result on one coding benchmark is not the same as a frontier model across the board, and the AI beat is full of launches that blur the two on purpose.</p>
-<p>The more interesting story isn't the benchmark, it's the distribution. M3 is open-weight, and that lands at a pointed moment. With US export controls tangling up access to American frontier models, weights you can download and run on your own hardware are something no export order can reach. MiniMax has been explicit that self-hosted weights are the selling point.</p>
-<p>If you build agents, the move is simple: pull M3 and run your own harness against it. The June 1 marketing told you what MiniMax wants you to believe. Your own SWE-Bench run on your own tasks will tell you whether the 59% means anything for the work you actually do.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Patches a Beats Bug That Could Turn Earbuds Into a Wiretap</title>
-      <link>https://sabr-labs.com/article/apple-beats-studio-buds-airoha-eavesdrop-cve-2025-20701-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-beats-studio-buds-airoha-eavesdrop-cve-2025-20701-june-2026</guid>
-      <pubDate>Fri, 19 Jun 2026 12:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Apple</category>
-      <category>Beats</category>
-      <category>Bluetooth</category>
-      <category>Airoha</category>
-      <category>CVE-2025-20701</category>
-      <category>Firmware</category>
-      <description>Apple pushed firmware 1B211 to fix a high-severity Beats Studio Buds flaw that let someone in Bluetooth range impersonate a paired phone and listen through the microphone.</description>
-      <content:encoded><![CDATA[<p>Your earbuds will pair with the wrong phone if it asks the right way. That, stripped down, is the bug Apple just fixed in the Beats Studio Buds. It's tracked as CVE-2025-20701, rated 8.8, and it's an incorrect-authorization flaw in the Airoha Bluetooth audio chip software the buds run on.</p>
-<p>The practical version: an attacker within Bluetooth range can impersonate a previously paired device and connect to a bud that's still seeking its phone, then listen through the bud's microphone. No tap on the wire, no malware on your handset. Just radio proximity and a chip that trusted the wrong handshake.</p>
-<p>Apple's fix ships as Beats Firmware Update 1B211, and it installs the quiet way, automatically, when the buds are near a paired iPhone, iPad, or Mac. If you own a set, the useful move is simply to keep them next to your phone for a while so the update actually lands.</p>
-<p>The wider problem is that this isn't really a Beats problem. The flaw lives in Airoha's SDK, and Airoha silicon sits inside audio gear from Sony, Bose, JBL, Marshall, and Jabra. Apple shipped a patch quickly. Whether the rest of those vendors push firmware as cleanly is uneven, and a lot of cheaper headphones never get a security update at all.</p>
-<p>Don't panic over it. The attack is range-limited and needs a bud actively hunting for a connection, so this is not mass surveillance. It's a clean reminder that the little wireless chip you never think about runs firmware, and that firmware has authentication bugs like everything else. If you use non-Apple earbuds on an Airoha chip, go check whether your maker has a fix waiting.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Qualcomm Reportedly in Talks to Buy Tenstorrent for Up to $10B</title>
-      <link>https://sabr-labs.com/article/qualcomm-tenstorrent-acquisition-ai-chips-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/qualcomm-tenstorrent-acquisition-ai-chips-june-2026</guid>
-      <pubDate>Fri, 19 Jun 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Qualcomm</category>
-      <category>Tenstorrent</category>
-      <category>AI Chips</category>
-      <category>Jim Keller</category>
-      <category>RISC-V</category>
-      <category>Acquisition</category>
-      <description>Qualcomm is reportedly negotiating to acquire Jim Keller&apos;s AI-chip startup Tenstorrent for $8 to $10 billion, a bet on data-center inference against Nvidia.</description>
-      <content:encoded><![CDATA[<p>Qualcomm wants back into the data center, and according to The Information it's willing to pay up to $10 billion to get there. The reported target is Tenstorrent, the AI-chip startup run by Jim Keller, with talks valuing the deal somewhere between $8 and $10 billion.</p>
-<p>Keller is the reason people pay attention. He's the chip architect behind AMD's Zen cores, early Apple A-series silicon, and a stint on Tesla's Autopilot hardware. Tenstorrent, which he's led since 2016, builds AI accelerators on open RISC-V designs and pitches them as more efficient than GPUs for specific inference workloads. The company was last valued around $2.6 billion in a December 2024 round, so $8 to $10 billion is a steep markup on a short timeline.</p>
-<p>It also fits a pattern. Qualcomm has spent the past year trying to be more than a phone-modem company, and recently agreed to buy Alphawave for data-center connectivity. Bolting Tenstorrent on top reads like an attempt to assemble a full data-center AI stack rather than buy a single part.</p>
-<p>Two cautions before anyone calls it done. First, this is still a rumor: Tenstorrent declined to comment and Qualcomm said it doesn't comment on rumors, and chip-startup deals love performance-based earn-outs that move the real price around. Second, buying silicon doesn't buy you Nvidia's software hold. CUDA is the moat, and a RISC-V accelerator with a thinner toolchain has to win developers it can't acquire.</p>
-<p>What the deal would say about the category is the interesting part. The money is moving toward inference and custom accelerators, which is exactly where Nvidia looks less untouchable than it does in training. Whether Qualcomm is the company to exploit that gap is a separate question from whether the gap exists.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI Surfaced 18 Rare-Disease Diagnoses Doctors Had Missed</title>
-      <link>https://sabr-labs.com/article/openai-o3-rare-disease-diagnosis-boston-childrens-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-o3-rare-disease-diagnosis-boston-childrens-june-2026</guid>
-      <pubDate>Fri, 19 Jun 2026 10:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Healthcare AI</category>
-      <category>Rare Disease</category>
-      <category>Boston Children&apos;s Hospital</category>
-      <category>Diagnosis</category>
-      <category>NEJM AI</category>
-      <description>A Boston Children&apos;s, Harvard and OpenAI study reran 376 unsolved cases through OpenAI&apos;s o3 and turned up 18 diagnoses that human specialists later confirmed.</description>
-      <content:encoded><![CDATA[<p>Eighteen children who had been stuck without a diagnosis now have one, after researchers fed their cold cases back through an AI model. The study, published June 18 in NEJM AI, came out of Boston Children's Hospital, Harvard, and OpenAI. They took 376 de-identified cases that specialists had already worked and failed to solve, and reanalyzed them with OpenAI's o3 Deep Research.</p>
-<p>The model flagged leads. Clinicians then ran those leads through normal testing and review, and confirmed 18 new diagnoses: ten neurodevelopmental conditions, four neuromuscular disorders, two children who had died suddenly, and two cases of early childhood psychosis. That works out to a 4.8% additional diagnostic yield on cases that were supposed to be exhausted.</p>
-<p>Read the mechanics carefully, because the headline writes itself wrong. The AI did not diagnose anyone. Every diagnosis was made by physicians through established clinical confirmation. What the model did was generate candidates a busy specialist hadn't gotten to, on cases that had already eaten enormous human effort. That's a real and useful job. It's also a narrower claim than 'AI diagnoses rare disease,' which is how a lot of coverage will frame it.</p>
-<p>Keep this separate from the consumer pitch landing the same week. OpenAI also talked up health improvements in GPT-5.5 Instant for free ChatGPT users, around urgent-care recognition and asking better follow-up questions. That's a chatbot getting more careful. This study is a research tool doing a second pass on hard cases under supervision. Conflating the two is how hype gets manufactured.</p>
-<p>The honest takeaway is the modest one. On a stack of cases human experts couldn't crack, a model added a few more answers when a doctor stayed in the loop to check its work. Nearly five percent of unsolvable cases becoming solvable is worth a lot to the families in that five percent. It is not the same as the model replacing the people who confirmed it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>F5 Ships Out-of-Band Patches for Two Critical NGINX Flaws</title>
-      <link>https://sabr-labs.com/article/f5-nginx-cve-2026-42530-42055-http3-http2-rce-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/f5-nginx-cve-2026-42530-42055-http3-http2-rce-june-2026</guid>
-      <pubDate>Fri, 19 Jun 2026 09:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>F5</category>
-      <category>NGINX</category>
-      <category>CVE-2026-42530</category>
-      <category>CVE-2026-42055</category>
-      <category>HTTP/3</category>
-      <category>Patch</category>
-      <description>F5 released emergency fixes for two NGINX bugs rated 9.2, including an HTTP/3 use-after-free, that let unauthenticated attackers crash worker processes and potentially run code.</description>
-      <content:encoded><![CDATA[<p>Two NGINX vulnerabilities rated CVSS 9.2 just got out-of-band patches, which is F5's way of telling you not to wait for the regular cycle. Both are reachable by a remote, unauthenticated attacker, and both sit in the HTTP request-handling path that high-traffic sites lean on hardest.</p>
-<p>The first, CVE-2026-42530, is a use-after-free in the HTTP/3 QUIC module. An attacker reopens a QPACK encoder stream through a crafted HTTP/3 session and forces the worker process to restart, which is a denial of service on its own. F5 says code execution is possible on systems where ASLR is disabled or where the attacker can bypass it. It affects NGINX Open Source 1.31.0 and 1.31.1 (fixed in 1.31.2), plus NGINX Gateway Fabric and the Ingress Controller in their respective ranges.</p>
-<p>The second, CVE-2026-42055, is a heap buffer overflow in the HTTP/2 proxy and gRPC handling, same 9.2 score. It only triggers under a specific config: proxy_http_version set to 2, ignore_invalid_headers turned off, and large_client_header_buffers above 2MB. That narrows the exposed population, but plenty of reverse-proxy setups match it. It hits NGINX Plus 37.0.0 to 37.0.1 and Open Source 1.30.0 through 1.30.2.</p>
-<p>Nobody has reported active exploitation yet. Don't read too much comfort into that. F5's own advisory notes that similar NGINX flaws have been picked up by attackers within days, pointing to CVE-2026-42945 as a recent example that went from patch to exploitation fast.</p>
-<p>If you can't patch this hour, you can buy time. For the HTTP/3 bug, drop quic from your listen directives to take the QUIC path out of play. For the HTTP/2 bug, check whether your config actually hits all three conditions before you panic, then fix it. The honest read here is that the RCE caveat keeps most hardened boxes in denial-of-service territory, and a downed edge proxy is still your site going dark.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FortiBleed: Credentials for 74,000 Fortinet Firewalls Are Loose</title>
-      <link>https://sabr-labs.com/article/fortibleed-fortinet-firewall-credential-leak-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortibleed-fortinet-firewall-credential-leak-june-2026</guid>
-      <pubDate>Fri, 19 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Fortinet</category>
-      <category>FortiGate</category>
-      <category>Credential Theft</category>
-      <category>SSL VPN</category>
-      <category>FortiBleed</category>
-      <category>Active Directory</category>
-      <description>A still-running campaign dubbed FortiBleed has exposed admin and VPN credentials for nearly 74,000 Fortinet firewalls across 194 countries, and the attacker&apos;s servers keep adding victims.</description>
-      <content:encoded><![CDATA[<p>Nearly 74,000 Fortinet firewalls have had their credentials harvested, and the people who did it haven't stopped. Researcher Volodymyr Diachenko found the haul exposed on a cybercriminal server in mid-June and disclosed it over the weekend. The dataset covers 73,932 unique Fortinet firewall and SSL VPN URLs tied to roughly 21,632 domains in 194 countries. Someone named it FortiBleed, and the name fits.</p>
-<p>Here's how the credentials got out. Russian-speaking operators intercepted SSL VPN authentication hashes from devices still storing passwords with older SHA-256, then cracked them on a 45-GPU cluster running Hashtopolis. Cracked passwords became the keys to walk into Active Directory. The crew folded old breach data together with fresh brute force at industrial scale: by one count, 1.16 billion credential attempts against more than 320,000 FortiGate targets.</p>
-<p>This is the part that should bother you. It isn't one CVE you patch and forget. It's weak password hashing plus credential reuse plus a VPN appliance sitting on the open internet, which is the exact combination that turns a firewall into an entry point instead of a wall.</p>
-<p>The victim list is not a list of stragglers. Samsung, Siemens, Foxconn, Oracle, Accenture, DHL and Infosys show up in it, alongside government agencies and critical infrastructure operators. At least four organizations were fully compromised, including a Turkish NATO defense contractor whose classified documents were exfiltrated. Fortinet itself appears in the data.</p>
-<p>Treat this as an active incident, because it is. The attacker infrastructure is still online and new entries are still being added, so a clean lookup today is not a guarantee for tomorrow. Diachenko and others point defenders to Hudson Rock's exposure checker as a first step.</p>
-<p>If your domain is in there, assume compromise and move. Upgrade FortiOS to the current release, rotate every credential those devices could reach, turn on multi-factor authentication for VPN access, and force a re-hash to the stronger PBKDF2 storage so a stolen hash isn't a crackable one. A firewall you can't trust the passwords on is not doing the job you bought it for.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
