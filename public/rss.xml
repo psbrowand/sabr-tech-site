@@ -6,9 +6,123 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jun 2026 16:19:06 GMT</lastBuildDate>
-    <pubDate>Tue, 30 Jun 2026 16:19:06 GMT</pubDate>
+    <lastBuildDate>Wed, 01 Jul 2026 13:16:48 GMT</lastBuildDate>
+    <pubDate>Wed, 01 Jul 2026 13:16:48 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Amazon Fined $2.25M for Denying Fraud Records to Theft Victims</title>
+      <link>https://sabr-labs.com/article/amazon-ftc-fine-identity-theft-records-fcra-609e-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-ftc-fine-identity-theft-records-fcra-609e-june-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 11:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Amazon</category>
+      <category>FTC</category>
+      <category>Identity Theft</category>
+      <category>FCRA</category>
+      <category>Regulation</category>
+      <description>Federal law gives identity-theft victims the right to the fraudulent transaction records made in their name, and the FTC just used a 2003 provision to enforce it.</description>
+      <content:encoded><![CDATA[<p>Here's a right most identity-theft victims don't know they have. Under Section 609(e) of the Fair Credit Reporting Act, if someone opens accounts or makes purchases in your name, you can demand the records of those fraudulent transactions from the business that processed them. On June 30 the FTC fined Amazon $2.25 million for refusing to hand them over.</p>
+<p>It's the largest penalty ever secured under 609(e), and only the second time the FTC has used the provision since it was written into law in 2003. According to the agency, Amazon customer service repeatedly denied victims who asked for fraud records, citing "privacy" or "security." When it did provide records, it often blew past the 30-day window the law requires. It even refused requests from law enforcement acting on victims' behalf.</p>
+<p>The detail that stings: Amazon had no written procedure for handling these legally mandated requests for years. It only wrote one in early 2025, after learning the FTC had opened an investigation.</p>
+<p>Financially, $2.25 million is nothing to Amazon. It's a rounding error against a single hour of revenue, and no executive is losing sleep over the check. Treating the fine as the story misses the point.</p>
+<p>The point is the precedent and the right itself. The FTC just demonstrated it will enforce 609(e), and the settlement forces Amazon to actually deliver requested records to victims and law enforcement within the 30 days the statute always required. If you've been through identity theft and hit a wall asking a retailer or bank for the paper trail, that wall is now less defensible.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Pulls Its Post-Quantum Deadline Forward to 2029</title>
+      <link>https://sabr-labs.com/article/microsoft-post-quantum-cryptography-2029-roadmap-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-post-quantum-cryptography-2029-roadmap-june-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 10:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Post-Quantum</category>
+      <category>Cryptography</category>
+      <category>PQC</category>
+      <category>Encryption</category>
+      <description>The new target has quantum-safe crypto in Microsoft products by 2029 and a full transition by 2033, two years ahead of most government mandates.</description>
+      <content:encoded><![CDATA[<p>Microsoft moved up its quantum-safe timeline. Under the revised roadmap, the company aims to have early post-quantum cryptography support in its products and services by 2029, with a complete transition by 2033. That's two years ahead of the 2035 deadline several governments have set for critical infrastructure.</p>
+<p>The reasoning is the one every crypto team has been chewing on: harvest now, decrypt later. Encrypted data being collected today could be cracked once a cryptographically relevant quantum computer exists, and Microsoft's position is that such a machine could arrive sooner than the field assumed. Whether or not you buy the timeline, the defensive logic holds. Long-lived secrets need protecting before the threat is real, not after.</p>
+<p>Microsoft laid out three priorities. First, upgrade network cryptography by moving to modern protocols like TLS 1.3 that can carry hybrid and post-quantum key exchange. Second, build crypto-agility, so algorithms can be swapped for PQC variants without rewriting the applications on top of them. Third, modernize the trust chains behind code signing, certificate issuance, software updates, and hardware-backed keys.</p>
+<p>The middle item is where the real work lives. Crypto-agility is easy to write on a slide and brutal to retrofit into decades of software that hardcoded assumptions about key sizes and algorithms. Dates are cheap. The migration is the hard part, and 2029 is not far away for a change this deep.</p>
+<p>It's also worth keeping a little distance from the framing. Microsoft has been aggressive about its own quantum hardware claims, so "the risk is accelerating" is coming from a company with reasons to say so. The practical takeaway for defenders doesn't depend on any of that: inventory where your systems use public-key crypto now, because you can't migrate what you can't find.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Claude Sonnet 5 Lands Close to Opus 4.8 at Half the Price</title>
+      <link>https://sabr-labs.com/article/anthropic-claude-sonnet-5-near-opus-price-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-claude-sonnet-5-near-opus-price-june-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>LLM</category>
+      <category>Benchmarks</category>
+      <category>AI Pricing</category>
+      <description>Anthropic&apos;s new mid-tier model trails its flagship on two headline benchmarks and beats it on two others, but the real number is the price.</description>
+      <content:encoded><![CDATA[<p>Anthropic released Claude Sonnet 5 on June 30 and made it the default model for every free and Pro user on claude.ai the same day. The pitch is straightforward: get most of the flagship's quality for a fraction of the cost.</p>
+<p>Start with the money, because that's the actual news. Introductory pricing runs $2 per million input tokens and $10 per million output through August 31, then settles at $3 and $15. Opus 4.8 sits at $5 and $25. So Sonnet 5 is roughly half the price of the top model, and it ships with the same 1M-token context window.</p>
+<p>The benchmarks are more of a split decision than "near-Opus" suggests. Sonnet 5 scores 63.2% on SWE-bench Pro against Opus 4.8's 69.2%, and 81.2% on OSWorld-Verified against 83.4%. It trails on the two marquee agentic tests. But it posts 80.4% on Terminal-Bench 2.1, beating Opus 4.8's 74.6%, and edges the flagship on GDPval-AA v2 knowledge work, 1,618 Elo to 1,615.</p>
+<p>Read that honestly and the model is a hair behind Opus on hard coding and computer-use tasks, roughly even on knowledge work, and ahead on some terminal workflows. It is not a flagship. It's close enough that for a lot of jobs the price difference decides it.</p>
+<p>That framing matches where the market has moved. CNBC reported in late June that enterprise buyers have shifted from what people were calling tokenmaxxing toward squeezing more work out of fewer tokens. A model that lands near the top tier at half the cost is aimed squarely at that shift. The interesting question isn't whether Sonnet 5 beats Opus. It's how many workloads people were paying flagship rates for that a mid-tier model now handles fine.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Azure CLI Password Spray Cracked 78 Accounts in 81 Million Tries</title>
+      <link>https://sabr-labs.com/article/azure-cli-password-spray-ropc-mfa-bypass-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/azure-cli-password-spray-ropc-mfa-bypass-june-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Azure</category>
+      <category>Microsoft</category>
+      <category>Password Spray</category>
+      <category>MFA</category>
+      <category>Identity</category>
+      <description>The attackers used a legacy login flow to slip past MFA at organizations that thought Conditional Access had them covered.</description>
+      <content:encoded><![CDATA[<p>Eighty-one million login attempts. Seventy-eight accounts cracked across 64 organizations. That's the tally Huntress put on an ongoing password-spray campaign aimed at Microsoft's Azure command-line interface, running from June 12 to June 26.</p>
+<p>The traffic came from a single IPv6 range, 2a0a:d683::/32, tied to an infrastructure provider called LSHIY LLC (AS32167). Targeting wasn't picky about industry. The operators appear to have worked straight from credential combo lists, spraying whichever accounts showed up with commonly reused passwords.</p>
+<p>The clever part is how they got past multi-factor auth. Azure CLI still supports ROPC, the Resource Owner Password Credentials flow, which trades a username and password directly for a token. At several victim organizations, MFA was switched on and Conditional Access policies were configured, but those policies didn't account for Azure CLI ROPC logins. So a correct password was enough. The second factor never entered the picture.</p>
+<p>That's the lesson, and it's an uncomfortable one. "We have MFA" and "MFA is enforced on every authentication path" are different statements. ROPC is a legacy flow that shouldn't be trading passwords for tokens in 2026, yet it's on by default and quietly routes around the controls teams assume are total.</p>
+<p>If you run Azure AD, check whether legacy authentication and ROPC are blocked, and confirm your Conditional Access policies actually cover command-line and programmatic logins, not just browser sign-ins. Then go looking for successful authentications from that IPv6 range, because the campaign was still live at the end of June.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Citrix Patches Six More NetScaler Flaws, Two Allow File Reads</title>
+      <link>https://sabr-labs.com/article/citrix-netscaler-six-cves-file-read-dos-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-six-cves-file-read-dos-july-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>Vulnerability</category>
+      <category>CVE</category>
+      <category>Patch</category>
+      <description>None are under active exploitation yet, but the batch keeps NetScaler&apos;s memory-safety streak going and one flaw reads files with no authentication.</description>
+      <content:encoded><![CDATA[<p>NetScaler administrators get another patch cycle. Citrix shipped fixes for six vulnerabilities across NetScaler ADC and Gateway, a mix of arbitrary file reads and denial-of-service bugs, all rooted in the appliance mishandling memory when it parses malformed input.</p>
+<p>The two file-read bugs are the ones to look at first. CVE-2026-10816 (CVSS 7.7) lets an unauthenticated attacker read arbitrary files through improper path control, but only when management access is exposed on a NIC. CVE-2026-8451 (CVSS 8.8) also enables arbitrary file reads, though it requires the box to be configured as a SAML identity provider. If your NetScaler does SSO for the rest of the estate, that's a config a lot of shops run.</p>
+<p>The rest are availability bugs. CVE-2026-8452, CVE-2026-8655, and CVE-2026-13474 (CVSS scores from 8.7 to 8.8) all crash or degrade the appliance through memory overflows or a malformed HTTP/2 request, and CVE-2026-10817 is a lower-severity memory overread tied to TCP timestamps.</p>
+<p>Citrix says none of these are being exploited in the wild right now. That's the good news and the asterisk. This is the same NetScaler product line that shipped CVE-2026-3055 earlier in June, a memory-overread bug that got mass-exploited as an unauthenticated RCE within days of disclosure. When an internet-facing appliance has a run of memory-safety flaws like this, the gap between patch and exploit tends to be short.</p>
+<p>Fixed builds are 14.1-72.61 and later, and 13.1-63.18 and later. CVE-2026-13474 needs a manual Http2SmallWndTimeout setting on some non-HTTP profiles, so read the advisory rather than assuming the upgrade covers everything. And if your management interface is reachable from a data NIC, fix that too, because it's the precondition for the worst bug in the set.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Aflac&apos;s Japan Arm Breached, 4.38 Million Policyholders Exposed</title>
+      <link>https://sabr-labs.com/article/aflac-japan-breach-4-38-million-bank-details-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/aflac-japan-breach-4-38-million-bank-details-june-2026</guid>
+      <pubDate>Wed, 01 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Aflac</category>
+      <category>Insurance</category>
+      <category>Japan</category>
+      <category>Scattered Spider</category>
+      <description>Attackers spent ten days inside Aflac Life Insurance Japan and walked out with policy records and bank account details for 4.38 million customers.</description>
+      <content:encoded><![CDATA[<p>Aflac disclosed this week that its Japanese subsidiary lost the records of 4.38 million policyholders. Aflac Life Insurance Japan, a wholly owned arm of the US insurer, found that intruders had been sitting in its systems from June 15 to June 25 before anyone noticed.</p>
+<p>The stolen data is worse than the usual name-and-email dump. Aflac says the attackers accessed policy details, coverage information, personal data, and bank account numbers. For an insurer, the bank details are the part that keeps customers up at night, because they feed directly into fraud and account-takeover attempts.</p>
+<p>There's no attribution yet. Aflac hasn't named a group, and the ten-day dwell time suggests the intruders had room to look around before exfiltrating. Worth remembering: an earlier intrusion into Aflac's US operations in 2025 was linked to activity consistent with Scattered Spider, the social-engineering crew that has made a habit of talking its way past help desks. That's context, not a confirmed attribution here.</p>
+<p>Insurers keep some of the most complete personal dossiers of any industry, which is exactly why they keep getting hit. A single policy file can hold identity, health, financial, and beneficiary data in one place. Aflac Japan alone insures a huge slice of the country's households, so 4.38 million records is a meaningful fraction of its book.</p>
+<p>If you're an Aflac Japan customer, treat this as a reason to watch your bank statements closely and to distrust any call or message that references your policy. Breaches of this shape are usually followed within weeks by targeted phishing that uses the stolen details to sound legitimate.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI Will Only Sell GPT-5.6 Sol to Trump-Approved Customers</title>
       <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-trump-approved-customers-export-june-2026</link>
@@ -857,122 +971,6 @@
 <p>The detail that sets this dump apart sits in a small subset, around 17,000 records. There, someone paired more than 9,500 CVE IDs and their descriptions with links to GitHub exploit repositories. In other words, the dataset didn't just hold stolen credentials, it enriched them with live exploit intel so an attacker could line up which targets to hit and with what.</p>
 <p>Keep the headline number in perspective, though. Twenty-four billion records is not twenty-four billion people. It's a heap of overlapping, re-aggregated dumps, heavy on duplicates and recycled data, and the count balloons fast when you merge 36 sources that already share entries. The exposure is real; the scariness of the raw figure is partly an artifact of how these collections get built.</p>
 <p>The practical response is the boring one that actually works. Use unique passwords stored in a manager so one stolen login doesn't unlock ten accounts, turn on MFA everywhere, ideally the phishing-resistant kind, and take session-token theft seriously as a way around your second factor. If a service supports it, kill old sessions and rotate tokens on a schedule rather than waiting for a reason.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Critical Veeam Backup Flaw Lets Any Domain User Seize the Backup Server</title>
-      <link>https://sabr-labs.com/article/veeam-backup-replication-cve-2026-44963-rce-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/veeam-backup-replication-cve-2026-44963-rce-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Veeam</category>
-      <category>CVE</category>
-      <category>Backup</category>
-      <category>Remote Code Execution</category>
-      <category>Ransomware</category>
-      <description>CVE-2026-44963 carries a CVSS 9.4 and gives any low-privileged domain user remote code execution on domain-joined Veeam Backup &amp; Replication servers up to build 12.3.2.4465.</description>
-      <content:encoded><![CDATA[<p>Veeam patched a critical hole in Backup & Replication this month, and it's the kind that should move backup admins to the front of the patch queue. CVE-2026-44963 lets any low-privileged domain user run arbitrary code on the backup server and take it over completely.</p>
-<p>The bug carries a CVSS v4 score of 9.4. It affects every Backup & Replication build in the v12 line up to and including 12.3.2.4465, and the fix arrives in 12.3.2.4854. Version 13, which reworked the underlying architecture, isn't affected.</p>
-<p>There's an important asterisk. The attack only works when the backup server is joined to a Windows domain. Veeam's own hardening guidance has told customers for years to run Backup & Replication in a workgroup, isolated from the production domain, and shops that followed it sit outside the blast radius. Plenty of shops didn't.</p>
-<p>Here's why this rates more attention than the average authenticated RCE: the backup server is the first thing a ransomware crew goes after. Encrypt the production estate, delete or corrupt the backups, and you've taken away the victim's only path that doesn't run through the ransom payment. A low-privileged domain account that turns into full control of that server is exactly the pivot attackers dream about.</p>
-<p>The flaw was found by Sina Kheirkhah of watchTowr and disclosed alongside the June 9 patch. No in-the-wild exploitation has been reported yet, but Veeam is warning that diffing the patch into a working exploit is the obvious next move, and backup servers are a target worth the effort.</p>
-<p>Patch to 12.3.2.4854. If you can't move on it immediately, the standing advice is the mitigation: get the backup server off the production domain and into a workgroup, the way Veeam told you to set it up in the first place.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Unpatchable usbliter8 Exploit Cracks Apple A12 and A13 Boot ROM</title>
-      <link>https://sabr-labs.com/article/apple-usbliter8-securerom-a12-a13-unpatchable-bootrom-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-usbliter8-securerom-a12-a13-unpatchable-bootrom-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Apple</category>
-      <category>iPhone</category>
-      <category>Exploit</category>
-      <category>Hardware Security</category>
-      <category>Jailbreak</category>
-      <description>Researchers at Paradigm Shift published a SecureROM exploit that Apple can&apos;t patch in software, reaching every iPhone XS, XR, and 11.</description>
-      <content:encoded><![CDATA[<p>On June 18 a team at Paradigm Shift dropped working code that runs inside the SecureROM of Apple's A12 and A13 chips. Apple cannot fix it with a software update, because the flaw lives in read-only code burned into the silicon at the factory. Every iPhone XS, XS Max, XR, and iPhone 11 carries it, along with the iPhone SE 2nd gen, several iPads, the Apple Watch Series 4 and 5, and the HomePod mini.</p>
-<p>The bug sits in the Synopsys DWC2 USB controller. On these chips the USB DART runs in bypass mode, which lets a malformed transfer overwrite the wrong region of SRAM and hand the attacker control of the boot process. From there usbliter8 gets arbitrary code execution at EL1 inside SecureROM, can demote the device out of production mode, and can boot unsigned iBoot images. The researchers tag a successful run with a 'PWND:[usbliter8]' marker, which is the kind of detail that tells you this is real and not a press release.</p>
-<p>This is not a remote attack, and that matters. Pulling it off needs the phone in your hands, in DFU mode, wired to a dedicated RP2350 microcontroller board. With that rig the exploit finishes in under two seconds, before Apple's signed boot chain ever loads.</p>
-<p>It's the obvious successor to checkm8, the 2019 boot ROM exploit that stopped at the A11. usbliter8 carries the same class of attack one chip generation forward. As of this week there's no CVE, no CVSS score, no Apple advisory, and no reported use in the wild. Paradigm Shift says it coordinated the disclosure with Apple Product Security first, which is the right call given that nothing on the software side can close the hole.</p>
-<p>Worth being precise about the blast radius: a boot ROM exploit is not a master key to your data. usbliter8 owns the application processor's startup, not the Secure Enclave, so it doesn't crack a strong passcode or the encryption keys derived from it. What it does enable is persistent tethered jailbreaks, forensic boot of seized devices, and evil-maid scenarios where someone with physical custody can run modified software on the phone.</p>
-<p>If you still carry an A12 or A13 device with sensitive data on it, the threat model just shifted toward physical seizure. Use a strong alphanumeric passcode, not a four-digit PIN, and treat a lost or confiscated phone as compromised at the boot level. The hardware will carry this flaw for as long as it stays in service, and the iPhone 11 in particular is still everywhere.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Operation Endgame Seizes SocGholish Servers, Cleans 14,971 Sites</title>
-      <link>https://sabr-labs.com/article/socgholish-operation-endgame-takedown-14971-wordpress-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/socgholish-operation-endgame-takedown-14971-wordpress-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Malware</category>
-      <category>WordPress</category>
-      <category>Law Enforcement</category>
-      <category>Ransomware</category>
-      <category>Europol</category>
-      <description>A four-country police action knocked out 106 SocGholish servers and scrubbed nearly 15,000 hacked WordPress sites feeding the fake-update malware.</description>
-      <content:encoded><![CDATA[<p>Law enforcement spent this week pulling the rug out from under SocGholish. On June 18, agencies from the Netherlands, Canada, the United States, and Germany, coordinated through Europol under the Operation Endgame banner, seized 106 servers and 101 domains tied to the malware and remotely cleaned infections from 14,971 compromised WordPress sites.</p>
-<p>If you don't know SocGholish by name, you've probably seen its work. It's the 'FakeUpdates' network: hacked WordPress sites that pop a convincing browser-update prompt, and the file you download is the first stage of an intrusion. It's been running since 2017, operated by the actor tracked as TA569, with downstream ties to the Russian cybercriminal outfit Evil Corp. The fake update is the front door; ransomware and data theft tend to be what walks through it.</p>
-<p>The scale here is the part worth sitting with. In May, ShadowServer counted more than 1.44 million compromised WordPress sites available to SocGholish operators. Against that number, 14,971 cleaned sites is a dent, not a kill.</p>
-<p>Takedowns like this disrupt; they rarely end anything. Operation Endgame has become a recurring banner for these coordinated strikes, and the crews behind initial-access malware are practiced at standing infrastructure back up. Seizing 106 servers and a hundred domains in one move still forces a costly rebuild, and the public sinkholing gives defenders a clean window to find and fix infections before the network reconstitutes.</p>
-<p>For anyone running WordPress, this is the moment to look at your own install. Patch core and plugins, scan for injected JavaScript that serves those update lures, and pull anything you don't actively use. A site that's quietly part of a malware network is also a site that's one bad day from being the entry point into your own environment.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Gravity SMTP WordPress Flaw Leaks API Keys, Now Under Active Attack</title>
-      <link>https://sabr-labs.com/article/gravity-smtp-cve-2026-4020-wordpress-api-key-exposure-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gravity-smtp-cve-2026-4020-wordpress-api-key-exposure-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>CVE</category>
-      <category>Vulnerability</category>
-      <category>API Security</category>
-      <category>Web Security</category>
-      <description>An unauthenticated endpoint in the Gravity SMTP plugin hands attackers the API keys and OAuth tokens for connected email services, and they&apos;re scanning for it at scale.</description>
-      <content:encoded><![CDATA[<p>Wordfence says it has blocked more than 17 million attempts against a single WordPress plugin bug, and that number tells you everything about where attacker attention is right now. The flaw is CVE-2026-4020 in Gravity SMTP, a plugin that routes WordPress mail through external providers.</p>
-<p>The mistake is the kind that makes security people wince. Gravity SMTP registers a REST endpoint at /wp-json/gravitysmtp/v1/tests/mock-data with a permission_callback that just returns true, unconditionally. No auth, no capability check. Anyone who can reach the site can hit it.</p>
-<p>What comes back is the sensitive part. The endpoint can expose API keys, secrets, and OAuth tokens for whatever email service the site has wired up, including Amazon SES, Google, Mailjet, Resend, and Zoho, plus a readout of installed plugins, themes, and version numbers. Hand an attacker a live SES key and they have a sending platform on your dime and your domain's reputation.</p>
-<p>The flaw affects every version up to and including 2.1.4 and was fixed in 2.1.5, which shipped back in March. The exploitation curve has only steepened since: CrowdSec tracked 412 distinct attacking IPs by early June, and this week brought fresh reports of the bug being actively worked.</p>
-<p>Updating to 2.1.5 closes the door, but it does not undo a theft that already happened. If your site ran a vulnerable version while internet-facing, assume the connected credentials leaked. Patch, then rotate every API key and OAuth token for the email integrations Gravity SMTP touched. Patching alone is a half-fix when the secret is already gone.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Snap Opens Preorders for $2,195 Standalone Specs AR Glasses</title>
-      <link>https://sabr-labs.com/article/snap-specs-ar-glasses-2195-standalone-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/snap-specs-ar-glasses-2195-standalone-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Snap</category>
-      <category>AR</category>
-      <category>Wearables</category>
-      <category>Qualcomm</category>
-      <category>Hardware</category>
-      <description>Snap&apos;s consumer Specs ship this fall with no phone, no tether, and a price that makes clear who they&apos;re actually for.</description>
-      <content:encoded><![CDATA[<p>Snap pulled the cover off its consumer Specs at the Augmented World Expo in Long Beach on June 16, and preorders are open now. The headline number is $2,195, with a refundable $200 deposit to hold a unit. They ship this fall in the US, UK, and France, with nothing announced beyond those three markets yet.</p>
-<p>The genuine achievement is that they're fully standalone. No phone in your pocket doing the work, no puck on a lanyard, no tether. Dual Qualcomm chips run navigation, AI, and shared experiences on the glasses themselves, which is the hard engineering problem everyone in this category has been circling. Snap says roughly $3 billion of R&D went into getting here.</p>
-<p>It also beats Apple, Meta, and Google to a true standalone consumer AR product. That's a real first, and Snap earned the bragging rights.</p>
-<p>Now the honest part. At $2,195 this is not a consumer device in any normal sense of the word, whatever the marketing says. It's a developer and early-adopter kit with a refined design and a consumer label stapled on. Snap has been here before, sitting on unsold Spectacles inventory it had to write down, and pricing this high is partly a hedge against making the same bet at scale twice.</p>
-<p>What makes it interesting anyway is that the standalone milestone is independent of the price. The thing that was supposed to be years out, all-day AR with no phone doing the heavy lifting, is shipping this fall to anyone willing to pay. Whether the category becomes a mass market depends on the next device at a third of the cost, not this one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s First Smart Speaker in Six Years Ships June 25 for $99</title>
-      <link>https://sabr-labs.com/article/google-home-speaker-gemini-99-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-home-speaker-gemini-99-june-2026</guid>
-      <pubDate>Sat, 20 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>Smart Home</category>
-      <category>Hardware</category>
-      <category>AI Assistants</category>
-      <description>The new Google Home Speaker puts Gemini at the center of the living room, and the bet is on the assistant rather than the hardware.</description>
-      <content:encoded><![CDATA[<p>Google is back in the smart-speaker business after a long absence. The new Google Home Speaker is up for preorder at $99.99 and ships June 25, the company's first new speaker since the Nest Audio landed in 2020.</p>
-<p>The pitch is Gemini for Home. Instead of the old call-and-response of asking Assistant for a timer, the speaker is built for natural, multi-step conversation, the kind where you can follow up without re-stating the whole request. It does 360-degree sound, adds an underglow light ring that shows when it's listening, processing, or answering, and can pair with the Google TV Streamer for home-theater audio.</p>
-<p>Google first teased this hardware in October alongside the Pixel 10 line, then sat on it for months. The reason it gave is worth noting: it wanted to push Gemini out to its existing speakers and shake out the bugs before putting new hardware in people's homes. The new launch also comes as Google quietly discontinues two older speakers.</p>
-<p>Six years is a long time to leave a product line idle, and the gap says something about how much the assistant matters more than the box it lives in. Amazon is rebuilding Alexa around its Nova models, Apple is reworking Siri, and Google is doing the same with Gemini. The hardware is a vessel; the competition is over whose assistant you'll actually want to talk to all day.</p>
-<p>At a hundred bucks, the speaker isn't the gamble. Gemini for Home is. If the conversational layer holds up in a real kitchen with kids talking over each other, Google has a reason to be back. If it stumbles the way voice assistants have for a decade, the underglow ring won't save it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
