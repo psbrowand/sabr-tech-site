@@ -20,6 +20,7 @@ import {
   ArrowRight, Target, BookOpen, Users, BarChart3,
   CheckCircle2, Star, ChevronRight, Shield, Zap,
   Network, TerminalSquare, Wrench, Sparkles,
+  CalendarClock, Compass,
 } from 'lucide-react';
 import FadeIn from '../components/FadeIn';
 import NewsletterSignup from '../components/newsletter/NewsletterSignup';
@@ -48,6 +49,22 @@ const FEATURES = [
     accent: 'text-cyan-400',
     bg: 'bg-cyan-400/10',
     border: 'border-cyan-400/20',
+  },
+  {
+    icon: CalendarClock,
+    title: 'Know exactly when you’re ready',
+    desc: 'Set your exam date and get a live countdown, a readiness score built from your real practice-exam trend, and an honest verdict — on track, almost, or not yet. Stop guessing before you book.',
+    accent: 'text-sky-400',
+    bg: 'bg-sky-400/10',
+    border: 'border-sky-400/20',
+  },
+  {
+    icon: Compass,
+    title: 'A guided path, not a question dump',
+    desc: 'A domain-by-domain roadmap tells you the single best thing to study next and drops you straight into it. Save any question and re-drill every miss from one Saved & Missed list.',
+    accent: 'text-violet-400',
+    bg: 'bg-violet-400/10',
+    border: 'border-violet-400/20',
   },
   {
     icon: BookOpen,
