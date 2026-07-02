@@ -59,12 +59,16 @@ async function main() {
   const articlesUrl = pathToFileURL(join(ROOT, 'src', 'data', 'articles.js')).href;
   const { articles } = await import(articlesUrl);
 
+  const certUrl = pathToFileURL(join(ROOT, 'src', 'data', 'certPrep.js')).href;
+  const { CERTS } = await import(certUrl);
+
   const today = toW3C();
 
   // Top-level marketing + utility routes.
   const staticRoutes = [
     { loc: `${SITE_URL}/`,                  priority: '1.0', changefreq: 'daily' },
     { loc: `${SITE_URL}/try`,               priority: '0.9', changefreq: 'weekly' },
+    { loc: `${SITE_URL}/practice`,          priority: '0.9', changefreq: 'weekly' },
     { loc: `${SITE_URL}/compare/boson-netsim-alternative`,  priority: '0.7', changefreq: 'monthly' },
     { loc: `${SITE_URL}/compare/packet-tracer-alternative`, priority: '0.7', changefreq: 'monthly' },
     { loc: `${SITE_URL}/learning`,          priority: '0.8', changefreq: 'weekly' },
@@ -81,6 +85,14 @@ async function main() {
     { loc: `${SITE_URL}/refund`,            priority: '0.2', changefreq: 'yearly' },
   ].map((r) => ({ ...r, lastmod: today }));
 
+  // One URL per certification practice-test page (high-intent search targets).
+  const certUrls = CERTS.map((c) => ({
+    loc:        `${SITE_URL}/practice/${c.slug}`,
+    lastmod:    today,
+    changefreq: 'weekly',
+    priority:   '0.9',
+  }));
+
   // One URL per article.
   const articleUrls = articles
     .filter((a) => a && a.slug && a.title)
@@ -94,14 +106,14 @@ async function main() {
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    [...staticRoutes, ...articleUrls].map(urlXml).join('\n'),
+    [...staticRoutes, ...certUrls, ...articleUrls].map(urlXml).join('\n'),
     '</urlset>',
     '',
   ].join('\n');
 
   await mkdir(dirname(OUT_PATH), { recursive: true });
   await writeFile(OUT_PATH, xml, 'utf8');
-  console.log(`[sitemap] wrote ${staticRoutes.length + articleUrls.length} URLs → ${OUT_PATH}`);
+  console.log(`[sitemap] wrote ${staticRoutes.length + certUrls.length + articleUrls.length} URLs → ${OUT_PATH}`);
 }
 
 main().catch((err) => {

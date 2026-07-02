@@ -74,11 +74,14 @@ function renderHead(template, page) {
   if (page.path !== '/') html = html.replace(LANDING_ONLY_RE, '');
 
   if (page.jsonLd) {
-    const block =
-      `    <script type="application/ld+json">\n` +
-      `    ${JSON.stringify(page.jsonLd)}\n` +
-      `    </script>\n`;
-    html = html.replace('</head>', `${block}  </head>`);
+    const blocks = (Array.isArray(page.jsonLd) ? page.jsonLd : [page.jsonLd])
+      .map((obj) =>
+        `    <script type="application/ld+json">\n` +
+        `    ${JSON.stringify(obj)}\n` +
+        `    </script>\n`
+      )
+      .join('');
+    html = html.replace('</head>', `${blocks}  </head>`);
   }
 
   return html;
@@ -105,9 +108,38 @@ function articleJsonLd(a) {
   };
 }
 
+function certJsonLd(c, faqs) {
+  const course = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: `${c.name} (${c.code}) Practice Test`,
+    description: c.intro,
+    provider: {
+      '@type': 'Organization',
+      name: 'Sabr Learning Labs',
+      sameAs: SITE_URL,
+    },
+    about: `${c.name} certification exam preparation`,
+    educationalLevel: c.exam.level,
+    url: `${SITE_URL}/practice/${c.slug}`,
+  };
+  const faqPage = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+  // Multiple JSON-LD blocks are allowed; emit as an array.
+  return [course, faqPage];
+}
+
 async function main() {
   const template = await readFile(join(DIST, 'index.html'), 'utf8');
   const { articles } = await import(pathToFileURL(join(ROOT, 'src', 'data', 'articles.js')).href);
+  const { CERTS, allFaqs } = await import(pathToFileURL(join(ROOT, 'src', 'data', 'certPrep.js')).href);
 
   const DESC_NEWS =
     'Daily cyber, tech, and AI news written for working IT people: incidents, CVEs, vendor moves, and certification changes, with sources cited.';
@@ -211,7 +243,27 @@ async function main() {
       jsonLd: articleJsonLd(a),
     }));
 
-  const pages = [...staticPages, ...articlePages];
+  // Per-cert practice-test landing pages (organic-search front door).
+  const practiceIndex = {
+    path: '/practice',
+    url: `${SITE_URL}/practice`,
+    title: 'IT Certification Practice Tests & Exam Questions | Sabr Learning Labs',
+    description:
+      'Free-trial practice tests for CompTIA, Cisco, AWS, Microsoft, Google Cloud, ISC2, Aruba, and Juniper certifications — exam-style questions with full explanations, flashcards, timed exam simulation, and hands-on labs.',
+    keywords: 'IT certification practice test, practice exam questions, CompTIA, Cisco, AWS, Microsoft, Google Cloud practice tests',
+  };
+  const certPages = CERTS.map((c) => ({
+    path: `/practice/${c.slug}`,
+    url: `${SITE_URL}/practice/${c.slug}`,
+    title: `${c.name} Practice Test — ${c.pool} ${c.code} Exam Questions | Sabr`,
+    description:
+      `${c.name} (${c.code}) practice tests and exam questions with full explanations, cited to the official objectives` +
+      `${c.labs ? ', plus hands-on labs' : ''}. ${c.pool} questions, ${c.flashcards} flashcards, timed exam simulation, and a 7-day free trial.`,
+    keywords: `${c.name} practice test, ${c.code} practice questions, ${c.name} exam questions, ${c.name} practice exam, ${c.vendor} certification`,
+    jsonLd: certJsonLd(c, allFaqs(c)),
+  }));
+
+  const pages = [...staticPages, practiceIndex, ...certPages, ...articlePages];
 
   for (const page of pages) {
     const html  = renderHead(template, page);

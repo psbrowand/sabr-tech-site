@@ -21,6 +21,8 @@ import HomePage          from './pages/HomePage';
 import LandingPage       from './pages/LandingPage';
 import DemoLabPage       from './pages/DemoLabPage';
 import ComparePage       from './pages/ComparePage';
+import PracticeIndexPage from './pages/PracticeIndexPage';
+import CertPrepPage      from './pages/CertPrepPage';
 import TechNewsPage      from './pages/TechNewsPage';
 import CyberSecurityPage from './pages/CyberSecurityPage';
 import ArticlePage       from './pages/ArticlePage';
@@ -103,6 +105,9 @@ export default function App() {
           {/* Free no-signup demo lab — top-of-funnel. /demo aliases /try. */}
           <Route path="/try"            element={<DemoLabPage />} />
           <Route path="/demo"           element={<DemoLabPage />} />
+          {/* Per-cert practice-test landing pages — organic-search front door. */}
+          <Route path="/practice"          element={<PracticeIndexPage />} />
+          <Route path="/practice/:slug"    element={<CertPrepPage />} />
           {/* High-intent comparison landing pages (nominative fair use). */}
           <Route path="/compare/boson-netsim-alternative"  element={<ComparePage competitor="boson-netsim" />} />
           <Route path="/compare/packet-tracer-alternative" element={<ComparePage competitor="packet-tracer" />} />

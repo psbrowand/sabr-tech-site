@@ -77,15 +77,15 @@ const FEATURES = [
 
 // ── Launch certifications ─────────────────────────────────────────────────────
 const LAUNCH_CERTS = [
-  { code: '200-301',  name: 'CCNA',       questions: 100, vendor: 'Cisco',   accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
-  { code: 'HPE6-A86', name: 'Aruba Switching Associate', questions: 100, vendor: 'HPE Aruba', accent: 'text-orange-400', border: 'border-orange-400/20', bg: 'bg-orange-400/8' },
-  { code: 'JN0-106',  name: 'JNCIA-Junos', questions: 100, vendor: 'Juniper', accent: 'text-lime-400',  border: 'border-lime-400/20',  bg: 'bg-lime-400/8' },
-  { code: '220-1201', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
-  { code: '220-1202', name: 'A+ Core 2',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
-  { code: 'N10-009',  name: 'Network+',   questions: 100, vendor: 'CompTIA', accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
-  { code: 'SY0-701',  name: 'Security+',  questions: 100, vendor: 'CompTIA', accent: 'text-emerald-400',border: 'border-emerald-400/20',bg: 'bg-emerald-400/8' },
-  { code: 'CS0-003',  name: 'CySA+',      questions: 100, vendor: 'CompTIA', accent: 'text-violet-400', border: 'border-violet-400/20', bg: 'bg-violet-400/8' },
-  { code: 'PT0-003',  name: 'PenTest+',   questions: 100, vendor: 'CompTIA', accent: 'text-orange-400', border: 'border-orange-400/20', bg: 'bg-orange-400/8' },
+  { code: '200-301',  slug: 'ccna',        name: 'CCNA',       questions: 180, vendor: 'Cisco',   accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
+  { code: 'HPE6-A86', slug: 'aruba-aca-switching', name: 'Aruba Switching Associate', questions: 110, vendor: 'HPE Aruba', accent: 'text-orange-400', border: 'border-orange-400/20', bg: 'bg-orange-400/8' },
+  { code: 'JN0-106',  slug: 'jncia-junos', name: 'JNCIA-Junos', questions: 110, vendor: 'Juniper', accent: 'text-lime-400',  border: 'border-lime-400/20',  bg: 'bg-lime-400/8' },
+  { code: '220-1201', slug: 'a-plus-core-1', name: 'A+ Core 1',  questions: 100, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
+  { code: '220-1202', slug: 'a-plus-core-2', name: 'A+ Core 2',  questions: 140, vendor: 'CompTIA', accent: 'text-red-400',    border: 'border-red-400/20',    bg: 'bg-red-400/8' },
+  { code: 'N10-009',  slug: 'network-plus', name: 'Network+',   questions: 100, vendor: 'CompTIA', accent: 'text-cyan-400',   border: 'border-cyan-400/20',   bg: 'bg-cyan-400/8' },
+  { code: 'SY0-701',  slug: 'security-plus', name: 'Security+',  questions: 500, vendor: 'CompTIA', accent: 'text-emerald-400',border: 'border-emerald-400/20',bg: 'bg-emerald-400/8' },
+  { code: 'CS0-003',  slug: 'cysa-plus',   name: 'CySA+',      questions: 100, vendor: 'CompTIA', accent: 'text-violet-400', border: 'border-violet-400/20', bg: 'bg-violet-400/8' },
+  { code: 'PT0-003',  slug: 'pentest-plus', name: 'PenTest+',   questions: 100, vendor: 'CompTIA', accent: 'text-orange-400', border: 'border-orange-400/20', bg: 'bg-orange-400/8' },
 ];
 
 // ── Pricing ───────────────────────────────────────────────────────────────────
@@ -470,13 +470,11 @@ export default function LandingPage() {
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {LAUNCH_CERTS.map(({ code, name, questions, vendor, accent, border, bg }, i) => (
+            {LAUNCH_CERTS.map(({ code, slug, name, questions, vendor, accent, border, bg }, i) => (
               <FadeIn key={code} delay={i * 50}>
-                <a
-                  href={`${APP_ORIGIN}/register`}
+                <Link
+                  to={`/practice/${slug}`}
                   onClick={() => track(EVENTS.CERT_CARD_CLICK, { cert_code: code, cert_name: name, vendor })}
-                  target="_blank"
-                  rel="noopener"
                   className={`card p-5 border ${border} hover-glow flex flex-col gap-3 group`}
                 >
                   <div className="flex items-start justify-between">
@@ -498,19 +496,19 @@ export default function LandingPage() {
                     <span>120+ flashcards</span>
                   </div>
                   <div className={`flex items-center gap-1 text-xs font-semibold ${accent} opacity-0 group-hover:opacity-100 transition-opacity duration-200`}>
-                    Start studying
+                    View practice test
                     <ChevronRight className="w-3 h-3" />
                   </div>
-                </a>
+                </Link>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn delay={320}>
             <p className="text-center mt-6 text-sm text-slate-600">
-              More certifications added every month.{' '}
-              <Link to="/learning" className="text-cyan-400 hover:text-cyan-300">
-                See the full roadmap →
+              17 certifications active, more added every month.{' '}
+              <Link to="/practice" className="text-cyan-400 hover:text-cyan-300">
+                Browse all practice tests →
               </Link>
             </p>
           </FadeIn>

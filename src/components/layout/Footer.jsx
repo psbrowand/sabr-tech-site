@@ -8,29 +8,35 @@ import { useState } from 'react';
 const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
 const footerLinks = {
-  'News': [
-    { label: 'Tech News',       href: '/tech-news' },
-    { label: 'Cyber Security',  href: '/cyber-security' },
-    { label: 'AI & Machine Learning', href: '/tech-news?cat=ai' },
-    { label: 'Space & Science', href: '/tech-news?cat=space' },
-    { label: 'Learning & Certs', href: '/learning' },
+  'Practice Tests': [
+    { label: 'All Practice Tests', href: '/practice' },
+    { label: 'CompTIA Security+',  href: '/practice/security-plus' },
+    { label: 'CompTIA Network+',   href: '/practice/network-plus' },
+    { label: 'CompTIA A+',         href: '/practice/a-plus-core-1' },
+    { label: 'Cisco CCNA',         href: '/practice/ccna' },
+    { label: 'AWS Solutions Architect', href: '/practice/aws-solutions-architect-associate' },
   ],
   'Services': [
     { label: 'SABR Learning',  href: APP_ORIGIN, external: true },
-    { label: 'Discussions',    href: 'https://discussions.sabr-labs.com', external: true },
     { label: 'Try a Free Lab', href: '/try' },
+    { label: 'Discussions',    href: 'https://discussions.sabr-labs.com', external: true },
     { label: 'vs Boson NetSim',   href: '/compare/boson-netsim-alternative' },
     { label: 'vs Packet Tracer',  href: '/compare/packet-tracer-alternative' },
+  ],
+  'News & Guides': [
+    { label: 'Cert Guides',     href: '/learning' },
+    { label: 'Tech News',       href: '/tech-news' },
+    { label: 'Cyber Security',  href: '/cyber-security' },
+    { label: 'AI & ML',         href: '/tech-news?cat=ai' },
+    { label: 'Question of the Day', href: '/qod' },
   ],
   'Company': [
     { label: 'About Us',   href: '/about' },
     { label: 'Contact',    href: '/contact' },
     { label: 'Newsletter', href: '/newsletter' },
-  ],
-  'Legal': [
-    { label: 'Privacy Policy',    href: '/privacy' },
-    { label: 'Terms of Service',  href: '/terms' },
-    { label: 'Refund Policy',     href: '/refund' },
+    { label: 'Privacy Policy',   href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Refund Policy',    href: '/refund' },
   ],
 };
 
