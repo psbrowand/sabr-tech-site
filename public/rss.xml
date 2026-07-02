@@ -6,9 +6,126 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jul 2026 13:16:48 GMT</lastBuildDate>
-    <pubDate>Wed, 01 Jul 2026 13:16:48 GMT</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2026 13:16:19 GMT</lastBuildDate>
+    <pubDate>Thu, 02 Jul 2026 13:16:19 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Meta Had Kenyan Workers Pose as Teens to Probe Rival Chatbots</title>
+      <link>https://sabr-labs.com/article/meta-cannes-kenya-contractors-posing-as-teens-chatbot-testing-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-cannes-kenya-contractors-posing-as-teens-chatbot-testing-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Meta</category>
+      <category>AI Safety</category>
+      <category>Content Moderation</category>
+      <category>Wired</category>
+      <category>Chatbots</category>
+      <description>A Wired investigation says Meta ran a project called Cannes that fed tens of thousands of harmful prompts to ChatGPT, Gemini and Character.AI.</description>
+      <content:encoded><![CDATA[<p>Meta ran an operation, internally named Cannes, in which contractors in Kenya posed as children and teenagers and pushed rival AI chatbots toward their worst possible answers. That is the core of a Wired investigation published this week, and it is one of the stranger stories the AI beat has produced.</p>
+<p>The contractors, managed through a firm called Covalen, sent prompts about suicide, sex and drugs to ChatGPT, Google's Gemini and Character.AI while presenting as minors. Wired reports one round alone ran more than 45,000 prompts and wrapped in August 2025, and that the effort was still active as recently as April 21 of this year. Workers also used images of pills, knives and nooses as part of the testing.</p>
+<p>Meta's framing is that this is ordinary safety work. The company calls testing and benchmarking chatbot responses a responsible, industry-standard practice for ensuring age-appropriate experiences. There is a real version of that argument. Red-teaming models against how a vulnerable teenager might actually use them is genuinely important, and every serious lab does some form of it.</p>
+<p>But the details strain the safety label. Experts told Wired that spinning up accounts dressed as children to probe competitors sits outside what is normally called industry-standard evaluation. Safety testing you do on your own product to fix it is one thing. Systematically stress-testing rivals' products, at scale, looks a lot more like competitive intelligence wearing a safety badge.</p>
+<p>The human cost is the part that should not get lost. This is content moderation's oldest pattern, low-paid workers in the global south absorbing the most disturbing material so a trillion-dollar company doesn't have to. The Nairobi outsourcing firm Sama, which has done this kind of work for Meta before, issued redundancy notices to more than 1,100 employees in April after a major Meta engagement ended, following whistleblower complaints about the content those workers had to handle.</p>
+<p>If Cannes was really about child safety, the obvious question is why it needed to run through disposable contractors in Kenya rather than a transparent, disclosed research program. Meta has not answered that one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>UK&apos;s National Grid Puts $1.75B Into US Power for AI Data Centers</title>
+      <link>https://sabr-labs.com/article/national-grid-joulent-1-75-billion-ai-data-center-power-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/national-grid-joulent-1-75-billion-ai-data-center-power-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 12:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>National Grid</category>
+      <category>Joulent</category>
+      <category>Data Centers</category>
+      <category>Energy</category>
+      <category>Microsoft</category>
+      <description>National Grid is buying a 35% stake in Joulent, whose first project is a 2.67-gigawatt Texas plant feeding a Microsoft data center.</description>
+      <content:encoded><![CDATA[<p>The constraint on AI right now is not chips. It is watts. Britain's National Grid just made that literal by committing $1.75 billion for a 35 percent stake in Joulent, a US company that builds power for the largest electricity users, meaning data centers and the AI clusters inside them.</p>
+<p>The money goes through National Grid Ventures, and the anchor project tells you exactly what this is about. Joulent's first build is Project Kilby, a 2.67-gigawatt gas-fired plant in West Texas that will feed a Microsoft-operated data center campus under a 20-year power purchase agreement, with Chevron as a partner. Joulent is targeting first power by 2028.</p>
+<p>Read the shape of the deal and you see the real story. A regulated UK grid operator is reaching across the Atlantic to buy into American gas generation, because that is where the demand is and because getting new load connected to the existing grid has become the bottleneck. Interconnection queues stretch for years in a lot of US markets. Building dedicated generation next to the data center sidesteps the wait.</p>
+<p>National Grid was careful to say this is incremental to its existing capital program of at least 70 billion pounds through the 2031 financial year, funded from balance-sheet headroom, and does not change its five-year framework. Translation: don't read this as a strategy wobble, read it as a bolt-on bet on a demand curve they expect to keep climbing.</p>
+<p>For everyone watching the AI buildout, this is the pattern to track. The headline announcements are about models and chips. The projects that actually gate how fast any of it gets deployed are power plants and substations, and the capital is starting to flow accordingly.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>South Korea Bets $880 Billion That AI Is Won in Hardware</title>
+      <link>https://sabr-labs.com/article/south-korea-880-billion-semiconductor-ai-investment-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/south-korea-880-billion-semiconductor-ai-investment-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>South Korea</category>
+      <category>Semiconductors</category>
+      <category>Samsung</category>
+      <category>SK Hynix</category>
+      <category>AI Infrastructure</category>
+      <description>Seoul and its chipmakers pledged the largest national semiconductor investment on record, aimed at fabs, data centers and robotics.</description>
+      <content:encoded><![CDATA[<p>South Korea has decided the next phase of AI will be settled in fabs and data centers, not in model demos, and it is putting a staggering amount of money behind that view. President Lee Jae-myung and the heads of Samsung Electronics and SK Hynix laid out a plan on June 29 to pour at least $880 billion into semiconductors, AI infrastructure and robotics over the next decade.</p>
+<p>The bulk of it comes from the companies. Samsung and SK Hynix, together with their suppliers, committed 800 trillion won, roughly $518 billion, to build two new chip fabrication sites each in the country's southwest. Samsung's slice alone is about 400 trillion won for new fabs around Gwangju, plus another 56 trillion won for advanced high-bandwidth-memory lines in Cheonan and Onyang. HBM is the memory that feeds AI accelerators, and it is where SK Hynix in particular has been printing money.</p>
+<p>Lee framed the whole thing around what he called a triple axis of semiconductors, physical AI and data centers, and said the country has to secure the core pieces of AI faster than anyone else. The southwest was chosen in part because it has spare, underused power, which is quietly the real currency of the AI buildout right now.</p>
+<p>Set against the scale, some skepticism is fair. This is a ten-year commitment, and ten-year industrial pledges have a way of getting renegotiated when the market turns or a government changes. The won figures are announced spending, not delivered concrete and clean rooms. Fabs take years to build and can slip.</p>
+<p>Still, the direction is unmistakable. Between this, the US CHIPS money and comparable moves elsewhere, every major manufacturing economy is now treating advanced chips and the power to run them as strategic national assets. South Korea just planted the biggest single flag yet.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ransomware Crews Adopt BlueHammer, a Defender Bug Fixed in April</title>
+      <link>https://sabr-labs.com/article/bluehammer-cve-2026-33825-defender-ransomware-exploitation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/bluehammer-cve-2026-33825-defender-ransomware-exploitation-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 10:05:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Windows Defender</category>
+      <category>CVE-2026-33825</category>
+      <category>BlueHammer</category>
+      <category>Ransomware</category>
+      <category>Privilege Escalation</category>
+      <description>CISA says ransomware groups are now abusing CVE-2026-33825 to jump from local user to SYSTEM on unpatched Windows machines.</description>
+      <content:encoded><![CDATA[<p>A Windows Defender privilege escalation bug that Microsoft patched almost three months ago has found a second life. CISA said this week that ransomware crews are actively exploiting CVE-2026-33825, the flaw a researcher named BlueHammer, to take over machines that never got the fix.</p>
+<p>The mechanics are clever. BlueHammer is a time-of-check to time-of-use race in Defender's cleanup routine. When Defender detects a malicious file and moves to remediate it, the exploit uses an opportunistic lock to freeze that operation at the exact wrong moment, then swaps in an NTFS junction that redirects Defender's privileged write from a temp folder into C:\Windows\System32. The result is SYSTEM-level access on fully patched Windows 10 and 11, and from there the attacker can read the SAM database and its password hashes.</p>
+<p>There is history here worth remembering. BlueHammer went public on April 7 with working exploit code, dropped by a researcher using the handle Chaotic Eclipse as a protest against how Microsoft's Security Response Center handled the disclosure. Microsoft patched it a week later on the April 14 Patch Tuesday. So the fix has been sitting there since spring.</p>
+<p>That is the part that stings. This is not a zero-day catching defenders off guard. It is a known bug with a patch that has been available for months, and it is still landing because unpatched Windows endpoints are everywhere. Privilege escalation flaws like this one are the quiet workhorses of a ransomware intrusion. The crew gets in some other way, then reaches for a reliable path to SYSTEM, and BlueHammer is now on that shelf.</p>
+<p>If your patch management covers Defender and the April updates, you are done. If you are not sure whether every endpoint took that Patch Tuesday, this is your reminder to go check the stragglers before someone else does.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Start Hitting Kemp LoadMaster Days After Exploit Drops</title>
+      <link>https://sabr-labs.com/article/progress-kemp-loadmaster-cve-2026-8037-preauth-rce-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/progress-kemp-loadmaster-cve-2026-8037-preauth-rce-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 09:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Progress</category>
+      <category>Kemp LoadMaster</category>
+      <category>CVE-2026-8037</category>
+      <category>RCE</category>
+      <category>watchTowr</category>
+      <description>A CVSS 9.6 pre-auth flaw in Progress Kemp LoadMaster went from advisory to exploitation attempts within hours of a public writeup.</description>
+      <content:encoded><![CDATA[<p>Progress disclosed a flaw in its Kemp LoadMaster load balancers on June 4 and said it had no reports of exploitation. That held for about three weeks. Then watchTowr Labs published a full technical breakdown on June 29, and by that same day attackers were throwing it at live appliances.</p>
+<p>CVE-2026-8037 is an OS command injection bug rated 9.6. It is pre-auth, which is the phrase that turns a routine patch into an emergency: an unauthenticated attacker can send a crafted request to the /accessv2 endpoint and run commands on the appliance. Load balancers sit right at the network edge, in front of the applications you are trying to protect, so a box under an attacker's control is close to worst case.</p>
+<p>The root cause is a small one with a large blast radius. A function named escape_quotes() failed to null-terminate the strings it sanitized, which led to an out-of-bounds read into adjacent heap memory. From there the exploit chain reaches command execution. watchTowr's writeup walks the whole path, which is exactly why the timing lined up the way it did.</p>
+<p>Affected builds are GA v7.2.63.1 and earlier, and LTSF v7.2.54.17 and earlier, but only when the API is enabled. If you have the API turned off, you are not in the blast zone for this one. Check before you panic.</p>
+<p>The early news is oddly reassuring. eSentire watched exploitation attempts and reported that they failed, with no post-compromise activity. That is not a reason to relax. A working proof-of-concept is public, the technical details are all out there, and the gap between failed opportunistic scans and a reliable weaponized exploit tends to be short.</p>
+<p>Patch to a fixed build. If you cannot patch today, disabling the API closes the door until you can.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SharePoint RCE From May Is Now Being Exploited, Patch by Friday</title>
+      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-rce-kev-active-exploitation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-rce-kev-active-exploitation-july-2026</guid>
+      <pubDate>Thu, 02 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SharePoint</category>
+      <category>CVE-2026-45659</category>
+      <category>Microsoft</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <description>CISA added CVE-2026-45659 to its exploited-vulnerabilities list, and any authenticated SharePoint user can trigger it.</description>
+      <content:encoded><![CDATA[<p>A SharePoint flaw Microsoft patched back in May is now being used in real attacks, and the ugly part is how little access it takes to pull off.</p>
+<p>CVE-2026-45659 is a deserialization bug (CWE-502) that carries a CVSS score of 8.8. Microsoft shipped the fix on May 21 as part of that month's Patch Tuesday. On Monday, CISA added it to the Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 4 to patch under BOD 26-04. If you run SharePoint on-prem, treat that deadline as yours too.</p>
+<p>What makes this one worth dropping everything for is the privilege bar. An attacker does not need admin. They do not need elevated rights of any kind. A plain authenticated user with Site Member permissions, the level you hand out to ordinary contributors, can execute code on the server. In most organizations that describes a lot of accounts, and every one of them is now a potential foothold.</p>
+<p>Affected versions are SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. The bug lives in how the server deserializes attacker-controlled objects without checking them properly, which is the same class of mistake that has burned SharePoint before.</p>
+<p>Here is what CISA and Microsoft are not saying: who is behind the attacks, how they are getting in, or what they are after. That silence is normal this early, but it also means you cannot wait for indicators of compromise to justify patching. The exploitation is confirmed. The attribution is a blank.</p>
+<p>If you have not applied the May update, that is the whole job. There is no config workaround that beats installing the patch. Do it, then go read your SharePoint access logs for anything a Site Member should not have been doing.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Amazon Fined $2.25M for Denying Fraud Records to Theft Victims</title>
       <link>https://sabr-labs.com/article/amazon-ftc-fine-identity-theft-records-fcra-609e-june-2026</link>
@@ -852,125 +969,6 @@
 <p>Geography is lopsided. Almost half of the infections sit in South Korea, with China accounting for roughly another third, then a long tail through Sweden, Malaysia, and Singapore. XLab also found two flavors of the malware: a C-based build that hits the old routers, and a Go-based version aimed at NAS systems that, for now, has a much smaller footprint.</p>
 <p>There's a timing detail worth noting. AryStinger's operators started spreading it one day after law enforcement disrupted the AVrecon proxy botnet, and XLab's first detection lands back in March. That's the proxy-botnet market working exactly the way it always does: take one operation down, and the demand for residential exit nodes just routes to the next one.</p>
 <p>If you've got a D-Link router from the mid-2010s still doing duty somewhere, this is the nudge to pull it. There is no patch coming for hardware this old, and the only real fix is a device the vendor still supports. Check your DNS settings while you're at it, because that's one of the first things AryStinger changes.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Gentlemen Ransomware Built Its Own EDR-Killer, and It&apos;s Fast</title>
-      <link>https://sabr-labs.com/article/gentlekiller-the-gentlemen-raas-edr-killer-byovd-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gentlekiller-the-gentlemen-raas-edr-killer-byovd-june-2026</guid>
-      <pubDate>Mon, 22 Jun 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>EDR</category>
-      <category>BYOVD</category>
-      <category>ESET</category>
-      <category>FortiGate</category>
-      <description>ESET says the Gentlemen RaaS now ships affiliates a custom toolkit, GentleKiller, that disables 400-plus processes across 48 security products by abusing vulnerable kernel drivers.</description>
-      <content:encoded><![CDATA[<p>Most ransomware crews rent their EDR-killers from someone else. The Gentlemen built their own, and according to ESET research published this week, it's better than what they could have bought.</p>
-<p>The toolkit is called GentleKiller, and the Gentlemen ransomware-as-a-service operation hands it to vetted affiliates as part of the package. It targets more than 400 processes belonging to 48 separate security products, which covers basically every endpoint agent a defender is likely to be running. It ships in at least eight variants, each one impersonating a different legitimate application and each one loading a different vulnerable or outright malicious kernel driver to do its work.</p>
-<p>That technique, bring-your-own-vulnerable-driver, isn't new. What's new is the speed. ESET found that the Gentlemen fold freshly published BYOVD proof-of-concept code into GentleKiller within days of it hitting GitHub. Tools named UnknownKiller and PoisonKiller went from public research to production tooling in the gang's hands almost immediately. Most RaaS operators sit on public exploits for weeks or months before they bother to weaponize them. This crew runs a development pipeline that keeps pace with the security researchers publishing the bugs.</p>
-<p>Their targeting is unusual too. Instead of the usual fixation on US victims, the Gentlemen go after organizations in Southeast Asia, South America, and Western Europe, and they pick targets less by geography than by exposure. The common thread in their intrusions is a misconfigured FortiGate sitting on the edge. Find the soft firewall, get in, then let GentleKiller clear the room before the encryptor runs.</p>
-<p>A data leak from inside the operation back in May confirmed what researchers suspected: the operators actively build, maintain, and distribute the EDR-killer suite themselves rather than reselling someone else's. One tracker puts the group's victim count at 478. That's a real operation, not a side project.</p>
-<p>The uncomfortable part for defenders is that a kernel driver Windows trusts is a kernel driver an attacker can abuse, and Microsoft's vulnerable-driver blocklist has never kept up with the pace of new signed-but-broken drivers entering the wild. If your entire detection strategy lives in one EDR agent running in user space, a tool like GentleKiller is designed specifically to turn it off before you ever see an alert.</p>
-<p>If you run FortiGate at the perimeter, audit the configuration now, because that's the door this group keeps walking through. And if you can enforce Microsoft's vulnerable-driver blocklist and watch for driver loads that have no business happening on your endpoints, do it. The encryptor is the loud part. GentleKiller is the quiet part that happens first.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FERC Orders All Six US Grid Operators to Rewrite Data-Center Hookup Rules</title>
-      <link>https://sabr-labs.com/article/ferc-grid-operators-data-center-interconnection-orders-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ferc-grid-operators-data-center-interconnection-orders-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 14:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Data Centers</category>
-      <category>FERC</category>
-      <category>Energy</category>
-      <category>AI Infrastructure</category>
-      <category>Policy</category>
-      <description>FERC issued show-cause orders to PJM, MISO, SPP, CAISO, ISO-NE, and NYISO, giving them 60 days to defend or rewrite how AI data centers connect to the grid.</description>
-      <content:encoded><![CDATA[<p>Federal regulators just put the entire US power grid on notice over data centers. On June 18, the Federal Energy Regulatory Commission issued show-cause orders to all six jurisdictional grid operators, telling each one to defend the rules it uses for connecting enormous new electrical loads, or rewrite them.</p>
-<p>The orders go to PJM, MISO, SPP, CAISO, ISO-NE, and NYISO, carried on a unanimous Commission vote under Section 206 of the Federal Power Act. They land in dockets EL26-67 through EL26-72. Between them, those operators run the grid for roughly 200 million Americans across more than 30 states and DC, about two-thirds of the country's electricity demand.</p>
-<p>The clock is short. Operators have 60 days to answer FERC's briefing questions and 30 days to file informational reports on whether they actually have enough generation lined up to keep the system reliable as these loads arrive. FERC staff reviewed more than 3,500 pages of comments before issuing the orders, and the action builds on a December 2025 co-location order in PJM and SPP's earlier work on high-impact large loads.</p>
-<p>FERC organized its demands around five reform areas: faster transmission-service processes, preventing cost-shifts onto ordinary ratepayers, how to treat co-located and behind-the-meter generation, flexible-load service options, and the study process for generation that sits right next to a giant load. That fourth one matters more than it sounds. A data center that can throttle its own draw during grid stress is a very different animal from one that can't.</p>
-<p>This is the AI buildout running into physics. The companies racing to stand up gigawatt-scale data centers want grid connections immediately, and the interconnection queues were never designed for single loads this big showing up this fast. Something had to give, and FERC decided it would rather set the terms now than clean up a reliability mess or a ratepayer revolt later.</p>
-<p>The real fight underneath all this is who pays. Building transmission and generation to feed a hyperscaler's campus costs billions, and if that cost lands in everyone's monthly bill, the politics get ugly quickly. Watch what the operators file in 60 days. If the proposals push more of the cost onto the data centers themselves, that's the signal FERC actually meant it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Klue Breach Lets Icarus Group Steal Salesforce Data From Security Firms</title>
-      <link>https://sabr-labs.com/article/klue-oauth-breach-icarus-salesforce-data-theft-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/klue-oauth-breach-icarus-salesforce-data-theft-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Salesforce</category>
-      <category>OAuth</category>
-      <category>Supply Chain</category>
-      <category>Extortion</category>
-      <description>A poisoned update inside competitive-intel vendor Klue let the Icarus extortion group harvest OAuth tokens and steal Salesforce data from customers including Huntress, ReliaQuest, and Recorded Future.</description>
-      <content:encoded><![CDATA[<p>Klue, the competitive-intelligence tool a lot of sales teams plug straight into their CRM, spotted unauthorized activity in its integration infrastructure on June 12. By the time the picture was clear this week, the attackers had pushed a malicious code update through Klue's own backend, scraped the OAuth tokens that connect Klue to its customers, and walked those tokens straight into Salesforce.</p>
-<p>The foothold was depressingly ordinary. According to the incident writeups, the attackers got in through a dormant but still-active legacy credential, created for a prototype integration and never revoked. From there they had enough access to ship a backend update that quietly collected the tokens linking Klue to everyone who used it.</p>
-<p>Once that was understood, Klue pulled its integrations with Salesforce, HubSpot, SharePoint, Zoom, Gong, Chorus, Clari, Google Drive, and Slack. Salesforce separately disabled the Klue Battlecards app on its side. The data that actually left was CRM data: business contacts, sales communications, price quotes, account records, and the competitive-intel reports Klue exists to produce. Klue says its threat-intel data, customer telemetry, passwords, payment cards, and engineering systems were not touched.</p>
-<p>The victim list is the part that stings. Huntress, ReliaQuest, Recorded Future, Tanium, Jamf, Sprout Social, Gong, and Insurity have all been named as affected, and several of them are security companies that sell exactly the kind of monitoring that's supposed to catch this. Huntress and ReliaQuest, to their credit, published their own breach investigations rather than wait to be outed.</p>
-<p>The Icarus extortion group, which surfaced around April, claimed responsibility and is now leaning on victims through extortion emails and a leak site. If the pattern feels familiar, it should. This is the same play that drove the Salesloft and Drift wave: don't bother breaching the big, well-defended company, breach the small SaaS tool it trusted, and let the OAuth tokens handle the lateral movement for you.</p>
-<p>That's the uncomfortable lesson here. Every third-party app you connect to Salesforce is a key to your data sitting in someone else's building, and you're trusting that building's security as much as your own. A dormant credential at a mid-size vendor turned into stolen records at a row of household-name security firms.</p>
-<p>If you run Salesforce and bolt third-party apps onto it, this is the week to audit which OAuth grants are still live, revoke the ones nobody uses anymore, and assume any token issued to a breached vendor is now in someone else's hands. Rotate first, ask questions after.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Trump Says Apple Will Build Chips With Intel; Neither Company Confirms</title>
-      <link>https://sabr-labs.com/article/trump-apple-intel-us-chip-claim-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/trump-apple-intel-us-chip-claim-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Intel</category>
-      <category>Semiconductors</category>
-      <category>Manufacturing</category>
-      <category>Markets</category>
-      <description>President Trump claimed Apple agreed to design and build chips with Intel in the US, sending Intel up about 10%, though neither Apple nor Intel has confirmed any deal.</description>
-      <content:encoded><![CDATA[<p>President Trump said on June 18 that Apple has agreed to work with Intel to design and build chips in America. Intel stock jumped about 10.5% on the news, climbing to $133.82. There's one problem worth leading with: neither Apple nor Intel will confirm that any such deal exists.</p>
-<p>Apple didn't comment at all. Intel declined to comment on what it called a potential Apple-Intel agreement, which is the corporate phrasing companies use when they're not going to confirm a thing but don't want to flatly deny it either. So the only named source for a market-moving claim about two of the biggest companies in tech is the president's social media account.</p>
-<p>The analysts filled in the rest. Wedbush's Dan Ives framed it as a preliminary deal following more than a year of talks, with the logic being that Apple wants to reduce how much it leans on TSMC for manufacturing. Some go further and float Apple's M7 chip running on Intel's 18A-P process with volume production around late 2027. That's speculation stacked on top of an unconfirmed claim, and it's worth labeling as such.</p>
-<p>There's politics baked into this one. The US government took a 10% stake in Intel last August, so an administration talking up Intel's prospects is also, in a real sense, talking up a position it holds. That doesn't make the claim false. It does mean the messenger has a stake in the stock that just rose 10%.</p>
-<p>Treat this as exactly what it is for now: a claim that moved a major stock double digits before either company at the center of it would stand behind a single word. If a real Apple-Intel manufacturing deal is coming, Apple and Intel are perfectly capable of saying so themselves. Until one of them does, the only confirmed fact here is the stock chart.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Texas Parks Breach Exposes 3 Million Hunting License Holders&apos; IDs</title>
-      <link>https://sabr-labs.com/article/texas-parks-wildlife-3-million-license-breach-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/texas-parks-wildlife-3-million-license-breach-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Texas</category>
-      <category>Third-Party Risk</category>
-      <category>Identity Theft</category>
-      <category>Government</category>
-      <description>A compromise of Texas Parks &amp; Wildlife&apos;s third-party license vendor exposed driver&apos;s license and passport details for more than 3 million hunting and fishing license holders.</description>
-      <content:encoded><![CDATA[<p>Three million Texans who bought a hunting or fishing license now have their driver's license and passport details in someone else's hands. Texas Parks and Wildlife disclosed the breach on June 18, putting the number at 3,087,721 license holders, all of it flowing through a compromise of the third-party vendor that runs the agency's license-sales system.</p>
-<p>The exposed data covers driver's license information, passport numbers, email addresses, phone numbers, and home addresses. What's notably absent is almost as important as what's there: no Social Security numbers, no dates of birth, and no financial or credit-card data. That narrows the fraud options, though passport numbers are nothing to wave off.</p>
-<p>The timeline has a familiar gap. TPWD says it detected the incident on May 13 and notified Texas Cyber Command, then went public on June 18. Five weeks between detection and disclosure is on the faster end of how these tend to go, but it's still over a month in which affected people had no idea their passport number was loose.</p>
-<p>The agency is careful to say its own systems weren't breached, the unnamed vendor's were. That's accurate and also cold comfort to the people affected, who never chose the vendor and can't audit it. When you outsource license sales, you outsource the breach risk too, and the public still reads it as a state agency losing their data.</p>
-<p>Affected license holders are being offered a year of free credit monitoring and the standard advice to set a credit freeze or fraud alert. The piece worth actually caring about is the passport number, which credit monitoring does nothing for. If yours was in this dataset, it's a good moment to know how you'd spot a passport used in your name, because that's the exposure a free monitoring year won't cover.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Open Elasticsearch Server Exposed 24 Billion Stolen Credential Records</title>
-      <link>https://sabr-labs.com/article/infostealer-24-billion-credential-database-exposed-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/infostealer-24-billion-credential-database-exposed-june-2026</guid>
-      <pubDate>Sun, 21 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Infostealer</category>
-      <category>Credentials</category>
-      <category>Data Leak</category>
-      <category>MFA</category>
-      <category>Exposed Database</category>
-      <description>Researchers found an unsecured 8.3 TB database of 24 billion records, mostly infostealer logs, with a subset that paired stolen logins to CVE IDs and ready-made exploit repos.</description>
-      <content:encoded><![CDATA[<p>Twenty-four billion records, 8.3 terabytes, sitting on an Elasticsearch cluster with no password on it. Cybernews researchers found the trove exposed on June 12 and traced it to a breach-monitoring operation that reportedly left it open during a migration. The data is now offline.</p>
-<p>Most of it is infostealer logs, the output of malware that scrapes everything useful off an infected machine: passwords, session cookies and tokens that can sail right past multi-factor authentication, browser autofill data, device fingerprints, and crypto wallet details. It was aggregated from roughly 36 sources, including Telegram channels and older breach compilations stitched together into one searchable pile.</p>
-<p>The detail that sets this dump apart sits in a small subset, around 17,000 records. There, someone paired more than 9,500 CVE IDs and their descriptions with links to GitHub exploit repositories. In other words, the dataset didn't just hold stolen credentials, it enriched them with live exploit intel so an attacker could line up which targets to hit and with what.</p>
-<p>Keep the headline number in perspective, though. Twenty-four billion records is not twenty-four billion people. It's a heap of overlapping, re-aggregated dumps, heavy on duplicates and recycled data, and the count balloons fast when you merge 36 sources that already share entries. The exposure is real; the scariness of the raw figure is partly an artifact of how these collections get built.</p>
-<p>The practical response is the boring one that actually works. Use unique passwords stored in a manager so one stolen login doesn't unlock ten accounts, turn on MFA everywhere, ideally the phishing-resistant kind, and take session-token theft seriously as a way around your second factor. If a service supports it, kill old sessions and rotate tokens on a schedule rather than waiting for a reason.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
