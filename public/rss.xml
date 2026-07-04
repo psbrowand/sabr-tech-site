@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jul 2026 13:15:37 GMT</lastBuildDate>
-    <pubDate>Fri, 03 Jul 2026 13:15:37 GMT</pubDate>
+    <lastBuildDate>Sat, 04 Jul 2026 13:13:42 GMT</lastBuildDate>
+    <pubDate>Sat, 04 Jul 2026 13:13:42 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Federal Agencies Have Until Today to Patch Exploited SharePoint Flaw</title>
+      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-cisa-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-cisa-kev-july-2026</guid>
+      <pubDate>Sat, 04 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SharePoint</category>
+      <category>Microsoft</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <category>Patch Management</category>
+      <description>CISA added CVE-2026-45659, an authenticated SharePoint RCE rated CVSS 8.8, to its Known Exploited Vulnerabilities catalog with a July 4 remediation deadline.</description>
+      <content:encoded><![CDATA[<p>Every federal civilian agency running on-prem SharePoint has until the end of today to patch, or explain to CISA why they didn't.</p>
+<p>The flaw is CVE-2026-45659, a deserialization of untrusted data bug in SharePoint Server that lets an authenticated attacker run code across the network. It carries a CVSS score of 8.8. CISA moved it onto the Known Exploited Vulnerabilities catalog after confirming attackers are already using it in the wild, which triggers the binding operational directive and the July 4 clock for Federal Civilian Executive Branch agencies.</p>
+<p>Here's the part that should sting: Microsoft shipped the fix back in May, in an out-of-band update. The patch has been sitting there for weeks. What changed is that exploitation went from theoretical to observed, and CISA reacts to evidence, not to CVSS scores alone.</p>
+<p>The affected list covers the versions most enterprises actually run: SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. If you're on any of those and internet-exposed, assume you're a target.</p>
+<p>The one bit of friction for attackers is that this is an authenticated flaw, not a pre-auth drive-by. That raises the bar slightly, but not much. Credential theft, an existing foothold, or a low-privilege service account is enough to reach the vulnerable code path, and SharePoint deployments are rarely short on stale accounts.</p>
+<p>If you run SharePoint on-prem, treat the KEV listing as your deadline whether or not you answer to CISA. Apply the May update, review your SharePoint service accounts for anything over-privileged or unused, and check web logs for the kind of deserialization payloads that follow this class of bug. The patch has been available long enough that there's no good reason to still be exposed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Dropping Web Shells on PTC Windchill Servers</title>
+      <link>https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-exploitation</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-exploitation</guid>
+      <pubDate>Sat, 04 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>PTC Windchill</category>
+      <category>PLM</category>
+      <category>CISA KEV</category>
+      <category>Web Shell</category>
+      <category>Manufacturing</category>
+      <description>CVE-2026-12569 in PTC Windchill and FlexPLM is under active exploitation, with attackers deploying web shells on exposed systems that hold manufacturing IP.</description>
+      <content:encoded><![CDATA[<p>PTC Windchill is not a household name, but it sits at the center of how aerospace, automotive, and industrial companies manage their product designs. That's exactly why the current attacks matter.</p>
+<p>CVE-2026-12569 is a critical remote code execution flaw in Windchill and its FlexPLM sibling, and it's being exploited right now. Researchers have observed attackers using it to plant web shells on internet-exposed servers, which gives them persistent, interactive access to the box. CISA added the vulnerability to its Known Exploited Vulnerabilities catalog once the evidence was clear.</p>
+<p>A web shell is about as bad as it sounds. Once one is dropped, the attacker has a foothold that survives reboots and blends into normal web traffic, and from there they can move laterally into the rest of the environment.</p>
+<p>What makes a PLM platform a juicy target isn't the server itself. It's the data. Windchill holds the CAD files, bills of materials, and engineering change records for whatever a company builds. For a manufacturer, that's the crown jewels, and for a nation-state interested in defense or automotive design, it's a shopping list.</p>
+<p>PTC customers should patch to the fixed release immediately and then assume compromise until proven otherwise. Hunt for unexpected files in web-accessible directories, review outbound connections from Windchill hosts, and pull any exposed instance off the public internet if it doesn't strictly need to be there. A web shell that's already landed won't be removed by the patch.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>14 Million Credentials Spill From KDDI and Six Japanese ISPs</title>
+      <link>https://sabr-labs.com/article/kddi-japan-isp-credential-breach-14-million-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/kddi-japan-isp-credential-breach-14-million-2026</guid>
+      <pubDate>Sat, 04 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>KDDI</category>
+      <category>Japan</category>
+      <category>Credential Theft</category>
+      <category>Supply Chain</category>
+      <description>Roughly 14.2 million email and password combinations tied to KDDI and six other Japanese internet providers were exposed after a flaw in third-party software was exploited.</description>
+      <content:encoded><![CDATA[<p>Around 14.2 million email and password pairs belonging to customers of KDDI and six other Japanese internet service providers have been exposed, and the root cause is one that keeps showing up: a vulnerability in third-party software the providers all relied on.</p>
+<p>The details on the exact software are still thin, but the shape of the incident is familiar. A shared component sat in the supply chain of multiple ISPs, someone found a way in, and a single weakness turned into a seven-figure credential dump spanning several unrelated companies.</p>
+<p>Credential breaches age badly. Password reuse means these pairs won't just unlock the accounts they came from. They'll get fed into credential-stuffing runs against banking, email, and retail logins for months, and a meaningful slice will hit because people reuse passwords across services.</p>
+<p>If you're a KDDI customer or use any Japanese ISP, change the password now and turn on multi-factor authentication anywhere it's offered. If you reused that password anywhere else, change it there too. That's the unglamorous but correct response to any breach that leaks the password itself rather than just a hash.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia&apos;s RTX Spark Superchip Puts a Petaflop in a Laptop</title>
+      <link>https://sabr-labs.com/article/nvidia-rtx-spark-superchip-ai-pc-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-superchip-ai-pc-2026</guid>
+      <pubDate>Sat, 04 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>AI Hardware</category>
+      <category>Blackwell</category>
+      <category>GPU</category>
+      <category>Local AI</category>
+      <description>Nvidia&apos;s new RTX Spark pairs a Blackwell RTX GPU with a 20-core Grace CPU and 128GB of unified memory, aiming to run large AI models locally instead of in the cloud.</description>
+      <content:encoded><![CDATA[<p>Nvidia's pitch for the RTX Spark is simple: stop renting a datacenter to run your AI, and run it on the machine in front of you.</p>
+<p>The chip couples a Blackwell RTX GPU with 6,144 CUDA cores and fifth-generation Tensor Cores to a 20-core Grace CPU, backed by 128GB of unified memory. Nvidia claims up to 1 petaflop of AI compute, using FP4 precision to get there. That unified memory pool is the interesting number, because it's what lets a laptop hold a large model in memory without shuttling weights back and forth across a slow bus.</p>
+<p>The FP4 caveat matters. A petaflop at four-bit precision is not a petaflop of the high-precision math you'd use for training. It's tuned for inference, which is the right call for the target buyer running models locally, but it's the kind of headline figure worth reading twice.</p>
+<p>RTX Spark laptops and compact desktops are due this fall from the usual roster: ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI. Nvidia also used the moment to push DLSS 4.5 with a second-generation transformer model for ray reconstruction, aimed at cleaner image quality in path-traced games.</p>
+<p>The broader move here is Nvidia planting a flag in the PC market it mostly ceded to Intel and AMD for on-device compute. If local inference becomes the default way people run agents and assistants, owning the silicon that makes it fast is a strong position. Whether buyers actually want a petaflop under the desk, or would rather keep paying for cloud tokens, is the question the fall launch will start to answer.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Is Now Running Apple Intelligence on Nvidia GPUs</title>
+      <link>https://sabr-labs.com/article/apple-intelligence-nvidia-private-cloud-compute-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-intelligence-nvidia-private-cloud-compute-2026</guid>
+      <pubDate>Sat, 04 Jul 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Nvidia</category>
+      <category>Google Gemini</category>
+      <category>Private Cloud Compute</category>
+      <category>Apple Intelligence</category>
+      <description>Apple confirmed some Apple Intelligence features run on Nvidia chips inside its Private Cloud Compute, with Google&apos;s Gemini powering a rebuilt Siri.</description>
+      <content:encoded><![CDATA[<p>For years Apple's whole story was that it owned its silicon top to bottom. That story just got more complicated.</p>
+<p>Apple has confirmed that some Apple Intelligence features run on Nvidia GPUs in the cloud, sitting inside the company's Private Cloud Compute infrastructure. The heavier a request gets, the more likely it leaves your device and lands on Nvidia hardware Apple doesn't make. On top of that, the rebuilt, more capable Siri is being powered by Google's Gemini.</p>
+<p>The privacy framing is doing a lot of work. Apple says Nvidia's confidential computing technology is what let it meet its own privacy bar, keeping data encrypted and unreadable even to the machine processing it. That's a real technical feature, not just marketing, but it's also the concession that made outsourcing the compute palatable in the first place.</p>
+<p>Strip away the branding and the shape is clear. Apple was behind on large models, chose not to spend years catching up alone, and instead rented Google's model and Nvidia's chips while keeping the customer-facing wrapper. Pragmatic, and a notable climbdown from the company that spent a decade telling everyone vertical integration was the point.</p>
+<p>The thing to watch is how much of Apple Intelligence quietly depends on partners Apple used to compete with. A Siri that finally works is worth a lot to users. Whether Apple can walk this back to its own silicon later, or whether it's now structurally dependent on Nvidia and Google, is the more interesting long game.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Claude Sonnet 5 Lands as ChatGPT&apos;s Lead Keeps Shrinking</title>
+      <link>https://sabr-labs.com/article/claude-sonnet-5-openai-losing-ground-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/claude-sonnet-5-openai-losing-ground-july-2026</guid>
+      <pubDate>Sat, 04 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>OpenAI</category>
+      <category>LLM</category>
+      <category>AI Industry</category>
+      <description>Anthropic&apos;s new Sonnet 5 targets agentic work at lower cost, arriving as data shows ChatGPT slipping below half the generative AI market for the first time.</description>
+      <content:encoded><![CDATA[<p>Anthropic released Claude Sonnet 5 on July 1, and the framing is all about agents. The company calls it its most agentic model yet, built to drive tools like browsers and terminals on its own while landing near Opus 4.8 performance at a noticeably lower price.</p>
+<p>Take the benchmark language with the usual caution. "Most agentic yet" is a claim about tool-use reliability, and the real test is whether it can run a multi-step task without going off the rails halfway through, not whether it wins a leaderboard. But the pricing angle is the substance here. A model that gets close to flagship quality at mid-tier cost is what actually moves developers, because the bill is what kills most agent deployments before they ship.</p>
+<p>The release lands at an awkward moment for OpenAI. According to reporting from Fortune, ChatGPT's monthly visits fell below half of the generative AI market in May for the first time, as users drift toward Gemini and Claude. Ramp's payment data showed Anthropic passing OpenAI in business subscriptions. And Anthropic has said it's on track for roughly $47 billion in annualized revenue with profitability projected for 2029, a year ahead of OpenAI's own timeline.</p>
+<p>Treat those revenue figures as projections, not audited results, because that's what they are. Still, the direction is consistent across independent data sources, and that's harder to wave away than any single vendor's press release.</p>
+<p>Sam Altman's response has been less about product and more about the rules of the game. He's floated a US-led international forum to set AI safety and governance standards, pointing to aviation and atomic energy as templates. It's a reasonable idea on its face. It also reads a little like a company that led on product looking to lead on the framework instead, now that the product lead is thinner than it was.</p>
+<p>For anyone building on these models, the takeaway is boring and useful: the price-to-capability floor keeps dropping, and there's more than one credible vendor to build on. Competition is doing what competition does.</p>]]></content:encoded>
+    </item>
     <item>
       <title>FortiBleed&apos;s Stolen FortiGate Credentials Are Now Fueling Ransomware</title>
       <link>https://sabr-labs.com/article/fortibleed-inc-lynx-ransomware-fortigate-credential-theft-july-2026</link>
@@ -851,122 +966,6 @@
 <p>What makes this one matter is where these boxes sit. The EDS5000 is a serial-to-ethernet converter, the kind of gear that bridges old industrial and OT equipment to a network so it can be managed remotely. They live in the quiet corners of plant and facility networks, often installed years ago and rarely touched since. Nobody is watching them, and almost nobody patches them on a schedule.</p>
 <p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on June 23, one of four it listed that day. The batch also included max-severity flaws in Ubiquiti UniFi OS, so this wasn't an isolated alert. Federal Civilian Executive Branch agencies were given until June 26 to patch or pull the affected devices.</p>
 <p>Lantronix has a fix, version 2.2.0.0R1. The catch is that applying it means someone has to know the device exists, find it, and update firmware on a box that may not have been logged into since it was racked. If you run OT, the move today is to inventory anything Lantronix on your network, get these segmented away from anything that can reach the internet, and schedule the upgrade rather than hoping the device is too obscure to notice. Attackers scanning for 9.8s do not share that assumption.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco Unified CM Flaw Now Dropping Webshells After Public Exploit</title>
-      <link>https://sabr-labs.com/article/cisco-unified-cm-cve-2026-20230-webshells-exploited-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-unified-cm-cve-2026-20230-webshells-exploited-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 08:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>SSRF</category>
-      <category>Unified CM</category>
-      <category>Webshell</category>
-      <category>Active Exploitation</category>
-      <description>Attackers are exploiting CVE-2026-20230, an SSRF bug in Cisco Unified Communications Manager, to write files and plant webshells that survive the patch.</description>
-      <content:encoded><![CDATA[<p>The patch came out three weeks ago. The exploitation started last weekend, and it's the kind that doesn't go away once you finally install the fix.</p>
-<p>CVE-2026-20230 is a server-side request forgery flaw in Cisco Unified Communications Manager, the system that runs enterprise phone and conferencing infrastructure. Cisco shipped fixes on June 3 and rated it 8.6. The root cause is improper input validation on certain HTTP requests, which lets an attacker abuse the WebDialer component with file:// payloads to write arbitrary files to the underlying OS. From there, the path to root is short.</p>
-<p>Threat intelligence firm Defused logged the first real-world attempts over the weekend after exploit details went public. The early activity was reconnaissance: a single IP writing a harmless marker file, /tmp/cve-2026-20230-test.txt, to find vulnerable boxes. That's the polite knock before the door comes off. Honeypots have since seen automated sweeps over Tor dropping webshells, with the observed chain standing up a rogue Apache Axis service to get command execution.</p>
-<p>There's one condition that keeps this from being a five-alarm fire for everyone. Exploitation needs the WebDialer service enabled, and it's off by default. So a shop that never turned it on isn't exposed through this path. A shop that did is, and click-to-call WebDialer is common enough in large Cisco voice deployments that plenty of orgs qualify.</p>
-<p>Here's the part worth sitting with: patching does not evict an attacker who already wrote a webshell. The fix closes the SSRF door. It does nothing about the persistence someone may have dropped behind it last weekend. If your Unified CM had WebDialer on and you patched late, you patched a house someone may have already keyed.</p>
-<p>Concrete next steps. Update to the fixed Unified CM release if you haven't. Check whether WebDialer is actually enabled in your deployment and turn it off where it isn't needed. Then go hunt: look for unexpected files written outside normal paths, any Apache Axis service you didn't deploy, and outbound connections to Tor exit nodes from a voice appliance that has no business talking to them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Refrigerator-Sized Robot Will Try to Save a Falling NASA Telescope</title>
-      <link>https://sabr-labs.com/article/katalyst-link-swift-telescope-rescue-pegasus-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/katalyst-link-swift-telescope-rescue-pegasus-june-2026</guid>
-      <pubDate>Tue, 23 Jun 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>NASA</category>
-      <category>Swift</category>
-      <category>Katalyst</category>
-      <category>Satellite Servicing</category>
-      <category>Pegasus</category>
-      <description>Katalyst&apos;s Link tug launches June 27 on the last-ever Pegasus XL rocket to grab the decaying Swift observatory with robotic arms and boost it back to a safe orbit.</description>
-      <content:encoded><![CDATA[<p>Swift has roughly a 90% chance of falling out of the sky before the end of the year. NASA's plan to stop that involves a refrigerator-sized robot and the last Pegasus rocket that will ever fly.</p>
-<p>The Neil Gehrels Swift Observatory has been up there since November 2004, hunting gamma-ray bursts and doing it well past its design life. After 21 years, its low orbit has started decaying fast, pushed along by a stretch of heavy solar activity that's thickened the upper atmosphere and added drag. Left alone, it faces an uncontrolled reentry, the kind where nobody gets to choose where the pieces come down.</p>
-<p>Enter Katalyst Space Technologies, an Arizona company that won a $30 million task order back in September 2025 with a plan NASA officials politely called technically and programmatically plausible. Their spacecraft is named Link, it's about the size of a refrigerator and roughly twice as heavy, and it carries three robotic arms tipped with LiDAR sensors. The job is to fly up, find Swift, grab a telescope that was never built to be grabbed, and gently push it back toward its original 600-kilometer altitude.</p>
-<p>The ride up is its own piece of history. Liftoff is set for June 27 aboard the final Pegasus XL, Northrop Grumman's air-launched booster that gets dropped from a carrier plane before lighting its motor. The drop happens over the equatorial water near Kwajalein Atoll in the Marshall Islands, and the rocket has to thread Link into Swift's orbital plane at a 20.6-degree inclination. After this one, the Pegasus is retired for good.</p>
-<p>What makes this worth watching isn't just the save. It's the precedent. Swift was designed in the 1990s with no docking port, no grapple fixture, nothing meant to be serviced by another spacecraft. If a commercial tug can latch onto hardware like that and add years to its life, the math on every aging satellite in orbit changes. The rehearsals have gone well. The real thing is a robot trying to catch a tumbling telescope on the first try, and it gets exactly one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Oracle Ships 245 Fixes, and Fusion Middleware Takes the Worst of It</title>
-      <link>https://sabr-labs.com/article/oracle-june-2026-cspu-fusion-middleware-cve-2026-21992-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-june-2026-cspu-fusion-middleware-cve-2026-21992-june-2026</guid>
-      <pubDate>Tue, 23 Jun 2026 12:05:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>Patch Management</category>
-      <category>Fusion Middleware</category>
-      <category>CVE-2026-21992</category>
-      <category>RCE</category>
-      <description>Oracle&apos;s June Critical Security Patch Update covers 243 CVEs across 245 fixes, with Fusion Middleware getting 106 of them, including an unauthenticated remote code execution flaw in Identity Manager.</description>
-      <content:encoded><![CDATA[<p>Two hundred forty-three CVEs in a single drop. Oracle's June update is the kind of release that quietly ruins a patch team's month, and this one is heavier than most.</p>
-<p>The Critical Security Patch Update covers those 243 unique CVEs across 245 fixes, and just under half, 122 of them, carry a critical severity rating. Fusion Middleware ate the largest slice by a wide margin: 106 patches, more than 43% of the entire release. A lot of those are the worst kind, remotely exploitable without any authentication, which is the combination that turns a patch advisory into a weekend.</p>
-<p>The one to flag is CVE-2026-21992, an unauthenticated remote code execution bug in Oracle Identity Manager and Oracle Web Services Manager. It lives in the OIM REST WebServices component and hits versions 12.2.1.4.0 and 14.1.2.1.0. An identity-management server is precisely where you don't want a no-credentials RCE, because it sits at the center of who gets access to everything else.</p>
-<p>There's a reason this release has urgency behind it rather than the usual quarterly shrug. The same cycle addresses CVE-2026-35273, a PeopleSoft flaw that Google's Threat Intelligence Group and Mandiant confirmed was already exploited in the wild as a zero-day by the extortion crew ShinyHunters, tracked as UNC6240. That campaign hit more than 100 organizations, with the bulk of the damage in higher education. When an attacker is already through the door on one Oracle product, the rest of the patch list stops looking optional.</p>
-<p>Oracle moved to a monthly security cadence earlier this year, and the volume shows what that actually means in practice: more frequent releases that are still enormous. Prioritize the unauthenticated remote bugs first, Identity Manager included, and don't let the sheer length of the list become an excuse to defer the handful that an attacker can reach from the open internet.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>WhatsApp Campaign Pushes VBScript That Installs ManageEngine RMM</title>
-      <link>https://sabr-labs.com/article/whatsapp-vbscript-manageengine-rmm-campaign-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/whatsapp-vbscript-manageengine-rmm-campaign-june-2026</guid>
-      <pubDate>Tue, 23 Jun 2026 11:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WhatsApp</category>
-      <category>Malware</category>
-      <category>RMM</category>
-      <category>Kaspersky</category>
-      <category>Social Engineering</category>
-      <description>Kaspersky says an unattributed actor is hijacking WhatsApp accounts to send fake invoice VBS files that quietly install legitimate remote-management software on victims&apos; machines.</description>
-      <content:encoded><![CDATA[<p>The attachment looks like an invoice. Open it, and a script quietly turns your own machine into something someone else can log into whenever they want.</p>
-<p>Kaspersky's Securelist team documented an active campaign this month spreading malicious VBScript files through WhatsApp direct messages. The attackers compromise real WhatsApp accounts and use them to send the files, which arrive dressed up as business and financial documents from someone the recipient may actually know. Victims are spread across Malaysia, Brazil, India, Mexico, Singapore, the UK, Spain, Taiwan, Australia, Russia, and Vietnam, with Malaysia taking the heaviest share.</p>
-<p>Run the script and it kicks off a multi-stage chain. One stage tries to weaken Windows User Account Control. Another pulls down a ZIP archive containing the installer for a legitimate remote monitoring and management tool, ManageEngine's RMM, and sets it up on the host. There's no exotic malware here and that's the point. The attacker installs a real admin tool that endpoint products are inclined to trust, then uses it for hands-on access. It's the same living-off-trusted-software pattern that has made RMM abuse one of the harder intrusions to spot.</p>
-<p>Attribution is thin and Kaspersky is careful about it. The campaign isn't tied to a named group. The one thread investigators pulled is an infrastructure overlap, the IP 202.61.160.201, which has shown up in prior activity linked to Gh0st RAT and ValleyRAT, both associated with Chinese-speaking operators. That's a lead, not a conclusion, and it's worth keeping in that lane.</p>
-<p>The defensive read is simple and slightly old-fashioned. A document arriving over WhatsApp is still a document from the internet, and a .vbs file has no business being one. Block script execution where you can, watch for RMM tools appearing on machines that never had them, and treat an unexpected ManageEngine install on an endpoint as an incident rather than an IT mystery.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Squidbleed: A 29-Year-Old Squid Proxy Bug Leaks Cleartext Traffic</title>
-      <link>https://sabr-labs.com/article/squidbleed-squid-proxy-cve-2026-47729-heap-overread-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/squidbleed-squid-proxy-cve-2026-47729-heap-overread-june-2026</guid>
-      <pubDate>Tue, 23 Jun 2026 10:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Squid</category>
-      <category>Vulnerability</category>
-      <category>Proxy</category>
-      <category>CVE-2026-47729</category>
-      <category>Heartbleed</category>
-      <description>A heap over-read in Squid&apos;s FTP gateway, tracked as CVE-2026-47729, can leak other users&apos; HTTP headers, cookies, and session tokens to anyone who can make the proxy fetch a malicious directory listing.</description>
-      <content:encoded><![CDATA[<p>The bug shipped in January 1997. It survived three decades of releases, code reviews, and independent security audits, and nobody noticed until this month.</p>
-<p>Researchers are calling it Squidbleed, CVE-2026-47729, and the comparison to Heartbleed is earned. It's a heap buffer over-read in Squid Proxy's FTP gateway. When an attacker's FTP server sends a directory listing line that ends right after the timestamp, a strchr call walks past the buffer and treats the terminating null as part of the search. The result is that raw heap memory gets handed back to whoever asked, and that memory can contain other users' HTTP Authorization headers, cookies, and live session tokens.</p>
-<p>Here's who should care. The damage is worst in shared proxy setups, which is to say corporate networks, schools, and public Wi-Fi, anywhere a crowd of people share one Squid instance. Most traffic is HTTPS, which the proxy passes through as an opaque CONNECT tunnel and never sees, so the exposure is really cleartext HTTP and any place the proxy terminates TLS. The attacker also needs the proxy to reach an FTP server they control on port 21. That's a real constraint, but in a lot of default corporate egress, outbound FTP is exactly the kind of thing nobody got around to blocking.</p>
-<p>The patch story got messy fast. Early reporting said Squid 7.6 carried the fix. It doesn't. Maintainer Amos Jeffries posted a correction confirming the real CVE-2026-47729 patch is slated for 7.7, which means anyone who upgraded to 7.6 thinking they were covered is not. If you moved to 7.6 on that assumption, you have homework.</p>
-<p>There's a cleaner fix available right now, and it costs nothing. Disable FTP gateway support. Every major browser dropped native FTP years ago, so legitimate FTP traffic through a corporate or campus proxy in 2026 is close to nonexistent, and turning the feature off removes this entire bug class instead of just this one CVE. Do that today and patch to 7.7 when it lands.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Wants Its AI to Patch Open Source, Not Just Find the Bugs</title>
-      <link>https://sabr-labs.com/article/openai-daybreak-patch-the-planet-gpt-5-5-cyber-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-daybreak-patch-the-planet-gpt-5-5-cyber-june-2026</guid>
-      <pubDate>Tue, 23 Jun 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Open Source</category>
-      <category>Vulnerability Management</category>
-      <category>GPT-5.5-Cyber</category>
-      <category>Daybreak</category>
-      <description>OpenAI expanded its Daybreak program on June 22 with Patch the Planet, a Codex Security plugin, a vendor partner program, and the full release of GPT-5.5-Cyber scoring 85.6% on CyberGym.</description>
-      <content:encoded><![CDATA[<p>Finding bugs is the easy part now. The harder, more thankless work is writing the fix and convincing an overworked open-source maintainer to merge it. That's the gap OpenAI is aiming at with the expanded version of its Daybreak cybersecurity program.</p>
-<p>The centerpiece is Patch the Planet, an initiative built with Trail of Bits and run alongside HackerOne and Calif. The idea is to fund expert researchers, hand them Codex Security and OpenAI's models, and point them straight at the maintainers of the projects everything else depends on. More than 30 projects have signed up so far, with early names including cURL, the Go project, Python, Sigstore, and pyca/cryptography. If you've ever traced a CVE down to a library maintained by one exhausted volunteer, you understand why this is where the leverage actually is.</p>
-<p>OpenAI also pushed GPT-5.5-Cyber to a full release, replacing a preview that had been gated to permissive use. The company put its CyberGym score at 85.6%, up from 81.8% for the standard GPT-5.5. Worth knowing what that number is and isn't: CyberGym measures how well a model reproduces and exploits known vulnerability classes in a controlled benchmark. A high score says the model is good at the kind of bug-hunting the benchmark contains. It does not say the model is safe to wire into your pipeline, and it definitely doesn't capture the messy part, which is everything that happens after a finding lands in a real repo.</p>
-<p>There's a commercial layer too. The new Daybreak Cyber Partner Program lets vendors fold GPT-5.5 with Trusted Access into the products they sell, with Accenture, Cisco, CrowdStrike, IBM, Okta, Palo Alto Networks, and Wiz as launch partners. That's most of the enterprise security shelf signing on at once.</p>
-<p>The timing is hard to ignore. The same day this shipped, the Five Eyes agencies named GPT-5.5-Cyber as an example of a model lowering the barrier to offensive hacking. OpenAI's whole framing is that defenders should get there first, and Patch the Planet is the most concrete version of that argument anyone has put real money behind. The open question is the one no benchmark answers: whether AI that's this good at finding and fixing bugs helps the maintainers more than it helps the people targeting them.</p>
-<p>If you maintain something on that list of 30-plus projects, the practical move is to read the patches these researchers send as carefully as you'd read any drive-by pull request. A good patch from a good tool is still a patch you own once you merge it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
