@@ -6,9 +6,105 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 04 Jul 2026 13:13:42 GMT</lastBuildDate>
-    <pubDate>Sat, 04 Jul 2026 13:13:42 GMT</pubDate>
+    <lastBuildDate>Sun, 05 Jul 2026 13:17:56 GMT</lastBuildDate>
+    <pubDate>Sun, 05 Jul 2026 13:17:56 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Microsoft Bets $2.5 Billion That Enterprise AI Needs Humans On-Site</title>
+      <link>https://sabr-labs.com/article/microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026</guid>
+      <pubDate>Sun, 05 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Enterprise AI</category>
+      <category>AI Adoption</category>
+      <category>Consulting</category>
+      <category>Copilot</category>
+      <description>Microsoft&apos;s new Frontier Company will embed 6,000 engineers inside customer offices to make AI deployments actually pay off, an admission that selling Copilot licenses wasn&apos;t enough.</description>
+      <content:encoded><![CDATA[<p>Ninety-five percent of enterprise AI pilots produce no measurable return. That's the figure MIT's Project NANDA put on the table this spring, and it's the figure Microsoft is now spending $2.5 billion to argue it can beat.</p>
+<p>On July 2 the company launched Microsoft Frontier Company, a new operating unit staffed by roughly 6,000 engineers, industry specialists, and consultants who won't sit in Redmond. They'll be embedded inside customer organizations to design, build, and run AI systems on-site.</p>
+<p>Judson Althoff, CEO of Microsoft's Commercial Business, framed the job as co-designing and continuously improving AI systems "based on measurable business outcomes" rather than more experimentation. Early partners named at launch include the London Stock Exchange Group, Unilever, Land O'Lakes, and Accenture.</p>
+<p>Strip away the branding and this is professional services. The forward-deployed engineer model belongs to Palantir, and consulting-firms-with-a-product is a well-worn shape. What makes the move interesting is what it concedes: Copilot subscriptions on their own don't move a customer's profit and loss. You need people in the building wiring the thing into real workflows. That's less a launch than an admission, dressed up as one.</p>
+<p>Microsoft isn't alone in reaching that conclusion. Amazon announced a comparable AI-deployment group two days earlier, and Microsoft's dollar figure is more than double it. Anthropic and OpenAI both stood up similar teams back in May, partnering with banks, PE firms, and consultancies. Four of the biggest names in the industry looked at the same pilot-failure data and arrived at the same fix within weeks of each other.</p>
+<p>The tell here isn't the money. It's that the frontier of enterprise AI in 2026 turns out to be staffing. The models are good enough; getting them to earn their keep is a human problem, and everyone selling them just admitted it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>JetBrains Patches a 9.8 Account-Takeover Bug Across Its Dev Tools</title>
+      <link>https://sabr-labs.com/article/jetbrains-hub-account-takeover-ide-rce-cve-2026-56141-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/jetbrains-hub-account-takeover-ide-rce-cve-2026-56141-july-2026</guid>
+      <pubDate>Sun, 05 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>JetBrains</category>
+      <category>CVE</category>
+      <category>Account Takeover</category>
+      <category>RCE</category>
+      <category>Developer Tools</category>
+      <description>A weak random number generator let attackers guess JetBrains Hub account-restore codes and seize admin accounts, one of several critical flaws JetBrains just fixed across Hub, YouTrack, TeamCity, and its IDEs.</description>
+      <content:encoded><![CDATA[<p>The codes JetBrains Hub hands out to restore a locked account were guessable. Guessable enough that an attacker who never had a valid login could enumerate them, land on an administrator account, and take it over.</p>
+<p>That flaw is CVE-2026-56141, and it carries a CVSS score of 9.8. The root cause is mundane and a little embarrassing for 2026: a weak random number generator (CWE-338) producing predictable restore codes. Hub matters here because it's the identity backbone behind YouTrack, TeamCity, and JetBrains' on-prem tooling. Own Hub and you're positioned to own everything wired into it.</p>
+<p>It didn't ship alone. JetBrains disclosed two more critical Hub issues, an authentication bypass via direct database access (CVE-2026-50242) that grants admin control without credentials, and a privilege-escalation bug (CVE-2026-56142) that lets an attacker attach their own auth details to an existing account. The IDEs got hit too: IntelliJ IDEA has a remote code execution flaw from template injection in its Copyright plugin (CVE-2026-49382) and a command-injection bug reachable through filename completion (CVE-2026-49366).</p>
+<p>Developer tooling is a high-value target for a reason. Hub, YouTrack, and TeamCity sit on top of source code, CI/CD pipelines, signing keys, and the secrets that pipeline needs to deploy. An IDE that can be coaxed into running attacker-supplied code is a supply-chain foothold that starts on the machine of someone with commit access.</p>
+<p>Release lines from 2024 through 2026 are affected, so a reasonably current on-prem instance can still be exposed until the latest security builds land. There's no confirmed in-the-wild exploitation yet, but these are the kind of bug classes that get proof-of-concept code fast. If you run any of these products on your own hardware, patch now, and start with anything internet-exposed, especially Hub.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ServiceNow Left an API Open, and Someone Queried Customer Data</title>
+      <link>https://sabr-labs.com/article/servicenow-unauthenticated-api-customer-data-exposure-june-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/servicenow-unauthenticated-api-customer-data-exposure-june-2026</guid>
+      <pubDate>Sun, 05 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ServiceNow</category>
+      <category>API Security</category>
+      <category>Data Exposure</category>
+      <category>Authentication</category>
+      <category>SaaS</category>
+      <description>A ServiceNow endpoint shipped with authentication disabled, letting unauthenticated requests pull data from customer instances before the company patched hosted tenants on June 5.</description>
+      <content:encoded><![CDATA[<p>One ServiceNow API endpoint shipped with authentication switched off. Between June 2 and June 3, someone noticed and began using it to pull data straight out of customer instances.</p>
+<p>The endpoint was /api/now/related_list_edit/create, configured with requires_authentication set to false. That single setting meant plain unauthenticated HTTP requests could query tables inside a tenant. According to ServiceNow, the exposure was present in a recent platform release and in older instances where certain configuration changes had been made.</p>
+<p>A ServiceNow instance is not a low-value target. These tenants routinely hold IT support tickets, employee records, asset inventories, internal documentation, workflow data, and, ironically, security incident reports. ServiceNow pushed a fix to hosted customer instances on June 5 but has not said what data was actually accessed.</p>
+<p>The company's public position is that the activity was "likely" tied to security researchers or bug-bounty submissions rather than malicious actors. Maybe it was. But an endpoint that answers unauthenticated queries doesn't check who's asking, and "we think it was the good guys" is not the same as knowing it was. The exposure is identical either way.</p>
+<p>If you run a self-managed instance, the indicators are specific enough to hunt for: requests to /api/now/related_list_edit/create, traffic from the IP address 51.159.98.241, and log entries attributed to the Guest user account. Confirm that endpoint requires authentication in your configuration, then go read your access logs for early June.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google&apos;s Power Use Jumped 37% in a Year, and AI Is Why</title>
+      <link>https://sabr-labs.com/article/google-electricity-37-percent-jump-ai-data-centers-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-electricity-37-percent-jump-ai-data-centers-july-2026</guid>
+      <pubDate>Sun, 05 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>AI Infrastructure</category>
+      <category>Data Centers</category>
+      <category>Energy</category>
+      <category>Sustainability</category>
+      <description>Google&apos;s 2026 environmental report shows its largest-ever single-year electricity increase, with AI data centers driving demand faster than the grid can decarbonize.</description>
+      <content:encoded><![CDATA[<p>Google used 37% more electricity in 2025 than the year before. That's the largest single-year jump in the company's history, and it didn't come from more people searching the web.</p>
+<p>The driver is AI: model training, inference, the Gemini products, and cloud capacity rented out to third parties. Google's data centers alone drew roughly 42 million megawatt-hours across 2025, comparable to the entire annual electricity consumption of New Zealand. Total company electricity use is now up more than 250% since 2019.</p>
+<p>Google's report wraps those numbers in a more comfortable story. Operational emissions fell 2% year over year. The company says it matched 100% of its electricity with renewable energy for the ninth straight year, and it signed over 12 gigawatts of new clean-energy deals in 2025, its largest annual haul, including agreements to restart a nuclear plant and buy hydropower and fusion capacity.</p>
+<p>Here's where the accounting gets slippery. "Matched" means Google bought enough renewable energy over the course of a year to cover its total consumption on paper. It does not mean its data centers run on clean power at three in the morning when the sun's down and the training run isn't. The report itself concedes the buildout is accelerating faster than the grid is decarbonizing, and the carbon baked into the supply chain, the chips, the concrete, the steel, sits largely outside the headline figure.</p>
+<p>The useful thing about this disclosure is that it makes the AI energy question concrete instead of hypothetical. Every frontier lab is climbing the same curve; Google just publishes more of the receipts. The number to watch next year isn't the pledge total. It's whether new clean supply actually catches demand, or whether the gap keeps getting bought down with certificates.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The UN&apos;s New AI Commission Seats the CEOs It&apos;s Meant to Govern</title>
+      <link>https://sabr-labs.com/article/un-ai-for-good-global-commission-ceos-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/un-ai-for-good-global-commission-ceos-july-2026</guid>
+      <pubDate>Sun, 05 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Governance</category>
+      <category>United Nations</category>
+      <category>ITU</category>
+      <category>Regulation</category>
+      <category>Policy</category>
+      <description>The ITU&apos;s AI for Good Global Commission puts the heads of Nvidia, Amazon, and Salesforce alongside heads of state, with the power to broker voluntary commitments but not to bind anyone.</description>
+      <content:encoded><![CDATA[<p>The UN's answer to AI governance is a commission co-chaired by the CEO of Salesforce and seated alongside the heads of Nvidia, Amazon, and Microsoft. The people who build and sell the technology now help write the rules for it.</p>
+<p>The International Telecommunication Union launched the AI for Good Global Commission on July 2. It gathers more than 40 founding members: heads of state from Rwanda, Estonia, Saudi Arabia, Singapore, and Nigeria, several UN agency chiefs, and a row of tech executives including Nvidia's Jensen Huang, Amazon's Andy Jassy, and Microsoft president Brad Smith. Rwandan president Paul Kagame and Salesforce chief Marc Benioff co-chair it, with ITU Secretary-General Doreen Bogdan-Martin as vice-chair. The first meeting is July 8 in Geneva, during the AI for Good Global Summit.</p>
+<p>The design is the pitch. Organizers describe it as a "smaller, faster team" of executives that can publish recommendations, convene working groups, and broker voluntary commitments without waiting on ratification by the 193-member UN General Assembly. The stated goal is to move at the speed the technology demands rather than the speed diplomacy usually allows.</p>
+<p>Speed is real, and so is the conflict of interest sitting at the head table. Strip the framing and this is an advisory body whose output is voluntary and whose membership includes the companies being advised. A group that can't bind anyone, staffed in part by the industry it's meant to steer, is closer to a very senior working group than a regulator. That's not automatically bad, but it's worth being honest about what it is.</p>
+<p>The thing to watch is the July 8 meeting and, more specifically, what comes out of it. If the first deliverable is a set of principles everyone in the room already agreed with, that tells you the shape of the whole enterprise. The question worth holding onto: can a governance body funded and populated by the governed ever ask its members to do something they'd rather not?</p>]]></content:encoded>
+    </item>
     <item>
       <title>Federal Agencies Have Until Today to Patch Exploited SharePoint Flaw</title>
       <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-cisa-kev-july-2026</link>
@@ -870,102 +966,6 @@
 <p>The detail that makes this harder to dismiss as fancy autocomplete is the second result. Unutmaz says the model also correctly predicted the outcome of unpublished experiments involving CD8+ T cells killing lymphoma cells. If the data wasn't in any training corpus, the model couldn't have simply retrieved the answer, which is the usual deflation for stories like this.</p>
 <p>So this is more interesting than the average benchmark win. It's also a single anecdote, told by an enthusiastic user, amplified by the company that sells the product. None of that makes it false. It does mean the honest framing is 'a domain expert used a very strong model to accelerate a hypothesis and then validated it himself,' not 'AI did science.'</p>
 <p>That distinction is the whole game right now. A model that generates a sharp, testable hypothesis from messy data is genuinely useful to a working scientist, and Unutmaz is clearly a believer. The work that turns a hypothesis into a result still happens at the bench, run by people who know which answers are worth chasing. Keep both halves of that sentence in view when the next 'AI solved it' headline lands.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX Tests Starfall, a Disk-Shaped Capsule to Return Cargo From Orbit</title>
-      <link>https://sabr-labs.com/article/spacex-starfall-cargo-return-capsule-demo-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starfall-cargo-return-capsule-demo-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>SpaceX</category>
-      <category>Starfall</category>
-      <category>Reentry</category>
-      <category>Microgravity</category>
-      <category>Falcon 9</category>
-      <description>The uncrewed June 23 demo flew SpaceX&apos;s new reentry vehicle, built for in-space manufacturing and rapid cargo return.</description>
-      <content:encoded><![CDATA[<p>It looks like a flying saucer, and that's not a jab at the design. Starfall is a disk: roughly 10 feet across and barely 2.5 feet tall, a shape SpaceX picked on purpose.</p>
-<p>The first demonstration flight lifted off June 23 at 6:53 AM EDT from Space Launch Complex 40 at Cape Canaveral, riding a Falcon 9. The capsule was uncrewed, deployed a little after 10 AM ET, and SpaceX reported no anomalies. After demonstrating controlled flight, it was set to splash down in the Pacific.</p>
-<p>The vehicle is small and dense. About 3.1 meters in diameter, 0.75 meters tall, around 2,100 kilograms, and able to carry roughly 2,200 pounds of payload. SpaceX is pitching two jobs for it. One is routine, affordable access to microgravity and vacuum for scientific research and in-space manufacturing, the sort of thing companies have wanted cheaply for years. The other is point-to-point delivery of critical cargo through space on fast timelines.</p>
-<p>That second use is where the interest gets quieter and more pointed. Cargo delivered anywhere on Earth in under an hour, by way of orbit, is an idea with obvious military logistics appeal, and SpaceX has said very little about the specifics. A few outlets reached for the word "secretive," and the reticence is doing some of that work.</p>
-<p>Why the disk shape matters: a wide, flat body sheds reentry heat across a large surface instead of concentrating it on a narrow nose, which can make a returning capsule simpler and cheaper to fly back intact. That's the actual engineering bet here, and a single demo splashdown is a long way from a routine service. But this was the test you run to find out whether the bet holds, and the first one flew clean.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chip Stocks Shed $1.3 Trillion as Investors Question AI Spending</title>
-      <link>https://sabr-labs.com/article/ai-chip-stock-selloff-capex-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ai-chip-stock-selloff-capex-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Markets</category>
-      <category>Semiconductors</category>
-      <category>AI Capex</category>
-      <category>Nasdaq</category>
-      <category>Micron</category>
-      <description>A two-day rout knocked the Nasdaq down 2.2% as the market started asking for returns on the year&apos;s $452 billion in AI capital spending.</description>
-      <content:encoded><![CDATA[<p>One point three trillion dollars. That's how much market value semiconductor stocks gave back in the selloff that ran through June 24.</p>
-<p>The Nasdaq Composite dropped 2.21% to 25,587 and the S&P 500 fell 1.44%. The pain wasn't evenly spread. Micron tumbled 13% before clawing some of it back, Alphabet slid 6 to 10% across two sessions, and Amazon shed 4%. When memory and the hyperscalers move together like that, it isn't a single bad earnings print. It's sentiment turning.</p>
-<p>And the sentiment that turned is specific. For two years the market rewarded any company willing to spend big on AI, no questions asked. That reflex is fading. Combined 2026 capital spending across Microsoft, Alphabet, Amazon, and Meta has now passed $452 billion, and institutional investors are starting to ask the obvious question: where's the revenue that justifies it? Wanting proof of return instead of a roadmap is a healthy instinct. It's also a painful one when the whole sector is priced for the roadmap.</p>
-<p>The Federal Reserve added to the mood. Investors who came into the year expecting rate cuts by mid-2026 are recalibrating, because inflation stayed stickier and the economy stayed stronger than the cut-by-summer thesis needed.</p>
-<p>The case for calm is that this looks like a valuation reset, not a thesis breaking. Strategists pointed out that S&P 500 tech earnings are still projected to climb more than 22% this year, which is not the profile of a sector falling apart. The real question underneath the selloff isn't whether AI is real. It's whether the spending math works at the multiples these stocks were carrying, and that's a question a few hundred billion in capex makes harder to wave off.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Qualcomm Buys Modular for $3.9B to Chip at Nvidia&apos;s CUDA Lock-In</title>
-      <link>https://sabr-labs.com/article/qualcomm-modular-acquisition-cuda-nvidia-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/qualcomm-modular-acquisition-cuda-nvidia-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Qualcomm</category>
-      <category>Modular</category>
-      <category>Nvidia</category>
-      <category>CUDA</category>
-      <category>AI Chips</category>
-      <description>Qualcomm&apos;s all-stock deal for Modular targets the software moat that keeps AI developers tied to Nvidia hardware, not the silicon itself.</description>
-      <content:encoded><![CDATA[<p>Qualcomm's biggest AI bet this year isn't a chip. It's a compiler.</p>
-<p>The company agreed to buy Modular in an all-stock deal worth about $3.92 billion, expected to close in the second half of 2026. Modular is a four-year-old software startup founded by Chris Lattner and Tim Davis, two engineers who met at Google. It builds the Mojo programming language and the MAX inference engine, and the pitch is simple to say and hard to deliver: write your AI code once and run it across chips from different vendors without rewriting it for each one.</p>
-<p>That pitch aims directly at the thing that actually protects Nvidia. The hardware is fast, but the real moat is CUDA, the software layer that everything in AI is written against. Once your models and tooling assume CUDA, moving to another vendor's silicon means rewriting the parts that matter, and most teams won't. Break that dependency and a Qualcomm or an AMD chip stops being a science project and starts being a real option.</p>
-<p>Worth keeping expectations grounded. The graveyard of CUDA alternatives is not empty, and "portable across any accelerator" has been promised before by people with good engineers and good intentions. The hard part was never the demo. It's getting enough developers to trust the abstraction that the network effect flips. Qualcomm is buying a credible team and a head start, not a finished win.</p>
-<p>For Qualcomm the deal fits a larger push past phones, into PCs, automotive, and data center infrastructure. Owning a software layer that doesn't care whose chip runs underneath is a smart place to plant a flag if you're the one trying to sell the other chip. Whether developers show up is the only question that counts, and that answer comes later.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Keeps Losing Its Top AI Researchers to Anthropic and OpenAI</title>
-      <link>https://sabr-labs.com/article/google-ai-researchers-departures-anthropic-openai-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-ai-researchers-departures-anthropic-openai-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
-      <category>AI Talent</category>
-      <category>DeepMind</category>
-      <description>Two more Gemini researchers are headed to Anthropic, the latest in a run of senior departures that now includes a Nobel laureate and a Transformer co-author.</description>
-      <content:encoded><![CDATA[<p>Jonas Adler and Alexander Pritzel, both of whom worked on Google's Gemini models, are leaving for Anthropic. That's the new item, reported June 24. The pattern around it is the actual story.</p>
-<p>In the same stretch of days, two of the biggest names in the field walked out the door. Noam Shazeer, a Gemini co-lead and one of the co-authors of "Attention Is All You Need," the paper that introduced the Transformer, said on June 18 he's going to OpenAI. The next day, John Jumper, who led AlphaFold at DeepMind and shared the 2024 Nobel Prize in Chemistry for it, announced he's joining Anthropic after nearly nine years.</p>
-<p>Shazeer's exit stings in a particular way. Google paid a reported $2.7 billion in 2024 to license Character.AI's technology and bring him back into the fold. Two years later he's gone, and the check did not buy lasting loyalty.</p>
-<p>Why the one-way traffic? The simplest read is equity. OpenAI and Anthropic are both circling public offerings, and pre-IPO stock is a recruiting lever a mature company can't easily match with refreshed grants. For a senior researcher who already has money, the upside of getting in before the bell rings is the thing that moves them.</p>
-<p>The skeptical caveat is real: individual researcher moves are noisy. One departure rarely makes or breaks a model, and Google still ships Gemini at the frontier. But direction matters more than any single name, and right now the direction is consistent. When the people who built your flagship keep choosing the same two competitors, that's not noise, that's a retention problem with a clear address.</p>
-<p>Investors noticed. Alphabet slid around 5 to 6 percent on June 22, with analysts tying part of the move to questions about whether Google can hold onto the talent that got it this far.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags Lantronix EDS5000 Bug as Exploited, Patch Due Friday</title>
-      <link>https://sabr-labs.com/article/lantronix-eds5000-cve-2025-67038-kev-exploited-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/lantronix-eds5000-cve-2025-67038-kev-exploited-june-2026</guid>
-      <pubDate>Thu, 25 Jun 2026 08:25:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CISA</category>
-      <category>KEV</category>
-      <category>Lantronix</category>
-      <category>OT Security</category>
-      <category>Command Injection</category>
-      <description>A 9.8-severity command injection in Lantronix EDS5000 serial-to-ethernet devices is under active attack, and CISA gave federal agencies until June 26 to fix it.</description>
-      <content:encoded><![CDATA[<p>The attacker doesn't need a valid login. The username they fail with is the payload.</p>
-<p>CVE-2025-67038 is a command injection flaw rated 9.8 in the Lantronix EDS5000, and the bug lives somewhere unglamorous: the code that logs a failed authentication. The device's HTTP RPC module takes the username from a failed login attempt and drops it straight into a shell command without sanitizing it first. Feed it a crafted username and you get arbitrary OS commands running as root. No credentials required, because failing the login is the whole point.</p>
-<p>What makes this one matter is where these boxes sit. The EDS5000 is a serial-to-ethernet converter, the kind of gear that bridges old industrial and OT equipment to a network so it can be managed remotely. They live in the quiet corners of plant and facility networks, often installed years ago and rarely touched since. Nobody is watching them, and almost nobody patches them on a schedule.</p>
-<p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on June 23, one of four it listed that day. The batch also included max-severity flaws in Ubiquiti UniFi OS, so this wasn't an isolated alert. Federal Civilian Executive Branch agencies were given until June 26 to patch or pull the affected devices.</p>
-<p>Lantronix has a fix, version 2.2.0.0R1. The catch is that applying it means someone has to know the device exists, find it, and update firmware on a box that may not have been logged into since it was racked. If you run OT, the move today is to inventory anything Lantronix on your network, get these segmented away from anything that can reach the internet, and schedule the upgrade rather than hoping the device is too obscure to notice. Attackers scanning for 9.8s do not share that assumption.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

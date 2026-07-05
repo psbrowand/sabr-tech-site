@@ -25,6 +25,227 @@
 
 export const articles = [
   {
+    id: 179,
+    slug: "microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026",
+    title: "Microsoft Bets $2.5 Billion That Enterprise AI Needs Humans On-Site",
+    summary: "Microsoft's new Frontier Company will embed 6,000 engineers inside customer offices to make AI deployments actually pay off, an admission that selling Copilot licenses wasn't enough.",
+    body: [
+      "Ninety-five percent of enterprise AI pilots produce no measurable return. That's the figure MIT's Project NANDA put on the table this spring, and it's the figure Microsoft is now spending $2.5 billion to argue it can beat.",
+      "On July 2 the company launched Microsoft Frontier Company, a new operating unit staffed by roughly 6,000 engineers, industry specialists, and consultants who won't sit in Redmond. They'll be embedded inside customer organizations to design, build, and run AI systems on-site.",
+      "Judson Althoff, CEO of Microsoft's Commercial Business, framed the job as co-designing and continuously improving AI systems \"based on measurable business outcomes\" rather than more experimentation. Early partners named at launch include the London Stock Exchange Group, Unilever, Land O'Lakes, and Accenture.",
+      "Strip away the branding and this is professional services. The forward-deployed engineer model belongs to Palantir, and consulting-firms-with-a-product is a well-worn shape. What makes the move interesting is what it concedes: Copilot subscriptions on their own don't move a customer's profit and loss. You need people in the building wiring the thing into real workflows. That's less a launch than an admission, dressed up as one.",
+      "Microsoft isn't alone in reaching that conclusion. Amazon announced a comparable AI-deployment group two days earlier, and Microsoft's dollar figure is more than double it. Anthropic and OpenAI both stood up similar teams back in May, partnering with banks, PE firms, and consultancies. Four of the biggest names in the industry looked at the same pilot-failure data and arrived at the same fix within weeks of each other.",
+      "The tell here isn't the money. It's that the frontier of enterprise AI in 2026 turns out to be staffing. The models are good enough; getting them to earn their keep is a human problem, and everyone selling them just admitted it.",
+    ],
+    category: "tech",
+    tags: ["Microsoft", "Enterprise AI", "AI Adoption", "Consulting", "Copilot"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-05T13:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Reporting on the $2.5B commitment and 6,000-person headcount",
+        url: "https://www.cnbc.com/2026/07/02/microsoft-commits-2point5-billion-6000-employees-ai-implementation-unit.html",
+      },
+      {
+        name: "TechCrunch",
+        desc: "Coverage of the Frontier Company launch and structure",
+        url: "https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/",
+      },
+      {
+        name: "The Decoder",
+        desc: "Details on embedding engineers inside enterprise clients",
+        url: "https://the-decoder.com/microsoft-launches-2-5-billion-frontier-company-to-embed-6000-ai-engineers-inside-enterprise-clients/",
+      },
+      {
+        name: "The Next Web",
+        desc: "Context on the enterprise AI adoption problem",
+        url: "https://thenextweb.com/news/microsoft-frontier-company-2-5-billion-ai-deployment",
+      },
+    ],
+  },
+  {
+    id: 180,
+    slug: "jetbrains-hub-account-takeover-ide-rce-cve-2026-56141-july-2026",
+    title: "JetBrains Patches a 9.8 Account-Takeover Bug Across Its Dev Tools",
+    summary: "A weak random number generator let attackers guess JetBrains Hub account-restore codes and seize admin accounts, one of several critical flaws JetBrains just fixed across Hub, YouTrack, TeamCity, and its IDEs.",
+    body: [
+      "The codes JetBrains Hub hands out to restore a locked account were guessable. Guessable enough that an attacker who never had a valid login could enumerate them, land on an administrator account, and take it over.",
+      "That flaw is CVE-2026-56141, and it carries a CVSS score of 9.8. The root cause is mundane and a little embarrassing for 2026: a weak random number generator (CWE-338) producing predictable restore codes. Hub matters here because it's the identity backbone behind YouTrack, TeamCity, and JetBrains' on-prem tooling. Own Hub and you're positioned to own everything wired into it.",
+      "It didn't ship alone. JetBrains disclosed two more critical Hub issues, an authentication bypass via direct database access (CVE-2026-50242) that grants admin control without credentials, and a privilege-escalation bug (CVE-2026-56142) that lets an attacker attach their own auth details to an existing account. The IDEs got hit too: IntelliJ IDEA has a remote code execution flaw from template injection in its Copyright plugin (CVE-2026-49382) and a command-injection bug reachable through filename completion (CVE-2026-49366).",
+      "Developer tooling is a high-value target for a reason. Hub, YouTrack, and TeamCity sit on top of source code, CI/CD pipelines, signing keys, and the secrets that pipeline needs to deploy. An IDE that can be coaxed into running attacker-supplied code is a supply-chain foothold that starts on the machine of someone with commit access.",
+      "Release lines from 2024 through 2026 are affected, so a reasonably current on-prem instance can still be exposed until the latest security builds land. There's no confirmed in-the-wild exploitation yet, but these are the kind of bug classes that get proof-of-concept code fast. If you run any of these products on your own hardware, patch now, and start with anything internet-exposed, especially Hub.",
+    ],
+    category: "cyber",
+    tags: ["JetBrains", "CVE", "Account Takeover", "RCE", "Developer Tools"],
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-05T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "JetBrains Security",
+        desc: "Vendor's fixed-issues advisory listing the patched CVEs",
+        url: "https://www.jetbrains.com/privacy-security/issues-fixed/",
+      },
+      {
+        name: "Cyber Security News",
+        desc: "Breakdown of the auth-bypass and code-execution flaws",
+        url: "https://cybersecuritynews.com/jetbrains-vulnerabilities/",
+      },
+      {
+        name: "GBHackers",
+        desc: "Detail on the Hub account-takeover and privilege-escalation bugs",
+        url: "https://gbhackers.com/jetbrains-patches-critical-hub-authentication-bypass/",
+      },
+      {
+        name: "SentinelOne (CVE-2026-49382)",
+        desc: "IntelliJ IDEA RCE via Copyright-plugin template injection",
+        url: "https://www.sentinelone.com/vulnerability-database/cve-2026-49382/",
+      },
+    ],
+  },
+  {
+    id: 181,
+    slug: "servicenow-unauthenticated-api-customer-data-exposure-june-2026",
+    title: "ServiceNow Left an API Open, and Someone Queried Customer Data",
+    summary: "A ServiceNow endpoint shipped with authentication disabled, letting unauthenticated requests pull data from customer instances before the company patched hosted tenants on June 5.",
+    body: [
+      "One ServiceNow API endpoint shipped with authentication switched off. Between June 2 and June 3, someone noticed and began using it to pull data straight out of customer instances.",
+      "The endpoint was /api/now/related_list_edit/create, configured with requires_authentication set to false. That single setting meant plain unauthenticated HTTP requests could query tables inside a tenant. According to ServiceNow, the exposure was present in a recent platform release and in older instances where certain configuration changes had been made.",
+      "A ServiceNow instance is not a low-value target. These tenants routinely hold IT support tickets, employee records, asset inventories, internal documentation, workflow data, and, ironically, security incident reports. ServiceNow pushed a fix to hosted customer instances on June 5 but has not said what data was actually accessed.",
+      "The company's public position is that the activity was \"likely\" tied to security researchers or bug-bounty submissions rather than malicious actors. Maybe it was. But an endpoint that answers unauthenticated queries doesn't check who's asking, and \"we think it was the good guys\" is not the same as knowing it was. The exposure is identical either way.",
+      "If you run a self-managed instance, the indicators are specific enough to hunt for: requests to /api/now/related_list_edit/create, traffic from the IP address 51.159.98.241, and log entries attributed to the Guest user account. Confirm that endpoint requires authentication in your configuration, then go read your access logs for early June.",
+    ],
+    category: "cyber",
+    tags: ["ServiceNow", "API Security", "Data Exposure", "Authentication", "SaaS"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-05T10:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "BleepingComputer",
+        desc: "Disclosure of the incident and customer-data exposure",
+        url: "https://www.bleepingcomputer.com/news/security/servicenow-discloses-security-incident-exposing-customer-data/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Detail on the vulnerable endpoint and unauthenticated access",
+        url: "https://thehackernews.com/2026/06/servicenow-flaw-exploited-to-gain.html",
+      },
+      {
+        name: "Cybernews",
+        desc: "ServiceNow attributing the activity to researcher testing",
+        url: "https://cybernews.com/security/servicenow-confirms-security-incident-data-breach/",
+      },
+      {
+        name: "Rescana",
+        desc: "Technical analysis and indicators of compromise",
+        url: "https://www.rescana.com/post/servicenow-api-security-incident-exposes-customer-data-analysis-of-unauthenticated-access-vulnerability-june-2026",
+      },
+    ],
+  },
+  {
+    id: 182,
+    slug: "google-electricity-37-percent-jump-ai-data-centers-july-2026",
+    title: "Google's Power Use Jumped 37% in a Year, and AI Is Why",
+    summary: "Google's 2026 environmental report shows its largest-ever single-year electricity increase, with AI data centers driving demand faster than the grid can decarbonize.",
+    body: [
+      "Google used 37% more electricity in 2025 than the year before. That's the largest single-year jump in the company's history, and it didn't come from more people searching the web.",
+      "The driver is AI: model training, inference, the Gemini products, and cloud capacity rented out to third parties. Google's data centers alone drew roughly 42 million megawatt-hours across 2025, comparable to the entire annual electricity consumption of New Zealand. Total company electricity use is now up more than 250% since 2019.",
+      "Google's report wraps those numbers in a more comfortable story. Operational emissions fell 2% year over year. The company says it matched 100% of its electricity with renewable energy for the ninth straight year, and it signed over 12 gigawatts of new clean-energy deals in 2025, its largest annual haul, including agreements to restart a nuclear plant and buy hydropower and fusion capacity.",
+      "Here's where the accounting gets slippery. \"Matched\" means Google bought enough renewable energy over the course of a year to cover its total consumption on paper. It does not mean its data centers run on clean power at three in the morning when the sun's down and the training run isn't. The report itself concedes the buildout is accelerating faster than the grid is decarbonizing, and the carbon baked into the supply chain, the chips, the concrete, the steel, sits largely outside the headline figure.",
+      "The useful thing about this disclosure is that it makes the AI energy question concrete instead of hypothetical. Every frontier lab is climbing the same curve; Google just publishes more of the receipts. The number to watch next year isn't the pledge total. It's whether new clean supply actually catches demand, or whether the gap keeps getting bought down with certificates.",
+    ],
+    category: "tech",
+    tags: ["Google", "AI Infrastructure", "Data Centers", "Energy", "Sustainability"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-05T09:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Google Sustainability",
+        desc: "Google's own 2026 environmental report",
+        url: "https://blog.google/company-news/outreach-and-initiatives/sustainability/2026-environmental-report/",
+      },
+      {
+        name: "Axios",
+        desc: "Analysis of Google's rising emissions and power use",
+        url: "https://www.axios.com/2026/06/30/google-ai-boom-emissions-power-use",
+      },
+      {
+        name: "TechTimes",
+        desc: "On renewable matching versus supply-chain carbon",
+        url: "https://www.techtimes.com/articles/319712/20260704/google-ai-electricity-37-renewable-certificates-cannot-cover-supply-chain-carbon.htm",
+      },
+      {
+        name: "Cloud News",
+        desc: "Coverage of the 37% consumption increase",
+        url: "https://cloudnews.tech/googles-electricity-consumption-rises-by-37-amid-ai-expansion/",
+      },
+    ],
+  },
+  {
+    id: 183,
+    slug: "un-ai-for-good-global-commission-ceos-july-2026",
+    title: "The UN's New AI Commission Seats the CEOs It's Meant to Govern",
+    summary: "The ITU's AI for Good Global Commission puts the heads of Nvidia, Amazon, and Salesforce alongside heads of state, with the power to broker voluntary commitments but not to bind anyone.",
+    body: [
+      "The UN's answer to AI governance is a commission co-chaired by the CEO of Salesforce and seated alongside the heads of Nvidia, Amazon, and Microsoft. The people who build and sell the technology now help write the rules for it.",
+      "The International Telecommunication Union launched the AI for Good Global Commission on July 2. It gathers more than 40 founding members: heads of state from Rwanda, Estonia, Saudi Arabia, Singapore, and Nigeria, several UN agency chiefs, and a row of tech executives including Nvidia's Jensen Huang, Amazon's Andy Jassy, and Microsoft president Brad Smith. Rwandan president Paul Kagame and Salesforce chief Marc Benioff co-chair it, with ITU Secretary-General Doreen Bogdan-Martin as vice-chair. The first meeting is July 8 in Geneva, during the AI for Good Global Summit.",
+      "The design is the pitch. Organizers describe it as a \"smaller, faster team\" of executives that can publish recommendations, convene working groups, and broker voluntary commitments without waiting on ratification by the 193-member UN General Assembly. The stated goal is to move at the speed the technology demands rather than the speed diplomacy usually allows.",
+      "Speed is real, and so is the conflict of interest sitting at the head table. Strip the framing and this is an advisory body whose output is voluntary and whose membership includes the companies being advised. A group that can't bind anyone, staffed in part by the industry it's meant to steer, is closer to a very senior working group than a regulator. That's not automatically bad, but it's worth being honest about what it is.",
+      "The thing to watch is the July 8 meeting and, more specifically, what comes out of it. If the first deliverable is a set of principles everyone in the room already agreed with, that tells you the shape of the whole enterprise. The question worth holding onto: can a governance body funded and populated by the governed ever ask its members to do something they'd rather not?",
+    ],
+    category: "ai",
+    tags: ["AI Governance", "United Nations", "ITU", "Regulation", "Policy"],
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-05T08:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "ITU",
+        desc: "Official press release announcing the Commission",
+        url: "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-02-AI-for-Good-Global-Commission.aspx",
+      },
+      {
+        name: "Axios",
+        desc: "Reporting on the CEO-heavy membership",
+        url: "https://www.axios.com/2026/07/01/un-ai-commission-ceos-world-leaders",
+      },
+      {
+        name: "Salesforce Newsroom",
+        desc: "Co-chair Benioff's announcement and founding members",
+        url: "https://www.salesforce.com/news/press-releases/2026/07/02/ai-for-good-global-commission-announcement/",
+      },
+      {
+        name: "TechTimes",
+        desc: "On the commission seating CEOs alongside heads of state",
+        url: "https://www.techtimes.com/articles/319675/20260704/un-launches-governance-commission-putting-ai-ceos-alongside-heads-state.htm",
+      },
+    ],
+  },
+  {
     id: 173,
     slug: "sharepoint-cve-2026-45659-cisa-kev-july-2026",
     title: "Federal Agencies Have Until Today to Patch Exploited SharePoint Flaw",
@@ -43,7 +264,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-04T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -291,7 +512,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "SOCRadar",
@@ -1441,7 +1662,7 @@ export const articles = [
     publishedAt: "2026-06-28T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1485,7 +1706,7 @@ export const articles = [
     publishedAt: "2026-06-28T08:40:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1529,7 +1750,7 @@ export const articles = [
     publishedAt: "2026-06-28T09:20:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1573,7 +1794,7 @@ export const articles = [
     publishedAt: "2026-06-28T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
