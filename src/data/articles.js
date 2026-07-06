@@ -25,6 +25,207 @@
 
 export const articles = [
   {
+    id: 184,
+    slug: "bad-epoll-cve-2026-46242-linux-kernel-root-july-2026",
+    title: "'Bad Epoll' Linux Kernel Bug Hands Any Local User Root, Android Included",
+    summary: "A use-after-free in the kernel's epoll code turns any local Linux or Android user into root, and most distributions still haven't shipped the fix.",
+    body: [
+      "Give an attacker any account on a Linux box, even a heavily locked-down one, and Bad Epoll gets them to root. The exploit works about 99 times out of 100.",
+      "Tracked as CVE-2026-46242, the flaw is a use-after-free race in ep_remove() inside the kernel's eventpoll code. Two paths try to tear down the same internal object at once: one frees the memory while the other is still writing into it, corrupting kernel state. The timing window is only about six instructions wide, but researcher Jaeyoung Chung, who found the bug, built an exploit that hits it reliably anyway.",
+      "The blast radius is the problem. Kernel versions 5.10 through 6.11 are confirmed affected, and the bad code was introduced back in April 2023, so it's been sitting in the tree for three years. This isn't only a server and desktop issue either. Android runs the same kernel, which puts phones in scope too.",
+      "Here's the part that should worry you. The fix landed in the mainline kernel on April 24, then sat quiet for roughly 70 days before the public writeup dropped. A patched mainline does nothing for you if your distribution hasn't backported it, and plenty haven't. That leaves a live window where the bug is public, the exploit is reliable, and a lot of machines are still open.",
+      "There's an uncomfortable footnote for the AI-finds-bugs crowd. Bad Epoll sits in the same small stretch of kernel code where Anthropic's Mythos model recently flagged a different flaw. The model caught one and walked straight past this one. Automated auditing is useful, but it isn't a substitute for a human who knows where the bodies are buried.",
+      "Check your running kernel version, watch your distribution's advisory feed, and apply the backport the moment it ships. If you run shared or multi-tenant systems, where untrusted users already have local accounts, treat this as urgent rather than routine.",
+    ],
+    category: "cyber",
+    tags: ["Linux", "Kernel", "Privilege Escalation", "Android", "CVE"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-06T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "NVD — CVE-2026-46242",
+        desc: "National Vulnerability Database entry for Bad Epoll",
+        url: "https://nvd.nist.gov/vuln/detail/CVE-2026-46242",
+      },
+      {
+        name: "bad-epoll PoC (GitHub)",
+        desc: "Researcher's proof-of-concept and technical writeup",
+        url: "https://github.com/J-jaeyoung/bad-epoll",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Reporting on the flaw and its Android reach",
+        url: "https://thehackernews.com/2026/07/new-bad-epoll-linux-kernel-flaw-lets.html",
+      },
+      {
+        name: "Cyber Security News",
+        desc: "Coverage of the 0-day and exploit reliability",
+        url: "https://cybersecuritynews.com/bad-epoll-0-day-vulnerability/",
+      },
+    ],
+  },
+  {
+    id: 185,
+    slug: "oracle-ebs-payments-cve-2026-46817-exploited-july-2026",
+    title: "Attackers Spent the Weekend Probing an Oracle EBS Payments Flaw",
+    summary: "Exploitation attempts against a critical bug in Oracle E-Business Suite's Payments module showed up over the weekend, and EBS has been a repeat target all year.",
+    body: [
+      "Over the weekend, researchers spotted exploitation attempts against CVE-2026-46817, a critical vulnerability in the Payments module of Oracle E-Business Suite. That's the part of EBS that actually moves money, which is exactly why it's worth an attacker's time.",
+      "EBS is the back office for a lot of large enterprises. It runs financials, procurement, HR, and payment processing, and it tends to sit deep inside the network holding data that matters. When a flaw lands in the Payments component specifically, the worst-case reads like fraud, not just data theft.",
+      "The full technical picture is still thin. What's clear is that attackers are already testing the bug in the wild, and probing at this stage usually means a working exploit is circulating or close behind. Oracle has published a fix, so the clock is now the enemy.",
+      "That clock is the real story. EBS deployments are notoriously slow to patch because they're heavily customized, business-critical systems that nobody reboots casually. The gap between an Oracle advisory and an actual production patch can run weeks, and attackers know it. If you run EBS, apply the fix, pull external access to the Payments endpoints, and start watching those logs now rather than after quarter close.",
+    ],
+    category: "cyber",
+    tags: ["Oracle", "E-Business Suite", "CVE", "Active Exploitation", "Enterprise"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-06T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Oracle Security Alerts",
+        desc: "Oracle's official advisories and Critical Patch Updates",
+        url: "https://www.oracle.com/security-alerts/",
+      },
+      {
+        name: "NVD — CVE-2026-46817",
+        desc: "National Vulnerability Database entry",
+        url: "https://nvd.nist.gov/vuln/detail/CVE-2026-46817",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Week-in-review noting weekend exploitation attempts",
+        url: "https://www.helpnetsecurity.com/2026/07/05/week-in-review-simplehelp-vulnerability-exploited-oracle-ebs-payments-flaw-under-attack/",
+      },
+    ],
+  },
+  {
+    id: 186,
+    slug: "simplehelp-cve-2026-48558-djinn-stealer-july-2026",
+    title: "SimpleHelp Bug Is Dropping the New 'Djinn Stealer' on Endpoints",
+    summary: "An authentication bypass in the SimpleHelp remote-management tool is being used to install Djinn Stealer, which harvests credentials from cloud consoles to crypto wallets.",
+    body: [
+      "Djinn Stealer isn't picky. Cloud logins, source-control tokens, package-registry keys, SSH keys, browser-stored passwords, even the credentials your AI coding assistant uses, it sweeps up the lot.",
+      "The way in is CVE-2026-48558, an authentication bypass in SimpleHelp, the remote-monitoring-and-management tool IT teams use to reach endpoints. Attackers are actively exploiting it to push Djinn onto Windows, macOS, and Linux machines. This one is being used right now, not just theorized about.",
+      "RMM compromise is a bad category of bad. These tools are trusted by design, run with high privileges, and reach a lot of machines from one console. Break the console and you inherit its footprint. That's why RMM flaws keep turning up at the front of real intrusions instead of buried in an advisory nobody reads.",
+      "What makes Djinn worth naming is its shopping list. It reads like a modern developer's keyring: package registries, infrastructure tooling, AI dev assistants, version control. Stolen registry credentials are how supply-chain attacks get their start, so the blast radius doesn't stop at the machine that got popped.",
+      "If you run SimpleHelp, patch it now, then rotate anything a compromised host could have touched and assume the stolen tokens are already in use somewhere. Credential theft doesn't wait for your incident review to finish.",
+    ],
+    category: "cyber",
+    tags: ["SimpleHelp", "RMM", "Infostealer", "Credential Theft", "CVE"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-06T10:45:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "NVD — CVE-2026-48558",
+        desc: "National Vulnerability Database entry for the SimpleHelp flaw",
+        url: "https://nvd.nist.gov/vuln/detail/CVE-2026-48558",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Week-in-review documenting active exploitation",
+        url: "https://www.helpnetsecurity.com/2026/07/05/week-in-review-simplehelp-vulnerability-exploited-oracle-ebs-payments-flaw-under-attack/",
+      },
+      {
+        name: "CISA KEV Catalog",
+        desc: "Authoritative list of vulnerabilities under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+    ],
+  },
+  {
+    id: 187,
+    slug: "openai-5-percent-us-government-stake-july-2026",
+    title: "OpenAI Floats Giving the US Government a 5% Stake",
+    summary: "OpenAI has pitched the Trump administration on a roughly $43 billion equity stake, framed as sharing AI's upside with the public while cooling political heat in Washington.",
+    body: [
+      "Five percent of OpenAI is worth about $42.6 billion. That's the size of the stake the company has reportedly floated handing to the US government.",
+      "According to the Financial Times, OpenAI proposed the government take a 5% equity position in the company. Sam Altman's framing is that it's the best way to share AI's upside with the public. The valuation math runs off the record $852 billion post-money figure from OpenAI's March funding round, so the percentage translates into a very large number.",
+      "The talks are described as conceptual, with Altman engaging President Trump directly along with Commerce Secretary Howard Lutnick and Treasury Secretary Scott Bessent. The pitch reportedly goes further and asks other US AI companies to grant the government the same 5%, though whether any of them would sign up for that is a separate question entirely.",
+      "OpenAI points to the Alaska Permanent Fund as the template, the sovereign wealth fund set up in 1976 to pay residents from the state's oil revenue. The analogy casts AI as a public windfall that the state should own a slice of, the way Alaska owns a slice of its oil.",
+      "Read it less charitably and it looks a lot like buying goodwill. A government that owns 5% of OpenAI has a direct financial reason to want the company to thrive, and that interest doesn't vanish when the same administration sits down to write AI rules. Handing equity to your future regulator raises an obvious question about who's refereeing the match. It would also likely require an act of Congress, which puts real distance between the pitch and anything binding.",
+      "Whatever the motive, the proposal reframes the relationship between AI labs and Washington from oversight toward partnership. A regulator with a line on the cap table is a different kind of regulator.",
+    ],
+    category: "ai",
+    tags: ["OpenAI", "Sam Altman", "AI Policy", "Government", "Regulation"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-06T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Reporting on the proposed 5% government stake",
+        url: "https://www.cnbc.com/2026/07/02/openai-proposes-us-government-own-5percent-stake-to-address-political-blowback.html",
+      },
+      {
+        name: "Forbes",
+        desc: "Details on the pitch and valuation math",
+        url: "https://www.forbes.com/sites/siladityaray/2026/07/02/openai-reportedly-pitches-granting-us-government-5-stake/",
+      },
+      {
+        name: "TIME",
+        desc: "Context on OpenAI courting the administration as investor",
+        url: "https://time.com/article/2026/07/03/openai-invest-ai-trump-administration-sam-altman/",
+      },
+    ],
+  },
+  {
+    id: 188,
+    slug: "etched-inference-chip-800m-funding-july-2026",
+    title: "AI Chip Startup Etched Lands $800M at a $5 Billion Valuation",
+    summary: "Etched raised $800 million to build chips that only run AI inference, betting that ripping out training hardware makes it the fastest way to serve today's biggest models.",
+    body: [
+      "Etched's bet is blunt: build a chip that can't train an AI model at all, and it'll run one faster than anything that can. The company just came out with $800 million in funding and a $5 billion valuation to prove it.",
+      "The chips are inference-only, built on TSMC's N4P process and shipped as rack-scale appliances rather than loose cards. By stripping out the circuitry a chip needs for training, Etched claims several times the compute density of general-purpose parts and says it can run trillion-parameter models at more than 80% of peak throughput. The backer list is a who's-who of AI academia, including Geoffrey Hinton, Fei-Fei Li, and Andrej Karpathy.",
+      "The contrast with Nvidia is the whole pitch. Nvidia's Rubin generation does both training and inference, which is a big part of why it dominates. Etched is wagering that inference is where the volume and the money are heading as AI products actually scale to millions of users, and that specialization wins there in a way flexibility can't.",
+      "The risk is just as blunt. Betting the company on the transformer architecture is a real bet. Inference-only silicon is fast precisely because it's rigid, and if the dominant model shape shifts under it, that rigidity turns from an advantage into dead weight. The road behind Nvidia is littered with challengers that had gorgeous benchmarks and no customers.",
+      "Which is why the number to watch isn't the valuation. Etched says it has booked more than $1 billion in orders with first racks shipping this summer. If those racks land and hit the throughput claims in production, the inference-chip argument stops being a pitch and starts being a product.",
+    ],
+    category: "tech",
+    tags: ["Semiconductors", "AI Chips", "Etched", "Nvidia", "Inference"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-06T13:15:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Etched",
+        desc: "Company site and product details",
+        url: "https://www.etched.com/",
+      },
+      {
+        name: "SiliconANGLE",
+        desc: "Reporting on the funding round and chip architecture",
+        url: "https://siliconangle.com/2026/06/30/inference-chip-startup-etched-launches-800m-funding/",
+      },
+      {
+        name: "Crunchbase News",
+        desc: "Context on 2026 semiconductor startup funding",
+        url: "https://news.crunchbase.com/semiconductors-and-5g/chip-startup-funding-2026-cerebras-matx-ayar-labs-ipos-nvda/",
+      },
+    ],
+  },
+  {
     id: 179,
     slug: "microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026",
     title: "Microsoft Bets $2.5 Billion That Enterprise AI Needs Humans On-Site",
@@ -43,7 +244,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-05T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: false,
     sources: [
@@ -266,7 +467,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA KEV Catalog",
@@ -310,7 +511,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA KEV Catalog",
@@ -1449,7 +1650,7 @@ export const articles = [
     publishedAt: "2026-06-29T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1499,7 +1700,7 @@ export const articles = [
     publishedAt: "2026-06-29T08:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1542,7 +1743,7 @@ export const articles = [
     publishedAt: "2026-06-29T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1585,7 +1786,7 @@ export const articles = [
     publishedAt: "2026-06-29T10:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
