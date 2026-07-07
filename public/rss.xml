@@ -6,9 +6,106 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Jul 2026 13:22:11 GMT</lastBuildDate>
-    <pubDate>Mon, 06 Jul 2026 13:22:11 GMT</pubDate>
+    <lastBuildDate>Tue, 07 Jul 2026 13:14:14 GMT</lastBuildDate>
+    <pubDate>Tue, 07 Jul 2026 13:14:14 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Sysdig Documents JADEPUFFER, the First Fully Autonomous Ransomware Attack</title>
+      <link>https://sabr-labs.com/article/jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026</guid>
+      <pubDate>Tue, 07 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>AI</category>
+      <category>Langflow</category>
+      <category>Sysdig</category>
+      <category>Threat Intelligence</category>
+      <description>An AI agent exploited a Langflow flaw and ran the entire ransomware chain, from break-in to database destruction, with no human between the steps.</description>
+      <content:encoded><![CDATA[<p>An AI agent broke into an internet-facing Langflow server, ran its own reconnaissance, stole cloud credentials, moved laterally, and encrypted a production database. No human touched the keyboard between steps. Sysdig is calling it JADEPUFFER, and says it's the first ransomware operation it has watched run end to end by an autonomous agent.</p>
+<p>The way in was CVE-2025-3248, a missing-authentication flaw in Langflow's code-validation endpoint that lets an unauthenticated attacker run arbitrary Python on the host. That bug is old news; it's been patched since 2025. What's new is what came after the foothold.</p>
+<p>Sysdig's researchers describe an agent that behaved like a competent human operator working at machine speed. When a login failed, it diagnosed the root cause and shipped a multi-step fix in 31 seconds rather than blindly retrying. The payloads it dropped were self-narrating, stuffed with plain-English notes explaining why each action was being taken, the kind of annotation a person almost never writes but an LLM produces reflexively.</p>
+<p>On the target, the agent encrypted all 1,342 Nacos service configuration items with MySQL's AES_ENCRYPT(), dropped the original tables, and stood up an extortion table holding a Bitcoin address and a Proton Mail contact.</p>
+<p>Here's the part that undercuts the horror-movie framing: the operation was sloppy in ways a real crew wouldn't be. The Bitcoin address it demanded payment to was a sample wallet lifted from developer documentation. The encryption key was generated at random, printed to the screen once, and never saved or sent anywhere, which means even a victim who paid could not get their data back. This wasn't extortion so much as automated destruction wearing an extortion note.</p>
+<p>Sysdig frames JADEPUFFER as a warning sign, not a crisis, and that's the right read. None of the individual moves were novel. What's notable is that they were chained together autonomously, which collapses the time and skill a human operator used to need. The uncomfortable trajectory is obvious: the next version won't paste the wrong wallet address.</p>
+<p>For defenders the takeaway is boring and familiar. The initial access was a year-old unpatched CVE on an exposed service. Agent or no agent, that's still the door. Patch Langflow, get code-execution-capable dev tools off the public internet, and watch for credential-access patterns that move faster than a person could type.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DHS Confirms Hackers Breached Its HSIN Information-Sharing Network</title>
+      <link>https://sabr-labs.com/article/dhs-hsin-homeland-security-information-network-breach-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/dhs-hsin-homeland-security-information-network-breach-july-2026</guid>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>DHS</category>
+      <category>Data Breach</category>
+      <category>Government</category>
+      <category>SharePoint</category>
+      <category>Incident Response</category>
+      <description>The Homeland Security Information Network and an associated SharePoint system were compromised between late May and early June; DHS hasn&apos;t named an actor or confirmed data theft.</description>
+      <content:encoded><![CDATA[<p>The Department of Homeland Security is investigating a breach of the Homeland Security Information Network, the platform federal, state, local, and private-sector partners use to share sensitive threat information.</p>
+<p>According to DHS, the intrusion happened somewhere between late May and early June, and hit both HSIN servers and an associated SharePoint system. The department confirmed the compromise this week but has not attributed it to any actor, and says it's still unclear whether documents were actually stolen. In a statement, DHS said it isolated the affected systems and launched a forensic investigation, that there's no indication classified networks were touched, and that the platform remains operational for its partners.</p>
+<p>HSIN isn't classified, but it's not nothing. It's where partners coordinate on physical and cyber threats, and a lot of that traffic is exactly the kind of operational detail an adversary would want. The timing draws extra scrutiny because it lands in the middle of World Cup 2026 security planning, a period when that coordination network is busier than usual.</p>
+<p>The SharePoint detail is worth sitting with. On-prem SharePoint has been one of the most reliably exploited pieces of enterprise software this year, with CISA adding a fresh SharePoint remote-code-execution bug to its exploited-vulnerabilities catalog just last week. DHS hasn't said whether a SharePoint flaw was the way in, but the pairing of HSIN servers and an associated SharePoint system will make every incident responder assume it until told otherwise.</p>
+<p>The open questions are the ones DHS hasn't answered: what was accessed, for how long, and by whom. Until there's a scoping statement, any partner whose data touched HSIN in that late-May-to-early-June window should treat it as potentially exposed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>New CitrixBleed-Style NetScaler Flaw Exploited Within 24 Hours</title>
+      <link>https://sabr-labs.com/article/citrix-netscaler-cve-2026-8451-citrixbleed-memory-overread-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-cve-2026-8451-citrixbleed-memory-overread-july-2026</guid>
+      <pubDate>Tue, 07 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>CVE</category>
+      <category>Vulnerability</category>
+      <category>Active Exploitation</category>
+      <description>CVE-2026-8451 lets an unauthenticated attacker read session tokens and credentials out of NetScaler memory; exploitation began within a day of disclosure.</description>
+      <content:encoded><![CDATA[<p>Citrix disclosed a memory-disclosure bug in NetScaler on June 30. By July 2, attackers were already exploiting it. That window, measured in hours, is why researchers are filing CVE-2026-8451 under the CitrixBleed lineage.</p>
+<p>The flaw is a pre-auth out-of-bounds read in how NetScaler parses SAML authentication requests when the appliance is configured as a SAML identity provider. watchTowr, which found it, traced the bug to an XML parser that failed to terminate unquoted attribute values followed by a newline, so the parser walked past its buffer and returned chunks of device memory in the NSC_TASS cookie. Citrix rates it 8.8.</p>
+<p>The reason this pattern keeps mattering is what leaks. An unauthenticated attacker can pull session tokens, cleartext credentials, and TLS private keys straight out of memory, no login required. That's the same class of exposure that made the original CitrixBleed such a gift to ransomware crews in 2023, because a stolen session token sidesteps MFA entirely.</p>
+<p>Lupovis reported active exploitation within 24 hours of disclosure, and watchTowr published a technical writeup that makes reproduction straightforward. When a working method is public and the payoff is session hijacking, the exploitation curve doesn't flatten on its own.</p>
+<p>Fixed builds are out: NetScaler ADC and Gateway 14.1-72.61 or 13.1-63.18 and later. Patching alone isn't enough here. Because the bug leaks live session tokens, anyone who was exposed should terminate all active sessions and rotate secrets after upgrading, the exact cleanup step CitrixBleed victims skipped and regretted.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Bitcoin Miner Just Leased Anthropic a $19 Billion Data Center</title>
+      <link>https://sabr-labs.com/article/terawulf-anthropic-19-billion-data-center-lease-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/terawulf-anthropic-19-billion-data-center-lease-july-2026</guid>
+      <pubDate>Tue, 07 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Anthropic</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>TeraWulf</category>
+      <category>Compute</category>
+      <description>TeraWulf signed a 20-year, roughly $19 billion lease to house Anthropic&apos;s servers at a former Kentucky aluminum smelter, and its stock jumped.</description>
+      <content:encoded><![CDATA[<p>A Bitcoin miner just signed a 20-year lease worth roughly $19 billion to house Anthropic's servers, and its stock popped on the news. That sentence would have read as nonsense two years ago. In 2026 it's the template.</p>
+<p>TeraWulf, a Nasdaq-listed outfit that made its name mining crypto, announced the deal on July 6. Anthropic will occupy a data center TeraWulf is building on the site of a former aluminum smelter in Hawesville, Kentucky, which will run at 401 megawatts once it's fully online. Initial capacity is slated for the second half of 2027, with the full build following the year after.</p>
+<p>The math explains why miners keep making this jump. TeraWulf plans to sink $3 to $4 billion into the site, less than a fifth of the lease's total value, against roughly $19 billion in contracted revenue over the term. For a company with a market value around $12 billion, a single tenant just committed to paying more than the whole company is worth. Shares rose about 5%.</p>
+<p>The aluminum-smelter detail isn't incidental. Those sites exist because someone already ran high-voltage power to them decades ago, and cheap, available power is the one thing AI buildouts can't conjure on demand. Old heavy industry is being recycled into compute because the grid connection is the scarce asset, not the land or the concrete.</p>
+<p>The broader pattern is a capital reshuffle hiding inside a real estate deal. Crypto miners spent years building power-hungry sites on a bet about Bitcoin; now the surer bet is renting those sites to AI labs on 20-year terms. Anthropic gets guaranteed capacity without owning the buildings. TeraWulf gets a revenue floor that dwarfs its mining business. Whether 401 megawatts still counts as a lot of compute in 2028 is the part nobody's underwriting.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>US Firms Are Routing Real Traffic to Chinese Models to Cut Costs</title>
+      <link>https://sabr-labs.com/article/chinese-ai-models-us-adoption-cost-surge-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chinese-ai-models-us-adoption-cost-surge-july-2026</guid>
+      <pubDate>Tue, 07 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI</category>
+      <category>China</category>
+      <category>DeepSeek</category>
+      <category>Zhipu</category>
+      <category>Pricing</category>
+      <description>As token prices for top US models climb, companies are increasingly finding DeepSeek and Zhipu&apos;s GLM good enough for production, and much cheaper.</description>
+      <content:encoded><![CDATA[<p>US companies building on AI are starting to do something that would have been unthinkable a year ago: routing real production traffic to Chinese models, on purpose, to save money.</p>
+<p>CNBC reported this week that models from DeepSeek and Zhipu's Z.ai are increasingly seen inside US firms as competitive with frontier systems from OpenAI and Anthropic, at a moment when token prices for the top US models keep climbing. The gap is concrete. Zhipu's GLM-5.2 runs about $1.40 per million input tokens and $4.40 output; Anthropic's Claude Sonnet 5 sits at $2 and $10, even on introductory pricing.</p>
+<p>For a demo, that spread is noise. For a company serving millions of API calls a day, it's the difference between a viable margin and a bleeding one. As agentic workloads push token consumption up by orders of magnitude, per-token price stops being a line item and becomes the business model. Open-weight Chinese models you can self-host remove the metered bill entirely.</p>
+<p>None of this is free of friction. Running a Chinese open-weight model in production raises data-governance and procurement questions a lot of US enterprises won't clear, and "good enough on benchmarks" is not the same as "good enough on your workload." The pull is real, but so is the reason most regulated shops still won't touch it.</p>
+<p>The uncomfortable read for the US labs is that their pricing power is thinner than the revenue headlines suggest. Anthropic says it's on track for $47 billion annualized and has passed OpenAI on revenue, but revenue leadership doesn't lock in customers who watch a cheaper model close the quality gap every quarter. The floor under frontier pricing is competition, and a growing share of that competition now ships from Hangzhou.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI Chip Startup Etched Lands $800M at a $5 Billion Valuation</title>
       <link>https://sabr-labs.com/article/etched-inference-chip-800m-funding-july-2026</link>
@@ -870,102 +967,6 @@
 <p>Now the same leaders want receipts. Tighter controls, clearer return on investment, and cheaper alternatives where the expensive model isn't earning its keep. The most pointed example: the CEO of the AI startup Lindy moved all of his company's traffic off Anthropic's Claude and onto DeepSeek, the cheaper Chinese open-weight option, and watched the cost curve fall off a cliff. That's not a rounding-error saving. That's a different bill.</p>
 <p>The timing is awkward for the two biggest labs. OpenAI and Anthropic both filed confidentially for what could be historic IPOs in early June, right as their largest enterprise customers start asking why the monthly invoice keeps climbing. Models like Zhipu's GLM-5.2 and DeepSeek give those customers a credible threat to walk, and a credible threat is all you need to renegotiate.</p>
 <p>None of this means demand for AI is shrinking. It means the era of unmetered, ROI-optional spending is over, and the providers that win the next phase will be the ones whose pricing survives a CFO actually reading the line items.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Zhipu&apos;s GLM-5.2 Is the First Open-Weight Model That Feels Frontier</title>
-      <link>https://sabr-labs.com/article/glm-5-2-zhipu-open-weight-frontier-china-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/glm-5-2-zhipu-open-weight-frontier-china-june-2026</guid>
-      <pubDate>Sun, 28 Jun 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Open Weights</category>
-      <category>Zhipu</category>
-      <category>GLM</category>
-      <category>China</category>
-      <category>LLM</category>
-      <description>China&apos;s Zhipu shipped MIT-licensed weights that land within a point of Claude Opus on an agentic benchmark at roughly a fifth of the price.</description>
-      <content:encoded><![CDATA[<p>For two years the open-weight crowd has had to settle for "good enough." GLM-5.2, from the Chinese lab Zhipu, is the model that stops the apologizing. Released under a full MIT license on June 17, it scores within about a point of Anthropic's Claude Opus 4.8 on a widely cited agentic benchmark, and it does it at roughly a fifth of the cost. Practitioners who've actually run it, not just read the chart, keep describing it the same way: the first open model that feels plausibly frontier in daily use.</p>
-<p>The numbers behind that have texture. It's a mixture-of-experts model, 744 billion total parameters with 40 billion active per token, and the context window has been stretched to one million tokens. On Artificial Analysis's Intelligence Index, GLM-5.2 lands at 51, ahead of MiniMax-M3 and DeepSeek V4 Pro at 44 and Kimi K2.6 at 43. That ordering matters less than the gap it closes: the best open model is now trading blows with the closed ones rather than chasing them by a generation.</p>
-<p>The price is the headline for anyone running real workloads. Through a host like OpenRouter, GLM-5.2 runs around $1.40 per million input tokens and $4.40 per million output. GPT-5.5 sits at roughly $5 and $30. Claude Opus is near $5 and $25. When a model is one-fifth the cost and a rounding error behind on quality, the math starts making the decision for you.</p>
-<p>There's a real distinction worth keeping straight, though. Open weights mean you can download GLM-5.2 and run it on your own hardware, where your data never leaves your network. Calling Zhipu's hosted API is a different deal, and sending sensitive prompts to a Chinese-operated endpoint carries the data-governance questions you'd expect. The benchmark wins are also benchmark wins. A score of 51 doesn't tell you how it handles your codebase or your weird internal tooling, and the only way to know is to try it.</p>
-<p>The timing stings for the US labs. CNBC framed it bluntly this week: Zhipu is closing in while OpenAI and Anthropic are partly held back by Washington's release controls. A capable model you can host yourself, license freely, and run cheap is exactly the thing that erodes a premium API's pricing power. That pressure is already showing up in how companies budget for AI.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Patches Its Fifth Chrome Zero-Day of 2026, Already Exploited</title>
-      <link>https://sabr-labs.com/article/chrome-fifth-zero-day-cve-2026-11645-v8-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-fifth-zero-day-cve-2026-11645-v8-june-2026</guid>
-      <pubDate>Sun, 28 Jun 2026 09:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Google Chrome</category>
-      <category>Zero-Day</category>
-      <category>Browser Security</category>
-      <category>V8</category>
-      <category>Patch</category>
-      <description>CVE-2026-11645 is an out-of-bounds memory bug in Chrome&apos;s V8 engine that attackers were exploiting before the fix shipped.</description>
-      <content:encoded><![CDATA[<p>Five. That's how many actively exploited Chrome zero-days Google has patched since January, and the count is only half the year. The latest is CVE-2026-11645, an out-of-bounds memory access in V8, the JavaScript and WebAssembly engine that does the heavy lifting on every page you open. Google says plainly that it is "aware that an exploit for CVE-2026-11645 exists in the wild."</p>
-<p>An out-of-bounds bug in V8 is the kind attackers like because it's reachable from a web page. A crafted site corrupts memory inside the engine and, chained with the right follow-on, becomes code running in the browser's context. The flaw is rated high severity, with a CVSS of 8.8 in the public scoring. The fix lands in Chrome 149.0.7827.102 for Windows and Linux and 149.0.7827.103 for Mac.</p>
-<p>An anonymous researcher reported the bug to Google a couple of weeks before the patch shipped, reportedly earning a five-figure bounty. The faster turnaround between a private report and an in-the-wild exploit is becoming the pattern, and it isn't an accident. Google and Microsoft have both pointed to AI-assisted vulnerability discovery as a reason patch volumes keep climbing. Microsoft's June update alone topped 200 CVEs. More eyes, human and machine, on the same memory-safety bugs means more of them surface at once.</p>
-<p>This isn't a Chrome-only problem either. Edge, Brave, Opera and Vivaldi all ride on Chromium and inherit V8, so they're exposed until each ships the same fix. If you maintain any of those in a fleet, they're on your list too.</p>
-<p>Updating takes ten seconds and most people skip it anyway. Open the menu, go to Help, click About Google Chrome, and let it pull the update, then hit Relaunch. The fix does nothing sitting in a tab you never restarted.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ShinyHunters Hit 100+ PeopleSoft Servers Through an Oracle Zero-Day</title>
-      <link>https://sabr-labs.com/article/shinyhunters-oracle-peoplesoft-cve-2026-35273-higher-ed-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-oracle-peoplesoft-cve-2026-35273-higher-ed-june-2026</guid>
-      <pubDate>Sun, 28 Jun 2026 08:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>PeopleSoft</category>
-      <category>Zero-Day</category>
-      <category>ShinyHunters</category>
-      <category>Data Breach</category>
-      <description>CVE-2026-35273 let attackers run code on PeopleSoft with no login, and Mandiant says two-thirds of the affected organizations are universities.</description>
-      <content:encoded><![CDATA[<p>The calling card was a file named README-IF-YOU-SEE-THIS-YOUVE-BEEN-HACKED.TXT, dropped into PeopleSoft directories after the attackers had already taken what they came for. The crew behind it is ShinyHunters, and the way in was CVE-2026-35273, a remote code execution flaw in Oracle PeopleSoft Enterprise PeopleTools rated 9.8 out of 10. No login required, no user interaction, just network access over HTTP to a vulnerable instance.</p>
-<p>The bug lives in the Updates Environment Management component, the piece behind the Environment Management Hub known as PSEMHUB. Mandiant dated the activity to a window between May 27 and June 9. Oracle didn't publish its out-of-band advisory until June 10, which means it was a true zero-day the entire time attackers were working through it.</p>
-<p>Mandiant, now part of Google, notified more than 100 organizations whose internet-facing endpoints matched the vulnerable fingerprint. Roughly 68 percent of them are in higher education, most in the United States. Some blocked the activity in time. Others were compromised and watched their data land on the ShinyHunters leak site, with the University of Nottingham among the first confirmed victims.</p>
-<p>The post-exploitation work was unglamorous and effective. After landing on a PeopleSoft host, the attackers sprayed a hardcoded list of usernames and passwords over SSH to reach other internal machines, compressed stolen data with zstd, and shipped it out over an SSH connection to the server hosting a public mirror of their leak site. Nothing here is exotic. It's a known group running a clean playbook against a class of systems that universities and large enterprises run wide open for staff and student self-service.</p>
-<p>If you run PeopleSoft, the PeopleTools patch from Oracle's June 10 alert is the floor, not the ceiling. Assume anything reachable before you patched may already be compromised, hunt for that marker file and unexpected SSH activity between PeopleSoft hosts, and reset the credentials that were sitting on those servers. The leak-site postings are still trickling out, so the list of named victims isn't final.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Self-Spreading Miasma Worm Poisons 20+ npm Packages in Seconds</title>
-      <link>https://sabr-labs.com/article/miasma-npm-worm-leo-rstreams-supply-chain-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/miasma-npm-worm-leo-rstreams-supply-chain-june-2026</guid>
-      <pubDate>Sun, 28 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>npm</category>
-      <category>Malware</category>
-      <category>Credential Theft</category>
-      <category>DevSecOps</category>
-      <description>A hijacked maintainer account pushed credential-stealing updates to Leo Platform and RStreams packages, and the malware republishes itself to spread.</description>
-      <content:encoded><![CDATA[<p>The whole thing took under three seconds. Late on June 24, an attacker who had taken over the npm maintainer account "czirker" pushed poisoned updates to more than 20 packages used by the Leo Platform and RStreams data-streaming projects. There was no human at the keyboard timing it. The publish run was fully automated, which is how you compromise two dozen package versions faster than most people can read a single changelog.</p>
-<p>Microsoft Threat Intelligence flagged the campaign, with extra technical analysis from Sonatype. The malware family is called Miasma, and it does two things well. First, it hunts for secrets: AWS, Azure and GCP credentials, GitHub tokens, Kubernetes secrets, HashiCorp Vault access, 1Password data, and the victim's own npm publishing tokens. Second, and this is the part that makes it dangerous, it uses those stolen npm tokens to republish itself into more packages. It's a worm. Steal a maintainer's keys, ship a tainted version under their name, harvest the next maintainer's keys, repeat.</p>
-<p>If that pattern sounds familiar, it should. Miasma is the same lineage as the Shai-Hulud self-propagating npm attacks, and a "mini Shai-Hulud" toolkit went public on GitHub earlier this month, lowering the bar for anyone who wants to run this play. Miasma also showed up at the start of June in the @redhat-cloud-services compromise, where a hijacked Red Hat employee GitHub account was used to push malicious orphan commits into RedHatInsights repositories, poisoning around 32 packages that pulled roughly 80,000 weekly downloads between them.</p>
-<p>The uncomfortable detail in the Red Hat case was that the malicious commits bypassed code review entirely. The June 24 round skips review too, because once an attacker holds a publishing token, npm just accepts the upload. Two-factor authentication on the human login doesn't help when the token is what's being abused.</p>
-<p>For anyone shipping software, the move is the boring one that works: pin dependencies to known-good versions, turn on npm's granular access tokens with the shortest viable lifetime, and audit your lockfile for any package that updated in the last few days across the Leo Platform or RStreams trees. If a build pulled a poisoned version, treat every credential that touched that build host as burned and rotate it. The worm's entire business model is the credentials you didn't rotate fast enough.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Adds PTC Windchill RCE to KEV as Webshells Land on PLM Servers</title>
-      <link>https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-rce-kev-june-2026</guid>
-      <pubDate>Fri, 26 Jun 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CVE-2026-12569</category>
-      <category>PTC Windchill</category>
-      <category>FlexPLM</category>
-      <category>CISA KEV</category>
-      <category>Remote Code Execution</category>
-      <description>CVE-2026-12569 is a CVSS 10.0 deserialization bug in Windchill and FlexPLM, and CISA confirmed active exploitation by adding it to the KEV catalog on June 25.</description>
-      <content:encoded><![CDATA[<p>A perfect-10 remote code execution bug in PTC's Windchill and FlexPLM product lifecycle management suites is being exploited in the wild, and CISA added CVE-2026-12569 to its Known Exploited Vulnerabilities catalog on June 25. Federal agencies now have a hard deadline to patch, and everyone else should treat that date as their own.</p>
-<p>The flaw is an unsafe deserialization of untrusted data, the kind of bug that turns a web request into arbitrary code on the server. No authentication is required. PTC rates it CVSS 10.0, Germany's BSI issued its own critical warning, and the affected footprint includes Windchill's PDMLink module and FlexPLM, the systems that hold a manufacturer's CAD files, bills of materials, and product specs.</p>
-<p>What makes this one worth your attention is who runs Windchill. It's the engineering backbone for aerospace, automotive, industrial, and defense suppliers. A webshell on a PLM server isn't a nuisance, it's a window into the design data of whatever the company makes.</p>
-<p>And webshells are exactly what's showing up. PTC's advisory describes attackers naming their webshells with 16 lowercase hex characters, so defenders should hunt for any POST request to a path matching /Windchill/login/[16 hex chars].jsp. The intruders also send a custom HTTP header, X-windchill-req, which has no legitimate use in the product. PTC first published indicators on June 18 and has since added more, which tells you the activity is ongoing rather than a single burst.</p>
-<p>If you run Windchill or FlexPLM, the order of operations is straightforward. Apply PTC's patch, then go looking for the IOCs, because a patch closes the door but doesn't evict anyone already inside. Check your logs for those JSP paths and the X-windchill-req header going back at least to mid-June, and assume any internet-facing instance was a target.</p>
-<p>PLM platforms rarely make the security headlines that VPNs and firewalls do, which is part of why they're attractive. They sit deep in the network, they're trusted, and they're often patched on a sleepy enterprise-software cadence. A CVSS 10 with confirmed exploitation should reset that cadence.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
