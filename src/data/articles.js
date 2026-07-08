@@ -25,6 +25,233 @@
 
 export const articles = [
   {
+    id: 194,
+    slug: "adobe-coldfusion-cve-2026-48282-rds-rce-exploited-july-2026",
+    title: "Adobe ColdFusion Flaw Exploited Two Hours After It Went Public",
+    summary: "CVE-2026-48282, a CVSS 10 path traversal in ColdFusion's Remote Development Services, went from disclosure to in-the-wild attacks in under two hours and is now on CISA's KEV list.",
+    body: [
+      "Attackers were exploiting CVE-2026-48282 in the wild less than two hours after the details went public. That is not a typo. Researchers watched the first payloads land the same afternoon the writeups dropped.",
+      "The flaw sits in ColdFusion's Remote Development Services, the RDS component that IDE tooling uses to talk to a server. Its FILEIO handler doesn't validate paths properly, so a remote attacker can walk out of the intended directory and read or write files anywhere the ColdFusion process can reach. On its own that's a nasty information leak. Chained through RDS, it becomes unauthenticated remote code execution, which is why the CVSS score is a flat 10.0.",
+      "It affects ColdFusion 2025.9, 2023.20, and earlier. Adobe shipped fixes in ColdFusion 2025 Update 10 and 2023 Update 21 as part of bulletin APSB26-68, a release that patched seven separate CVSS 10.0 bugs in one go. That count alone should tell you how exposed the RDS surface has been.",
+      "CISA added the CVE to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 10 to patch. One of the earliest recorded attempts came from an IP in India trying to read C:\\Windows\\win.ini, the classic \"can I read arbitrary files\" canary before an attacker commits to something worse.",
+      "Here's the part worth saying plainly: RDS was never supposed to face the internet. It's a developer convenience meant for trusted networks, and Adobe has told people to disable it in production for years. Every server getting hit right now had a component exposed that should have been off. The patch closes the bug, but the real lesson is inventory. If you run ColdFusion, confirm RDS is disabled, not just that you've updated.",
+      "If a box was internet-facing any time in the last week, patching is not enough. Hunt for unauthorized files in the web root and /CFIDE/ directories, because a two-hour exploitation window means the scanners found you before you found the advisory.",
+    ],
+    category: "cyber",
+    tags: ["Adobe ColdFusion", "CVE-2026-48282", "RCE", "CISA KEV", "Path Traversal"],
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-08T07:30:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "CISA KEV",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Reporting on the in-the-wild exploitation timeline",
+        url: "https://www.helpnetsecurity.com/2026/07/07/adobe-coldfusion-cve-2026-48282-exploitation-detected/",
+      },
+      {
+        name: "watchTowr Labs",
+        desc: "Technical breakdown of the ColdFusion APSB26-68 bulletin",
+        url: "https://labs.watchtowr.com/its-37oc-and-all-we-can-think-about-is-coldfusion-adobe-coldfusion-security-bulletin-apsb26-68-cve-bonanza/",
+      },
+      {
+        name: "Resecurity",
+        desc: "Analysis of the RDS FILEIO path traversal to RCE chain",
+        url: "https://www.resecurity.com/blog/article/cve-2026-48282-adobe-coldfusion-rds-path-traversal-leading-to-rce",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of Adobe's seven CVSS 10.0 patches",
+        url: "https://thehackernews.com/2026/07/adobe-patches-7-cvss-100-flaws-in.html",
+      },
+    ],
+  },
+  {
+    id: 195,
+    slug: "gitea-docker-cve-2026-20896-webauth-header-auth-bypass-july-2026",
+    title: "One HTTP Header Turns Gitea's Docker Image Into an Open Admin Door",
+    summary: "CVE-2026-20896 lets anyone who can reach a default Gitea Docker container impersonate any user, admins included, by setting a single X-WEBAUTH-USER header.",
+    body: [
+      "Set one header, become the admin. That's the whole exploit for CVE-2026-20896, a CVSS 9.8 authentication bypass in Gitea's official Docker image.",
+      "The mechanics are almost too simple to call a vulnerability. Gitea supports reverse-proxy authentication, where a trusted proxy in front of the app asserts the logged-in user via the X-WEBAUTH-USER header. That's fine when only your proxy can set it. The problem is the Docker image ships with REVERSE_PROXY_TRUSTED_PROXIES set to a wildcard, so Gitea trusts that header from any source that can reach its port. Turn on reverse-proxy auth, expose the container, and any unauthenticated client can send X-WEBAUTH-USER: gitea_admin and walk in. No password, no token, no second factor.",
+      "Gitea's own advisory put it bluntly: any process that can reach the container's HTTP port directly, bypassing the intended proxy, can impersonate any user whose login name is known or guessable. For a self-hosted Git server, that means source code, CI secrets, deploy keys, and signing material, all reachable by guessing that the admin account is called \"admin.\"",
+      "The fix landed in Gitea 1.26.3 and 1.26.4, which change the insecure default. Everything up to and including 1.26.2 is exposed. If you can't upgrade immediately, edit app.ini and pin REVERSE_PROXY_TRUSTED_PROXIES to 127.0.0.0/8,::1/128 so only localhost is trusted.",
+      "Attackers noticed. Roughly 6,200 Gitea servers were reachable during the first scanning wave, and thirteen days after disclosure researchers logged active probing, with early reconnaissance traced to a ProtonVPN exit node. Thirteen days is a generous head start that a lot of homelab and small-team instances will not have used.",
+      "This is a default-configuration footgun, not an exotic memory bug, and those are the ones that quietly rack up victims. The container ran, the app worked, nobody touched the proxy settings, and the door was open the entire time.",
+    ],
+    category: "cyber",
+    tags: ["Gitea", "CVE-2026-20896", "Authentication Bypass", "Docker", "Self-Hosted"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-08T08:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Gitea Blog",
+        desc: "Official 1.26.3 and 1.26.4 security release notes",
+        url: "https://blog.gitea.com/release-of-1.26.3-and-1.26.4/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Reporting on active probing 13 days after disclosure",
+        url: "https://thehackernews.com/2026/07/threat-actors-probe-gitea-docker-flaw.html",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Coverage of the active exploitation warning",
+        url: "https://www.securityweek.com/critical-gitea-flaw-under-active-exploitation-researchers-warn/",
+      },
+      {
+        name: "Security Affairs",
+        desc: "Details on exposed instances and impact",
+        url: "https://securityaffairs.com/194902/hacking/critical-gitea-docker-bug-under-active-exploitation-exposes-repositories-and-secrets.html",
+      },
+    ],
+  },
+  {
+    id: 196,
+    slug: "conduent-healthcare-breach-62-million-third-largest-july-2026",
+    title: "Conduent Breach Count Climbs Past 62 Million, Now Third-Largest Ever",
+    summary: "The Conduent intrusion keeps growing; updated filings put the affected population above 62.2 million, making it the third-largest healthcare data breach in U.S. history.",
+    body: [
+      "Sixty-two point two million. That's where the Conduent breach tally now sits, and it's still labeled as a running count.",
+      "Conduent is a business-process outsourcer that most people have never heard of, which is exactly why the number is so large. It runs government and healthcare back-office systems: Medicaid claims processing, benefits administration, the plumbing that dozens of agencies and health plans quietly depend on. When one vendor holds records for that many programs, one intrusion scales into the tens of millions.",
+      "The forensic timeline is ugly. Attackers were inside the network for 83 days, from October 21, 2024 until Conduent spotted them on January 13, 2025, and they left with roughly 8.5 terabytes of data. That haul included Social Security numbers, medical records, health insurance details, and Medicaid claims. The current figure of more than 62.2 million puts it behind only Change Healthcare's 2024 breach, which hit 192.7 million, and one other incident in the all-time U.S. rankings.",
+      "The notification story is its own problem. Conduent discovered the breach in January 2025 but didn't begin notifying people until late October, roughly nine months later. HIPAA's breach notification rule gives covered entities and their business associates 60 days. Nine months is not 60 days.",
+      "If you work anywhere that hands data to a third-party processor, this is the recurring nightmare in one case study. Your security posture can be excellent and it won't matter, because the exposure lives in a vendor's environment you don't control and can't fully audit. Business-associate agreements shift liability on paper. They don't shrink the blast radius.",
+    ],
+    category: "cyber",
+    tags: ["Conduent", "Data Breach", "Healthcare", "HIPAA", "Third-Party Risk"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-08T08:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "HIPAA Journal",
+        desc: "Reporting on the 62.2 million affected-individual count",
+        url: "https://www.hipaajournal.com/conduent-business-solutions-data-breach/",
+      },
+      {
+        name: "BankInfoSecurity",
+        desc: "Coverage of the updated victim tally",
+        url: "https://www.bankinfosecurity.com/conduent-hack-victim-count-now-tops-622-million-a-31900",
+      },
+      {
+        name: "TechCrunch",
+        desc: "Earlier reporting as the breach scope expanded",
+        url: "https://techcrunch.com/2026/02/05/data-breach-at-govtech-giant-conduent-balloons-affecting-millions-more-americans/",
+      },
+      {
+        name: "Malwarebytes",
+        desc: "Timeline of the growing affected count",
+        url: "https://www.malwarebytes.com/blog/news/2026/02/the-conduent-breach-from-10-million-to-25-million-and-counting",
+      },
+    ],
+  },
+  {
+    id: 197,
+    slug: "deepseek-in-house-inference-chip-nvidia-huawei-july-2026",
+    title: "DeepSeek Is Designing Its Own Inference Chip to Cut Nvidia Reliance",
+    summary: "Reuters reports DeepSeek has begun in-house work on an inference chip aimed at reducing its dependence on both Nvidia and Huawei, though the project is early.",
+    body: [
+      "China's DeepSeek is designing its own AI chip, according to a Reuters report citing people familiar with the effort. The company has started talking to chip-design, foundry, and memory partners, and it's trying to hire experienced silicon engineers.",
+      "The important detail is what kind of chip. This is an inference part, built to run models and answer user queries, not a training accelerator meant to build new models from scratch. Inference is the cheaper, more repetitive half of the workload, and it's where a company running a popular model burns money every single day. Designing your own inference silicon is how you claw back margin, and it's a far more achievable first target than trying to match Nvidia on training.",
+      "It also puts DeepSeek on the same path OpenAI took with its Broadcom-designed custom chip. When your compute bill is your largest cost and your supply is politically constrained, building your own becomes less of a moonshot and more of a budget decision.",
+      "The supply piece is the whole point here. U.S. export curbs limit DeepSeek's access to Nvidia's top parts, and the domestic fallback, Huawei's Ascend line, comes with its own capacity and yield constraints. A chip DeepSeek controls end to end would loosen both leashes at once. Reuters framed it as an attempt to reduce reliance on Nvidia and on Huawei, which is a pointed thing for a Chinese AI champion to signal about its own national supplier.",
+      "Temper the excitement. Designing a chip and shipping one at volume are separated by the hardest problem in the industry: fabrication. DeepSeek would still need a foundry, and inside China that means SMIC and the same process-node ceiling everyone else is stuck under. A tapeout is a milestone. Working parts in a data center at scale are a different year entirely. DeepSeek didn't comment.",
+    ],
+    category: "tech",
+    tags: ["DeepSeek", "AI Chips", "Inference", "Nvidia", "Semiconductors"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-08T09:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Reuters (via U.S. News)",
+        desc: "Original exclusive on DeepSeek's chip effort",
+        url: "https://www.usnews.com/news/top-news/articles/2026-07-07/exclusive-chinas-deepseek-developing-its-own-ai-chip-sources-say",
+      },
+      {
+        name: "Bloomberg",
+        desc: "Confirmation and market context on the report",
+        url: "https://www.bloomberg.com/news/articles/2026-07-07/chinese-ai-startup-deepseek-developing-own-ai-chip-reuters-says",
+      },
+      {
+        name: "TechNode",
+        desc: "Detail on cutting reliance on Nvidia and Huawei",
+        url: "https://technode.com/2026/07/08/deepseek-begins-in-house-ai-chip-development-to-cut-reliance-on-nvidia-sources-say/",
+      },
+      {
+        name: "SiliconANGLE",
+        desc: "Comparison to OpenAI's custom inference chip move",
+        url: "https://siliconangle.com/2026/07/07/report-chinas-deepseek-follows-openai-developing-custom-inference-chips/",
+      },
+    ],
+  },
+  {
+    id: 198,
+    slug: "white-house-voluntary-ai-testing-standards-framework-july-2026",
+    title: "White House Races to Finalize Voluntary AI Testing Rules With Top Labs",
+    summary: "The administration is close to publishing a voluntary framework with OpenAI, Google, and Anthropic that sets capability thresholds, pre-release notice windows, and access rules for frontier models.",
+    body: [
+      "The White House is finishing a voluntary framework for how frontier AI models get tested before they ship, built in talks with OpenAI, Google, and Anthropic. Officials expect to publish it as soon as next week.",
+      "The draft reportedly does three concrete things. It defines the capability levels that trigger a government security review, so labs know in advance what crosses the line. It sets a pre-release notification window, the amount of warning a company owes before a launch. And it spells out domestic-versus-foreign access rules, which is the part with real teeth given the last two months.",
+      "Because this isn't happening in a vacuum. In June the administration reviewed several new models for cybersecurity risk, and the labs responded fast. OpenAI limited its GPT-5.6 Sol model to Trump-administration-approved customers. Anthropic pulled two freshly announced models, Fable 5 and Mythos 5, then redeployed Mythos 5 on July 1 to a small set of cyber defenders and infrastructure providers after the government eased its restriction. All of that traces back to a June executive order on promoting AI innovation and security.",
+      "The stated worry is specific: that a capable enough model could find software vulnerabilities in critical infrastructure faster than defenders can patch them. That's not science fiction anymore, and it's a reasonable thing for a government to want visibility into.",
+      "But watch the word \"voluntary,\" because it's carrying a lot of weight. When the same administration already made companies restrict or shelve models on request, a framework everyone opts into looks less like a suggestion and more like the paperwork version of a decision that's already been made. Codifying the thresholds is genuinely useful; predictable rules beat case-by-case phone calls. The open question is whether \"voluntary\" survives contact with the first lab that decides it would rather not comply.",
+    ],
+    category: "ai",
+    tags: ["AI Policy", "White House", "OpenAI", "Anthropic", "AI Safety"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-08T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "The White House",
+        desc: "June 2026 executive order underpinning the framework",
+        url: "https://www.whitehouse.gov/presidential-actions/2026/06/promoting-advanced-artificial-intelligence-innovation-and-security/",
+      },
+      {
+        name: "TipRanks",
+        desc: "Reporting that the rules could publish within a week",
+        url: "https://www.tipranks.com/news/white-house-races-to-finalize-ai-model-rules-with-openai-google-and-anthropic",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Background on the June model-access restrictions",
+        url: "https://www.securityweek.com/openai-and-anthropic-limit-new-ai-models-to-trump-approved-customers-during-cybersecurity-review/",
+      },
+      {
+        name: "Axios",
+        desc: "How the restricted models were revived",
+        url: "https://www.axios.com/2026/07/03/anthropic-ai-models-revived-behind-the-scenes",
+      },
+    ],
+  },
+  {
     id: 189,
     slug: "jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026",
     title: "Sysdig Documents JADEPUFFER, the First Fully Autonomous Ransomware Attack",
@@ -44,7 +271,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-07T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -262,7 +489,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "NVD — CVE-2026-46242",
@@ -305,7 +532,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Oracle Security Alerts",
@@ -1392,7 +1619,7 @@ export const articles = [
     publishedAt: "2026-07-01T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1431,7 +1658,7 @@ export const articles = [
     publishedAt: "2026-07-01T08:40:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1470,7 +1697,7 @@ export const articles = [
     publishedAt: "2026-07-01T09:20:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1509,7 +1736,7 @@ export const articles = [
     publishedAt: "2026-07-01T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

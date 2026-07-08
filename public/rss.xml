@@ -6,9 +6,106 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2026 13:14:14 GMT</lastBuildDate>
-    <pubDate>Tue, 07 Jul 2026 13:14:14 GMT</pubDate>
+    <lastBuildDate>Wed, 08 Jul 2026 13:14:21 GMT</lastBuildDate>
+    <pubDate>Wed, 08 Jul 2026 13:14:21 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>White House Races to Finalize Voluntary AI Testing Rules With Top Labs</title>
+      <link>https://sabr-labs.com/article/white-house-voluntary-ai-testing-standards-framework-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/white-house-voluntary-ai-testing-standards-framework-july-2026</guid>
+      <pubDate>Wed, 08 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Policy</category>
+      <category>White House</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <category>AI Safety</category>
+      <description>The administration is close to publishing a voluntary framework with OpenAI, Google, and Anthropic that sets capability thresholds, pre-release notice windows, and access rules for frontier models.</description>
+      <content:encoded><![CDATA[<p>The White House is finishing a voluntary framework for how frontier AI models get tested before they ship, built in talks with OpenAI, Google, and Anthropic. Officials expect to publish it as soon as next week.</p>
+<p>The draft reportedly does three concrete things. It defines the capability levels that trigger a government security review, so labs know in advance what crosses the line. It sets a pre-release notification window, the amount of warning a company owes before a launch. And it spells out domestic-versus-foreign access rules, which is the part with real teeth given the last two months.</p>
+<p>Because this isn't happening in a vacuum. In June the administration reviewed several new models for cybersecurity risk, and the labs responded fast. OpenAI limited its GPT-5.6 Sol model to Trump-administration-approved customers. Anthropic pulled two freshly announced models, Fable 5 and Mythos 5, then redeployed Mythos 5 on July 1 to a small set of cyber defenders and infrastructure providers after the government eased its restriction. All of that traces back to a June executive order on promoting AI innovation and security.</p>
+<p>The stated worry is specific: that a capable enough model could find software vulnerabilities in critical infrastructure faster than defenders can patch them. That's not science fiction anymore, and it's a reasonable thing for a government to want visibility into.</p>
+<p>But watch the word "voluntary," because it's carrying a lot of weight. When the same administration already made companies restrict or shelve models on request, a framework everyone opts into looks less like a suggestion and more like the paperwork version of a decision that's already been made. Codifying the thresholds is genuinely useful; predictable rules beat case-by-case phone calls. The open question is whether "voluntary" survives contact with the first lab that decides it would rather not comply.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepSeek Is Designing Its Own Inference Chip to Cut Nvidia Reliance</title>
+      <link>https://sabr-labs.com/article/deepseek-in-house-inference-chip-nvidia-huawei-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-in-house-inference-chip-nvidia-huawei-july-2026</guid>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>DeepSeek</category>
+      <category>AI Chips</category>
+      <category>Inference</category>
+      <category>Nvidia</category>
+      <category>Semiconductors</category>
+      <description>Reuters reports DeepSeek has begun in-house work on an inference chip aimed at reducing its dependence on both Nvidia and Huawei, though the project is early.</description>
+      <content:encoded><![CDATA[<p>China's DeepSeek is designing its own AI chip, according to a Reuters report citing people familiar with the effort. The company has started talking to chip-design, foundry, and memory partners, and it's trying to hire experienced silicon engineers.</p>
+<p>The important detail is what kind of chip. This is an inference part, built to run models and answer user queries, not a training accelerator meant to build new models from scratch. Inference is the cheaper, more repetitive half of the workload, and it's where a company running a popular model burns money every single day. Designing your own inference silicon is how you claw back margin, and it's a far more achievable first target than trying to match Nvidia on training.</p>
+<p>It also puts DeepSeek on the same path OpenAI took with its Broadcom-designed custom chip. When your compute bill is your largest cost and your supply is politically constrained, building your own becomes less of a moonshot and more of a budget decision.</p>
+<p>The supply piece is the whole point here. U.S. export curbs limit DeepSeek's access to Nvidia's top parts, and the domestic fallback, Huawei's Ascend line, comes with its own capacity and yield constraints. A chip DeepSeek controls end to end would loosen both leashes at once. Reuters framed it as an attempt to reduce reliance on Nvidia and on Huawei, which is a pointed thing for a Chinese AI champion to signal about its own national supplier.</p>
+<p>Temper the excitement. Designing a chip and shipping one at volume are separated by the hardest problem in the industry: fabrication. DeepSeek would still need a foundry, and inside China that means SMIC and the same process-node ceiling everyone else is stuck under. A tapeout is a milestone. Working parts in a data center at scale are a different year entirely. DeepSeek didn't comment.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Conduent Breach Count Climbs Past 62 Million, Now Third-Largest Ever</title>
+      <link>https://sabr-labs.com/article/conduent-healthcare-breach-62-million-third-largest-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/conduent-healthcare-breach-62-million-third-largest-july-2026</guid>
+      <pubDate>Wed, 08 Jul 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Conduent</category>
+      <category>Data Breach</category>
+      <category>Healthcare</category>
+      <category>HIPAA</category>
+      <category>Third-Party Risk</category>
+      <description>The Conduent intrusion keeps growing; updated filings put the affected population above 62.2 million, making it the third-largest healthcare data breach in U.S. history.</description>
+      <content:encoded><![CDATA[<p>Sixty-two point two million. That's where the Conduent breach tally now sits, and it's still labeled as a running count.</p>
+<p>Conduent is a business-process outsourcer that most people have never heard of, which is exactly why the number is so large. It runs government and healthcare back-office systems: Medicaid claims processing, benefits administration, the plumbing that dozens of agencies and health plans quietly depend on. When one vendor holds records for that many programs, one intrusion scales into the tens of millions.</p>
+<p>The forensic timeline is ugly. Attackers were inside the network for 83 days, from October 21, 2024 until Conduent spotted them on January 13, 2025, and they left with roughly 8.5 terabytes of data. That haul included Social Security numbers, medical records, health insurance details, and Medicaid claims. The current figure of more than 62.2 million puts it behind only Change Healthcare's 2024 breach, which hit 192.7 million, and one other incident in the all-time U.S. rankings.</p>
+<p>The notification story is its own problem. Conduent discovered the breach in January 2025 but didn't begin notifying people until late October, roughly nine months later. HIPAA's breach notification rule gives covered entities and their business associates 60 days. Nine months is not 60 days.</p>
+<p>If you work anywhere that hands data to a third-party processor, this is the recurring nightmare in one case study. Your security posture can be excellent and it won't matter, because the exposure lives in a vendor's environment you don't control and can't fully audit. Business-associate agreements shift liability on paper. They don't shrink the blast radius.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>One HTTP Header Turns Gitea&apos;s Docker Image Into an Open Admin Door</title>
+      <link>https://sabr-labs.com/article/gitea-docker-cve-2026-20896-webauth-header-auth-bypass-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gitea-docker-cve-2026-20896-webauth-header-auth-bypass-july-2026</guid>
+      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Gitea</category>
+      <category>CVE-2026-20896</category>
+      <category>Authentication Bypass</category>
+      <category>Docker</category>
+      <category>Self-Hosted</category>
+      <description>CVE-2026-20896 lets anyone who can reach a default Gitea Docker container impersonate any user, admins included, by setting a single X-WEBAUTH-USER header.</description>
+      <content:encoded><![CDATA[<p>Set one header, become the admin. That's the whole exploit for CVE-2026-20896, a CVSS 9.8 authentication bypass in Gitea's official Docker image.</p>
+<p>The mechanics are almost too simple to call a vulnerability. Gitea supports reverse-proxy authentication, where a trusted proxy in front of the app asserts the logged-in user via the X-WEBAUTH-USER header. That's fine when only your proxy can set it. The problem is the Docker image ships with REVERSE_PROXY_TRUSTED_PROXIES set to a wildcard, so Gitea trusts that header from any source that can reach its port. Turn on reverse-proxy auth, expose the container, and any unauthenticated client can send X-WEBAUTH-USER: gitea_admin and walk in. No password, no token, no second factor.</p>
+<p>Gitea's own advisory put it bluntly: any process that can reach the container's HTTP port directly, bypassing the intended proxy, can impersonate any user whose login name is known or guessable. For a self-hosted Git server, that means source code, CI secrets, deploy keys, and signing material, all reachable by guessing that the admin account is called "admin."</p>
+<p>The fix landed in Gitea 1.26.3 and 1.26.4, which change the insecure default. Everything up to and including 1.26.2 is exposed. If you can't upgrade immediately, edit app.ini and pin REVERSE_PROXY_TRUSTED_PROXIES to 127.0.0.0/8,::1/128 so only localhost is trusted.</p>
+<p>Attackers noticed. Roughly 6,200 Gitea servers were reachable during the first scanning wave, and thirteen days after disclosure researchers logged active probing, with early reconnaissance traced to a ProtonVPN exit node. Thirteen days is a generous head start that a lot of homelab and small-team instances will not have used.</p>
+<p>This is a default-configuration footgun, not an exotic memory bug, and those are the ones that quietly rack up victims. The container ran, the app worked, nobody touched the proxy settings, and the door was open the entire time.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Adobe ColdFusion Flaw Exploited Two Hours After It Went Public</title>
+      <link>https://sabr-labs.com/article/adobe-coldfusion-cve-2026-48282-rds-rce-exploited-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/adobe-coldfusion-cve-2026-48282-rds-rce-exploited-july-2026</guid>
+      <pubDate>Wed, 08 Jul 2026 07:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Adobe ColdFusion</category>
+      <category>CVE-2026-48282</category>
+      <category>RCE</category>
+      <category>CISA KEV</category>
+      <category>Path Traversal</category>
+      <description>CVE-2026-48282, a CVSS 10 path traversal in ColdFusion&apos;s Remote Development Services, went from disclosure to in-the-wild attacks in under two hours and is now on CISA&apos;s KEV list.</description>
+      <content:encoded><![CDATA[<p>Attackers were exploiting CVE-2026-48282 in the wild less than two hours after the details went public. That is not a typo. Researchers watched the first payloads land the same afternoon the writeups dropped.</p>
+<p>The flaw sits in ColdFusion's Remote Development Services, the RDS component that IDE tooling uses to talk to a server. Its FILEIO handler doesn't validate paths properly, so a remote attacker can walk out of the intended directory and read or write files anywhere the ColdFusion process can reach. On its own that's a nasty information leak. Chained through RDS, it becomes unauthenticated remote code execution, which is why the CVSS score is a flat 10.0.</p>
+<p>It affects ColdFusion 2025.9, 2023.20, and earlier. Adobe shipped fixes in ColdFusion 2025 Update 10 and 2023 Update 21 as part of bulletin APSB26-68, a release that patched seven separate CVSS 10.0 bugs in one go. That count alone should tell you how exposed the RDS surface has been.</p>
+<p>CISA added the CVE to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 10 to patch. One of the earliest recorded attempts came from an IP in India trying to read C:\Windows\win.ini, the classic "can I read arbitrary files" canary before an attacker commits to something worse.</p>
+<p>Here's the part worth saying plainly: RDS was never supposed to face the internet. It's a developer convenience meant for trusted networks, and Adobe has told people to disable it in production for years. Every server getting hit right now had a component exposed that should have been off. The patch closes the bug, but the real lesson is inventory. If you run ColdFusion, confirm RDS is disabled, not just that you've updated.</p>
+<p>If a box was internet-facing any time in the last week, patching is not enough. Hunt for unauthorized files in the web root and /CFIDE/ directories, because a two-hour exploitation window means the scanners found you before you found the advisory.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Sysdig Documents JADEPUFFER, the First Fully Autonomous Ransomware Attack</title>
       <link>https://sabr-labs.com/article/jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026</link>
@@ -874,99 +971,6 @@
 <p>The pitch is structure, not just text. OCR 4 returns bounding boxes, per-element confidence scores, and block classification that separates a table from a heading from a paragraph, and it's offered both through an API and as a self-hosted deployment for companies that can't send sensitive documents to someone else's cloud. That second option is the concession to the open-weight crowd Mistral grew up with.</p>
 <p>It's worth being clear-eyed about what this is. Pulling characters off a page is close to solved; the hard, unglamorous work is producing structured output reliable enough that a human doesn't have to recheck every field. Confidence scores are Mistral's answer to that, and they're the feature to scrutinize, because the review burden is what kills most document-AI projects before they pay for themselves.</p>
 <p>The interesting tension is strategic. Mistral is now playing both sides of the document-AI split: open weights for teams that want to self-host and parse on their own terms, and a managed, metered product for teams that want a vendor to own the accuracy. Whether enterprises pay per page for that, or push the open option until the bills get uncomfortable, is the question OCR 4 is really testing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia&apos;s RTX Spark Brings a Grace-Blackwell Superchip to Windows PCs</title>
-      <link>https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-windows-pc-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-grace-blackwell-windows-pc-2026</guid>
-      <pubDate>Mon, 29 Jun 2026 10:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>Chips</category>
-      <category>PC Hardware</category>
-      <category>AI Hardware</category>
-      <category>Grace Blackwell</category>
-      <description>Nvidia&apos;s RTX Spark pairs a 20-core Grace CPU with a Blackwell RTX GPU for a petaflop of local AI, and it ships this fall in machines from Dell, HP, Lenovo and Microsoft.</description>
-      <content:encoded><![CDATA[<p>Nvidia spent years selling the chips that train AI in data centers. At GTC Taipei on June 1 it revealed the part meant to run AI on your desk. RTX Spark packages a 20-core Nvidia Grace CPU, co-designed with MediaTek, alongside a Blackwell RTX GPU, the two linked over NVLink-C2C in a single module.</p>
-<p>The specs are aimed squarely at local inference. Nvidia quotes one petaflop of AI performance, up to 128GB of unified memory, and enough headroom to run a 120-billion-parameter model with a one-million-token context window without leaving the machine. The GPU side carries 6,144 CUDA cores and fifth-generation Tensor Cores with FP4 precision.</p>
-<p>What makes this more than a spec sheet is whose turf it's on. RTX Spark is Nvidia stepping down into the PC processor market that Intel, AMD, and Qualcomm have split among themselves. The market noticed immediately; shares of all three slipped after the unveiling. Nvidia owning the GPU was old news. Nvidia owning the whole system-on-chip in a consumer laptop is the shift.</p>
-<p>The honest caveat is that none of this is buyable yet. RTX Spark is slated for fall in PCs from ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI, with Acer and Gigabyte to follow. Until those ship and someone runs a 120B model on a laptop on battery, the petaflop is a keynote number. Worth watching, not yet worth believing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Device Code Phishing Went From Spy Tool to Off-the-Shelf Kit</title>
-      <link>https://sabr-labs.com/article/device-code-phishing-spy-tool-to-commodity-kit-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/device-code-phishing-spy-tool-to-commodity-kit-2026</guid>
-      <pubDate>Mon, 29 Jun 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Phishing</category>
-      <category>Identity</category>
-      <category>MFA Bypass</category>
-      <category>OAuth</category>
-      <category>Threat Intelligence</category>
-      <description>A technique that was Russian-state tradecraft 18 months ago now ships in commodity phishing kits, and detections have climbed sharply through 2026.</description>
-      <content:encoded><![CDATA[<p>Huntress logged a roughly 14-fold jump in device code phishing over the first four months of 2026 compared with the back half of 2025. Six months in, researchers are tracking around 18 distinct kits in circulation and a 37x rise in detections. The technique used to be associated with a handful of Russian-linked espionage campaigns. Now anyone with a subscription can run it.</p>
-<p>The appeal is that it sidesteps the things defenders rely on. In a device code flow, the attacker kicks off a legitimate OAuth login on the real vendor's site, then sends the target a genuine login page and a short code to enter. The victim authenticates on the actual service, against actual MFA, and approves the code. The attacker walks away with the session tokens. There's no fake domain to flag and no password to capture, which is exactly why it slides past defenses tuned for those signals.</p>
-<p>The shift to commodity is the real story. Tycoon2FA, an established adversary-in-the-middle kit, added device code phishing to its menu, and its operator started selling the capability as a service after an infrastructure disruption in February. Kits like EvilTokens, Kali365, Ghost Hub, and Cyb3r are now doing the heavy lifting on landing pages. Crews that were running AiTM phishing are pivoting wholesale.</p>
-<p>Because the prize is a stolen token rather than a stolen password, a password reset does nothing to evict the attacker. The defenses that bite are conditional access policies that block or constrain the device code grant, phishing-resistant FIDO2 keys, and alerting on token issuance from unexpected locations. If your identity provider lets you disable the device code flow for users who don't need it, that's the cheapest win on the board.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Threatens a Researcher Over Two Unpatched Defender Bugs</title>
-      <link>https://sabr-labs.com/article/microsoft-defender-redsun-undefend-unpatched-researcher-threat-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-redsun-undefend-unpatched-researcher-threat-2026</guid>
-      <pubDate>Mon, 29 Jun 2026 08:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft Defender</category>
-      <category>Privilege Escalation</category>
-      <category>Zero-Day</category>
-      <category>Vulnerability Disclosure</category>
-      <category>Windows</category>
-      <description>RedSun and UnDefend turn Windows Defender into a path to SYSTEM and still have no fix, while the researcher who disclosed them says Microsoft threatened them instead of patching.</description>
-      <content:encoded><![CDATA[<p>Three local privilege escalation techniques have a common ingredient: Windows Defender itself. They're named BlueHammer, RedSun, and UnDefend, and the unifying trick is abusing Defender's own privileged file operations to climb from a normal user to SYSTEM. The security tool becomes the way in.</p>
-<p>Microsoft already shipped a fix for one of them. BlueHammer, tracked as CVE-2026-33825, is a time-of-check to time-of-use race in Defender's remediation engine; it was patched in April Patch Tuesday. From SYSTEM, the same exploit chain can dump and decrypt the SAM database and reset local passwords. The other two are the problem. RedSun abuses Defender's cloud file rollback, which restores a flagged file without validating where it writes, letting an attacker redirect that write into a privileged directory. UnDefend quietly degrades Defender's update mechanism so the gap stays open. Both are still unpatched, and Huntress says all three have been used in real attacks, with intrusions starting from stolen VPN credentials.</p>
-<p>Here's the ugly part. The three exploits were published as working proof-of-concept code by an anonymous researcher using the handles Chaotic Eclipse and Nightmare Eclipse, explicitly as a protest. Their account is that Microsoft's Security Response Center mishandled the reports, threatened them, and disabled their accounts rather than coordinating a fix. Microsoft hasn't disputed the threat allegation in public.</p>
-<p>Drop the question of who behaved worse and the operational picture is bad either way. Two flaws that hand attackers SYSTEM on fully updated Windows 10, 11, and Server are sitting in the open with public exploit code and no patch. The dispute that produced that situation is exactly the kind of standoff coordinated disclosure exists to prevent.</p>
-<p>Until fixes land, treat Defender's privileged operations as attack surface rather than a backstop. Restrict who can manipulate quarantine and rollback paths, watch for binaries appearing in user directories, and alert on tunneling tools beaconing out. A vendor that answers a bug report with a lawyer instead of a patch teaches the next researcher to skip the report and go straight to publishing. That lesson costs everyone.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>KDDI Breach Puts Up to 14.2 Million ISP Email Logins at Risk</title>
-      <link>https://sabr-labs.com/article/kddi-breach-14-million-isp-email-logins-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/kddi-breach-14-million-isp-email-logins-2026</guid>
-      <pubDate>Mon, 29 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>KDDI</category>
-      <category>Japan</category>
-      <category>ISP</category>
-      <category>Credentials</category>
-      <description>A flaw in third-party software inside KDDI&apos;s shared email platform exposed addresses and passwords for as many as 14.2 million accounts across six Japanese ISPs.</description>
-      <content:encoded><![CDATA[<p>Fourteen point two million email logins. That's the ceiling on what a single intrusion at Japanese telecom KDDI may have exposed, and the reason it reached so far is the part worth sitting with: most of those accounts don't carry the KDDI name.</p>
-<p>KDDI says it detected unauthorized access on June 17 in an email system it operates on behalf of other providers. Both addresses and passwords are in scope. The affected brands span six internet service providers riding on that one backend: STNet, KDDI Web Communications, JCOM, Chubu Telecommunications, Nifty, and Biglobe. A customer of any of them could be exposed without ever having signed up with KDDI directly.</p>
-<p>The root cause, per KDDI, was a vulnerability in third-party software used in the email platform. The company hasn't named the product. What the incident really illustrates is consolidation risk. When six consumer ISPs share one mail backend, a single bug in one dependency becomes a breach across all six brands at once. That's efficient until the day it isn't.</p>
-<p>KDDI says it has modified the affected system, is working with the impacted ISPs to notify users, and is cooperating with Japan's Personal Information Protection Commission and the Ministry of Internal Affairs and Communications. The 14.2 million figure is an upper bound on accounts that could be affected, not a confirmed count of compromised credentials. The investigation is ongoing.</p>
-<p>If you hold mail at any of those six providers, change the password now and change it anywhere you reused it. Email passwords are reset-everything passwords. Whoever has them can pivot into every account that uses that address for recovery, which is the real reason a mail breach is worse than the headline number suggests.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The &apos;Tokenmaxxing&apos; Era Is Ending as Companies Rein In AI Bills</title>
-      <link>https://sabr-labs.com/article/ai-tokenmaxxing-efficiency-enterprise-spend-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ai-tokenmaxxing-efficiency-enterprise-spend-june-2026</guid>
-      <pubDate>Sun, 28 Jun 2026 10:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>AI Spending</category>
-      <category>Enterprise IT</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <category>FinOps</category>
-      <description>Enterprises that told staff to burn as many tokens as possible are now demanding ROI, and some are routing traffic to cheaper models.</description>
-      <content:encoded><![CDATA[<p>Uber went through its entire annual AI budget in four months. The company's CTO, Praveen Neppalli Naga, told The Information as much earlier this year, and the response was the tell: Uber put spending tiers on some AI tools, starting at a $1,500-per-month base, with employees having to request anything above that. When a company that size starts metering token use like an overage plan, the mood has shifted.</p>
-<p>The thing that's ending has a name. "Tokenmaxxing" was the brief period where employers told developers to use as much AI as humanly possible and treated raw token consumption as a stand-in for productivity. More tokens meant more innovation, supposedly. For a year that logic held, because the spending was a land grab and nobody wanted to be the team that under-invested.</p>
-<p>Now the same leaders want receipts. Tighter controls, clearer return on investment, and cheaper alternatives where the expensive model isn't earning its keep. The most pointed example: the CEO of the AI startup Lindy moved all of his company's traffic off Anthropic's Claude and onto DeepSeek, the cheaper Chinese open-weight option, and watched the cost curve fall off a cliff. That's not a rounding-error saving. That's a different bill.</p>
-<p>The timing is awkward for the two biggest labs. OpenAI and Anthropic both filed confidentially for what could be historic IPOs in early June, right as their largest enterprise customers start asking why the monthly invoice keeps climbing. Models like Zhipu's GLM-5.2 and DeepSeek give those customers a credible threat to walk, and a credible threat is all you need to renegotiate.</p>
-<p>None of this means demand for AI is shrinking. It means the era of unmetered, ROI-optional spending is over, and the providers that win the next phase will be the ones whose pricing survives a CFO actually reading the line items.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
