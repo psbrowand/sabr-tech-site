@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Jul 2026 13:14:21 GMT</lastBuildDate>
-    <pubDate>Wed, 08 Jul 2026 13:14:21 GMT</pubDate>
+    <lastBuildDate>Thu, 09 Jul 2026 13:16:32 GMT</lastBuildDate>
+    <pubDate>Thu, 09 Jul 2026 13:16:32 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Blue Origin Seeks $10B at a $130B Valuation, Its First Outside Money</title>
+      <link>https://sabr-labs.com/article/blue-origin-10-billion-raise-130-billion-valuation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/blue-origin-10-billion-raise-130-billion-valuation-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>Blue Origin</category>
+      <category>Jeff Bezos</category>
+      <category>New Glenn</category>
+      <category>Funding</category>
+      <category>SpaceX</category>
+      <description>Blue Origin is raising $10 billion at a $130 billion valuation led by Coatue, the first outside funding in the rocket maker&apos;s history, weeks after New Glenn exploded in testing.</description>
+      <content:encoded><![CDATA[<p>Blue Origin has been around since 2000 and, until now, has run almost entirely on Jeff Bezos's money. That's changing. The company is raising $10 billion at a $130 billion valuation, its first real outside funding round in more than two decades.</p>
+<p>Coatue is expected to lead with about $4 billion, and Bezos himself is putting in another $2 billion, with other investors covering the rest, according to reporting from Bloomberg, CNBC, and TechCrunch. For most of its life, Blue Origin's defining trait was that it didn't need anyone else's capital. Taking outside money is a real change in posture.</p>
+<p>The timing is the interesting part. This round comes weeks after New Glenn, Blue Origin's heavy-lift rocket, exploded during testing in late May as the company was preparing for its fourth flight. Raising a mega-round right after a very public failure isn't necessarily a sign of weakness. But it does suggest the pace Bezos wants now costs more than even he wants to keep funding solo.</p>
+<p>Blue Origin is chasing SpaceX in a market SpaceX largely defined, and the gap is measured in launches per year, not press releases. New Glenn has to fly, and fly reliably, to matter. CEO Dave Limp has set a goal of returning it to flight by the end of 2026, which is aggressive for a vehicle that just came apart on the stand.</p>
+<p>Ten billion dollars buys manufacturing scale, more engines, and room to fail a few more times without flinching. That's what building a launch business takes. What it can't buy outright is cadence — the number of times a year you actually reach orbit — and that, not valuation, is the only scoreboard SpaceX is currently winning on.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta&apos;s Muse Image Can Use Your Public Instagram Photos by Default</title>
+      <link>https://sabr-labs.com/article/meta-muse-image-instagram-public-photos-opt-out-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-image-instagram-public-photos-opt-out-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Meta</category>
+      <category>Instagram</category>
+      <category>Generative AI</category>
+      <category>Privacy</category>
+      <category>WhatsApp</category>
+      <description>Meta&apos;s new Muse Image generator lets anyone @-mention a public Instagram account to build AI images from its photos, and the setting is on unless you turn it off.</description>
+      <content:encoded><![CDATA[<p>If your Instagram is public, a stranger can now type your username into Meta's AI and generate images built from your photos. You won't get a notification. And the setting that allows it is on by default.</p>
+<p>Meta is rolling out Muse Image across Instagram, WhatsApp, and the Meta AI app. The hook is the @-mention: tag a public Instagram account and Meta AI pulls in that account's photos to build something new, whether that's an event invite, a mockup, or a personalized graphic. It's a genuinely useful feature and a genuinely uncomfortable one, depending on whose photos are getting mentioned.</p>
+<p>The friction is all in the defaults. Public accounts are opted in. There's a toggle to shut it off, but Meta says it's still rolling out, so you might not see it yet. And turning it off only looks forward: anything generated from your photos before you flip the switch stays generated. Meta won't delete it.</p>
+<p>This is the same play Meta has run before, where a capability ships enabled and the opt-out arrives on Meta's schedule rather than yours. Treating public photos as fair game isn't new. Letting anyone turn them into AI compositions of a specific, named person, silently, is a different kind of exposure than "someone could screenshot your profile." The people most affected are the ones least likely to hear the toggle exists.</p>
+<p>Muse Image is heading to Facebook and Messenger next, and Meta is opening it to advertisers and agencies in the coming weeks. That last part tells you what this is really for. The consumer @-mention feature is the friendly face; the business is dropping AI image generation, fed by the enormous pool of content people posted publicly, into the ad pipeline. If you'd rather not be raw material, the only lever Meta hands you is to find the toggle or go private.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>&apos;Friendly Fire&apos; Turns Claude Code and Codex Into Malware Launchers</title>
+      <link>https://sabr-labs.com/article/friendly-fire-ai-coding-agents-claude-codex-rce-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/friendly-fire-ai-coding-agents-claude-codex-rce-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Security</category>
+      <category>Claude Code</category>
+      <category>OpenAI Codex</category>
+      <category>Prompt Injection</category>
+      <category>RCE</category>
+      <description>Researchers showed that Claude Code and OpenAI&apos;s Codex, running in auto-approve mode to review untrusted code, can be tricked into executing a hidden payload.</description>
+      <content:encoded><![CDATA[<p>The pitch for pointing an AI agent at an unfamiliar codebase is that it'll spot the sketchy stuff before you do. A new proof of concept called Friendly Fire flips that: it gets the agent to run the sketchy stuff for you.</p>
+<p>The work comes from the AI Now Institute, with a working exploit published on GitHub. It targets Claude Code and OpenAI's Codex when either runs in an autonomous mode that approves its own shell commands — Claude Code on Sonnet 4.6, Sonnet 5, or Opus 4.8, and Codex on GPT-5.5. The scenario is the exact job these tools are sold for: reviewing an untrusted third-party library for problems.</p>
+<p>The bait is a booby-trapped copy of geopy, a common Python geocoding library. Its files carry prompt injections that name-drop standard security tooling, and sitting in the repo is an obfuscated binary disguised as the compiled build of a harmless Go file. The README suggests running a script, security.sh, as a routine check before opening a pull request. The agent, trying to be thorough, runs it. The script quietly launches the hidden binary, and the payload fires.</p>
+<p>Both agents' auto modes lean on a classifier that runs commands the model judges safe and pauses on the ones it flags as risky. "Run the project's own security check before a PR" reads as safe. That's the whole trick. This isn't a memory-corruption bug or a jailbreak in the usual sense. It's social engineering aimed at a machine that was told to be a diligent reviewer.</p>
+<p>Credit to the researchers, and a caveat worth stating plainly: the exposure is bounded. It lands only when a command-capable agent, running in auto-approve mode, reviews code you don't control. Keep a human approving commands, or don't hand an autonomous agent untrusted repos, and this specific attack has nowhere to stand. That's not a reason to shrug, though. Auto-approve is exactly the mode people reach for when they're moving fast.</p>
+<p>The broader point outlives this one demo. The moment an AI agent can both read attacker-supplied text and execute commands, that text becomes an attack surface, and "review this untrusted thing for me" is close to the highest-risk instruction you can give it. The fix isn't a signature. It's not letting the reviewer also be the one who pulls the trigger.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>RoguePlanet Turns Microsoft Defender Into a Path to SYSTEM</title>
+      <link>https://sabr-labs.com/article/microsoft-defender-rogueplanet-cve-2026-50656-system-eop-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-rogueplanet-cve-2026-50656-system-eop-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft Defender</category>
+      <category>Windows</category>
+      <category>Privilege Escalation</category>
+      <category>CVE</category>
+      <category>Zero-Day</category>
+      <description>A patched race condition in Microsoft&apos;s Malware Protection Engine, CVE-2026-50656, lets a local attacker trick Defender itself into handing over SYSTEM privileges.</description>
+      <content:encoded><![CDATA[<p>The tool that's supposed to catch the attacker turned out to be the way up. CVE-2026-50656, nicknamed RoguePlanet, is a flaw in the Microsoft Malware Protection Engine — the core scanner behind Windows Defender — that lets a local user coax Defender into spawning a shell as SYSTEM.</p>
+<p>The bug is a textbook time-of-check to time-of-use race. Defender inspects a file path, then reopens that path a moment later to scan or clean it, without holding a lock across both steps. In that gap, an attacker uses NTFS junctions or symbolic links to swap what the path points at, redirecting Defender's privileged file operations onto attacker-controlled targets. A researcher going by Nightmare Eclipse reported it.</p>
+<p>A few things make this nastier than a run-of-the-mill privilege-escalation bug. It works on fully patched Windows 10 and 11. It works whether or not real-time protection is switched on, because the vulnerable code lives in the engine, not the toggle. And ordinary endpoint controls don't stop it unless you're enforcing application allowlisting. Microsoft tagged it "Exploitation More Likely" on its own index and scored it 7.8.</p>
+<p>It's not remote. An attacker needs local access already, which makes RoguePlanet a second-stage tool: the thing you run after phishing a user, not the thing that gets you in the door. That's still precisely what a ransomware crew wants, because SYSTEM on the endpoint is the line between one compromised account and the whole machine.</p>
+<p>Here's the part that makes this manageable. The fix ships inside the engine, not in a Patch Tuesday bundle, and the Malware Protection Engine updates itself automatically on most systems. The fixed version is 1.1.26060.3008 or later. Go check it, because "automatic" and "already happened" are not the same thing on machines that have been offline or have update policy sitting in the way.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ubiquiti Patches CVSS 10 Command Injection in UniFi Connect</title>
+      <link>https://sabr-labs.com/article/ubiquiti-unifi-connect-cve-2026-50746-command-injection-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ubiquiti-unifi-connect-cve-2026-50746-command-injection-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ubiquiti</category>
+      <category>UniFi</category>
+      <category>CVE</category>
+      <category>Command Injection</category>
+      <category>Network Security</category>
+      <description>A maximum-severity flaw in Ubiquiti&apos;s UniFi Connect app lets an unauthenticated attacker on the network run OS commands, and roughly 100,000 UniFi endpoints sit exposed online.</description>
+      <content:encoded><![CDATA[<p>Ubiquiti shipped a fix this week for a flaw in its UniFi Connect app that scores a clean 10.0, the maximum, because it asks nothing of the attacker except a network path to the device.</p>
+<p>CVE-2026-50746 is an improper access control bug in UniFi Connect, the software Ubiquiti sells for running smart-building gear like LED lighting and EV chargers. The CVSS vector is the bad kind all the way across: network vector, low complexity, no privileges, no user interaction. Send a crafted request, run operating-system commands, no login required. It affects UniFi Connect 3.4.16 and earlier; the fixed build is 3.4.20.</p>
+<p>The reason this one matters beyond the score is exposure. The threat intelligence firm Censys counted roughly 100,000 UniFi OS endpoints reachable from the public internet. Not all of them run the vulnerable Connect app, but the population of internet-facing Ubiquiti gear is large, and a good chunk of it belongs to people who set it up once and never looked at it again.</p>
+<p>CVE-2026-50746 didn't arrive alone. Ubiquiti's Security Advisory Bulletin 066 bundles a set of UniFi OS fixes, including CVE-2026-50747 and CVE-2026-50748 in the Talk and Access products, and reporting around the disclosure counted 25 issues across the UniFi range. The 10.0 command injection is the headline, but if you're patching, patch the batch.</p>
+<p>There's no confirmed in-the-wild exploitation yet, which is the window you want to be inside of. Update Connect to 3.4.20 or later, and while you're in the console, take Ubiquiti's standing advice and get UniFi management off the public internet. A max-severity unauthenticated RCE is only a crisis if the attacker can reach it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Accenture Confirms Incident After Hacker Claims 35GB Source Code Theft</title>
+      <link>https://sabr-labs.com/article/accenture-source-code-breach-888-pwnforums-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/accenture-source-code-breach-888-pwnforums-july-2026</guid>
+      <pubDate>Thu, 09 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Accenture</category>
+      <category>Azure DevOps</category>
+      <category>Credential Exposure</category>
+      <description>A threat actor called 888 posted 35GB of Accenture source code, keys, and Azure tokens to a cybercrime forum, and Accenture says it has remediated the source.</description>
+      <content:encoded><![CDATA[<p>Someone using the handle 888 walked into a cybercrime forum on Monday and offered up 35GB of Accenture's internal source code, along with the kind of secrets that make a breach worse than a breach: RSA keys, SSH keys, Azure personal access tokens, and Azure Storage access keys.</p>
+<p>The data reportedly came out of a private Azure DevOps repository, according to a post on the PwnForums site that Help Net Security reviewed. Source code alone is embarrassing. Source code shipped with live credentials and cloud access keys is an incident, because those keys open doors that don't care whether the code ever leaks.</p>
+<p>Accenture's statement was short and carefully built. The company said it is "aware of this isolated matter," that it has "remediated its source," and that "operations and service delivery was not affected." It did not confirm what was taken, and it did not say the 35GB is fake.</p>
+<p>Read that wording again. "Remediated its source" tells you they found how someone got in and closed it. It says nothing about whether the tokens in that repo were valid, how long they stayed valid, or where they were used before Monday. For a consulting firm that builds and runs systems for a large slice of the Fortune 500, the blast radius of a leaked Azure token isn't Accenture's problem alone.</p>
+<p>This isn't Accenture's first turn in this position. The company was swept up in the Cl0p MOVEit campaign and has shown up in ransomware crews' claims before. A single exposed repo is a smaller event than either of those. But the pattern that matters here is the one every security team should recognize on sight: secrets committed into source control, then found by someone who was never supposed to have the repo.</p>
+<p>If your organization has any Accenture-managed Azure footprint, the move isn't to wait for a bulletin. Rotate the keys, review the token grants, and check sign-in logs for the service principals and repos involved. "Isolated matter" is Accenture's read on its own environment, not yours.</p>]]></content:encoded>
+    </item>
     <item>
       <title>White House Races to Finalize Voluntary AI Testing Rules With Top Labs</title>
       <link>https://sabr-labs.com/article/white-house-voluntary-ai-testing-standards-framework-july-2026</link>
@@ -856,121 +971,6 @@
 <p>The stated reason is cyber capability. Officials grew alarmed after Anthropic warned earlier this year that its Mythos model was good enough at finding software flaws that it could be turned into a weapon against critical networks. Once a vendor says the quiet part out loud, the regulators have to act on it, and a vetting process for who gets access to the most capable models is what that action looks like.</p>
 <p>Strip away the security framing and this is industrial policy. Approval lists are how governments pick winners and losers, and a model rationed by federal sign-off is a strange thing to put in an S-1. Both OpenAI and Anthropic have been circling public offerings, and explaining to investors that your flagship product ships only to a government-approved customer roster is not the growth story either of them wanted to tell.</p>
 <p>The harder problem is that controls only bite if the capability is scarce. China's GLM-5.2 has been measured matching Anthropic on cybersecurity tasks, and it ships as open weights anyone can download. Watch two things from here: who actually lands on the approved list, and whether an open-weight model that nobody controls makes the whole regime academic.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Onsemi&apos;s $7 Billion Synaptics Deal Is a Bet on Edge AI Silicon</title>
-      <link>https://sabr-labs.com/article/onsemi-synaptics-7-billion-edge-ai-acquisition-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/onsemi-synaptics-7-billion-edge-ai-acquisition-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Onsemi</category>
-      <category>Synaptics</category>
-      <category>Semiconductors</category>
-      <category>Edge AI</category>
-      <category>Acquisition</category>
-      <description>Onsemi is buying Synaptics in an all-stock deal worth about $7 billion, its largest ever, to push deeper into edge AI, robotics, and connected-device chips.</description>
-      <content:encoded><![CDATA[<p>Onsemi agreed on June 25 to buy Synaptics in an all-stock transaction worth roughly $7 billion, the biggest acquisition in the chipmaker's history. The terms set a fixed exchange ratio of 1.35 onsemi shares for each Synaptics share, about a 19% premium on the recent average price.</p>
-<p>The fit is more logical than most chip mergers. Onsemi's strength is power, analog, and sensing silicon. Synaptics brings touch, audio, wireless connectivity, and a line of low-power edge AI processors. Bolt them together and onsemi gets a fuller stack for what it's calling physical AI, the chips that let robots, vehicles, and connected devices sense and act without phoning home to a data center.</p>
-<p>Onsemi says the deal widens the markets it can chase by $30 billion, to a total addressable $243 billion by 2030, with $200 million in annual synergies inside 18 months of closing. Those are the buyer's own projections, and the gap between a slide-deck total addressable market and actual revenue is where a lot of semiconductor acquisitions quietly underperform.</p>
-<p>Paying entirely in stock keeps cash on the balance sheet but dilutes existing onsemi holders, a tell that management would rather conserve money than spend it at this point in the cycle. The deal is expected to close in mid-2027, and large cross-border chip mergers now move through a gauntlet of regulators, China's included, that can stretch timelines and attach conditions.</p>
-<p>Edge AI has been the promised next leg of growth for the analog and sensing vendors for a while. Onsemi just made its largest bet that this is the year it starts paying.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Rocket Lab Buys Iridium for $8 Billion to Take On Starlink</title>
-      <link>https://sabr-labs.com/article/rocket-lab-iridium-8-billion-acquisition-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/rocket-lab-iridium-8-billion-acquisition-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Rocket Lab</category>
-      <category>Iridium</category>
-      <category>Satellites</category>
-      <category>Acquisition</category>
-      <category>Space</category>
-      <description>Rocket Lab is acquiring Iridium&apos;s 66-satellite network, licensed L-band spectrum, and 2.55 million subscribers in an $8 billion cash-and-stock deal to become a full-stack space company.</description>
-      <content:encoded><![CDATA[<p>Rocket Lab spent years as the company that builds rockets and small satellites for other people. As of June 29, it wants to own the constellation too. Rocket Lab agreed to acquire Iridium Communications for about $8 billion, paying $54 per share split evenly between cash and Rocket Lab stock, a roughly 24% premium to where Iridium last traded.</p>
-<p>What Rocket Lab is actually buying is operational. Iridium runs a 66-satellite low-Earth-orbit network that already works, plus globally licensed L-band spectrum and a subscriber base north of 2.55 million across government, defense, aviation, and maritime customers. Spectrum that's already licensed worldwide is close to impossible to assemble from scratch, and that, more than the hardware, is the prize.</p>
-<p>The pitch is vertical integration: one company that designs, builds, launches, and operates its own constellations instead of stitching that chain together across vendors. It puts Rocket Lab in more direct competition with SpaceX and Starlink, and the L-band angle also feeds the growing defense appetite for positioning and timing that doesn't depend on GPS.</p>
-<p>The skeptical read is worth holding onto. Rocket Lab is very good at launch and at manufacturing small satellites. It has never run a global subscription communications network with millions of paying customers, and operating one is a different muscle than building the parts. Integrating Iridium's network, its 500-plus partners, and its billing relationships is where deals like this tend to get hard.</p>
-<p>The transaction is expected to close in mid-2027, pending Iridium shareholder and regulatory approval. That's a long runway, and a lot can shift in the satellite market before the ink dries.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DirtyClone Hands Any Local User Root on Unpatched Linux Boxes</title>
-      <link>https://sabr-labs.com/article/dirtyclone-linux-kernel-cve-2026-43503-root-lpe-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/dirtyclone-linux-kernel-cve-2026-43503-root-lpe-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 11:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Linux Kernel</category>
-      <category>Privilege Escalation</category>
-      <category>DirtyClone</category>
-      <category>JFrog</category>
-      <category>Exploit</category>
-      <description>JFrog published a working exploit for CVE-2026-43503, a Linux kernel flaw that turns an unprivileged shell into root by abusing how the network stack clones packets.</description>
-      <content:encoded><![CDATA[<p>JFrog Security Research published the full exploit chain for CVE-2026-43503 on June 25, and the part that matters is that it works. Any unprivileged local user can ride this flaw straight to root. The researchers named it DirtyClone, and it's the latest member of a kernel bug family that keeps producing variants.</p>
-<p>The technique is the same one that powered DirtyFrag and Fragnesia before it: trick the kernel into treating read-only, file-backed page-cache memory as if it were a writable network buffer. The bug lives in how socket buffers reference shared page-cache memory, and it gets weaponized through in-place cryptographic transforms in subsystems like XFRM/IPsec or RxRPC. Different packet path, same root cause.</p>
-<p>Here's the uncomfortable part. The fix has been in the Linux mainline since May 21, but a mainline patch does you no good until your distribution ships it, and many haven't. Debian and Fedora are vulnerable in their default configurations because they enable unprivileged user namespaces. Ubuntu 24.04 and later have partial AppArmor mitigations and are still listed as affected.</p>
-<p>Local privilege escalation sounds less scary than remote code execution until you remember where Linux actually runs. Multi-tenant servers, Kubernetes nodes, CI/CD runners, container hosts. In all of those, an attacker who already has an unprivileged foothold and a reliable path to root has effectively won. A public, working PoC just handed them the second half.</p>
-<p>There's a one-line mitigation while you wait for your distro: set kernel.unprivileged_userns_clone=0, which cuts off this entire family's escalation path. That it keeps working as the fix for variant after variant raises a fair question about whether unprivileged user namespaces are worth leaving on by default at all.</p>
-<p>Patch when your distribution ships the update. Until then, turn the namespaces off where you can.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Oracle E-Business Suite Flaw Is Under Attack a Month After the Fix</title>
-      <link>https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-active-exploitation-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-active-exploitation-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 09:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>E-Business Suite</category>
-      <category>Active Exploitation</category>
-      <category>ERP Security</category>
-      <category>CVE</category>
-      <description>Attackers are exploiting CVE-2026-46817, a CVSS 9.8 flaw in Oracle Payments, to take over E-Business Suite instances that never applied May&apos;s patch.</description>
-      <content:encoded><![CDATA[<p>The first sign someone was using the new Oracle bug came from a honeypot. Over the weekend of June 27, Defused Cyber watched an attacker exploit CVE-2026-46817 against its E-Business Suite decoys, the first confirmed in-the-wild use of a flaw Oracle had already patched.</p>
-<p>The vulnerability sits in the File Transmission component of Oracle Payments. It scores a 9.8, and the reason it's that high is simple: an unauthenticated attacker with nothing more than HTTP access can take over a vulnerable instance through a low-complexity attack. No credentials, no user interaction. It affects Oracle Payments versions 12.2.3 through 12.2.15.</p>
-<p>Oracle shipped the fix in its May Critical Security Patch Update, released May 28. That means the patch has been sitting available for a month while exploitation only kicked off now. The window between a vendor disclosing a flaw and attackers operationalizing it keeps shrinking, but the window between disclosure and customers actually patching never seems to.</p>
-<p>E-Business Suite is the kind of target that rewards patience. It's the ERP backbone for finance, procurement, and payments at a lot of large organizations, which means it holds exactly the data that makes extortion pay. Anyone who watched the mass E-Business Suite campaign tear through unpatched instances last year already knows how this movie ends if the patch doesn't get applied.</p>
-<p>There's no public proof-of-concept yet and no prior exploitation history, so the people hitting this had to find the path themselves, which usually signals a more capable operator rather than a spray-and-pray crowd. If you run E-Business Suite, the May CSPU is not optional anymore. Apply it, then check your Payments module exposure and your logs for unexpected File Transmission activity.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SimpleHelp&apos;s CVSS 10 Auth Bypass Is Dropping Djinn Stealer</title>
-      <link>https://sabr-labs.com/article/simplehelp-oidc-auth-bypass-cve-2026-48558-djinn-stealer-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/simplehelp-oidc-auth-bypass-cve-2026-48558-djinn-stealer-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SimpleHelp</category>
-      <category>CISA KEV</category>
-      <category>Authentication Bypass</category>
-      <category>Infostealer</category>
-      <category>RMM</category>
-      <description>CISA added the SimpleHelp OIDC authentication bypass to its exploited list after attackers used it to forge technician sessions and deploy a cross-platform infostealer.</description>
-      <content:encoded><![CDATA[<p>The remote-support software that IT teams install to log into other people's machines is now the way in. CISA added CVE-2026-48558, an authentication bypass in SimpleHelp, to its Known Exploited Vulnerabilities catalog on June 29 after researchers caught it being used to push malware through internet-facing servers. It carries a CVSS score of 10. There is no higher number.</p>
-<p>The flaw lives in SimpleHelp's OpenID Connect login flow. When OIDC is configured, the server accepts identity tokens without verifying their cryptographic signature. So an unauthenticated attacker can forge a token, stuff it with whatever identity claims they want, and walk away with a fully authenticated technician session. From there they control the remote-support server and everything it can reach.</p>
-<p>Horizon3.ai disclosed the bug publicly on June 12, two-plus weeks before CISA confirmed real-world abuse. By the time it landed on the KEV list, attackers were already using it to plant a two-stage payload.</p>
-<p>Stage one is a loader the researchers call TaskWeaver, delivered as a heavily obfuscated single-line Node.js file masquerading as jquery.js. It fingerprints the host, embeds an RSA public key, and pulls down a payload tailored to what it finds. Stage two is Djinn Stealer, which reuses the same obfuscation framework and the identical RSA key. Djinn runs on Windows, macOS, and Linux, and it goes after credentials from cloud consoles, source control, package registries, AI coding assistants, browsers, SSH keys, and crypto wallets.</p>
-<p>Remote management and monitoring tools keep ending up at the center of these incidents for a reason. They run with high privilege, they're exposed to the internet by design, and defenders treat their traffic as trusted. SimpleHelp has been here before, with a separate set of flaws that drew CISA attention in 2025. The vendor patches, the install base lags, and attackers walk through the gap.</p>
-<p>Federal agencies have 14 days to remediate under Binding Operational Directive 22-01. Everyone else should patch now and not wait on the clock. If your SimpleHelp box was internet-facing with OIDC enabled, assume a session could have been forged already: rotate technician credentials, pull the logs, and hunt for jquery.js and stray node.exe activity before you call it clean.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Mistral&apos;s OCR 4 Bets Document Extraction Is a Product, Not a Model</title>
-      <link>https://sabr-labs.com/article/mistral-ocr-4-document-extraction-enterprise-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/mistral-ocr-4-document-extraction-enterprise-2026</guid>
-      <pubDate>Mon, 29 Jun 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Mistral</category>
-      <category>OCR</category>
-      <category>Document AI</category>
-      <category>Enterprise AI</category>
-      <category>Open Weights</category>
-      <description>Mistral shipped OCR 4 as a managed enterprise service with per-page pricing, a notable turn for a company best known for open weights.</description>
-      <content:encoded><![CDATA[<p>Mistral built its reputation handing out open-weight models. OCR 4, its new document extraction release, goes the other way. It's a commercial product with per-page pricing, sold as a managed service rather than a checkpoint you download and run yourself.</p>
-<p>The pitch is structure, not just text. OCR 4 returns bounding boxes, per-element confidence scores, and block classification that separates a table from a heading from a paragraph, and it's offered both through an API and as a self-hosted deployment for companies that can't send sensitive documents to someone else's cloud. That second option is the concession to the open-weight crowd Mistral grew up with.</p>
-<p>It's worth being clear-eyed about what this is. Pulling characters off a page is close to solved; the hard, unglamorous work is producing structured output reliable enough that a human doesn't have to recheck every field. Confidence scores are Mistral's answer to that, and they're the feature to scrutinize, because the review burden is what kills most document-AI projects before they pay for themselves.</p>
-<p>The interesting tension is strategic. Mistral is now playing both sides of the document-AI split: open weights for teams that want to self-host and parse on their own terms, and a managed, metered product for teams that want a vendor to own the accuracy. Whether enterprises pay per page for that, or push the open option until the bills get uncomfortable, is the question OCR 4 is really testing.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
