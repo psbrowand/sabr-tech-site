@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jul 2026 13:16:32 GMT</lastBuildDate>
-    <pubDate>Thu, 09 Jul 2026 13:16:32 GMT</pubDate>
+    <lastBuildDate>Fri, 10 Jul 2026 13:15:19 GMT</lastBuildDate>
+    <pubDate>Fri, 10 Jul 2026 13:15:19 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>GPT-5.6 Goes Public After a Two-Week Government Safety Hold</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-terra-luna-general-availability-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-sol-terra-luna-general-availability-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5.6</category>
+      <category>AI Models</category>
+      <category>API</category>
+      <description>OpenAI shipped GPT-5.6 Sol, Terra, and Luna to everyone on July 9 after a government safety review, with API prices running from $1 to $30 per million tokens.</description>
+      <content:encoded><![CDATA[<p>For about two weeks, GPT-5.6 existed and almost nobody could use it. OpenAI previewed the model family on June 26 and then, at the request of the U.S. government, shipped it only to a small group of vetted partners while a safety review ran. On July 9 that gate came down. Sol, Terra, and Luna went generally available across ChatGPT, ChatGPT Work, Codex, and the API, rolling out worldwide over roughly a day.</p>
+<p>The tiering is the story.</p>
+<p>Sol is the flagship, priced at $5 per million input tokens and $30 per million output for heavy agentic and reasoning work. Terra sits in the middle at $2.50 and $15, and OpenAI is pitching it as a GPT-5.5-class model at half the cost. Luna runs $1 and $6, built for high-volume pipelines where latency and price matter more than the last few points of benchmark performance. Three models, one release, aimed at three different budgets.</p>
+<p>The gated launch is worth sitting with. Every major OpenAI model since GPT-4 shipped to the public on day one. This one didn't, and the reason given was a government safety review of a frontier system's capabilities. Whether that becomes routine or stays a one-off depends on how the White House's voluntary testing framework shakes out, but it's the first time a commercial model's release date was effectively set in Washington.</p>
+<p>It also didn't launch into a quiet room. The same 48 hours brought Grok 4.5 from the rebranded SpaceXAI and Muse Spark 1.1 from Meta, both pitched at roughly Opus 4.8 and GPT-5.5 territory. Three frontier-class releases in two days isn't a coincidence of the calendar. It's what the top of the market looks like now: nobody wants to be the lab that shipped second.</p>
+<p>For anyone building on the API, the real question isn't Sol versus the competition. It's whether Terra at $2.50 quietly eats the workloads that used to justify a flagship. That's where the pricing pressure actually lands.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>&apos;Ill Bloom&apos; Flaw Lets Attackers Recompute Weak Wallet Seeds</title>
+      <link>https://sabr-labs.com/article/ill-bloom-crypto-wallet-weak-randomness-coinspect-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ill-bloom-crypto-wallet-weak-randomness-coinspect-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cryptocurrency</category>
+      <category>Vulnerability</category>
+      <category>Coinspect</category>
+      <category>Wallets</category>
+      <category>Active Exploitation</category>
+      <description>Coinspect&apos;s Ill Bloom flaw lets attackers recompute seed phrases from software wallets built on weak randomness, and one sweep already drained $3.1 million.</description>
+      <content:encoded><![CDATA[<p>The whole point of a recovery phrase is that nobody can guess it. Twelve or twenty-four words pulled from a list of 2,048, seeded by good randomness, produce more combinations than there are atoms in a lot of the universe. Ill Bloom is what happens when the randomness is bad.</p>
+<p>Security firm Coinspect disclosed the flaw this week, and it's not theoretical. Some software wallets generated their seed phrases with a weak pseudorandom number generator. When the seeding is predictable, the space of possible phrases collapses from astronomical to something an attacker can simply compute through. Guess the seed, own every address it controls.</p>
+<p>Coinspect has confirmed one coordinated sweep on May 27 that drained about $3.1 million from 431 wallets in a single run. The exposure spans Bitcoin, Ethereum, Polygon, Rootstock, Tron, and Solana, because the weakness is in how the seed was generated, not in any one chain. Researchers put the number of wallets still at risk in the low thousands.</p>
+<p>The good news, if there is any, is scope. Hardware wallets aren't affected. Most mainstream software wallets aren't either. The exposure sits mostly in less widely used mobile wallets that rolled their own key generation and got it wrong. That's a small population, but for anyone in it the loss is total and irreversible.</p>
+<p>If you use a niche mobile wallet, treat this as urgent. Check your public address against Coinspect's database of vulnerable wallets. If it matches, assume the seed is already compromised, generate a brand new wallet, and move your funds to addresses from that new one. And one hard rule: never type a recovery phrase, private key, or backup file into any 'am I affected' checker. A legitimate checker only ever needs your public address. Anything asking for the seed is the second attack.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Langflow Auth-Bypass Bug Is Being Used to Steal Cloud Keys</title>
+      <link>https://sabr-labs.com/article/langflow-cve-2026-55255-idor-auth-bypass-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/langflow-cve-2026-55255-idor-auth-bypass-kev-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CVE-2026-55255</category>
+      <category>Langflow</category>
+      <category>CISA KEV</category>
+      <category>AI Security</category>
+      <category>IDOR</category>
+      <description>CISA gave agencies until Friday to patch a Langflow auth-bypass bug that attackers have used since June to steal cloud and LLM keys and drop implants.</description>
+      <content:encoded><![CDATA[<p>CVE-2026-55255 sounds mild on paper. It's an insecure direct object reference, the kind of bug where you change an ID in a request and suddenly you're looking at someone else's data. CISA added it to the Known Exploited Vulnerabilities catalog this week and gave federal agencies until Friday to patch, which tells you the paper doesn't capture it.</p>
+<p>The target is Langflow, a popular tool for wiring up AI pipelines with a drag-and-drop interface and a REST API to run them. The flaw lives in the /api/v1/responses endpoint. An authenticated attacker sends a request carrying someone else's flow ID, and Langflow runs it with no ownership check. Version 1.9.1 adds the check back; the fix was a single pull request closing the gap.</p>
+<p>Here's why a CVSS 6.1 earned a federal patch deadline. Sysdig's threat researchers watched this exploited in the wild starting June 25, and the goal wasn't reading data. It was code execution and dropping a second-stage implant. Along the way the attackers pulled LLM provider keys and AWS credentials out of the victims' flows. An AI pipeline tool is a concentrated pile of exactly the secrets an attacker wants.</p>
+<p>This is the shape of AI-tooling security in 2026. The tools that make it easy to connect models, data, and cloud accounts also make it easy to steal all three at once when the access control is wrong. Langflow isn't uniquely careless here. It's just the one that got caught this month.</p>
+<p>If you run Langflow, get to 1.9.1. Then rotate every credential any flow touched, because a KEV listing means someone was already inside before the patch existed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AssuranceAmerica Breach Exposes 6.9 Million Driver&apos;s Licenses</title>
+      <link>https://sabr-labs.com/article/assuranceamerica-breach-6-9-million-drivers-license-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/assuranceamerica-breach-6-9-million-drivers-license-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>AssuranceAmerica</category>
+      <category>Identity Theft</category>
+      <category>Insurance</category>
+      <category>Privacy</category>
+      <description>AssuranceAmerica exposed the names and driver&apos;s license numbers of 6.9 million people, the largest known driver&apos;s-license breach of 2026 so far.</description>
+      <content:encoded><![CDATA[<p>Driver's license numbers are the quiet workhorse of identity theft. They don't expire like a card, you can't easily change them, and they unlock a surprising amount of fraud. AssuranceAmerica just spilled 6.9 million of them.</p>
+<p>The auto insurer's breach, disclosed this week, is the largest known exposure of Americans' driver's license numbers so far in 2026. Alongside the license data, the stolen records include personal information on the affected people. According to a filing with the Indiana attorney general's office, notification letters were set to start going out on July 10.</p>
+<p>The company hasn't said much about how it happened, and that's become a familiar pattern. A large breach gets disclosed through mandatory state-regulator filings rather than a clear public accounting, the notification letters use the standard 'we take your privacy seriously' language, and the actual cause stays vague. Nearly seven million people are left to find out from a letter.</p>
+<p>Driver's license numbers matter more than most people assume. Combined with a name and address, which were also in this breach, they're enough to open accounts, file fraudulent tax returns, and pass a lot of identity-verification checks. Unlike a leaked password, you can't rotate your license number. A state can reissue one, but that's a DMV ordeal most victims never bother with.</p>
+<p>If you've been an AssuranceAmerica customer, watch for the letter and take the credit monitoring if it's offered, but don't stop there. A credit freeze at all three bureaus is free, it's the single most effective step against new-account fraud, and it doesn't depend on the company that lost your data doing anything else right.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta Drops Open Weights for a Paid API With Muse Spark 1.1</title>
+      <link>https://sabr-labs.com/article/meta-muse-spark-1-1-model-api-closed-source-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-spark-1-1-model-api-closed-source-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Meta</category>
+      <category>Muse Spark</category>
+      <category>AI Models</category>
+      <category>Open Source</category>
+      <category>API</category>
+      <description>Meta opened a paid Meta Model API with the closed-source Muse Spark 1.1, walking away from the open-weight strategy that defined Llama.</description>
+      <content:encoded><![CDATA[<p>Meta built its AI reputation on giving the weights away. Llama was the open-source counterweight to OpenAI and Anthropic, the model you could download and run yourself. On July 9, Meta closed the door. Muse Spark 1.1 is closed source, and the only way to use it is a paid API.</p>
+<p>The Meta Model API opened in public preview the same day, putting Meta in the exact business it spent years positioning against. Pricing runs $1.25 per million input tokens and $4.25 per million output, with $20 in credits to start. Access is US-only for now, with no EU availability.</p>
+<p>Muse Spark 1.1 is the second model out of Meta Superintelligence Labs and an upgrade to the original Muse Spark from April. It's a multimodal reasoning model built for agents, with a 1M-token context window and gains in tool use, computer use, and coding. Meta is putting it up against GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro.</p>
+<p>The capability jump matters less than the posture change. For years the argument was that open weights were both good strategy and good for the field, and Meta was the biggest company willing to make it out loud. Charging for a closed model is a concession that the frontier is expensive to build and Meta would like to be paid for it. The theory that Llama was always a loss leader just got a lot more credible.</p>
+<p>Developers get another frontier option and $20 to try it. Meta gets a revenue line and a reason to stop shipping its best work for free. Only one of those is a surprise.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Grok 4.5 Bets That Cheap and Fast Beats Frontier-Accurate</title>
+      <link>https://sabr-labs.com/article/grok-4-5-spacexai-cursor-coding-agent-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/grok-4-5-spacexai-cursor-coding-agent-july-2026</guid>
+      <pubDate>Fri, 10 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Grok</category>
+      <category>SpaceXAI</category>
+      <category>AI Models</category>
+      <category>Coding</category>
+      <category>Cursor</category>
+      <description>SpaceXAI&apos;s Grok 4.5 undercuts frontier rivals on price for coding agents, but independent tests flag higher hallucination rates as the tradeoff.</description>
+      <content:encoded><![CDATA[<p>Elon Musk called Grok 4.5 'an Opus-class model, but faster, more token-efficient and lower cost,' and then did something unusual for a launch: he admitted it competes with a previous Claude generation, not the current frontier. SpaceXAI shipped the model on July 8 for coding and agentic work, available through its own console, the Grok Build agent, and inside Cursor.</p>
+<p>The pricing is the argument. Grok 4.5 runs $2 per million input tokens and $6 output, with cached input at 50 cents. One benchmarking firm put it fourth on a real-world agentic knowledge-work index while measuring its cost per completed task at a fraction of the models above it. When you're running thousands of agent steps, fourth-place quality at a quarter of the price is a trade a lot of teams will take.</p>
+<p>There's a catch, and it's the one that always shows up when a model optimizes hard for speed and cost. Independent testing flagged higher hallucination rates than the frontier leaders. For a coding agent that's a specific kind of dangerous: fast, confident, and occasionally wrong about an API that doesn't exist. Cheap tokens don't help if a human has to catch the fabrications.</p>
+<p>The Cursor tie-in is the interesting part. SpaceXAI trained Grok 4.5 partly on Cursor's interaction data, real signals on how engineers write, review, and debug, then shipped it inside Cursor on day one. That's a tighter loop between a model and a coding tool than most labs have, and it shows up in the coding numbers.</p>
+<p>It carries a 500,000-token context window, and EU access is expected in mid-July.</p>
+<p>Grok 4.5 isn't trying to win the benchmark crown. It's trying to make the crown irrelevant by being cheap enough that the gap stops mattering. Whether that works depends entirely on how much you trust a model that's faster because it worries less.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Blue Origin Seeks $10B at a $130B Valuation, Its First Outside Money</title>
       <link>https://sabr-labs.com/article/blue-origin-10-billion-raise-130-billion-valuation-july-2026</link>
@@ -857,120 +972,6 @@
 <p>The detail that stings: Amazon had no written procedure for handling these legally mandated requests for years. It only wrote one in early 2025, after learning the FTC had opened an investigation.</p>
 <p>Financially, $2.25 million is nothing to Amazon. It's a rounding error against a single hour of revenue, and no executive is losing sleep over the check. Treating the fine as the story misses the point.</p>
 <p>The point is the precedent and the right itself. The FTC just demonstrated it will enforce 609(e), and the settlement forces Amazon to actually deliver requested records to victims and law enforcement within the 30 days the statute always required. If you've been through identity theft and hit a wall asking a retailer or bank for the paper trail, that wall is now less defensible.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Pulls Its Post-Quantum Deadline Forward to 2029</title>
-      <link>https://sabr-labs.com/article/microsoft-post-quantum-cryptography-2029-roadmap-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-post-quantum-cryptography-2029-roadmap-june-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 10:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Post-Quantum</category>
-      <category>Cryptography</category>
-      <category>PQC</category>
-      <category>Encryption</category>
-      <description>The new target has quantum-safe crypto in Microsoft products by 2029 and a full transition by 2033, two years ahead of most government mandates.</description>
-      <content:encoded><![CDATA[<p>Microsoft moved up its quantum-safe timeline. Under the revised roadmap, the company aims to have early post-quantum cryptography support in its products and services by 2029, with a complete transition by 2033. That's two years ahead of the 2035 deadline several governments have set for critical infrastructure.</p>
-<p>The reasoning is the one every crypto team has been chewing on: harvest now, decrypt later. Encrypted data being collected today could be cracked once a cryptographically relevant quantum computer exists, and Microsoft's position is that such a machine could arrive sooner than the field assumed. Whether or not you buy the timeline, the defensive logic holds. Long-lived secrets need protecting before the threat is real, not after.</p>
-<p>Microsoft laid out three priorities. First, upgrade network cryptography by moving to modern protocols like TLS 1.3 that can carry hybrid and post-quantum key exchange. Second, build crypto-agility, so algorithms can be swapped for PQC variants without rewriting the applications on top of them. Third, modernize the trust chains behind code signing, certificate issuance, software updates, and hardware-backed keys.</p>
-<p>The middle item is where the real work lives. Crypto-agility is easy to write on a slide and brutal to retrofit into decades of software that hardcoded assumptions about key sizes and algorithms. Dates are cheap. The migration is the hard part, and 2029 is not far away for a change this deep.</p>
-<p>It's also worth keeping a little distance from the framing. Microsoft has been aggressive about its own quantum hardware claims, so "the risk is accelerating" is coming from a company with reasons to say so. The practical takeaway for defenders doesn't depend on any of that: inventory where your systems use public-key crypto now, because you can't migrate what you can't find.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Claude Sonnet 5 Lands Close to Opus 4.8 at Half the Price</title>
-      <link>https://sabr-labs.com/article/anthropic-claude-sonnet-5-near-opus-price-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-claude-sonnet-5-near-opus-price-june-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>LLM</category>
-      <category>Benchmarks</category>
-      <category>AI Pricing</category>
-      <description>Anthropic&apos;s new mid-tier model trails its flagship on two headline benchmarks and beats it on two others, but the real number is the price.</description>
-      <content:encoded><![CDATA[<p>Anthropic released Claude Sonnet 5 on June 30 and made it the default model for every free and Pro user on claude.ai the same day. The pitch is straightforward: get most of the flagship's quality for a fraction of the cost.</p>
-<p>Start with the money, because that's the actual news. Introductory pricing runs $2 per million input tokens and $10 per million output through August 31, then settles at $3 and $15. Opus 4.8 sits at $5 and $25. So Sonnet 5 is roughly half the price of the top model, and it ships with the same 1M-token context window.</p>
-<p>The benchmarks are more of a split decision than "near-Opus" suggests. Sonnet 5 scores 63.2% on SWE-bench Pro against Opus 4.8's 69.2%, and 81.2% on OSWorld-Verified against 83.4%. It trails on the two marquee agentic tests. But it posts 80.4% on Terminal-Bench 2.1, beating Opus 4.8's 74.6%, and edges the flagship on GDPval-AA v2 knowledge work, 1,618 Elo to 1,615.</p>
-<p>Read that honestly and the model is a hair behind Opus on hard coding and computer-use tasks, roughly even on knowledge work, and ahead on some terminal workflows. It is not a flagship. It's close enough that for a lot of jobs the price difference decides it.</p>
-<p>That framing matches where the market has moved. CNBC reported in late June that enterprise buyers have shifted from what people were calling tokenmaxxing toward squeezing more work out of fewer tokens. A model that lands near the top tier at half the cost is aimed squarely at that shift. The interesting question isn't whether Sonnet 5 beats Opus. It's how many workloads people were paying flagship rates for that a mid-tier model now handles fine.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Azure CLI Password Spray Cracked 78 Accounts in 81 Million Tries</title>
-      <link>https://sabr-labs.com/article/azure-cli-password-spray-ropc-mfa-bypass-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/azure-cli-password-spray-ropc-mfa-bypass-june-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 09:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Azure</category>
-      <category>Microsoft</category>
-      <category>Password Spray</category>
-      <category>MFA</category>
-      <category>Identity</category>
-      <description>The attackers used a legacy login flow to slip past MFA at organizations that thought Conditional Access had them covered.</description>
-      <content:encoded><![CDATA[<p>Eighty-one million login attempts. Seventy-eight accounts cracked across 64 organizations. That's the tally Huntress put on an ongoing password-spray campaign aimed at Microsoft's Azure command-line interface, running from June 12 to June 26.</p>
-<p>The traffic came from a single IPv6 range, 2a0a:d683::/32, tied to an infrastructure provider called LSHIY LLC (AS32167). Targeting wasn't picky about industry. The operators appear to have worked straight from credential combo lists, spraying whichever accounts showed up with commonly reused passwords.</p>
-<p>The clever part is how they got past multi-factor auth. Azure CLI still supports ROPC, the Resource Owner Password Credentials flow, which trades a username and password directly for a token. At several victim organizations, MFA was switched on and Conditional Access policies were configured, but those policies didn't account for Azure CLI ROPC logins. So a correct password was enough. The second factor never entered the picture.</p>
-<p>That's the lesson, and it's an uncomfortable one. "We have MFA" and "MFA is enforced on every authentication path" are different statements. ROPC is a legacy flow that shouldn't be trading passwords for tokens in 2026, yet it's on by default and quietly routes around the controls teams assume are total.</p>
-<p>If you run Azure AD, check whether legacy authentication and ROPC are blocked, and confirm your Conditional Access policies actually cover command-line and programmatic logins, not just browser sign-ins. Then go looking for successful authentications from that IPv6 range, because the campaign was still live at the end of June.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Citrix Patches Six More NetScaler Flaws, Two Allow File Reads</title>
-      <link>https://sabr-labs.com/article/citrix-netscaler-six-cves-file-read-dos-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-six-cves-file-read-dos-july-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 08:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Citrix</category>
-      <category>NetScaler</category>
-      <category>Vulnerability</category>
-      <category>CVE</category>
-      <category>Patch</category>
-      <description>None are under active exploitation yet, but the batch keeps NetScaler&apos;s memory-safety streak going and one flaw reads files with no authentication.</description>
-      <content:encoded><![CDATA[<p>NetScaler administrators get another patch cycle. Citrix shipped fixes for six vulnerabilities across NetScaler ADC and Gateway, a mix of arbitrary file reads and denial-of-service bugs, all rooted in the appliance mishandling memory when it parses malformed input.</p>
-<p>The two file-read bugs are the ones to look at first. CVE-2026-10816 (CVSS 7.7) lets an unauthenticated attacker read arbitrary files through improper path control, but only when management access is exposed on a NIC. CVE-2026-8451 (CVSS 8.8) also enables arbitrary file reads, though it requires the box to be configured as a SAML identity provider. If your NetScaler does SSO for the rest of the estate, that's a config a lot of shops run.</p>
-<p>The rest are availability bugs. CVE-2026-8452, CVE-2026-8655, and CVE-2026-13474 (CVSS scores from 8.7 to 8.8) all crash or degrade the appliance through memory overflows or a malformed HTTP/2 request, and CVE-2026-10817 is a lower-severity memory overread tied to TCP timestamps.</p>
-<p>Citrix says none of these are being exploited in the wild right now. That's the good news and the asterisk. This is the same NetScaler product line that shipped CVE-2026-3055 earlier in June, a memory-overread bug that got mass-exploited as an unauthenticated RCE within days of disclosure. When an internet-facing appliance has a run of memory-safety flaws like this, the gap between patch and exploit tends to be short.</p>
-<p>Fixed builds are 14.1-72.61 and later, and 13.1-63.18 and later. CVE-2026-13474 needs a manual Http2SmallWndTimeout setting on some non-HTTP profiles, so read the advisory rather than assuming the upgrade covers everything. And if your management interface is reachable from a data NIC, fix that too, because it's the precondition for the worst bug in the set.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Aflac&apos;s Japan Arm Breached, 4.38 Million Policyholders Exposed</title>
-      <link>https://sabr-labs.com/article/aflac-japan-breach-4-38-million-bank-details-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/aflac-japan-breach-4-38-million-bank-details-june-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Aflac</category>
-      <category>Insurance</category>
-      <category>Japan</category>
-      <category>Scattered Spider</category>
-      <description>Attackers spent ten days inside Aflac Life Insurance Japan and walked out with policy records and bank account details for 4.38 million customers.</description>
-      <content:encoded><![CDATA[<p>Aflac disclosed this week that its Japanese subsidiary lost the records of 4.38 million policyholders. Aflac Life Insurance Japan, a wholly owned arm of the US insurer, found that intruders had been sitting in its systems from June 15 to June 25 before anyone noticed.</p>
-<p>The stolen data is worse than the usual name-and-email dump. Aflac says the attackers accessed policy details, coverage information, personal data, and bank account numbers. For an insurer, the bank details are the part that keeps customers up at night, because they feed directly into fraud and account-takeover attempts.</p>
-<p>There's no attribution yet. Aflac hasn't named a group, and the ten-day dwell time suggests the intruders had room to look around before exfiltrating. Worth remembering: an earlier intrusion into Aflac's US operations in 2025 was linked to activity consistent with Scattered Spider, the social-engineering crew that has made a habit of talking its way past help desks. That's context, not a confirmed attribution here.</p>
-<p>Insurers keep some of the most complete personal dossiers of any industry, which is exactly why they keep getting hit. A single policy file can hold identity, health, financial, and beneficiary data in one place. Aflac Japan alone insures a huge slice of the country's households, so 4.38 million records is a meaningful fraction of its book.</p>
-<p>If you're an Aflac Japan customer, treat this as a reason to watch your bank statements closely and to distrust any call or message that references your policy. Breaches of this shape are usually followed within weeks by targeted phishing that uses the stolen details to sound legitimate.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Will Only Sell GPT-5.6 Sol to Trump-Approved Customers</title>
-      <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-trump-approved-customers-export-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-sol-trump-approved-customers-export-june-2026</guid>
-      <pubDate>Tue, 30 Jun 2026 15:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>GPT-5.6 Sol</category>
-      <category>AI Regulation</category>
-      <category>Export Controls</category>
-      <category>Anthropic</category>
-      <description>OpenAI is restricting its new GPT-5.6 Sol model to buyers vetted by the Trump administration, as Washington&apos;s cybersecurity review of frontier AI hardens into a gatekeeping regime.</description>
-      <content:encoded><![CDATA[<p>OpenAI said Friday that its newest model, GPT-5.6 Sol, will be available only to customers the Trump administration approves. Read that again. A private frontier lab is letting the federal government decide who is allowed to buy its product. That arrangement did not exist a year ago.</p>
-<p>OpenAI is not alone in it. Anthropic said roughly the same week that the administration had cleared a limited release of its strongest cybersecurity model, two weeks after the Commerce Department effectively banned it outright. Both of the country's leading labs are now shipping their best models through the same government turnstile.</p>
-<p>The stated reason is cyber capability. Officials grew alarmed after Anthropic warned earlier this year that its Mythos model was good enough at finding software flaws that it could be turned into a weapon against critical networks. Once a vendor says the quiet part out loud, the regulators have to act on it, and a vetting process for who gets access to the most capable models is what that action looks like.</p>
-<p>Strip away the security framing and this is industrial policy. Approval lists are how governments pick winners and losers, and a model rationed by federal sign-off is a strange thing to put in an S-1. Both OpenAI and Anthropic have been circling public offerings, and explaining to investors that your flagship product ships only to a government-approved customer roster is not the growth story either of them wanted to tell.</p>
-<p>The harder problem is that controls only bite if the capability is scarce. China's GLM-5.2 has been measured matching Anthropic on cybersecurity tasks, and it ships as open weights anyone can download. Watch two things from here: who actually lands on the approved list, and whether an open-weight model that nobody controls makes the whole regime academic.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
