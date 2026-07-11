@@ -6,9 +6,105 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2026 13:15:19 GMT</lastBuildDate>
-    <pubDate>Fri, 10 Jul 2026 13:15:19 GMT</pubDate>
+    <lastBuildDate>Sat, 11 Jul 2026 13:16:27 GMT</lastBuildDate>
+    <pubDate>Sat, 11 Jul 2026 13:16:27 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Chip Stocks Rip Higher as Apple Closes on Nvidia&apos;s Crown</title>
+      <link>https://sabr-labs.com/article/chip-stock-rally-apple-nvidia-market-cap-race-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chip-stock-rally-apple-nvidia-market-cap-race-july-2026</guid>
+      <pubDate>Sat, 11 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>Nvidia</category>
+      <category>Apple</category>
+      <category>Stock Market</category>
+      <category>AI Capex</category>
+      <description>Friday&apos;s rally in US chipmakers pulled Japanese and Korean semiconductor stocks up sharply, even as Apple sits within striking distance of retaking the most-valuable-company title from Nvidia.</description>
+      <content:encoded><![CDATA[<p>Semiconductor stocks had a Friday. A rally in US chipmakers spilled into Asian markets, sending Japanese and South Korean semiconductor names sharply higher, with SoftBank Group up more than 11% and chip-equipment makers Advantest and Renesas both climbing. Nvidia rose around 4% and did much of the work lifting the S&P 500.</p>
+<p>Sitting behind the tape is a genuinely close race at the top. Nvidia holds a slim lead with a market cap hovering around $4.7 to $4.8 trillion, and Apple is a step back near $4.5 to $4.6 trillion. Analysts think Apple could retake the most-valuable-company crown as soon as this month if it delivers a strong report when it announces earnings on July 30.</p>
+<p>What's striking about the enthusiasm is its timing. This is the same week SemiAnalysis reported that Nvidia's next-generation Kyber rack slipped to 2028 on manufacturing problems, a real setback for the rack-scale roadmap. The market looked at that and bought chip stocks anyway.</p>
+<p>That tells you what's actually being priced. Investors aren't trading on any single product ship date. They're trading on the belief that AI capital spending keeps climbing regardless of which specific rack lands in which specific year, and that demand for anything that trains or serves a model stays, in TSMC's words, extremely robust.</p>
+<p>It's a comfortable story right up until it isn't. A one-day rally on optimism is not the same as a roadmap executing on schedule, and the gap between those two things is exactly where the next repricing tends to come from.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s GPT-Live Talks and Listens at the Same Time</title>
+      <link>https://sabr-labs.com/article/openai-gpt-live-full-duplex-voice-models-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-live-full-duplex-voice-models-july-2026</guid>
+      <pubDate>Sat, 11 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>Voice AI</category>
+      <category>ChatGPT</category>
+      <category>GPT-Live</category>
+      <category>Speech Models</category>
+      <description>The new GPT-Live voice models process your speech while they answer, adding real-time backchannels and interruptions, but they hand the hard reasoning off to GPT-5.5 in the background.</description>
+      <content:encoded><![CDATA[<p>OpenAI released a pair of voice models on July 8, GPT-Live-1 and GPT-Live-1 mini, and the pitch is that they finally stop taking turns. These are full-duplex models, which means they process incoming audio and generate outgoing audio at the same time instead of waiting for you to finish a sentence before they start thinking about a reply.</p>
+<p>In practice that buys two things. You can interrupt the model mid-answer and it reacts, the way you would cut off a person who's already told you what you needed. And it throws in the little acknowledgments that make a conversation feel live, the 'mhmm' and 'got it' that land while you're still talking. OpenAI says the model makes a decision many times a second about whether to speak, listen, pause, or reach for a tool.</p>
+<p>Now the part the demos skip past. GPT-Live is a fast front end, not the brain. When your question needs real reasoning or a web search, GPT-Live-1 quietly ships it to GPT-5.5 in the background and folds the answer back in when it's ready. That's a sensible design, but it means the thing that feels responsive and the thing that's actually smart are two different models wearing one voice.</p>
+<p>Full-duplex speech isn't a brand-new idea either. Labs have demoed continuous listen-and-speak systems before, and the concept has floated around research for a couple of years. What OpenAI has done is ship it as the default, which is the harder and more consequential move.</p>
+<p>The rollout says as much about product strategy as about audio. GPT-Live-1 mini is replacing Advanced Voice Mode as the standard ChatGPT experience, with the larger GPT-Live-1 reserved for paid tiers. The real unlock here isn't a smarter assistant, it's the removal of the awkward pause, and if turn-taking latency was the thing keeping you from talking to a chatbot out loud, that's the barrier this is aimed at.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia&apos;s Next AI Rack Slips to 2028 Over a Circuit Board</title>
+      <link>https://sabr-labs.com/article/nvidia-kyber-nvl144-rack-delay-2028-semianalysis-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-kyber-nvl144-rack-delay-2028-semianalysis-july-2026</guid>
+      <pubDate>Sat, 11 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>AI Hardware</category>
+      <category>Data Center</category>
+      <category>Semiconductors</category>
+      <category>SemiAnalysis</category>
+      <description>SemiAnalysis reports the Kyber NVL144 rack has been pushed from 2027 to 2028 because its midplane circuit board is proving too hard to build, with two larger configurations delayed or cut.</description>
+      <content:encoded><![CDATA[<p>The chip was never the problem. According to a July 6 report from SemiAnalysis, Nvidia's Kyber NVL144 rack has slipped from 2027 to 2028, and the thing holding it up is a printed circuit board. Specifically, the midplane, the dense backbone that wires 144 GPUs together inside a single rack, is proving too difficult to manufacture at the tolerances the design needs.</p>
+<p>Kyber NVL144 was supposed to arrive alongside the Vera Rubin Ultra platform and represent the next step in Nvidia's push toward rack-scale systems, where the unit of compute is no longer a card or a server but an entire cabinet acting as one machine. A year-plus delay on that timeline is not a rounding error.</p>
+<p>The knock-on effects are worse than the headline. SemiAnalysis says NVL576, the larger design that would link eight racks together over optical connections, is likely delayed or held to small volumes. The back-to-back NVL72x2 configuration was reportedly canceled outright. So this isn't one product slipping, it's a chunk of the rack roadmap getting rearranged.</p>
+<p>It's a useful correction to how people talk about this industry. The story for two years has been transistors and process nodes, TSMC's 2nm, packaging. But once you're stitching hundreds of accelerators into a single power and signal domain, the hard engineering moves into the boring-sounding parts: the boards, the connectors, the cooling, the sheer physics of moving that much data across a backplane without it falling apart.</p>
+<p>Nvidia didn't comment on the report, which is its usual posture on roadmap leaks. Suppliers won't have that luxury. The companies building midplanes and optical interconnects on the assumption of a 2027 ramp now have to plan around a gap, and their stock moves this week suggest the market already did the math.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Confirms a SharePoint RCE Is Under Active Attack</title>
+      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-deserialization-rce-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-deserialization-rce-kev-july-2026</guid>
+      <pubDate>Sat, 11 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SharePoint</category>
+      <category>Microsoft</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <category>Storm-2603</category>
+      <description>CVE-2026-45659, a deserialization flaw Microsoft patched in May, is now on CISA&apos;s exploited list, with Storm-2603 the suspected operator and a July 4 federal deadline already past.</description>
+      <content:encoded><![CDATA[<p>Microsoft shipped the fix for this one back in May, which makes the update on July 1 the awkward part: CISA moved CVE-2026-45659 onto its Known Exploited Vulnerabilities catalog after seeing it used in the wild. Anyone still running an unpatched SharePoint Server has been exposed for weeks without knowing the clock had already started.</p>
+<p>The flaw is a remote code execution bug rooted in deserialization of untrusted data, carrying a CVSS score of 8.8. It affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. Exploitation isn't fully unauthenticated. An attacker needs at least Site Member permissions, which sounds like a barrier until you remember how many SharePoint deployments hand out that level of access across a whole organization.</p>
+<p>Attribution points at Storm-2603, a threat actor that has been working SharePoint bugs since mid-2025. That confidence comes from tracking, not a confession, so treat it as an assessment rather than a certainty.</p>
+<p>Here's the detail that hasn't aged well. Microsoft's own advisory tagged this as 'Exploitation Less Likely.' It's being exploited. That label is a probability estimate, not a promise, and it's a useful reminder that a low likelihood rating is not a reason to deprioritize a patch on an internet-reachable collaboration server.</p>
+<p>The federal deadline under BOD 26-04 was July 4, so agencies were meant to be done a week ago. If you're outside that mandate and your SharePoint boxes are still on the May level, patch them, then go read your Site Member rolls. The permission that turns this from an internal-only risk into a real one is probably sitting in a group you forgot you created.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ransomware Killed EDR With a Driver Microsoft Itself Signed</title>
+      <link>https://sabr-labs.com/article/goddamn-poisonx-signed-driver-ransomware-symantec-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/goddamn-poisonx-signed-driver-ransomware-symantec-july-2026</guid>
+      <pubDate>Sat, 11 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>BYOVD</category>
+      <category>EDR</category>
+      <category>Windows</category>
+      <category>Symantec</category>
+      <description>Symantec says the Hyadina crew&apos;s new &apos;GodDamn&apos; locker disabled endpoint defenses on ten hosts using PoisonX, a malicious kernel driver that carried a valid Microsoft signature.</description>
+      <content:encoded><![CDATA[<p>A ransomware crew walked its kill-switch past Microsoft's own driver-signing check and used the result to blind endpoint protection on ten machines before it started encrypting. That's the finding from Broadcom's Symantec Threat Hunter Team, which disclosed the campaign on July 9 and named two things: the ransomware, GodDamn, and the kernel-mode driver it leans on, PoisonX.</p>
+<p>The group behind GodDamn is tracked as Hyadina, a ransomware-as-a-service operation Symantec has followed since March 2022. GodDamn is the latest rebrand of its lockers, which previously shipped under the names Beast and Monster. New name, same business, and the same appetite for turning off whatever's watching before the payload runs.</p>
+<p>PoisonX is the part worth slowing down on. The usual version of this attack, Bring Your Own Vulnerable Driver, works by finding a legitimate signed driver with a bug in it, a hardware monitor or an anti-cheat component, then exploiting that bug to reach the kernel. PoisonX skips the middleman. It was written to be malicious and still came out the other end of Microsoft's signing review with a valid signature. Its author uses the GitHub handle 'oxfemale,' self-identifies as a Russian security researcher, and published the driver on April 7 as a research tool.</p>
+<p>Calling an EDR-disabling kernel driver a research tool and posting it publicly is a fig leaf, and everyone in this chain knows it. But the real failure sits with the signature. A driver Microsoft has vouched for runs at Ring 0 and sails past the trust checks that stop ordinary malware, which is exactly why attackers keep hunting for signed code they can abuse.</p>
+<p>The intrusion Symantec reconstructed ran from May 29 to June 3, and it reads like patient work rather than a smash-and-grab. The operators came in over AnyDesk for remote access, harvested credentials with a NirSoft-based toolkit, moved through the environment, and only then dropped PoisonX to switch off defenses across roughly ten hosts ahead of the encryption stage.</p>
+<p>If you run Windows fleets, three moves matter now. Push Microsoft's vulnerable-driver blocklist and make sure it's actually enforced, not just present. Add PoisonX's hash to your own block rules rather than waiting for the platform to catch up. And treat the combination of AnyDesk plus a NirSoft credential grab as a staging signal worth an alert, because by the time the driver loads you're already at the last quiet moment before the ransom note.</p>]]></content:encoded>
+    </item>
     <item>
       <title>GPT-5.6 Goes Public After a Two-Week Government Safety Hold</title>
       <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-terra-luna-general-availability-july-2026</link>
@@ -875,103 +971,6 @@
 <p>Read the shape of the deal and you see the real story. A regulated UK grid operator is reaching across the Atlantic to buy into American gas generation, because that is where the demand is and because getting new load connected to the existing grid has become the bottleneck. Interconnection queues stretch for years in a lot of US markets. Building dedicated generation next to the data center sidesteps the wait.</p>
 <p>National Grid was careful to say this is incremental to its existing capital program of at least 70 billion pounds through the 2031 financial year, funded from balance-sheet headroom, and does not change its five-year framework. Translation: don't read this as a strategy wobble, read it as a bolt-on bet on a demand curve they expect to keep climbing.</p>
 <p>For everyone watching the AI buildout, this is the pattern to track. The headline announcements are about models and chips. The projects that actually gate how fast any of it gets deployed are power plants and substations, and the capital is starting to flow accordingly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>South Korea Bets $880 Billion That AI Is Won in Hardware</title>
-      <link>https://sabr-labs.com/article/south-korea-880-billion-semiconductor-ai-investment-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/south-korea-880-billion-semiconductor-ai-investment-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>South Korea</category>
-      <category>Semiconductors</category>
-      <category>Samsung</category>
-      <category>SK Hynix</category>
-      <category>AI Infrastructure</category>
-      <description>Seoul and its chipmakers pledged the largest national semiconductor investment on record, aimed at fabs, data centers and robotics.</description>
-      <content:encoded><![CDATA[<p>South Korea has decided the next phase of AI will be settled in fabs and data centers, not in model demos, and it is putting a staggering amount of money behind that view. President Lee Jae-myung and the heads of Samsung Electronics and SK Hynix laid out a plan on June 29 to pour at least $880 billion into semiconductors, AI infrastructure and robotics over the next decade.</p>
-<p>The bulk of it comes from the companies. Samsung and SK Hynix, together with their suppliers, committed 800 trillion won, roughly $518 billion, to build two new chip fabrication sites each in the country's southwest. Samsung's slice alone is about 400 trillion won for new fabs around Gwangju, plus another 56 trillion won for advanced high-bandwidth-memory lines in Cheonan and Onyang. HBM is the memory that feeds AI accelerators, and it is where SK Hynix in particular has been printing money.</p>
-<p>Lee framed the whole thing around what he called a triple axis of semiconductors, physical AI and data centers, and said the country has to secure the core pieces of AI faster than anyone else. The southwest was chosen in part because it has spare, underused power, which is quietly the real currency of the AI buildout right now.</p>
-<p>Set against the scale, some skepticism is fair. This is a ten-year commitment, and ten-year industrial pledges have a way of getting renegotiated when the market turns or a government changes. The won figures are announced spending, not delivered concrete and clean rooms. Fabs take years to build and can slip.</p>
-<p>Still, the direction is unmistakable. Between this, the US CHIPS money and comparable moves elsewhere, every major manufacturing economy is now treating advanced chips and the power to run them as strategic national assets. South Korea just planted the biggest single flag yet.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ransomware Crews Adopt BlueHammer, a Defender Bug Fixed in April</title>
-      <link>https://sabr-labs.com/article/bluehammer-cve-2026-33825-defender-ransomware-exploitation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bluehammer-cve-2026-33825-defender-ransomware-exploitation-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 10:05:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Windows Defender</category>
-      <category>CVE-2026-33825</category>
-      <category>BlueHammer</category>
-      <category>Ransomware</category>
-      <category>Privilege Escalation</category>
-      <description>CISA says ransomware groups are now abusing CVE-2026-33825 to jump from local user to SYSTEM on unpatched Windows machines.</description>
-      <content:encoded><![CDATA[<p>A Windows Defender privilege escalation bug that Microsoft patched almost three months ago has found a second life. CISA said this week that ransomware crews are actively exploiting CVE-2026-33825, the flaw a researcher named BlueHammer, to take over machines that never got the fix.</p>
-<p>The mechanics are clever. BlueHammer is a time-of-check to time-of-use race in Defender's cleanup routine. When Defender detects a malicious file and moves to remediate it, the exploit uses an opportunistic lock to freeze that operation at the exact wrong moment, then swaps in an NTFS junction that redirects Defender's privileged write from a temp folder into C:\Windows\System32. The result is SYSTEM-level access on fully patched Windows 10 and 11, and from there the attacker can read the SAM database and its password hashes.</p>
-<p>There is history here worth remembering. BlueHammer went public on April 7 with working exploit code, dropped by a researcher using the handle Chaotic Eclipse as a protest against how Microsoft's Security Response Center handled the disclosure. Microsoft patched it a week later on the April 14 Patch Tuesday. So the fix has been sitting there since spring.</p>
-<p>That is the part that stings. This is not a zero-day catching defenders off guard. It is a known bug with a patch that has been available for months, and it is still landing because unpatched Windows endpoints are everywhere. Privilege escalation flaws like this one are the quiet workhorses of a ransomware intrusion. The crew gets in some other way, then reaches for a reliable path to SYSTEM, and BlueHammer is now on that shelf.</p>
-<p>If your patch management covers Defender and the April updates, you are done. If you are not sure whether every endpoint took that Patch Tuesday, this is your reminder to go check the stragglers before someone else does.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Start Hitting Kemp LoadMaster Days After Exploit Drops</title>
-      <link>https://sabr-labs.com/article/progress-kemp-loadmaster-cve-2026-8037-preauth-rce-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/progress-kemp-loadmaster-cve-2026-8037-preauth-rce-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 09:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Progress</category>
-      <category>Kemp LoadMaster</category>
-      <category>CVE-2026-8037</category>
-      <category>RCE</category>
-      <category>watchTowr</category>
-      <description>A CVSS 9.6 pre-auth flaw in Progress Kemp LoadMaster went from advisory to exploitation attempts within hours of a public writeup.</description>
-      <content:encoded><![CDATA[<p>Progress disclosed a flaw in its Kemp LoadMaster load balancers on June 4 and said it had no reports of exploitation. That held for about three weeks. Then watchTowr Labs published a full technical breakdown on June 29, and by that same day attackers were throwing it at live appliances.</p>
-<p>CVE-2026-8037 is an OS command injection bug rated 9.6. It is pre-auth, which is the phrase that turns a routine patch into an emergency: an unauthenticated attacker can send a crafted request to the /accessv2 endpoint and run commands on the appliance. Load balancers sit right at the network edge, in front of the applications you are trying to protect, so a box under an attacker's control is close to worst case.</p>
-<p>The root cause is a small one with a large blast radius. A function named escape_quotes() failed to null-terminate the strings it sanitized, which led to an out-of-bounds read into adjacent heap memory. From there the exploit chain reaches command execution. watchTowr's writeup walks the whole path, which is exactly why the timing lined up the way it did.</p>
-<p>Affected builds are GA v7.2.63.1 and earlier, and LTSF v7.2.54.17 and earlier, but only when the API is enabled. If you have the API turned off, you are not in the blast zone for this one. Check before you panic.</p>
-<p>The early news is oddly reassuring. eSentire watched exploitation attempts and reported that they failed, with no post-compromise activity. That is not a reason to relax. A working proof-of-concept is public, the technical details are all out there, and the gap between failed opportunistic scans and a reliable weaponized exploit tends to be short.</p>
-<p>Patch to a fixed build. If you cannot patch today, disabling the API closes the door until you can.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SharePoint RCE From May Is Now Being Exploited, Patch by Friday</title>
-      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-rce-kev-active-exploitation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-rce-kev-active-exploitation-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SharePoint</category>
-      <category>CVE-2026-45659</category>
-      <category>Microsoft</category>
-      <category>CISA KEV</category>
-      <category>RCE</category>
-      <description>CISA added CVE-2026-45659 to its exploited-vulnerabilities list, and any authenticated SharePoint user can trigger it.</description>
-      <content:encoded><![CDATA[<p>A SharePoint flaw Microsoft patched back in May is now being used in real attacks, and the ugly part is how little access it takes to pull off.</p>
-<p>CVE-2026-45659 is a deserialization bug (CWE-502) that carries a CVSS score of 8.8. Microsoft shipped the fix on May 21 as part of that month's Patch Tuesday. On Monday, CISA added it to the Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 4 to patch under BOD 26-04. If you run SharePoint on-prem, treat that deadline as yours too.</p>
-<p>What makes this one worth dropping everything for is the privilege bar. An attacker does not need admin. They do not need elevated rights of any kind. A plain authenticated user with Site Member permissions, the level you hand out to ordinary contributors, can execute code on the server. In most organizations that describes a lot of accounts, and every one of them is now a potential foothold.</p>
-<p>Affected versions are SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. The bug lives in how the server deserializes attacker-controlled objects without checking them properly, which is the same class of mistake that has burned SharePoint before.</p>
-<p>Here is what CISA and Microsoft are not saying: who is behind the attacks, how they are getting in, or what they are after. That silence is normal this early, but it also means you cannot wait for indicators of compromise to justify patching. The exploitation is confirmed. The attribution is a blank.</p>
-<p>If you have not applied the May update, that is the whole job. There is no config workaround that beats installing the patch. Do it, then go read your SharePoint access logs for anything a Site Member should not have been doing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Amazon Fined $2.25M for Denying Fraud Records to Theft Victims</title>
-      <link>https://sabr-labs.com/article/amazon-ftc-fine-identity-theft-records-fcra-609e-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-ftc-fine-identity-theft-records-fcra-609e-june-2026</guid>
-      <pubDate>Wed, 01 Jul 2026 11:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Amazon</category>
-      <category>FTC</category>
-      <category>Identity Theft</category>
-      <category>FCRA</category>
-      <category>Regulation</category>
-      <description>Federal law gives identity-theft victims the right to the fraudulent transaction records made in their name, and the FTC just used a 2003 provision to enforce it.</description>
-      <content:encoded><![CDATA[<p>Here's a right most identity-theft victims don't know they have. Under Section 609(e) of the Fair Credit Reporting Act, if someone opens accounts or makes purchases in your name, you can demand the records of those fraudulent transactions from the business that processed them. On June 30 the FTC fined Amazon $2.25 million for refusing to hand them over.</p>
-<p>It's the largest penalty ever secured under 609(e), and only the second time the FTC has used the provision since it was written into law in 2003. According to the agency, Amazon customer service repeatedly denied victims who asked for fraud records, citing "privacy" or "security." When it did provide records, it often blew past the 30-day window the law requires. It even refused requests from law enforcement acting on victims' behalf.</p>
-<p>The detail that stings: Amazon had no written procedure for handling these legally mandated requests for years. It only wrote one in early 2025, after learning the FTC had opened an investigation.</p>
-<p>Financially, $2.25 million is nothing to Amazon. It's a rounding error against a single hour of revenue, and no executive is losing sleep over the check. Treating the fine as the story misses the point.</p>
-<p>The point is the precedent and the right itself. The FTC just demonstrated it will enforce 609(e), and the settlement forces Amazon to actually deliver requested records to victims and law enforcement within the 30 days the statute always required. If you've been through identity theft and hit a wall asking a retailer or bank for the paper trail, that wall is now less defensible.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

@@ -25,6 +25,207 @@
 
 export const articles = [
   {
+    id: 211,
+    slug: "goddamn-poisonx-signed-driver-ransomware-symantec-july-2026",
+    title: "Ransomware Killed EDR With a Driver Microsoft Itself Signed",
+    summary: "Symantec says the Hyadina crew's new 'GodDamn' locker disabled endpoint defenses on ten hosts using PoisonX, a malicious kernel driver that carried a valid Microsoft signature.",
+    body: [
+      "A ransomware crew walked its kill-switch past Microsoft's own driver-signing check and used the result to blind endpoint protection on ten machines before it started encrypting. That's the finding from Broadcom's Symantec Threat Hunter Team, which disclosed the campaign on July 9 and named two things: the ransomware, GodDamn, and the kernel-mode driver it leans on, PoisonX.",
+      "The group behind GodDamn is tracked as Hyadina, a ransomware-as-a-service operation Symantec has followed since March 2022. GodDamn is the latest rebrand of its lockers, which previously shipped under the names Beast and Monster. New name, same business, and the same appetite for turning off whatever's watching before the payload runs.",
+      "PoisonX is the part worth slowing down on. The usual version of this attack, Bring Your Own Vulnerable Driver, works by finding a legitimate signed driver with a bug in it, a hardware monitor or an anti-cheat component, then exploiting that bug to reach the kernel. PoisonX skips the middleman. It was written to be malicious and still came out the other end of Microsoft's signing review with a valid signature. Its author uses the GitHub handle 'oxfemale,' self-identifies as a Russian security researcher, and published the driver on April 7 as a research tool.",
+      "Calling an EDR-disabling kernel driver a research tool and posting it publicly is a fig leaf, and everyone in this chain knows it. But the real failure sits with the signature. A driver Microsoft has vouched for runs at Ring 0 and sails past the trust checks that stop ordinary malware, which is exactly why attackers keep hunting for signed code they can abuse.",
+      "The intrusion Symantec reconstructed ran from May 29 to June 3, and it reads like patient work rather than a smash-and-grab. The operators came in over AnyDesk for remote access, harvested credentials with a NirSoft-based toolkit, moved through the environment, and only then dropped PoisonX to switch off defenses across roughly ten hosts ahead of the encryption stage.",
+      "If you run Windows fleets, three moves matter now. Push Microsoft's vulnerable-driver blocklist and make sure it's actually enforced, not just present. Add PoisonX's hash to your own block rules rather than waiting for the platform to catch up. And treat the combination of AnyDesk plus a NirSoft credential grab as a staging signal worth an alert, because by the time the driver loads you're already at the last quiet moment before the ransom note.",
+    ],
+    category: "cyber",
+    tags: ["Ransomware", "BYOVD", "EDR", "Windows", "Symantec"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-11T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Symantec Enterprise Blog",
+        desc: "Broadcom's Threat Hunter Team analysis naming GodDamn and PoisonX",
+        url: "https://www.security.com/blog-post/goddamn-ransomware-beast-rebrand",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Report on GodDamn using the signed PoisonX driver to disable defenses",
+        url: "https://thehackernews.com/2026/07/goddamn-ransomware-uses-poisonx-driver.html",
+      },
+      {
+        name: "Dark Reading",
+        desc: "Coverage of the GodDamn BYOVD campaign against US companies",
+        url: "https://www.darkreading.com/cyberattacks-data-breaches/goddamn-ransomware-byovd-smite-companies",
+      },
+      {
+        name: "SecurityAffairs",
+        desc: "Details on PoisonX blinding security software",
+        url: "https://securityaffairs.com/195042/malware/goddamn-ransomware-uses-poisonx-to-blind-security-software.html",
+      },
+    ],
+  },
+  {
+    id: 212,
+    slug: "sharepoint-cve-2026-45659-deserialization-rce-kev-july-2026",
+    title: "CISA Confirms a SharePoint RCE Is Under Active Attack",
+    summary: "CVE-2026-45659, a deserialization flaw Microsoft patched in May, is now on CISA's exploited list, with Storm-2603 the suspected operator and a July 4 federal deadline already past.",
+    body: [
+      "Microsoft shipped the fix for this one back in May, which makes the update on July 1 the awkward part: CISA moved CVE-2026-45659 onto its Known Exploited Vulnerabilities catalog after seeing it used in the wild. Anyone still running an unpatched SharePoint Server has been exposed for weeks without knowing the clock had already started.",
+      "The flaw is a remote code execution bug rooted in deserialization of untrusted data, carrying a CVSS score of 8.8. It affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. Exploitation isn't fully unauthenticated. An attacker needs at least Site Member permissions, which sounds like a barrier until you remember how many SharePoint deployments hand out that level of access across a whole organization.",
+      "Attribution points at Storm-2603, a threat actor that has been working SharePoint bugs since mid-2025. That confidence comes from tracking, not a confession, so treat it as an assessment rather than a certainty.",
+      "Here's the detail that hasn't aged well. Microsoft's own advisory tagged this as 'Exploitation Less Likely.' It's being exploited. That label is a probability estimate, not a promise, and it's a useful reminder that a low likelihood rating is not a reason to deprioritize a patch on an internet-reachable collaboration server.",
+      "The federal deadline under BOD 26-04 was July 4, so agencies were meant to be done a week ago. If you're outside that mandate and your SharePoint boxes are still on the May level, patch them, then go read your Site Member rolls. The permission that turns this from an internal-only risk into a real one is probably sitting in a group you forgot you created.",
+    ],
+    category: "cyber",
+    tags: ["SharePoint", "Microsoft", "CISA KEV", "RCE", "Storm-2603"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-11T09:15:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CISA KEV Catalog",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Report on CVE-2026-45659 being added to KEV after exploitation",
+        url: "https://thehackernews.com/2026/07/sharepoint-rce-cve-2026-45659-added-to.html",
+      },
+      {
+        name: "Microsoft Security Response Center",
+        desc: "Vendor advisory and affected SharePoint versions",
+        url: "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-45659",
+      },
+    ],
+  },
+  {
+    id: 213,
+    slug: "nvidia-kyber-nvl144-rack-delay-2028-semianalysis-july-2026",
+    title: "Nvidia's Next AI Rack Slips to 2028 Over a Circuit Board",
+    summary: "SemiAnalysis reports the Kyber NVL144 rack has been pushed from 2027 to 2028 because its midplane circuit board is proving too hard to build, with two larger configurations delayed or cut.",
+    body: [
+      "The chip was never the problem. According to a July 6 report from SemiAnalysis, Nvidia's Kyber NVL144 rack has slipped from 2027 to 2028, and the thing holding it up is a printed circuit board. Specifically, the midplane, the dense backbone that wires 144 GPUs together inside a single rack, is proving too difficult to manufacture at the tolerances the design needs.",
+      "Kyber NVL144 was supposed to arrive alongside the Vera Rubin Ultra platform and represent the next step in Nvidia's push toward rack-scale systems, where the unit of compute is no longer a card or a server but an entire cabinet acting as one machine. A year-plus delay on that timeline is not a rounding error.",
+      "The knock-on effects are worse than the headline. SemiAnalysis says NVL576, the larger design that would link eight racks together over optical connections, is likely delayed or held to small volumes. The back-to-back NVL72x2 configuration was reportedly canceled outright. So this isn't one product slipping, it's a chunk of the rack roadmap getting rearranged.",
+      "It's a useful correction to how people talk about this industry. The story for two years has been transistors and process nodes, TSMC's 2nm, packaging. But once you're stitching hundreds of accelerators into a single power and signal domain, the hard engineering moves into the boring-sounding parts: the boards, the connectors, the cooling, the sheer physics of moving that much data across a backplane without it falling apart.",
+      "Nvidia didn't comment on the report, which is its usual posture on roadmap leaks. Suppliers won't have that luxury. The companies building midplanes and optical interconnects on the assumption of a 2027 ramp now have to plan around a gap, and their stock moves this week suggest the market already did the math.",
+    ],
+    category: "tech",
+    tags: ["Nvidia", "AI Hardware", "Data Center", "Semiconductors", "SemiAnalysis"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-11T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Tom's Hardware",
+        desc: "Report on the Kyber delay and the PCB midplane problem, citing SemiAnalysis",
+        url: "https://www.tomshardware.com/pc-components/gpus/nvidias-kyber-rack-for-rubin-ultra-slips-to-2028",
+      },
+      {
+        name: "CNBC",
+        desc: "Coverage of the Kyber rack delay over manufacturing snags",
+        url: "https://www.cnbc.com/2026/07/06/nvidia-kyber-rack-system-delays-manufacturing-taiwan-rubin-chips-.html",
+      },
+      {
+        name: "Data Center Dynamics",
+        desc: "Report on Nvidia pushing Kyber to 2028",
+        url: "https://www.datacenterdynamics.com/en/news/nvidia-pushes-kyber-release-to-2028-following-manufacturing-concerns-report/",
+      },
+    ],
+  },
+  {
+    id: 214,
+    slug: "openai-gpt-live-full-duplex-voice-models-july-2026",
+    title: "OpenAI's GPT-Live Talks and Listens at the Same Time",
+    summary: "The new GPT-Live voice models process your speech while they answer, adding real-time backchannels and interruptions, but they hand the hard reasoning off to GPT-5.5 in the background.",
+    body: [
+      "OpenAI released a pair of voice models on July 8, GPT-Live-1 and GPT-Live-1 mini, and the pitch is that they finally stop taking turns. These are full-duplex models, which means they process incoming audio and generate outgoing audio at the same time instead of waiting for you to finish a sentence before they start thinking about a reply.",
+      "In practice that buys two things. You can interrupt the model mid-answer and it reacts, the way you would cut off a person who's already told you what you needed. And it throws in the little acknowledgments that make a conversation feel live, the 'mhmm' and 'got it' that land while you're still talking. OpenAI says the model makes a decision many times a second about whether to speak, listen, pause, or reach for a tool.",
+      "Now the part the demos skip past. GPT-Live is a fast front end, not the brain. When your question needs real reasoning or a web search, GPT-Live-1 quietly ships it to GPT-5.5 in the background and folds the answer back in when it's ready. That's a sensible design, but it means the thing that feels responsive and the thing that's actually smart are two different models wearing one voice.",
+      "Full-duplex speech isn't a brand-new idea either. Labs have demoed continuous listen-and-speak systems before, and the concept has floated around research for a couple of years. What OpenAI has done is ship it as the default, which is the harder and more consequential move.",
+      "The rollout says as much about product strategy as about audio. GPT-Live-1 mini is replacing Advanced Voice Mode as the standard ChatGPT experience, with the larger GPT-Live-1 reserved for paid tiers. The real unlock here isn't a smarter assistant, it's the removal of the awkward pause, and if turn-taking latency was the thing keeping you from talking to a chatbot out loud, that's the barrier this is aimed at.",
+    ],
+    category: "ai",
+    tags: ["OpenAI", "Voice AI", "ChatGPT", "GPT-Live", "Speech Models"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-11T11:45:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "TechCrunch",
+        desc: "Report on OpenAI's new voice models for live conversation",
+        url: "https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/",
+      },
+      {
+        name: "VentureBeat",
+        desc: "Coverage of GPT-Live full-duplex voice and default rollout",
+        url: "https://venturebeat.com/technology/openai-launches-gpt-live-a-full-duplex-voice-upgrade-that-lets-chatgpt-talk-more-like-a-person",
+      },
+      {
+        name: "MarkTechPost",
+        desc: "Technical writeup on GPT-Live delegating reasoning to GPT-5.5",
+        url: "https://www.marktechpost.com/2026/07/08/openai-releases-gpt-live-and-gpt-live-1-mini-full-duplex-voice-models-that-delegate-deeper-reasoning-to-gpt-5-5/",
+      },
+    ],
+  },
+  {
+    id: 215,
+    slug: "chip-stock-rally-apple-nvidia-market-cap-race-july-2026",
+    title: "Chip Stocks Rip Higher as Apple Closes on Nvidia's Crown",
+    summary: "Friday's rally in US chipmakers pulled Japanese and Korean semiconductor stocks up sharply, even as Apple sits within striking distance of retaking the most-valuable-company title from Nvidia.",
+    body: [
+      "Semiconductor stocks had a Friday. A rally in US chipmakers spilled into Asian markets, sending Japanese and South Korean semiconductor names sharply higher, with SoftBank Group up more than 11% and chip-equipment makers Advantest and Renesas both climbing. Nvidia rose around 4% and did much of the work lifting the S&P 500.",
+      "Sitting behind the tape is a genuinely close race at the top. Nvidia holds a slim lead with a market cap hovering around $4.7 to $4.8 trillion, and Apple is a step back near $4.5 to $4.6 trillion. Analysts think Apple could retake the most-valuable-company crown as soon as this month if it delivers a strong report when it announces earnings on July 30.",
+      "What's striking about the enthusiasm is its timing. This is the same week SemiAnalysis reported that Nvidia's next-generation Kyber rack slipped to 2028 on manufacturing problems, a real setback for the rack-scale roadmap. The market looked at that and bought chip stocks anyway.",
+      "That tells you what's actually being priced. Investors aren't trading on any single product ship date. They're trading on the belief that AI capital spending keeps climbing regardless of which specific rack lands in which specific year, and that demand for anything that trains or serves a model stays, in TSMC's words, extremely robust.",
+      "It's a comfortable story right up until it isn't. A one-day rally on optimism is not the same as a roadmap executing on schedule, and the gap between those two things is exactly where the next repricing tends to come from.",
+    ],
+    category: "tech",
+    tags: ["Semiconductors", "Nvidia", "Apple", "Stock Market", "AI Capex"],
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-11T13:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Stock market coverage of the July 10 session and chip rally",
+        url: "https://www.cnbc.com/2026/07/09/stock-market-today-live-updates.html",
+      },
+      {
+        name: "Reuters via Investing.com",
+        desc: "Take Five: chips, banks and volatility, on the semiconductor rally",
+        url: "https://www.investing.com/news/economy-news/take-five-chips-banks-and-volatility-4785518",
+      },
+      {
+        name: "MacDailyNews",
+        desc: "Report on Apple closing in on Nvidia's most-valuable-company title",
+        url: "https://macdailynews.com/2026/07/08/apple-closes-in-on-nvidia-poised-to-reclaim-worlds-most-valuable-company-crown/",
+      },
+    ],
+  },
+  {
     id: 205,
     slug: "openai-gpt-5-6-sol-terra-luna-general-availability-july-2026",
     title: "GPT-5.6 Goes Public After a Two-Week Government Safety Hold",
@@ -43,7 +244,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-10T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: false,
     sources: [
@@ -312,7 +513,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: false,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Help Net Security",
@@ -1423,7 +1624,7 @@ export const articles = [
     publishedAt: "2026-07-04T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1467,7 +1668,7 @@ export const articles = [
     publishedAt: "2026-07-04T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1544,7 +1745,7 @@ export const articles = [
     publishedAt: "2026-07-04T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1624,7 +1825,7 @@ export const articles = [
     publishedAt: "2026-07-04T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
