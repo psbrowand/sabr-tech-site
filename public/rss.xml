@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jul 2026 13:16:27 GMT</lastBuildDate>
-    <pubDate>Sat, 11 Jul 2026 13:16:27 GMT</pubDate>
+    <lastBuildDate>Sun, 12 Jul 2026 13:18:39 GMT</lastBuildDate>
+    <pubDate>Sun, 12 Jul 2026 13:18:39 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Anthropic Wants to Run Its Own Data Centers, on Google&apos;s Dime</title>
+      <link>https://sabr-labs.com/article/anthropic-google-data-center-leases-compute-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-google-data-center-leases-compute-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Google</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>Compute</category>
+      <description>Anthropic is lining up direct US data-center leases for over a gigawatt of capacity, with Google reportedly backstopping around $35 billion of the financing.</description>
+      <content:encoded><![CDATA[<p>Anthropic, the maker of Claude, is trying to stop being a tenant. The company is lining up direct leases on US data centers and leaning on Google to help pay for them.</p>
+<p>According to reporting from The Information, Anthropic has assembled more than a dozen preliminary agreements for US data-center capacity adding up to more than a gigawatt. Google is helping backstop the lease payments on five of those sites, a move that could unlock roughly $35 billion in financing for the buildout.</p>
+<p>The shift matters because of what it changes about Anthropic's business. Until now the company mostly bought compute through cloud providers and let someone else run the buildings. Taking leases directly means operating facilities, carrying the obligations, and owning the risk that comes with them. It's the same path OpenAI and Meta already walked. When your product is bottlenecked on GPUs and power, you eventually stop outsourcing the exact thing you're bottlenecked on.</p>
+<p>Here's the part worth sitting with. Google is both an Anthropic investor and, through Gemini, a direct competitor, and it's now backstopping Anthropic's debt on data centers that will likely run Google's own TPUs. Money flows out to a rival and comes back as chip and cloud commitments. The financing behind this AI boom is getting circular enough that who is really funding whom is a fair question, not a cynical one.</p>
+<p>Anthropic's answer is demand. Reported run-rate revenue has climbed past $30 billion this year, up from around $9 billion at the end of 2025, and that curve is the case for signing up to a gigawatt-plus of new capacity. The bet underneath all of it is that customer demand keeps pace with the concrete and the power bills. If it does, owning the infrastructure looks shrewd. If it slips, those leases don't get any smaller.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta Puts Its Own AI Chip, Iris, Into Production in September</title>
+      <link>https://sabr-labs.com/article/meta-iris-mtia-ai-chip-production-september-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-iris-mtia-ai-chip-production-september-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Meta</category>
+      <category>AI Chips</category>
+      <category>MTIA</category>
+      <category>Broadcom</category>
+      <category>TSMC</category>
+      <description>An internal memo reported this week says Meta&apos;s in-house Iris accelerator, built with Broadcom and TSMC, enters production in September as it tries to escape GPU costs.</description>
+      <content:encoded><![CDATA[<p>Meta is tired of renting all its compute from Nvidia. In September it starts producing Iris, its own data-center AI chip, according to an internal memo reported this week.</p>
+<p>Iris is the newest of Meta's MTIA accelerators, part of a four-generation in-house program the company designs itself. Broadcom helped with the design and TSMC will manufacture it. Meta says testing wrapped in about six weeks with no major issues, which is quick for a chip this ambitious.</p>
+<p>The logic is the same one driving every hyperscaler down this road: escape the GPU tax. Meta's projected AI infrastructure spending runs as high as $145 billion this year, and silicon tuned to its own recommendation and ranking workloads is how it hopes to bend that number. The chip feeds a plan to roughly double compute to 14 gigawatts by 2027, backed by long-term supply deals with Samsung, SanDisk, and Sumitomo Electric.</p>
+<p>Custom silicon is the move of the moment. Google has TPUs, Amazon has Trainium, and now Meta has MTIA far enough along to name a production date. But designing a chip and betting production workloads on it are different sports. Testing went fine is what everyone says right before the ramp exposes the yield problems and the software gaps. The honest test isn't the tape-out. It's whether Meta's own researchers reach for Iris when they need to train something that matters, or quietly ask for more Nvidia GPUs instead.</p>
+<p>If Iris clears that bar, it's a genuine dent in Nvidia's grip on the one customer segment it can least afford to lose. If it doesn't, it joins the long list of internal accelerators that shipped a press release and not much compute.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SK Hynix Raises $26.5B in the Biggest Foreign IPO in US History</title>
+      <link>https://sabr-labs.com/article/sk-hynix-nasdaq-ipo-26-billion-hbm-memory-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-nasdaq-ipo-26-billion-hbm-memory-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SK Hynix</category>
+      <category>IPO</category>
+      <category>Semiconductors</category>
+      <category>HBM</category>
+      <category>Nasdaq</category>
+      <description>The Korean memory maker sold $26.5 billion of stock on Nasdaq and jumped 13% on day one, a bet by US investors on the memory bottleneck of the AI buildout.</description>
+      <content:encoded><![CDATA[<p>Twenty-six and a half billion dollars. That's what SK Hynix pulled out of US markets on Friday, the largest debut ever by a non-American company and the second-biggest US listing of any kind, behind only SpaceX from a month ago.</p>
+<p>The South Korean memory giant sold roughly 177.9 million American depositary shares at $149 apiece and closed its first Nasdaq session up about 13%, near $168. Demand ran more than seven times the shares on offer. It trades under the ticker SKHY.</p>
+<p>SK Hynix isn't a household name the way Nvidia is, but it should be. The company makes more than half the world's supply of high-bandwidth memory, the stacked DRAM that sits right next to every serious AI accelerator. An H-series GPU with no HBM to feed it is an expensive paperweight. So the money here isn't really a bet on a Korean chipmaker. It's a bet on the memory bottleneck of the entire AI buildout, and on the one company that dominates it.</p>
+<p>The scale of the raise tells you how badly US investors wanted in. It tops Alibaba's $25 billion listing from 2014 and clears the bar for the largest foreign debut on record. For a memory company, historically the least glamorous corner of semiconductors, that's a remarkable place to land.</p>
+<p>Now the interesting part. The US Commerce Secretary has reportedly already opened talks with SK Hynix and Samsung about building new fabs on American soil, and a blockbuster US listing hands Washington leverage it didn't have when Hynix was purely a Seoul-listed firm. Fresh American shareholders and a government pushing for domestic plants tend to pull in the same direction. Whether that turns into actual fab announcements or stays a talking point is the thing worth tracking from here.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Zimbra Patches a Web Client Flaw Google&apos;s TAG Turned Up</title>
+      <link>https://sabr-labs.com/article/zimbra-classic-web-client-stored-xss-10-1-19-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zimbra-classic-web-client-stored-xss-10-1-19-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Zimbra</category>
+      <category>XSS</category>
+      <category>Email Security</category>
+      <category>Google TAG</category>
+      <category>Zero-Day</category>
+      <description>Zimbra&apos;s 10.1.19 update fixes a stored XSS in the Classic Web Client that runs code from a crafted email; the reporter, Google&apos;s TAG, is the detail worth reading.</description>
+      <content:encoded><![CDATA[<p>A booby-trapped email that runs code the moment you open it in Zimbra's Classic Web Client. That's the flaw Zimbra fixed this week in version 10.1.19, and it's the kind of bug that turns a mail server into an entry point.</p>
+<p>Technically it's a stored cross-site scripting issue in the Classic Web Client of Zimbra Collaboration Suite. A specially crafted message executes script inside your session, which is enough to lift session data, account settings, or mailbox contents. Only the Classic Web Client is affected. The fix is ZCS 10.1.19, and anyone upgrading from 10.0.x, 9.0.x, or 8.8.15 has to reapply the SNMP mitigation after the update, so don't skip that step.</p>
+<p>Zimbra didn't publish a CVE identifier or a CVSS score, which is a choice. What it did disclose is who found the bug: Google's Threat Analysis Group.</p>
+<p>That name is the story. TAG exists to track zero-days used by government-backed attackers. When TAG is the reporter on a webmail vulnerability, the quiet subtext is that someone was likely already using it, or was about to. Zimbra's Classic Web Client has a long history as a favorite target for exactly that crowd, with multiple past zero-days burned in nation-state campaigns. A vendor advisory that says nothing about exploitation while crediting TAG for the find should be read as two facts sitting next to each other, not one.</p>
+<p>Patch to 10.1.19 now, and reapply the SNMP mitigation if you came up from an older branch. If you have the option, this is one more reason to move users off the Classic Web Client entirely. It keeps drawing this kind of attention, and the modern client isn't in the blast radius here.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>China and India Ran Separate Spy Campaigns on One Police Force</title>
+      <link>https://sabr-labs.com/article/china-india-espionage-pakistan-police-sentinellabs-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/china-india-espionage-pakistan-police-sentinellabs-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cyberespionage</category>
+      <category>APT</category>
+      <category>PlugX</category>
+      <category>ShadowPad</category>
+      <category>SentinelLABS</category>
+      <description>SentinelLABS says suspected China- and India-linked groups independently spent two years inside Pakistani law enforcement systems holding biometric and criminal records.</description>
+      <content:encoded><![CDATA[<p>Two rival intelligence operations, from two countries that spend most of their time glaring at each other across a contested border, ended up crawling through the same Pakistani police network. Neither one appears to have known the other was there.</p>
+<p>That's the picture SentinelLABS painted in a report published July 9. Suspected China-linked and India-linked clusters independently targeted Pakistani law enforcement organizations between February 2024 and April 2026, with the Balochistan Police as the primary target. Attribution here is assessed from tooling and infrastructure, not confessed, so read it as a well-supported assessment rather than a certainty.</p>
+<p>What they were after says a lot. The compromised servers ran the web applications behind criminal case files, personnel records, and biometric records tied to national identity, along with hotel and tenant registrations. For a foreign intelligence service, that's not data theft for its own sake. It's a map of who is who, who is where, and who is worth watching.</p>
+<p>SentinelLABS flagged four distinct threat clusters, each leaning on a different malware family: PlugX, ShadowPad, Cobalt Strike, and Remcos RAT. The Remcos activity is the one tied to an India-nexus actor. The PlugX, ShadowPad, and Cobalt Strike tooling is shared or commodity enough that more than one operator could be hiding behind it, which is part of why the researchers stop short of naming names.</p>
+<p>The sharpest detail is how one intrusion was delivered. Attackers compromised the Balochistan Police complaint portal, a system used by both officers and the public, and planted files dressed up as legitimate software updates. Run one and it quietly pulled down more malware from attacker infrastructure. A public complaint system became a malware distribution point.</p>
+<p>SentinelLABS assesses the China-linked activity was driven in part by concern for the safety of Chinese nationals working on China-Pakistan Economic Corridor projects. Espionage against an ally's police force is an old move. Doing it through the ally's own citizen-facing portal, while a second rival service works the same building, is the version worth remembering.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A WhatsApp Message Can Hijack OpenClaw and the Host It Runs On</title>
+      <link>https://sabr-labs.com/article/openclaw-claw-chain-whatsapp-host-rce-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openclaw-claw-chain-whatsapp-host-rce-july-2026</guid>
+      <pubDate>Sun, 12 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>OpenClaw</category>
+      <category>AI Agents</category>
+      <category>RCE</category>
+      <category>Command Injection</category>
+      <category>Sandbox Escape</category>
+      <description>Researcher Chinmohan Nayak chained three OpenClaw flaws so a single inbound WhatsApp message runs code on the host; all three are fixed in version 2026.6.6.</description>
+      <content:encoded><![CDATA[<p>Send the right WhatsApp message to someone running OpenClaw and you can climb out of the assistant's sandbox and onto the machine it lives on. No stolen password, no phishing link they have to click, no prior foothold. Just a message.</p>
+<p>That's the attack security researcher Chinmohan Nayak put together against OpenClaw, the self-hosted personal AI assistant. He chained three separate weaknesses into a clean path from an inbound message to full host code execution, and the project fixed all of them in version 2026.6.6. Two of the bugs are OS command injection flaws where the input filtering was left incomplete. The third is a path traversal and symlink trick that breaks the assistant out of the sandbox it's supposed to stay inside.</p>
+<p>The sandbox escape is the part worth slowing down on. By mounting parent directories the attacker can reach the things you never want an untrusted process touching: SSH keys, AWS credentials, GPG secrets, and the Docker socket. Once you can talk to the Docker socket, the sandbox is a formality. You own the host.</p>
+<p>GitHub's advisories rate two of the flaws 8.8 and the third 8.4, and the severity makes sense once you remember what these assistants are wired into. People connect OpenClaw to their messages, their email, their files, their cloud accounts, on purpose. The blast radius isn't one app. It's the user's whole digital life.</p>
+<p>The uncomfortable thing isn't this one chain, it's the run OpenClaw has been on. Earlier this year a separate token-exfiltration bug let an attacker steal a user's auth token and connect straight to their instance. Self-hosted AI agents are being pointed at the open internet with roughly the trust boundary of a 2004 PHP forum, and the tooling is racing ahead of the security review that's supposed to keep pace with it.</p>
+<p>If you run OpenClaw, three things. Update to 2026.6.6 today. Don't expose the instance to the public internet; sit it behind a VPN or an auth proxy so a stranger's message can't reach it in the first place. And treat every inbound message an agent processes as hostile input, because as this chain shows, that's exactly what it can be.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Chip Stocks Rip Higher as Apple Closes on Nvidia&apos;s Crown</title>
       <link>https://sabr-labs.com/article/chip-stock-rally-apple-nvidia-market-cap-race-july-2026</link>
@@ -856,121 +972,6 @@
 <p>From there the funnel narrows the way these things do. SOCRadar tracked scanning against roughly 11,250 portals in more than 150 countries, confirmed admin-level access on 409 of them, and saw the full intrusion chain completed on 354. At least a dozen of those ended in ransomware. Those are the cases researchers could see. The real number is almost certainly higher.</p>
 <p>One detail cuts against the lone-hacker image. An internal tracking document points to an organization of about twenty people: a small core doing the high-value break-ins, specialists for specific tasks, and a back-office tier of juniors and technical support. This is a company. It has a staffing chart.</p>
 <p>If you run FortiGate anywhere, assume any credentials that crossed those devices are burned. Rotate them, force re-authentication, and hunt for the sniffer: unexpected use of diagnose sniffer packet, odd admin sessions, config changes nobody made. Patching won't save you here, because there was nothing to patch. This was your own firewall's diagnostics used against you.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Alleged Scattered Spider Member Extradited From Finland to Chicago</title>
-      <link>https://sabr-labs.com/article/scattered-spider-peter-stokes-extradited-finland-doj-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/scattered-spider-peter-stokes-extradited-finland-doj-july-2026</guid>
-      <pubDate>Fri, 03 Jul 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Scattered Spider</category>
-      <category>DOJ</category>
-      <category>Social Engineering</category>
-      <category>Extradition</category>
-      <category>Ransomware</category>
-      <description>The DOJ says Peter Stokes, 19, was extradited from Finland to face charges tied to a hacking group blamed for more than 100 intrusions and $100 million in ransoms.</description>
-      <content:encoded><![CDATA[<p>The pitch is almost embarrassingly low-tech: call a company's help desk, say you're a locked-out employee, and talk someone into resetting your password. Prosecutors say Scattered Spider turned that into more than 100 break-ins and over $100 million in ransom payments.</p>
-<p>On July 1 the Justice Department said one of its alleged members is now in a Chicago jail. Peter Stokes, 19, a dual U.S. and Estonian citizen, was arrested in Finland in April on an Interpol Red Notice and extradited to the U.S. in late June. He appeared in federal court on June 30, where a judge ordered him held. The complaint charges conspiracy, computer intrusion, and fraud.</p>
-<p>Prosecutors point to one job in particular. In May 2025, they say, Stokes and others broke into a luxury jewelry retailer, copied its data, and demanded roughly $8 million in cryptocurrency. The retailer refused, kicked the intruders out, and spent at least $2 million cleaning up. That's the pattern with this group. The ransom demand is the headline, but the cleanup bill lands whether or not anyone pays.</p>
-<p>Scattered Spider isn't a hierarchy so much as a loose, mostly English-speaking scene of young people across the U.S., U.K., and Europe, a lot of them teenagers. That's exactly what makes them hard to stamp out. Arrest one and the technique survives, because the technique is just talking. The group's real weapon has always been the phone, not the exploit.</p>
-<p>Extraditions like this one are the government's answer, and they do matter. A 19-year-old facing U.S. federal charges is a real deterrent signal. But the help-desk social engineering that Scattered Spider runs on works against companies that haven't hardened their identity-reset process, and most still haven't. If your IT support can reset MFA on a phone call, you're exposed to the same play, indictment or not.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The AI Memory Crunch Is Pushing Apple Toward Blacklisted Chip Suppliers</title>
-      <link>https://sabr-labs.com/article/apple-ai-memory-crunch-blacklisted-chinese-chips-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-ai-memory-crunch-blacklisted-chinese-chips-july-2026</guid>
-      <pubDate>Fri, 03 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Memory Chips</category>
-      <category>DRAM</category>
-      <category>Supply Chain</category>
-      <category>AI Infrastructure</category>
-      <description>A DRAM and NAND shortage driven by AI data centers has Apple reportedly in talks to buy memory from two Pentagon-blacklisted Chinese suppliers, and raising prices to cope.</description>
-      <content:encoded><![CDATA[<p>The AI data-center boom is reaching into your next phone's price tag. Soaring demand for high-bandwidth memory has drained supply of ordinary DRAM and NAND, prices are climbing fast, and Apple is reportedly weighing a supplier it would normally never touch.</p>
-<p>Bloomberg reported on July 1 that Apple is in talks to buy memory chips from two Chinese manufacturers that sit on a Pentagon blacklist. For a company that has spent years distancing its supply chain from Chinese state-linked firms, that's a notable reversal, and it says a lot about how tight the memory market has gotten. Apple has already raised prices across parts of its lineup to absorb higher component costs.</p>
-<p>The cause is straightforward. AI servers eat high-bandwidth memory, the stacked DRAM that feeds GPUs, and memory makers have shifted capacity toward it because the margins are better. That leaves less fab space for the commodity DRAM and NAND that goes into phones, laptops, and SSDs. When the same factories can sell every wafer to a data center, consumer devices lose the bidding war.</p>
-<p>Buying from blacklisted suppliers isn't a clean fix. It invites regulatory and political friction, and Bloomberg says Apple is pairing the talks with a lobbying push, which tells you the company knows this is delicate. The alternative is worse for Apple: keep eating shortage-driven costs, or pass even more of them to customers.</p>
-<p>This is the part of the AI buildout that doesn't make the keynote slides. The capital pouring into inference and training capacity has second-order effects, and one of them is that a memory chip in a mid-range laptop now competes with a hyperscaler's order book. Expect flagship phones from Samsung and Apple to carry the cost. The AI bill is getting itemized onto consumer hardware, and buyers are the ones paying it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Nano Banana 2 Lite Bets on Cheap, Fast AI Media Over Frontier Wins</title>
-      <link>https://sabr-labs.com/article/google-nano-banana-2-lite-gemini-omni-flash-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-nano-banana-2-lite-gemini-omni-flash-july-2026</guid>
-      <pubDate>Fri, 03 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>Generative AI</category>
-      <category>Image Generation</category>
-      <category>DeepMind</category>
-      <description>Google put Nano Banana 2 Lite and Gemini Omni Flash in front of developers, competing on speed and price with roughly four-cent images and per-second video.</description>
-      <content:encoded><![CDATA[<p>Google's latest AI drop isn't about a smarter model. It's about a cheaper one. On June 30 the company put Nano Banana 2 Lite and Gemini Omni Flash in front of developers, and the pitch is speed and price, not raw capability.</p>
-<p>Nano Banana 2 Lite, internally gemini-3.1-flash-lite-image, generates a 1K image in about four seconds for roughly $0.034 apiece. Gemini Omni Flash is the video and conversational-editing counterpart, priced at $0.10 per second of output, which Google says matches its Veo 3.1 Fast tier. Omni Flash tops out at 10-second clips for now, with longer runs promised later.</p>
-<p>The intended workflow is a tell. Google wants you to generate an image with Nano Banana 2 Lite, then hand that image to Omni Flash to animate it into video. This is generative media aimed at volume, the throughput you need for ad variations, product shots, and app content pipelines, not one-off hero images. Both are live in the Gemini API and AI Studio, and Nano Banana 2 Lite is rolling into consumer surfaces like AI Mode in Search.</p>
-<p>Here's the honest read. A 'Lite' model is Google conceding that most generative-media calls don't need the flagship. They need to be cheap enough to run a million times. That's a smart business move, and it's also an admission that the frontier-quality race has cooled into a cost race for a lot of real usage. The interesting figure here isn't a benchmark score. It's the four cents per image.</p>
-<p>For developers, the math is the story. When image generation costs less than a rounding error, the constraint stops being budget and starts being what you can find to do with it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CCSP Exam Adds AI Content August 1, and the Timing Matters</title>
-      <link>https://sabr-labs.com/article/ccsp-exam-ai-refresh-august-2026-test-timing</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ccsp-exam-ai-refresh-august-2026-test-timing</guid>
-      <pubDate>Fri, 03 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CCSP</category>
-      <category>ISC2</category>
-      <category>Certification</category>
-      <category>Cloud Security</category>
-      <category>AI Security</category>
-      <description>ISC2 refreshes the CCSP outline on August 1 with more AI and cloud-workload content; the format stays the same, but when you sit the exam now matters.</description>
-      <content:encoded><![CDATA[<p>If you're studying for the CCSP, you have a date to care about: August 1, 2026. That's when ISC2 rolls the exam to a new outline, and it changes what you should study and, more usefully, when you should sit.</p>
-<p>The good news first. The format isn't moving. You keep the six domains, the computerized adaptive testing format of 100 to 150 items over three hours, and the same 700-out-of-1000 scaled passing score. What's shifting is content. AI and machine learning topics are being folded into the existing domains rather than spun off into a new one, so expect more weight on cloud workload protection, model and data-pipeline exposure, and the shared-responsibility questions around managed AI services.</p>
-<p>So should you test before or after? If you're already deep in prep with current materials, book a date before August 1 and go. Your study guide matches the exam you'll take, and there's no reason to relearn against a blueprint that isn't published in full yet. If you're just starting and have a three-month-plus runway, plan around the new outline instead, because you'll be studying into it anyway.</p>
-<p>One caution applies to every ISC2 refresh: download the official exam outline from ISC2 directly when it lands, and don't trust secondhand summaries, including this one, for the fine-grained weights. Third-party bootcamp blogs are useful for orientation and terrible for exact percentages. And book early. Testing slots always compress in the weeks before an outline change, because everyone else is trying to beat the same deadline.</p>
-<p>The AI content isn't a gimmick, by the way. Cloud security jobs increasingly mean securing the AI stack running on that cloud, and the exam is catching up to that. Whichever version you take, that material is worth actually learning, not just passing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta Had Kenyan Workers Pose as Teens to Probe Rival Chatbots</title>
-      <link>https://sabr-labs.com/article/meta-cannes-kenya-contractors-posing-as-teens-chatbot-testing-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-cannes-kenya-contractors-posing-as-teens-chatbot-testing-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>AI Safety</category>
-      <category>Content Moderation</category>
-      <category>Wired</category>
-      <category>Chatbots</category>
-      <description>A Wired investigation says Meta ran a project called Cannes that fed tens of thousands of harmful prompts to ChatGPT, Gemini and Character.AI.</description>
-      <content:encoded><![CDATA[<p>Meta ran an operation, internally named Cannes, in which contractors in Kenya posed as children and teenagers and pushed rival AI chatbots toward their worst possible answers. That is the core of a Wired investigation published this week, and it is one of the stranger stories the AI beat has produced.</p>
-<p>The contractors, managed through a firm called Covalen, sent prompts about suicide, sex and drugs to ChatGPT, Google's Gemini and Character.AI while presenting as minors. Wired reports one round alone ran more than 45,000 prompts and wrapped in August 2025, and that the effort was still active as recently as April 21 of this year. Workers also used images of pills, knives and nooses as part of the testing.</p>
-<p>Meta's framing is that this is ordinary safety work. The company calls testing and benchmarking chatbot responses a responsible, industry-standard practice for ensuring age-appropriate experiences. There is a real version of that argument. Red-teaming models against how a vulnerable teenager might actually use them is genuinely important, and every serious lab does some form of it.</p>
-<p>But the details strain the safety label. Experts told Wired that spinning up accounts dressed as children to probe competitors sits outside what is normally called industry-standard evaluation. Safety testing you do on your own product to fix it is one thing. Systematically stress-testing rivals' products, at scale, looks a lot more like competitive intelligence wearing a safety badge.</p>
-<p>The human cost is the part that should not get lost. This is content moderation's oldest pattern, low-paid workers in the global south absorbing the most disturbing material so a trillion-dollar company doesn't have to. The Nairobi outsourcing firm Sama, which has done this kind of work for Meta before, issued redundancy notices to more than 1,100 employees in April after a major Meta engagement ended, following whistleblower complaints about the content those workers had to handle.</p>
-<p>If Cannes was really about child safety, the obvious question is why it needed to run through disposable contractors in Kenya rather than a transparent, disclosed research program. Meta has not answered that one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>UK&apos;s National Grid Puts $1.75B Into US Power for AI Data Centers</title>
-      <link>https://sabr-labs.com/article/national-grid-joulent-1-75-billion-ai-data-center-power-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/national-grid-joulent-1-75-billion-ai-data-center-power-july-2026</guid>
-      <pubDate>Thu, 02 Jul 2026 12:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>National Grid</category>
-      <category>Joulent</category>
-      <category>Data Centers</category>
-      <category>Energy</category>
-      <category>Microsoft</category>
-      <description>National Grid is buying a 35% stake in Joulent, whose first project is a 2.67-gigawatt Texas plant feeding a Microsoft data center.</description>
-      <content:encoded><![CDATA[<p>The constraint on AI right now is not chips. It is watts. Britain's National Grid just made that literal by committing $1.75 billion for a 35 percent stake in Joulent, a US company that builds power for the largest electricity users, meaning data centers and the AI clusters inside them.</p>
-<p>The money goes through National Grid Ventures, and the anchor project tells you exactly what this is about. Joulent's first build is Project Kilby, a 2.67-gigawatt gas-fired plant in West Texas that will feed a Microsoft-operated data center campus under a 20-year power purchase agreement, with Chevron as a partner. Joulent is targeting first power by 2028.</p>
-<p>Read the shape of the deal and you see the real story. A regulated UK grid operator is reaching across the Atlantic to buy into American gas generation, because that is where the demand is and because getting new load connected to the existing grid has become the bottleneck. Interconnection queues stretch for years in a lot of US markets. Building dedicated generation next to the data center sidesteps the wait.</p>
-<p>National Grid was careful to say this is incremental to its existing capital program of at least 70 billion pounds through the 2031 financial year, funded from balance-sheet headroom, and does not change its five-year framework. Translation: don't read this as a strategy wobble, read it as a bolt-on bet on a demand curve they expect to keep climbing.</p>
-<p>For everyone watching the AI buildout, this is the pattern to track. The headline announcements are about models and chips. The projects that actually gate how fast any of it gets deployed are power plants and substations, and the capital is starting to flow accordingly.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
