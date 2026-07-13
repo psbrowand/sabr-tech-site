@@ -6,9 +6,110 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jul 2026 13:18:39 GMT</lastBuildDate>
-    <pubDate>Sun, 12 Jul 2026 13:18:39 GMT</pubDate>
+    <lastBuildDate>Mon, 13 Jul 2026 13:18:44 GMT</lastBuildDate>
+    <pubDate>Mon, 13 Jul 2026 13:18:44 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Two Joomla Extension Flaws Rated 10.0 Are Being Exploited Right Now</title>
+      <link>https://sabr-labs.com/article/joomla-icagenda-balbooa-forms-cve-2026-48939-56291-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/joomla-icagenda-balbooa-forms-cve-2026-48939-56291-kev-july-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Joomla</category>
+      <category>CVE</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <category>Zero-Day</category>
+      <description>CISA gave federal agencies until today to patch iCagenda and Balbooa Forms, two Joomla add-ons with perfect-score file-upload bugs already used in automated attacks.</description>
+      <content:encoded><![CDATA[<p>A perfect 10.0 on the CVSS scale means there's nothing left to make the bug worse. Two Joomla extensions hit that mark this month, and both are being exploited in the wild before most site owners knew there was anything to patch.</p>
+<p>The first is CVE-2026-48939 in iCagenda, a widely used events-calendar extension. Its 'Submit an Event' form lets an unauthenticated visitor attach a file, and the extension never checks what that file actually is. Upload a PHP script, request it, and you're running code on the server. Attackers have been doing exactly that since June 15, weeks before a fix existed, using a scanner that identifies itself in logs as 'icagenda-batch/1.0.' The patched builds are 4.0.8 and 3.9.15; anything from 3.2.1 through 3.9.14, or 4.x up to 4.0.7, is exposed.</p>
+<p>The second, CVE-2026-56291, sits in Balbooa Forms and is arguably worse in construction. There's no login required, no CSRF token, and no file-type validation on the upload path. It reads like the security checklist was skipped entirely. Researchers found it being used as a zero-day on July 8. Version 2.4.1 closes it; everything up to 2.4.0 is fair game.</p>
+<p>CISA added both to its Known Exploited Vulnerabilities catalog and set the federal patch deadline for today, July 13. That deadline only binds civilian agencies, but the KEV list is the closest thing the industry has to a fix-this-now siren, and everyone else should read it the same way.</p>
+<p>This fits a pattern the Australian Cyber Security Centre flagged as a large-scale campaign against content-management add-ons. The core CMS isn't the soft spot anymore. It's the third-party extension nobody's tracking, installed once for a contact form or an events page and then forgotten through a dozen update cycles.</p>
+<p>If you run Joomla, the move is boring and urgent: inventory your extensions, patch iCagenda and Balbooa Forms today, and check your upload directories for anything with a script extension that shouldn't be there. A file that showed up in June is not a false alarm.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Security Vendor&apos;s npm Package Got Hijacked to Ship an Infostealer</title>
+      <link>https://sabr-labs.com/article/jscrambler-npm-compromise-rust-infostealer-supply-chain-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/jscrambler-npm-compromise-rust-infostealer-supply-chain-july-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 12:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>npm</category>
+      <category>Supply Chain</category>
+      <category>Infostealer</category>
+      <category>Malware</category>
+      <category>DevSecOps</category>
+      <description>Someone pushed a malicious jscrambler release to npm on Saturday that drops a Rust infostealer hunting for cloud keys, crypto wallets, and even your AI coding tool&apos;s config.</description>
+      <content:encoded><![CDATA[<p>jscrambler sells tools that protect JavaScript from tampering. On Saturday, its own npm package got tampered with.</p>
+<p>On July 11, someone used a compromised publishing credential to push version 8.14.0 of the jscrambler package to the npm registry. The release carried a preinstall hook, meaning the malicious code runs the moment you install it, before you've imported a single line. That hook drops and executes a Rust-based infostealer that runs on Windows, macOS, and Linux.</p>
+<p>The payload goes after the things that hurt most to lose: cloud credentials, CI/CD tokens, active browser sessions, cryptocurrency wallets, and Bitwarden vaults. It also reads the config files of AI coding assistants like Claude Desktop and Cursor, which increasingly hold API keys and access tokens developers forgot they'd pasted in. That target is newer, and it's a sign attackers have noticed where developers now keep their secrets.</p>
+<p>The package pulls roughly 15,800 downloads a week, so the blast radius could have been large. It wasn't, mostly because Socket's scanners flagged the release about six minutes after it went up. The same actor didn't stop at one build, though, pushing 8.16.0, 8.17.0, 8.18.0, and 8.20.0 over the next three hours or so, a spray-and-pray attempt to slip a poisoned version in before anyone reacted.</p>
+<p>jscrambler deprecated the malicious versions and says it has found zero confirmed malicious downloads, with the investigation ongoing. That's the good outcome, if it holds. But zero-confirmed isn't zero, and preinstall hooks execute on every machine that pulled the package in that window, including CI runners that install fresh dependencies on every job.</p>
+<p>This is the shape of npm attacks in 2026: not a typo-squatted nobody package, but a real, trusted one taken over through a stolen credential. npm's coming v12 release finally blocks install scripts by default, which would have neutered this exact attack. It ships this month. It couldn't come soon enough.</p>
+<p>If your builds pulled jscrambler between Saturday and now, assume the credentials on that machine are burned. Rotate cloud keys, CI tokens, and anything a browser session touched, and don't trust that a clean-looking lockfile means you dodged it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Three FortiSandbox Flaws Are Being Exploited to Own the Appliance</title>
+      <link>https://sabr-labs.com/article/fortisandbox-cve-2026-25089-26083-active-exploitation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fortisandbox-cve-2026-25089-26083-active-exploitation-july-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Fortinet</category>
+      <category>FortiSandbox</category>
+      <category>CVE</category>
+      <category>RCE</category>
+      <category>Active Exploitation</category>
+      <description>Two of the FortiSandbox bugs Fortinet patched in June carry 9.8 severity scores, and researchers now see them exploited to take over the malware-analysis appliance itself.</description>
+      <content:encoded><![CDATA[<p>FortiSandbox exists to detonate suspicious files in isolation so they can't hurt anything. So there's a particular sting to attackers using the appliance itself as the way in.</p>
+<p>Fortinet patched the flaws on June 9. The two headline entries are CVE-2026-25089 and CVE-2026-26083, both rated 9.8. The first is an OS command injection in the web interface that a remote, unauthenticated attacker can hit with a crafted HTTP request. The second is a missing-authorization bug that gets them where they shouldn't be. Chained, they hand over command execution on the box with no credentials at all.</p>
+<p>Affected versions run across the 4.2, 4.4, and 5.0 branches, plus the Cloud and PaaS deployments. Fortinet's fixed builds are 5.0.6 and 4.4.9 or later. If you're on anything older and internet-reachable, treat it as a live problem.</p>
+<p>The reason this jumped from patch-soon to patch-now is that it's being used. Tracking firms reported exploit attempts hitting production endpoints within weeks of disclosure, and by early July the exploitation was confirmed rather than theoretical.</p>
+<p>A compromised sandbox is a nasty foothold. It sees the files an organization was already suspicious of. From there an attacker can read submitted samples and analysis reports, quietly switch off detection, pivot into the internal network, or drop ransomware from a device the security team implicitly trusts. The tool built to watch for intrusions becomes the one nobody's watching.</p>
+<p>Fortinet appliances have been a recurring name on the KEV list for a reason: they sit at the edge, they're internet-facing, and they're a fast route inward. Patch to 5.0.6 or 4.4.9, pull the management interface off the public internet, and check access logs for the window between June 9 and whenever you actually updated.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>TSMC&apos;s June Sales Jumped 68%, and the AI Ceiling Question Is Still Open</title>
+      <link>https://sabr-labs.com/article/tsmc-june-revenue-surge-q2-earnings-cowos-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tsmc-june-revenue-surge-q2-earnings-cowos-july-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>TSMC</category>
+      <category>Semiconductors</category>
+      <category>AI Chips</category>
+      <category>Earnings</category>
+      <category>CoWoS</category>
+      <description>TSMC posted a 68% jump in June revenue ahead of Wednesday&apos;s earnings, but the number investors actually care about is how much CoWoS packaging it can build.</description>
+      <content:encoded><![CDATA[<p>Sixty-eight percent. That's how much TSMC's June revenue climbed year over year, a figure the world's largest contract chipmaker reported Monday ahead of its full quarterly results this week.</p>
+<p>For the first half of 2026, revenue reached NT$2.4 trillion, about $75 billion, up nearly 36% from the same stretch last year. TSMC reports Q2 earnings on July 16, and Wall Street is looking for roughly $40 billion in quarterly revenue, up about a third from a year ago. The company builds the chips at the center of the AI buildout, so its results have become a proxy for whether that buildout is still accelerating or starting to cool.</p>
+<p>The headline growth number isn't really the story anymore. The constraint is. TSMC's advanced packaging technology, CoWoS, is the bottleneck for high-end AI accelerators, and it's harder to scale than the chips themselves. Nvidia has reportedly booked around 60% of TSMC's CoWoS capacity through 2026, plus more than half of the planned 2026-2027 expansion. When one customer locks up that much of a scarce process, the question of how much TSMC can make matters more than how much it sold.</p>
+<p>AI chips are on track to bring in more than $40 billion for TSMC this year, close to a quarter of total revenue. Its N3 node is sold out, targeted by every leading AI GPU and CPU in production. That's a comfortable position, but it also means there's no slack. If demand keeps climbing, the ceiling isn't willingness to buy. It's fab and packaging capacity that takes years to build.</p>
+<p>TSMC has also told major customers to expect price increases of 5% to 10% on its leading-edge processes, the 7nm-and-below work that makes up roughly three-quarters of its revenue. When a supplier this dominant raises prices across the board and customers pay it, that tells you who holds the pricing power. The cost eventually lands in the AI infrastructure bills everyone else is running up.</p>
+<p>Wednesday's call will get parsed for three things: full-year guidance, any change to capex, and whatever TSMC says about CoWoS capacity. The revenue number is already strong. What investors want to know is whether the company can build fast enough to keep the AI trade from tripping over its own supply chain.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta&apos;s Brain-to-Text Decoder Hit 61% Accuracy Without Surgery</title>
+      <link>https://sabr-labs.com/article/meta-brain2qwerty-v2-noninvasive-brain-to-text-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-brain2qwerty-v2-noninvasive-brain-to-text-july-2026</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Meta</category>
+      <category>Brain-Computer Interface</category>
+      <category>Neuroscience</category>
+      <category>MEG</category>
+      <category>AI Research</category>
+      <description>Meta&apos;s Brain2Qwerty v2 reads typed sentences from non-invasive brain scans at 61% word accuracy, a big jump that still depends on a room-sized magnetometer.</description>
+      <content:encoded><![CDATA[<p>Meta's research lab says its latest brain-to-text system decodes typed sentences at 61% word accuracy without touching the brain. That's a real result. It also comes with a machine the size of a small room attached to it.</p>
+<p>The system is called Brain2Qwerty v2, from Meta's FAIR group. It reads magnetoencephalography signals, MEG, which pick up the faint magnetic fields your neurons produce, and turns them into text. The headline is the jump: non-invasive decoding went from about 8% word accuracy to 61% across nine participants, with the best individual hitting 78%. An eightfold gain is not the kind of thing this field expected to see this decade.</p>
+<p>Under the hood it's end-to-end deep learning on raw brain signals paired with fine-tuned language models, moving from spelling out characters to decoding whole words and meaning. Meta trained it on roughly 22,000 sentences, recorded from nine volunteers who each sat under an MEG scanner for about ten hours. The language-model layer does a lot of the work, using context to clean up an imperfect neural signal, the same trick that makes speech recognition usable.</p>
+<p>Here's the part the demos gloss over. MEG hardware isn't wearable. It's a shielded room and a cryogenically cooled sensor array that costs as much as a house, and it needs the subject to hold still. This is a lab result about what's decodable in principle, not a product you'll strap on. Surgical implants still beat it on accuracy, and Meta's own researchers admit the gap with intracranial approaches remains.</p>
+<p>So why care? Because the trend line is the point. Every prior high-accuracy brain-to-text result required cutting into someone's skull, with the infection risk and signal decay that brings. Getting non-invasive methods anywhere near usable reframes what's possible for people who've lost the ability to speak or type, even if the practical version is years and a hardware leap away.</p>
+<p>The open question isn't whether the AI can decode the signal. It clearly can, given enough of it. It's whether anyone can shrink the sensor from a room to something you'd actually wear. That's a physics and engineering problem, not a machine-learning one, and it's the wall this research keeps running into.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic Wants to Run Its Own Data Centers, on Google&apos;s Dime</title>
       <link>https://sabr-labs.com/article/anthropic-google-data-center-leases-compute-july-2026</link>
@@ -875,103 +976,6 @@
 <p>A web shell is about as bad as it sounds. Once one is dropped, the attacker has a foothold that survives reboots and blends into normal web traffic, and from there they can move laterally into the rest of the environment.</p>
 <p>What makes a PLM platform a juicy target isn't the server itself. It's the data. Windchill holds the CAD files, bills of materials, and engineering change records for whatever a company builds. For a manufacturer, that's the crown jewels, and for a nation-state interested in defense or automotive design, it's a shopping list.</p>
 <p>PTC customers should patch to the fixed release immediately and then assume compromise until proven otherwise. Hunt for unexpected files in web-accessible directories, review outbound connections from Windchill hosts, and pull any exposed instance off the public internet if it doesn't strictly need to be there. A web shell that's already landed won't be removed by the patch.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>14 Million Credentials Spill From KDDI and Six Japanese ISPs</title>
-      <link>https://sabr-labs.com/article/kddi-japan-isp-credential-breach-14-million-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/kddi-japan-isp-credential-breach-14-million-2026</guid>
-      <pubDate>Sat, 04 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>KDDI</category>
-      <category>Japan</category>
-      <category>Credential Theft</category>
-      <category>Supply Chain</category>
-      <description>Roughly 14.2 million email and password combinations tied to KDDI and six other Japanese internet providers were exposed after a flaw in third-party software was exploited.</description>
-      <content:encoded><![CDATA[<p>Around 14.2 million email and password pairs belonging to customers of KDDI and six other Japanese internet service providers have been exposed, and the root cause is one that keeps showing up: a vulnerability in third-party software the providers all relied on.</p>
-<p>The details on the exact software are still thin, but the shape of the incident is familiar. A shared component sat in the supply chain of multiple ISPs, someone found a way in, and a single weakness turned into a seven-figure credential dump spanning several unrelated companies.</p>
-<p>Credential breaches age badly. Password reuse means these pairs won't just unlock the accounts they came from. They'll get fed into credential-stuffing runs against banking, email, and retail logins for months, and a meaningful slice will hit because people reuse passwords across services.</p>
-<p>If you're a KDDI customer or use any Japanese ISP, change the password now and turn on multi-factor authentication anywhere it's offered. If you reused that password anywhere else, change it there too. That's the unglamorous but correct response to any breach that leaks the password itself rather than just a hash.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia&apos;s RTX Spark Superchip Puts a Petaflop in a Laptop</title>
-      <link>https://sabr-labs.com/article/nvidia-rtx-spark-superchip-ai-pc-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-rtx-spark-superchip-ai-pc-2026</guid>
-      <pubDate>Sat, 04 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>AI Hardware</category>
-      <category>Blackwell</category>
-      <category>GPU</category>
-      <category>Local AI</category>
-      <description>Nvidia&apos;s new RTX Spark pairs a Blackwell RTX GPU with a 20-core Grace CPU and 128GB of unified memory, aiming to run large AI models locally instead of in the cloud.</description>
-      <content:encoded><![CDATA[<p>Nvidia's pitch for the RTX Spark is simple: stop renting a datacenter to run your AI, and run it on the machine in front of you.</p>
-<p>The chip couples a Blackwell RTX GPU with 6,144 CUDA cores and fifth-generation Tensor Cores to a 20-core Grace CPU, backed by 128GB of unified memory. Nvidia claims up to 1 petaflop of AI compute, using FP4 precision to get there. That unified memory pool is the interesting number, because it's what lets a laptop hold a large model in memory without shuttling weights back and forth across a slow bus.</p>
-<p>The FP4 caveat matters. A petaflop at four-bit precision is not a petaflop of the high-precision math you'd use for training. It's tuned for inference, which is the right call for the target buyer running models locally, but it's the kind of headline figure worth reading twice.</p>
-<p>RTX Spark laptops and compact desktops are due this fall from the usual roster: ASUS, Dell, HP, Lenovo, Microsoft Surface, and MSI. Nvidia also used the moment to push DLSS 4.5 with a second-generation transformer model for ray reconstruction, aimed at cleaner image quality in path-traced games.</p>
-<p>The broader move here is Nvidia planting a flag in the PC market it mostly ceded to Intel and AMD for on-device compute. If local inference becomes the default way people run agents and assistants, owning the silicon that makes it fast is a strong position. Whether buyers actually want a petaflop under the desk, or would rather keep paying for cloud tokens, is the question the fall launch will start to answer.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Is Now Running Apple Intelligence on Nvidia GPUs</title>
-      <link>https://sabr-labs.com/article/apple-intelligence-nvidia-private-cloud-compute-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-intelligence-nvidia-private-cloud-compute-2026</guid>
-      <pubDate>Sat, 04 Jul 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Nvidia</category>
-      <category>Google Gemini</category>
-      <category>Private Cloud Compute</category>
-      <category>Apple Intelligence</category>
-      <description>Apple confirmed some Apple Intelligence features run on Nvidia chips inside its Private Cloud Compute, with Google&apos;s Gemini powering a rebuilt Siri.</description>
-      <content:encoded><![CDATA[<p>For years Apple's whole story was that it owned its silicon top to bottom. That story just got more complicated.</p>
-<p>Apple has confirmed that some Apple Intelligence features run on Nvidia GPUs in the cloud, sitting inside the company's Private Cloud Compute infrastructure. The heavier a request gets, the more likely it leaves your device and lands on Nvidia hardware Apple doesn't make. On top of that, the rebuilt, more capable Siri is being powered by Google's Gemini.</p>
-<p>The privacy framing is doing a lot of work. Apple says Nvidia's confidential computing technology is what let it meet its own privacy bar, keeping data encrypted and unreadable even to the machine processing it. That's a real technical feature, not just marketing, but it's also the concession that made outsourcing the compute palatable in the first place.</p>
-<p>Strip away the branding and the shape is clear. Apple was behind on large models, chose not to spend years catching up alone, and instead rented Google's model and Nvidia's chips while keeping the customer-facing wrapper. Pragmatic, and a notable climbdown from the company that spent a decade telling everyone vertical integration was the point.</p>
-<p>The thing to watch is how much of Apple Intelligence quietly depends on partners Apple used to compete with. A Siri that finally works is worth a lot to users. Whether Apple can walk this back to its own silicon later, or whether it's now structurally dependent on Nvidia and Google, is the more interesting long game.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Claude Sonnet 5 Lands as ChatGPT&apos;s Lead Keeps Shrinking</title>
-      <link>https://sabr-labs.com/article/claude-sonnet-5-openai-losing-ground-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/claude-sonnet-5-openai-losing-ground-july-2026</guid>
-      <pubDate>Sat, 04 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>OpenAI</category>
-      <category>LLM</category>
-      <category>AI Industry</category>
-      <description>Anthropic&apos;s new Sonnet 5 targets agentic work at lower cost, arriving as data shows ChatGPT slipping below half the generative AI market for the first time.</description>
-      <content:encoded><![CDATA[<p>Anthropic released Claude Sonnet 5 on July 1, and the framing is all about agents. The company calls it its most agentic model yet, built to drive tools like browsers and terminals on its own while landing near Opus 4.8 performance at a noticeably lower price.</p>
-<p>Take the benchmark language with the usual caution. "Most agentic yet" is a claim about tool-use reliability, and the real test is whether it can run a multi-step task without going off the rails halfway through, not whether it wins a leaderboard. But the pricing angle is the substance here. A model that gets close to flagship quality at mid-tier cost is what actually moves developers, because the bill is what kills most agent deployments before they ship.</p>
-<p>The release lands at an awkward moment for OpenAI. According to reporting from Fortune, ChatGPT's monthly visits fell below half of the generative AI market in May for the first time, as users drift toward Gemini and Claude. Ramp's payment data showed Anthropic passing OpenAI in business subscriptions. And Anthropic has said it's on track for roughly $47 billion in annualized revenue with profitability projected for 2029, a year ahead of OpenAI's own timeline.</p>
-<p>Treat those revenue figures as projections, not audited results, because that's what they are. Still, the direction is consistent across independent data sources, and that's harder to wave away than any single vendor's press release.</p>
-<p>Sam Altman's response has been less about product and more about the rules of the game. He's floated a US-led international forum to set AI safety and governance standards, pointing to aviation and atomic energy as templates. It's a reasonable idea on its face. It also reads a little like a company that led on product looking to lead on the framework instead, now that the product lead is thinner than it was.</p>
-<p>For anyone building on these models, the takeaway is boring and useful: the price-to-capability floor keeps dropping, and there's more than one credible vendor to build on. Competition is doing what competition does.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FortiBleed&apos;s Stolen FortiGate Credentials Are Now Fueling Ransomware</title>
-      <link>https://sabr-labs.com/article/fortibleed-inc-lynx-ransomware-fortigate-credential-theft-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortibleed-inc-lynx-ransomware-fortigate-credential-theft-july-2026</guid>
-      <pubDate>Fri, 03 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>FortiBleed</category>
-      <category>Fortinet</category>
-      <category>Ransomware</category>
-      <category>INC Ransom</category>
-      <category>Lynx</category>
-      <category>SOCRadar</category>
-      <description>SOCRadar tied the FortiBleed credential-theft campaign to the INC and Lynx ransomware crews, the first confirmed link between mass FortiGate credential theft and live ransomware deployment.</description>
-      <content:encoded><![CDATA[<p>For most of this year, FortiBleed looked like a hoarding operation. Someone was quietly scraping credentials off FortiGate firewalls and sitting on the pile. This week we learned what the pile was for.</p>
-<p>Threat-intel firm SOCRadar tied the FortiBleed campaign to two active ransomware crews, INC Ransom and Lynx. The link is not circumstantial. An operator using FortiBleed infrastructure was found logged into both groups' victim-negotiation panels, and companies INC Ransom later named as victims overlap with the campaign's own target list. SOCRadar calls it the first confirmed case connecting mass FortiGate credential theft to actual ransomware deployment.</p>
-<p>The mechanics are what make this worth your attention. The crew built a custom Go tool, FortigateSniffer, that abuses FortiOS's own diagnose sniffer packet command to passively read authentication traffic across roughly two dozen protocols. No exploit, no CVE, just a native diagnostic feature turned into a wiretap. SOCRadar says sniffers landed on around 19,000 devices out of a target set north of 400,000 firewalls, and the operators walked off with more than 100 million credentials.</p>
-<p>From there the funnel narrows the way these things do. SOCRadar tracked scanning against roughly 11,250 portals in more than 150 countries, confirmed admin-level access on 409 of them, and saw the full intrusion chain completed on 354. At least a dozen of those ended in ransomware. Those are the cases researchers could see. The real number is almost certainly higher.</p>
-<p>One detail cuts against the lone-hacker image. An internal tracking document points to an organization of about twenty people: a small core doing the high-value break-ins, specialists for specific tasks, and a back-office tier of juniors and technical support. This is a company. It has a staffing chart.</p>
-<p>If you run FortiGate anywhere, assume any credentials that crossed those devices are burned. Rotate them, force re-authentication, and hunt for the sniffer: unexpected use of diagnose sniffer packet, odd admin sessions, config changes nobody made. Patching won't save you here, because there was nothing to patch. This was your own firewall's diagnostics used against you.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
