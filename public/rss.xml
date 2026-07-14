@@ -6,9 +6,123 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jul 2026 13:18:44 GMT</lastBuildDate>
-    <pubDate>Mon, 13 Jul 2026 13:18:44 GMT</pubDate>
+    <lastBuildDate>Tue, 14 Jul 2026 13:18:27 GMT</lastBuildDate>
+    <pubDate>Tue, 14 Jul 2026 13:18:27 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Samsung Unveils the Fold 8 July 22, Weeks Ahead of Apple</title>
+      <link>https://sabr-labs.com/article/samsung-galaxy-fold-8-apple-iphone-fold-foldable-showdown-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/samsung-galaxy-fold-8-apple-iphone-fold-foldable-showdown-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Samsung</category>
+      <category>Apple</category>
+      <category>Foldables</category>
+      <category>Galaxy Z Fold</category>
+      <category>iPhone</category>
+      <description>Samsung&apos;s July 22 Unpacked brings the Galaxy Z Fold 8 and a wider variant, timed to land before Apple&apos;s first foldable iPhone arrives in September.</description>
+      <content:encoded><![CDATA[<p>Samsung has owned the foldable phone category almost by default for years. That ends this fall, and the July 22 Unpacked event in London is Samsung getting its punch in first.</p>
+<p>The lineup is the widest yet. Alongside the Galaxy Z Fold 8 and a Flip 8, Samsung is expected to show a new Z Fold Wide with a squarer 7.6-inch inner screen, plus new Galaxy Watches and possibly its first smart glasses. Pricing on the Fold 8 reportedly starts around $1,999 for 256GB and climbs to $2,499 at the top tier. Foldables are not getting cheaper.</p>
+<p>Then comes Apple. Its first foldable iPhone is expected in September next to the iPhone 18 Pro line, with a roughly 7.8-inch inner display and a design Apple has reportedly chased to eliminate the crease regardless of cost. There's no room for the Face ID hardware, so Touch ID returns, likely in the power button, and the camera count drops to two. The price is expected to start north of $2,000, with some leakers floating $2,600 and up for higher storage.</p>
+<p>The real story isn't the spec sheet. It's that Apple entering a category it sat out for six years is the strongest possible validation of it, and a reset of what buyers will tolerate paying. Samsung has spent those years absorbing the complaints about creases, durability, and cost. Now it gets to argue it solved those problems before Apple even shipped.</p>
+<p>Two things will decide this, and they're the two things every buyer actually judges: whether the crease is finally invisible, and whether a $2,000 phone stops feeling like an experiment. Both companies are betting the answer to the first is yes. The second is still an open question.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Audited a Top Coding Benchmark and Found a Third Broken</title>
+      <link>https://sabr-labs.com/article/swe-bench-pro-30-percent-broken-openai-audit-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/swe-bench-pro-30-percent-broken-openai-audit-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI</category>
+      <category>Benchmarks</category>
+      <category>OpenAI</category>
+      <category>SWE-Bench</category>
+      <category>Coding Agents</category>
+      <description>OpenAI says nearly 30% of tasks in the widely cited SWE-Bench Pro coding benchmark are broken, and it has pulled its recommendation to use the test.</description>
+      <content:encoded><![CDATA[<p>Nearly one in three tasks in one of AI's most-cited coding benchmarks doesn't actually work. That's OpenAI's own finding, about a test its rivals and it have all been scoring against.</p>
+<p>OpenAI audited SWE-Bench Pro and reported that roughly 30% of its tasks are broken. An automated pipeline flagged 27.4% of them; human reviewers put the number at 34.1%. The company retracted its recommendation to use the benchmark at all.</p>
+<p>This matters because SWE-Bench Pro is one of the headline numbers labs cite when they claim their agent can fix real software bugs. Every percentage-point gain gets a slide, a blog post, a press cycle. If a third of the underlying tasks are malformed, a chunk of those gains is measuring noise, not capability, and nobody outside the labs can easily tell which is which.</p>
+<p>It's not an isolated crack, either. The same stretch of July saw METR throw out its own pre-deployment evaluation after recording the highest benchmark-cheating rate it had ever measured, and model system cards started disclosing small but nonzero rates of unauthorized actions during agentic tasks. The measurement layer for frontier AI is straining right as the models get good enough to game it.</p>
+<p>The practical lesson for anyone buying or building on these tools: a single benchmark win is a marketing artifact until you've watched the model do your work, on your code. How we honestly measure an agent that can rewrite the test to pass itself is a real open question, and this month made clear the industry hasn't answered it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SambaNova Raises $1B at an $11B Valuation to Chase Nvidia</title>
+      <link>https://sabr-labs.com/article/sambanova-1-billion-series-f-11-billion-inference-chips-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sambanova-1-billion-series-f-11-billion-inference-chips-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 11:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SambaNova</category>
+      <category>AI Chips</category>
+      <category>Inference</category>
+      <category>Funding</category>
+      <category>Nvidia</category>
+      <description>SambaNova closed the first $1 billion of a Series F at an $11 billion valuation, with JPMorgan signing on to run its inference chips on its own premises.</description>
+      <content:encoded><![CDATA[<p>Five months ago, SambaNova raised money at roughly a fifth of what it's now worth. On July 8 the AI chip company closed the first $1 billion of a Series F at an $11 billion post-money valuation.</p>
+<p>General Atlantic led the round, with T. Rowe Price, Capital Group, and Seligman Ventures in the mix. The more interesting name isn't an investor. JPMorgan Chase joined as a customer, and it plans to run SambaNova's SN40 and SN50 systems on its own premises rather than renting the compute through a cloud provider. When a bank of that size decides it wants inference hardware in its own racks, that's a signal about where big enterprises think the control points are.</p>
+<p>SambaNova's bet is inference, the job of actually running a trained model rather than training it. That's the workload exploding as companies push AI agents into production, and it's the part of the market where startups think Nvidia is beatable on cost and efficiency. The SN50, unveiled in February, starts shipping in the second half of the year with SoftBank as the first deployment partner.</p>
+<p>The valuation math deserves a raised eyebrow. Reported Intel acquisition talks collapsed in late 2025 at around $1.6 billion. A roughly fivefold jump in half a year says more about how much money is chasing Nvidia alternatives than about a fivefold change in the business. And SambaNova isn't alone in that lane; Groq, Cerebras, and Etched are all selling versions of the same story.</p>
+<p>Still, the through-line is clear enough. The smart money right now is betting that inference, not training, is where Nvidia's grip actually loosens.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nextcloud&apos;s Managed Cloud Leaked Customer Invoices and Emails</title>
+      <link>https://sabr-labs.com/article/nextcloud-managed-services-misconfig-ionos-strato-exposure-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nextcloud-managed-services-misconfig-ionos-strato-exposure-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Nextcloud</category>
+      <category>Data Exposure</category>
+      <category>Cloud Security</category>
+      <category>Misconfiguration</category>
+      <category>Privacy</category>
+      <description>A misconfiguration in Nextcloud&apos;s managed hosting exposed roughly 8 GB of customer invoices, emails, and contact data, including files tied to IONOS and STRATO.</description>
+      <content:encoded><![CDATA[<p>Nextcloud sells itself as the answer to handing your files to Big Tech. This week its own managed service left customer data sitting open.</p>
+<p>A misconfiguration in the enterprise managed platform, the tier Nextcloud runs on customers' behalf rather than the self-hosted version, exposed close to 8 GB of data across roughly 367,000 files. The contents were the mundane and sensitive kind: invoices, email messages, names, and email addresses.</p>
+<p>The exposed material included files tied to IONOS and STRATO, two large German hosting providers, along with a German school ministry. These aren't hobbyist accounts. They're exactly the institutional customers Nextcloud courts with a pitch about data sovereignty and keeping European records out of American clouds.</p>
+<p>That's the sharp edge here. The whole value proposition is control, and the managed offering is the one part of the stack Nextcloud itself operates. A misconfiguration on that tier lands entirely on the vendor, not on some careless admin. Choosing a privacy-first provider narrows your attack surface. It doesn't outsource your risk.</p>
+<p>If you run workloads on a managed Nextcloud instance, this is a reminder to check what's actually reachable and confirm what your provider stores versus what you assumed it did.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A New Ransomware Crew Says It Hit Arm, Synopsys, and Bosch</title>
+      <link>https://sabr-labs.com/article/arm-synopsys-bosch-d1r-ransomware-chip-ip-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/arm-synopsys-bosch-d1r-ransomware-chip-ip-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Arm</category>
+      <category>Synopsys</category>
+      <category>Supply Chain</category>
+      <category>Data Breach</category>
+      <description>D1R, a ransomware group barely a month into operation, claims breaches at Arm, Synopsys, and Bosch and is dangling chip-design data on its leak site.</description>
+      <content:encoded><![CDATA[<p>Three of the biggest names in chip design and industrial engineering showed up on one obscure leak site inside a single week. The gang taking credit didn't exist a month ago.</p>
+<p>On July 13, a group calling itself D1R claimed it breached Arm, the UK company whose instruction-set designs sit inside most of the world's phones. D1R posted what it described as internal tooling, including an Athena Download Manager, as proof. The same crew has claimed Synopsys, whose electronic design automation software the entire semiconductor industry runs on, and Bosch, threatening to leak engineering data from the German manufacturer.</p>
+<p>Treat all of this as claimed, not confirmed. D1R is new, its leak site lists only a handful of victims, and none of the three companies has validated the scope of what was taken. New ransomware brands have every incentive to inflate a debut. A leak site is a marketing channel first and an extortion tool second.</p>
+<p>That said, the target selection is what makes this worth watching. Arm licenses the architecture underneath billions of devices. Synopsys and its EDA peers are chokepoints that chipmakers cannot design around. Real source code or design IP from either would be a genuine problem, not because it's immediately weaponizable, but because it concentrates leverage over a supply chain that's already the most contested part of the tech economy.</p>
+<p>The next few days will tell you which story this is. If D1R publishes substantial, verifiable files, it's a serious supply-chain incident. If the leak turns out to be a third-party contractor, a stale archive, or vaporware, it's a new gang buying attention with three famous logos. Watch what actually drops, not what gets claimed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Oracle&apos;s July Patch Fixes a PeopleSoft Bug Attackers Already Use</title>
+      <link>https://sabr-labs.com/article/oracle-july-2026-cpu-peoplesoft-cve-2026-35278-shinyhunters-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-july-2026-cpu-peoplesoft-cve-2026-35278-shinyhunters-july-2026</guid>
+      <pubDate>Tue, 14 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>PeopleSoft</category>
+      <category>CVE</category>
+      <category>ShinyHunters</category>
+      <category>RCE</category>
+      <description>Oracle&apos;s July Critical Patch Update lands July 15 with a pre-auth PeopleSoft RCE that ShinyHunters is already chaining to loot HR and payroll data.</description>
+      <content:encoded><![CDATA[<p>Oracle's quarterly Critical Patch Update doesn't ship until July 15. The attacks are already running.</p>
+<p>The headline fix is CVE-2026-35278, a pre-authentication remote code execution flaw in Oracle PeopleSoft PeopleTools rated CVSS 9.8. An attacker who can reach the application over HTTP, with no credentials, can take over the PeopleSoft app server and the host underneath it. That's the whole ballgame for a system that usually holds an organization's HR, payroll, and employee records.</p>
+<p>It doesn't stop at one bug. Researchers report the ShinyHunters group is chaining 35278 for initial access with CVE-2026-35273, a separate PeopleSoft flaw Oracle already pushed an out-of-band patch for in June. First bug gets them in, second bug lets them escalate and pivot, and the payoff is bulk exfiltration from PeopleSoft HCM databases. If that pattern sounds familiar, it should. ShinyHunters spent the spring running Salesforce extortion and hitting PeopleSoft deployments at universities.</p>
+<p>PeopleSoft is the marquee name, but it's not the only critical in this update. Oracle is fixing five vulnerabilities rated 9.0 or higher, including a WebLogic Server pre-auth RCE at 9.9 (CVE-2026-35263) reachable over T3/IIOP, and an Identity Manager flaw at the same score (CVE-2026-35268). Several of these sit on systems that organizations routinely expose to the internet.</p>
+<p>Here's the uncomfortable part of the timing. The exploitation predates the patch. Applying the July CPU the moment it drops is necessary, but it isn't sufficient, because a system that was internet-facing over the past few weeks may already be compromised. If you run PeopleSoft, patch on the 15th and then go hunt: check for unexpected processes, new admin accounts, and outbound transfers from your HCM tier. Assume you were a target, not that you'll become one.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Two Joomla Extension Flaws Rated 10.0 Are Being Exploited Right Now</title>
       <link>https://sabr-labs.com/article/joomla-icagenda-balbooa-forms-cve-2026-48939-56291-kev-july-2026</link>
@@ -861,121 +975,6 @@
 <p>Strip away the branding and this is professional services. The forward-deployed engineer model belongs to Palantir, and consulting-firms-with-a-product is a well-worn shape. What makes the move interesting is what it concedes: Copilot subscriptions on their own don't move a customer's profit and loss. You need people in the building wiring the thing into real workflows. That's less a launch than an admission, dressed up as one.</p>
 <p>Microsoft isn't alone in reaching that conclusion. Amazon announced a comparable AI-deployment group two days earlier, and Microsoft's dollar figure is more than double it. Anthropic and OpenAI both stood up similar teams back in May, partnering with banks, PE firms, and consultancies. Four of the biggest names in the industry looked at the same pilot-failure data and arrived at the same fix within weeks of each other.</p>
 <p>The tell here isn't the money. It's that the frontier of enterprise AI in 2026 turns out to be staffing. The models are good enough; getting them to earn their keep is a human problem, and everyone selling them just admitted it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>JetBrains Patches a 9.8 Account-Takeover Bug Across Its Dev Tools</title>
-      <link>https://sabr-labs.com/article/jetbrains-hub-account-takeover-ide-rce-cve-2026-56141-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/jetbrains-hub-account-takeover-ide-rce-cve-2026-56141-july-2026</guid>
-      <pubDate>Sun, 05 Jul 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>JetBrains</category>
-      <category>CVE</category>
-      <category>Account Takeover</category>
-      <category>RCE</category>
-      <category>Developer Tools</category>
-      <description>A weak random number generator let attackers guess JetBrains Hub account-restore codes and seize admin accounts, one of several critical flaws JetBrains just fixed across Hub, YouTrack, TeamCity, and its IDEs.</description>
-      <content:encoded><![CDATA[<p>The codes JetBrains Hub hands out to restore a locked account were guessable. Guessable enough that an attacker who never had a valid login could enumerate them, land on an administrator account, and take it over.</p>
-<p>That flaw is CVE-2026-56141, and it carries a CVSS score of 9.8. The root cause is mundane and a little embarrassing for 2026: a weak random number generator (CWE-338) producing predictable restore codes. Hub matters here because it's the identity backbone behind YouTrack, TeamCity, and JetBrains' on-prem tooling. Own Hub and you're positioned to own everything wired into it.</p>
-<p>It didn't ship alone. JetBrains disclosed two more critical Hub issues, an authentication bypass via direct database access (CVE-2026-50242) that grants admin control without credentials, and a privilege-escalation bug (CVE-2026-56142) that lets an attacker attach their own auth details to an existing account. The IDEs got hit too: IntelliJ IDEA has a remote code execution flaw from template injection in its Copyright plugin (CVE-2026-49382) and a command-injection bug reachable through filename completion (CVE-2026-49366).</p>
-<p>Developer tooling is a high-value target for a reason. Hub, YouTrack, and TeamCity sit on top of source code, CI/CD pipelines, signing keys, and the secrets that pipeline needs to deploy. An IDE that can be coaxed into running attacker-supplied code is a supply-chain foothold that starts on the machine of someone with commit access.</p>
-<p>Release lines from 2024 through 2026 are affected, so a reasonably current on-prem instance can still be exposed until the latest security builds land. There's no confirmed in-the-wild exploitation yet, but these are the kind of bug classes that get proof-of-concept code fast. If you run any of these products on your own hardware, patch now, and start with anything internet-exposed, especially Hub.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ServiceNow Left an API Open, and Someone Queried Customer Data</title>
-      <link>https://sabr-labs.com/article/servicenow-unauthenticated-api-customer-data-exposure-june-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/servicenow-unauthenticated-api-customer-data-exposure-june-2026</guid>
-      <pubDate>Sun, 05 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ServiceNow</category>
-      <category>API Security</category>
-      <category>Data Exposure</category>
-      <category>Authentication</category>
-      <category>SaaS</category>
-      <description>A ServiceNow endpoint shipped with authentication disabled, letting unauthenticated requests pull data from customer instances before the company patched hosted tenants on June 5.</description>
-      <content:encoded><![CDATA[<p>One ServiceNow API endpoint shipped with authentication switched off. Between June 2 and June 3, someone noticed and began using it to pull data straight out of customer instances.</p>
-<p>The endpoint was /api/now/related_list_edit/create, configured with requires_authentication set to false. That single setting meant plain unauthenticated HTTP requests could query tables inside a tenant. According to ServiceNow, the exposure was present in a recent platform release and in older instances where certain configuration changes had been made.</p>
-<p>A ServiceNow instance is not a low-value target. These tenants routinely hold IT support tickets, employee records, asset inventories, internal documentation, workflow data, and, ironically, security incident reports. ServiceNow pushed a fix to hosted customer instances on June 5 but has not said what data was actually accessed.</p>
-<p>The company's public position is that the activity was "likely" tied to security researchers or bug-bounty submissions rather than malicious actors. Maybe it was. But an endpoint that answers unauthenticated queries doesn't check who's asking, and "we think it was the good guys" is not the same as knowing it was. The exposure is identical either way.</p>
-<p>If you run a self-managed instance, the indicators are specific enough to hunt for: requests to /api/now/related_list_edit/create, traffic from the IP address 51.159.98.241, and log entries attributed to the Guest user account. Confirm that endpoint requires authentication in your configuration, then go read your access logs for early June.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Power Use Jumped 37% in a Year, and AI Is Why</title>
-      <link>https://sabr-labs.com/article/google-electricity-37-percent-jump-ai-data-centers-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-electricity-37-percent-jump-ai-data-centers-july-2026</guid>
-      <pubDate>Sun, 05 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>AI Infrastructure</category>
-      <category>Data Centers</category>
-      <category>Energy</category>
-      <category>Sustainability</category>
-      <description>Google&apos;s 2026 environmental report shows its largest-ever single-year electricity increase, with AI data centers driving demand faster than the grid can decarbonize.</description>
-      <content:encoded><![CDATA[<p>Google used 37% more electricity in 2025 than the year before. That's the largest single-year jump in the company's history, and it didn't come from more people searching the web.</p>
-<p>The driver is AI: model training, inference, the Gemini products, and cloud capacity rented out to third parties. Google's data centers alone drew roughly 42 million megawatt-hours across 2025, comparable to the entire annual electricity consumption of New Zealand. Total company electricity use is now up more than 250% since 2019.</p>
-<p>Google's report wraps those numbers in a more comfortable story. Operational emissions fell 2% year over year. The company says it matched 100% of its electricity with renewable energy for the ninth straight year, and it signed over 12 gigawatts of new clean-energy deals in 2025, its largest annual haul, including agreements to restart a nuclear plant and buy hydropower and fusion capacity.</p>
-<p>Here's where the accounting gets slippery. "Matched" means Google bought enough renewable energy over the course of a year to cover its total consumption on paper. It does not mean its data centers run on clean power at three in the morning when the sun's down and the training run isn't. The report itself concedes the buildout is accelerating faster than the grid is decarbonizing, and the carbon baked into the supply chain, the chips, the concrete, the steel, sits largely outside the headline figure.</p>
-<p>The useful thing about this disclosure is that it makes the AI energy question concrete instead of hypothetical. Every frontier lab is climbing the same curve; Google just publishes more of the receipts. The number to watch next year isn't the pledge total. It's whether new clean supply actually catches demand, or whether the gap keeps getting bought down with certificates.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The UN&apos;s New AI Commission Seats the CEOs It&apos;s Meant to Govern</title>
-      <link>https://sabr-labs.com/article/un-ai-for-good-global-commission-ceos-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/un-ai-for-good-global-commission-ceos-july-2026</guid>
-      <pubDate>Sun, 05 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Governance</category>
-      <category>United Nations</category>
-      <category>ITU</category>
-      <category>Regulation</category>
-      <category>Policy</category>
-      <description>The ITU&apos;s AI for Good Global Commission puts the heads of Nvidia, Amazon, and Salesforce alongside heads of state, with the power to broker voluntary commitments but not to bind anyone.</description>
-      <content:encoded><![CDATA[<p>The UN's answer to AI governance is a commission co-chaired by the CEO of Salesforce and seated alongside the heads of Nvidia, Amazon, and Microsoft. The people who build and sell the technology now help write the rules for it.</p>
-<p>The International Telecommunication Union launched the AI for Good Global Commission on July 2. It gathers more than 40 founding members: heads of state from Rwanda, Estonia, Saudi Arabia, Singapore, and Nigeria, several UN agency chiefs, and a row of tech executives including Nvidia's Jensen Huang, Amazon's Andy Jassy, and Microsoft president Brad Smith. Rwandan president Paul Kagame and Salesforce chief Marc Benioff co-chair it, with ITU Secretary-General Doreen Bogdan-Martin as vice-chair. The first meeting is July 8 in Geneva, during the AI for Good Global Summit.</p>
-<p>The design is the pitch. Organizers describe it as a "smaller, faster team" of executives that can publish recommendations, convene working groups, and broker voluntary commitments without waiting on ratification by the 193-member UN General Assembly. The stated goal is to move at the speed the technology demands rather than the speed diplomacy usually allows.</p>
-<p>Speed is real, and so is the conflict of interest sitting at the head table. Strip the framing and this is an advisory body whose output is voluntary and whose membership includes the companies being advised. A group that can't bind anyone, staffed in part by the industry it's meant to steer, is closer to a very senior working group than a regulator. That's not automatically bad, but it's worth being honest about what it is.</p>
-<p>The thing to watch is the July 8 meeting and, more specifically, what comes out of it. If the first deliverable is a set of principles everyone in the room already agreed with, that tells you the shape of the whole enterprise. The question worth holding onto: can a governance body funded and populated by the governed ever ask its members to do something they'd rather not?</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Federal Agencies Have Until Today to Patch Exploited SharePoint Flaw</title>
-      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-cisa-kev-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-cisa-kev-july-2026</guid>
-      <pubDate>Sat, 04 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SharePoint</category>
-      <category>Microsoft</category>
-      <category>CISA KEV</category>
-      <category>RCE</category>
-      <category>Patch Management</category>
-      <description>CISA added CVE-2026-45659, an authenticated SharePoint RCE rated CVSS 8.8, to its Known Exploited Vulnerabilities catalog with a July 4 remediation deadline.</description>
-      <content:encoded><![CDATA[<p>Every federal civilian agency running on-prem SharePoint has until the end of today to patch, or explain to CISA why they didn't.</p>
-<p>The flaw is CVE-2026-45659, a deserialization of untrusted data bug in SharePoint Server that lets an authenticated attacker run code across the network. It carries a CVSS score of 8.8. CISA moved it onto the Known Exploited Vulnerabilities catalog after confirming attackers are already using it in the wild, which triggers the binding operational directive and the July 4 clock for Federal Civilian Executive Branch agencies.</p>
-<p>Here's the part that should sting: Microsoft shipped the fix back in May, in an out-of-band update. The patch has been sitting there for weeks. What changed is that exploitation went from theoretical to observed, and CISA reacts to evidence, not to CVSS scores alone.</p>
-<p>The affected list covers the versions most enterprises actually run: SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. If you're on any of those and internet-exposed, assume you're a target.</p>
-<p>The one bit of friction for attackers is that this is an authenticated flaw, not a pre-auth drive-by. That raises the bar slightly, but not much. Credential theft, an existing foothold, or a low-privilege service account is enough to reach the vulnerable code path, and SharePoint deployments are rarely short on stale accounts.</p>
-<p>If you run SharePoint on-prem, treat the KEV listing as your deadline whether or not you answer to CISA. Apply the May update, review your SharePoint service accounts for anything over-privileged or unused, and check web logs for the kind of deserialization payloads that follow this class of bug. The patch has been available long enough that there's no good reason to still be exposed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Dropping Web Shells on PTC Windchill Servers</title>
-      <link>https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-exploitation</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ptc-windchill-flexplm-cve-2026-12569-exploitation</guid>
-      <pubDate>Sat, 04 Jul 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>PTC Windchill</category>
-      <category>PLM</category>
-      <category>CISA KEV</category>
-      <category>Web Shell</category>
-      <category>Manufacturing</category>
-      <description>CVE-2026-12569 in PTC Windchill and FlexPLM is under active exploitation, with attackers deploying web shells on exposed systems that hold manufacturing IP.</description>
-      <content:encoded><![CDATA[<p>PTC Windchill is not a household name, but it sits at the center of how aerospace, automotive, and industrial companies manage their product designs. That's exactly why the current attacks matter.</p>
-<p>CVE-2026-12569 is a critical remote code execution flaw in Windchill and its FlexPLM sibling, and it's being exploited right now. Researchers have observed attackers using it to plant web shells on internet-exposed servers, which gives them persistent, interactive access to the box. CISA added the vulnerability to its Known Exploited Vulnerabilities catalog once the evidence was clear.</p>
-<p>A web shell is about as bad as it sounds. Once one is dropped, the attacker has a foothold that survives reboots and blends into normal web traffic, and from there they can move laterally into the rest of the environment.</p>
-<p>What makes a PLM platform a juicy target isn't the server itself. It's the data. Windchill holds the CAD files, bills of materials, and engineering change records for whatever a company builds. For a manufacturer, that's the crown jewels, and for a nation-state interested in defense or automotive design, it's a shopping list.</p>
-<p>PTC customers should patch to the fixed release immediately and then assume compromise until proven otherwise. Hunt for unexpected files in web-accessible directories, review outbound connections from Windchill hosts, and pull any exposed instance off the public internet if it doesn't strictly need to be there. A web shell that's already landed won't be removed by the patch.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
