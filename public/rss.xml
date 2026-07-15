@@ -6,9 +6,134 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2026 13:18:27 GMT</lastBuildDate>
-    <pubDate>Tue, 14 Jul 2026 13:18:27 GMT</pubDate>
+    <lastBuildDate>Wed, 15 Jul 2026 13:17:07 GMT</lastBuildDate>
+    <pubDate>Wed, 15 Jul 2026 13:17:07 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>GPT-5.6 Went Public Only After a 12-Day Government Review</title>
+      <link>https://sabr-labs.com/article/gpt-5-6-sol-terra-luna-public-commerce-department-caisi-review-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gpt-5-6-sol-terra-luna-public-commerce-department-caisi-review-july-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5.6</category>
+      <category>AI Regulation</category>
+      <category>CAISI</category>
+      <category>Commerce Department</category>
+      <category>AI Governance</category>
+      <description>OpenAI&apos;s Sol, Terra, and Luna models reached general availability on July 9, but only after the Commerce Department&apos;s AI standards office signed off.</description>
+      <content:encoded><![CDATA[<p>OpenAI's GPT-5.6 family reached broad availability on July 9, and the more telling detail isn't the models. It's that they shipped only after a roughly 12-day review by the federal government.</p>
+<p>The lineup is three models. Sol is the flagship, with a new Ultra subagent mode and a Max reasoning-effort setting. Terra targets the quality of last generation's mid-tier at a lower price. Luna is the fast, cheap option. Pricing runs from $5 per million input tokens and $30 output for Sol, down to $1 and $6 for Luna, which puts the family in roughly the same bracket as its competitors rather than undercutting them.</p>
+<p>Before OpenAI could widen access, the models went through the Commerce Department's Center for AI Standards and Innovation, or CAISI. OpenAI sent engineers to Washington to work through the office's questions directly, and the Trump administration cleared the wider release once that testing wrapped. GPT-5.6 is the first frontier model to run this particular gauntlet end to end.</p>
+<p>That's worth sitting with. The framework CAISI operates under is officially voluntary. In practice, a company held its most capable model back from the public for nearly two weeks while a government office ran its own tests. Voluntary or not, that's a gate, and this is the first time we've watched a flagship model queue behind it.</p>
+<p>What CAISI actually tested, and against what bar, hasn't been disclosed in any detail. "The government reviewed it" reads as reassurance, but without knowing the evaluation criteria it's hard to say whether the review caught anything a lab's internal red team wouldn't have. The precedent is the story here more than the findings.</p>
+<p>For developers, the practical takeaway is narrower: three new models, a fresh subagent mode to test, and prices that reward routing cheaper work to Luna. For everyone watching how AI gets governed, the more durable question is whether a "voluntary" review that functions as a release gate stays voluntary the next time a model is a little more capable and the stakes are a little higher.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>PixVerse Raises $439M for Generative Video, Topping a $2B Valuation</title>
+      <link>https://sabr-labs.com/article/pixverse-439-million-series-c-generative-video-ai-2-billion-valuation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pixverse-439-million-series-c-generative-video-ai-2-billion-valuation-july-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>PixVerse</category>
+      <category>Generative Video</category>
+      <category>AI Startups</category>
+      <category>Funding</category>
+      <category>World Models</category>
+      <category>Venture Capital</category>
+      <description>The Singapore-based video AI startup closed a Series C extension and now says it wants to build real-time interactive world models.</description>
+      <content:encoded><![CDATA[<p>PixVerse, a Singapore-based startup building generative video, closed a $439 million Series C extension that pushes its valuation above $2 billion. The company was founded in 2023 by former ByteDance and Microsoft Research Asia engineers, which is a useful tell about where the talent in this corner of AI is coming from.</p>
+<p>The traction numbers are real and worth stating plainly: more than 150 million registered users and over 15 million monthly actives. In a category crowded with demos that look great in a launch video and fall apart in daily use, an audience that size is the harder thing to fake.</p>
+<p>What the money is actually for is the more interesting part. PixVerse says it's moving past clip generation toward real-time interactive world models, the kind of system meant for gaming and enterprise use where the video responds to input as it's produced rather than being rendered once and played back. That's a much heavier compute and research problem than text-to-video, and it's where several well-funded labs are now pointing.</p>
+<p>It's fair to be skeptical of the pivot. "World model" is doing a lot of marketing work across the industry right now, and plenty of companies invoke it before they can demonstrate anything interactive at usable latency and quality. A $2 billion valuation buys runway to try; it doesn't prove the thing works.</p>
+<p>Still, the raise is a signal about where investor money is flowing. After a year dominated by chips, data centers, and the models themselves, the application layer, and generative video specifically, is pulling nine-figure rounds again. Whether PixVerse turns that into a product people keep paying for is the question the next year answers.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>New York Becomes the First State to Hit Pause on Big Data Centers</title>
+      <link>https://sabr-labs.com/article/new-york-first-statewide-hyperscale-data-center-moratorium-hochul-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/new-york-first-statewide-hyperscale-data-center-moratorium-hochul-july-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>New York</category>
+      <category>AI Infrastructure</category>
+      <category>Energy</category>
+      <category>Regulation</category>
+      <category>Hyperscale</category>
+      <description>Governor Hochul&apos;s executive order freezes state permits for data centers drawing 50 megawatts or more while New York writes new rules.</description>
+      <content:encoded><![CDATA[<p>New York just told hyperscale data center developers to wait. On July 14, Governor Kathy Hochul signed an executive order pausing state environmental permits for any data center that draws 50 megawatts or more, making New York the first state in the country to impose a statewide moratorium on the facilities.</p>
+<p>The pause runs for up to a year. During that window, the Department of Public Service will draft a Generic Environmental Impact Statement for data centers, and the Department of Environmental Conservation will hold back on any discretionary permits that aren't already complete. In plain terms: new hyperscale projects don't move forward in New York until the state finishes writing the rulebook.</p>
+<p>The 50-megawatt threshold matters. That's a deliberate line drawn at the AI-scale campuses, the ones that pull as much power as a small city, not the ordinary server rooms and colocation sites businesses already run. This is aimed squarely at the buildout that's been racing ahead of the grid.</p>
+<p>Power is the real subject here. Hochul also directed the DPS to open a proceeding called Energize NY, which would force data centers to either pay more for the electricity they consume or bring their own generation. The state's argument is that residential ratepayers shouldn't quietly subsidize the energy bills of AI infrastructure, and it's not wrong to worry about it, given how fast these loads are being added.</p>
+<p>There's a community-benefits piece too. Empire State Development has 60 days to publish a framework meant to help towns negotiate real concessions when a developer comes calling, rather than getting steamrolled by the promise of jobs and tax revenue.</p>
+<p>The obvious risk is that developers simply route around New York to states that will permit them faster, and a one-year pause is a long time in a market moving this quickly. But New York is a large, wired market with cheap access to hydro power, and if the first-mover framework holds up, expect other states watching their own grids to borrow from it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Treasury Sanctions the VPN and Malware Sellers Ransomware Crews Rely On</title>
+      <link>https://sabr-labs.com/article/ofac-sanctions-first-vpn-service-1vpns-cryptor-seller-ransomware-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ofac-sanctions-first-vpn-service-1vpns-cryptor-seller-ransomware-july-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>OFAC</category>
+      <category>Sanctions</category>
+      <category>Treasury</category>
+      <category>Cybercrime</category>
+      <category>Malware</category>
+      <description>OFAC designated First VPN Service and a Belarusian cryptor seller, going after the infrastructure ransomware groups rent instead of the gangs themselves.</description>
+      <content:encoded><![CDATA[<p>Ransomware operators need infrastructure they can trust to stay quiet. On July 14 the Treasury Department tried to take some of that away.</p>
+<p>The Office of Foreign Assets Control sanctioned First VPN Service, known as 1VPNS, along with its administrator Dmytro Rashevskyi, a 45-year-old Ukrainian national. OFAC also hit Yegeniy Vladimirovich Silayev, a Belarusian who sells "cryptors", the tools that disguise ransomware and other malware as harmless files so endpoint security waves them through.</p>
+<p>1VPNS wasn't hiding what it was. Since 2014 it advertised openly on cybercrime forums, promised it kept no logs of who used it or what they did, and said flatly it would not cooperate with law enforcement. Rashevskyi ran the operation behind a rotating set of fake names, including "Maksim Sorin" and "Roman Chabanenko," so hosting providers that had received abuse complaints wouldn't recognize him as a repeat customer.</p>
+<p>This is the part of the ransomware economy that usually escapes attention. Everyone tracks the crews with the flashy leak sites. Fewer people go after the anonymous VPN reseller and the malware-obfuscation vendor who quietly make those crews' work possible. Treasury put a number on it: groups using this infrastructure have caused billions in losses to U.S. businesses and critical infrastructure.</p>
+<p>The sanctions build on a takedown from earlier this year. In May, French and Dutch authorities dismantled 1VPNS's website and servers with help from the FBI's Boston Field Office, in a joint operation named Saffron. Killing the infrastructure stops the service; sanctioning the people behind it makes it a crime for U.S. entities to do business with them and freezes any assets within reach.</p>
+<p>Whether that actually raises the cost of running this kind of service, or just pushes the next Rashevskyi to a new alias and a new host, is the open question with every sanctions action against cybercrime plumbing. But naming the enablers, not just the gangs, is at least aimed at the right layer.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SonicWall SMA 1000 Zero-Days Are Being Chained Into Unauth RCE</title>
+      <link>https://sabr-labs.com/article/sonicwall-sma1000-zero-days-cve-2026-15409-15410-active-exploitation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sonicwall-sma1000-zero-days-cve-2026-15409-15410-active-exploitation-july-2026</guid>
+      <pubDate>Wed, 15 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SonicWall</category>
+      <category>Zero-Day</category>
+      <category>SSRF</category>
+      <category>CISA KEV</category>
+      <category>Edge Security</category>
+      <category>RCE</category>
+      <description>SonicWall confirmed attackers are exploiting two SMA 1000 flaws that, chained together, hand a remote attacker admin-level command execution.</description>
+      <content:encoded><![CDATA[<p>SonicWall's SMA 1000 appliances sit at the edge of corporate networks, brokering remote access. That's exactly why the two zero-days the company disclosed on July 14 are the kind of thing you patch tonight, not next sprint.</p>
+<p>The worse of the pair is CVE-2026-15409, a server-side request forgery bug in the appliance's Work Place interface. It carries a maximum CVSS score of 10.0, and it needs no authentication. On its own, it lets a remote attacker force the appliance to make requests to places it shouldn't.</p>
+<p>The second, CVE-2026-15410, is a post-authentication code-injection flaw in the Appliance Management Console rated 7.2. By itself it requires an admin login. The problem is that an attacker can chain the two: use the unauthenticated SSRF to reach the management console, then trigger the code injection to run operating-system commands with administrative privileges. No credentials required at the start of the chain.</p>
+<p>SonicWall says it investigated multiple incidents and confirmed both bugs are being actively exploited. The company pushed hotfixes (versions 12.4.3-03453 and 12.5.0-02835) and quietly alerted customers before the public advisory went out, which tells you how seriously it's taking this.</p>
+<p>CISA added both CVEs to its Known Exploited Vulnerabilities catalog and set a July 17 deadline for federal agencies to patch or pull the appliances offline. That's a three-day window, which is CISA-speak for "this is already being used against real targets."</p>
+<p>Patch immediately if you run these. And because this is an edge device that brokers access into everything behind it, don't stop at patching. Assume the box may already have been touched, pull the management-console logs, and hunt for the SSRF and injection patterns before you call it closed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft&apos;s July Patch Tuesday Is Its Biggest Ever, With Two Zero-Days</title>
+      <link>https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-record-570-cves-adfs-sharepoint-zero-days</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-record-570-cves-adfs-sharepoint-zero-days</guid>
+      <pubDate>Wed, 15 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Patch Tuesday</category>
+      <category>Zero-Day</category>
+      <category>AD FS</category>
+      <category>SharePoint</category>
+      <category>CISA KEV</category>
+      <description>Microsoft shipped more than 570 fixes on July 14, and two of them patch flaws attackers were already using against AD FS and SharePoint.</description>
+      <content:encoded><![CDATA[<p>Five hundred and seventy fixes in a single Patch Tuesday. That's what Microsoft pushed on July 14, and by the Zero Day Initiative's tally, which folds in third-party CVEs Microsoft republished, the number climbs past 620. Either way you count it, this is the largest security update the company has ever shipped in one month.</p>
+<p>Volume isn't the real story, though. Two of the flaws were being used in attacks before a patch existed. CVE-2026-56155 is an elevation-of-privilege bug in Active Directory Federation Services, the piece a lot of organizations rely on for single sign-on. CVE-2026-56164 is a privilege-escalation flaw in SharePoint Server that an unauthenticated attacker can reach over the network. Microsoft confirmed both are under active exploitation, and CISA added the AD FS bug to its Known Exploited Vulnerabilities catalog the same day.</p>
+<p>A third zero-day, a BitLocker security-feature bypass tracked as CVE-2026-50661, was publicly disclosed but hasn't shown up in the wild yet.</p>
+<p>Of the full batch, 59 carry a critical rating and 48 of those are remote code execution. That's the pile to triage first. But the SharePoint and AD FS bugs deserve to jump the queue regardless of their merely "important" severity labels, because a flaw someone is actively exploiting beats a theoretical critical every time.</p>
+<p>The record-setting count is partly a bookkeeping artifact. Microsoft has been rolling more Chromium, Azure, and Mariner Linux advisories into its monthly release, which inflates the raw total without meaning there are 570 fresh ways into your Windows fleet. But it also reflects a real drift: the monthly numbers have climbed all year, and a security team that could hand-review a Patch Tuesday in an afternoon two years ago can't anymore.</p>
+<p>If you run AD FS or an on-prem SharePoint farm, patch those two first and go back through your logs for signs you were already hit. Everything else can follow your normal ring schedule. Just don't let the sheer size of this month's release become the reason it slips.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Samsung Unveils the Fold 8 July 22, Weeks Ahead of Apple</title>
       <link>https://sabr-labs.com/article/samsung-galaxy-fold-8-apple-iphone-fold-foldable-showdown-july-2026</link>
@@ -859,122 +984,6 @@
 <p>For a demo, that spread is noise. For a company serving millions of API calls a day, it's the difference between a viable margin and a bleeding one. As agentic workloads push token consumption up by orders of magnitude, per-token price stops being a line item and becomes the business model. Open-weight Chinese models you can self-host remove the metered bill entirely.</p>
 <p>None of this is free of friction. Running a Chinese open-weight model in production raises data-governance and procurement questions a lot of US enterprises won't clear, and "good enough on benchmarks" is not the same as "good enough on your workload." The pull is real, but so is the reason most regulated shops still won't touch it.</p>
 <p>The uncomfortable read for the US labs is that their pricing power is thinner than the revenue headlines suggest. Anthropic says it's on track for $47 billion annualized and has passed OpenAI on revenue, but revenue leadership doesn't lock in customers who watch a cheaper model close the quality gap every quarter. The floor under frontier pricing is competition, and a growing share of that competition now ships from Hangzhou.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI Chip Startup Etched Lands $800M at a $5 Billion Valuation</title>
-      <link>https://sabr-labs.com/article/etched-inference-chip-800m-funding-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/etched-inference-chip-800m-funding-july-2026</guid>
-      <pubDate>Mon, 06 Jul 2026 13:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Semiconductors</category>
-      <category>AI Chips</category>
-      <category>Etched</category>
-      <category>Nvidia</category>
-      <category>Inference</category>
-      <description>Etched raised $800 million to build chips that only run AI inference, betting that ripping out training hardware makes it the fastest way to serve today&apos;s biggest models.</description>
-      <content:encoded><![CDATA[<p>Etched's bet is blunt: build a chip that can't train an AI model at all, and it'll run one faster than anything that can. The company just came out with $800 million in funding and a $5 billion valuation to prove it.</p>
-<p>The chips are inference-only, built on TSMC's N4P process and shipped as rack-scale appliances rather than loose cards. By stripping out the circuitry a chip needs for training, Etched claims several times the compute density of general-purpose parts and says it can run trillion-parameter models at more than 80% of peak throughput. The backer list is a who's-who of AI academia, including Geoffrey Hinton, Fei-Fei Li, and Andrej Karpathy.</p>
-<p>The contrast with Nvidia is the whole pitch. Nvidia's Rubin generation does both training and inference, which is a big part of why it dominates. Etched is wagering that inference is where the volume and the money are heading as AI products actually scale to millions of users, and that specialization wins there in a way flexibility can't.</p>
-<p>The risk is just as blunt. Betting the company on the transformer architecture is a real bet. Inference-only silicon is fast precisely because it's rigid, and if the dominant model shape shifts under it, that rigidity turns from an advantage into dead weight. The road behind Nvidia is littered with challengers that had gorgeous benchmarks and no customers.</p>
-<p>Which is why the number to watch isn't the valuation. Etched says it has booked more than $1 billion in orders with first racks shipping this summer. If those racks land and hit the throughput claims in production, the inference-chip argument stops being a pitch and starts being a product.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Floats Giving the US Government a 5% Stake</title>
-      <link>https://sabr-labs.com/article/openai-5-percent-us-government-stake-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-5-percent-us-government-stake-july-2026</guid>
-      <pubDate>Mon, 06 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Sam Altman</category>
-      <category>AI Policy</category>
-      <category>Government</category>
-      <category>Regulation</category>
-      <description>OpenAI has pitched the Trump administration on a roughly $43 billion equity stake, framed as sharing AI&apos;s upside with the public while cooling political heat in Washington.</description>
-      <content:encoded><![CDATA[<p>Five percent of OpenAI is worth about $42.6 billion. That's the size of the stake the company has reportedly floated handing to the US government.</p>
-<p>According to the Financial Times, OpenAI proposed the government take a 5% equity position in the company. Sam Altman's framing is that it's the best way to share AI's upside with the public. The valuation math runs off the record $852 billion post-money figure from OpenAI's March funding round, so the percentage translates into a very large number.</p>
-<p>The talks are described as conceptual, with Altman engaging President Trump directly along with Commerce Secretary Howard Lutnick and Treasury Secretary Scott Bessent. The pitch reportedly goes further and asks other US AI companies to grant the government the same 5%, though whether any of them would sign up for that is a separate question entirely.</p>
-<p>OpenAI points to the Alaska Permanent Fund as the template, the sovereign wealth fund set up in 1976 to pay residents from the state's oil revenue. The analogy casts AI as a public windfall that the state should own a slice of, the way Alaska owns a slice of its oil.</p>
-<p>Read it less charitably and it looks a lot like buying goodwill. A government that owns 5% of OpenAI has a direct financial reason to want the company to thrive, and that interest doesn't vanish when the same administration sits down to write AI rules. Handing equity to your future regulator raises an obvious question about who's refereeing the match. It would also likely require an act of Congress, which puts real distance between the pitch and anything binding.</p>
-<p>Whatever the motive, the proposal reframes the relationship between AI labs and Washington from oversight toward partnership. A regulator with a line on the cap table is a different kind of regulator.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SimpleHelp Bug Is Dropping the New &apos;Djinn Stealer&apos; on Endpoints</title>
-      <link>https://sabr-labs.com/article/simplehelp-cve-2026-48558-djinn-stealer-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/simplehelp-cve-2026-48558-djinn-stealer-july-2026</guid>
-      <pubDate>Mon, 06 Jul 2026 10:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SimpleHelp</category>
-      <category>RMM</category>
-      <category>Infostealer</category>
-      <category>Credential Theft</category>
-      <category>CVE</category>
-      <description>An authentication bypass in the SimpleHelp remote-management tool is being used to install Djinn Stealer, which harvests credentials from cloud consoles to crypto wallets.</description>
-      <content:encoded><![CDATA[<p>Djinn Stealer isn't picky. Cloud logins, source-control tokens, package-registry keys, SSH keys, browser-stored passwords, even the credentials your AI coding assistant uses, it sweeps up the lot.</p>
-<p>The way in is CVE-2026-48558, an authentication bypass in SimpleHelp, the remote-monitoring-and-management tool IT teams use to reach endpoints. Attackers are actively exploiting it to push Djinn onto Windows, macOS, and Linux machines. This one is being used right now, not just theorized about.</p>
-<p>RMM compromise is a bad category of bad. These tools are trusted by design, run with high privileges, and reach a lot of machines from one console. Break the console and you inherit its footprint. That's why RMM flaws keep turning up at the front of real intrusions instead of buried in an advisory nobody reads.</p>
-<p>What makes Djinn worth naming is its shopping list. It reads like a modern developer's keyring: package registries, infrastructure tooling, AI dev assistants, version control. Stolen registry credentials are how supply-chain attacks get their start, so the blast radius doesn't stop at the machine that got popped.</p>
-<p>If you run SimpleHelp, patch it now, then rotate anything a compromised host could have touched and assume the stolen tokens are already in use somewhere. Credential theft doesn't wait for your incident review to finish.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Spent the Weekend Probing an Oracle EBS Payments Flaw</title>
-      <link>https://sabr-labs.com/article/oracle-ebs-payments-cve-2026-46817-exploited-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-ebs-payments-cve-2026-46817-exploited-july-2026</guid>
-      <pubDate>Mon, 06 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>E-Business Suite</category>
-      <category>CVE</category>
-      <category>Active Exploitation</category>
-      <category>Enterprise</category>
-      <description>Exploitation attempts against a critical bug in Oracle E-Business Suite&apos;s Payments module showed up over the weekend, and EBS has been a repeat target all year.</description>
-      <content:encoded><![CDATA[<p>Over the weekend, researchers spotted exploitation attempts against CVE-2026-46817, a critical vulnerability in the Payments module of Oracle E-Business Suite. That's the part of EBS that actually moves money, which is exactly why it's worth an attacker's time.</p>
-<p>EBS is the back office for a lot of large enterprises. It runs financials, procurement, HR, and payment processing, and it tends to sit deep inside the network holding data that matters. When a flaw lands in the Payments component specifically, the worst-case reads like fraud, not just data theft.</p>
-<p>The full technical picture is still thin. What's clear is that attackers are already testing the bug in the wild, and probing at this stage usually means a working exploit is circulating or close behind. Oracle has published a fix, so the clock is now the enemy.</p>
-<p>That clock is the real story. EBS deployments are notoriously slow to patch because they're heavily customized, business-critical systems that nobody reboots casually. The gap between an Oracle advisory and an actual production patch can run weeks, and attackers know it. If you run EBS, apply the fix, pull external access to the Payments endpoints, and start watching those logs now rather than after quarter close.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>&apos;Bad Epoll&apos; Linux Kernel Bug Hands Any Local User Root, Android Included</title>
-      <link>https://sabr-labs.com/article/bad-epoll-cve-2026-46242-linux-kernel-root-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bad-epoll-cve-2026-46242-linux-kernel-root-july-2026</guid>
-      <pubDate>Mon, 06 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Linux</category>
-      <category>Kernel</category>
-      <category>Privilege Escalation</category>
-      <category>Android</category>
-      <category>CVE</category>
-      <description>A use-after-free in the kernel&apos;s epoll code turns any local Linux or Android user into root, and most distributions still haven&apos;t shipped the fix.</description>
-      <content:encoded><![CDATA[<p>Give an attacker any account on a Linux box, even a heavily locked-down one, and Bad Epoll gets them to root. The exploit works about 99 times out of 100.</p>
-<p>Tracked as CVE-2026-46242, the flaw is a use-after-free race in ep_remove() inside the kernel's eventpoll code. Two paths try to tear down the same internal object at once: one frees the memory while the other is still writing into it, corrupting kernel state. The timing window is only about six instructions wide, but researcher Jaeyoung Chung, who found the bug, built an exploit that hits it reliably anyway.</p>
-<p>The blast radius is the problem. Kernel versions 5.10 through 6.11 are confirmed affected, and the bad code was introduced back in April 2023, so it's been sitting in the tree for three years. This isn't only a server and desktop issue either. Android runs the same kernel, which puts phones in scope too.</p>
-<p>Here's the part that should worry you. The fix landed in the mainline kernel on April 24, then sat quiet for roughly 70 days before the public writeup dropped. A patched mainline does nothing for you if your distribution hasn't backported it, and plenty haven't. That leaves a live window where the bug is public, the exploit is reliable, and a lot of machines are still open.</p>
-<p>There's an uncomfortable footnote for the AI-finds-bugs crowd. Bad Epoll sits in the same small stretch of kernel code where Anthropic's Mythos model recently flagged a different flaw. The model caught one and walked straight past this one. Automated auditing is useful, but it isn't a substitute for a human who knows where the bodies are buried.</p>
-<p>Check your running kernel version, watch your distribution's advisory feed, and apply the backport the moment it ships. If you run shared or multi-tenant systems, where untrusted users already have local accounts, treat this as urgent rather than routine.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Bets $2.5 Billion That Enterprise AI Needs Humans On-Site</title>
-      <link>https://sabr-labs.com/article/microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-frontier-company-2-5-billion-enterprise-ai-july-2026</guid>
-      <pubDate>Sun, 05 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Enterprise AI</category>
-      <category>AI Adoption</category>
-      <category>Consulting</category>
-      <category>Copilot</category>
-      <description>Microsoft&apos;s new Frontier Company will embed 6,000 engineers inside customer offices to make AI deployments actually pay off, an admission that selling Copilot licenses wasn&apos;t enough.</description>
-      <content:encoded><![CDATA[<p>Ninety-five percent of enterprise AI pilots produce no measurable return. That's the figure MIT's Project NANDA put on the table this spring, and it's the figure Microsoft is now spending $2.5 billion to argue it can beat.</p>
-<p>On July 2 the company launched Microsoft Frontier Company, a new operating unit staffed by roughly 6,000 engineers, industry specialists, and consultants who won't sit in Redmond. They'll be embedded inside customer organizations to design, build, and run AI systems on-site.</p>
-<p>Judson Althoff, CEO of Microsoft's Commercial Business, framed the job as co-designing and continuously improving AI systems "based on measurable business outcomes" rather than more experimentation. Early partners named at launch include the London Stock Exchange Group, Unilever, Land O'Lakes, and Accenture.</p>
-<p>Strip away the branding and this is professional services. The forward-deployed engineer model belongs to Palantir, and consulting-firms-with-a-product is a well-worn shape. What makes the move interesting is what it concedes: Copilot subscriptions on their own don't move a customer's profit and loss. You need people in the building wiring the thing into real workflows. That's less a launch than an admission, dressed up as one.</p>
-<p>Microsoft isn't alone in reaching that conclusion. Amazon announced a comparable AI-deployment group two days earlier, and Microsoft's dollar figure is more than double it. Anthropic and OpenAI both stood up similar teams back in May, partnering with banks, PE firms, and consultancies. Four of the biggest names in the industry looked at the same pilot-failure data and arrived at the same fix within weeks of each other.</p>
-<p>The tell here isn't the money. It's that the frontier of enterprise AI in 2026 turns out to be staffing. The models are good enough; getting them to earn their keep is a human problem, and everyone selling them just admitted it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
