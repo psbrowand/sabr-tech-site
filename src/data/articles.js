@@ -25,6 +25,228 @@
 
 export const articles = [
   {
+    id: 239,
+    slug: "asml-q2-2026-earnings-raise-forecast-ai-chip-demand-july-2026",
+    title: "ASML Raises Its 2026 Forecast Again as AI Chip Orders Pile Up",
+    summary: "ASML posted 9.3 billion euros in Q2 sales and lifted its full-year outlook to 43-45 billion euros, crediting extremely strong orders for AI chip gear.",
+    body: [
+      "9.3 billion euros in sales and a raised outlook, for the second time this year. That's ASML's second quarter, and for anyone trying to work out whether the AI buildout is real demand or a good story, it's about as close to ground truth as the chip industry offers.",
+      "The company reported 9.3 billion euros in net sales and 2.9 billion in net income, both ahead of expectations. It then raised its 2026 revenue guidance to a range of 43 to 45 billion euros, up from the 36 to 40 billion it had guided earlier, with gross margin expected between 54 and 56 percent. CEO Christophe Fouquet flagged extremely strong order intake driven by demand for AI chips.",
+      "Why does one Dutch equipment maker's earnings call matter this much? Because ASML is the only company on earth that builds EUV lithography machines, the tools every advanced chip is patterned on. Nvidia's accelerators, Apple's phone silicon, the memory going into AI servers: all of it runs through ASML gear at some point. So when ASML says orders are extremely strong and capacity is the limiting factor, that isn't marketing. It's the supplier at the narrowest point of the whole pipeline telling you the demand is already booked.",
+      "On that capacity point, ASML said it plans to expand output for its flagship EUV tools by 30 percent in each of the next two years, and to do the same for the older DUV machines used for less advanced chips and by customers in China.",
+      "The skeptical read is the China exposure and the question any second forecast hike invites: is this froth? But ASML's order book works against the froth story rather than for it. The company books orders years ahead and has no real competitor, so its guidance tends to lag hype cycles instead of riding them. A number it raises today reflects commitments made well before this week's headlines.",
+      "If you want a single dial to watch for whether the AI capex wave is cresting, don't look at a hyperscaler's press release. Look at ASML's order book. Right now the dial says up.",
+    ],
+    category: "tech",
+    tags: ["ASML", "Semiconductors", "EUV", "AI Chips", "Earnings"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-16T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "ASML Q2 2026 Results",
+        desc: "ASML's own press release with the quarter's figures and revised outlook",
+        url: "https://www.asml.com/en/news/press-releases/2026/q2-2026-financial-results",
+      },
+      {
+        name: "Investing.com",
+        desc: "Reporting on the Q2 beat and raised full-year forecast",
+        url: "https://www.investing.com/news/earnings/asml-q2-outlook-tops-on-ai-chip-demand-lifts-fullyear-forecast-4792148",
+      },
+      {
+        name: "Yahoo Finance",
+        desc: "Coverage of the forecast raise and capacity expansion",
+        url: "https://finance.yahoo.com/video/asml-raises-2026-forecast-expands-091838488.html",
+      },
+      {
+        name: "Global Banking & Finance",
+        desc: "Analysis of ASML topping Q2 estimates on AI chip demand",
+        url: "https://www.globalbankingandfinance.com/asml-tops-q2-estimates-ai-chip-demand/",
+      },
+    ],
+  },
+  {
+    id: 240,
+    slug: "oracle-ebs-cve-2026-46817-payments-kev-active-exploitation-july-2026",
+    title: "CISA Flags an Exploited Oracle E-Business Suite Payments Bug",
+    summary: "CISA added CVE-2026-46817, an unauthenticated flaw that can hand attackers control of Oracle Payments, to its exploited-vulnerabilities catalog with a July 18 federal fix deadline.",
+    body: [
+      "An unauthenticated attacker who can reach your Oracle E-Business Suite over HTTP may be able to take over its payments module. No login required. CISA thinks someone already is.",
+      "On July 15 the agency added CVE-2026-46817 to its Known Exploited Vulnerabilities catalog. The flaw sits in Oracle Payments, part of E-Business Suite, and it's really a stack of authentication failures bundled together: improper privilege management, improper authentication, and missing authentication for a critical function. The plain-language version is that the checks meant to confirm who you are and what you're allowed to do aren't reliably there.",
+      "Federal civilian agencies have until July 18 to patch it. That's three days from the listing. CISA's usual remediation window runs longer, and this time the agency didn't publish indicators of compromise or name a threat actor. When CISA sets a short fuse and stays quiet on the details, the message tends to be the same: this is being used in the wild, and explaining how would help the wrong people more than the defenders.",
+      "Oracle's E-Business Suite has been a rewarding target before. Late last year the Cl0p ransomware crew tore through EBS zero-days to steal data from dozens of organizations. Payments is exactly the module an attacker would want if the goal is fraud or extortion, because it sits on top of financial records, payment workflows, and whatever downstream enterprise systems the platform is wired into.",
+      "If you run E-Business Suite, treat this as tonight's work, not next sprint's. Apply Oracle's fix and then pull access logs for the payments endpoints, going back further than feels necessary, because a spot on the KEV list means exploitation predates the public disclosure. Worth noting: CISA added an older KNX building-automation flaw, CVE-2023-4346, the same day. Known-exploited and newly-discovered are not the same thing, and attackers are happy to use whichever one you forgot to patch.",
+    ],
+    category: "cyber",
+    tags: [
+      "Oracle",
+      "CVE-2026-46817",
+      "CISA KEV",
+      "Active Exploitation",
+      "E-Business Suite",
+    ],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-16T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "CISA KEV Catalog",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "CISA Alert (July 15, 2026)",
+        desc: "Official notice adding the two vulnerabilities to the KEV catalog",
+        url: "https://www.cisa.gov/news-events/alerts/2026/07/15/cisa-adds-two-known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "GBHackers",
+        desc: "Technical writeup of the Oracle E-Business Suite flaw and its impact",
+        url: "https://gbhackers.com/cisa-warns-of-actively-exploited-oracle-e-business-suite-flaw/",
+      },
+      {
+        name: "OpenText Cybersecurity",
+        desc: "Summary of the July 15 KEV additions",
+        url: "https://community.opentextcybersecurity.com/vulnerability-vault-228/alert-cisa-adds-two-known-exploited-vulnerabilities-to-catalog-release-date-july-15-2026-365036",
+      },
+    ],
+  },
+  {
+    id: 241,
+    slug: "eu-uk-first-joint-sanctions-russia-fsb-centre-16-turla-july-2026",
+    title: "EU and UK Sanction Russia's FSB Cyber Complex in a First Joint Move",
+    summary: "The EU and UK issued their first joint cyber sanctions package, naming the FSB's 16th Centre as the hand behind Turla and years of espionage and sabotage against member states.",
+    body: [
+      "For years, network defenders across Europe have watched a set of intrusions that all felt related but were hard to pin on a single owner. On July 13 the EU put a name on the owner: the 16th Centre of Russia's Federal Security Service.",
+      "The EU and UK moved together, in what both describe as their first joint cyber sanctions package. The EU listed nine individuals and four entities; the UK listed 24. The named parties run the gamut from intelligence officers to cybercriminals, self-described hacktivists, and private companies that the EU says feed Russia's operations.",
+      "The headline attribution is that the 16th Centre directs several threat groups, including Turla, an espionage crew that researchers have tracked for more than a decade under names like Snake and Uroburos. The EU's account covers both spying and sabotage: cyber operations against strategic French government entities going back to 2010 and its defense industry in 2025, and, in Poland, disruptive sabotage against critical infrastructure that included combined heat and power plants. France, Germany, Poland, Cyprus, the Netherlands, Austria, Slovakia, Romania, and Finland all appear on the target list, along with Ukraine.",
+      "Now the honest part. Sanctions on FSB officers aren't going to freeze anyone's holiday plans in Nice. These people weren't banking in Frankfurt. The mechanism's real product isn't financial pain, it's attribution: a government putting its name behind the claim that one identifiable Russian unit ran a decade of operations, and two governments doing it in lockstep rather than issuing separate statements a month apart.",
+      "For a SOC, the useful part is the mapping. When states formally tie the 16th Centre to Turla and to named sabotage campaigns, threat intelligence gets a firmer backbone. The activity you're modeling has an org chart now, not just a cluster of overlapping indicators. Whether naming it changes what Moscow does is a separate question, and the track record says attribution rarely slows these groups down. It does make them easier to talk about, and easier to hunt.",
+    ],
+    category: "cyber",
+    tags: ["Russia", "FSB", "Turla", "EU Sanctions", "Cyber Espionage"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-16T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Council of the EU",
+        desc: "Official High Representative statement announcing the attribution and measures",
+        url: "https://www.consilium.europa.eu/en/press/press-releases/2026/07/13/cyber-russia-statement-by-the-high-representative-on-behalf-of-the-european-union-denouncing-russia-s-malicious-cyber-ecosystem-targeting-the-eu-its-member-states-and-international-partners/",
+      },
+      {
+        name: "CyberScoop",
+        desc: "Reporting on the EU-UK action against Turla and the FSB",
+        url: "https://cyberscoop.com/eu-uk-russian-cyberespionage-sanctions/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Details on the listed individuals and entities",
+        url: "https://www.helpnetsecurity.com/2026/07/13/eu-uk-russia-cyber-activity-sanctions/",
+      },
+      {
+        name: "The Next Web",
+        desc: "Coverage of the first joint EU-UK cyber sanctions package",
+        url: "https://thenextweb.com/news/eu-uk-russia-cyber-sanctions-turla-fsb",
+      },
+    ],
+  },
+  {
+    id: 242,
+    slug: "ode-anthropic-blackstone-ai-implementation-services-july-2026",
+    title: "Anthropic's Bet: The Money Is in Deploying AI, Not Building It",
+    summary: "A 1.5 billion dollar Anthropic-backed venture called Ode is embedding engineers inside enterprises, wagering that implementation, not model access, is the real AI business.",
+    body: [
+      "Anthropic just put money behind an idea that cuts against its own core product: the frontier model is the easy part, and the real money is in the grunt work of making it useful inside a company.",
+      "The venture is called Ode with Anthropic, a 1.5 billion dollar joint effort launched in May and backed by Anthropic along with Blackstone, Hellman & Friedman, Goldman Sachs, and others. It's run by Chris Taylor and Eddie Siegel, who co-founded the AI services firm Fractional AI, and it already has around 100 engineers. The model is old-fashioned consulting with a new subject: embed engineers inside a client, learn how the business actually works, and build the custom plumbing that connects a language model to messy real operations.",
+      "Siegel put the thesis plainly. The model itself, he said, is \"one ingredient in a system that has to be engineered,\" adding that he \"would not define an enterprise transformation in terms of whether they choose Python or Java.\" Read that from Anthropic's seat. The company whose whole product is Claude is funding a business built on the premise that which model you pick is a detail.",
+      "Ode isn't alone, and it isn't first. OpenAI stood up its own services arm, The Deployment Company, and the incumbents (Deloitte, Accenture, and every systems integrator with a slide deck) have been building forward-deployed AI teams for a year. What's new is the labs themselves reaching down into the services layer they used to leave to partners.",
+      "The honest read is a hedge. If model quality keeps converging and prices keep falling (GPT-5.6, Grok 4.5, and Meta's Muse Spark all landed within days of each other this month, which is what convergence looks like), then the durable margin isn't in the API meter. It's in the engineers who make the thing work. Anthropic is betting on that outcome by building the business that profits from it. That's either sharp strategy or a quiet admission about where model economics are heading. Probably both.",
+    ],
+    category: "ai",
+    tags: ["Anthropic", "Ode", "Blackstone", "Enterprise AI", "Consulting"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-16T13:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "TechCrunch",
+        desc: "Reporting on the Ode venture and the implementation-over-models thesis",
+        url: "https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/",
+      },
+      {
+        name: "Anthropic Newsroom",
+        desc: "Anthropic's own announcements and company updates",
+        url: "https://www.anthropic.com/news",
+      },
+      {
+        name: "CNBC",
+        desc: "Context on AI labs moving into the enterprise deployment market",
+        url: "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html",
+      },
+    ],
+  },
+  {
+    id: 243,
+    slug: "comptia-cisco-networking-pro-v7-retiring-v8-july-2026",
+    title: "CompTIA Retires Cisco Networking Pro V7 on July 31",
+    summary: "CompTIA's Cisco Networking Pro V7 course retires July 31, replaced by a V8 built around the current CCNA 200-301 exam and hands-on network engineer skills.",
+    body: [
+      "If you're studying with CompTIA's Cisco Networking Pro track, note the date: V7 goes away on July 31. After that it's V8 only, and if you've already started V7, this is the moment to decide whether to finish or switch.",
+      "Quick orientation, because the naming trips people up. Cisco Networking Pro is CompTIA's hands-on learning product, the one that used to be called Routing and Switching Pro, and it's built to prep you for Cisco's CCNA 200-301 exam. It is not a certification on its own. Think of it as the lab-and-coursework path toward CCNA, not a credential you'd list by itself.",
+      "V8 carries updated content and, per CompTIA, more study time built into the track. The exam target is still CCNA 200-301, so the destination hasn't moved. What you get with V8 is fresher labs and material lined up with how the current exam actually tests, which matters more than it sounds once an old version's examples start drifting from the blueprint.",
+      "Here's the part worth thinking through, because there are two clocks running. CompTIA's V7 course retires July 31, 2026. Separately, Cisco announced CCNA v2.0 back on May 20, and that new exam becomes the only option on February 3, 2027. So the course you learn from changes this summer, and the exam itself changes early next year. If you're already on the current 200-301 and moving at a steady pace, you can still finish under the exam you started with. If you're just beginning, you're studying toward a target that shifts in about seven months.",
+      "The practical call: if you're partway through V7 and your exam date lands before July 31, keep going and don't restart. If you're starting fresh this summer, go straight into V8 so your materials match, and try to book your CCNA before the v2.0 cutover, since sitting the exam you actually studied for beats retooling for a new blueprint mid-stream. None of this touches the fundamentals CCNA tests. It just changes which version's wording you'll see on test day.",
+    ],
+    category: "learning",
+    tags: ["CompTIA", "Cisco", "CCNA", "Certification", "Networking"],
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-16T14:15:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CompTIA Cisco Networking Pro",
+        desc: "Official product page listing V7 retirement and the V8 version",
+        url: "https://www.comptia.org/en-us/certifications/cisco-networking-pro/",
+      },
+      {
+        name: "Cisco: A New Chapter for CCNA",
+        desc: "Cisco's announcement of the CCNA change taking effect February 2027",
+        url: "https://www.netacad.com/articles/news/s-new-chapter-for-ccna?courseLang=en-US",
+      },
+      {
+        name: "Cisco Learning Network",
+        desc: "Cisco's overview of the current certification changes",
+        url: "https://learningnetwork.cisco.com/s/a-new-era-for-cisco-certifications",
+      },
+      {
+        name: "CBT Nuggets",
+        desc: "Rundown of the 2026-2027 Cisco certification changes",
+        url: "https://www.cbtnuggets.com/blog/certifications/cisco/major-cisco-cert-changes",
+      },
+    ],
+  },
+  {
     id: 233,
     slug: "microsoft-july-2026-patch-tuesday-record-570-cves-adfs-sharepoint-zero-days",
     title: "Microsoft's July Patch Tuesday Is Its Biggest Ever, With Two Zero-Days",
@@ -43,7 +265,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-15T08:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -329,7 +551,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Oracle Security Alerts",
@@ -1547,7 +1769,7 @@ export const articles = [
     publishedAt: "2026-07-09T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1636,7 +1858,7 @@ export const articles = [
     publishedAt: "2026-07-09T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1675,7 +1897,7 @@ export const articles = [
     publishedAt: "2026-07-09T14:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1714,7 +1936,7 @@ export const articles = [
     publishedAt: "2026-07-09T15:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

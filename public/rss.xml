@@ -6,9 +6,105 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2026 13:17:07 GMT</lastBuildDate>
-    <pubDate>Wed, 15 Jul 2026 13:17:07 GMT</pubDate>
+    <lastBuildDate>Thu, 16 Jul 2026 16:13:32 GMT</lastBuildDate>
+    <pubDate>Thu, 16 Jul 2026 16:13:32 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CompTIA Retires Cisco Networking Pro V7 on July 31</title>
+      <link>https://sabr-labs.com/article/comptia-cisco-networking-pro-v7-retiring-v8-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-cisco-networking-pro-v7-retiring-v8-july-2026</guid>
+      <pubDate>Thu, 16 Jul 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>Cisco</category>
+      <category>CCNA</category>
+      <category>Certification</category>
+      <category>Networking</category>
+      <description>CompTIA&apos;s Cisco Networking Pro V7 course retires July 31, replaced by a V8 built around the current CCNA 200-301 exam and hands-on network engineer skills.</description>
+      <content:encoded><![CDATA[<p>If you're studying with CompTIA's Cisco Networking Pro track, note the date: V7 goes away on July 31. After that it's V8 only, and if you've already started V7, this is the moment to decide whether to finish or switch.</p>
+<p>Quick orientation, because the naming trips people up. Cisco Networking Pro is CompTIA's hands-on learning product, the one that used to be called Routing and Switching Pro, and it's built to prep you for Cisco's CCNA 200-301 exam. It is not a certification on its own. Think of it as the lab-and-coursework path toward CCNA, not a credential you'd list by itself.</p>
+<p>V8 carries updated content and, per CompTIA, more study time built into the track. The exam target is still CCNA 200-301, so the destination hasn't moved. What you get with V8 is fresher labs and material lined up with how the current exam actually tests, which matters more than it sounds once an old version's examples start drifting from the blueprint.</p>
+<p>Here's the part worth thinking through, because there are two clocks running. CompTIA's V7 course retires July 31, 2026. Separately, Cisco announced CCNA v2.0 back on May 20, and that new exam becomes the only option on February 3, 2027. So the course you learn from changes this summer, and the exam itself changes early next year. If you're already on the current 200-301 and moving at a steady pace, you can still finish under the exam you started with. If you're just beginning, you're studying toward a target that shifts in about seven months.</p>
+<p>The practical call: if you're partway through V7 and your exam date lands before July 31, keep going and don't restart. If you're starting fresh this summer, go straight into V8 so your materials match, and try to book your CCNA before the v2.0 cutover, since sitting the exam you actually studied for beats retooling for a new blueprint mid-stream. None of this touches the fundamentals CCNA tests. It just changes which version's wording you'll see on test day.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic&apos;s Bet: The Money Is in Deploying AI, Not Building It</title>
+      <link>https://sabr-labs.com/article/ode-anthropic-blackstone-ai-implementation-services-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ode-anthropic-blackstone-ai-implementation-services-july-2026</guid>
+      <pubDate>Thu, 16 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Ode</category>
+      <category>Blackstone</category>
+      <category>Enterprise AI</category>
+      <category>Consulting</category>
+      <description>A 1.5 billion dollar Anthropic-backed venture called Ode is embedding engineers inside enterprises, wagering that implementation, not model access, is the real AI business.</description>
+      <content:encoded><![CDATA[<p>Anthropic just put money behind an idea that cuts against its own core product: the frontier model is the easy part, and the real money is in the grunt work of making it useful inside a company.</p>
+<p>The venture is called Ode with Anthropic, a 1.5 billion dollar joint effort launched in May and backed by Anthropic along with Blackstone, Hellman & Friedman, Goldman Sachs, and others. It's run by Chris Taylor and Eddie Siegel, who co-founded the AI services firm Fractional AI, and it already has around 100 engineers. The model is old-fashioned consulting with a new subject: embed engineers inside a client, learn how the business actually works, and build the custom plumbing that connects a language model to messy real operations.</p>
+<p>Siegel put the thesis plainly. The model itself, he said, is "one ingredient in a system that has to be engineered," adding that he "would not define an enterprise transformation in terms of whether they choose Python or Java." Read that from Anthropic's seat. The company whose whole product is Claude is funding a business built on the premise that which model you pick is a detail.</p>
+<p>Ode isn't alone, and it isn't first. OpenAI stood up its own services arm, The Deployment Company, and the incumbents (Deloitte, Accenture, and every systems integrator with a slide deck) have been building forward-deployed AI teams for a year. What's new is the labs themselves reaching down into the services layer they used to leave to partners.</p>
+<p>The honest read is a hedge. If model quality keeps converging and prices keep falling (GPT-5.6, Grok 4.5, and Meta's Muse Spark all landed within days of each other this month, which is what convergence looks like), then the durable margin isn't in the API meter. It's in the engineers who make the thing work. Anthropic is betting on that outcome by building the business that profits from it. That's either sharp strategy or a quiet admission about where model economics are heading. Probably both.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>EU and UK Sanction Russia&apos;s FSB Cyber Complex in a First Joint Move</title>
+      <link>https://sabr-labs.com/article/eu-uk-first-joint-sanctions-russia-fsb-centre-16-turla-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/eu-uk-first-joint-sanctions-russia-fsb-centre-16-turla-july-2026</guid>
+      <pubDate>Thu, 16 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Russia</category>
+      <category>FSB</category>
+      <category>Turla</category>
+      <category>EU Sanctions</category>
+      <category>Cyber Espionage</category>
+      <description>The EU and UK issued their first joint cyber sanctions package, naming the FSB&apos;s 16th Centre as the hand behind Turla and years of espionage and sabotage against member states.</description>
+      <content:encoded><![CDATA[<p>For years, network defenders across Europe have watched a set of intrusions that all felt related but were hard to pin on a single owner. On July 13 the EU put a name on the owner: the 16th Centre of Russia's Federal Security Service.</p>
+<p>The EU and UK moved together, in what both describe as their first joint cyber sanctions package. The EU listed nine individuals and four entities; the UK listed 24. The named parties run the gamut from intelligence officers to cybercriminals, self-described hacktivists, and private companies that the EU says feed Russia's operations.</p>
+<p>The headline attribution is that the 16th Centre directs several threat groups, including Turla, an espionage crew that researchers have tracked for more than a decade under names like Snake and Uroburos. The EU's account covers both spying and sabotage: cyber operations against strategic French government entities going back to 2010 and its defense industry in 2025, and, in Poland, disruptive sabotage against critical infrastructure that included combined heat and power plants. France, Germany, Poland, Cyprus, the Netherlands, Austria, Slovakia, Romania, and Finland all appear on the target list, along with Ukraine.</p>
+<p>Now the honest part. Sanctions on FSB officers aren't going to freeze anyone's holiday plans in Nice. These people weren't banking in Frankfurt. The mechanism's real product isn't financial pain, it's attribution: a government putting its name behind the claim that one identifiable Russian unit ran a decade of operations, and two governments doing it in lockstep rather than issuing separate statements a month apart.</p>
+<p>For a SOC, the useful part is the mapping. When states formally tie the 16th Centre to Turla and to named sabotage campaigns, threat intelligence gets a firmer backbone. The activity you're modeling has an org chart now, not just a cluster of overlapping indicators. Whether naming it changes what Moscow does is a separate question, and the track record says attribution rarely slows these groups down. It does make them easier to talk about, and easier to hunt.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Flags an Exploited Oracle E-Business Suite Payments Bug</title>
+      <link>https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-kev-active-exploitation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-kev-active-exploitation-july-2026</guid>
+      <pubDate>Thu, 16 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Oracle</category>
+      <category>CVE-2026-46817</category>
+      <category>CISA KEV</category>
+      <category>Active Exploitation</category>
+      <category>E-Business Suite</category>
+      <description>CISA added CVE-2026-46817, an unauthenticated flaw that can hand attackers control of Oracle Payments, to its exploited-vulnerabilities catalog with a July 18 federal fix deadline.</description>
+      <content:encoded><![CDATA[<p>An unauthenticated attacker who can reach your Oracle E-Business Suite over HTTP may be able to take over its payments module. No login required. CISA thinks someone already is.</p>
+<p>On July 15 the agency added CVE-2026-46817 to its Known Exploited Vulnerabilities catalog. The flaw sits in Oracle Payments, part of E-Business Suite, and it's really a stack of authentication failures bundled together: improper privilege management, improper authentication, and missing authentication for a critical function. The plain-language version is that the checks meant to confirm who you are and what you're allowed to do aren't reliably there.</p>
+<p>Federal civilian agencies have until July 18 to patch it. That's three days from the listing. CISA's usual remediation window runs longer, and this time the agency didn't publish indicators of compromise or name a threat actor. When CISA sets a short fuse and stays quiet on the details, the message tends to be the same: this is being used in the wild, and explaining how would help the wrong people more than the defenders.</p>
+<p>Oracle's E-Business Suite has been a rewarding target before. Late last year the Cl0p ransomware crew tore through EBS zero-days to steal data from dozens of organizations. Payments is exactly the module an attacker would want if the goal is fraud or extortion, because it sits on top of financial records, payment workflows, and whatever downstream enterprise systems the platform is wired into.</p>
+<p>If you run E-Business Suite, treat this as tonight's work, not next sprint's. Apply Oracle's fix and then pull access logs for the payments endpoints, going back further than feels necessary, because a spot on the KEV list means exploitation predates the public disclosure. Worth noting: CISA added an older KNX building-automation flaw, CVE-2023-4346, the same day. Known-exploited and newly-discovered are not the same thing, and attackers are happy to use whichever one you forgot to patch.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ASML Raises Its 2026 Forecast Again as AI Chip Orders Pile Up</title>
+      <link>https://sabr-labs.com/article/asml-q2-2026-earnings-raise-forecast-ai-chip-demand-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/asml-q2-2026-earnings-raise-forecast-ai-chip-demand-july-2026</guid>
+      <pubDate>Thu, 16 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>ASML</category>
+      <category>Semiconductors</category>
+      <category>EUV</category>
+      <category>AI Chips</category>
+      <category>Earnings</category>
+      <description>ASML posted 9.3 billion euros in Q2 sales and lifted its full-year outlook to 43-45 billion euros, crediting extremely strong orders for AI chip gear.</description>
+      <content:encoded><![CDATA[<p>9.3 billion euros in sales and a raised outlook, for the second time this year. That's ASML's second quarter, and for anyone trying to work out whether the AI buildout is real demand or a good story, it's about as close to ground truth as the chip industry offers.</p>
+<p>The company reported 9.3 billion euros in net sales and 2.9 billion in net income, both ahead of expectations. It then raised its 2026 revenue guidance to a range of 43 to 45 billion euros, up from the 36 to 40 billion it had guided earlier, with gross margin expected between 54 and 56 percent. CEO Christophe Fouquet flagged extremely strong order intake driven by demand for AI chips.</p>
+<p>Why does one Dutch equipment maker's earnings call matter this much? Because ASML is the only company on earth that builds EUV lithography machines, the tools every advanced chip is patterned on. Nvidia's accelerators, Apple's phone silicon, the memory going into AI servers: all of it runs through ASML gear at some point. So when ASML says orders are extremely strong and capacity is the limiting factor, that isn't marketing. It's the supplier at the narrowest point of the whole pipeline telling you the demand is already booked.</p>
+<p>On that capacity point, ASML said it plans to expand output for its flagship EUV tools by 30 percent in each of the next two years, and to do the same for the older DUV machines used for less advanced chips and by customers in China.</p>
+<p>The skeptical read is the China exposure and the question any second forecast hike invites: is this froth? But ASML's order book works against the froth story rather than for it. The company books orders years ahead and has no real competitor, so its guidance tends to lag hype cycles instead of riding them. A number it raises today reflects commitments made well before this week's headlines.</p>
+<p>If you want a single dial to watch for whether the AI capex wave is cresting, don't look at a hyperscaler's press release. Look at ASML's order book. Right now the dial says up.</p>]]></content:encoded>
+    </item>
     <item>
       <title>GPT-5.6 Went Public Only After a 12-Day Government Review</title>
       <link>https://sabr-labs.com/article/gpt-5-6-sol-terra-luna-public-commerce-department-caisi-review-july-2026</link>
@@ -887,103 +983,6 @@
 <p>CISA added the CVE to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 10 to patch. One of the earliest recorded attempts came from an IP in India trying to read C:\Windows\win.ini, the classic "can I read arbitrary files" canary before an attacker commits to something worse.</p>
 <p>Here's the part worth saying plainly: RDS was never supposed to face the internet. It's a developer convenience meant for trusted networks, and Adobe has told people to disable it in production for years. Every server getting hit right now had a component exposed that should have been off. The patch closes the bug, but the real lesson is inventory. If you run ColdFusion, confirm RDS is disabled, not just that you've updated.</p>
 <p>If a box was internet-facing any time in the last week, patching is not enough. Hunt for unauthorized files in the web root and /CFIDE/ directories, because a two-hour exploitation window means the scanners found you before you found the advisory.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Sysdig Documents JADEPUFFER, the First Fully Autonomous Ransomware Attack</title>
-      <link>https://sabr-labs.com/article/jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/jadepuffer-agentic-ransomware-langflow-cve-2025-3248-july-2026</guid>
-      <pubDate>Tue, 07 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>AI</category>
-      <category>Langflow</category>
-      <category>Sysdig</category>
-      <category>Threat Intelligence</category>
-      <description>An AI agent exploited a Langflow flaw and ran the entire ransomware chain, from break-in to database destruction, with no human between the steps.</description>
-      <content:encoded><![CDATA[<p>An AI agent broke into an internet-facing Langflow server, ran its own reconnaissance, stole cloud credentials, moved laterally, and encrypted a production database. No human touched the keyboard between steps. Sysdig is calling it JADEPUFFER, and says it's the first ransomware operation it has watched run end to end by an autonomous agent.</p>
-<p>The way in was CVE-2025-3248, a missing-authentication flaw in Langflow's code-validation endpoint that lets an unauthenticated attacker run arbitrary Python on the host. That bug is old news; it's been patched since 2025. What's new is what came after the foothold.</p>
-<p>Sysdig's researchers describe an agent that behaved like a competent human operator working at machine speed. When a login failed, it diagnosed the root cause and shipped a multi-step fix in 31 seconds rather than blindly retrying. The payloads it dropped were self-narrating, stuffed with plain-English notes explaining why each action was being taken, the kind of annotation a person almost never writes but an LLM produces reflexively.</p>
-<p>On the target, the agent encrypted all 1,342 Nacos service configuration items with MySQL's AES_ENCRYPT(), dropped the original tables, and stood up an extortion table holding a Bitcoin address and a Proton Mail contact.</p>
-<p>Here's the part that undercuts the horror-movie framing: the operation was sloppy in ways a real crew wouldn't be. The Bitcoin address it demanded payment to was a sample wallet lifted from developer documentation. The encryption key was generated at random, printed to the screen once, and never saved or sent anywhere, which means even a victim who paid could not get their data back. This wasn't extortion so much as automated destruction wearing an extortion note.</p>
-<p>Sysdig frames JADEPUFFER as a warning sign, not a crisis, and that's the right read. None of the individual moves were novel. What's notable is that they were chained together autonomously, which collapses the time and skill a human operator used to need. The uncomfortable trajectory is obvious: the next version won't paste the wrong wallet address.</p>
-<p>For defenders the takeaway is boring and familiar. The initial access was a year-old unpatched CVE on an exposed service. Agent or no agent, that's still the door. Patch Langflow, get code-execution-capable dev tools off the public internet, and watch for credential-access patterns that move faster than a person could type.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DHS Confirms Hackers Breached Its HSIN Information-Sharing Network</title>
-      <link>https://sabr-labs.com/article/dhs-hsin-homeland-security-information-network-breach-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/dhs-hsin-homeland-security-information-network-breach-july-2026</guid>
-      <pubDate>Tue, 07 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>DHS</category>
-      <category>Data Breach</category>
-      <category>Government</category>
-      <category>SharePoint</category>
-      <category>Incident Response</category>
-      <description>The Homeland Security Information Network and an associated SharePoint system were compromised between late May and early June; DHS hasn&apos;t named an actor or confirmed data theft.</description>
-      <content:encoded><![CDATA[<p>The Department of Homeland Security is investigating a breach of the Homeland Security Information Network, the platform federal, state, local, and private-sector partners use to share sensitive threat information.</p>
-<p>According to DHS, the intrusion happened somewhere between late May and early June, and hit both HSIN servers and an associated SharePoint system. The department confirmed the compromise this week but has not attributed it to any actor, and says it's still unclear whether documents were actually stolen. In a statement, DHS said it isolated the affected systems and launched a forensic investigation, that there's no indication classified networks were touched, and that the platform remains operational for its partners.</p>
-<p>HSIN isn't classified, but it's not nothing. It's where partners coordinate on physical and cyber threats, and a lot of that traffic is exactly the kind of operational detail an adversary would want. The timing draws extra scrutiny because it lands in the middle of World Cup 2026 security planning, a period when that coordination network is busier than usual.</p>
-<p>The SharePoint detail is worth sitting with. On-prem SharePoint has been one of the most reliably exploited pieces of enterprise software this year, with CISA adding a fresh SharePoint remote-code-execution bug to its exploited-vulnerabilities catalog just last week. DHS hasn't said whether a SharePoint flaw was the way in, but the pairing of HSIN servers and an associated SharePoint system will make every incident responder assume it until told otherwise.</p>
-<p>The open questions are the ones DHS hasn't answered: what was accessed, for how long, and by whom. Until there's a scoping statement, any partner whose data touched HSIN in that late-May-to-early-June window should treat it as potentially exposed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>New CitrixBleed-Style NetScaler Flaw Exploited Within 24 Hours</title>
-      <link>https://sabr-labs.com/article/citrix-netscaler-cve-2026-8451-citrixbleed-memory-overread-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-cve-2026-8451-citrixbleed-memory-overread-july-2026</guid>
-      <pubDate>Tue, 07 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Citrix</category>
-      <category>NetScaler</category>
-      <category>CVE</category>
-      <category>Vulnerability</category>
-      <category>Active Exploitation</category>
-      <description>CVE-2026-8451 lets an unauthenticated attacker read session tokens and credentials out of NetScaler memory; exploitation began within a day of disclosure.</description>
-      <content:encoded><![CDATA[<p>Citrix disclosed a memory-disclosure bug in NetScaler on June 30. By July 2, attackers were already exploiting it. That window, measured in hours, is why researchers are filing CVE-2026-8451 under the CitrixBleed lineage.</p>
-<p>The flaw is a pre-auth out-of-bounds read in how NetScaler parses SAML authentication requests when the appliance is configured as a SAML identity provider. watchTowr, which found it, traced the bug to an XML parser that failed to terminate unquoted attribute values followed by a newline, so the parser walked past its buffer and returned chunks of device memory in the NSC_TASS cookie. Citrix rates it 8.8.</p>
-<p>The reason this pattern keeps mattering is what leaks. An unauthenticated attacker can pull session tokens, cleartext credentials, and TLS private keys straight out of memory, no login required. That's the same class of exposure that made the original CitrixBleed such a gift to ransomware crews in 2023, because a stolen session token sidesteps MFA entirely.</p>
-<p>Lupovis reported active exploitation within 24 hours of disclosure, and watchTowr published a technical writeup that makes reproduction straightforward. When a working method is public and the payoff is session hijacking, the exploitation curve doesn't flatten on its own.</p>
-<p>Fixed builds are out: NetScaler ADC and Gateway 14.1-72.61 or 13.1-63.18 and later. Patching alone isn't enough here. Because the bug leaks live session tokens, anyone who was exposed should terminate all active sessions and rotate secrets after upgrading, the exact cleanup step CitrixBleed victims skipped and regretted.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Bitcoin Miner Just Leased Anthropic a $19 Billion Data Center</title>
-      <link>https://sabr-labs.com/article/terawulf-anthropic-19-billion-data-center-lease-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/terawulf-anthropic-19-billion-data-center-lease-july-2026</guid>
-      <pubDate>Tue, 07 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Anthropic</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>TeraWulf</category>
-      <category>Compute</category>
-      <description>TeraWulf signed a 20-year, roughly $19 billion lease to house Anthropic&apos;s servers at a former Kentucky aluminum smelter, and its stock jumped.</description>
-      <content:encoded><![CDATA[<p>A Bitcoin miner just signed a 20-year lease worth roughly $19 billion to house Anthropic's servers, and its stock popped on the news. That sentence would have read as nonsense two years ago. In 2026 it's the template.</p>
-<p>TeraWulf, a Nasdaq-listed outfit that made its name mining crypto, announced the deal on July 6. Anthropic will occupy a data center TeraWulf is building on the site of a former aluminum smelter in Hawesville, Kentucky, which will run at 401 megawatts once it's fully online. Initial capacity is slated for the second half of 2027, with the full build following the year after.</p>
-<p>The math explains why miners keep making this jump. TeraWulf plans to sink $3 to $4 billion into the site, less than a fifth of the lease's total value, against roughly $19 billion in contracted revenue over the term. For a company with a market value around $12 billion, a single tenant just committed to paying more than the whole company is worth. Shares rose about 5%.</p>
-<p>The aluminum-smelter detail isn't incidental. Those sites exist because someone already ran high-voltage power to them decades ago, and cheap, available power is the one thing AI buildouts can't conjure on demand. Old heavy industry is being recycled into compute because the grid connection is the scarce asset, not the land or the concrete.</p>
-<p>The broader pattern is a capital reshuffle hiding inside a real estate deal. Crypto miners spent years building power-hungry sites on a bet about Bitcoin; now the surer bet is renting those sites to AI labs on 20-year terms. Anthropic gets guaranteed capacity without owning the buildings. TeraWulf gets a revenue floor that dwarfs its mining business. Whether 401 megawatts still counts as a lot of compute in 2028 is the part nobody's underwriting.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>US Firms Are Routing Real Traffic to Chinese Models to Cut Costs</title>
-      <link>https://sabr-labs.com/article/chinese-ai-models-us-adoption-cost-surge-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chinese-ai-models-us-adoption-cost-surge-july-2026</guid>
-      <pubDate>Tue, 07 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI</category>
-      <category>China</category>
-      <category>DeepSeek</category>
-      <category>Zhipu</category>
-      <category>Pricing</category>
-      <description>As token prices for top US models climb, companies are increasingly finding DeepSeek and Zhipu&apos;s GLM good enough for production, and much cheaper.</description>
-      <content:encoded><![CDATA[<p>US companies building on AI are starting to do something that would have been unthinkable a year ago: routing real production traffic to Chinese models, on purpose, to save money.</p>
-<p>CNBC reported this week that models from DeepSeek and Zhipu's Z.ai are increasingly seen inside US firms as competitive with frontier systems from OpenAI and Anthropic, at a moment when token prices for the top US models keep climbing. The gap is concrete. Zhipu's GLM-5.2 runs about $1.40 per million input tokens and $4.40 output; Anthropic's Claude Sonnet 5 sits at $2 and $10, even on introductory pricing.</p>
-<p>For a demo, that spread is noise. For a company serving millions of API calls a day, it's the difference between a viable margin and a bleeding one. As agentic workloads push token consumption up by orders of magnitude, per-token price stops being a line item and becomes the business model. Open-weight Chinese models you can self-host remove the metered bill entirely.</p>
-<p>None of this is free of friction. Running a Chinese open-weight model in production raises data-governance and procurement questions a lot of US enterprises won't clear, and "good enough on benchmarks" is not the same as "good enough on your workload." The pull is real, but so is the reason most regulated shops still won't touch it.</p>
-<p>The uncomfortable read for the US labs is that their pricing power is thinner than the revenue headlines suggest. Anthropic says it's on track for $47 billion annualized and has passed OpenAI on revenue, but revenue leadership doesn't lock in customers who watch a cheaper model close the quality gap every quarter. The floor under frontier pricing is competition, and a growing share of that competition now ships from Hangzhou.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
