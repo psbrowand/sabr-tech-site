@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jul 2026 16:13:32 GMT</lastBuildDate>
-    <pubDate>Thu, 16 Jul 2026 16:13:32 GMT</pubDate>
+    <lastBuildDate>Fri, 17 Jul 2026 13:20:49 GMT</lastBuildDate>
+    <pubDate>Fri, 17 Jul 2026 13:20:49 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A Claude for Chrome Flaw Lets Other Extensions Trigger Its AI Actions</title>
+      <link>https://sabr-labs.com/article/claude-for-chrome-extension-flaw-gmail</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/claude-for-chrome-extension-flaw-gmail</guid>
+      <pubDate>Fri, 17 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>Browser Security</category>
+      <category>AI Agents</category>
+      <category>Chrome Extensions</category>
+      <description>Researchers found that a malicious browser extension can forge a click to make Anthropic&apos;s Claude for Chrome run privileged actions across Gmail, Docs, and Salesforce.</description>
+      <content:encoded><![CDATA[<p>Researchers have found a way for one browser extension to quietly boss around another. In this case the target is Anthropic's Claude for Chrome, and the trick is a fake click that makes Claude run privileged actions the user never asked for.</p>
+<p>The flaw sits in the extension's content script, which listens for a click on an onboarding button and forwards a matching prompt to Claude's side panel. The handler never checks whether the click actually came from a person. Any other extension with script access on claude.ai, a common permission, can forge that click in about six lines of JavaScript and trigger one of nine hardcoded prompts. Those prompts can reach into Gmail, Google Docs, Calendar, and Salesforce through Claude's own connected access.</p>
+<p>The severity depends on how the user has Claude set up. Manifold Security, which reported the issue, rates it CVSS 7.7 in the default mode, where the fake click coerces an approval prompt. Turn on the 'Act without asking' setting and it jumps to 9.6, because now the malicious action runs silently. That one convenience toggle is the whole difference between a suspicious popup and a silent read of your inbox.</p>
+<p>Here's the uncomfortable part. Manifold says it first reported these problems back in May, and verified on July 7 that they were still reproducible in the latest build, version 1.0.80. The researchers note the vulnerable code is byte-identical to an earlier release. A two-month gap between a working proof of concept and no visible fix is a long time for a flaw that touches a user's email and CRM.</p>
+<p>This is the shape of a whole new class of problem. AI agents that act inside the browser inherit all the access we grant them, and the browser is a crowded room full of other extensions with their own permissions. The old assumption that a click means a human decided something breaks down when an agent is standing by to act on it. Expect a lot more of this as agentic browsing goes mainstream.</p>
+<p>If you run Claude for Chrome, turn off 'Act without asking' until there's a confirmed fix, and audit which extensions have permission to read or change data on claude.ai. That second step is good hygiene regardless of this particular bug.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Moonshot&apos;s Kimi K3 Is the Largest Open-Weight Model Yet at 2.8T</title>
+      <link>https://sabr-labs.com/article/moonshot-kimi-k3-largest-open-weight-model</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/moonshot-kimi-k3-largest-open-weight-model</guid>
+      <pubDate>Fri, 17 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Moonshot AI</category>
+      <category>Kimi K3</category>
+      <category>Open Weights</category>
+      <category>LLM</category>
+      <category>China</category>
+      <description>Moonshot AI unveiled Kimi K3, a 2.8-trillion-parameter mixture-of-experts model, with the weights due to be released by July 27.</description>
+      <content:encoded><![CDATA[<p>China's Moonshot AI has put out what it says is the largest open-weight model ever released: Kimi K3, a mixture-of-experts system with 2.8 trillion total parameters. The announcement landed this week, with the actual weights promised by July 27.</p>
+<p>Size alone isn't the story, and Moonshot knows it. The company's own benchmark table shows K3 mostly edging past last generation's closed models while trailing the current frontier from Anthropic and OpenAI. That's a familiar pattern for open releases: match the previous tier of proprietary systems, ship the weights, and let the price-to-performance argument do the rest.</p>
+<p>This is where open weights earn their keep. A model you can download and run yourself, without paying per token to a US lab, is a different proposition than one you can only rent through an API. For teams that want to fine-tune on private data or avoid sending prompts to someone else's servers, a capable 2.8T model with published weights is worth attention, even if it isn't the smartest thing available.</p>
+<p>The independent takes have been more measured than the launch numbers. Simon Willison, testing it on release day, flagged that K3 burns through reasoning tokens at an alarming rate, in one case spending over 13,000 tokens and about 25 cents to answer a simple prompt. Self-reported benchmarks also keep drifting away from real-world usefulness, and nobody has published a solid read on K3's agentic tool-calling yet. Impressive on paper doesn't always survive contact with a production workload.</p>
+<p>The bigger signal is momentum. Chinese labs keep shipping frontier-adjacent open models, and each release chips away at the idea that the best AI has to be closed and American. K3 won't dethrone anyone at the top of the leaderboard. It doesn't need to. It just needs to be good enough to run yourself, and the weights land in under two weeks.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>TSMC Posts a Record Quarter and Lifts 2026 Capex to $64 Billion</title>
+      <link>https://sabr-labs.com/article/tsmc-q2-2026-earnings-record-profit-capex</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tsmc-q2-2026-earnings-record-profit-capex</guid>
+      <pubDate>Fri, 17 Jul 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>TSMC</category>
+      <category>Semiconductors</category>
+      <category>AI</category>
+      <category>Earnings</category>
+      <category>Capex</category>
+      <description>TSMC reported $40.2 billion in Q2 revenue and raised its full-year spending plan, signaling the AI chip buildout hasn&apos;t slowed.</description>
+      <content:encoded><![CDATA[<p>Forty point two billion dollars in a single quarter. That's what TSMC pulled in for the three months ending in June, up about 37% from a year earlier, and it's the clearest signal yet that the AI chip buildout hasn't cooled.</p>
+<p>Profit hit a record, and the gross margin came in at 67.7%, the kind of number that reflects how much pricing power the world's leading foundry has right now. High-performance computing, the segment that captures AI accelerators, made up roughly two-thirds of revenue and grew about 20% from the prior quarter. When your biggest slice is also your fastest-growing, the story writes itself.</p>
+<p>The more telling part is what TSMC said about the rest of the year. Management raised full-year revenue growth guidance to slightly above 40% in dollar terms and lifted the 2026 capital spending plan to between $60 and $64 billion. Companies don't commit that much to new fabs and equipment unless they believe the orders are real and sustained.</p>
+<p>There's a reasonable question lurking under the good numbers: how long can this run? Every quarter of record capex raises the stakes if AI demand normalizes. TSMC's bet is that it won't, at least not soon, and management described the computational needs driving orders as a lasting shift rather than a spike. They've been right so far, which is why the whole supply chain hangs on these calls.</p>
+<p>For everyone downstream, from the accelerator designers to the cloud providers to the startups renting GPU time, TSMC's guidance is the tell. The foundry sits at the bottom of the stack, and its confidence is a proxy for the industry's. Right now that confidence is pointed straight up, energy and packaging constraints notwithstanding.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Zoom Patches a 9.8-Severity Account Takeover Bug in Its Windows Client</title>
+      <link>https://sabr-labs.com/article/zoom-cve-2026-53412-account-takeover-windows</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zoom-cve-2026-53412-account-takeover-windows</guid>
+      <pubDate>Fri, 17 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Zoom</category>
+      <category>CVE</category>
+      <category>Vulnerability</category>
+      <category>Windows</category>
+      <category>Patch Management</category>
+      <description>CVE-2026-53412 lets an unauthenticated attacker take over a Zoom account over the network, and Zoom has fixed it in the 7.0.0 client branch.</description>
+      <content:encoded><![CDATA[<p>Zoom just shipped a fix for a bug that scores about as bad as they come. CVE-2026-53412 carries a CVSS rating of 9.8 and lets an unauthenticated attacker take over an account over the network, with no credentials and no user interaction required.</p>
+<p>The flaw is an improper input validation issue in the Zoom Workplace client and the VDI client for Windows. It affects versions before 7.0.0, and Zoom fixed it in the 7.0.0 branch and later. There's a good bit of nuance in the affected-version list for the VDI plugin, so anyone running the virtual desktop flavor should check the advisory against their exact build rather than assume.</p>
+<p>One piece of good news: Zoom says there's no evidence anyone has exploited this in the wild. That's the difference between patch-this-weekend and patch-right-now, but with a 9.8 in a client installed on a large share of corporate Windows machines, weekend is generous. Account takeover on a collaboration tool means access to meetings, chats, recordings, and whatever else the account touches.</p>
+<p>The account-takeover flaw came bundled with three more, all local privilege escalation issues rated between 7.0 and 7.8: one in the VDI plugin, one race condition affecting several clients, and one in Zoom Rooms for Windows. None are as alarming as the headline bug, but they're the kind of thing that turns a foothold into full control of a host.</p>
+<p>If you manage Zoom deployments, the move is straightforward. Push the 7.0.0 update, confirm your VDI clients are on a fixed branch, and don't let auto-update lull you into assuming machines are current. Clients that sit behind managed policies often lag the public release by weeks, and that gap is exactly where a 9.8 gets interesting.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Two Scattered Spider Hackers Get 5½ Years for the TfL Attack</title>
+      <link>https://sabr-labs.com/article/scattered-spider-tfl-sentencing-uk-cybercrime</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/scattered-spider-tfl-sentencing-uk-cybercrime</guid>
+      <pubDate>Fri, 17 Jul 2026 08:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Scattered Spider</category>
+      <category>Transport for London</category>
+      <category>Cybercrime</category>
+      <category>UK</category>
+      <category>Social Engineering</category>
+      <description>Owen Flowers and Thalha Jubair were each sentenced to five and a half years over the Transport for London breach that cost roughly £29 million to recover from.</description>
+      <content:encoded><![CDATA[<p>Two members of Scattered Spider are heading to prison for hobbling a capital city's transport network. Owen Flowers, 18, from Walsall, and Thalha Jubair, 20, from East London, were each handed five and a half years at Woolwich Crown Court for the attack on Transport for London.</p>
+<p>The numbers behind the intrusion are what make it land. Prosecutors put TfL's recovery bill at around £29 million, with roughly another £10 million in lost revenue on top. The pair compromised accounts belonging to 28,000 employees and pulled out about six million lines of data. TfL spent months forcing password resets and re-verifying staff in person.</p>
+<p>Both pleaded guilty last month, on the day their trial was due to start, to offenses under Section 3ZA of the Computer Misuse Act. That's the provision covering unauthorized acts that create a significant risk of serious damage, and it carries real weight. Prosecutors called this the largest cybercrime case the UK courts have handled.</p>
+<p>Scattered Spider isn't a traditional hacking crew. It's a loose, mostly young, English-speaking collective that's leaned on social engineering and SIM-swapping to breach help desks at some of the biggest names in retail, hospitality, and now public infrastructure. The group's calling card is talking its way past humans rather than exploiting a clever bug.</p>
+<p>Sentences like this matter because the group's members have long operated with a sense that they were untouchable: too young, too distributed, too online to face a courtroom. Two of them just did. Whether that deters the next teenager reading the same Telegram channels is a fair question, but the days of treating these attacks as pranks are clearly over.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Coca-Cola Says a Ransomware Attack Has Halted Fairlife&apos;s US Production</title>
+      <link>https://sabr-labs.com/article/coca-cola-fairlife-ransomware-us-production-halt</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/coca-cola-fairlife-ransomware-us-production-halt</guid>
+      <pubDate>Fri, 17 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Coca-Cola</category>
+      <category>Fairlife</category>
+      <category>OT Security</category>
+      <category>Manufacturing</category>
+      <description>A ransomware intrusion at Coca-Cola&apos;s Fairlife subsidiary disrupted operations enough to suspend production of the dairy brand across the United States.</description>
+      <content:encoded><![CDATA[<p>Ransomware knocked a household dairy brand offline this week. Coca-Cola confirmed that an intrusion at its Fairlife subsidiary disrupted operations enough to suspend production of Fairlife products across the United States, the kind of physical, shelf-emptying consequence that turns an IT incident into a supply problem.</p>
+<p>The company has kept the technical specifics thin. It hasn't named the group behind the attack, described a ransom demand, or said whether data was stolen alongside the encryption. What it has confirmed is the part customers will notice: the lines are down, and the popular high-protein milk that fills a chunk of dairy-case space isn't being made right now.</p>
+<p>Fairlife isn't a side project. It's one of Coca-Cola's fastest-growing brands outside soda, built on ultrafiltered milk and protein shakes that sell at a premium. Halting production isn't a matter of restoring a database and moving on. Manufacturing environments mix IT and operational technology, and bringing a plant back means validating that control systems weren't touched before the first carton ships.</p>
+<p>The silence on attribution is standard for the first days of an incident, but it also means we don't yet know if this was a financially motivated crew running a standard double-extortion playbook or something more disruptive. Food and beverage makers have become a favored target precisely because downtime is so visible and so expensive. When product stops moving, the pressure to pay climbs by the hour.</p>
+<p>For anyone defending a plant floor, the reminder is old but keeps landing: segmentation between the corporate network and the production side is what decides whether an attack is a headache or a shutdown. Fairlife's outage is the shutdown version. Watch for a data-theft disclosure in the coming days, which almost always follows this pattern even when encryption is the headline.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CompTIA Retires Cisco Networking Pro V7 on July 31</title>
       <link>https://sabr-labs.com/article/comptia-cisco-networking-pro-v7-retiring-v8-july-2026</link>
@@ -867,122 +982,6 @@
 <p>The reason this one matters beyond the score is exposure. The threat intelligence firm Censys counted roughly 100,000 UniFi OS endpoints reachable from the public internet. Not all of them run the vulnerable Connect app, but the population of internet-facing Ubiquiti gear is large, and a good chunk of it belongs to people who set it up once and never looked at it again.</p>
 <p>CVE-2026-50746 didn't arrive alone. Ubiquiti's Security Advisory Bulletin 066 bundles a set of UniFi OS fixes, including CVE-2026-50747 and CVE-2026-50748 in the Talk and Access products, and reporting around the disclosure counted 25 issues across the UniFi range. The 10.0 command injection is the headline, but if you're patching, patch the batch.</p>
 <p>There's no confirmed in-the-wild exploitation yet, which is the window you want to be inside of. Update Connect to 3.4.20 or later, and while you're in the console, take Ubiquiti's standing advice and get UniFi management off the public internet. A max-severity unauthenticated RCE is only a crisis if the attacker can reach it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Accenture Confirms Incident After Hacker Claims 35GB Source Code Theft</title>
-      <link>https://sabr-labs.com/article/accenture-source-code-breach-888-pwnforums-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/accenture-source-code-breach-888-pwnforums-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Accenture</category>
-      <category>Azure DevOps</category>
-      <category>Credential Exposure</category>
-      <description>A threat actor called 888 posted 35GB of Accenture source code, keys, and Azure tokens to a cybercrime forum, and Accenture says it has remediated the source.</description>
-      <content:encoded><![CDATA[<p>Someone using the handle 888 walked into a cybercrime forum on Monday and offered up 35GB of Accenture's internal source code, along with the kind of secrets that make a breach worse than a breach: RSA keys, SSH keys, Azure personal access tokens, and Azure Storage access keys.</p>
-<p>The data reportedly came out of a private Azure DevOps repository, according to a post on the PwnForums site that Help Net Security reviewed. Source code alone is embarrassing. Source code shipped with live credentials and cloud access keys is an incident, because those keys open doors that don't care whether the code ever leaks.</p>
-<p>Accenture's statement was short and carefully built. The company said it is "aware of this isolated matter," that it has "remediated its source," and that "operations and service delivery was not affected." It did not confirm what was taken, and it did not say the 35GB is fake.</p>
-<p>Read that wording again. "Remediated its source" tells you they found how someone got in and closed it. It says nothing about whether the tokens in that repo were valid, how long they stayed valid, or where they were used before Monday. For a consulting firm that builds and runs systems for a large slice of the Fortune 500, the blast radius of a leaked Azure token isn't Accenture's problem alone.</p>
-<p>This isn't Accenture's first turn in this position. The company was swept up in the Cl0p MOVEit campaign and has shown up in ransomware crews' claims before. A single exposed repo is a smaller event than either of those. But the pattern that matters here is the one every security team should recognize on sight: secrets committed into source control, then found by someone who was never supposed to have the repo.</p>
-<p>If your organization has any Accenture-managed Azure footprint, the move isn't to wait for a bulletin. Rotate the keys, review the token grants, and check sign-in logs for the service principals and repos involved. "Isolated matter" is Accenture's read on its own environment, not yours.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>White House Races to Finalize Voluntary AI Testing Rules With Top Labs</title>
-      <link>https://sabr-labs.com/article/white-house-voluntary-ai-testing-standards-framework-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/white-house-voluntary-ai-testing-standards-framework-july-2026</guid>
-      <pubDate>Wed, 08 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Policy</category>
-      <category>White House</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <category>AI Safety</category>
-      <description>The administration is close to publishing a voluntary framework with OpenAI, Google, and Anthropic that sets capability thresholds, pre-release notice windows, and access rules for frontier models.</description>
-      <content:encoded><![CDATA[<p>The White House is finishing a voluntary framework for how frontier AI models get tested before they ship, built in talks with OpenAI, Google, and Anthropic. Officials expect to publish it as soon as next week.</p>
-<p>The draft reportedly does three concrete things. It defines the capability levels that trigger a government security review, so labs know in advance what crosses the line. It sets a pre-release notification window, the amount of warning a company owes before a launch. And it spells out domestic-versus-foreign access rules, which is the part with real teeth given the last two months.</p>
-<p>Because this isn't happening in a vacuum. In June the administration reviewed several new models for cybersecurity risk, and the labs responded fast. OpenAI limited its GPT-5.6 Sol model to Trump-administration-approved customers. Anthropic pulled two freshly announced models, Fable 5 and Mythos 5, then redeployed Mythos 5 on July 1 to a small set of cyber defenders and infrastructure providers after the government eased its restriction. All of that traces back to a June executive order on promoting AI innovation and security.</p>
-<p>The stated worry is specific: that a capable enough model could find software vulnerabilities in critical infrastructure faster than defenders can patch them. That's not science fiction anymore, and it's a reasonable thing for a government to want visibility into.</p>
-<p>But watch the word "voluntary," because it's carrying a lot of weight. When the same administration already made companies restrict or shelve models on request, a framework everyone opts into looks less like a suggestion and more like the paperwork version of a decision that's already been made. Codifying the thresholds is genuinely useful; predictable rules beat case-by-case phone calls. The open question is whether "voluntary" survives contact with the first lab that decides it would rather not comply.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepSeek Is Designing Its Own Inference Chip to Cut Nvidia Reliance</title>
-      <link>https://sabr-labs.com/article/deepseek-in-house-inference-chip-nvidia-huawei-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-in-house-inference-chip-nvidia-huawei-july-2026</guid>
-      <pubDate>Wed, 08 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>DeepSeek</category>
-      <category>AI Chips</category>
-      <category>Inference</category>
-      <category>Nvidia</category>
-      <category>Semiconductors</category>
-      <description>Reuters reports DeepSeek has begun in-house work on an inference chip aimed at reducing its dependence on both Nvidia and Huawei, though the project is early.</description>
-      <content:encoded><![CDATA[<p>China's DeepSeek is designing its own AI chip, according to a Reuters report citing people familiar with the effort. The company has started talking to chip-design, foundry, and memory partners, and it's trying to hire experienced silicon engineers.</p>
-<p>The important detail is what kind of chip. This is an inference part, built to run models and answer user queries, not a training accelerator meant to build new models from scratch. Inference is the cheaper, more repetitive half of the workload, and it's where a company running a popular model burns money every single day. Designing your own inference silicon is how you claw back margin, and it's a far more achievable first target than trying to match Nvidia on training.</p>
-<p>It also puts DeepSeek on the same path OpenAI took with its Broadcom-designed custom chip. When your compute bill is your largest cost and your supply is politically constrained, building your own becomes less of a moonshot and more of a budget decision.</p>
-<p>The supply piece is the whole point here. U.S. export curbs limit DeepSeek's access to Nvidia's top parts, and the domestic fallback, Huawei's Ascend line, comes with its own capacity and yield constraints. A chip DeepSeek controls end to end would loosen both leashes at once. Reuters framed it as an attempt to reduce reliance on Nvidia and on Huawei, which is a pointed thing for a Chinese AI champion to signal about its own national supplier.</p>
-<p>Temper the excitement. Designing a chip and shipping one at volume are separated by the hardest problem in the industry: fabrication. DeepSeek would still need a foundry, and inside China that means SMIC and the same process-node ceiling everyone else is stuck under. A tapeout is a milestone. Working parts in a data center at scale are a different year entirely. DeepSeek didn't comment.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Conduent Breach Count Climbs Past 62 Million, Now Third-Largest Ever</title>
-      <link>https://sabr-labs.com/article/conduent-healthcare-breach-62-million-third-largest-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/conduent-healthcare-breach-62-million-third-largest-july-2026</guid>
-      <pubDate>Wed, 08 Jul 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Conduent</category>
-      <category>Data Breach</category>
-      <category>Healthcare</category>
-      <category>HIPAA</category>
-      <category>Third-Party Risk</category>
-      <description>The Conduent intrusion keeps growing; updated filings put the affected population above 62.2 million, making it the third-largest healthcare data breach in U.S. history.</description>
-      <content:encoded><![CDATA[<p>Sixty-two point two million. That's where the Conduent breach tally now sits, and it's still labeled as a running count.</p>
-<p>Conduent is a business-process outsourcer that most people have never heard of, which is exactly why the number is so large. It runs government and healthcare back-office systems: Medicaid claims processing, benefits administration, the plumbing that dozens of agencies and health plans quietly depend on. When one vendor holds records for that many programs, one intrusion scales into the tens of millions.</p>
-<p>The forensic timeline is ugly. Attackers were inside the network for 83 days, from October 21, 2024 until Conduent spotted them on January 13, 2025, and they left with roughly 8.5 terabytes of data. That haul included Social Security numbers, medical records, health insurance details, and Medicaid claims. The current figure of more than 62.2 million puts it behind only Change Healthcare's 2024 breach, which hit 192.7 million, and one other incident in the all-time U.S. rankings.</p>
-<p>The notification story is its own problem. Conduent discovered the breach in January 2025 but didn't begin notifying people until late October, roughly nine months later. HIPAA's breach notification rule gives covered entities and their business associates 60 days. Nine months is not 60 days.</p>
-<p>If you work anywhere that hands data to a third-party processor, this is the recurring nightmare in one case study. Your security posture can be excellent and it won't matter, because the exposure lives in a vendor's environment you don't control and can't fully audit. Business-associate agreements shift liability on paper. They don't shrink the blast radius.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>One HTTP Header Turns Gitea&apos;s Docker Image Into an Open Admin Door</title>
-      <link>https://sabr-labs.com/article/gitea-docker-cve-2026-20896-webauth-header-auth-bypass-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gitea-docker-cve-2026-20896-webauth-header-auth-bypass-july-2026</guid>
-      <pubDate>Wed, 08 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Gitea</category>
-      <category>CVE-2026-20896</category>
-      <category>Authentication Bypass</category>
-      <category>Docker</category>
-      <category>Self-Hosted</category>
-      <description>CVE-2026-20896 lets anyone who can reach a default Gitea Docker container impersonate any user, admins included, by setting a single X-WEBAUTH-USER header.</description>
-      <content:encoded><![CDATA[<p>Set one header, become the admin. That's the whole exploit for CVE-2026-20896, a CVSS 9.8 authentication bypass in Gitea's official Docker image.</p>
-<p>The mechanics are almost too simple to call a vulnerability. Gitea supports reverse-proxy authentication, where a trusted proxy in front of the app asserts the logged-in user via the X-WEBAUTH-USER header. That's fine when only your proxy can set it. The problem is the Docker image ships with REVERSE_PROXY_TRUSTED_PROXIES set to a wildcard, so Gitea trusts that header from any source that can reach its port. Turn on reverse-proxy auth, expose the container, and any unauthenticated client can send X-WEBAUTH-USER: gitea_admin and walk in. No password, no token, no second factor.</p>
-<p>Gitea's own advisory put it bluntly: any process that can reach the container's HTTP port directly, bypassing the intended proxy, can impersonate any user whose login name is known or guessable. For a self-hosted Git server, that means source code, CI secrets, deploy keys, and signing material, all reachable by guessing that the admin account is called "admin."</p>
-<p>The fix landed in Gitea 1.26.3 and 1.26.4, which change the insecure default. Everything up to and including 1.26.2 is exposed. If you can't upgrade immediately, edit app.ini and pin REVERSE_PROXY_TRUSTED_PROXIES to 127.0.0.0/8,::1/128 so only localhost is trusted.</p>
-<p>Attackers noticed. Roughly 6,200 Gitea servers were reachable during the first scanning wave, and thirteen days after disclosure researchers logged active probing, with early reconnaissance traced to a ProtonVPN exit node. Thirteen days is a generous head start that a lot of homelab and small-team instances will not have used.</p>
-<p>This is a default-configuration footgun, not an exotic memory bug, and those are the ones that quietly rack up victims. The container ran, the app worked, nobody touched the proxy settings, and the door was open the entire time.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Adobe ColdFusion Flaw Exploited Two Hours After It Went Public</title>
-      <link>https://sabr-labs.com/article/adobe-coldfusion-cve-2026-48282-rds-rce-exploited-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/adobe-coldfusion-cve-2026-48282-rds-rce-exploited-july-2026</guid>
-      <pubDate>Wed, 08 Jul 2026 07:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Adobe ColdFusion</category>
-      <category>CVE-2026-48282</category>
-      <category>RCE</category>
-      <category>CISA KEV</category>
-      <category>Path Traversal</category>
-      <description>CVE-2026-48282, a CVSS 10 path traversal in ColdFusion&apos;s Remote Development Services, went from disclosure to in-the-wild attacks in under two hours and is now on CISA&apos;s KEV list.</description>
-      <content:encoded><![CDATA[<p>Attackers were exploiting CVE-2026-48282 in the wild less than two hours after the details went public. That is not a typo. Researchers watched the first payloads land the same afternoon the writeups dropped.</p>
-<p>The flaw sits in ColdFusion's Remote Development Services, the RDS component that IDE tooling uses to talk to a server. Its FILEIO handler doesn't validate paths properly, so a remote attacker can walk out of the intended directory and read or write files anywhere the ColdFusion process can reach. On its own that's a nasty information leak. Chained through RDS, it becomes unauthenticated remote code execution, which is why the CVSS score is a flat 10.0.</p>
-<p>It affects ColdFusion 2025.9, 2023.20, and earlier. Adobe shipped fixes in ColdFusion 2025 Update 10 and 2023 Update 21 as part of bulletin APSB26-68, a release that patched seven separate CVSS 10.0 bugs in one go. That count alone should tell you how exposed the RDS surface has been.</p>
-<p>CISA added the CVE to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 10 to patch. One of the earliest recorded attempts came from an IP in India trying to read C:\Windows\win.ini, the classic "can I read arbitrary files" canary before an attacker commits to something worse.</p>
-<p>Here's the part worth saying plainly: RDS was never supposed to face the internet. It's a developer convenience meant for trusted networks, and Adobe has told people to disable it in production for years. Every server getting hit right now had a component exposed that should have been off. The patch closes the bug, but the real lesson is inventory. If you run ColdFusion, confirm RDS is disabled, not just that you've updated.</p>
-<p>If a box was internet-facing any time in the last week, patching is not enough. Hunt for unauthorized files in the web root and /CFIDE/ directories, because a two-hour exploitation window means the scanners found you before you found the advisory.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
