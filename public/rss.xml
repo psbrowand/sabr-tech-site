@@ -6,9 +6,125 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jul 2026 13:20:49 GMT</lastBuildDate>
-    <pubDate>Fri, 17 Jul 2026 13:20:49 GMT</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2026 13:16:04 GMT</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2026 13:16:04 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Gemini 3.5 Pro Slips Months as DeepMind Loses Four Researchers</title>
+      <link>https://sabr-labs.com/article/google-gemini-3-5-pro-delayed-coding-deepmind-exodus-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-3-5-pro-delayed-coding-deepmind-exodus-july-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 14:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>DeepMind</category>
+      <category>AI Models</category>
+      <category>Anthropic</category>
+      <description>Google&apos;s flagship model is months behind after missing internal coding targets, and four senior DeepMind researchers left in a single week.</description>
+      <content:encoded><![CDATA[<p>Google's next flagship model isn't ready, and the reason is the one thing developers care about most: coding.</p>
+<p>Gemini 3.5 Pro is months behind schedule. Google refreshed its training data late in June specifically to sharpen coding performance, and the results still weren't good enough to ship. The model remains in limited preview for select Vertex AI enterprise customers, with general availability now targeted for sometime in July.</p>
+<p>The delay landed the same week as a talent bleed. Four senior DeepMind researchers left in a matter of days: Gemini co-lead Noam Shazeer to OpenAI, Nobel laureate John Jumper to Anthropic, and researchers Jonas Adler and Alexander Pritzel also to Anthropic. Losing your model's co-lead and a Nobel winner in the same week isn't a coincidence you wave off.</p>
+<p>Google's problem isn't raw model quality on a benchmark sheet. It's that the company lacks a credible commercial coding product while OpenAI, Anthropic, and a wave of startups have shipped agents developers actually use. DeepMind staff have reportedly flagged this internally. Meanwhile Google Cloud, DeepMind, Android, and consumer teams have each built their own AI coding tools, competing for the same people and budget.</p>
+<p>Investors noticed. The delay and the departures helped wipe roughly $225 billion off Alphabet's market cap. That's a large number for a model that will still ship eventually, which tells you the market is pricing the org chart as much as the release date.</p>
+<p>A delayed model is recoverable. A pattern of your best researchers choosing competitors is harder to fix, because it compounds. The real question for Google isn't whether Gemini 3.5 Pro eventually ships. It's whether the people who'd build 4.0 are still in the building.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Chip Stocks Sell Off Hard Even as Earnings Come In Strong</title>
+      <link>https://sabr-labs.com/article/semiconductor-stock-selloff-rout-july-2026-ai-chip-valuations</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/semiconductor-stock-selloff-rout-july-2026-ai-chip-valuations</guid>
+      <pubDate>Sat, 18 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>Stock Market</category>
+      <category>Nvidia</category>
+      <category>AI</category>
+      <category>Markets</category>
+      <description>A tech-led selloff dragged the Nasdaq down more than 1% on July 17, with chipmakers falling despite TSMC and ASML both beating expectations.</description>
+      <content:encoded><![CDATA[<p>TSMC posted record profit. ASML raised its forecast. And chip stocks fell anyway.</p>
+<p>On July 17 the Nasdaq dropped about 1.4%, the S&P 500 lost roughly 1%, and semiconductors led the way down. What makes the selloff notable is the timing: it landed in the same week as two blowout earnings reports from companies sitting at the center of the AI buildout.</p>
+<p>When good news stops pushing a stock up, that's the market telling you the good news was already priced in. Chip names have run for the better part of two years on AI demand. A quarter of strong results that fails to spark a rally looks less like a verdict on the businesses and more like fatigue with the valuations.</p>
+<p>None of this says the AI buildout is slowing. TSMC's own numbers point the other way. What's wobbling is the share price, not the demand, and those are different things that headlines love to blur together. Profit-taking after a long run is ordinary. It only becomes a story when it happens on a day that by all rights should have been green.</p>
+<p>Worth watching whether this is a one-day wobble or the start of a real repricing. The tell will be the next round of earnings from the buyers of chips, not the sellers. If the hyperscalers keep guiding capital spending higher, the demand story holds regardless of what the tape does this week.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Intel Is First to Ship High-Volume Chips Made With High-NA EUV</title>
+      <link>https://sabr-labs.com/article/intel-first-high-volume-high-na-euv-18a-panther-lake-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/intel-first-high-volume-high-na-euv-18a-panther-lake-july-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Intel</category>
+      <category>ASML</category>
+      <category>High-NA EUV</category>
+      <category>18A</category>
+      <category>Semiconductors</category>
+      <description>Select layers of Intel&apos;s 18A Panther Lake chips are now being mass-produced on ASML&apos;s newest lithography tools, a first for the industry.</description>
+      <content:encoded><![CDATA[<p>For the first time, commercial logic chips are shipping to customers with layers printed by ASML's High-NA EUV machines. Intel got there first.</p>
+<p>ASML confirmed the milestone on July 15. Intel has qualified High-NA (the 0.55 numerical aperture generation of extreme ultraviolet lithography) for selected layers of its 18A process in Oregon, and is using it to build parts of the Core Ultra Series 3 "Panther Lake" processors. Those layers are dual-qualified, meaning they can run on both the new 0.55 NA scanners and the older 0.33 NA ones, at yields Intel says match its existing platform.</p>
+<p>High-NA tools run around $400 million each and print finer features in a single exposure, which can replace the slow, yield-hungry multi-pass patterning older tools need. Getting one into high-volume production is the genuinely hard part. TSMC and Samsung own these machines too. Intel shipping product first is a real bragging right for a foundry that's spent years playing catch-up.</p>
+<p>"Selected layers" is carrying weight in that sentence. This isn't a chip built end to end on High-NA. It's a handful of critical layers where the tool earns its cost, with the rest still on 0.33 NA. That's the normal way a new lithography generation enters production, and it's real progress. It's also not a full-node transition, so the "Intel leapfrogs everyone" read is premature.</p>
+<p>The numbers that matter next are yield at scale and whether Intel Foundry can turn this into external customer wins. A first-shipment headline is good. Signed foundry contracts on 18A would be better.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Medtronic Notifies 3.8 Million After ShinyHunters Breach</title>
+      <link>https://sabr-labs.com/article/medtronic-shinyhunters-breach-3-8-million-notifications-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/medtronic-shinyhunters-breach-3-8-million-notifications-july-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Medtronic</category>
+      <category>ShinyHunters</category>
+      <category>Healthcare</category>
+      <category>Extortion</category>
+      <description>The device maker says 3.8 million people had names, Social Security numbers, and health data exposed, while ShinyHunters claims the real number is more than double.</description>
+      <content:encoded><![CDATA[<p>Medtronic told Indiana's attorney general that 3,834,294 people were caught in a breach of its corporate IT systems. ShinyHunters, the group that claimed the attack, says the real figure is more than 9 million. Those two numbers don't match, and the gap is the story.</p>
+<p>The intrusion ran from April 13 to 19. Medtronic spotted suspicious activity on April 15 and disclosed publicly on April 24. Notification letters didn't start reaching people until late June, roughly two months after discovery. The exposed data includes names, contact details, dates of birth, Social Security numbers, and health information.</p>
+<p>ShinyHunters has spent 2026 running the same play against large enterprises: get into corporate systems, often through socially engineered access to a SaaS platform, grab the data, list the victim on a leak site, and apply pressure for a payment. Medtronic went on that list.</p>
+<p>The 3.8 million figure is what Medtronic verified from the records it could review. The 9 million is the attacker's unverified claim. Both can be technically defensible at once, because companies count confirmed-affected individuals while attackers count raw records, and one person can appear across many records. What it means in practice is that three months on, the public still doesn't have a settled number for how big this was.</p>
+<p>Affected people are being offered 24 months of credit and identity monitoring, the standard package. If you've ever been a Medtronic patient or customer, watch for a letter and assume the Social Security number is out. The sharper question sits with regulators. A two-month gap between discovery and notification is the kind of timeline HIPAA reviewers tend to ask pointed questions about.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Adds Actively Exploited SharePoint RCE Zero-Day to KEV</title>
+      <link>https://sabr-labs.com/article/sharepoint-cve-2026-58644-deserialization-zero-day-cisa-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-58644-deserialization-zero-day-cisa-kev-july-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SharePoint</category>
+      <category>Microsoft</category>
+      <category>CVE-2026-58644</category>
+      <category>CISA KEV</category>
+      <category>Zero-Day</category>
+      <description>CVE-2026-58644 is a 9.8-rated deserialization bug that lets an unauthenticated attacker run code on on-prem SharePoint, and it was exploited before the patch shipped.</description>
+      <content:encoded><![CDATA[<p>Microsoft patched CVE-2026-58644 on July 14. Attackers had already been using it. On July 17 CISA made that official, adding the SharePoint bug to its Known Exploited Vulnerabilities catalog with a two-day remediation deadline for federal agencies.</p>
+<p>The vulnerability is a deserialization flaw rated 9.8 that lets an unauthenticated attacker execute arbitrary code on on-premises SharePoint Server. It hits Subscription Edition, 2019, and 2016. No authentication plus code execution is the combination that turns a document server into a foothold, and Microsoft has confirmed the flaw was weaponized before fixes were available.</p>
+<p>This is not the first on-prem SharePoint RCE to draw active exploitation this year, and the pattern is familiar. On-prem SharePoint sits deep inside corporate networks, holds sensitive documents, and often runs under service accounts with generous privileges. It's a high-value target, and it's a slow-to-patch one.</p>
+<p>The KEV deadline for agencies is July 19, two days after listing. Federal teams will move on that clock. Everyone else moves on their own, and SharePoint upgrades have a reputation for being disruptive, which is exactly why exploited SharePoint bugs keep having long tails.</p>
+<p>If you run SharePoint on-prem, the July Patch Tuesday update closes this hole. Apply it, then assume anything internet-reachable may have been touched before you got there. Hunt for unexpected web shells, new or modified service accounts, and outbound connections originating from the SharePoint host.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>WordPress Ships Emergency Fix for Pre-Auth RCE in Core (wp2shell)</title>
+      <link>https://sabr-labs.com/article/wordpress-wp2shell-cve-2026-63030-preauth-rce-core-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-wp2shell-cve-2026-63030-preauth-rce-core-july-2026</guid>
+      <pubDate>Sat, 18 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>RCE</category>
+      <category>CVE-2026-63030</category>
+      <category>Vulnerabilities</category>
+      <category>Web Security</category>
+      <description>A default WordPress install can be taken over by a single anonymous HTTP request, and the proof-of-concept is already public.</description>
+      <content:encoded><![CDATA[<p>A single anonymous HTTP request is enough to run code on a default WordPress site. No login, no plugins, no special configuration. That's the bug WordPress just shipped an emergency fix for.</p>
+<p>The flaw, nicknamed wp2shell by the researchers who found it, is tracked as CVE-2026-63030. It chains two problems: a route-confusion bug in WordPress core's REST API batch endpoint, and a SQL injection (CVE-2026-60137) in the author__not_in parameter of WP_Query, the class that builds nearly every database query WordPress runs. The SQL injection alone carries a 9.1 CVSS. Put together, they turn an unauthenticated request into remote code execution.</p>
+<p>Affected versions are 6.9.0 through 6.9.4 and 7.0.0 through 7.0.1. Both bugs are fixed in 6.9.5 and 7.0.2, released July 17. WordPress.org has turned on forced automatic updates for affected sites, because the severity is high enough that waiting for admins to click "update" wasn't an acceptable plan.</p>
+<p>WP_Query is the worst possible place to find a SQL injection. It isn't some rarely-touched admin corner. It's the plumbing behind archive pages, search, and most theme loops, so any surface that lets a visitor shape query arguments becomes potential reach.</p>
+<p>A working proof-of-concept is already on GitHub. WordPress runs a large share of the web, and the sites that lag on core updates are exactly the ones that get hit first. Forced auto-updates will cover most managed hosts within days. The long tail of self-hosted and heavily customized installs is where this one lives for months.</p>
+<p>Confirm you're on 6.9.5 or 7.0.2. If you've disabled auto-updates across a fleet of sites, this is the week to push the release by hand and check that nothing is pinned to an affected version. If you genuinely can't patch right now, block the REST batch route at the edge and treat it as a stopgap, not a fix.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A Claude for Chrome Flaw Lets Other Extensions Trigger Its AI Actions</title>
       <link>https://sabr-labs.com/article/claude-for-chrome-extension-flaw-gmail</link>
@@ -866,122 +982,6 @@
 <p>Muse Spark 1.1 is the second model out of Meta Superintelligence Labs and an upgrade to the original Muse Spark from April. It's a multimodal reasoning model built for agents, with a 1M-token context window and gains in tool use, computer use, and coding. Meta is putting it up against GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro.</p>
 <p>The capability jump matters less than the posture change. For years the argument was that open weights were both good strategy and good for the field, and Meta was the biggest company willing to make it out loud. Charging for a closed model is a concession that the frontier is expensive to build and Meta would like to be paid for it. The theory that Llama was always a loss leader just got a lot more credible.</p>
 <p>Developers get another frontier option and $20 to try it. Meta gets a revenue line and a reason to stop shipping its best work for free. Only one of those is a surprise.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Grok 4.5 Bets That Cheap and Fast Beats Frontier-Accurate</title>
-      <link>https://sabr-labs.com/article/grok-4-5-spacexai-cursor-coding-agent-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/grok-4-5-spacexai-cursor-coding-agent-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Grok</category>
-      <category>SpaceXAI</category>
-      <category>AI Models</category>
-      <category>Coding</category>
-      <category>Cursor</category>
-      <description>SpaceXAI&apos;s Grok 4.5 undercuts frontier rivals on price for coding agents, but independent tests flag higher hallucination rates as the tradeoff.</description>
-      <content:encoded><![CDATA[<p>Elon Musk called Grok 4.5 'an Opus-class model, but faster, more token-efficient and lower cost,' and then did something unusual for a launch: he admitted it competes with a previous Claude generation, not the current frontier. SpaceXAI shipped the model on July 8 for coding and agentic work, available through its own console, the Grok Build agent, and inside Cursor.</p>
-<p>The pricing is the argument. Grok 4.5 runs $2 per million input tokens and $6 output, with cached input at 50 cents. One benchmarking firm put it fourth on a real-world agentic knowledge-work index while measuring its cost per completed task at a fraction of the models above it. When you're running thousands of agent steps, fourth-place quality at a quarter of the price is a trade a lot of teams will take.</p>
-<p>There's a catch, and it's the one that always shows up when a model optimizes hard for speed and cost. Independent testing flagged higher hallucination rates than the frontier leaders. For a coding agent that's a specific kind of dangerous: fast, confident, and occasionally wrong about an API that doesn't exist. Cheap tokens don't help if a human has to catch the fabrications.</p>
-<p>The Cursor tie-in is the interesting part. SpaceXAI trained Grok 4.5 partly on Cursor's interaction data, real signals on how engineers write, review, and debug, then shipped it inside Cursor on day one. That's a tighter loop between a model and a coding tool than most labs have, and it shows up in the coding numbers.</p>
-<p>It carries a 500,000-token context window, and EU access is expected in mid-July.</p>
-<p>Grok 4.5 isn't trying to win the benchmark crown. It's trying to make the crown irrelevant by being cheap enough that the gap stops mattering. Whether that works depends entirely on how much you trust a model that's faster because it worries less.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Blue Origin Seeks $10B at a $130B Valuation, Its First Outside Money</title>
-      <link>https://sabr-labs.com/article/blue-origin-10-billion-raise-130-billion-valuation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/blue-origin-10-billion-raise-130-billion-valuation-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 15:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>Blue Origin</category>
-      <category>Jeff Bezos</category>
-      <category>New Glenn</category>
-      <category>Funding</category>
-      <category>SpaceX</category>
-      <description>Blue Origin is raising $10 billion at a $130 billion valuation led by Coatue, the first outside funding in the rocket maker&apos;s history, weeks after New Glenn exploded in testing.</description>
-      <content:encoded><![CDATA[<p>Blue Origin has been around since 2000 and, until now, has run almost entirely on Jeff Bezos's money. That's changing. The company is raising $10 billion at a $130 billion valuation, its first real outside funding round in more than two decades.</p>
-<p>Coatue is expected to lead with about $4 billion, and Bezos himself is putting in another $2 billion, with other investors covering the rest, according to reporting from Bloomberg, CNBC, and TechCrunch. For most of its life, Blue Origin's defining trait was that it didn't need anyone else's capital. Taking outside money is a real change in posture.</p>
-<p>The timing is the interesting part. This round comes weeks after New Glenn, Blue Origin's heavy-lift rocket, exploded during testing in late May as the company was preparing for its fourth flight. Raising a mega-round right after a very public failure isn't necessarily a sign of weakness. But it does suggest the pace Bezos wants now costs more than even he wants to keep funding solo.</p>
-<p>Blue Origin is chasing SpaceX in a market SpaceX largely defined, and the gap is measured in launches per year, not press releases. New Glenn has to fly, and fly reliably, to matter. CEO Dave Limp has set a goal of returning it to flight by the end of 2026, which is aggressive for a vehicle that just came apart on the stand.</p>
-<p>Ten billion dollars buys manufacturing scale, more engines, and room to fail a few more times without flinching. That's what building a launch business takes. What it can't buy outright is cadence — the number of times a year you actually reach orbit — and that, not valuation, is the only scoreboard SpaceX is currently winning on.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s Muse Image Can Use Your Public Instagram Photos by Default</title>
-      <link>https://sabr-labs.com/article/meta-muse-image-instagram-public-photos-opt-out-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-image-instagram-public-photos-opt-out-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>Instagram</category>
-      <category>Generative AI</category>
-      <category>Privacy</category>
-      <category>WhatsApp</category>
-      <description>Meta&apos;s new Muse Image generator lets anyone @-mention a public Instagram account to build AI images from its photos, and the setting is on unless you turn it off.</description>
-      <content:encoded><![CDATA[<p>If your Instagram is public, a stranger can now type your username into Meta's AI and generate images built from your photos. You won't get a notification. And the setting that allows it is on by default.</p>
-<p>Meta is rolling out Muse Image across Instagram, WhatsApp, and the Meta AI app. The hook is the @-mention: tag a public Instagram account and Meta AI pulls in that account's photos to build something new, whether that's an event invite, a mockup, or a personalized graphic. It's a genuinely useful feature and a genuinely uncomfortable one, depending on whose photos are getting mentioned.</p>
-<p>The friction is all in the defaults. Public accounts are opted in. There's a toggle to shut it off, but Meta says it's still rolling out, so you might not see it yet. And turning it off only looks forward: anything generated from your photos before you flip the switch stays generated. Meta won't delete it.</p>
-<p>This is the same play Meta has run before, where a capability ships enabled and the opt-out arrives on Meta's schedule rather than yours. Treating public photos as fair game isn't new. Letting anyone turn them into AI compositions of a specific, named person, silently, is a different kind of exposure than "someone could screenshot your profile." The people most affected are the ones least likely to hear the toggle exists.</p>
-<p>Muse Image is heading to Facebook and Messenger next, and Meta is opening it to advertisers and agencies in the coming weeks. That last part tells you what this is really for. The consumer @-mention feature is the friendly face; the business is dropping AI image generation, fed by the enormous pool of content people posted publicly, into the ad pipeline. If you'd rather not be raw material, the only lever Meta hands you is to find the toggle or go private.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>&apos;Friendly Fire&apos; Turns Claude Code and Codex Into Malware Launchers</title>
-      <link>https://sabr-labs.com/article/friendly-fire-ai-coding-agents-claude-codex-rce-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/friendly-fire-ai-coding-agents-claude-codex-rce-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Security</category>
-      <category>Claude Code</category>
-      <category>OpenAI Codex</category>
-      <category>Prompt Injection</category>
-      <category>RCE</category>
-      <description>Researchers showed that Claude Code and OpenAI&apos;s Codex, running in auto-approve mode to review untrusted code, can be tricked into executing a hidden payload.</description>
-      <content:encoded><![CDATA[<p>The pitch for pointing an AI agent at an unfamiliar codebase is that it'll spot the sketchy stuff before you do. A new proof of concept called Friendly Fire flips that: it gets the agent to run the sketchy stuff for you.</p>
-<p>The work comes from the AI Now Institute, with a working exploit published on GitHub. It targets Claude Code and OpenAI's Codex when either runs in an autonomous mode that approves its own shell commands — Claude Code on Sonnet 4.6, Sonnet 5, or Opus 4.8, and Codex on GPT-5.5. The scenario is the exact job these tools are sold for: reviewing an untrusted third-party library for problems.</p>
-<p>The bait is a booby-trapped copy of geopy, a common Python geocoding library. Its files carry prompt injections that name-drop standard security tooling, and sitting in the repo is an obfuscated binary disguised as the compiled build of a harmless Go file. The README suggests running a script, security.sh, as a routine check before opening a pull request. The agent, trying to be thorough, runs it. The script quietly launches the hidden binary, and the payload fires.</p>
-<p>Both agents' auto modes lean on a classifier that runs commands the model judges safe and pauses on the ones it flags as risky. "Run the project's own security check before a PR" reads as safe. That's the whole trick. This isn't a memory-corruption bug or a jailbreak in the usual sense. It's social engineering aimed at a machine that was told to be a diligent reviewer.</p>
-<p>Credit to the researchers, and a caveat worth stating plainly: the exposure is bounded. It lands only when a command-capable agent, running in auto-approve mode, reviews code you don't control. Keep a human approving commands, or don't hand an autonomous agent untrusted repos, and this specific attack has nowhere to stand. That's not a reason to shrug, though. Auto-approve is exactly the mode people reach for when they're moving fast.</p>
-<p>The broader point outlives this one demo. The moment an AI agent can both read attacker-supplied text and execute commands, that text becomes an attack surface, and "review this untrusted thing for me" is close to the highest-risk instruction you can give it. The fix isn't a signature. It's not letting the reviewer also be the one who pulls the trigger.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>RoguePlanet Turns Microsoft Defender Into a Path to SYSTEM</title>
-      <link>https://sabr-labs.com/article/microsoft-defender-rogueplanet-cve-2026-50656-system-eop-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-defender-rogueplanet-cve-2026-50656-system-eop-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft Defender</category>
-      <category>Windows</category>
-      <category>Privilege Escalation</category>
-      <category>CVE</category>
-      <category>Zero-Day</category>
-      <description>A patched race condition in Microsoft&apos;s Malware Protection Engine, CVE-2026-50656, lets a local attacker trick Defender itself into handing over SYSTEM privileges.</description>
-      <content:encoded><![CDATA[<p>The tool that's supposed to catch the attacker turned out to be the way up. CVE-2026-50656, nicknamed RoguePlanet, is a flaw in the Microsoft Malware Protection Engine — the core scanner behind Windows Defender — that lets a local user coax Defender into spawning a shell as SYSTEM.</p>
-<p>The bug is a textbook time-of-check to time-of-use race. Defender inspects a file path, then reopens that path a moment later to scan or clean it, without holding a lock across both steps. In that gap, an attacker uses NTFS junctions or symbolic links to swap what the path points at, redirecting Defender's privileged file operations onto attacker-controlled targets. A researcher going by Nightmare Eclipse reported it.</p>
-<p>A few things make this nastier than a run-of-the-mill privilege-escalation bug. It works on fully patched Windows 10 and 11. It works whether or not real-time protection is switched on, because the vulnerable code lives in the engine, not the toggle. And ordinary endpoint controls don't stop it unless you're enforcing application allowlisting. Microsoft tagged it "Exploitation More Likely" on its own index and scored it 7.8.</p>
-<p>It's not remote. An attacker needs local access already, which makes RoguePlanet a second-stage tool: the thing you run after phishing a user, not the thing that gets you in the door. That's still precisely what a ransomware crew wants, because SYSTEM on the endpoint is the line between one compromised account and the whole machine.</p>
-<p>Here's the part that makes this manageable. The fix ships inside the engine, not in a Patch Tuesday bundle, and the Malware Protection Engine updates itself automatically on most systems. The fixed version is 1.1.26060.3008 or later. Go check it, because "automatic" and "already happened" are not the same thing on machines that have been offline or have update policy sitting in the way.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ubiquiti Patches CVSS 10 Command Injection in UniFi Connect</title>
-      <link>https://sabr-labs.com/article/ubiquiti-unifi-connect-cve-2026-50746-command-injection-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ubiquiti-unifi-connect-cve-2026-50746-command-injection-july-2026</guid>
-      <pubDate>Thu, 09 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ubiquiti</category>
-      <category>UniFi</category>
-      <category>CVE</category>
-      <category>Command Injection</category>
-      <category>Network Security</category>
-      <description>A maximum-severity flaw in Ubiquiti&apos;s UniFi Connect app lets an unauthenticated attacker on the network run OS commands, and roughly 100,000 UniFi endpoints sit exposed online.</description>
-      <content:encoded><![CDATA[<p>Ubiquiti shipped a fix this week for a flaw in its UniFi Connect app that scores a clean 10.0, the maximum, because it asks nothing of the attacker except a network path to the device.</p>
-<p>CVE-2026-50746 is an improper access control bug in UniFi Connect, the software Ubiquiti sells for running smart-building gear like LED lighting and EV chargers. The CVSS vector is the bad kind all the way across: network vector, low complexity, no privileges, no user interaction. Send a crafted request, run operating-system commands, no login required. It affects UniFi Connect 3.4.16 and earlier; the fixed build is 3.4.20.</p>
-<p>The reason this one matters beyond the score is exposure. The threat intelligence firm Censys counted roughly 100,000 UniFi OS endpoints reachable from the public internet. Not all of them run the vulnerable Connect app, but the population of internet-facing Ubiquiti gear is large, and a good chunk of it belongs to people who set it up once and never looked at it again.</p>
-<p>CVE-2026-50746 didn't arrive alone. Ubiquiti's Security Advisory Bulletin 066 bundles a set of UniFi OS fixes, including CVE-2026-50747 and CVE-2026-50748 in the Talk and Access products, and reporting around the disclosure counted 25 issues across the UniFi range. The 10.0 command injection is the headline, but if you're patching, patch the batch.</p>
-<p>There's no confirmed in-the-wild exploitation yet, which is the window you want to be inside of. Update Connect to 3.4.20 or later, and while you're in the console, take Ubiquiti's standing advice and get UniFi management off the public internet. A max-severity unauthenticated RCE is only a crisis if the attacker can reach it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
