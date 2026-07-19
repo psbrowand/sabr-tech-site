@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jul 2026 13:16:04 GMT</lastBuildDate>
-    <pubDate>Sat, 18 Jul 2026 13:16:04 GMT</pubDate>
+    <lastBuildDate>Sun, 19 Jul 2026 13:17:30 GMT</lastBuildDate>
+    <pubDate>Sun, 19 Jul 2026 13:17:30 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Starship&apos;s Flight 13 Aborts at T-0 After Four Engines Refuse to Light</title>
+      <link>https://sabr-labs.com/article/spacex-starship-flight-13-t-zero-abort-engine-ignition-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starship-flight-13-t-zero-abort-engine-ignition-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>SpaceX</category>
+      <category>Starship</category>
+      <category>Raptor</category>
+      <category>NASA</category>
+      <category>Rockets</category>
+      <description>SpaceX scrubbed Starship&apos;s 13th test flight a second before liftoff when four Raptor engines failed to ignite, triggering an automatic shutdown of the rest.</description>
+      <content:encoded><![CDATA[<p>Starship came within about a second of leaving the pad on Thursday, then didn't. Four of its 33 Raptor engines failed to ignite during the startup sequence, and the flight computer did exactly what it's supposed to do: it shut the other 29 down and kept the rocket bolted to the ground, wrapped in smoke and vapor.</p>
+<p>This was a first. For all the drama of earlier Starship tests, a full-scale vehicle had never triggered a last-second abort at T-0 like this. The automatic shutdown is the system working, not failing. Catching a bad ignition and standing down beats lifting off on 29 of 33 engines and finding out what happens next over the Gulf.</p>
+<p>Elon Musk said on X that two engines will be swapped out before the next attempt, and that the most probable launch window is early next week. At 407 feet with 33 main engines, Starship is the largest and most powerful rocket ever built, and getting all 33 to light in the right fraction of a second is exactly the kind of problem that doesn't fully show up until you're doing it for real.</p>
+<p>There's a NASA deadline hanging over this. Starship is the lander for returning astronauts to the Moon, and the program's schedule leans on these test flights going well and going soon. A scrub isn't a setback in engineering terms. It is one in calendar terms, and the calendar is the part NASA cares about.</p>
+<p>The retarget lands on July 20 if the window holds, which is a nice bit of timing. Apollo 11 touched down on the Moon on July 20, 1969. Watch the ignition sequence on the next attempt. That one second is where this flight lives or dies.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Report: US Pressed Samsung and SK Hynix to Share AI &apos;Excess Profits&apos;</title>
+      <link>https://sabr-labs.com/article/us-samsung-sk-hynix-ai-excess-profits-sharing-report-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/us-samsung-sk-hynix-ai-excess-profits-sharing-report-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Samsung</category>
+      <category>SK Hynix</category>
+      <category>Semiconductors</category>
+      <category>Trade Policy</category>
+      <category>AI Chips</category>
+      <description>Korean press reports say a US trade official told Seoul that Washington has a right to share in the memory-chip windfall driven by the AI boom, a claim the US has not confirmed.</description>
+      <content:encoded><![CDATA[<p>Washington reportedly wants a cut of the money South Korea's memory-chip makers are pulling in off the AI boom. According to reports out of Seoul, a US trade official told his Korean counterpart that the US has a right to share in the "excess profits" of Samsung Electronics and SK Hynix.</p>
+<p>The claim traces to a meeting in which Deputy US Trade Representative Rick Switzer reportedly raised the idea with Korea's trade minister. It has not been officially confirmed by the US side. The backdrop is real enough: South Korean semiconductor exports to the US jumped more than 90% year over year in the first half of 2026, and both companies sell the high-bandwidth memory that AI accelerators depend on.</p>
+<p>The numbers behind the demand are eye-catching, and worth a grain of salt. Reports cite projections of a massive jump in Samsung's 2026 profit and an even steeper climb for SK Hynix off a small 2025 base. These are forecasts, not booked results, so read them as the shape of the windfall rather than a settled figure.</p>
+<p>A foreign government asking to share in a private company's profits is unusual and legally murky. Korea's trade ministry said it was unaware of any such request. This reads less like a concrete policy and more like an opening position in a wider negotiation over tariffs and US investment commitments, the kind of maximalist ask that gets floated to see what sticks.</p>
+<p>If any of it is confirmed on the record, it's a new way of tying chip revenue to trade leverage. For now it's a report, and the thing to watch is whether either government says the words out loud.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic May Rent $10 Billion of Compute From a Direct Rival, Meta</title>
+      <link>https://sabr-labs.com/article/meta-anthropic-10-billion-compute-lease-talks-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-anthropic-10-billion-compute-lease-talks-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Meta</category>
+      <category>Anthropic</category>
+      <category>Data Centers</category>
+      <category>AI Compute</category>
+      <category>Cloud</category>
+      <description>Anthropic is in early talks to lease up to $10 billion in data-center capacity from Meta, whose Llama models compete head-on with Claude.</description>
+      <content:encoded><![CDATA[<p>Anthropic is in early talks to rent up to $10 billion in computing capacity from Meta. That's the same Meta that builds the Llama models competing directly with Claude. Reuters and the New York Times reported the discussions this week.</p>
+<p>The terms are preliminary. The talks reportedly began in June on a proposal from Anthropic, with payments made in monthly increments over roughly two years, and either side can walk away before anything is signed. Nothing is final, and "up to $10 billion" is a ceiling, not a check that's been written.</p>
+<p>What makes this odd is the shape of it. Meta ships its own frontier models and would, under this arrangement, also become the landlord renting Anthropic the infrastructure to train and serve a rival. The logic on Meta's side is that hyperscalers have spent enormously on data centers, and leasing out spare capacity turns some of that capex into a revenue line. On Anthropic's side, it's about getting enough compute, from wherever it can, fast enough to keep up.</p>
+<p>Anthropic already leans on Amazon and Google for capacity. Adding Meta would be less about strategy and more about raw availability, which is the tell. When a company is willing to buy compute from a direct competitor, scarcity has clearly started to outweigh the awkwardness.</p>
+<p>Early-stage deals leak for a reason, so treat the number as a headline, not a done deal. If it does close, the signal matters more than the dollar figure: the fight for compute has gotten intense enough that rivals will do business with each other to get it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft&apos;s &apos;Project Perception&apos; Takes Aim at Anthropic&apos;s Mythos Bug Hunter</title>
+      <link>https://sabr-labs.com/article/microsoft-project-perception-ai-vulnerability-finder-mythos-rival-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-project-perception-ai-vulnerability-finder-mythos-rival-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Microsoft</category>
+      <category>Anthropic</category>
+      <category>AI Security</category>
+      <category>Vulnerability Management</category>
+      <category>OpenAI</category>
+      <description>Microsoft is reportedly readying an AI security product that finds and fixes software bugs across code, cloud, and endpoints, priced to undercut Anthropic&apos;s Mythos.</description>
+      <content:encoded><![CDATA[<p>Microsoft wants to find your software bugs with AI, fix them automatically, and charge less than Anthropic to do it. The company is preparing to launch a security product internally codenamed Project Perception, according to a report from The Information, and it's built to look across a company's code, cloud infrastructure, and endpoints, flag exploitable weaknesses, explain the impact, and propose concrete fixes.</p>
+<p>The interesting piece is how it's wired. Rather than betting on a single model, Perception reportedly uses a router that picks the best model per task, drawing on Microsoft's own models plus ones from OpenAI and Anthropic. It ties into the security estate Microsoft already sells: Defender XDR for endpoint signals, Defender for Cloud, Entra ID for identity, and GitHub for source. The pitch is that combining those inputs answers questions a standalone scanner can't.</p>
+<p>The target is obvious. Anthropic's Mythos does autonomous bug-finding and patching, and it's expensive to run. Reporting puts Mythos API costs well above both Opus and GPT pricing, and Microsoft's per-task routing is the lever it plans to pull to come in cheaper. Cheap enough, the framing goes, to run continuously instead of in occasional audits.</p>
+<p>Skepticism is the right default on the AI security beat. This is still a report about an unshipped product that's supposedly launching "as soon as this month." AI bug-finders are genuinely useful and also genuinely oversold. The hard part was never generating a list of candidate bugs. It's the false-positive rate, and whether an auto-proposed fix is safe to actually merge without a human who understands the codebase signing off.</p>
+<p>Cost routing helps adoption. It says nothing about accuracy. For Windows-heavy shops already living inside Defender and Entra, the real moat isn't the model, it's the integration, and no competitor can replicate the telemetry Microsoft already holds. The number worth waiting for is the false-positive rate when this ships. Everything else is a demo.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ecopetrol Blocked the Encryption, But Attackers Still Walked Out With Data</title>
+      <link>https://sabr-labs.com/article/ecopetrol-colombia-ransomware-contained-3300-accounts-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ecopetrol-colombia-ransomware-contained-3300-accounts-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ecopetrol</category>
+      <category>Ransomware</category>
+      <category>Data Breach</category>
+      <category>Critical Infrastructure</category>
+      <category>Extortion</category>
+      <description>Colombia&apos;s largest company stopped a ransomware payload from firing, yet an intruder still downloaded data tied to about 3,300 accounts and is now demanding money.</description>
+      <content:encoded><![CDATA[<p>The ransomware didn't fire. That's the unusual part.</p>
+<p>Ecopetrol, Colombia's state-controlled oil producer and the country's biggest company, said an intruder reached its cloud file storage on July 17 and tried to launch ransomware. The encryption never ran. Company controls caught and blocked it before it could lock any systems, and Ecopetrol reported no material disruption to production or critical operations.</p>
+<p>The attacker still got something. Data tied to roughly 3,300 user accounts, spread across about 15 subsidiaries, was downloaded before the intrusion was contained. The company revoked the unauthorized access, blocked the mass-download mechanisms, and disclosed the incident publicly. The actor, so far unidentified, has since made an extortion demand, threatening to publish the stolen data. As of Ecopetrol's latest statement, nothing has surfaced on leak sites.</p>
+<p>Most breach disclosures we cover are about the encryption that did fire, the plant that went dark, the hospital diverting ambulances. This one is the more common and less dramatic middle outcome: execution blocked, data gone anyway. It's worth paying attention to precisely because the controls worked as designed on the part that would have made headlines.</p>
+<p>Still, "contained" is carrying a lot of weight here. The data already left the building, and the leverage now is publication, not encryption. "No evidence of publication" is a snapshot, not a promise. On the other side, 3,300 accounts is a small number for a company this size, which suggests either tight segmentation held or the attacker simply didn't get far before being cut off.</p>
+<p>The tell to watch is whether the data shows up on an extortion leak site in the coming weeks. If it does, the story shifts from a blocked attack to a slow-motion data breach.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Sets Today&apos;s Deadline for FortiSandbox Flaws Under Active Attack</title>
+      <link>https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-39808-25089-active-exploitation-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-39808-25089-active-exploitation-kev-july-2026</guid>
+      <pubDate>Sun, 19 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Fortinet</category>
+      <category>FortiSandbox</category>
+      <category>CVE-2026-39808</category>
+      <category>CVE-2026-25089</category>
+      <category>CISA KEV</category>
+      <description>Two unauthenticated command-injection bugs in Fortinet&apos;s malware sandbox are being exploited now, and federal agencies have until July 19 to patch.</description>
+      <content:encoded><![CDATA[<p>The appliance that's supposed to catch malware is now a way in. CISA has ordered federal agencies to patch two FortiSandbox flaws by today, July 19, after confirming both are being used in real attacks.</p>
+<p>The bugs are CVE-2026-39808 and CVE-2026-25089, both OS command injection (CWE-78). An unauthenticated attacker sends a crafted HTTP request and runs arbitrary operating-system commands on the box, no credentials required. CVE-2026-39808 hits FortiSandbox directly. CVE-2026-25089 has the wider blast radius, reaching FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS. CISA added both to its Known Exploited Vulnerabilities catalog on July 16 under Binding Operational Directive 26-04.</p>
+<p>FortiSandbox isn't a corner appliance. It detonates suspicious files, which means it's wired into email gateways, endpoints, and file shares, and it usually runs with high privilege so it can inspect anything you throw at it. Handing an unauthenticated attacker command execution on a box with that much reach is close to a worst case.</p>
+<p>This keeps happening to edge security gear. Fortinet, Ivanti, SonicWall: the devices sitting at the network boundary, the ones meant to keep attackers out, have become the reliable way in. A sandbox getting popped by the very traffic it's built to analyze is the same story with a sharper edge.</p>
+<p>Check FortiGuard's PSIRT advisory for the exact fixed builds and update now. If your FortiSandbox management interface has been reachable from the internet, don't assume you're clean because you patched today. Treat it as potentially compromised, pull logs, and hunt for unexpected commands or new accounts. The federal deadline is federal, but the exploitation is everyone's problem.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Gemini 3.5 Pro Slips Months as DeepMind Loses Four Researchers</title>
       <link>https://sabr-labs.com/article/google-gemini-3-5-pro-delayed-coding-deepmind-exodus-july-2026</link>
@@ -867,121 +982,6 @@
 <p>Attribution points at Storm-2603, a threat actor that has been working SharePoint bugs since mid-2025. That confidence comes from tracking, not a confession, so treat it as an assessment rather than a certainty.</p>
 <p>Here's the detail that hasn't aged well. Microsoft's own advisory tagged this as 'Exploitation Less Likely.' It's being exploited. That label is a probability estimate, not a promise, and it's a useful reminder that a low likelihood rating is not a reason to deprioritize a patch on an internet-reachable collaboration server.</p>
 <p>The federal deadline under BOD 26-04 was July 4, so agencies were meant to be done a week ago. If you're outside that mandate and your SharePoint boxes are still on the May level, patch them, then go read your Site Member rolls. The permission that turns this from an internal-only risk into a real one is probably sitting in a group you forgot you created.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ransomware Killed EDR With a Driver Microsoft Itself Signed</title>
-      <link>https://sabr-labs.com/article/goddamn-poisonx-signed-driver-ransomware-symantec-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/goddamn-poisonx-signed-driver-ransomware-symantec-july-2026</guid>
-      <pubDate>Sat, 11 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>BYOVD</category>
-      <category>EDR</category>
-      <category>Windows</category>
-      <category>Symantec</category>
-      <description>Symantec says the Hyadina crew&apos;s new &apos;GodDamn&apos; locker disabled endpoint defenses on ten hosts using PoisonX, a malicious kernel driver that carried a valid Microsoft signature.</description>
-      <content:encoded><![CDATA[<p>A ransomware crew walked its kill-switch past Microsoft's own driver-signing check and used the result to blind endpoint protection on ten machines before it started encrypting. That's the finding from Broadcom's Symantec Threat Hunter Team, which disclosed the campaign on July 9 and named two things: the ransomware, GodDamn, and the kernel-mode driver it leans on, PoisonX.</p>
-<p>The group behind GodDamn is tracked as Hyadina, a ransomware-as-a-service operation Symantec has followed since March 2022. GodDamn is the latest rebrand of its lockers, which previously shipped under the names Beast and Monster. New name, same business, and the same appetite for turning off whatever's watching before the payload runs.</p>
-<p>PoisonX is the part worth slowing down on. The usual version of this attack, Bring Your Own Vulnerable Driver, works by finding a legitimate signed driver with a bug in it, a hardware monitor or an anti-cheat component, then exploiting that bug to reach the kernel. PoisonX skips the middleman. It was written to be malicious and still came out the other end of Microsoft's signing review with a valid signature. Its author uses the GitHub handle 'oxfemale,' self-identifies as a Russian security researcher, and published the driver on April 7 as a research tool.</p>
-<p>Calling an EDR-disabling kernel driver a research tool and posting it publicly is a fig leaf, and everyone in this chain knows it. But the real failure sits with the signature. A driver Microsoft has vouched for runs at Ring 0 and sails past the trust checks that stop ordinary malware, which is exactly why attackers keep hunting for signed code they can abuse.</p>
-<p>The intrusion Symantec reconstructed ran from May 29 to June 3, and it reads like patient work rather than a smash-and-grab. The operators came in over AnyDesk for remote access, harvested credentials with a NirSoft-based toolkit, moved through the environment, and only then dropped PoisonX to switch off defenses across roughly ten hosts ahead of the encryption stage.</p>
-<p>If you run Windows fleets, three moves matter now. Push Microsoft's vulnerable-driver blocklist and make sure it's actually enforced, not just present. Add PoisonX's hash to your own block rules rather than waiting for the platform to catch up. And treat the combination of AnyDesk plus a NirSoft credential grab as a staging signal worth an alert, because by the time the driver loads you're already at the last quiet moment before the ransom note.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5.6 Goes Public After a Two-Week Government Safety Hold</title>
-      <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-terra-luna-general-availability-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-sol-terra-luna-general-availability-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>GPT-5.6</category>
-      <category>AI Models</category>
-      <category>API</category>
-      <description>OpenAI shipped GPT-5.6 Sol, Terra, and Luna to everyone on July 9 after a government safety review, with API prices running from $1 to $30 per million tokens.</description>
-      <content:encoded><![CDATA[<p>For about two weeks, GPT-5.6 existed and almost nobody could use it. OpenAI previewed the model family on June 26 and then, at the request of the U.S. government, shipped it only to a small group of vetted partners while a safety review ran. On July 9 that gate came down. Sol, Terra, and Luna went generally available across ChatGPT, ChatGPT Work, Codex, and the API, rolling out worldwide over roughly a day.</p>
-<p>The tiering is the story.</p>
-<p>Sol is the flagship, priced at $5 per million input tokens and $30 per million output for heavy agentic and reasoning work. Terra sits in the middle at $2.50 and $15, and OpenAI is pitching it as a GPT-5.5-class model at half the cost. Luna runs $1 and $6, built for high-volume pipelines where latency and price matter more than the last few points of benchmark performance. Three models, one release, aimed at three different budgets.</p>
-<p>The gated launch is worth sitting with. Every major OpenAI model since GPT-4 shipped to the public on day one. This one didn't, and the reason given was a government safety review of a frontier system's capabilities. Whether that becomes routine or stays a one-off depends on how the White House's voluntary testing framework shakes out, but it's the first time a commercial model's release date was effectively set in Washington.</p>
-<p>It also didn't launch into a quiet room. The same 48 hours brought Grok 4.5 from the rebranded SpaceXAI and Muse Spark 1.1 from Meta, both pitched at roughly Opus 4.8 and GPT-5.5 territory. Three frontier-class releases in two days isn't a coincidence of the calendar. It's what the top of the market looks like now: nobody wants to be the lab that shipped second.</p>
-<p>For anyone building on the API, the real question isn't Sol versus the competition. It's whether Terra at $2.50 quietly eats the workloads that used to justify a flagship. That's where the pricing pressure actually lands.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>&apos;Ill Bloom&apos; Flaw Lets Attackers Recompute Weak Wallet Seeds</title>
-      <link>https://sabr-labs.com/article/ill-bloom-crypto-wallet-weak-randomness-coinspect-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ill-bloom-crypto-wallet-weak-randomness-coinspect-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cryptocurrency</category>
-      <category>Vulnerability</category>
-      <category>Coinspect</category>
-      <category>Wallets</category>
-      <category>Active Exploitation</category>
-      <description>Coinspect&apos;s Ill Bloom flaw lets attackers recompute seed phrases from software wallets built on weak randomness, and one sweep already drained $3.1 million.</description>
-      <content:encoded><![CDATA[<p>The whole point of a recovery phrase is that nobody can guess it. Twelve or twenty-four words pulled from a list of 2,048, seeded by good randomness, produce more combinations than there are atoms in a lot of the universe. Ill Bloom is what happens when the randomness is bad.</p>
-<p>Security firm Coinspect disclosed the flaw this week, and it's not theoretical. Some software wallets generated their seed phrases with a weak pseudorandom number generator. When the seeding is predictable, the space of possible phrases collapses from astronomical to something an attacker can simply compute through. Guess the seed, own every address it controls.</p>
-<p>Coinspect has confirmed one coordinated sweep on May 27 that drained about $3.1 million from 431 wallets in a single run. The exposure spans Bitcoin, Ethereum, Polygon, Rootstock, Tron, and Solana, because the weakness is in how the seed was generated, not in any one chain. Researchers put the number of wallets still at risk in the low thousands.</p>
-<p>The good news, if there is any, is scope. Hardware wallets aren't affected. Most mainstream software wallets aren't either. The exposure sits mostly in less widely used mobile wallets that rolled their own key generation and got it wrong. That's a small population, but for anyone in it the loss is total and irreversible.</p>
-<p>If you use a niche mobile wallet, treat this as urgent. Check your public address against Coinspect's database of vulnerable wallets. If it matches, assume the seed is already compromised, generate a brand new wallet, and move your funds to addresses from that new one. And one hard rule: never type a recovery phrase, private key, or backup file into any 'am I affected' checker. A legitimate checker only ever needs your public address. Anything asking for the seed is the second attack.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Langflow Auth-Bypass Bug Is Being Used to Steal Cloud Keys</title>
-      <link>https://sabr-labs.com/article/langflow-cve-2026-55255-idor-auth-bypass-kev-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/langflow-cve-2026-55255-idor-auth-bypass-kev-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CVE-2026-55255</category>
-      <category>Langflow</category>
-      <category>CISA KEV</category>
-      <category>AI Security</category>
-      <category>IDOR</category>
-      <description>CISA gave agencies until Friday to patch a Langflow auth-bypass bug that attackers have used since June to steal cloud and LLM keys and drop implants.</description>
-      <content:encoded><![CDATA[<p>CVE-2026-55255 sounds mild on paper. It's an insecure direct object reference, the kind of bug where you change an ID in a request and suddenly you're looking at someone else's data. CISA added it to the Known Exploited Vulnerabilities catalog this week and gave federal agencies until Friday to patch, which tells you the paper doesn't capture it.</p>
-<p>The target is Langflow, a popular tool for wiring up AI pipelines with a drag-and-drop interface and a REST API to run them. The flaw lives in the /api/v1/responses endpoint. An authenticated attacker sends a request carrying someone else's flow ID, and Langflow runs it with no ownership check. Version 1.9.1 adds the check back; the fix was a single pull request closing the gap.</p>
-<p>Here's why a CVSS 6.1 earned a federal patch deadline. Sysdig's threat researchers watched this exploited in the wild starting June 25, and the goal wasn't reading data. It was code execution and dropping a second-stage implant. Along the way the attackers pulled LLM provider keys and AWS credentials out of the victims' flows. An AI pipeline tool is a concentrated pile of exactly the secrets an attacker wants.</p>
-<p>This is the shape of AI-tooling security in 2026. The tools that make it easy to connect models, data, and cloud accounts also make it easy to steal all three at once when the access control is wrong. Langflow isn't uniquely careless here. It's just the one that got caught this month.</p>
-<p>If you run Langflow, get to 1.9.1. Then rotate every credential any flow touched, because a KEV listing means someone was already inside before the patch existed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AssuranceAmerica Breach Exposes 6.9 Million Driver&apos;s Licenses</title>
-      <link>https://sabr-labs.com/article/assuranceamerica-breach-6-9-million-drivers-license-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/assuranceamerica-breach-6-9-million-drivers-license-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>AssuranceAmerica</category>
-      <category>Identity Theft</category>
-      <category>Insurance</category>
-      <category>Privacy</category>
-      <description>AssuranceAmerica exposed the names and driver&apos;s license numbers of 6.9 million people, the largest known driver&apos;s-license breach of 2026 so far.</description>
-      <content:encoded><![CDATA[<p>Driver's license numbers are the quiet workhorse of identity theft. They don't expire like a card, you can't easily change them, and they unlock a surprising amount of fraud. AssuranceAmerica just spilled 6.9 million of them.</p>
-<p>The auto insurer's breach, disclosed this week, is the largest known exposure of Americans' driver's license numbers so far in 2026. Alongside the license data, the stolen records include personal information on the affected people. According to a filing with the Indiana attorney general's office, notification letters were set to start going out on July 10.</p>
-<p>The company hasn't said much about how it happened, and that's become a familiar pattern. A large breach gets disclosed through mandatory state-regulator filings rather than a clear public accounting, the notification letters use the standard 'we take your privacy seriously' language, and the actual cause stays vague. Nearly seven million people are left to find out from a letter.</p>
-<p>Driver's license numbers matter more than most people assume. Combined with a name and address, which were also in this breach, they're enough to open accounts, file fraudulent tax returns, and pass a lot of identity-verification checks. Unlike a leaked password, you can't rotate your license number. A state can reissue one, but that's a DMV ordeal most victims never bother with.</p>
-<p>If you've been an AssuranceAmerica customer, watch for the letter and take the credit monitoring if it's offered, but don't stop there. A credit freeze at all three bureaus is free, it's the single most effective step against new-account fraud, and it doesn't depend on the company that lost your data doing anything else right.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta Drops Open Weights for a Paid API With Muse Spark 1.1</title>
-      <link>https://sabr-labs.com/article/meta-muse-spark-1-1-model-api-closed-source-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-spark-1-1-model-api-closed-source-july-2026</guid>
-      <pubDate>Fri, 10 Jul 2026 10:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>Muse Spark</category>
-      <category>AI Models</category>
-      <category>Open Source</category>
-      <category>API</category>
-      <description>Meta opened a paid Meta Model API with the closed-source Muse Spark 1.1, walking away from the open-weight strategy that defined Llama.</description>
-      <content:encoded><![CDATA[<p>Meta built its AI reputation on giving the weights away. Llama was the open-source counterweight to OpenAI and Anthropic, the model you could download and run yourself. On July 9, Meta closed the door. Muse Spark 1.1 is closed source, and the only way to use it is a paid API.</p>
-<p>The Meta Model API opened in public preview the same day, putting Meta in the exact business it spent years positioning against. Pricing runs $1.25 per million input tokens and $4.25 per million output, with $20 in credits to start. Access is US-only for now, with no EU availability.</p>
-<p>Muse Spark 1.1 is the second model out of Meta Superintelligence Labs and an upgrade to the original Muse Spark from April. It's a multimodal reasoning model built for agents, with a 1M-token context window and gains in tool use, computer use, and coding. Meta is putting it up against GPT-5.5, Claude Opus 4.8, and Gemini 3.1 Pro.</p>
-<p>The capability jump matters less than the posture change. For years the argument was that open weights were both good strategy and good for the field, and Meta was the biggest company willing to make it out loud. Charging for a closed model is a concession that the frontier is expensive to build and Meta would like to be paid for it. The theory that Llama was always a loss leader just got a lot more credible.</p>
-<p>Developers get another frontier option and $20 to try it. Meta gets a revenue line and a reason to stop shipping its best work for free. Only one of those is a surprise.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
