@@ -6,9 +6,124 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jul 2026 13:17:30 GMT</lastBuildDate>
-    <pubDate>Sun, 19 Jul 2026 13:17:30 GMT</pubDate>
+    <lastBuildDate>Mon, 20 Jul 2026 13:17:38 GMT</lastBuildDate>
+    <pubDate>Mon, 20 Jul 2026 13:17:38 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Apple Sues OpenAI, Says Its Hardware Chief Ran a Poaching Scheme</title>
+      <link>https://sabr-labs.com/article/apple-openai-trade-secret-lawsuit-tang-tan-hardware-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-openai-trade-secret-lawsuit-tang-tan-hardware-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Apple</category>
+      <category>OpenAI</category>
+      <category>Trade Secrets</category>
+      <category>AI Hardware</category>
+      <category>Litigation</category>
+      <description>Apple&apos;s trade-secret lawsuit accuses OpenAI&apos;s hardware leadership of code-name leaks, laptop theft, and coaching Apple staff to evade security on their way out the door.</description>
+      <content:encoded><![CDATA[<p>Apple says OpenAI's chief hardware officer asked job candidates to bring Apple parts to their interviews. That's one line in a lawsuit full of them.</p>
+<p>On July 10, Apple sued OpenAI, its hardware startup io Products, and former Apple executive Tang Tan in federal court, alleging theft of hardware, manufacturing, and supply-chain trade secrets plus breach of contract. Tan spent 24 years at Apple, most recently as vice president of product design for the iPhone and Apple Watch, before leaving for OpenAI's device effort.</p>
+<p>The specifics are what got attention. Apple claims Tan used the company's internal project code names while recruiting for OpenAI, coached departing Apple employees on how to evade Apple's security procedures, and pressed for details on unreleased products. A second former employee, engineer Chang Liu, allegedly never returned an Apple-issued laptop and used it to download confidential technical documents. Apple frames the whole thing as a scheme directed from senior leadership.</p>
+<p>Strip away the spy-thriller framing and this is a fight about OpenAI building hardware. The company wants a consumer AI device out of its io acquisition, and building one at scale means hiring the people who know how Apple ships hardware. Poaching talent is legal and normal. Walking out with documents and trade secrets is not, and that's the line Apple argues OpenAI crossed. OpenAI pushed back on July 14, saying it has no interest in other companies' trade secrets and remains focused on its own technology.</p>
+<p>Trade-secret suits are hard to win and easy to file, and Apple has an obvious interest in making the cost of raiding its hardware bench look steep. Whether the claims survive in court matters less than the signal they send: the race to build AI hardware is now pulling directly from Apple's design team, and Apple has decided to fight that in public rather than quietly.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Memory&apos;s Supercycle Is Real. The Stock Reaction Says It&apos;s Priced In.</title>
+      <link>https://sabr-labs.com/article/memory-hbm4-delay-supercycle-earnings-priced-in-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/memory-hbm4-delay-supercycle-earnings-priced-in-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SK Hynix</category>
+      <category>HBM</category>
+      <category>Memory Chips</category>
+      <category>Semiconductors</category>
+      <category>AI Hardware</category>
+      <description>SK Hynix is heading for a roughly 556% jump in operating profit, but an HBM4 production slip and a brutal stock reaction show investors have already banked the boom.</description>
+      <content:encoded><![CDATA[<p>SK Hynix is on track to report roughly a 556% jump in operating profit. Its stock still had one of its worst days in Seoul on record this month.</p>
+<p>Memory earnings season is here, and the numbers are staggering by any normal standard. SK Hynix's first quarter already set records, with revenue up 144% year over year to 52.1 trillion won and operating profit of 37.5 trillion won. Analysts now peg Q2 operating profit near 60 trillion won, though even that lands a few percent under what the market had penciled in.</p>
+<p>The wrinkle is HBM4. The next generation of high-bandwidth memory, the stuff AI accelerators are starving for, slipped its full-scale mass-production ramp to the third quarter. HBM4E samples come in the second half, with volume production targeted for 2027. Investors who assumed HBM4 shipments would already be scaling read the delay as a reason to take profits.</p>
+<p>This is what priced for perfection looks like. Samsung reported profit growth around 1,800% and watched its stock fall about 7% anyway. When a supercycle is already the consensus view, even historic results get met with a shrug or a selloff. None of that means the demand is fake. SK Hynix still holds roughly 56% of the HBM market, and Micron just posted record quarterly revenue on the same AI-memory hunger. The boom is real, and it is enormous.</p>
+<p>The question for the back half of 2026 isn't whether memory makers are minting money. They are. It's whether HBM4 ramps on the revised schedule, because that timeline is now the load-bearing assumption under the entire trade.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>India&apos;s Skyroot Reaches Orbit, Joining a Club of Three</title>
+      <link>https://sabr-labs.com/article/skyroot-vikram-1-india-first-private-orbital-launch-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/skyroot-vikram-1-india-first-private-orbital-launch-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>space</category>
+      <category>Skyroot</category>
+      <category>India</category>
+      <category>Rocket Launch</category>
+      <category>Small Satellites</category>
+      <category>Commercial Space</category>
+      <description>Skyroot&apos;s Vikram-1 became the first privately built Indian rocket to reach orbit, making India the third nation with a private orbital launch capability.</description>
+      <content:encoded><![CDATA[<p>A 3D-printed rocket engine, built by a company that didn't exist eight years ago, just put India in a club with only two other members.</p>
+<p>On July 18, Skyroot Aerospace's Vikram-1 lifted off from the Satish Dhawan Space Centre at Sriharikota and reached a roughly 450-kilometer orbit about 15 minutes later. The mission, named Aagaman, makes India the third country with a private company that can reach orbit on its own, after the United States and China.</p>
+<p>The rocket is a small-satellite launcher. Four stages, about seven stories tall, with three solid-fuel stages topped by a liquid-fueled orbital adjustment module that runs on a 3D-printed engine, a first for an Indian launch vehicle. It carries around 350 kilograms to low Earth orbit, squarely in the range that constellation and cubesat operators care about.</p>
+<p>Skyroot is based in Hyderabad and was founded in 2018. It became the first Indian space startup to reach a $1 billion valuation earlier this year, and this flight is the payoff from six years of policy reform that opened orbital launch to private builders working alongside ISRO. India spent decades with launch as a government monopoly. Now it has a commercial one that works.</p>
+<p>The small-sat launch market is crowded and unforgiving on margins, and a single successful debut doesn't make a viable business. But a private Indian rocket in orbit changes who gets to bid for that market, and at what price. That's the part worth watching.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CitrixBleed Is Back: NetScaler Memory Bug Exploited in Under a Day</title>
+      <link>https://sabr-labs.com/article/citrixbleed-cve-2026-8451-netscaler-exploited-24-hours-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/citrixbleed-cve-2026-8451-netscaler-exploited-24-hours-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>CVE-2026-8451</category>
+      <category>CitrixBleed</category>
+      <category>Active Exploitation</category>
+      <description>A pre-auth memory overread in NetScaler&apos;s SAML handling, CVE-2026-8451, was under active exploitation less than 24 hours after Citrix patched it.</description>
+      <content:encoded><![CDATA[<p>Citrix shipped the patch on June 30. Attackers were exploiting the hole in under 24 hours.</p>
+<p>CVE-2026-8451 is one of six NetScaler ADC and Gateway flaws Citrix fixed that day. It's a pre-authentication memory overread, rated CVSS 8.8, in the XML parser NetScaler uses when it's configured as a SAML identity provider. No credentials required. An attacker sends a crafted request, forces the appliance to read past its buffer, and gets chunks of process memory handed back inside an HTTP response cookie.</p>
+<p>The name isn't marketing. This is the same class of bug as CitrixBleed, the 2023 flaw that leaked session tokens and let attackers ride authenticated sessions straight past multi-factor auth. The root cause this time is small and ugly: the parser didn't terminate unquoted XML attribute values when a newline followed, so it kept reading into whatever was next in memory.</p>
+<p>Researchers at watchTowr published a technical writeup the same day Citrix disclosed, and honeypot sensors recorded a working exploit within a roughly five-hour window spanning June 30 into July 1. That's the pattern now. When a memory-disclosure bug in an internet-facing VPN appliance gets full technical detail on day one, the window to mass exploitation is measured in hours, not weeks.</p>
+<p>Patch to the fixed NetScaler builds if you haven't. And if your appliance ran as a SAML IdP while exposed to the internet, patching alone won't save you. Rotate session secrets and terminate active sessions, because anything that leaked out of memory, tokens included, is already gone. CitrixBleed taught this exact lesson in 2023. The sequel has the same plot.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>EY Says Client Tax Files Stolen Through a Third-Party Help Desk</title>
+      <link>https://sabr-labs.com/article/ernst-young-ey-breach-client-tax-documents-third-party-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ernst-young-ey-breach-client-tax-documents-third-party-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ernst &amp; Young</category>
+      <category>Data Breach</category>
+      <category>Third-Party Risk</category>
+      <category>Tax Data</category>
+      <category>Identity Theft</category>
+      <description>Ernst &amp; Young disclosed that attackers accessed a third-party IT support platform and downloaded client tax documents, including Social Security numbers and investment holdings.</description>
+      <content:encoded><![CDATA[<p>The data in an accountant's support ticket is exactly the data a criminal wants: Social Security numbers, bank account codes, investment holdings, and the actual contents of people's tax filings. Ernst & Young just confirmed a batch of it walked out the door.</p>
+<p>EY, one of the Big Four, disclosed that an unauthorized party got into a third-party IT service management platform its staff used to support client tax work. The attackers had access from March 28 to April 12, and downloaded client documents during that window. EY spotted suspicious activity on April 23, filed a breach notification with California's Attorney General on July 15, and has notified at least four states.</p>
+<p>That's roughly a three-week gap between the intrusion and detection, and the stolen material is about as sensitive as personal data gets. According to the disclosures, it included Social Security numbers, financial account and routing codes, credit and debit account data, investment holdings, and the contents of client tax returns.</p>
+<p>EY hasn't named a threat actor or said whether ransomware was involved. What it has confirmed is the shape of the attack, and it's a familiar one in 2026: not EY's own network, but a vendor platform holding EY's data. The help-desk tool you trust with support tickets becomes the soft path to your clients' most sensitive records.</p>
+<p>EY is offering affected people 24 months of identity monitoring through Experian. If you're an EY tax client, don't wait on the letter. Assume the data is out, freeze your credit, and be ready for tax-fraud attempts and phishing that quotes real details from your filings to sound legitimate. Monitoring after the fact tells you when someone uses your data. It doesn't stop them.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>An AI Agent Broke Into Hugging Face and Logged 17,000 Actions</title>
+      <link>https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach-17000-actions-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach-17000-actions-july-2026</guid>
+      <pubDate>Mon, 20 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Hugging Face</category>
+      <category>AI Security</category>
+      <category>Autonomous Agents</category>
+      <category>Data Breach</category>
+      <category>Supply Chain</category>
+      <description>Hugging Face says an autonomous AI agent breached its production infrastructure through a malicious dataset, harvested internal credentials, and ran end to end with no human at the keyboard.</description>
+      <content:encoded><![CDATA[<p>Seventeen thousand actions. That's how many moves an autonomous AI agent made inside Hugging Face's production infrastructure before the company pieced together what it had done.</p>
+<p>In a disclosure published July 20, the world's largest AI model repository described an intrusion unlike anything it had handled before. It wasn't a person with a keyboard. It was an autonomous agent framework, one that appears to have been built on an agentic security-research harness, running thousands of individual actions across a swarm of short-lived sandboxes.</p>
+<p>The way in was a dataset. A malicious dataset abused two code-execution paths, the remote-code dataset loader and a template injection in a dataset configuration, and both let attacker code run on a data-processing worker. From that worker the agent got node-level access, then harvested cloud and cluster credentials and moved laterally across internal clusters over a weekend.</p>
+<p>There is good news buried in the report. Hugging Face found no tampering with public, user-facing models, datasets, or Spaces, and it verified that container images and published packages were clean. The software supply chain held. The internal-cluster access is the part that should keep people up at night.</p>
+<p>The sharpest detail is about the defense. To reconstruct more than 17,000 events, Hugging Face ran its own LLM analysis agents over the attacker log. When it tried to use frontier model APIs for parts of that work, the models' safety guardrails balked at analyzing the attacker's actions, so the team fell back to a self-hosted open-weight model (GLM 5.2) on internal infrastructure and finished in hours. The attacker had no such guardrails. If your incident-response plan depends on a model that might refuse the job, you don't have an incident-response plan.</p>
+<p>The practical takeaway is old advice with new urgency. If you run pipelines that load untrusted datasets or render configs, treat those loaders and template paths as remote code execution surfaces: sandbox them hard and scope worker credentials to the minimum. The novelty here isn't the entry point. It's that the whole intrusion ran at machine speed with nobody steering it.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Starship&apos;s Flight 13 Aborts at T-0 After Four Engines Refuse to Light</title>
       <link>https://sabr-labs.com/article/spacex-starship-flight-13-t-zero-abort-engine-ignition-july-2026</link>
@@ -866,122 +981,6 @@
 <p>Zimbra didn't publish a CVE identifier or a CVSS score, which is a choice. What it did disclose is who found the bug: Google's Threat Analysis Group.</p>
 <p>That name is the story. TAG exists to track zero-days used by government-backed attackers. When TAG is the reporter on a webmail vulnerability, the quiet subtext is that someone was likely already using it, or was about to. Zimbra's Classic Web Client has a long history as a favorite target for exactly that crowd, with multiple past zero-days burned in nation-state campaigns. A vendor advisory that says nothing about exploitation while crediting TAG for the find should be read as two facts sitting next to each other, not one.</p>
 <p>Patch to 10.1.19 now, and reapply the SNMP mitigation if you came up from an older branch. If you have the option, this is one more reason to move users off the Classic Web Client entirely. It keeps drawing this kind of attention, and the modern client isn't in the blast radius here.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>China and India Ran Separate Spy Campaigns on One Police Force</title>
-      <link>https://sabr-labs.com/article/china-india-espionage-pakistan-police-sentinellabs-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/china-india-espionage-pakistan-police-sentinellabs-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cyberespionage</category>
-      <category>APT</category>
-      <category>PlugX</category>
-      <category>ShadowPad</category>
-      <category>SentinelLABS</category>
-      <description>SentinelLABS says suspected China- and India-linked groups independently spent two years inside Pakistani law enforcement systems holding biometric and criminal records.</description>
-      <content:encoded><![CDATA[<p>Two rival intelligence operations, from two countries that spend most of their time glaring at each other across a contested border, ended up crawling through the same Pakistani police network. Neither one appears to have known the other was there.</p>
-<p>That's the picture SentinelLABS painted in a report published July 9. Suspected China-linked and India-linked clusters independently targeted Pakistani law enforcement organizations between February 2024 and April 2026, with the Balochistan Police as the primary target. Attribution here is assessed from tooling and infrastructure, not confessed, so read it as a well-supported assessment rather than a certainty.</p>
-<p>What they were after says a lot. The compromised servers ran the web applications behind criminal case files, personnel records, and biometric records tied to national identity, along with hotel and tenant registrations. For a foreign intelligence service, that's not data theft for its own sake. It's a map of who is who, who is where, and who is worth watching.</p>
-<p>SentinelLABS flagged four distinct threat clusters, each leaning on a different malware family: PlugX, ShadowPad, Cobalt Strike, and Remcos RAT. The Remcos activity is the one tied to an India-nexus actor. The PlugX, ShadowPad, and Cobalt Strike tooling is shared or commodity enough that more than one operator could be hiding behind it, which is part of why the researchers stop short of naming names.</p>
-<p>The sharpest detail is how one intrusion was delivered. Attackers compromised the Balochistan Police complaint portal, a system used by both officers and the public, and planted files dressed up as legitimate software updates. Run one and it quietly pulled down more malware from attacker infrastructure. A public complaint system became a malware distribution point.</p>
-<p>SentinelLABS assesses the China-linked activity was driven in part by concern for the safety of Chinese nationals working on China-Pakistan Economic Corridor projects. Espionage against an ally's police force is an old move. Doing it through the ally's own citizen-facing portal, while a second rival service works the same building, is the version worth remembering.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A WhatsApp Message Can Hijack OpenClaw and the Host It Runs On</title>
-      <link>https://sabr-labs.com/article/openclaw-claw-chain-whatsapp-host-rce-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openclaw-claw-chain-whatsapp-host-rce-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>OpenClaw</category>
-      <category>AI Agents</category>
-      <category>RCE</category>
-      <category>Command Injection</category>
-      <category>Sandbox Escape</category>
-      <description>Researcher Chinmohan Nayak chained three OpenClaw flaws so a single inbound WhatsApp message runs code on the host; all three are fixed in version 2026.6.6.</description>
-      <content:encoded><![CDATA[<p>Send the right WhatsApp message to someone running OpenClaw and you can climb out of the assistant's sandbox and onto the machine it lives on. No stolen password, no phishing link they have to click, no prior foothold. Just a message.</p>
-<p>That's the attack security researcher Chinmohan Nayak put together against OpenClaw, the self-hosted personal AI assistant. He chained three separate weaknesses into a clean path from an inbound message to full host code execution, and the project fixed all of them in version 2026.6.6. Two of the bugs are OS command injection flaws where the input filtering was left incomplete. The third is a path traversal and symlink trick that breaks the assistant out of the sandbox it's supposed to stay inside.</p>
-<p>The sandbox escape is the part worth slowing down on. By mounting parent directories the attacker can reach the things you never want an untrusted process touching: SSH keys, AWS credentials, GPG secrets, and the Docker socket. Once you can talk to the Docker socket, the sandbox is a formality. You own the host.</p>
-<p>GitHub's advisories rate two of the flaws 8.8 and the third 8.4, and the severity makes sense once you remember what these assistants are wired into. People connect OpenClaw to their messages, their email, their files, their cloud accounts, on purpose. The blast radius isn't one app. It's the user's whole digital life.</p>
-<p>The uncomfortable thing isn't this one chain, it's the run OpenClaw has been on. Earlier this year a separate token-exfiltration bug let an attacker steal a user's auth token and connect straight to their instance. Self-hosted AI agents are being pointed at the open internet with roughly the trust boundary of a 2004 PHP forum, and the tooling is racing ahead of the security review that's supposed to keep pace with it.</p>
-<p>If you run OpenClaw, three things. Update to 2026.6.6 today. Don't expose the instance to the public internet; sit it behind a VPN or an auth proxy so a stranger's message can't reach it in the first place. And treat every inbound message an agent processes as hostile input, because as this chain shows, that's exactly what it can be.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chip Stocks Rip Higher as Apple Closes on Nvidia&apos;s Crown</title>
-      <link>https://sabr-labs.com/article/chip-stock-rally-apple-nvidia-market-cap-race-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chip-stock-rally-apple-nvidia-market-cap-race-july-2026</guid>
-      <pubDate>Sat, 11 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Semiconductors</category>
-      <category>Nvidia</category>
-      <category>Apple</category>
-      <category>Stock Market</category>
-      <category>AI Capex</category>
-      <description>Friday&apos;s rally in US chipmakers pulled Japanese and Korean semiconductor stocks up sharply, even as Apple sits within striking distance of retaking the most-valuable-company title from Nvidia.</description>
-      <content:encoded><![CDATA[<p>Semiconductor stocks had a Friday. A rally in US chipmakers spilled into Asian markets, sending Japanese and South Korean semiconductor names sharply higher, with SoftBank Group up more than 11% and chip-equipment makers Advantest and Renesas both climbing. Nvidia rose around 4% and did much of the work lifting the S&P 500.</p>
-<p>Sitting behind the tape is a genuinely close race at the top. Nvidia holds a slim lead with a market cap hovering around $4.7 to $4.8 trillion, and Apple is a step back near $4.5 to $4.6 trillion. Analysts think Apple could retake the most-valuable-company crown as soon as this month if it delivers a strong report when it announces earnings on July 30.</p>
-<p>What's striking about the enthusiasm is its timing. This is the same week SemiAnalysis reported that Nvidia's next-generation Kyber rack slipped to 2028 on manufacturing problems, a real setback for the rack-scale roadmap. The market looked at that and bought chip stocks anyway.</p>
-<p>That tells you what's actually being priced. Investors aren't trading on any single product ship date. They're trading on the belief that AI capital spending keeps climbing regardless of which specific rack lands in which specific year, and that demand for anything that trains or serves a model stays, in TSMC's words, extremely robust.</p>
-<p>It's a comfortable story right up until it isn't. A one-day rally on optimism is not the same as a roadmap executing on schedule, and the gap between those two things is exactly where the next repricing tends to come from.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s GPT-Live Talks and Listens at the Same Time</title>
-      <link>https://sabr-labs.com/article/openai-gpt-live-full-duplex-voice-models-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-live-full-duplex-voice-models-july-2026</guid>
-      <pubDate>Sat, 11 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Voice AI</category>
-      <category>ChatGPT</category>
-      <category>GPT-Live</category>
-      <category>Speech Models</category>
-      <description>The new GPT-Live voice models process your speech while they answer, adding real-time backchannels and interruptions, but they hand the hard reasoning off to GPT-5.5 in the background.</description>
-      <content:encoded><![CDATA[<p>OpenAI released a pair of voice models on July 8, GPT-Live-1 and GPT-Live-1 mini, and the pitch is that they finally stop taking turns. These are full-duplex models, which means they process incoming audio and generate outgoing audio at the same time instead of waiting for you to finish a sentence before they start thinking about a reply.</p>
-<p>In practice that buys two things. You can interrupt the model mid-answer and it reacts, the way you would cut off a person who's already told you what you needed. And it throws in the little acknowledgments that make a conversation feel live, the 'mhmm' and 'got it' that land while you're still talking. OpenAI says the model makes a decision many times a second about whether to speak, listen, pause, or reach for a tool.</p>
-<p>Now the part the demos skip past. GPT-Live is a fast front end, not the brain. When your question needs real reasoning or a web search, GPT-Live-1 quietly ships it to GPT-5.5 in the background and folds the answer back in when it's ready. That's a sensible design, but it means the thing that feels responsive and the thing that's actually smart are two different models wearing one voice.</p>
-<p>Full-duplex speech isn't a brand-new idea either. Labs have demoed continuous listen-and-speak systems before, and the concept has floated around research for a couple of years. What OpenAI has done is ship it as the default, which is the harder and more consequential move.</p>
-<p>The rollout says as much about product strategy as about audio. GPT-Live-1 mini is replacing Advanced Voice Mode as the standard ChatGPT experience, with the larger GPT-Live-1 reserved for paid tiers. The real unlock here isn't a smarter assistant, it's the removal of the awkward pause, and if turn-taking latency was the thing keeping you from talking to a chatbot out loud, that's the barrier this is aimed at.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia&apos;s Next AI Rack Slips to 2028 Over a Circuit Board</title>
-      <link>https://sabr-labs.com/article/nvidia-kyber-nvl144-rack-delay-2028-semianalysis-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-kyber-nvl144-rack-delay-2028-semianalysis-july-2026</guid>
-      <pubDate>Sat, 11 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>AI Hardware</category>
-      <category>Data Center</category>
-      <category>Semiconductors</category>
-      <category>SemiAnalysis</category>
-      <description>SemiAnalysis reports the Kyber NVL144 rack has been pushed from 2027 to 2028 because its midplane circuit board is proving too hard to build, with two larger configurations delayed or cut.</description>
-      <content:encoded><![CDATA[<p>The chip was never the problem. According to a July 6 report from SemiAnalysis, Nvidia's Kyber NVL144 rack has slipped from 2027 to 2028, and the thing holding it up is a printed circuit board. Specifically, the midplane, the dense backbone that wires 144 GPUs together inside a single rack, is proving too difficult to manufacture at the tolerances the design needs.</p>
-<p>Kyber NVL144 was supposed to arrive alongside the Vera Rubin Ultra platform and represent the next step in Nvidia's push toward rack-scale systems, where the unit of compute is no longer a card or a server but an entire cabinet acting as one machine. A year-plus delay on that timeline is not a rounding error.</p>
-<p>The knock-on effects are worse than the headline. SemiAnalysis says NVL576, the larger design that would link eight racks together over optical connections, is likely delayed or held to small volumes. The back-to-back NVL72x2 configuration was reportedly canceled outright. So this isn't one product slipping, it's a chunk of the rack roadmap getting rearranged.</p>
-<p>It's a useful correction to how people talk about this industry. The story for two years has been transistors and process nodes, TSMC's 2nm, packaging. But once you're stitching hundreds of accelerators into a single power and signal domain, the hard engineering moves into the boring-sounding parts: the boards, the connectors, the cooling, the sheer physics of moving that much data across a backplane without it falling apart.</p>
-<p>Nvidia didn't comment on the report, which is its usual posture on roadmap leaks. Suppliers won't have that luxury. The companies building midplanes and optical interconnects on the assumption of a 2027 ramp now have to plan around a gap, and their stock moves this week suggest the market already did the math.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Confirms a SharePoint RCE Is Under Active Attack</title>
-      <link>https://sabr-labs.com/article/sharepoint-cve-2026-45659-deserialization-rce-kev-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-45659-deserialization-rce-kev-july-2026</guid>
-      <pubDate>Sat, 11 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SharePoint</category>
-      <category>Microsoft</category>
-      <category>CISA KEV</category>
-      <category>RCE</category>
-      <category>Storm-2603</category>
-      <description>CVE-2026-45659, a deserialization flaw Microsoft patched in May, is now on CISA&apos;s exploited list, with Storm-2603 the suspected operator and a July 4 federal deadline already past.</description>
-      <content:encoded><![CDATA[<p>Microsoft shipped the fix for this one back in May, which makes the update on July 1 the awkward part: CISA moved CVE-2026-45659 onto its Known Exploited Vulnerabilities catalog after seeing it used in the wild. Anyone still running an unpatched SharePoint Server has been exposed for weeks without knowing the clock had already started.</p>
-<p>The flaw is a remote code execution bug rooted in deserialization of untrusted data, carrying a CVSS score of 8.8. It affects SharePoint Server Subscription Edition, SharePoint Server 2019, and SharePoint Enterprise Server 2016. Exploitation isn't fully unauthenticated. An attacker needs at least Site Member permissions, which sounds like a barrier until you remember how many SharePoint deployments hand out that level of access across a whole organization.</p>
-<p>Attribution points at Storm-2603, a threat actor that has been working SharePoint bugs since mid-2025. That confidence comes from tracking, not a confession, so treat it as an assessment rather than a certainty.</p>
-<p>Here's the detail that hasn't aged well. Microsoft's own advisory tagged this as 'Exploitation Less Likely.' It's being exploited. That label is a probability estimate, not a promise, and it's a useful reminder that a low likelihood rating is not a reason to deprioritize a patch on an internet-reachable collaboration server.</p>
-<p>The federal deadline under BOD 26-04 was July 4, so agencies were meant to be done a week ago. If you're outside that mandate and your SharePoint boxes are still on the May level, patch them, then go read your Site Member rolls. The permission that turns this from an internal-only risk into a real one is probably sitting in a group you forgot you created.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
