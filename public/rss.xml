@@ -6,9 +6,108 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 13:17:38 GMT</lastBuildDate>
-    <pubDate>Mon, 20 Jul 2026 13:17:38 GMT</pubDate>
+    <lastBuildDate>Tue, 21 Jul 2026 13:16:00 GMT</lastBuildDate>
+    <pubDate>Tue, 21 Jul 2026 13:16:00 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>An AI Agent Broke Into Hugging Face and Ran the Whole Attack Itself</title>
+      <link>https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach</guid>
+      <pubDate>Tue, 21 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Hugging Face</category>
+      <category>AI Security</category>
+      <category>Data Breach</category>
+      <category>Autonomous Agents</category>
+      <category>Incident Response</category>
+      <description>Hugging Face says an autonomous agent framework, not a human at a keyboard, drove the intrusion that stole internal datasets and service credentials over a weekend.</description>
+      <content:encoded><![CDATA[<p>Over a single weekend, software did the hacking. Hugging Face disclosed this week that an autonomous AI agent system, not a person clicking through a session, drove an intrusion into part of its production infrastructure end to end. If the company's account holds up, it's one of the first clearly documented cases of an agent framework running a real attack from initial access to credential theft with a human mostly out of the loop.</p>
+<p>The way in is the part every ML platform should sit with. The attacker uploaded a malicious dataset that abused two code-execution paths in Hugging Face's data-processing pipeline: a remote-code dataset loader and a template injection in a dataset configuration. That was enough to run code on a processing worker. From there the agents escalated privileges and pulled cloud and other internal credentials. Hugging Face confirmed unauthorized access to a limited set of internal datasets and several service credentials, with the assessment of partner and customer data still open.</p>
+<p>What makes this different from a normal breach is the volume. Hugging Face's forensic team reconstructed the attack from more than 17,000 recorded attacker actions, executed across a swarm of short-lived sandboxes with command-and-control that kept moving. No human types 17,000 actions over a weekend. The agent did, and it did so at a pace and breadth that a manual SOC review would have taken days to untangle.</p>
+<p>So Hugging Face fought agents with agents. It ran LLM-driven analysis over the full 17,000-plus event log to rebuild the timeline, extract indicators, map which credentials were touched, and separate real impact from decoy noise, in hours rather than days. Here's the detail worth flagging: the company said commercial API models refused to analyze the attack payloads, because their safety filters couldn't tell an incident responder from an attacker. It fell back to an open-weight model running on its own infrastructure to get the work done.</p>
+<p>That's the uncomfortable takeaway, and it's bigger than one company. Call it guardrail asymmetry. The attacker's agent operated with no safety constraints at all. The defenders' agents, when built on hosted frontier models, can be blocked by those same models' safety policies from even reading the malicious code they need to analyze. If your incident-response plan assumes you can point a commercial LLM at attacker artifacts mid-breach, test that assumption before you need it.</p>
+<p>The good news is narrow but real: Hugging Face found no evidence of tampering with public models, datasets, or Spaces, and says its software supply chain came back clean. Given how much of the ML world pulls weights and datasets straight from the Hub, that distinction matters.</p>
+<p>If you run anything that ingests user-supplied datasets, notebooks, or model files, treat the loader as attack surface. Disable remote code execution in dataset and model loading where you can, sandbox the workers that process untrusted uploads, and rotate any credentials those workers can reach. The novelty here is the autonomy. The entry point was boring, and that's the point.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Two SonicWall SMA 1000 Zero-Days Chained for Full Appliance Takeover</title>
+      <link>https://sabr-labs.com/article/sonicwall-sma-1000-zero-days-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sonicwall-sma-1000-zero-days-exploited</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SonicWall</category>
+      <category>Zero-Day</category>
+      <category>CVE</category>
+      <category>VPN Security</category>
+      <category>CISA KEV</category>
+      <description>A CVSS 10.0 SSRF flaw and a post-auth command injection were exploited together against internet-facing SMA 1000 appliances before SonicWall had a public advisory out.</description>
+      <content:encoded><![CDATA[<p>SonicWall SMA 1000 appliances got hit before anyone had a patch. Two zero-days, CVE-2026-15409 and CVE-2026-15410, were exploited in the wild against internet-facing SMA 1000-series gateways, and Rapid7's MDR team says it watched the targeted exploitation happen before SonicWall's advisory even went public.</p>
+<p>The first bug is as bad as the scoring system goes. CVE-2026-15409 is a server-side request forgery flaw in the SMA 1000 Workplace interface, rated CVSS 10.0, exploitable by a remote unauthenticated attacker. It lets that attacker make the appliance issue network requests to a destination of their choosing. On its own, SSRF is a pivot. Paired with the second bug, it's a takeover.</p>
+<p>CVE-2026-15410 is the other half: a post-authentication code injection in the Appliance Management Console, rated CVSS 7.2, that runs arbitrary OS commands as administrator under the right conditions. Chain the SSRF into the management console and you get from "unauthenticated on the internet" to "admin commands on the box." Volexity, which published its own analysis of the exploitation, described attackers proxying through the appliance to get deeper into victim networks.</p>
+<p>SonicWall quietly warned customers ahead of the public advisory, telling them to contact support for hotfixes rather than wait. The fixed builds are v12.4.3-03453 and 12.5.0-02835, made available July 14. CISA added both CVEs to its Known Exploited Vulnerabilities catalog the next day, which puts a federal patch deadline on them and should end any internal debate about whether this one can wait.</p>
+<p>SMA 1000 is a remote-access appliance, which means it sits at the edge by design, reachable from the internet, holding the keys to the internal network behind it. That's exactly the profile attackers have been mining for two years now across every VPN and secure-access vendor. An edge box with a pre-auth 10.0 is the worst version of this pattern.</p>
+<p>If you run SMA 1000 anywhere, apply the hotfix now, then assume compromise on any appliance that was internet-facing before you patched. Pull the AMC logs, look for unexpected outbound requests from the appliance itself, and rotate the credentials and sessions that box could reach. A patched appliance that was already breached is still breached.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft&apos;s July Patch Tuesday Hits a Record 622 CVEs</title>
+      <link>https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-622-cves</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-622-cves</guid>
+      <pubDate>Tue, 21 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Patch Tuesday</category>
+      <category>Zero-Day</category>
+      <category>SharePoint</category>
+      <category>Vulnerability Management</category>
+      <description>The largest single Patch Tuesday on record fixes 622 flaws, including two elevation-of-privilege zero-days already under active attack in SharePoint and ADFS.</description>
+      <content:encoded><![CDATA[<p>Six hundred twenty-two CVEs in one month. That's Microsoft's July 2026 Patch Tuesday, and it's the largest single monthly release the company has ever shipped. Windows alone accounts for 416 of them, with 95 remote-code-execution bugs spread across the batch. The number is staggering, but the two that matter most are already being exploited.</p>
+<p>The first zero-day is CVE-2026-56164, a SharePoint Server elevation-of-privilege flaw. The dangerous part is reachability: it's a missing-authentication bug, so an unauthenticated attacker can hit it over the network with no user interaction. SharePoint has been an attacker favorite all year, and "unauthenticated, over the network, actively exploited" is the combination that turns a routine patch cycle into an emergency.</p>
+<p>The second is CVE-2026-56155, an elevation-of-privilege bug in Active Directory Federation Services carrying a CVSS of 7.8. ADFS sits in the middle of federated sign-on for a lot of enterprises, so a privilege-escalation path there is worth prioritizing even though it needs some level of access to start. Both zero-days are on CISA's KEV list.</p>
+<p>There's a third flaw worth noting even though it isn't under attack yet: CVE-2026-50661, a publicly disclosed BitLocker bypass. Public disclosure without active exploitation is the window where you still have time, so treat it as a countdown rather than a footnote.</p>
+<p>The record CVE count is partly a story about scale and partly about Microsoft's own tooling surfacing more issues than it used to, but for the people who actually have to deploy these, the volume is the problem. You cannot meaningfully test 622 fixes before rollout. Prioritization is the only sane path.</p>
+<p>Patch the two exploited zero-days first, then the RCEs on anything internet-facing, then everything else on your normal cadence. If you run SharePoint on-prem or lean on ADFS for federation, those go to the front of the line today.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s GPT-5.6 Sol Runs at 750 Tokens/Sec on Cerebras Wafers</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-6-sol-cerebras-inference</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-sol-cerebras-inference</guid>
+      <pubDate>Tue, 21 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5.6</category>
+      <category>Cerebras</category>
+      <category>AI Inference</category>
+      <category>AI Hardware</category>
+      <description>The flagship of OpenAI&apos;s new GPT-5.6 family is being served on Cerebras wafer-scale chips at up to 750 tokens per second, a speed play more than an intelligence one.</description>
+      <content:encoded><![CDATA[<p>OpenAI is selling speed this month. Its new GPT-5.6 family went to general availability on July 9, with three tiers: Sol as the flagship, Terra in the middle, and Luna as the cheap-and-fast option. Sol is now the default behind ChatGPT. The headline number, though, isn't a benchmark score. It's throughput: OpenAI says Sol runs on Cerebras wafer-scale hardware at up to 750 tokens per second.</p>
+<p>That figure is worth understanding before you get impressed by it. 750 tokens per second is an inference-speed claim, roughly ten times what a frontier model typically manages on GPU deployments in production. It says nothing about whether Sol is smarter than the model it replaced. It says the same answer arrives faster. For agentic workloads that chain dozens of model calls, faster is genuinely useful, sometimes the difference between a workflow that feels usable and one that doesn't.</p>
+<p>The hardware story underneath is the more interesting one. Cerebras builds a single chip the size of a dinner plate, and serving Sol reportedly spreads the model across 70 to 100 of those wafers, roughly one model layer per wafer. Independent estimates put Sol somewhere near 3 trillion total parameters with about 150 billion active. Those are estimates, not disclosures, so treat them as informed guesses rather than spec-sheet facts.</p>
+<p>There's a catch OpenAI is upfront about: the fast version is capacity-constrained. Sol at 750 tokens per second is going to select customers on a limited scale first, expanding as Cerebras adds wafers. And it isn't cheap, at $5 per million input tokens and $30 per million output. The premium speed is a premium product.</p>
+<p>Strip away the throughput theater and the real signal is diversification. Running a flagship model on Cerebras instead of Nvidia is OpenAI hedging against the GPU supply crunch and the single-vendor dependence that comes with it. That's the move to watch. The tokens-per-second number is marketing. The willingness to run production inference on non-Nvidia silicon is strategy.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>New York Freezes New Hyperscale Data Centers for a Year</title>
+      <link>https://sabr-labs.com/article/new-york-hyperscale-data-center-moratorium</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/new-york-hyperscale-data-center-moratorium</guid>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>Energy</category>
+      <category>Regulation</category>
+      <category>New York</category>
+      <description>Governor Hochul signed a one-year moratorium on new data centers drawing more than 50 megawatts, the first statewide pause of its kind in the US.</description>
+      <content:encoded><![CDATA[<p>New York just hit pause on the AI build-out. Governor Kathy Hochul signed an executive order freezing state permits for new hyperscale data centers for one year, the first statewide moratorium of its kind in the country. The line is drawn at 50 megawatts: any new facility pulling more than that from the grid is on hold while the state figures out the rules.</p>
+<p>The reasoning is about the grid and the bill, not the technology. Hochul pointed to rising utility costs, strain on water and power, and uncertainty for residents. The number doing the work here is electricity prices: average residential rates in New York have climbed nearly 68 percent since 2019, and data centers competing for the same power don't help the politics of that.</p>
+<p>During the freeze, state regulators have to actually write standards, on environmental impact, energy demand, and water use, and prepare a Generic Environmental Impact Statement that sets consistent rules for future projects. In other words, this isn't a permanent ban. It's a timeout to build a permitting framework that doesn't currently exist for facilities this large.</p>
+<p>This is the collision that's been coming for two years. AI compute demand is effectively unbounded, and the physical grid is very much bounded. Every hyperscaler siting decision now runs into local power capacity, water for cooling, and voters who see their bills going up while a windowless building next door draws the equivalent of a small city.</p>
+<p>New York won't be the last. Other states are watching residential rates climb for the same reason, and "we paused it to write rules" is an easier position to defend than "we approved a 500-megawatt load with no framework." If you're planning infrastructure that assumes cheap, available power wherever you want to put it, that assumption is getting more expensive and more political by the quarter.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Apple Sues OpenAI, Says Its Hardware Chief Ran a Poaching Scheme</title>
       <link>https://sabr-labs.com/article/apple-openai-trade-secret-lawsuit-tang-tan-hardware-july-2026</link>
@@ -885,102 +984,6 @@
 <p>AI chips are on track to bring in more than $40 billion for TSMC this year, close to a quarter of total revenue. Its N3 node is sold out, targeted by every leading AI GPU and CPU in production. That's a comfortable position, but it also means there's no slack. If demand keeps climbing, the ceiling isn't willingness to buy. It's fab and packaging capacity that takes years to build.</p>
 <p>TSMC has also told major customers to expect price increases of 5% to 10% on its leading-edge processes, the 7nm-and-below work that makes up roughly three-quarters of its revenue. When a supplier this dominant raises prices across the board and customers pay it, that tells you who holds the pricing power. The cost eventually lands in the AI infrastructure bills everyone else is running up.</p>
 <p>Wednesday's call will get parsed for three things: full-year guidance, any change to capex, and whatever TSMC says about CoWoS capacity. The revenue number is already strong. What investors want to know is whether the company can build fast enough to keep the AI trade from tripping over its own supply chain.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s Brain-to-Text Decoder Hit 61% Accuracy Without Surgery</title>
-      <link>https://sabr-labs.com/article/meta-brain2qwerty-v2-noninvasive-brain-to-text-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-brain2qwerty-v2-noninvasive-brain-to-text-july-2026</guid>
-      <pubDate>Mon, 13 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>Brain-Computer Interface</category>
-      <category>Neuroscience</category>
-      <category>MEG</category>
-      <category>AI Research</category>
-      <description>Meta&apos;s Brain2Qwerty v2 reads typed sentences from non-invasive brain scans at 61% word accuracy, a big jump that still depends on a room-sized magnetometer.</description>
-      <content:encoded><![CDATA[<p>Meta's research lab says its latest brain-to-text system decodes typed sentences at 61% word accuracy without touching the brain. That's a real result. It also comes with a machine the size of a small room attached to it.</p>
-<p>The system is called Brain2Qwerty v2, from Meta's FAIR group. It reads magnetoencephalography signals, MEG, which pick up the faint magnetic fields your neurons produce, and turns them into text. The headline is the jump: non-invasive decoding went from about 8% word accuracy to 61% across nine participants, with the best individual hitting 78%. An eightfold gain is not the kind of thing this field expected to see this decade.</p>
-<p>Under the hood it's end-to-end deep learning on raw brain signals paired with fine-tuned language models, moving from spelling out characters to decoding whole words and meaning. Meta trained it on roughly 22,000 sentences, recorded from nine volunteers who each sat under an MEG scanner for about ten hours. The language-model layer does a lot of the work, using context to clean up an imperfect neural signal, the same trick that makes speech recognition usable.</p>
-<p>Here's the part the demos gloss over. MEG hardware isn't wearable. It's a shielded room and a cryogenically cooled sensor array that costs as much as a house, and it needs the subject to hold still. This is a lab result about what's decodable in principle, not a product you'll strap on. Surgical implants still beat it on accuracy, and Meta's own researchers admit the gap with intracranial approaches remains.</p>
-<p>So why care? Because the trend line is the point. Every prior high-accuracy brain-to-text result required cutting into someone's skull, with the infection risk and signal decay that brings. Getting non-invasive methods anywhere near usable reframes what's possible for people who've lost the ability to speak or type, even if the practical version is years and a hardware leap away.</p>
-<p>The open question isn't whether the AI can decode the signal. It clearly can, given enough of it. It's whether anyone can shrink the sensor from a room to something you'd actually wear. That's a physics and engineering problem, not a machine-learning one, and it's the wall this research keeps running into.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Wants to Run Its Own Data Centers, on Google&apos;s Dime</title>
-      <link>https://sabr-labs.com/article/anthropic-google-data-center-leases-compute-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-google-data-center-leases-compute-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Google</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>Compute</category>
-      <description>Anthropic is lining up direct US data-center leases for over a gigawatt of capacity, with Google reportedly backstopping around $35 billion of the financing.</description>
-      <content:encoded><![CDATA[<p>Anthropic, the maker of Claude, is trying to stop being a tenant. The company is lining up direct leases on US data centers and leaning on Google to help pay for them.</p>
-<p>According to reporting from The Information, Anthropic has assembled more than a dozen preliminary agreements for US data-center capacity adding up to more than a gigawatt. Google is helping backstop the lease payments on five of those sites, a move that could unlock roughly $35 billion in financing for the buildout.</p>
-<p>The shift matters because of what it changes about Anthropic's business. Until now the company mostly bought compute through cloud providers and let someone else run the buildings. Taking leases directly means operating facilities, carrying the obligations, and owning the risk that comes with them. It's the same path OpenAI and Meta already walked. When your product is bottlenecked on GPUs and power, you eventually stop outsourcing the exact thing you're bottlenecked on.</p>
-<p>Here's the part worth sitting with. Google is both an Anthropic investor and, through Gemini, a direct competitor, and it's now backstopping Anthropic's debt on data centers that will likely run Google's own TPUs. Money flows out to a rival and comes back as chip and cloud commitments. The financing behind this AI boom is getting circular enough that who is really funding whom is a fair question, not a cynical one.</p>
-<p>Anthropic's answer is demand. Reported run-rate revenue has climbed past $30 billion this year, up from around $9 billion at the end of 2025, and that curve is the case for signing up to a gigawatt-plus of new capacity. The bet underneath all of it is that customer demand keeps pace with the concrete and the power bills. If it does, owning the infrastructure looks shrewd. If it slips, those leases don't get any smaller.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta Puts Its Own AI Chip, Iris, Into Production in September</title>
-      <link>https://sabr-labs.com/article/meta-iris-mtia-ai-chip-production-september-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-iris-mtia-ai-chip-production-september-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>AI Chips</category>
-      <category>MTIA</category>
-      <category>Broadcom</category>
-      <category>TSMC</category>
-      <description>An internal memo reported this week says Meta&apos;s in-house Iris accelerator, built with Broadcom and TSMC, enters production in September as it tries to escape GPU costs.</description>
-      <content:encoded><![CDATA[<p>Meta is tired of renting all its compute from Nvidia. In September it starts producing Iris, its own data-center AI chip, according to an internal memo reported this week.</p>
-<p>Iris is the newest of Meta's MTIA accelerators, part of a four-generation in-house program the company designs itself. Broadcom helped with the design and TSMC will manufacture it. Meta says testing wrapped in about six weeks with no major issues, which is quick for a chip this ambitious.</p>
-<p>The logic is the same one driving every hyperscaler down this road: escape the GPU tax. Meta's projected AI infrastructure spending runs as high as $145 billion this year, and silicon tuned to its own recommendation and ranking workloads is how it hopes to bend that number. The chip feeds a plan to roughly double compute to 14 gigawatts by 2027, backed by long-term supply deals with Samsung, SanDisk, and Sumitomo Electric.</p>
-<p>Custom silicon is the move of the moment. Google has TPUs, Amazon has Trainium, and now Meta has MTIA far enough along to name a production date. But designing a chip and betting production workloads on it are different sports. Testing went fine is what everyone says right before the ramp exposes the yield problems and the software gaps. The honest test isn't the tape-out. It's whether Meta's own researchers reach for Iris when they need to train something that matters, or quietly ask for more Nvidia GPUs instead.</p>
-<p>If Iris clears that bar, it's a genuine dent in Nvidia's grip on the one customer segment it can least afford to lose. If it doesn't, it joins the long list of internal accelerators that shipped a press release and not much compute.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SK Hynix Raises $26.5B in the Biggest Foreign IPO in US History</title>
-      <link>https://sabr-labs.com/article/sk-hynix-nasdaq-ipo-26-billion-hbm-memory-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-nasdaq-ipo-26-billion-hbm-memory-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SK Hynix</category>
-      <category>IPO</category>
-      <category>Semiconductors</category>
-      <category>HBM</category>
-      <category>Nasdaq</category>
-      <description>The Korean memory maker sold $26.5 billion of stock on Nasdaq and jumped 13% on day one, a bet by US investors on the memory bottleneck of the AI buildout.</description>
-      <content:encoded><![CDATA[<p>Twenty-six and a half billion dollars. That's what SK Hynix pulled out of US markets on Friday, the largest debut ever by a non-American company and the second-biggest US listing of any kind, behind only SpaceX from a month ago.</p>
-<p>The South Korean memory giant sold roughly 177.9 million American depositary shares at $149 apiece and closed its first Nasdaq session up about 13%, near $168. Demand ran more than seven times the shares on offer. It trades under the ticker SKHY.</p>
-<p>SK Hynix isn't a household name the way Nvidia is, but it should be. The company makes more than half the world's supply of high-bandwidth memory, the stacked DRAM that sits right next to every serious AI accelerator. An H-series GPU with no HBM to feed it is an expensive paperweight. So the money here isn't really a bet on a Korean chipmaker. It's a bet on the memory bottleneck of the entire AI buildout, and on the one company that dominates it.</p>
-<p>The scale of the raise tells you how badly US investors wanted in. It tops Alibaba's $25 billion listing from 2014 and clears the bar for the largest foreign debut on record. For a memory company, historically the least glamorous corner of semiconductors, that's a remarkable place to land.</p>
-<p>Now the interesting part. The US Commerce Secretary has reportedly already opened talks with SK Hynix and Samsung about building new fabs on American soil, and a blockbuster US listing hands Washington leverage it didn't have when Hynix was purely a Seoul-listed firm. Fresh American shareholders and a government pushing for domestic plants tend to pull in the same direction. Whether that turns into actual fab announcements or stays a talking point is the thing worth tracking from here.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Zimbra Patches a Web Client Flaw Google&apos;s TAG Turned Up</title>
-      <link>https://sabr-labs.com/article/zimbra-classic-web-client-stored-xss-10-1-19-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/zimbra-classic-web-client-stored-xss-10-1-19-july-2026</guid>
-      <pubDate>Sun, 12 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Zimbra</category>
-      <category>XSS</category>
-      <category>Email Security</category>
-      <category>Google TAG</category>
-      <category>Zero-Day</category>
-      <description>Zimbra&apos;s 10.1.19 update fixes a stored XSS in the Classic Web Client that runs code from a crafted email; the reporter, Google&apos;s TAG, is the detail worth reading.</description>
-      <content:encoded><![CDATA[<p>A booby-trapped email that runs code the moment you open it in Zimbra's Classic Web Client. That's the flaw Zimbra fixed this week in version 10.1.19, and it's the kind of bug that turns a mail server into an entry point.</p>
-<p>Technically it's a stored cross-site scripting issue in the Classic Web Client of Zimbra Collaboration Suite. A specially crafted message executes script inside your session, which is enough to lift session data, account settings, or mailbox contents. Only the Classic Web Client is affected. The fix is ZCS 10.1.19, and anyone upgrading from 10.0.x, 9.0.x, or 8.8.15 has to reapply the SNMP mitigation after the update, so don't skip that step.</p>
-<p>Zimbra didn't publish a CVE identifier or a CVSS score, which is a choice. What it did disclose is who found the bug: Google's Threat Analysis Group.</p>
-<p>That name is the story. TAG exists to track zero-days used by government-backed attackers. When TAG is the reporter on a webmail vulnerability, the quiet subtext is that someone was likely already using it, or was about to. Zimbra's Classic Web Client has a long history as a favorite target for exactly that crowd, with multiple past zero-days burned in nation-state campaigns. A vendor advisory that says nothing about exploitation while crediting TAG for the find should be read as two facts sitting next to each other, not one.</p>
-<p>Patch to 10.1.19 now, and reapply the SNMP mitigation if you came up from an older branch. If you have the option, this is one more reason to move users off the Classic Web Client entirely. It keeps drawing this kind of attention, and the modern client isn't in the blast radius here.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
