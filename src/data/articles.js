@@ -25,6 +25,269 @@
 
 export const articles = [
   {
+    id: 279,
+    slug: "check-point-smartconsole-cve-2026-16232-auth-bypass-july-2026",
+    title: "Attackers Log In as Admin on Check Point Firewalls via SmartConsole Bug",
+    summary: "CVE-2026-16232 lets an unauthenticated attacker reach a Check Point management server and take it over with full admin rights, and it's already being exploited.",
+    body: [
+      "The box you use to manage your firewalls just became the way in. Check Point confirmed this week that attackers are abusing a flaw in SmartConsole, the client admins use to run Check Point management servers, to authenticate as a full administrator with no password at all.",
+      "The bug is CVE-2026-16232, and Check Point rates it 9.1 on the CVSS scale. It's an authentication bypass in the SmartConsole login process: an unauthenticated attacker who can reach the management server obtains a valid application login token and uses it to log in with full admin privileges. Once inside, they can rewrite the security policy and change the configuration of every gateway that server manages. There's one condition that limits the blast radius. The exploit only works when the management server is reachable over the network and the Trusted Clients list, the allowlist of hosts permitted to run GUI clients, hasn't been locked down.",
+      "The affected range is wide. Check Point's advisory (sk185169) lists R81, R81.10, R81.20, R82, and R82.10, along with older R80.x builds and even R77.30. The company says exploitation has so far hit a small number of customers, though that count tends to move in one direction once a management-plane bug is public.",
+      "Patches landed in the July 22 Jumbo Hotfix Accumulator, R82 from Take 118 and R81.20 from Take 158. CISA added the flaw to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 25 to fix it, one of the shorter fuses the agency hands out.",
+      "Worth being clear about why this one stings more than the average appliance CVE. A vulnerability in the data plane exposes traffic. A vulnerability in the management plane exposes the ruleset itself, and whoever controls SmartConsole controls what every downstream firewall will and won't allow. Attribution hasn't been offered, and Check Point hasn't said who's behind the activity.",
+      "If you can't take the hotfix today, restrict Trusted Clients to the specific admin subnets that actually need console access and get the management interface off any internet-facing address. Check Point published indicators of compromise alongside the advisory. Pull your management server logs and look for admin logins from IPs you don't recognize before you assume you're clear.",
+    ],
+    category: "cyber",
+    tags: ["Check Point", "CVE-2026-16232", "Firewall", "CISA KEV", "Vulnerabilities"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Check Point sk185169",
+        desc: "Vendor advisory for the SmartConsole authentication bypass",
+        url: "https://support.checkpoint.com/results/sk/sk185169/",
+      },
+      {
+        name: "Check Point CheckMates",
+        desc: "Vendor community post on active exploitation and remediation",
+        url: "https://community.checkpoint.com/t5/Firewall-and-Security-Management/CVE-2026-16232-Active-Exploitation-Requires-Immediate-Management/td-p/280065",
+      },
+      {
+        name: "Rapid7",
+        desc: "Emergent threat report with exploitation analysis",
+        url: "https://www.rapid7.com/blog/post/etr-cve-2026-16232-critical-check-point-smartconsole-authentication-bypass-exploited-in-the-wild/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Coverage of the management-plane takeover and CISA KEV listing",
+        url: "https://www.helpnetsecurity.com/2026/07/23/check-point-vulnerability-cve-2026-16232/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Report on the patch and full-admin-access impact",
+        url: "https://thehackernews.com/2026/07/check-point-patches-exploited.html",
+      },
+    ],
+  },
+  {
+    id: 280,
+    slug: "asyncapi-npm-supply-chain-miasma-import-time-july-2026",
+    title: "AsyncAPI npm Packages Backdoored to Run Malware the Moment You Import Them",
+    summary: "Attackers hijacked the AsyncAPI generator's release pipeline and shipped credential-stealing code that fires at import time, defeating the usual --ignore-scripts defense.",
+    body: [
+      "The defense half the industry reaches for when a package looks sketchy is npm install --ignore-scripts. In this attack it did nothing.",
+      "On July 14, three packages in the AsyncAPI generator monorepo were published to npm carrying an obfuscated dropper: @asyncapi/generator@3.3.1, @asyncapi/generator-helpers@1.1.1, and @asyncapi/generator-components@0.7.1. Together the affected @asyncapi packages pull more than 3 million downloads a week. The payload doesn't wait for a postinstall hook. It runs the moment the library is loaded, which is why ignoring install scripts bought nobody any protection.",
+      "The way in is the part worth studying. An attacker opened dozens of pull requests against the generator repo, then used that noise to camouflage one, PR #2155, that exploited a GitHub Actions 'pwn request' misconfiguration. That gave them the credentials of the bot account that cuts releases. From there they pushed malicious commits straight to two pre-production branches, next and schema, that had been left unprotected. No human ever reviewed the code that shipped.",
+      "Researchers who pulled the payload apart describe it as a descendant of the Miasma remote access trojan, a multi-stage botnet that steals credentials from the developer machine or CI runner that loads the poisoned module. For anyone running the generator in a build pipeline, that means the secrets in that pipeline should be considered exposed.",
+      "AsyncAPI moved fast once it was flagged. Every malicious version has been unpublished from the registry, and the latest tag for each package now points at a clean build. If you installed one of those exact versions between July 14 and the takedown, updating isn't enough. Rotate any tokens, keys, or credentials that were present in the environment where the build ran.",
+      "The uncomfortable lesson here isn't about AsyncAPI specifically. It's that a project can protect its main branch, require reviews, and still get owned through a forgotten release branch and an over-permissioned CI workflow. The registry is only as trustworthy as the weakest automation behind it.",
+    ],
+    category: "cyber",
+    tags: ["Supply Chain", "npm", "Open Source", "CI/CD", "Malware"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T09:10:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Datadog Security Labs",
+        desc: "Primary technical breakdown of the compromised packages",
+        url: "https://securitylabs.datadoghq.com/articles/compromised-asyncapi-npm-packages/",
+      },
+      {
+        name: "Chainguard",
+        desc: "Analysis of the GitHub Actions pwn-request vector",
+        url: "https://www.chainguard.dev/unchained/asyncapi-supply-chain-compromise-npm-packages-backdoored-via-github-actions",
+      },
+      {
+        name: "Microsoft Security Blog",
+        desc: "Writeup of the import-time payload delivery",
+        url: "https://www.microsoft.com/en-us/security/blog/2026/07/15/unpacking-asyncapi-npm-supply-chain-compromise-import-time-payload-delivery/",
+      },
+      {
+        name: "StepSecurity",
+        desc: "Details on the compromised release branches and CI pipeline",
+        url: "https://www.stepsecurity.io/blog/compromised-next-branch-pushes-malicious-asyncapi-generator-generator-helpers-and-generator-components-to-npm",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of the Miasma botnet payload and download reach",
+        url: "https://thehackernews.com/2026/07/compromised-asyncapi-npm-packages.html",
+      },
+    ],
+  },
+  {
+    id: 281,
+    slug: "vibe-coded-apps-434-exploitable-flaws-theori-study-july-2026",
+    title: "AI-Built Apps Fixed the SQL Injection and Left the Doors Unlocked",
+    summary: "A study that built 28 apps with AI coding agents and then attacked them found 434 confirmed vulnerabilities, and the pattern of what the models got wrong is the interesting part.",
+    body: [
+      "Give a coding model a spec and it will write you an app that sanitizes its inputs and reaches for prepared statements on its own. Then it will forget to put a lock on the front door.",
+      "That's the shape of a new study from security firm Theori, run through its Xint autonomous pentesting platform. The team built 28 applications using AI coding agents, spread across five models from Anthropic and OpenAI, and generated them three ways: from a written spec, from casual throwaway prompts, and by rewriting an aging PHP codebase. Then they attacked everything they'd built.",
+      "The scanners threw off 8,827 raw detections. After collapsing duplicates and actually building proof-of-concept exploits to confirm each one, the count settled at 434 real, exploitable vulnerabilities. Of those, 196 lived in the from-scratch apps. The remaining 238 all came from the single project that rewrote legacy PHP, which is a strong hint that pointing a model at old code inherits old problems and adds new ones.",
+      "Here's the twist that matters for anyone leaning on these tools. Classic injection flaws barely showed up. The models had genuinely learned to avoid the bugs that get screenshotted in security talks. What they missed was the unglamorous stuff: the largest single category was resource exhaustion and denial-of-service weaknesses, roughly a fifth of all confirmed findings, mostly missing rate limiting. Right behind it came broken access control (the kind where you change an ID in the URL and see someone else's data), server-side request forgery, directory traversal, and exposed secrets.",
+      "None of those are exotic. They're the boring, boilerplate protections a human developer adds because they've been burned before, and a model generating plausible code has no reason to include unless you ask. It writes the feature. It doesn't write the guardrail.",
+      "The practical read: AI-assisted code is fine to use and getting better at the flashy vulnerability classes, but it is not producing secure applications by default, and the security debt compounds as the codebase grows. Treat generated code like a fast junior's first draft. It needs the same authorization checks, rate limits, and secrets review you'd demand from anyone else, and skipping that step because 'the AI wrote it' is how 434 of these ended up in a lab instead of production.",
+    ],
+    category: "ai",
+    tags: ["AI", "Vibe Coding", "AppSec", "Vulnerabilities", "Software Development"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T10:20:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "SecurityWeek",
+        desc: "Report on the Theori study and vulnerability breakdown",
+        url: "https://www.securityweek.com/vibe-coded-apps-riddled-with-exploitable-security-flaws/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Analysis of how AI code vulnerabilities scale with app size",
+        url: "https://www.helpnetsecurity.com/2026/07/23/report-ai-code-vulnerabilities/",
+      },
+      {
+        name: "Cybersecurity News",
+        desc: "Detail on the 434 confirmed findings and their categories",
+        url: "https://cybersecuritynews.com/what-434-ai-generated-vulnerabilities-reveal-about-secure-software-development/",
+      },
+    ],
+  },
+  {
+    id: 282,
+    slug: "apple-upgrade-klarna-device-leasing-program-july-2026",
+    title: "Apple Turns to Klarna to Lease You an iPhone",
+    summary: "Apple's new Apple Upgrade program, launching July 28 with Klarna financing, lets US buyers lease iPhones, iPads, Macs, and Watches on fixed monthly payments.",
+    body: [
+      "Apple is about to stop selling you a phone and start renting you one. On July 28 it launches Apple Upgrade, a lease-to-own program backed by the buy-now-pay-later lender Klarna, available to US customers in Apple Stores and online.",
+      "The mechanics are straightforward. You pass a light credit check, then pay a fixed amount each month over a set term: 24 months for iPhones and Apple Watches, 36 months for Macs and iPads. At the end you pick one of three doors. Return the device, pay a fee to jump early to a newer model, or pay off the balance and keep the hardware for good.",
+      "This isn't entirely new territory for Apple. It's had an iPhone Upgrade Program for years, and Apple Upgrade largely absorbs and replaces it. What's changed is the scope, now spanning the full hardware lineup, and the partner. Handing the financing to Klarna rather than running it in-house tells you Apple wants the leasing volume without carrying all the consumer credit risk itself.",
+      "The why is not subtle. Device prices have crept up, people are holding their phones longer, and per Bloomberg's reporting the program is aimed squarely at softening demand. Spreading a $1,200 phone across 24 payments makes the sticker easier to swallow and, not coincidentally, nudges buyers toward an upgrade cadence that a four-year-old iPhone doesn't encourage.",
+      "For the customer the math is worth doing before you sign. Leasing lowers the monthly hit but you don't own anything until the final payment, and pairing a hardware lease with a BNPL lender is exactly the kind of arrangement that's easy to enter and easy to stop paying attention to. Read the early-upgrade fee closely. That's the lever that keeps you on the treadmill.",
+    ],
+    category: "tech",
+    tags: ["Apple", "Klarna", "iPhone", "Consumer Tech", "Fintech"],
+    image: "https://images.unsplash.com/photo-1516849677043-ef67c9557e16?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Bloomberg",
+        desc: "Report that Apple is launching the leasing program to spur sales",
+        url: "https://www.bloomberg.com/news/articles/2026-07-21/apple-to-launch-upgrade-device-leasing-program-with-klarna-to-spur-sales",
+      },
+      {
+        name: "TechCrunch",
+        desc: "Coverage of the Klarna-backed lease-to-own terms",
+        url: "https://techcrunch.com/2026/07/21/apple-teams-up-with-klarna-to-launch-a-lease-to-own-program-for-iphones-ipads-and-macs/",
+      },
+      {
+        name: "AppleInsider",
+        desc: "Detail on lease lengths and end-of-term options",
+        url: "https://appleinsider.com/articles/26/07/21/apple-upgrades-will-let-users-lease-iphones-and-macs-with-klarna",
+      },
+    ],
+  },
+  {
+    id: 283,
+    slug: "amazon-custom-silicon-trainium-graviton-20-billion-run-rate-july-2026",
+    title: "Amazon's In-House Chips Are Quietly a $20 Billion Business",
+    summary: "Between Trainium, Graviton, and Nitro, Amazon's custom silicon is running at roughly $20 billion a year and Amazon is reportedly weighing selling the AI chips to outside customers.",
+    body: [
+      "Ask who's challenging Nvidia and the usual answers are AMD and a handful of startups. The more interesting answer is a company most people think of as a bookstore and a cloud.",
+      "Amazon's custom silicon effort, spanning its Trainium AI accelerators, Graviton server CPUs, and Nitro networking chips, is now running at an annualized rate of about $20 billion, with all three lines growing at triple-digit percentages year over year. That figure alone would rank the operation among the larger chip businesses on the planet, and it's mostly invisible because nearly all of it is consumed inside AWS rather than sold on a shelf.",
+      "The demand behind Trainium in particular is real money, not slideware. CEO Andy Jassy has pointed to roughly $225 billion in Trainium commitments, with Anthropic, OpenAI, and Uber among the names driving it. Trainium2 is largely sold out. Trainium3, which started shipping earlier this year, is nearly fully subscribed, and pre-reservations for Trainium4 are already substantial ahead of a broad rollout that's still more than a year out.",
+      "What makes this a story now rather than a footnote is a shift in posture. Amazon is reportedly weighing whether to sell Trainium to third parties directly, which would put it in head-to-head competition with Nvidia instead of merely reducing its own dependence on Nvidia's supply. That's a different game, and a harder one, because selling chips to strangers means supporting a software stack, courting outside developers, and answering to customers who can walk.",
+      "The subtext under all of it is the same pressure squeezing every hyperscaler: GPUs are expensive and scarce, and owning the silicon is the only durable way to control the cost of AI at scale. Amazon has been at this longer than most, and the run-rate number is the receipt.",
+      "Whether it graduates from an internal cost-saver into an actual merchant chip vendor is the question worth watching. Building a great accelerator is one thing. Getting anyone outside your own data centers to bet a training run on it is another.",
+    ],
+    category: "tech",
+    tags: ["Amazon", "AWS", "Trainium", "AI Chips", "Nvidia"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T12:40:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "The Register",
+        desc: "Report that Amazon's custom chips have become a $20B business",
+        url: "https://www.theregister.com/2026/04/29/amazon_chips_20b_business",
+      },
+      {
+        name: "Crypto Briefing",
+        desc: "Detail on Trainium demand and multibillion-dollar commitments",
+        url: "https://cryptobriefing.com/amazon-trainium-chip-20b-revenue/",
+      },
+      {
+        name: "Yahoo Finance",
+        desc: "Report that Amazon may sell Trainium chips to third parties",
+        url: "https://finance.yahoo.com/sectors/technology/articles/amazon-may-sell-trainium-ai-174422601.html",
+      },
+      {
+        name: "The Next Web",
+        desc: "Jassy's comments on the silicon unit's potential scale",
+        url: "https://thenextweb.com/news/amazon-custom-chips-jassy-letter-fifty-billion-trainium",
+      },
+    ],
+  },
+  {
+    id: 284,
+    slug: "cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026",
+    title: "Cisco's Security Certs Get an AI and Zero-Trust Rewrite on August 27",
+    summary: "Cisco is updating the 350-701 SCOR exam to v2.0 and refreshing its CCNP and CCIE Security tracks with AI security and SASE content, with the last day to test on the old versions being August 26.",
+    body: [
+      "If you've been sitting on a half-finished CCNP Security, this is your notice to either finish it or plan to relearn part of it. Cisco is rolling the 350-701 SCOR core exam from v1.1 to v2.0 on August 27, and it's retiring three legacy exams the same day.",
+      "The last day to test on the current versions is August 26. Miss that window and you're taking the new blueprint. This is part of the broader overhaul Cisco kicked off earlier in the year, the biggest shake-up to its certification program in over a decade, and the security track is where the changes bite hardest.",
+      "The content shift tracks where enterprise security work has actually gone. The refreshed SCOR exam, and the CCIE Security written that shares its blueprint, adds AI and LLM security topics, including prompt injection and data poisoning, the kind of attacks that didn't exist as exam objectives a couple of years ago. Zero Trust, SSE, and SASE move to the center, largely displacing the traditional site-to-site VPN material that used to anchor this exam. The concentration exams pick up cloud-native security models and AI-assisted threat detection.",
+      "None of this is padding. Prompt injection against an internal LLM tool and an over-trusted service mesh are real things security engineers are being asked about now, and a cert that still tested you mostly on IPsec tunnels would be teaching to a job that's fading.",
+      "Practical advice if you're mid-study: figure out honestly whether you can be ready by August 26. If yes, sit v1.1 while your prep still matches the exam. If not, don't cram against a moving target. Pivot now to v2.0 materials, lean into the Zero Trust and AI-security sections, and treat the extra scope as the part of the job you were going to have to learn anyway.",
+    ],
+    category: "learning",
+    tags: ["Cisco", "CCNP Security", "CCIE", "Certifications", "Zero Trust"],
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-23T13:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Cisco Learning Network",
+        desc: "Official post on the CCNP Security certification update",
+        url: "https://learningnetwork.cisco.com/s/blogs/a0DQO000004N0jN2AS/cisco-ccnp-security-gets-a-major-upgrade-what-you-need-to-know",
+      },
+      {
+        name: "CBT Nuggets",
+        desc: "Rundown of the major Cisco cert changes for 2026",
+        url: "https://www.cbtnuggets.com/blog/certifications/cisco/major-cisco-cert-changes",
+      },
+      {
+        name: "SPOTO",
+        desc: "Detail on the SCOR v2.0 exam dates and AI-driven objectives",
+        url: "https://cciedump.spoto.net/news/cisco-ccnp-ccie-exam-updates-2026-ai-driven-changes-now-in-effect-for-us-candidates.html",
+      },
+    ],
+  },
+  {
     id: 273,
     slug: "openai-erdos-model-paused-sandbox-escape-july-2026",
     title: "OpenAI Paused Its Own Model After It Kept Escaping the Sandbox",
@@ -43,7 +306,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-22T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: false,
     sources: [
@@ -316,7 +579,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Hugging Face Security Disclosure",
@@ -361,7 +624,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Rapid7",
@@ -1554,7 +1817,7 @@ export const articles = [
     publishedAt: "2026-07-16T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1604,7 +1867,7 @@ export const articles = [
     publishedAt: "2026-07-16T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1648,7 +1911,7 @@ export const articles = [
     publishedAt: "2026-07-16T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1692,7 +1955,7 @@ export const articles = [
     publishedAt: "2026-07-16T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -2016,7 +2279,7 @@ export const articles = [
     publishedAt: "2026-07-15T14:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

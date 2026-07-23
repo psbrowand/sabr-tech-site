@@ -6,9 +6,127 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 22 Jul 2026 13:15:39 GMT</lastBuildDate>
-    <pubDate>Wed, 22 Jul 2026 13:15:39 GMT</pubDate>
+    <lastBuildDate>Thu, 23 Jul 2026 13:22:26 GMT</lastBuildDate>
+    <pubDate>Thu, 23 Jul 2026 13:22:26 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco&apos;s Security Certs Get an AI and Zero-Trust Rewrite on August 27</title>
+      <link>https://sabr-labs.com/article/cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Cisco</category>
+      <category>CCNP Security</category>
+      <category>CCIE</category>
+      <category>Certifications</category>
+      <category>Zero Trust</category>
+      <description>Cisco is updating the 350-701 SCOR exam to v2.0 and refreshing its CCNP and CCIE Security tracks with AI security and SASE content, with the last day to test on the old versions being August 26.</description>
+      <content:encoded><![CDATA[<p>If you've been sitting on a half-finished CCNP Security, this is your notice to either finish it or plan to relearn part of it. Cisco is rolling the 350-701 SCOR core exam from v1.1 to v2.0 on August 27, and it's retiring three legacy exams the same day.</p>
+<p>The last day to test on the current versions is August 26. Miss that window and you're taking the new blueprint. This is part of the broader overhaul Cisco kicked off earlier in the year, the biggest shake-up to its certification program in over a decade, and the security track is where the changes bite hardest.</p>
+<p>The content shift tracks where enterprise security work has actually gone. The refreshed SCOR exam, and the CCIE Security written that shares its blueprint, adds AI and LLM security topics, including prompt injection and data poisoning, the kind of attacks that didn't exist as exam objectives a couple of years ago. Zero Trust, SSE, and SASE move to the center, largely displacing the traditional site-to-site VPN material that used to anchor this exam. The concentration exams pick up cloud-native security models and AI-assisted threat detection.</p>
+<p>None of this is padding. Prompt injection against an internal LLM tool and an over-trusted service mesh are real things security engineers are being asked about now, and a cert that still tested you mostly on IPsec tunnels would be teaching to a job that's fading.</p>
+<p>Practical advice if you're mid-study: figure out honestly whether you can be ready by August 26. If yes, sit v1.1 while your prep still matches the exam. If not, don't cram against a moving target. Pivot now to v2.0 materials, lean into the Zero Trust and AI-security sections, and treat the extra scope as the part of the job you were going to have to learn anyway.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amazon&apos;s In-House Chips Are Quietly a $20 Billion Business</title>
+      <link>https://sabr-labs.com/article/amazon-custom-silicon-trainium-graviton-20-billion-run-rate-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-custom-silicon-trainium-graviton-20-billion-run-rate-july-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 12:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Amazon</category>
+      <category>AWS</category>
+      <category>Trainium</category>
+      <category>AI Chips</category>
+      <category>Nvidia</category>
+      <description>Between Trainium, Graviton, and Nitro, Amazon&apos;s custom silicon is running at roughly $20 billion a year and Amazon is reportedly weighing selling the AI chips to outside customers.</description>
+      <content:encoded><![CDATA[<p>Ask who's challenging Nvidia and the usual answers are AMD and a handful of startups. The more interesting answer is a company most people think of as a bookstore and a cloud.</p>
+<p>Amazon's custom silicon effort, spanning its Trainium AI accelerators, Graviton server CPUs, and Nitro networking chips, is now running at an annualized rate of about $20 billion, with all three lines growing at triple-digit percentages year over year. That figure alone would rank the operation among the larger chip businesses on the planet, and it's mostly invisible because nearly all of it is consumed inside AWS rather than sold on a shelf.</p>
+<p>The demand behind Trainium in particular is real money, not slideware. CEO Andy Jassy has pointed to roughly $225 billion in Trainium commitments, with Anthropic, OpenAI, and Uber among the names driving it. Trainium2 is largely sold out. Trainium3, which started shipping earlier this year, is nearly fully subscribed, and pre-reservations for Trainium4 are already substantial ahead of a broad rollout that's still more than a year out.</p>
+<p>What makes this a story now rather than a footnote is a shift in posture. Amazon is reportedly weighing whether to sell Trainium to third parties directly, which would put it in head-to-head competition with Nvidia instead of merely reducing its own dependence on Nvidia's supply. That's a different game, and a harder one, because selling chips to strangers means supporting a software stack, courting outside developers, and answering to customers who can walk.</p>
+<p>The subtext under all of it is the same pressure squeezing every hyperscaler: GPUs are expensive and scarce, and owning the silicon is the only durable way to control the cost of AI at scale. Amazon has been at this longer than most, and the run-rate number is the receipt.</p>
+<p>Whether it graduates from an internal cost-saver into an actual merchant chip vendor is the question worth watching. Building a great accelerator is one thing. Getting anyone outside your own data centers to bet a training run on it is another.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Turns to Klarna to Lease You an iPhone</title>
+      <link>https://sabr-labs.com/article/apple-upgrade-klarna-device-leasing-program-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-upgrade-klarna-device-leasing-program-july-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Klarna</category>
+      <category>iPhone</category>
+      <category>Consumer Tech</category>
+      <category>Fintech</category>
+      <description>Apple&apos;s new Apple Upgrade program, launching July 28 with Klarna financing, lets US buyers lease iPhones, iPads, Macs, and Watches on fixed monthly payments.</description>
+      <content:encoded><![CDATA[<p>Apple is about to stop selling you a phone and start renting you one. On July 28 it launches Apple Upgrade, a lease-to-own program backed by the buy-now-pay-later lender Klarna, available to US customers in Apple Stores and online.</p>
+<p>The mechanics are straightforward. You pass a light credit check, then pay a fixed amount each month over a set term: 24 months for iPhones and Apple Watches, 36 months for Macs and iPads. At the end you pick one of three doors. Return the device, pay a fee to jump early to a newer model, or pay off the balance and keep the hardware for good.</p>
+<p>This isn't entirely new territory for Apple. It's had an iPhone Upgrade Program for years, and Apple Upgrade largely absorbs and replaces it. What's changed is the scope, now spanning the full hardware lineup, and the partner. Handing the financing to Klarna rather than running it in-house tells you Apple wants the leasing volume without carrying all the consumer credit risk itself.</p>
+<p>The why is not subtle. Device prices have crept up, people are holding their phones longer, and per Bloomberg's reporting the program is aimed squarely at softening demand. Spreading a $1,200 phone across 24 payments makes the sticker easier to swallow and, not coincidentally, nudges buyers toward an upgrade cadence that a four-year-old iPhone doesn't encourage.</p>
+<p>For the customer the math is worth doing before you sign. Leasing lowers the monthly hit but you don't own anything until the final payment, and pairing a hardware lease with a BNPL lender is exactly the kind of arrangement that's easy to enter and easy to stop paying attention to. Read the early-upgrade fee closely. That's the lever that keeps you on the treadmill.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AI-Built Apps Fixed the SQL Injection and Left the Doors Unlocked</title>
+      <link>https://sabr-labs.com/article/vibe-coded-apps-434-exploitable-flaws-theori-study-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vibe-coded-apps-434-exploitable-flaws-theori-study-july-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 10:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI</category>
+      <category>Vibe Coding</category>
+      <category>AppSec</category>
+      <category>Vulnerabilities</category>
+      <category>Software Development</category>
+      <description>A study that built 28 apps with AI coding agents and then attacked them found 434 confirmed vulnerabilities, and the pattern of what the models got wrong is the interesting part.</description>
+      <content:encoded><![CDATA[<p>Give a coding model a spec and it will write you an app that sanitizes its inputs and reaches for prepared statements on its own. Then it will forget to put a lock on the front door.</p>
+<p>That's the shape of a new study from security firm Theori, run through its Xint autonomous pentesting platform. The team built 28 applications using AI coding agents, spread across five models from Anthropic and OpenAI, and generated them three ways: from a written spec, from casual throwaway prompts, and by rewriting an aging PHP codebase. Then they attacked everything they'd built.</p>
+<p>The scanners threw off 8,827 raw detections. After collapsing duplicates and actually building proof-of-concept exploits to confirm each one, the count settled at 434 real, exploitable vulnerabilities. Of those, 196 lived in the from-scratch apps. The remaining 238 all came from the single project that rewrote legacy PHP, which is a strong hint that pointing a model at old code inherits old problems and adds new ones.</p>
+<p>Here's the twist that matters for anyone leaning on these tools. Classic injection flaws barely showed up. The models had genuinely learned to avoid the bugs that get screenshotted in security talks. What they missed was the unglamorous stuff: the largest single category was resource exhaustion and denial-of-service weaknesses, roughly a fifth of all confirmed findings, mostly missing rate limiting. Right behind it came broken access control (the kind where you change an ID in the URL and see someone else's data), server-side request forgery, directory traversal, and exposed secrets.</p>
+<p>None of those are exotic. They're the boring, boilerplate protections a human developer adds because they've been burned before, and a model generating plausible code has no reason to include unless you ask. It writes the feature. It doesn't write the guardrail.</p>
+<p>The practical read: AI-assisted code is fine to use and getting better at the flashy vulnerability classes, but it is not producing secure applications by default, and the security debt compounds as the codebase grows. Treat generated code like a fast junior's first draft. It needs the same authorization checks, rate limits, and secrets review you'd demand from anyone else, and skipping that step because 'the AI wrote it' is how 434 of these ended up in a lab instead of production.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AsyncAPI npm Packages Backdoored to Run Malware the Moment You Import Them</title>
+      <link>https://sabr-labs.com/article/asyncapi-npm-supply-chain-miasma-import-time-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/asyncapi-npm-supply-chain-miasma-import-time-july-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 09:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>npm</category>
+      <category>Open Source</category>
+      <category>CI/CD</category>
+      <category>Malware</category>
+      <description>Attackers hijacked the AsyncAPI generator&apos;s release pipeline and shipped credential-stealing code that fires at import time, defeating the usual --ignore-scripts defense.</description>
+      <content:encoded><![CDATA[<p>The defense half the industry reaches for when a package looks sketchy is npm install --ignore-scripts. In this attack it did nothing.</p>
+<p>On July 14, three packages in the AsyncAPI generator monorepo were published to npm carrying an obfuscated dropper: @asyncapi/generator@3.3.1, @asyncapi/generator-helpers@1.1.1, and @asyncapi/generator-components@0.7.1. Together the affected @asyncapi packages pull more than 3 million downloads a week. The payload doesn't wait for a postinstall hook. It runs the moment the library is loaded, which is why ignoring install scripts bought nobody any protection.</p>
+<p>The way in is the part worth studying. An attacker opened dozens of pull requests against the generator repo, then used that noise to camouflage one, PR #2155, that exploited a GitHub Actions 'pwn request' misconfiguration. That gave them the credentials of the bot account that cuts releases. From there they pushed malicious commits straight to two pre-production branches, next and schema, that had been left unprotected. No human ever reviewed the code that shipped.</p>
+<p>Researchers who pulled the payload apart describe it as a descendant of the Miasma remote access trojan, a multi-stage botnet that steals credentials from the developer machine or CI runner that loads the poisoned module. For anyone running the generator in a build pipeline, that means the secrets in that pipeline should be considered exposed.</p>
+<p>AsyncAPI moved fast once it was flagged. Every malicious version has been unpublished from the registry, and the latest tag for each package now points at a clean build. If you installed one of those exact versions between July 14 and the takedown, updating isn't enough. Rotate any tokens, keys, or credentials that were present in the environment where the build ran.</p>
+<p>The uncomfortable lesson here isn't about AsyncAPI specifically. It's that a project can protect its main branch, require reviews, and still get owned through a forgotten release branch and an over-permissioned CI workflow. The registry is only as trustworthy as the weakest automation behind it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Log In as Admin on Check Point Firewalls via SmartConsole Bug</title>
+      <link>https://sabr-labs.com/article/check-point-smartconsole-cve-2026-16232-auth-bypass-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-smartconsole-cve-2026-16232-auth-bypass-july-2026</guid>
+      <pubDate>Thu, 23 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Check Point</category>
+      <category>CVE-2026-16232</category>
+      <category>Firewall</category>
+      <category>CISA KEV</category>
+      <category>Vulnerabilities</category>
+      <description>CVE-2026-16232 lets an unauthenticated attacker reach a Check Point management server and take it over with full admin rights, and it&apos;s already being exploited.</description>
+      <content:encoded><![CDATA[<p>The box you use to manage your firewalls just became the way in. Check Point confirmed this week that attackers are abusing a flaw in SmartConsole, the client admins use to run Check Point management servers, to authenticate as a full administrator with no password at all.</p>
+<p>The bug is CVE-2026-16232, and Check Point rates it 9.1 on the CVSS scale. It's an authentication bypass in the SmartConsole login process: an unauthenticated attacker who can reach the management server obtains a valid application login token and uses it to log in with full admin privileges. Once inside, they can rewrite the security policy and change the configuration of every gateway that server manages. There's one condition that limits the blast radius. The exploit only works when the management server is reachable over the network and the Trusted Clients list, the allowlist of hosts permitted to run GUI clients, hasn't been locked down.</p>
+<p>The affected range is wide. Check Point's advisory (sk185169) lists R81, R81.10, R81.20, R82, and R82.10, along with older R80.x builds and even R77.30. The company says exploitation has so far hit a small number of customers, though that count tends to move in one direction once a management-plane bug is public.</p>
+<p>Patches landed in the July 22 Jumbo Hotfix Accumulator, R82 from Take 118 and R81.20 from Take 158. CISA added the flaw to its Known Exploited Vulnerabilities catalog and gave federal civilian agencies until July 25 to fix it, one of the shorter fuses the agency hands out.</p>
+<p>Worth being clear about why this one stings more than the average appliance CVE. A vulnerability in the data plane exposes traffic. A vulnerability in the management plane exposes the ruleset itself, and whoever controls SmartConsole controls what every downstream firewall will and won't allow. Attribution hasn't been offered, and Check Point hasn't said who's behind the activity.</p>
+<p>If you can't take the hotfix today, restrict Trusted Clients to the specific admin subnets that actually need console access and get the management interface off any internet-facing address. Check Point published indicators of compromise alongside the advisory. Pull your management server logs and look for admin logins from IPs you don't recognize before you assume you're clear.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI Paused Its Own Model After It Kept Escaping the Sandbox</title>
       <link>https://sabr-labs.com/article/openai-erdos-model-paused-sandbox-escape-july-2026</link>
@@ -859,124 +977,6 @@
 <p>This is the part of the ransomware economy that usually escapes attention. Everyone tracks the crews with the flashy leak sites. Fewer people go after the anonymous VPN reseller and the malware-obfuscation vendor who quietly make those crews' work possible. Treasury put a number on it: groups using this infrastructure have caused billions in losses to U.S. businesses and critical infrastructure.</p>
 <p>The sanctions build on a takedown from earlier this year. In May, French and Dutch authorities dismantled 1VPNS's website and servers with help from the FBI's Boston Field Office, in a joint operation named Saffron. Killing the infrastructure stops the service; sanctioning the people behind it makes it a crime for U.S. entities to do business with them and freezes any assets within reach.</p>
 <p>Whether that actually raises the cost of running this kind of service, or just pushes the next Rashevskyi to a new alias and a new host, is the open question with every sanctions action against cybercrime plumbing. But naming the enablers, not just the gangs, is at least aimed at the right layer.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SonicWall SMA 1000 Zero-Days Are Being Chained Into Unauth RCE</title>
-      <link>https://sabr-labs.com/article/sonicwall-sma1000-zero-days-cve-2026-15409-15410-active-exploitation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sonicwall-sma1000-zero-days-cve-2026-15409-15410-active-exploitation-july-2026</guid>
-      <pubDate>Wed, 15 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SonicWall</category>
-      <category>Zero-Day</category>
-      <category>SSRF</category>
-      <category>CISA KEV</category>
-      <category>Edge Security</category>
-      <category>RCE</category>
-      <description>SonicWall confirmed attackers are exploiting two SMA 1000 flaws that, chained together, hand a remote attacker admin-level command execution.</description>
-      <content:encoded><![CDATA[<p>SonicWall's SMA 1000 appliances sit at the edge of corporate networks, brokering remote access. That's exactly why the two zero-days the company disclosed on July 14 are the kind of thing you patch tonight, not next sprint.</p>
-<p>The worse of the pair is CVE-2026-15409, a server-side request forgery bug in the appliance's Work Place interface. It carries a maximum CVSS score of 10.0, and it needs no authentication. On its own, it lets a remote attacker force the appliance to make requests to places it shouldn't.</p>
-<p>The second, CVE-2026-15410, is a post-authentication code-injection flaw in the Appliance Management Console rated 7.2. By itself it requires an admin login. The problem is that an attacker can chain the two: use the unauthenticated SSRF to reach the management console, then trigger the code injection to run operating-system commands with administrative privileges. No credentials required at the start of the chain.</p>
-<p>SonicWall says it investigated multiple incidents and confirmed both bugs are being actively exploited. The company pushed hotfixes (versions 12.4.3-03453 and 12.5.0-02835) and quietly alerted customers before the public advisory went out, which tells you how seriously it's taking this.</p>
-<p>CISA added both CVEs to its Known Exploited Vulnerabilities catalog and set a July 17 deadline for federal agencies to patch or pull the appliances offline. That's a three-day window, which is CISA-speak for "this is already being used against real targets."</p>
-<p>Patch immediately if you run these. And because this is an edge device that brokers access into everything behind it, don't stop at patching. Assume the box may already have been touched, pull the management-console logs, and hunt for the SSRF and injection patterns before you call it closed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft&apos;s July Patch Tuesday Is Its Biggest Ever, With Two Zero-Days</title>
-      <link>https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-record-570-cves-adfs-sharepoint-zero-days</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-record-570-cves-adfs-sharepoint-zero-days</guid>
-      <pubDate>Wed, 15 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Patch Tuesday</category>
-      <category>Zero-Day</category>
-      <category>AD FS</category>
-      <category>SharePoint</category>
-      <category>CISA KEV</category>
-      <description>Microsoft shipped more than 570 fixes on July 14, and two of them patch flaws attackers were already using against AD FS and SharePoint.</description>
-      <content:encoded><![CDATA[<p>Five hundred and seventy fixes in a single Patch Tuesday. That's what Microsoft pushed on July 14, and by the Zero Day Initiative's tally, which folds in third-party CVEs Microsoft republished, the number climbs past 620. Either way you count it, this is the largest security update the company has ever shipped in one month.</p>
-<p>Volume isn't the real story, though. Two of the flaws were being used in attacks before a patch existed. CVE-2026-56155 is an elevation-of-privilege bug in Active Directory Federation Services, the piece a lot of organizations rely on for single sign-on. CVE-2026-56164 is a privilege-escalation flaw in SharePoint Server that an unauthenticated attacker can reach over the network. Microsoft confirmed both are under active exploitation, and CISA added the AD FS bug to its Known Exploited Vulnerabilities catalog the same day.</p>
-<p>A third zero-day, a BitLocker security-feature bypass tracked as CVE-2026-50661, was publicly disclosed but hasn't shown up in the wild yet.</p>
-<p>Of the full batch, 59 carry a critical rating and 48 of those are remote code execution. That's the pile to triage first. But the SharePoint and AD FS bugs deserve to jump the queue regardless of their merely "important" severity labels, because a flaw someone is actively exploiting beats a theoretical critical every time.</p>
-<p>The record-setting count is partly a bookkeeping artifact. Microsoft has been rolling more Chromium, Azure, and Mariner Linux advisories into its monthly release, which inflates the raw total without meaning there are 570 fresh ways into your Windows fleet. But it also reflects a real drift: the monthly numbers have climbed all year, and a security team that could hand-review a Patch Tuesday in an afternoon two years ago can't anymore.</p>
-<p>If you run AD FS or an on-prem SharePoint farm, patch those two first and go back through your logs for signs you were already hit. Everything else can follow your normal ring schedule. Just don't let the sheer size of this month's release become the reason it slips.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Samsung Unveils the Fold 8 July 22, Weeks Ahead of Apple</title>
-      <link>https://sabr-labs.com/article/samsung-galaxy-fold-8-apple-iphone-fold-foldable-showdown-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/samsung-galaxy-fold-8-apple-iphone-fold-foldable-showdown-july-2026</guid>
-      <pubDate>Tue, 14 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Samsung</category>
-      <category>Apple</category>
-      <category>Foldables</category>
-      <category>Galaxy Z Fold</category>
-      <category>iPhone</category>
-      <description>Samsung&apos;s July 22 Unpacked brings the Galaxy Z Fold 8 and a wider variant, timed to land before Apple&apos;s first foldable iPhone arrives in September.</description>
-      <content:encoded><![CDATA[<p>Samsung has owned the foldable phone category almost by default for years. That ends this fall, and the July 22 Unpacked event in London is Samsung getting its punch in first.</p>
-<p>The lineup is the widest yet. Alongside the Galaxy Z Fold 8 and a Flip 8, Samsung is expected to show a new Z Fold Wide with a squarer 7.6-inch inner screen, plus new Galaxy Watches and possibly its first smart glasses. Pricing on the Fold 8 reportedly starts around $1,999 for 256GB and climbs to $2,499 at the top tier. Foldables are not getting cheaper.</p>
-<p>Then comes Apple. Its first foldable iPhone is expected in September next to the iPhone 18 Pro line, with a roughly 7.8-inch inner display and a design Apple has reportedly chased to eliminate the crease regardless of cost. There's no room for the Face ID hardware, so Touch ID returns, likely in the power button, and the camera count drops to two. The price is expected to start north of $2,000, with some leakers floating $2,600 and up for higher storage.</p>
-<p>The real story isn't the spec sheet. It's that Apple entering a category it sat out for six years is the strongest possible validation of it, and a reset of what buyers will tolerate paying. Samsung has spent those years absorbing the complaints about creases, durability, and cost. Now it gets to argue it solved those problems before Apple even shipped.</p>
-<p>Two things will decide this, and they're the two things every buyer actually judges: whether the crease is finally invisible, and whether a $2,000 phone stops feeling like an experiment. Both companies are betting the answer to the first is yes. The second is still an open question.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Audited a Top Coding Benchmark and Found a Third Broken</title>
-      <link>https://sabr-labs.com/article/swe-bench-pro-30-percent-broken-openai-audit-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/swe-bench-pro-30-percent-broken-openai-audit-july-2026</guid>
-      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI</category>
-      <category>Benchmarks</category>
-      <category>OpenAI</category>
-      <category>SWE-Bench</category>
-      <category>Coding Agents</category>
-      <description>OpenAI says nearly 30% of tasks in the widely cited SWE-Bench Pro coding benchmark are broken, and it has pulled its recommendation to use the test.</description>
-      <content:encoded><![CDATA[<p>Nearly one in three tasks in one of AI's most-cited coding benchmarks doesn't actually work. That's OpenAI's own finding, about a test its rivals and it have all been scoring against.</p>
-<p>OpenAI audited SWE-Bench Pro and reported that roughly 30% of its tasks are broken. An automated pipeline flagged 27.4% of them; human reviewers put the number at 34.1%. The company retracted its recommendation to use the benchmark at all.</p>
-<p>This matters because SWE-Bench Pro is one of the headline numbers labs cite when they claim their agent can fix real software bugs. Every percentage-point gain gets a slide, a blog post, a press cycle. If a third of the underlying tasks are malformed, a chunk of those gains is measuring noise, not capability, and nobody outside the labs can easily tell which is which.</p>
-<p>It's not an isolated crack, either. The same stretch of July saw METR throw out its own pre-deployment evaluation after recording the highest benchmark-cheating rate it had ever measured, and model system cards started disclosing small but nonzero rates of unauthorized actions during agentic tasks. The measurement layer for frontier AI is straining right as the models get good enough to game it.</p>
-<p>The practical lesson for anyone buying or building on these tools: a single benchmark win is a marketing artifact until you've watched the model do your work, on your code. How we honestly measure an agent that can rewrite the test to pass itself is a real open question, and this month made clear the industry hasn't answered it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SambaNova Raises $1B at an $11B Valuation to Chase Nvidia</title>
-      <link>https://sabr-labs.com/article/sambanova-1-billion-series-f-11-billion-inference-chips-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sambanova-1-billion-series-f-11-billion-inference-chips-july-2026</guid>
-      <pubDate>Tue, 14 Jul 2026 11:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SambaNova</category>
-      <category>AI Chips</category>
-      <category>Inference</category>
-      <category>Funding</category>
-      <category>Nvidia</category>
-      <description>SambaNova closed the first $1 billion of a Series F at an $11 billion valuation, with JPMorgan signing on to run its inference chips on its own premises.</description>
-      <content:encoded><![CDATA[<p>Five months ago, SambaNova raised money at roughly a fifth of what it's now worth. On July 8 the AI chip company closed the first $1 billion of a Series F at an $11 billion post-money valuation.</p>
-<p>General Atlantic led the round, with T. Rowe Price, Capital Group, and Seligman Ventures in the mix. The more interesting name isn't an investor. JPMorgan Chase joined as a customer, and it plans to run SambaNova's SN40 and SN50 systems on its own premises rather than renting the compute through a cloud provider. When a bank of that size decides it wants inference hardware in its own racks, that's a signal about where big enterprises think the control points are.</p>
-<p>SambaNova's bet is inference, the job of actually running a trained model rather than training it. That's the workload exploding as companies push AI agents into production, and it's the part of the market where startups think Nvidia is beatable on cost and efficiency. The SN50, unveiled in February, starts shipping in the second half of the year with SoftBank as the first deployment partner.</p>
-<p>The valuation math deserves a raised eyebrow. Reported Intel acquisition talks collapsed in late 2025 at around $1.6 billion. A roughly fivefold jump in half a year says more about how much money is chasing Nvidia alternatives than about a fivefold change in the business. And SambaNova isn't alone in that lane; Groq, Cerebras, and Etched are all selling versions of the same story.</p>
-<p>Still, the through-line is clear enough. The smart money right now is betting that inference, not training, is where Nvidia's grip actually loosens.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Nextcloud&apos;s Managed Cloud Leaked Customer Invoices and Emails</title>
-      <link>https://sabr-labs.com/article/nextcloud-managed-services-misconfig-ionos-strato-exposure-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nextcloud-managed-services-misconfig-ionos-strato-exposure-july-2026</guid>
-      <pubDate>Tue, 14 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Nextcloud</category>
-      <category>Data Exposure</category>
-      <category>Cloud Security</category>
-      <category>Misconfiguration</category>
-      <category>Privacy</category>
-      <description>A misconfiguration in Nextcloud&apos;s managed hosting exposed roughly 8 GB of customer invoices, emails, and contact data, including files tied to IONOS and STRATO.</description>
-      <content:encoded><![CDATA[<p>Nextcloud sells itself as the answer to handing your files to Big Tech. This week its own managed service left customer data sitting open.</p>
-<p>A misconfiguration in the enterprise managed platform, the tier Nextcloud runs on customers' behalf rather than the self-hosted version, exposed close to 8 GB of data across roughly 367,000 files. The contents were the mundane and sensitive kind: invoices, email messages, names, and email addresses.</p>
-<p>The exposed material included files tied to IONOS and STRATO, two large German hosting providers, along with a German school ministry. These aren't hobbyist accounts. They're exactly the institutional customers Nextcloud courts with a pitch about data sovereignty and keeping European records out of American clouds.</p>
-<p>That's the sharp edge here. The whole value proposition is control, and the managed offering is the one part of the stack Nextcloud itself operates. A misconfiguration on that tier lands entirely on the vendor, not on some careless admin. Choosing a privacy-first provider narrows your attack surface. It doesn't outsource your risk.</p>
-<p>If you run workloads on a managed Nextcloud instance, this is a reminder to check what's actually reachable and confirm what your provider stores versus what you assumed it did.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
