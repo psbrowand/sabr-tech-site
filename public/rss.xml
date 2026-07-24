@@ -6,9 +6,131 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2026 13:22:26 GMT</lastBuildDate>
-    <pubDate>Thu, 23 Jul 2026 13:22:26 GMT</pubDate>
+    <lastBuildDate>Fri, 24 Jul 2026 13:16:18 GMT</lastBuildDate>
+    <pubDate>Fri, 24 Jul 2026 13:16:18 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Tesla Delivered a Record Quarter and Made Less Money Doing It</title>
+      <link>https://sabr-labs.com/article/tesla-q2-2026-earnings-record-deliveries-profit-miss-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-q2-2026-earnings-record-deliveries-profit-miss-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Tesla</category>
+      <category>Earnings</category>
+      <category>Electric Vehicles</category>
+      <category>AI</category>
+      <category>Robotics</category>
+      <description>Tesla beat on revenue with 480,126 deliveries but missed profit estimates as spending on AI and robotics pushed operating income down 57%.</description>
+      <content:encoded><![CDATA[<p>Tesla delivered a record 480,126 vehicles in the second quarter, up 25% from a year ago and well past the roughly 407,000 analysts expected. Revenue hit $28.24 billion. And the stock fell about 4% after hours anyway.</p>
+<p>The problem was the bottom line. Adjusted earnings came in at 33 cents a share against a consensus closer to 49, and operating profit fell 57% year over year even as sales rose. Operating expenses jumped 47% to $4.35 billion, most of it going into AI infrastructure and R&D rather than the car business.</p>
+<p>Tesla also burned cash, posting a free-cash-flow deficit of about $1.09 billion after a surplus in the prior quarter.</p>
+<p>The split screen is the whole story. Tesla is selling more cars than ever, at lower margins, while pouring the proceeds into the AI and robotics bets Elon Musk keeps telling investors are the real company. Whether that reads as visionary reinvestment or a car maker quietly getting less profitable depends entirely on whether the robots show up.</p>
+<p>For now, the market is being asked to pay a technology multiple for a company whose actual product got cheaper to sell this quarter. That's a bet, and Q2 didn't make it an easier one to hold.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Alphabet Beat Everything and Fell 6% on One Number: Capex</title>
+      <link>https://sabr-labs.com/article/alphabet-q2-2026-capex-205-billion-cloud-82-percent-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/alphabet-q2-2026-capex-205-billion-cloud-82-percent-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Alphabet</category>
+      <category>Google Cloud</category>
+      <category>AI Infrastructure</category>
+      <category>Capex</category>
+      <category>Earnings</category>
+      <category>Hyperscalers</category>
+      <description>Alphabet raised 2026 capital spending guidance to as much as $205 billion, spooking investors even as cloud revenue grew 82%.</description>
+      <content:encoded><![CDATA[<p>Alphabet beat on revenue, beat on profit, grew its cloud business 82% in a single year, and watched its stock drop more than 6%. The reason was one line on the guidance page. The company now expects to spend between $195 and $205 billion on capital expenditure this year, up from the $180 to $190 billion it guided a quarter ago.</p>
+<p>The quarter itself was enormous. Revenue hit $119.8 billion against expectations near $116.9 billion, earnings came in at $9.11 a share, and Google Cloud jumped to $24.77 billion in revenue, up 82% year over year as AI workloads filled capacity as fast as Alphabet could build it.</p>
+<p>Google spent $44.9 billion on infrastructure in the quarter alone, more than double a year ago.</p>
+<p>This is the tension sitting under every hyperscaler's earnings right now. Cloud demand is real and the growth is real, but the spend required to serve it is climbing faster than the revenue it produces, and Alphabet told investors 2027 capex will rise significantly on top of this year's. The market's 6% haircut wasn't a vote against AI. It was a question about when the bill stops growing faster than the return.</p>
+<p>For everyone downstream of these decisions, from chip suppliers to power utilities to the startups renting this capacity, the message is that the buildout isn't slowing. Alphabet just told the market it plans to spend more, sooner, and dared it to complain.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Origin Energy Confirms Breach; Attacker Claims 2 Million Customer Records</title>
+      <link>https://sabr-labs.com/article/origin-energy-data-breach-4-8-million-customers-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/origin-energy-data-breach-4-8-million-customers-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Origin Energy</category>
+      <category>Australia</category>
+      <category>Critical Infrastructure</category>
+      <category>Phishing</category>
+      <description>Australia&apos;s Origin Energy says an unknown attacker stole customer data including names, dates of birth, and partial card and bank details.</description>
+      <content:encoded><![CDATA[<p>Origin Energy, one of Australia's largest power and gas retailers, confirmed on July 23 that an unknown attacker got into its systems and made off with customer data. The company has about 4.8 million customers and is still working out how many were caught in the breach. A threat actor claiming responsibility says the haul covers 2 million of them.</p>
+<p>The exposed fields are the usual identity-theft starter kit: name, address, date of birth, phone number, and account details. More concerning is what came with it. For some customers the data includes the last four digits of a credit card or the last three of a bank account.</p>
+<p>That's not enough to drain an account on its own, but it's plenty to make a phishing call or a fake 'Origin billing' text sound convincing.</p>
+<p>Origin says it has notified the Australian Federal Police, the Australian Cyber Security Centre, and the national privacy regulator, and is contacting affected customers directly through a dedicated support portal. It hasn't named the attacker or explained how the intrusion happened.</p>
+<p>Australia has spent the past few years as a case study in large-scale consumer breaches, from Optus to Medibank, and the pattern holds here: a big retailer, a huge customer base, and a slow drip of detail while the company maps the blast radius. Expect the confirmed-impact number to move as the investigation runs.</p>
+<p>If you're an Origin customer, the practical move is boring and effective. Assume your contact details are out, and be skeptical of any call or message that references your Origin account and asks you to verify anything.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Fake Claude Installer Rode a Real claude.ai Link to Push SectopRAT</title>
+      <link>https://sabr-labs.com/article/fakeagent-fake-claude-desktop-sectoprat-bing-malvertising-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fakeagent-fake-claude-desktop-sectoprat-bing-malvertising-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Malvertising</category>
+      <category>SectopRAT</category>
+      <category>Huntress</category>
+      <category>Malware</category>
+      <category>EtherHiding</category>
+      <category>Infostealer</category>
+      <description>Huntress says the FakeAgent campaign used Bing ads and a public Claude Artifact hosted on claude.ai to deliver SectopRAT to at least 29 organizations.</description>
+      <content:encoded><![CDATA[<p>The link pointed at claude.ai. The domain was legitimate, the page looked like exactly what someone searching Bing for 'Claude Desktop' expected, and the file behind the download button was SectopRAT.</p>
+<p>Researchers at Huntress, who named the campaign FakeAgent, say attackers bought sponsored Bing ads that led to a public Claude Artifact built to imitate Anthropic's official desktop installer. Because Artifacts are hosted on the real claude.ai domain, the whole thing sailed past the mental check most people run before clicking a download. Hitting the button kicked off a redirect chain through attacker-controlled domains that ended in a malicious ClaudeDesktop.exe.</p>
+<p>The artifact was downloaded roughly 7,100 times before Anthropic pulled it, and Huntress counted at least 29 organizations compromised over two days, July 21 and 22.</p>
+<p>SectopRAT, also tracked as ArechClient2, has been around since 2019. It's an information stealer with hidden-VNC capability, meaning an operator can quietly drive an infected machine in real time while lifting saved passwords, browser cookies, card numbers, and credentials from messaging and FTP clients. One detail stands out: the malware pulls its command-and-control address out of Ethereum transactions on the BNB Smart Chain, a technique called EtherHiding that makes the C2 nearly impossible to take down.</p>
+<p>The uncomfortable part isn't the malware, which is years old and well understood. It's the delivery. A trusted platform that lets anyone publish content on its primary domain becomes a laundering service for exactly this kind of lure, and 'check the URL before you click' training does nothing when the URL is genuinely correct.</p>
+<p>Download desktop software from the vendor's own documented link, not from a search ad, and treat any 'official app' that arrives through a sponsored result as suspect until proven otherwise. The domain being real doesn't mean the file is.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Clop Turns a PTC Windchill Flaw Into Its Latest Mass Data-Theft Campaign</title>
+      <link>https://sabr-labs.com/article/clop-ransomware-ptc-windchill-flexplm-cve-2026-12569-extortion-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/clop-ransomware-ptc-windchill-flexplm-cve-2026-12569-extortion-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Clop</category>
+      <category>Ransomware</category>
+      <category>PTC Windchill</category>
+      <category>CVE-2026-12569</category>
+      <category>Data Breach</category>
+      <category>CISA KEV</category>
+      <description>The Clop gang is exploiting CVE-2026-12569 to drop web shells on internet-exposed Windchill and FlexPLM servers and steal manufacturers&apos; product data.</description>
+      <content:encoded><![CDATA[<p>Clop is back to doing the thing it does best: find one enterprise application with a critical bug, then quietly empty out everyone running it. This time the target is PTC's Windchill and FlexPLM, the product lifecycle management platforms manufacturers use to store design files, bills of materials, and the guts of how their products get built.</p>
+<p>The gang is exploiting CVE-2026-12569, a critical deserialization flaw rated 9.3 that lets an unauthenticated attacker run code on an internet-exposed Windchill or FlexPLM server. Clop's operators drop JSP web shells onto compromised instances and use them to exfiltrate whatever product data is sitting there. No encryption, no locked files. Just theft and an extortion note.</p>
+<p>This is the same playbook Clop ran against MOVEit and every other mass-exploitation campaign it's built its name on. Steal at scale, list victims on a leak site, and let the threat of publication do the negotiating.</p>
+<p>PTC started shipping patches for the flaw on June 17 and warned customers of heightened threat activity on June 26. CISA added CVE-2026-12569 to its Known Exploited Vulnerabilities catalog and gave federal agencies three days to patch or pull the systems offline. If you run Windchill or FlexPLM with any internet exposure, treat it as compromised until you've hunted for JSP web shells and confirmed the June fix is applied.</p>
+<p>PLM data is exactly the kind of thing that never shows up in a credit-monitoring letter but absolutely shows up in a competitor's hands.</p>
+<p>The patch has been out for over a month. The organizations getting hit now are the ones that assumed a PLM server was too obscure to be a target. Clop's entire business model is proving that assumption wrong.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Intel Posts Fastest Growth Since 2011 as 18A Foundry Finally Delivers</title>
+      <link>https://sabr-labs.com/article/intel-q2-2026-earnings-fastest-growth-since-2011-18a-foundry-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/intel-q2-2026-earnings-fastest-growth-since-2011-18a-foundry-july-2026</guid>
+      <pubDate>Fri, 24 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Intel</category>
+      <category>Semiconductors</category>
+      <category>Earnings</category>
+      <category>18A</category>
+      <category>Foundry</category>
+      <category>AI Chips</category>
+      <description>Intel&apos;s Q2 revenue hit $16.1B on a 25% jump, with foundry and its 18A node beating targets and adjusted EPS coming in at double estimates.</description>
+      <content:encoded><![CDATA[<p>Intel's second quarter came in at $16.1 billion in revenue, up 25% from a year earlier. That's the company's fastest growth in more than 15 years, and it blew past the roughly $14.4 billion Wall Street had penciled in. Shares jumped more than 13% after hours.</p>
+<p>The number that actually matters for Intel's long game is the foundry line. Intel Foundry pulled in $5.8 billion, up 31%, and CFO David Zinsner credited the 18A process node for the jump. He said 18A output ran about 25% above target and climbed more than 50% from the prior quarter. After years of Intel insisting its manufacturing comeback was one node away, this is the first quarter where the numbers back the story.</p>
+<p>Data Center and AI was the other bright spot. That segment topped $6.3 billion, up 59% from a year ago and 24% quarter over quarter, as buyers kept absorbing anything that could sit next to a GPU. Gross margin recovered to 42%, a world away from the 2.5% Intel scraped together in the same quarter last year when write-downs gutted the line.</p>
+<p>Adjusted earnings landed at 42 cents a share, roughly double what analysts modeled.</p>
+<p>There's a catch, and Zinsner named it himself: supply, not demand, is now the constraint. Intel is selling everything 18A can make and still can't make enough. That's a far better problem than the one Intel had two years ago, but it caps how fast the recovery can compound and hands rivals like TSMC a window while Intel races to add capacity.</p>
+<p>For a company that spent the back half of the last decade as the cautionary tale of American chipmaking, a quarter like this changes the conversation. The question now isn't whether 18A works. It's whether Intel can build enough of it before the AI buildout finds another supplier.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Cisco&apos;s Security Certs Get an AI and Zero-Trust Rewrite on August 27</title>
       <link>https://sabr-labs.com/article/cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026</link>
@@ -855,128 +977,6 @@
 <p>The headline attribution is that the 16th Centre directs several threat groups, including Turla, an espionage crew that researchers have tracked for more than a decade under names like Snake and Uroburos. The EU's account covers both spying and sabotage: cyber operations against strategic French government entities going back to 2010 and its defense industry in 2025, and, in Poland, disruptive sabotage against critical infrastructure that included combined heat and power plants. France, Germany, Poland, Cyprus, the Netherlands, Austria, Slovakia, Romania, and Finland all appear on the target list, along with Ukraine.</p>
 <p>Now the honest part. Sanctions on FSB officers aren't going to freeze anyone's holiday plans in Nice. These people weren't banking in Frankfurt. The mechanism's real product isn't financial pain, it's attribution: a government putting its name behind the claim that one identifiable Russian unit ran a decade of operations, and two governments doing it in lockstep rather than issuing separate statements a month apart.</p>
 <p>For a SOC, the useful part is the mapping. When states formally tie the 16th Centre to Turla and to named sabotage campaigns, threat intelligence gets a firmer backbone. The activity you're modeling has an org chart now, not just a cluster of overlapping indicators. Whether naming it changes what Moscow does is a separate question, and the track record says attribution rarely slows these groups down. It does make them easier to talk about, and easier to hunt.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags an Exploited Oracle E-Business Suite Payments Bug</title>
-      <link>https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-kev-active-exploitation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-ebs-cve-2026-46817-payments-kev-active-exploitation-july-2026</guid>
-      <pubDate>Thu, 16 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Oracle</category>
-      <category>CVE-2026-46817</category>
-      <category>CISA KEV</category>
-      <category>Active Exploitation</category>
-      <category>E-Business Suite</category>
-      <description>CISA added CVE-2026-46817, an unauthenticated flaw that can hand attackers control of Oracle Payments, to its exploited-vulnerabilities catalog with a July 18 federal fix deadline.</description>
-      <content:encoded><![CDATA[<p>An unauthenticated attacker who can reach your Oracle E-Business Suite over HTTP may be able to take over its payments module. No login required. CISA thinks someone already is.</p>
-<p>On July 15 the agency added CVE-2026-46817 to its Known Exploited Vulnerabilities catalog. The flaw sits in Oracle Payments, part of E-Business Suite, and it's really a stack of authentication failures bundled together: improper privilege management, improper authentication, and missing authentication for a critical function. The plain-language version is that the checks meant to confirm who you are and what you're allowed to do aren't reliably there.</p>
-<p>Federal civilian agencies have until July 18 to patch it. That's three days from the listing. CISA's usual remediation window runs longer, and this time the agency didn't publish indicators of compromise or name a threat actor. When CISA sets a short fuse and stays quiet on the details, the message tends to be the same: this is being used in the wild, and explaining how would help the wrong people more than the defenders.</p>
-<p>Oracle's E-Business Suite has been a rewarding target before. Late last year the Cl0p ransomware crew tore through EBS zero-days to steal data from dozens of organizations. Payments is exactly the module an attacker would want if the goal is fraud or extortion, because it sits on top of financial records, payment workflows, and whatever downstream enterprise systems the platform is wired into.</p>
-<p>If you run E-Business Suite, treat this as tonight's work, not next sprint's. Apply Oracle's fix and then pull access logs for the payments endpoints, going back further than feels necessary, because a spot on the KEV list means exploitation predates the public disclosure. Worth noting: CISA added an older KNX building-automation flaw, CVE-2023-4346, the same day. Known-exploited and newly-discovered are not the same thing, and attackers are happy to use whichever one you forgot to patch.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ASML Raises Its 2026 Forecast Again as AI Chip Orders Pile Up</title>
-      <link>https://sabr-labs.com/article/asml-q2-2026-earnings-raise-forecast-ai-chip-demand-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/asml-q2-2026-earnings-raise-forecast-ai-chip-demand-july-2026</guid>
-      <pubDate>Thu, 16 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>ASML</category>
-      <category>Semiconductors</category>
-      <category>EUV</category>
-      <category>AI Chips</category>
-      <category>Earnings</category>
-      <description>ASML posted 9.3 billion euros in Q2 sales and lifted its full-year outlook to 43-45 billion euros, crediting extremely strong orders for AI chip gear.</description>
-      <content:encoded><![CDATA[<p>9.3 billion euros in sales and a raised outlook, for the second time this year. That's ASML's second quarter, and for anyone trying to work out whether the AI buildout is real demand or a good story, it's about as close to ground truth as the chip industry offers.</p>
-<p>The company reported 9.3 billion euros in net sales and 2.9 billion in net income, both ahead of expectations. It then raised its 2026 revenue guidance to a range of 43 to 45 billion euros, up from the 36 to 40 billion it had guided earlier, with gross margin expected between 54 and 56 percent. CEO Christophe Fouquet flagged extremely strong order intake driven by demand for AI chips.</p>
-<p>Why does one Dutch equipment maker's earnings call matter this much? Because ASML is the only company on earth that builds EUV lithography machines, the tools every advanced chip is patterned on. Nvidia's accelerators, Apple's phone silicon, the memory going into AI servers: all of it runs through ASML gear at some point. So when ASML says orders are extremely strong and capacity is the limiting factor, that isn't marketing. It's the supplier at the narrowest point of the whole pipeline telling you the demand is already booked.</p>
-<p>On that capacity point, ASML said it plans to expand output for its flagship EUV tools by 30 percent in each of the next two years, and to do the same for the older DUV machines used for less advanced chips and by customers in China.</p>
-<p>The skeptical read is the China exposure and the question any second forecast hike invites: is this froth? But ASML's order book works against the froth story rather than for it. The company books orders years ahead and has no real competitor, so its guidance tends to lag hype cycles instead of riding them. A number it raises today reflects commitments made well before this week's headlines.</p>
-<p>If you want a single dial to watch for whether the AI capex wave is cresting, don't look at a hyperscaler's press release. Look at ASML's order book. Right now the dial says up.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GPT-5.6 Went Public Only After a 12-Day Government Review</title>
-      <link>https://sabr-labs.com/article/gpt-5-6-sol-terra-luna-public-commerce-department-caisi-review-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gpt-5-6-sol-terra-luna-public-commerce-department-caisi-review-july-2026</guid>
-      <pubDate>Wed, 15 Jul 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>GPT-5.6</category>
-      <category>AI Regulation</category>
-      <category>CAISI</category>
-      <category>Commerce Department</category>
-      <category>AI Governance</category>
-      <description>OpenAI&apos;s Sol, Terra, and Luna models reached general availability on July 9, but only after the Commerce Department&apos;s AI standards office signed off.</description>
-      <content:encoded><![CDATA[<p>OpenAI's GPT-5.6 family reached broad availability on July 9, and the more telling detail isn't the models. It's that they shipped only after a roughly 12-day review by the federal government.</p>
-<p>The lineup is three models. Sol is the flagship, with a new Ultra subagent mode and a Max reasoning-effort setting. Terra targets the quality of last generation's mid-tier at a lower price. Luna is the fast, cheap option. Pricing runs from $5 per million input tokens and $30 output for Sol, down to $1 and $6 for Luna, which puts the family in roughly the same bracket as its competitors rather than undercutting them.</p>
-<p>Before OpenAI could widen access, the models went through the Commerce Department's Center for AI Standards and Innovation, or CAISI. OpenAI sent engineers to Washington to work through the office's questions directly, and the Trump administration cleared the wider release once that testing wrapped. GPT-5.6 is the first frontier model to run this particular gauntlet end to end.</p>
-<p>That's worth sitting with. The framework CAISI operates under is officially voluntary. In practice, a company held its most capable model back from the public for nearly two weeks while a government office ran its own tests. Voluntary or not, that's a gate, and this is the first time we've watched a flagship model queue behind it.</p>
-<p>What CAISI actually tested, and against what bar, hasn't been disclosed in any detail. "The government reviewed it" reads as reassurance, but without knowing the evaluation criteria it's hard to say whether the review caught anything a lab's internal red team wouldn't have. The precedent is the story here more than the findings.</p>
-<p>For developers, the practical takeaway is narrower: three new models, a fresh subagent mode to test, and prices that reward routing cheaper work to Luna. For everyone watching how AI gets governed, the more durable question is whether a "voluntary" review that functions as a release gate stays voluntary the next time a model is a little more capable and the stakes are a little higher.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>PixVerse Raises $439M for Generative Video, Topping a $2B Valuation</title>
-      <link>https://sabr-labs.com/article/pixverse-439-million-series-c-generative-video-ai-2-billion-valuation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/pixverse-439-million-series-c-generative-video-ai-2-billion-valuation-july-2026</guid>
-      <pubDate>Wed, 15 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>PixVerse</category>
-      <category>Generative Video</category>
-      <category>AI Startups</category>
-      <category>Funding</category>
-      <category>World Models</category>
-      <category>Venture Capital</category>
-      <description>The Singapore-based video AI startup closed a Series C extension and now says it wants to build real-time interactive world models.</description>
-      <content:encoded><![CDATA[<p>PixVerse, a Singapore-based startup building generative video, closed a $439 million Series C extension that pushes its valuation above $2 billion. The company was founded in 2023 by former ByteDance and Microsoft Research Asia engineers, which is a useful tell about where the talent in this corner of AI is coming from.</p>
-<p>The traction numbers are real and worth stating plainly: more than 150 million registered users and over 15 million monthly actives. In a category crowded with demos that look great in a launch video and fall apart in daily use, an audience that size is the harder thing to fake.</p>
-<p>What the money is actually for is the more interesting part. PixVerse says it's moving past clip generation toward real-time interactive world models, the kind of system meant for gaming and enterprise use where the video responds to input as it's produced rather than being rendered once and played back. That's a much heavier compute and research problem than text-to-video, and it's where several well-funded labs are now pointing.</p>
-<p>It's fair to be skeptical of the pivot. "World model" is doing a lot of marketing work across the industry right now, and plenty of companies invoke it before they can demonstrate anything interactive at usable latency and quality. A $2 billion valuation buys runway to try; it doesn't prove the thing works.</p>
-<p>Still, the raise is a signal about where investor money is flowing. After a year dominated by chips, data centers, and the models themselves, the application layer, and generative video specifically, is pulling nine-figure rounds again. Whether PixVerse turns that into a product people keep paying for is the question the next year answers.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>New York Becomes the First State to Hit Pause on Big Data Centers</title>
-      <link>https://sabr-labs.com/article/new-york-first-statewide-hyperscale-data-center-moratorium-hochul-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/new-york-first-statewide-hyperscale-data-center-moratorium-hochul-july-2026</guid>
-      <pubDate>Wed, 15 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Data Centers</category>
-      <category>New York</category>
-      <category>AI Infrastructure</category>
-      <category>Energy</category>
-      <category>Regulation</category>
-      <category>Hyperscale</category>
-      <description>Governor Hochul&apos;s executive order freezes state permits for data centers drawing 50 megawatts or more while New York writes new rules.</description>
-      <content:encoded><![CDATA[<p>New York just told hyperscale data center developers to wait. On July 14, Governor Kathy Hochul signed an executive order pausing state environmental permits for any data center that draws 50 megawatts or more, making New York the first state in the country to impose a statewide moratorium on the facilities.</p>
-<p>The pause runs for up to a year. During that window, the Department of Public Service will draft a Generic Environmental Impact Statement for data centers, and the Department of Environmental Conservation will hold back on any discretionary permits that aren't already complete. In plain terms: new hyperscale projects don't move forward in New York until the state finishes writing the rulebook.</p>
-<p>The 50-megawatt threshold matters. That's a deliberate line drawn at the AI-scale campuses, the ones that pull as much power as a small city, not the ordinary server rooms and colocation sites businesses already run. This is aimed squarely at the buildout that's been racing ahead of the grid.</p>
-<p>Power is the real subject here. Hochul also directed the DPS to open a proceeding called Energize NY, which would force data centers to either pay more for the electricity they consume or bring their own generation. The state's argument is that residential ratepayers shouldn't quietly subsidize the energy bills of AI infrastructure, and it's not wrong to worry about it, given how fast these loads are being added.</p>
-<p>There's a community-benefits piece too. Empire State Development has 60 days to publish a framework meant to help towns negotiate real concessions when a developer comes calling, rather than getting steamrolled by the promise of jobs and tax revenue.</p>
-<p>The obvious risk is that developers simply route around New York to states that will permit them faster, and a one-year pause is a long time in a market moving this quickly. But New York is a large, wired market with cheap access to hydro power, and if the first-mover framework holds up, expect other states watching their own grids to borrow from it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Treasury Sanctions the VPN and Malware Sellers Ransomware Crews Rely On</title>
-      <link>https://sabr-labs.com/article/ofac-sanctions-first-vpn-service-1vpns-cryptor-seller-ransomware-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ofac-sanctions-first-vpn-service-1vpns-cryptor-seller-ransomware-july-2026</guid>
-      <pubDate>Wed, 15 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>OFAC</category>
-      <category>Sanctions</category>
-      <category>Treasury</category>
-      <category>Cybercrime</category>
-      <category>Malware</category>
-      <description>OFAC designated First VPN Service and a Belarusian cryptor seller, going after the infrastructure ransomware groups rent instead of the gangs themselves.</description>
-      <content:encoded><![CDATA[<p>Ransomware operators need infrastructure they can trust to stay quiet. On July 14 the Treasury Department tried to take some of that away.</p>
-<p>The Office of Foreign Assets Control sanctioned First VPN Service, known as 1VPNS, along with its administrator Dmytro Rashevskyi, a 45-year-old Ukrainian national. OFAC also hit Yegeniy Vladimirovich Silayev, a Belarusian who sells "cryptors", the tools that disguise ransomware and other malware as harmless files so endpoint security waves them through.</p>
-<p>1VPNS wasn't hiding what it was. Since 2014 it advertised openly on cybercrime forums, promised it kept no logs of who used it or what they did, and said flatly it would not cooperate with law enforcement. Rashevskyi ran the operation behind a rotating set of fake names, including "Maksim Sorin" and "Roman Chabanenko," so hosting providers that had received abuse complaints wouldn't recognize him as a repeat customer.</p>
-<p>This is the part of the ransomware economy that usually escapes attention. Everyone tracks the crews with the flashy leak sites. Fewer people go after the anonymous VPN reseller and the malware-obfuscation vendor who quietly make those crews' work possible. Treasury put a number on it: groups using this infrastructure have caused billions in losses to U.S. businesses and critical infrastructure.</p>
-<p>The sanctions build on a takedown from earlier this year. In May, French and Dutch authorities dismantled 1VPNS's website and servers with help from the FBI's Boston Field Office, in a joint operation named Saffron. Killing the infrastructure stops the service; sanctioning the people behind it makes it a crime for U.S. entities to do business with them and freezes any assets within reach.</p>
-<p>Whether that actually raises the cost of running this kind of service, or just pushes the next Rashevskyi to a new alias and a new host, is the open question with every sanctions action against cybercrime plumbing. But naming the enablers, not just the gangs, is at least aimed at the right layer.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
