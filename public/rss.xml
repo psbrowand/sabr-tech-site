@@ -6,9 +6,126 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jul 2026 13:16:18 GMT</lastBuildDate>
-    <pubDate>Fri, 24 Jul 2026 13:16:18 GMT</pubDate>
+    <lastBuildDate>Sat, 25 Jul 2026 13:16:22 GMT</lastBuildDate>
+    <pubDate>Sat, 25 Jul 2026 13:16:22 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Kimi K3 Agents Found Redis Zero-Days and Wrote the Exploit in Minutes</title>
+      <link>https://sabr-labs.com/article/kimi-k3-agents-redis-zero-days-emergency-patches-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/kimi-k3-agents-redis-zero-days-emergency-patches-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Agents</category>
+      <category>Redis</category>
+      <category>Vulnerability Research</category>
+      <category>Moonshot AI</category>
+      <category>RCE</category>
+      <description>Moonshot&apos;s Kimi K3 agents surfaced authenticated RCE bugs in stock Redis builds, and the project shipped seven emergency releases on July 23.</description>
+      <content:encoded><![CDATA[<p>Twenty-seven minutes. That's how long a Kimi K3 agent reportedly needed to turn a fresh Redis flaw into a working remote code execution exploit, according to the researcher who ran it.</p>
+<p>The claim comes from Chaofan Shou, who said on X that Moonshot AI's Kimi K3 agents surfaced 19 Redis zero-days in roughly 90 minutes across the stock builds of Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0. A follow-up run, he said, produced a full exploit for 8.8.0 in under half an hour. Those numbers are self-reported, and neither the count nor the degree of autonomy has been independently verified.</p>
+<p>Here's what isn't in dispute. Redis shipped seven security releases on July 23 after authenticated RCE proof-of-concepts went public. The headline bug, CVE-2026-23631, is a Lua use-after-free that an authenticated user can trigger through the master-replica synchronization path on replicas with replica-read-only disabled. It carries a moderate CVSS of 6.1, which undersells how the published chain actually behaves.</p>
+<p>The exploit stitches two problems together: a shared-ownership bug in the Redis Streams consumer-group path, where a corrupt RDB object makes two consumers point at the same pending-entry record so removing both frees it twice, and a separate heap overflow in the bundled RedisBloom TDigest module. The public script walks that double-free into arbitrary memory access and, eventually, a call to system(). Redis confirmed the flaws and the fixes. It did not confirm how the bugs were found.</p>
+<p>The AI angle deserves the skepticism the AI beat rarely gets. "An agent found it" is doing a lot of marketing work in the retelling, and a self-reported 27-minute exploit is not a benchmark anyone can reproduce yet. But strip the theater and something real is left: the patched flaws exist, the PoCs run, and the turnaround from disclosure to weaponized code was short enough that Redis pushed an emergency batch on a Thursday. Whether a human or a model did the finding, the defensive clock is the same.</p>
+<p>No in-the-wild exploitation has been reported as of July 24. Upgrade to the patched Redis builds, and if you run replicas with replica-read-only turned off, treat that as the priority.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Says Russian Hackers Read NATO Email for a Year via Zimbra Bug</title>
+      <link>https://sabr-labs.com/article/zimbra-zero-day-laundry-bear-russian-espionage-cve-2025-66376-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zimbra-zero-day-laundry-bear-russian-espionage-cve-2025-66376-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Zimbra</category>
+      <category>LAUNDRY BEAR</category>
+      <category>Russia</category>
+      <category>Espionage</category>
+      <category>Zero-Day</category>
+      <description>A joint CISA and NSA advisory ties the Russia-aligned LAUNDRY BEAR group to a zero-click Zimbra flaw used to steal mail and 2FA codes since 2025.</description>
+      <content:encoded><![CDATA[<p>Russian intelligence spent the better part of a year reading other people's email, and the victims never had to click anything to let them in.</p>
+<p>CISA, the NSA, and more than two dozen partner agencies issued a joint advisory on July 23 tying a Russia-aligned espionage group to active exploitation of a Zimbra webmail flaw. The group is tracked as LAUNDRY BEAR, also filed under TA488 and Void Blizzard. The agencies assess it has been harvesting mail and two-factor codes since at least July 2025.</p>
+<p>The bug is CVE-2025-66376, a stored cross-site scripting flaw in Zimbra's webmail client that Zimbra fixed on November 6, 2025. Exploitation started months before the patch. The root cause is unglamorous: Zimbra didn't properly sanitize CSS @import directives inside email content, which let attacker-controlled script ride in on a message.</p>
+<p>What makes this one nasty is that viewing the email is the whole attack. No link, no attachment, no second step. The script runs silently in the victim's browser session and starts pulling session tokens, backup 2FA codes, browser-saved passwords, and the contents of the mailbox going back 90 days. The stolen data leaves over a mix of DNS and HTTPS, which helps it blend into normal traffic.</p>
+<p>The target list reads like a Russian collection wishlist: Ukrainian government bodies, US government and defense organizations, nuclear facilities, and scientific institutions across Europe. Stealing backup 2FA codes is the tell. This wasn't smash-and-grab; it was built to survive password resets and keep access alive.</p>
+<p>If you run on-prem Zimbra and haven't applied the November fix, assume compromise rather than exposure, and rotate credentials and 2FA seeds for anyone whose mailbox was reachable. A patch stops the bleeding. It doesn't evict someone who has been inside since last summer.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>RefluXFS Flaw Lets Local Users Gain Root on XFS Linux Systems</title>
+      <link>https://sabr-labs.com/article/refluxfs-cve-2026-64600-linux-xfs-root-privilege-escalation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/refluxfs-cve-2026-64600-linux-xfs-root-privilege-escalation-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 11:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Linux</category>
+      <category>XFS</category>
+      <category>Privilege Escalation</category>
+      <category>Qualys</category>
+      <category>Kernel</category>
+      <description>Qualys disclosed a race condition in the Linux kernel&apos;s XFS copy-on-write path that hands unprivileged local users persistent root.</description>
+      <content:encoded><![CDATA[<p>A local user on an XFS filesystem can now become root by racing the kernel against itself, and the exploit leaves almost nothing behind.</p>
+<p>Qualys's Threat Research Unit published RefluXFS on July 22, tracked as CVE-2026-64600. It's a race condition in the Linux kernel's XFS copy-on-write path, and it turns an unprivileged local account into full host root.</p>
+<p>The flaw lives in how XFS handles reflinked files. When two O_DIRECT writes hit the same reflinked file at once, the kernel can briefly drop the inode lock while it waits for transaction log space. In that window, the second writer finishes its own remap and changes the block's reference state. The first writer wakes up, trusts metadata that's now stale, and writes straight to the original block instead of a private copy. The result is that an unprivileged process can overwrite the on-disk contents of any file it can read.</p>
+<p>This isn't a memory-corruption bug, and that's what makes it interesting. There's no heap grooming, no bypass of the usual kernel hardening. It corrupts data on disk directly, so the root you get persists across reboots and leaves the kind of thin forensic trail that makes incident response miserable.</p>
+<p>Three conditions have to line up: a kernel at v4.11 or later without the patch, an XFS volume with reflink=1 in its superblock, and a directory a normal user can write to alongside a file worth overwriting. That combination is common on modern server distributions where XFS with reflinks is the default. No in-the-wild use has been reported.</p>
+<p>Patch the kernel. If you can't reboot right away, the practical first step is knowing which of your boxes actually run XFS with reflinks, because that's the population that matters.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Hackers Sat in South Korea&apos;s Diplomat Training System for 10 Months</title>
+      <link>https://sabr-labs.com/article/south-korea-diplomatic-academy-breach-diplomats-worldwide-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/south-korea-diplomatic-academy-breach-diplomats-worldwide-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>South Korea</category>
+      <category>Espionage</category>
+      <category>Government</category>
+      <category>Diplomacy</category>
+      <description>Seoul disclosed a ten-month intrusion into the National Diplomatic Academy that exposed personal data on thousands of current and former diplomats.</description>
+      <content:encoded><![CDATA[<p>For ten months, someone had a quiet seat inside the system South Korea uses to train its diplomats, and nobody in Seoul noticed.</p>
+<p>The Foreign Ministry disclosed this week that attackers breached the National Diplomatic Academy's online education platform and pulled personal data on current and former ministry staff, including diplomats posted overseas. The intrusion ran from April 2025 until February 2026, when an outside government body flagged abnormal access and the ministry took the platform offline the same day.</p>
+<p>The official count is at least 6,000 people affected, including roughly 350 attaches currently stationed abroad. Korean media put the real number closer to 10,000. The exposed data covers IDs, names, email addresses, and hashed passwords. The ministry says national ID numbers, mobile numbers, photos, and home addresses were not in the haul.</p>
+<p>The part worth sitting with is the timeline. Seoul recognized the breach in February and said nothing publicly until July, citing the sensitivity of diplomatic and security matters. Five months of silence is a long time to leave several hundred officials abroad unaware that their credentials might be in a hostile hand.</p>
+<p>A training-academy portal sounds like a soft target, and it was, but the payoff was a roster of the country's diplomatic corps. Hashed passwords buy some time depending on the algorithm, not immunity. Anyone in that dataset should assume their login is known and move accordingly.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AMD and Cerebras Team Up to Split AI Inference Across Their Chips</title>
+      <link>https://sabr-labs.com/article/amd-cerebras-ai-inference-partnership-helios-cloud-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amd-cerebras-ai-inference-partnership-helios-cloud-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>AMD</category>
+      <category>Cerebras</category>
+      <category>AI Inference</category>
+      <category>Data Centers</category>
+      <category>Semiconductors</category>
+      <description>A new deal divides inference workloads between AMD and Cerebras hardware, with AMD&apos;s Helios systems heading into Cerebras Cloud this year.</description>
+      <content:encoded><![CDATA[<p>AMD and Cerebras are splitting a single AI inference job across two very different chips, and betting the seam between them is where the speed hides.</p>
+<p>The two companies announced a technical partnership on July 23 for what they call a disaggregated inference system. AMD's Helios rackscale hardware handles the heavy front end, processing prompts and long context, while Cerebras's Wafer-Scale Engine takes over the low-latency decoding and token generation. The idea is to let each chip do the part it's best at instead of forcing one design to cover the whole pipeline.</p>
+<p>AMD and Cerebras say the combined setup can deliver up to 5x higher tokens per second per watt than a Cerebras-only configuration, based on their own July modeling. That's a vendor projection, not a measured result, so treat it as a target rather than a spec. The joint solution is slated to land through Cerebras Cloud in the second half of the year, with Cerebras deploying Helios systems in its own data centers.</p>
+<p>The timing says as much as the tech. This lands during a rough stretch for chip stocks, with the semiconductor sector down more than 20% from its June peak, and it follows AMD's recent inference deal with Anthropic. AMD shares still slipped a few percent on the news. The market's question right now isn't whether inference demand is real; it's whether current valuations already assumed all of it.</p>
+<p>Disaggregated inference is a genuinely interesting bet. The lead may not belong to whoever builds the biggest single chip, but to whoever divides the work most cleverly. The back half of the year will show whether customers actually want to buy their inference in two pieces.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Transformer-Chip Startup Etched Raises $300M at a $10.3B Valuation</title>
+      <link>https://sabr-labs.com/article/etched-300-million-series-c-transformer-asic-10-billion-valuation-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/etched-300-million-series-c-transformer-asic-10-billion-valuation-july-2026</guid>
+      <pubDate>Sat, 25 Jul 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Etched</category>
+      <category>AI Chips</category>
+      <category>Startups</category>
+      <category>Venture Capital</category>
+      <category>Nvidia</category>
+      <description>Etched closed a $300 million Series C at a $10.3 billion valuation for its Sohu ASICs built to run only transformer models.</description>
+      <content:encoded><![CDATA[<p>A chip that runs exactly one kind of AI model just raised $300 million, and the investors betting on it think that narrowness is the point.</p>
+<p>Etched closed a $300 million Series C at a $10.3 billion valuation, led by Sequoia with Andreessen Horowitz, Jane Street, Argo, and SK Hynix joining. Reuters noted it's the highest valuation on any Series C the firm has led. The figure roughly doubled from the company's reported $5 billion valuation earlier this year.</p>
+<p>Etched's pitch is a deliberate gamble. Its Sohu chip hardcodes the transformer architecture directly into silicon, trading the flexibility of a general-purpose GPU for raw efficiency on the one model shape that dominates AI right now. If transformers stay on top, Sohu runs them faster and cheaper than Nvidia's hardware. If the field moves to something else, a chip that only speaks transformer becomes a very expensive paperweight.</p>
+<p>The founders Gavin Uberti, Robert Wachen, and Chris Zhu started the company as Harvard dropouts in 2022. Etched says it's holding around $1 billion in contracts with racks shipping this summer, which is the detail that separates this round from pure story-stock territory.</p>
+<p>The raise fits a broader pattern this year, where roughly 60% of global startup funding has flowed into billion-dollar-plus rounds concentrated in AI and infrastructure. Specialized inference silicon is now a crowded, well-funded fight. Etched picked the boldest position in it, and just got the capital to find out if it's right.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Tesla Delivered a Record Quarter and Made Less Money Doing It</title>
       <link>https://sabr-labs.com/article/tesla-q2-2026-earnings-record-deliveries-profit-miss-july-2026</link>
@@ -863,120 +980,6 @@
 <p>The more telling part is what TSMC said about the rest of the year. Management raised full-year revenue growth guidance to slightly above 40% in dollar terms and lifted the 2026 capital spending plan to between $60 and $64 billion. Companies don't commit that much to new fabs and equipment unless they believe the orders are real and sustained.</p>
 <p>There's a reasonable question lurking under the good numbers: how long can this run? Every quarter of record capex raises the stakes if AI demand normalizes. TSMC's bet is that it won't, at least not soon, and management described the computational needs driving orders as a lasting shift rather than a spike. They've been right so far, which is why the whole supply chain hangs on these calls.</p>
 <p>For everyone downstream, from the accelerator designers to the cloud providers to the startups renting GPU time, TSMC's guidance is the tell. The foundry sits at the bottom of the stack, and its confidence is a proxy for the industry's. Right now that confidence is pointed straight up, energy and packaging constraints notwithstanding.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Zoom Patches a 9.8-Severity Account Takeover Bug in Its Windows Client</title>
-      <link>https://sabr-labs.com/article/zoom-cve-2026-53412-account-takeover-windows</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/zoom-cve-2026-53412-account-takeover-windows</guid>
-      <pubDate>Fri, 17 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Zoom</category>
-      <category>CVE</category>
-      <category>Vulnerability</category>
-      <category>Windows</category>
-      <category>Patch Management</category>
-      <description>CVE-2026-53412 lets an unauthenticated attacker take over a Zoom account over the network, and Zoom has fixed it in the 7.0.0 client branch.</description>
-      <content:encoded><![CDATA[<p>Zoom just shipped a fix for a bug that scores about as bad as they come. CVE-2026-53412 carries a CVSS rating of 9.8 and lets an unauthenticated attacker take over an account over the network, with no credentials and no user interaction required.</p>
-<p>The flaw is an improper input validation issue in the Zoom Workplace client and the VDI client for Windows. It affects versions before 7.0.0, and Zoom fixed it in the 7.0.0 branch and later. There's a good bit of nuance in the affected-version list for the VDI plugin, so anyone running the virtual desktop flavor should check the advisory against their exact build rather than assume.</p>
-<p>One piece of good news: Zoom says there's no evidence anyone has exploited this in the wild. That's the difference between patch-this-weekend and patch-right-now, but with a 9.8 in a client installed on a large share of corporate Windows machines, weekend is generous. Account takeover on a collaboration tool means access to meetings, chats, recordings, and whatever else the account touches.</p>
-<p>The account-takeover flaw came bundled with three more, all local privilege escalation issues rated between 7.0 and 7.8: one in the VDI plugin, one race condition affecting several clients, and one in Zoom Rooms for Windows. None are as alarming as the headline bug, but they're the kind of thing that turns a foothold into full control of a host.</p>
-<p>If you manage Zoom deployments, the move is straightforward. Push the 7.0.0 update, confirm your VDI clients are on a fixed branch, and don't let auto-update lull you into assuming machines are current. Clients that sit behind managed policies often lag the public release by weeks, and that gap is exactly where a 9.8 gets interesting.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Two Scattered Spider Hackers Get 5½ Years for the TfL Attack</title>
-      <link>https://sabr-labs.com/article/scattered-spider-tfl-sentencing-uk-cybercrime</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/scattered-spider-tfl-sentencing-uk-cybercrime</guid>
-      <pubDate>Fri, 17 Jul 2026 08:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Scattered Spider</category>
-      <category>Transport for London</category>
-      <category>Cybercrime</category>
-      <category>UK</category>
-      <category>Social Engineering</category>
-      <description>Owen Flowers and Thalha Jubair were each sentenced to five and a half years over the Transport for London breach that cost roughly £29 million to recover from.</description>
-      <content:encoded><![CDATA[<p>Two members of Scattered Spider are heading to prison for hobbling a capital city's transport network. Owen Flowers, 18, from Walsall, and Thalha Jubair, 20, from East London, were each handed five and a half years at Woolwich Crown Court for the attack on Transport for London.</p>
-<p>The numbers behind the intrusion are what make it land. Prosecutors put TfL's recovery bill at around £29 million, with roughly another £10 million in lost revenue on top. The pair compromised accounts belonging to 28,000 employees and pulled out about six million lines of data. TfL spent months forcing password resets and re-verifying staff in person.</p>
-<p>Both pleaded guilty last month, on the day their trial was due to start, to offenses under Section 3ZA of the Computer Misuse Act. That's the provision covering unauthorized acts that create a significant risk of serious damage, and it carries real weight. Prosecutors called this the largest cybercrime case the UK courts have handled.</p>
-<p>Scattered Spider isn't a traditional hacking crew. It's a loose, mostly young, English-speaking collective that's leaned on social engineering and SIM-swapping to breach help desks at some of the biggest names in retail, hospitality, and now public infrastructure. The group's calling card is talking its way past humans rather than exploiting a clever bug.</p>
-<p>Sentences like this matter because the group's members have long operated with a sense that they were untouchable: too young, too distributed, too online to face a courtroom. Two of them just did. Whether that deters the next teenager reading the same Telegram channels is a fair question, but the days of treating these attacks as pranks are clearly over.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Coca-Cola Says a Ransomware Attack Has Halted Fairlife&apos;s US Production</title>
-      <link>https://sabr-labs.com/article/coca-cola-fairlife-ransomware-us-production-halt</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/coca-cola-fairlife-ransomware-us-production-halt</guid>
-      <pubDate>Fri, 17 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Coca-Cola</category>
-      <category>Fairlife</category>
-      <category>OT Security</category>
-      <category>Manufacturing</category>
-      <description>A ransomware intrusion at Coca-Cola&apos;s Fairlife subsidiary disrupted operations enough to suspend production of the dairy brand across the United States.</description>
-      <content:encoded><![CDATA[<p>Ransomware knocked a household dairy brand offline this week. Coca-Cola confirmed that an intrusion at its Fairlife subsidiary disrupted operations enough to suspend production of Fairlife products across the United States, the kind of physical, shelf-emptying consequence that turns an IT incident into a supply problem.</p>
-<p>The company has kept the technical specifics thin. It hasn't named the group behind the attack, described a ransom demand, or said whether data was stolen alongside the encryption. What it has confirmed is the part customers will notice: the lines are down, and the popular high-protein milk that fills a chunk of dairy-case space isn't being made right now.</p>
-<p>Fairlife isn't a side project. It's one of Coca-Cola's fastest-growing brands outside soda, built on ultrafiltered milk and protein shakes that sell at a premium. Halting production isn't a matter of restoring a database and moving on. Manufacturing environments mix IT and operational technology, and bringing a plant back means validating that control systems weren't touched before the first carton ships.</p>
-<p>The silence on attribution is standard for the first days of an incident, but it also means we don't yet know if this was a financially motivated crew running a standard double-extortion playbook or something more disruptive. Food and beverage makers have become a favored target precisely because downtime is so visible and so expensive. When product stops moving, the pressure to pay climbs by the hour.</p>
-<p>For anyone defending a plant floor, the reminder is old but keeps landing: segmentation between the corporate network and the production side is what decides whether an attack is a headache or a shutdown. Fairlife's outage is the shutdown version. Watch for a data-theft disclosure in the coming days, which almost always follows this pattern even when encryption is the headline.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CompTIA Retires Cisco Networking Pro V7 on July 31</title>
-      <link>https://sabr-labs.com/article/comptia-cisco-networking-pro-v7-retiring-v8-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-cisco-networking-pro-v7-retiring-v8-july-2026</guid>
-      <pubDate>Thu, 16 Jul 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>CompTIA</category>
-      <category>Cisco</category>
-      <category>CCNA</category>
-      <category>Certification</category>
-      <category>Networking</category>
-      <description>CompTIA&apos;s Cisco Networking Pro V7 course retires July 31, replaced by a V8 built around the current CCNA 200-301 exam and hands-on network engineer skills.</description>
-      <content:encoded><![CDATA[<p>If you're studying with CompTIA's Cisco Networking Pro track, note the date: V7 goes away on July 31. After that it's V8 only, and if you've already started V7, this is the moment to decide whether to finish or switch.</p>
-<p>Quick orientation, because the naming trips people up. Cisco Networking Pro is CompTIA's hands-on learning product, the one that used to be called Routing and Switching Pro, and it's built to prep you for Cisco's CCNA 200-301 exam. It is not a certification on its own. Think of it as the lab-and-coursework path toward CCNA, not a credential you'd list by itself.</p>
-<p>V8 carries updated content and, per CompTIA, more study time built into the track. The exam target is still CCNA 200-301, so the destination hasn't moved. What you get with V8 is fresher labs and material lined up with how the current exam actually tests, which matters more than it sounds once an old version's examples start drifting from the blueprint.</p>
-<p>Here's the part worth thinking through, because there are two clocks running. CompTIA's V7 course retires July 31, 2026. Separately, Cisco announced CCNA v2.0 back on May 20, and that new exam becomes the only option on February 3, 2027. So the course you learn from changes this summer, and the exam itself changes early next year. If you're already on the current 200-301 and moving at a steady pace, you can still finish under the exam you started with. If you're just beginning, you're studying toward a target that shifts in about seven months.</p>
-<p>The practical call: if you're partway through V7 and your exam date lands before July 31, keep going and don't restart. If you're starting fresh this summer, go straight into V8 so your materials match, and try to book your CCNA before the v2.0 cutover, since sitting the exam you actually studied for beats retooling for a new blueprint mid-stream. None of this touches the fundamentals CCNA tests. It just changes which version's wording you'll see on test day.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic&apos;s Bet: The Money Is in Deploying AI, Not Building It</title>
-      <link>https://sabr-labs.com/article/ode-anthropic-blackstone-ai-implementation-services-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ode-anthropic-blackstone-ai-implementation-services-july-2026</guid>
-      <pubDate>Thu, 16 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Ode</category>
-      <category>Blackstone</category>
-      <category>Enterprise AI</category>
-      <category>Consulting</category>
-      <description>A 1.5 billion dollar Anthropic-backed venture called Ode is embedding engineers inside enterprises, wagering that implementation, not model access, is the real AI business.</description>
-      <content:encoded><![CDATA[<p>Anthropic just put money behind an idea that cuts against its own core product: the frontier model is the easy part, and the real money is in the grunt work of making it useful inside a company.</p>
-<p>The venture is called Ode with Anthropic, a 1.5 billion dollar joint effort launched in May and backed by Anthropic along with Blackstone, Hellman & Friedman, Goldman Sachs, and others. It's run by Chris Taylor and Eddie Siegel, who co-founded the AI services firm Fractional AI, and it already has around 100 engineers. The model is old-fashioned consulting with a new subject: embed engineers inside a client, learn how the business actually works, and build the custom plumbing that connects a language model to messy real operations.</p>
-<p>Siegel put the thesis plainly. The model itself, he said, is "one ingredient in a system that has to be engineered," adding that he "would not define an enterprise transformation in terms of whether they choose Python or Java." Read that from Anthropic's seat. The company whose whole product is Claude is funding a business built on the premise that which model you pick is a detail.</p>
-<p>Ode isn't alone, and it isn't first. OpenAI stood up its own services arm, The Deployment Company, and the incumbents (Deloitte, Accenture, and every systems integrator with a slide deck) have been building forward-deployed AI teams for a year. What's new is the labs themselves reaching down into the services layer they used to leave to partners.</p>
-<p>The honest read is a hedge. If model quality keeps converging and prices keep falling (GPT-5.6, Grok 4.5, and Meta's Muse Spark all landed within days of each other this month, which is what convergence looks like), then the durable margin isn't in the API meter. It's in the engineers who make the thing work. Anthropic is betting on that outcome by building the business that profits from it. That's either sharp strategy or a quiet admission about where model economics are heading. Probably both.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>EU and UK Sanction Russia&apos;s FSB Cyber Complex in a First Joint Move</title>
-      <link>https://sabr-labs.com/article/eu-uk-first-joint-sanctions-russia-fsb-centre-16-turla-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/eu-uk-first-joint-sanctions-russia-fsb-centre-16-turla-july-2026</guid>
-      <pubDate>Thu, 16 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Russia</category>
-      <category>FSB</category>
-      <category>Turla</category>
-      <category>EU Sanctions</category>
-      <category>Cyber Espionage</category>
-      <description>The EU and UK issued their first joint cyber sanctions package, naming the FSB&apos;s 16th Centre as the hand behind Turla and years of espionage and sabotage against member states.</description>
-      <content:encoded><![CDATA[<p>For years, network defenders across Europe have watched a set of intrusions that all felt related but were hard to pin on a single owner. On July 13 the EU put a name on the owner: the 16th Centre of Russia's Federal Security Service.</p>
-<p>The EU and UK moved together, in what both describe as their first joint cyber sanctions package. The EU listed nine individuals and four entities; the UK listed 24. The named parties run the gamut from intelligence officers to cybercriminals, self-described hacktivists, and private companies that the EU says feed Russia's operations.</p>
-<p>The headline attribution is that the 16th Centre directs several threat groups, including Turla, an espionage crew that researchers have tracked for more than a decade under names like Snake and Uroburos. The EU's account covers both spying and sabotage: cyber operations against strategic French government entities going back to 2010 and its defense industry in 2025, and, in Poland, disruptive sabotage against critical infrastructure that included combined heat and power plants. France, Germany, Poland, Cyprus, the Netherlands, Austria, Slovakia, Romania, and Finland all appear on the target list, along with Ukraine.</p>
-<p>Now the honest part. Sanctions on FSB officers aren't going to freeze anyone's holiday plans in Nice. These people weren't banking in Frankfurt. The mechanism's real product isn't financial pain, it's attribution: a government putting its name behind the claim that one identifiable Russian unit ran a decade of operations, and two governments doing it in lockstep rather than issuing separate statements a month apart.</p>
-<p>For a SOC, the useful part is the mapping. When states formally tie the 16th Centre to Turla and to named sabotage campaigns, threat intelligence gets a firmer backbone. The activity you're modeling has an org chart now, not just a cluster of overlapping indicators. Whether naming it changes what Moscow does is a separate question, and the track record says attribution rarely slows these groups down. It does make them easier to talk about, and easier to hunt.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
