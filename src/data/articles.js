@@ -25,6 +25,249 @@
 
 export const articles = [
   {
+    id: 297,
+    slug: "servicenow-ai-platform-cve-2026-6875-preauth-rce-exploited",
+    title: "ServiceNow AI Platform Pre-Auth RCE Is Being Exploited (CVE-2026-6875)",
+    summary: "Attackers are hitting an unauthenticated code-execution flaw in ServiceNow's AI Platform within days of the patch, using a sandbox escape that reaches the platform's Rhino engine.",
+    body: [
+      "A pre-authentication flaw in ServiceNow's AI Platform went from patch to in-the-wild exploitation in a matter of days, and the way in runs through an endpoint almost nobody thinks about.",
+      "CVE-2026-6875 is a sandbox escape. ServiceNow restricts what user-supplied scripts can do, but this bug carves a path from that restricted execution to a full code-execution primitive. Public research points to /assessment_thanks.do as a pre-auth sink that accepts attacker-controlled input, and a successful escape reaches ServiceNow's Rhino scripting engine. From there an attacker can read data straight out of tables, create administrator accounts, and run shell commands on configured proxy servers. Searchlight Cyber reported the issue to ServiceNow on April 1.",
+      "The exploitation is real, not theoretical. Defused observed in-the-wild attempts against the same pre-auth endpoint documented in the public write-up, though the attacks use a different escape route than the one researchers published. That detail matters. It means more than one working technique exists for the same door.",
+      "ServiceNow is where a lot of large organizations run their actual operations: tickets, approvals, HR records, IT workflows. Unauthenticated code execution on that tier is close to a keys-to-the-kingdom problem, and the data it exposes tends to be exactly the stuff you don't want walking out.",
+      "ServiceNow has pushed updates to hosted instances and shipped patches to self-hosted customers and partners. If you run your own instance, treat this as patch-now, not patch-this-sprint. If you're on a hosted instance, confirm the update landed rather than assuming it did.",
+    ],
+    category: "cyber",
+    tags: ["ServiceNow", "RCE", "Vulnerability", "Active Exploitation", "CVE"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T13:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "ServiceNow KB3137947",
+        desc: "Vendor advisory for the sandbox escape",
+        url: "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3137947",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Report on in-the-wild exploitation",
+        url: "https://www.helpnetsecurity.com/2026/07/20/servicenow-cve-2026-6875-exploited/",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Exploitation seen days after disclosure",
+        url: "https://www.securityweek.com/exploitation-of-servicenow-vulnerability-seen-days-after-disclosure/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Coverage of the flaw now exploited in attacks",
+        url: "https://www.bleepingcomputer.com/news/security/critical-servicenow-code-execution-flaw-now-exploited-in-attacks/",
+      },
+    ],
+  },
+  {
+    id: 298,
+    slug: "coca-cola-fairlife-anubis-ransomware-july-2026",
+    title: "Ransomware Halts Coca-Cola's Fairlife US Milk Production",
+    summary: "Coca-Cola disclosed a ransomware attack that suspended US production at its Fairlife dairy subsidiary, and the Anubis group claims it stole a terabyte of data.",
+    body: [
+      "Coca-Cola's ultra-filtered milk brand stopped rolling off US production lines this month, and not because of a supply problem. Ransomware got into the systems that run the plants.",
+      "Coca-Cola disclosed the incident in an SEC 8-K filing on July 16, saying attackers reached a portion of Fairlife's systems, including production-related ones, by way of a third party. US production was temporarily suspended. Canadian operations kept running, and the company says product quality and safety were not affected.",
+      "On July 20 a ransomware crew called Anubis listed Coca-Cola and Fairlife on its leak site, then publicly claimed the attack over the following days. Anubis says it encrypted Fairlife's Nutanix systems and walked off with roughly a terabyte of confidential data. Coca-Cola, for its part, activated incident response and business continuity plans, brought in outside cybersecurity advisors, and notified law enforcement.",
+      "Anubis is worth knowing by name. Researchers have documented a wiper mode in its toolkit capable of permanently deleting files, which turns a recoverable incident into an irreversible one. The group also disables volume shadow copies and interferes with security processes before encryption, so the usual answer of \"we'll just restore from backup\" gets harder if the operators did their homework.",
+      "The pattern here should bother anyone running a plant floor. This wasn't a stolen spreadsheet. It was an attack that reached the systems tied to physical production and stopped the line. Food and manufacturing operators have spent years treating OT as separate and safer than IT. Incidents like this keep proving that the wall between the two is thinner than the org chart suggests.",
+    ],
+    category: "cyber",
+    tags: ["Ransomware", "Coca-Cola", "Anubis", "Manufacturing", "Data Breach"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "SEC 8-K (KO)",
+        desc: "Coca-Cola's material-event filing",
+        url: "https://www.stocktitan.net/sec-filings/KO/8-k-coca-cola-co-reports-material-event-a8571b80a374.html",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Report on production halt",
+        url: "https://www.bleepingcomputer.com/news/security/coca-cola-says-fairlife-ransomware-attack-halts-us-dairy-production/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Coverage of the Fairlife attack",
+        url: "https://www.helpnetsecurity.com/2026/07/17/coca-cola-fairlife-ransomware-attack/",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Anubis threatening to leak stolen data",
+        url: "https://www.securityweek.com/ransomware-group-threatening-to-leak-data-stolen-from-coca-colas-fairlife/",
+      },
+    ],
+  },
+  {
+    id: 299,
+    slug: "gitlab-oj-rce-exploit-published-no-cve-2026",
+    title: "Working GitLab RCE Exploit Published for a Flaw With No CVE",
+    summary: "A researcher released code that runs commands as git on unpatched self-managed GitLab, exploiting a June fix that GitLab quietly filed under bug fixes with no CVE.",
+    body: [
+      "The exploit works on any self-managed GitLab that skipped a June update. There's no CVE for it, no CVSS score, and GitLab filed the fix under \"bug fixes.\"",
+      "On July 24, researchers at depthfirst published working exploit code for a flaw GitLab had already patched six weeks earlier, on June 10. Run against a self-managed 18.11.3 server that never took the update, it executes commands as the git user. The underlying chain runs through Oj, a fast native C JSON parser used across a lot of Ruby applications, GitLab included. depthfirst's Yuhang Wu found it by pointing an automated analysis system at the parser.",
+      "GitLab moved quickly on the fix itself. The chain was reported June 5, confirmed June 8, and patched June 10 across the 19.0.2, 18.11.5, and 18.10.8 releases.",
+      "Here's the part that should annoy defenders. GitLab didn't file it as a security fix. A review by The Hacker News found the Oj 3.17.3 bump listed under bug fixes in the June 10 notes, not in the security-fix table. No CVE, no CVSS, no mention of the exploit chain. If you triage patches by severity rating, this one had no rating to triage by. It reads like routine maintenance right up until someone hands you working exploit code.",
+      "The takeaway is simple and a little uncomfortable: a version bump in a changelog isn't the same as a heads-up, and \"we shipped the fix\" and \"we told you it mattered\" are two different things. If you run self-managed GitLab, get current now. And if you assume your vulnerability scanner catches everything worth catching, remember that a fix with no CVE is invisible to most of them.",
+    ],
+    category: "cyber",
+    tags: ["GitLab", "RCE", "Vulnerability", "Patch Management", "DevOps"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "The Hacker News",
+        desc: "Report on the published GitLab RCE PoC",
+        url: "https://thehackernews.com/2026/07/researcher-publishes-gitlab-rce-poc.html",
+      },
+      {
+        name: "GitLab patch release",
+        desc: "The June 10 release that shipped the fix",
+        url: "https://securityonline.info/gitlab-patch-release-19-1-2/",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "GitLab code execution patch coverage",
+        url: "https://www.securityweek.com/gitlab-patches-code-execution-information-disclosure-vulnerabilities/",
+      },
+    ],
+  },
+  {
+    id: 300,
+    slug: "amd-epyc-venice-zen-6-tsmc-2nm-256-core",
+    title: "AMD's EPYC Venice Puts 256 Zen 6 Cores on TSMC's 2nm Node",
+    summary: "AMD launched its sixth-gen EPYC server chips at Advancing AI 2026, the first x86 server CPU to reach volume production on TSMC's 2nm gate-all-around process.",
+    body: [
+      "Two hundred fifty-six cores in one socket, on a 2nm process that wasn't in any shipping server chip until this week.",
+      "AMD introduced EPYC Venice at its Advancing AI 2026 event in San Francisco on July 22. It's the sixth-generation EPYC line, built on the Zen 6 architecture, and the first x86 server CPU to reach volume production on TSMC's 2nm N2 node. That node switch is the real headline. N2 brings gate-all-around nanosheet transistors, replacing the FinFET design that has been the industry standard since 2011.",
+      "The core math changed too. Venice uses eight core complex dies with 32 cores each, instead of the previous generation's arrangement, and the flagship lands at 256 cores and 512 threads in a single socket with 1,024 MB of L3 cache and around 203 billion transistors. The platform moves to a new SP7 socket with 16 memory channels, up to 1.6 TB/s of bandwidth, and PCIe Gen 6, which doubles per-lane bandwidth for shoveling data between CPUs and GPUs.",
+      "AMD is claiming a 70% performance uplift over the prior generation alongside the 33% jump in core count. Treat the 70% as a vendor number until independent benchmarks land, because that figure always depends on which workload you pick. But the structural story stands on its own. More cores, more memory bandwidth, and a faster path to the GPUs is exactly the shape of chip that AI data centers are starving for.",
+      "The interesting subplot is the process node. Being first to volume on N2 is a bet as much as an achievement, and it puts AMD ahead of where a lot of people expected 2nm server silicon to actually ship. If the yields hold, that lead is worth more than the core count.",
+    ],
+    category: "tech",
+    tags: ["AMD", "EPYC", "Zen 6", "TSMC", "Data Center"],
+    image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "AMD Advancing AI 2026",
+        desc: "Event coverage of the Venice launch",
+        url: "https://www.techtimes.com/articles/321257/20260722/amd-advancing-ai-2026-opens-zen-6-venice-helios-open-ai-rack-bet.htm",
+      },
+      {
+        name: "Wccftech",
+        desc: "Details on the 256-core design and 2nm ramp",
+        url: "https://wccftech.com/amd-256-core-epyc-venice-behemoth-cpu-pictured-confirms-32-cores-per-zen-6-ccd/",
+      },
+      {
+        name: "Hardware Busters",
+        desc: "EPYC Venice specifications",
+        url: "https://hwbusters.com/news/amd-launches-zen-6-with-epyc-venice-256-cores-on-tsmc-2nm/",
+      },
+    ],
+  },
+  {
+    id: 301,
+    slug: "alphabet-q2-2026-capex-ai-spending-negative-fcf",
+    title: "Google Is Spending on AI Faster Than the Cash Comes In",
+    summary: "Alphabet beat on Q2 revenue but raised its 2026 capital spending to as much as $205 billion, pushing free cash flow negative and sinking the stock.",
+    body: [
+      "Google is making more money than ever and spending it faster than it comes in.",
+      "Alphabet reported second-quarter revenue of about $119.8 billion, up 24% from a year earlier and ahead of the roughly $117 billion analysts expected. The stock fell anyway. Investors weren't reacting to the beat. They were reacting to the bill.",
+      "The company raised its full-year 2026 capital spending guidance to a range of $195 to $205 billion, up from $180 to $190 billion. Quarterly capex hit $44.9 billion, roughly double the year-ago figure. Management said about 60% of the spend goes to servers and the rest to data centers and networking gear. All of that pushed free cash flow into negative territory, which for a business that mints cash the way Google's search engine does is a genuinely unusual sentence to write.",
+      "This is the AI infrastructure bet stated in dollars. Alphabet is wagering that demand for AI compute, both for its own products and for cloud customers, will justify building capacity ahead of the revenue. Cloud growth is real and strong, which is the part of the argument that holds up. The part investors are chewing on is the timing: you're spending certain money now against demand you're forecasting later.",
+      "The question worth sitting with isn't whether AI matters. It's what return actually justifies going cash-flow negative to chase it, and how long shareholders stay patient while the answer takes shape.",
+    ],
+    category: "ai",
+    tags: ["Alphabet", "Google", "AI Infrastructure", "Capex", "Earnings"],
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Q2 earnings and capex-hike reaction",
+        url: "https://www.cnbc.com/2026/07/22/google-earnings-q2-goog-live-updates.html",
+      },
+      {
+        name: "MLQ News",
+        desc: "Capex guidance raised to $195-205B",
+        url: "https://mlq.ai/news/alphabet-raises-2026-capex-guidance-to-195-205b-cloud-revenue-surges-82/",
+      },
+      {
+        name: "Investing.com",
+        desc: "Shares fall on capex surge",
+        url: "https://www.investing.com/news/earnings/alphabet-nearly-doubles-capital-spending-as-ai-push-powers-q2-growth-4806860",
+      },
+    ],
+  },
+  {
+    id: 302,
+    slug: "meta-seller-marketplace-app-ai-listings",
+    title: "Meta's New Seller App Lets AI Write Your Marketplace Listings",
+    summary: "Meta launched Seller, a standalone iOS app for Facebook Marketplace where Meta AI drafts the title, description, price, and shipping label from a photo.",
+    body: [
+      "Meta wants selling on Facebook Marketplace to feel like taking a photo and walking away.",
+      "On July 24, Facebook head Tom Alison introduced Seller, a standalone iOS app built around Marketplace. The pitch is that you upload a photo of whatever you're offloading and Meta AI drafts the rest: title, description, suggested price, and category. The listing that used to take a few minutes of typing becomes a review-and-post. The app is free, aimed at US power sellers 18 and up, and ships with a unified inbox, inventory management, and performance data on views, clicks, and sold items. An Android version is in the works.",
+      "Pulling Marketplace into its own app is a notable move on its own. Marketplace listings run to roughly 430 million a month, so treating selling as a distinct behavior worth its own front door rather than a tab buried in the blue app makes sense. The AI layer is the part that will make or break it in practice.",
+      "The friction Meta is removing is real. Writing a decent listing is tedious, and plenty of good items never get posted because the seller couldn't be bothered. But letting the model set the price is where trust gets tested. Sellers know what their stuff is worth to them, and an AI suggestion that's off in either direction is the kind of thing that sends people right back to typing it themselves. The description-and-category automation is the easy win. The pricing is the bet.",
+    ],
+    category: "tech",
+    tags: ["Meta", "Facebook Marketplace", "AI", "E-commerce", "Apps"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-26T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "The Next Web",
+        desc: "Report on the Seller app and AI-powered listings",
+        url: "https://thenextweb.com/news/meta-seller-app-facebook-marketplace-ai-listing",
+      },
+      {
+        name: "Retail TouchPoints",
+        desc: "Coverage of the standalone Marketplace seller app",
+        url: "https://www.retailtouchpoints.com/news/facebook-launches-standalone-app-for-marketplace-sellers/620616/",
+      },
+      {
+        name: "PPC Land",
+        desc: "Details on Marketplace listing volume and the new app",
+        url: "https://ppc.land/marketplace-sellers-gain-a-separate-meta-app-as-listings-hit-430m-a-month/",
+      },
+    ],
+  },
+  {
     id: 291,
     slug: "kimi-k3-agents-redis-zero-days-emergency-patches-july-2026",
     title: "Kimi K3 Agents Found Redis Zero-Days and Wrote the Exploit in Minutes",
@@ -43,7 +286,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-25T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: false,
     sources: [
@@ -354,7 +597,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "PTC Advisory Center",
@@ -452,7 +695,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: false,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Origin Energy",
@@ -1605,7 +1848,7 @@ export const articles = [
     publishedAt: "2026-07-19T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1695,7 +1938,7 @@ export const articles = [
     publishedAt: "2026-07-19T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1734,7 +1977,7 @@ export const articles = [
     publishedAt: "2026-07-19T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -2058,7 +2301,7 @@ export const articles = [
     publishedAt: "2026-07-18T14:20:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

@@ -6,9 +6,122 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 13:16:22 GMT</lastBuildDate>
-    <pubDate>Sat, 25 Jul 2026 13:16:22 GMT</pubDate>
+    <lastBuildDate>Sun, 26 Jul 2026 13:14:50 GMT</lastBuildDate>
+    <pubDate>Sun, 26 Jul 2026 13:14:50 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>ServiceNow AI Platform Pre-Auth RCE Is Being Exploited (CVE-2026-6875)</title>
+      <link>https://sabr-labs.com/article/servicenow-ai-platform-cve-2026-6875-preauth-rce-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/servicenow-ai-platform-cve-2026-6875-preauth-rce-exploited</guid>
+      <pubDate>Sun, 26 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ServiceNow</category>
+      <category>RCE</category>
+      <category>Vulnerability</category>
+      <category>Active Exploitation</category>
+      <category>CVE</category>
+      <description>Attackers are hitting an unauthenticated code-execution flaw in ServiceNow&apos;s AI Platform within days of the patch, using a sandbox escape that reaches the platform&apos;s Rhino engine.</description>
+      <content:encoded><![CDATA[<p>A pre-authentication flaw in ServiceNow's AI Platform went from patch to in-the-wild exploitation in a matter of days, and the way in runs through an endpoint almost nobody thinks about.</p>
+<p>CVE-2026-6875 is a sandbox escape. ServiceNow restricts what user-supplied scripts can do, but this bug carves a path from that restricted execution to a full code-execution primitive. Public research points to /assessment_thanks.do as a pre-auth sink that accepts attacker-controlled input, and a successful escape reaches ServiceNow's Rhino scripting engine. From there an attacker can read data straight out of tables, create administrator accounts, and run shell commands on configured proxy servers. Searchlight Cyber reported the issue to ServiceNow on April 1.</p>
+<p>The exploitation is real, not theoretical. Defused observed in-the-wild attempts against the same pre-auth endpoint documented in the public write-up, though the attacks use a different escape route than the one researchers published. That detail matters. It means more than one working technique exists for the same door.</p>
+<p>ServiceNow is where a lot of large organizations run their actual operations: tickets, approvals, HR records, IT workflows. Unauthenticated code execution on that tier is close to a keys-to-the-kingdom problem, and the data it exposes tends to be exactly the stuff you don't want walking out.</p>
+<p>ServiceNow has pushed updates to hosted instances and shipped patches to self-hosted customers and partners. If you run your own instance, treat this as patch-now, not patch-this-sprint. If you're on a hosted instance, confirm the update landed rather than assuming it did.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ransomware Halts Coca-Cola&apos;s Fairlife US Milk Production</title>
+      <link>https://sabr-labs.com/article/coca-cola-fairlife-anubis-ransomware-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/coca-cola-fairlife-anubis-ransomware-july-2026</guid>
+      <pubDate>Sun, 26 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Coca-Cola</category>
+      <category>Anubis</category>
+      <category>Manufacturing</category>
+      <category>Data Breach</category>
+      <description>Coca-Cola disclosed a ransomware attack that suspended US production at its Fairlife dairy subsidiary, and the Anubis group claims it stole a terabyte of data.</description>
+      <content:encoded><![CDATA[<p>Coca-Cola's ultra-filtered milk brand stopped rolling off US production lines this month, and not because of a supply problem. Ransomware got into the systems that run the plants.</p>
+<p>Coca-Cola disclosed the incident in an SEC 8-K filing on July 16, saying attackers reached a portion of Fairlife's systems, including production-related ones, by way of a third party. US production was temporarily suspended. Canadian operations kept running, and the company says product quality and safety were not affected.</p>
+<p>On July 20 a ransomware crew called Anubis listed Coca-Cola and Fairlife on its leak site, then publicly claimed the attack over the following days. Anubis says it encrypted Fairlife's Nutanix systems and walked off with roughly a terabyte of confidential data. Coca-Cola, for its part, activated incident response and business continuity plans, brought in outside cybersecurity advisors, and notified law enforcement.</p>
+<p>Anubis is worth knowing by name. Researchers have documented a wiper mode in its toolkit capable of permanently deleting files, which turns a recoverable incident into an irreversible one. The group also disables volume shadow copies and interferes with security processes before encryption, so the usual answer of "we'll just restore from backup" gets harder if the operators did their homework.</p>
+<p>The pattern here should bother anyone running a plant floor. This wasn't a stolen spreadsheet. It was an attack that reached the systems tied to physical production and stopped the line. Food and manufacturing operators have spent years treating OT as separate and safer than IT. Incidents like this keep proving that the wall between the two is thinner than the org chart suggests.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Working GitLab RCE Exploit Published for a Flaw With No CVE</title>
+      <link>https://sabr-labs.com/article/gitlab-oj-rce-exploit-published-no-cve-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-oj-rce-exploit-published-no-cve-2026</guid>
+      <pubDate>Sun, 26 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>GitLab</category>
+      <category>RCE</category>
+      <category>Vulnerability</category>
+      <category>Patch Management</category>
+      <category>DevOps</category>
+      <description>A researcher released code that runs commands as git on unpatched self-managed GitLab, exploiting a June fix that GitLab quietly filed under bug fixes with no CVE.</description>
+      <content:encoded><![CDATA[<p>The exploit works on any self-managed GitLab that skipped a June update. There's no CVE for it, no CVSS score, and GitLab filed the fix under "bug fixes."</p>
+<p>On July 24, researchers at depthfirst published working exploit code for a flaw GitLab had already patched six weeks earlier, on June 10. Run against a self-managed 18.11.3 server that never took the update, it executes commands as the git user. The underlying chain runs through Oj, a fast native C JSON parser used across a lot of Ruby applications, GitLab included. depthfirst's Yuhang Wu found it by pointing an automated analysis system at the parser.</p>
+<p>GitLab moved quickly on the fix itself. The chain was reported June 5, confirmed June 8, and patched June 10 across the 19.0.2, 18.11.5, and 18.10.8 releases.</p>
+<p>Here's the part that should annoy defenders. GitLab didn't file it as a security fix. A review by The Hacker News found the Oj 3.17.3 bump listed under bug fixes in the June 10 notes, not in the security-fix table. No CVE, no CVSS, no mention of the exploit chain. If you triage patches by severity rating, this one had no rating to triage by. It reads like routine maintenance right up until someone hands you working exploit code.</p>
+<p>The takeaway is simple and a little uncomfortable: a version bump in a changelog isn't the same as a heads-up, and "we shipped the fix" and "we told you it mattered" are two different things. If you run self-managed GitLab, get current now. And if you assume your vulnerability scanner catches everything worth catching, remember that a fix with no CVE is invisible to most of them.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AMD&apos;s EPYC Venice Puts 256 Zen 6 Cores on TSMC&apos;s 2nm Node</title>
+      <link>https://sabr-labs.com/article/amd-epyc-venice-zen-6-tsmc-2nm-256-core</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amd-epyc-venice-zen-6-tsmc-2nm-256-core</guid>
+      <pubDate>Sun, 26 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>AMD</category>
+      <category>EPYC</category>
+      <category>Zen 6</category>
+      <category>TSMC</category>
+      <category>Data Center</category>
+      <description>AMD launched its sixth-gen EPYC server chips at Advancing AI 2026, the first x86 server CPU to reach volume production on TSMC&apos;s 2nm gate-all-around process.</description>
+      <content:encoded><![CDATA[<p>Two hundred fifty-six cores in one socket, on a 2nm process that wasn't in any shipping server chip until this week.</p>
+<p>AMD introduced EPYC Venice at its Advancing AI 2026 event in San Francisco on July 22. It's the sixth-generation EPYC line, built on the Zen 6 architecture, and the first x86 server CPU to reach volume production on TSMC's 2nm N2 node. That node switch is the real headline. N2 brings gate-all-around nanosheet transistors, replacing the FinFET design that has been the industry standard since 2011.</p>
+<p>The core math changed too. Venice uses eight core complex dies with 32 cores each, instead of the previous generation's arrangement, and the flagship lands at 256 cores and 512 threads in a single socket with 1,024 MB of L3 cache and around 203 billion transistors. The platform moves to a new SP7 socket with 16 memory channels, up to 1.6 TB/s of bandwidth, and PCIe Gen 6, which doubles per-lane bandwidth for shoveling data between CPUs and GPUs.</p>
+<p>AMD is claiming a 70% performance uplift over the prior generation alongside the 33% jump in core count. Treat the 70% as a vendor number until independent benchmarks land, because that figure always depends on which workload you pick. But the structural story stands on its own. More cores, more memory bandwidth, and a faster path to the GPUs is exactly the shape of chip that AI data centers are starving for.</p>
+<p>The interesting subplot is the process node. Being first to volume on N2 is a bet as much as an achievement, and it puts AMD ahead of where a lot of people expected 2nm server silicon to actually ship. If the yields hold, that lead is worth more than the core count.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Is Spending on AI Faster Than the Cash Comes In</title>
+      <link>https://sabr-labs.com/article/alphabet-q2-2026-capex-ai-spending-negative-fcf</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/alphabet-q2-2026-capex-ai-spending-negative-fcf</guid>
+      <pubDate>Sun, 26 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Alphabet</category>
+      <category>Google</category>
+      <category>AI Infrastructure</category>
+      <category>Capex</category>
+      <category>Earnings</category>
+      <description>Alphabet beat on Q2 revenue but raised its 2026 capital spending to as much as $205 billion, pushing free cash flow negative and sinking the stock.</description>
+      <content:encoded><![CDATA[<p>Google is making more money than ever and spending it faster than it comes in.</p>
+<p>Alphabet reported second-quarter revenue of about $119.8 billion, up 24% from a year earlier and ahead of the roughly $117 billion analysts expected. The stock fell anyway. Investors weren't reacting to the beat. They were reacting to the bill.</p>
+<p>The company raised its full-year 2026 capital spending guidance to a range of $195 to $205 billion, up from $180 to $190 billion. Quarterly capex hit $44.9 billion, roughly double the year-ago figure. Management said about 60% of the spend goes to servers and the rest to data centers and networking gear. All of that pushed free cash flow into negative territory, which for a business that mints cash the way Google's search engine does is a genuinely unusual sentence to write.</p>
+<p>This is the AI infrastructure bet stated in dollars. Alphabet is wagering that demand for AI compute, both for its own products and for cloud customers, will justify building capacity ahead of the revenue. Cloud growth is real and strong, which is the part of the argument that holds up. The part investors are chewing on is the timing: you're spending certain money now against demand you're forecasting later.</p>
+<p>The question worth sitting with isn't whether AI matters. It's what return actually justifies going cash-flow negative to chase it, and how long shareholders stay patient while the answer takes shape.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta&apos;s New Seller App Lets AI Write Your Marketplace Listings</title>
+      <link>https://sabr-labs.com/article/meta-seller-marketplace-app-ai-listings</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-seller-marketplace-app-ai-listings</guid>
+      <pubDate>Sun, 26 Jul 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Meta</category>
+      <category>Facebook Marketplace</category>
+      <category>AI</category>
+      <category>E-commerce</category>
+      <category>Apps</category>
+      <description>Meta launched Seller, a standalone iOS app for Facebook Marketplace where Meta AI drafts the title, description, price, and shipping label from a photo.</description>
+      <content:encoded><![CDATA[<p>Meta wants selling on Facebook Marketplace to feel like taking a photo and walking away.</p>
+<p>On July 24, Facebook head Tom Alison introduced Seller, a standalone iOS app built around Marketplace. The pitch is that you upload a photo of whatever you're offloading and Meta AI drafts the rest: title, description, suggested price, and category. The listing that used to take a few minutes of typing becomes a review-and-post. The app is free, aimed at US power sellers 18 and up, and ships with a unified inbox, inventory management, and performance data on views, clicks, and sold items. An Android version is in the works.</p>
+<p>Pulling Marketplace into its own app is a notable move on its own. Marketplace listings run to roughly 430 million a month, so treating selling as a distinct behavior worth its own front door rather than a tab buried in the blue app makes sense. The AI layer is the part that will make or break it in practice.</p>
+<p>The friction Meta is removing is real. Writing a decent listing is tedious, and plenty of good items never get posted because the seller couldn't be bothered. But letting the model set the price is where trust gets tested. Sellers know what their stuff is worth to them, and an AI suggestion that's off in either direction is the kind of thing that sends people right back to typing it themselves. The description-and-category automation is the easy win. The pricing is the bet.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Kimi K3 Agents Found Redis Zero-Days and Wrote the Exploit in Minutes</title>
       <link>https://sabr-labs.com/article/kimi-k3-agents-redis-zero-days-emergency-patches-july-2026</link>
@@ -864,122 +977,6 @@
 <p>High-NA tools run around $400 million each and print finer features in a single exposure, which can replace the slow, yield-hungry multi-pass patterning older tools need. Getting one into high-volume production is the genuinely hard part. TSMC and Samsung own these machines too. Intel shipping product first is a real bragging right for a foundry that's spent years playing catch-up.</p>
 <p>"Selected layers" is carrying weight in that sentence. This isn't a chip built end to end on High-NA. It's a handful of critical layers where the tool earns its cost, with the rest still on 0.33 NA. That's the normal way a new lithography generation enters production, and it's real progress. It's also not a full-node transition, so the "Intel leapfrogs everyone" read is premature.</p>
 <p>The numbers that matter next are yield at scale and whether Intel Foundry can turn this into external customer wins. A first-shipment headline is good. Signed foundry contracts on 18A would be better.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Medtronic Notifies 3.8 Million After ShinyHunters Breach</title>
-      <link>https://sabr-labs.com/article/medtronic-shinyhunters-breach-3-8-million-notifications-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/medtronic-shinyhunters-breach-3-8-million-notifications-july-2026</guid>
-      <pubDate>Sat, 18 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Medtronic</category>
-      <category>ShinyHunters</category>
-      <category>Healthcare</category>
-      <category>Extortion</category>
-      <description>The device maker says 3.8 million people had names, Social Security numbers, and health data exposed, while ShinyHunters claims the real number is more than double.</description>
-      <content:encoded><![CDATA[<p>Medtronic told Indiana's attorney general that 3,834,294 people were caught in a breach of its corporate IT systems. ShinyHunters, the group that claimed the attack, says the real figure is more than 9 million. Those two numbers don't match, and the gap is the story.</p>
-<p>The intrusion ran from April 13 to 19. Medtronic spotted suspicious activity on April 15 and disclosed publicly on April 24. Notification letters didn't start reaching people until late June, roughly two months after discovery. The exposed data includes names, contact details, dates of birth, Social Security numbers, and health information.</p>
-<p>ShinyHunters has spent 2026 running the same play against large enterprises: get into corporate systems, often through socially engineered access to a SaaS platform, grab the data, list the victim on a leak site, and apply pressure for a payment. Medtronic went on that list.</p>
-<p>The 3.8 million figure is what Medtronic verified from the records it could review. The 9 million is the attacker's unverified claim. Both can be technically defensible at once, because companies count confirmed-affected individuals while attackers count raw records, and one person can appear across many records. What it means in practice is that three months on, the public still doesn't have a settled number for how big this was.</p>
-<p>Affected people are being offered 24 months of credit and identity monitoring, the standard package. If you've ever been a Medtronic patient or customer, watch for a letter and assume the Social Security number is out. The sharper question sits with regulators. A two-month gap between discovery and notification is the kind of timeline HIPAA reviewers tend to ask pointed questions about.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Adds Actively Exploited SharePoint RCE Zero-Day to KEV</title>
-      <link>https://sabr-labs.com/article/sharepoint-cve-2026-58644-deserialization-zero-day-cisa-kev-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-58644-deserialization-zero-day-cisa-kev-july-2026</guid>
-      <pubDate>Sat, 18 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SharePoint</category>
-      <category>Microsoft</category>
-      <category>CVE-2026-58644</category>
-      <category>CISA KEV</category>
-      <category>Zero-Day</category>
-      <description>CVE-2026-58644 is a 9.8-rated deserialization bug that lets an unauthenticated attacker run code on on-prem SharePoint, and it was exploited before the patch shipped.</description>
-      <content:encoded><![CDATA[<p>Microsoft patched CVE-2026-58644 on July 14. Attackers had already been using it. On July 17 CISA made that official, adding the SharePoint bug to its Known Exploited Vulnerabilities catalog with a two-day remediation deadline for federal agencies.</p>
-<p>The vulnerability is a deserialization flaw rated 9.8 that lets an unauthenticated attacker execute arbitrary code on on-premises SharePoint Server. It hits Subscription Edition, 2019, and 2016. No authentication plus code execution is the combination that turns a document server into a foothold, and Microsoft has confirmed the flaw was weaponized before fixes were available.</p>
-<p>This is not the first on-prem SharePoint RCE to draw active exploitation this year, and the pattern is familiar. On-prem SharePoint sits deep inside corporate networks, holds sensitive documents, and often runs under service accounts with generous privileges. It's a high-value target, and it's a slow-to-patch one.</p>
-<p>The KEV deadline for agencies is July 19, two days after listing. Federal teams will move on that clock. Everyone else moves on their own, and SharePoint upgrades have a reputation for being disruptive, which is exactly why exploited SharePoint bugs keep having long tails.</p>
-<p>If you run SharePoint on-prem, the July Patch Tuesday update closes this hole. Apply it, then assume anything internet-reachable may have been touched before you got there. Hunt for unexpected web shells, new or modified service accounts, and outbound connections originating from the SharePoint host.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>WordPress Ships Emergency Fix for Pre-Auth RCE in Core (wp2shell)</title>
-      <link>https://sabr-labs.com/article/wordpress-wp2shell-cve-2026-63030-preauth-rce-core-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-wp2shell-cve-2026-63030-preauth-rce-core-july-2026</guid>
-      <pubDate>Sat, 18 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>RCE</category>
-      <category>CVE-2026-63030</category>
-      <category>Vulnerabilities</category>
-      <category>Web Security</category>
-      <description>A default WordPress install can be taken over by a single anonymous HTTP request, and the proof-of-concept is already public.</description>
-      <content:encoded><![CDATA[<p>A single anonymous HTTP request is enough to run code on a default WordPress site. No login, no plugins, no special configuration. That's the bug WordPress just shipped an emergency fix for.</p>
-<p>The flaw, nicknamed wp2shell by the researchers who found it, is tracked as CVE-2026-63030. It chains two problems: a route-confusion bug in WordPress core's REST API batch endpoint, and a SQL injection (CVE-2026-60137) in the author__not_in parameter of WP_Query, the class that builds nearly every database query WordPress runs. The SQL injection alone carries a 9.1 CVSS. Put together, they turn an unauthenticated request into remote code execution.</p>
-<p>Affected versions are 6.9.0 through 6.9.4 and 7.0.0 through 7.0.1. Both bugs are fixed in 6.9.5 and 7.0.2, released July 17. WordPress.org has turned on forced automatic updates for affected sites, because the severity is high enough that waiting for admins to click "update" wasn't an acceptable plan.</p>
-<p>WP_Query is the worst possible place to find a SQL injection. It isn't some rarely-touched admin corner. It's the plumbing behind archive pages, search, and most theme loops, so any surface that lets a visitor shape query arguments becomes potential reach.</p>
-<p>A working proof-of-concept is already on GitHub. WordPress runs a large share of the web, and the sites that lag on core updates are exactly the ones that get hit first. Forced auto-updates will cover most managed hosts within days. The long tail of self-hosted and heavily customized installs is where this one lives for months.</p>
-<p>Confirm you're on 6.9.5 or 7.0.2. If you've disabled auto-updates across a fleet of sites, this is the week to push the release by hand and check that nothing is pinned to an affected version. If you genuinely can't patch right now, block the REST batch route at the edge and treat it as a stopgap, not a fix.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Claude for Chrome Flaw Lets Other Extensions Trigger Its AI Actions</title>
-      <link>https://sabr-labs.com/article/claude-for-chrome-extension-flaw-gmail</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/claude-for-chrome-extension-flaw-gmail</guid>
-      <pubDate>Fri, 17 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>Browser Security</category>
-      <category>AI Agents</category>
-      <category>Chrome Extensions</category>
-      <description>Researchers found that a malicious browser extension can forge a click to make Anthropic&apos;s Claude for Chrome run privileged actions across Gmail, Docs, and Salesforce.</description>
-      <content:encoded><![CDATA[<p>Researchers have found a way for one browser extension to quietly boss around another. In this case the target is Anthropic's Claude for Chrome, and the trick is a fake click that makes Claude run privileged actions the user never asked for.</p>
-<p>The flaw sits in the extension's content script, which listens for a click on an onboarding button and forwards a matching prompt to Claude's side panel. The handler never checks whether the click actually came from a person. Any other extension with script access on claude.ai, a common permission, can forge that click in about six lines of JavaScript and trigger one of nine hardcoded prompts. Those prompts can reach into Gmail, Google Docs, Calendar, and Salesforce through Claude's own connected access.</p>
-<p>The severity depends on how the user has Claude set up. Manifold Security, which reported the issue, rates it CVSS 7.7 in the default mode, where the fake click coerces an approval prompt. Turn on the 'Act without asking' setting and it jumps to 9.6, because now the malicious action runs silently. That one convenience toggle is the whole difference between a suspicious popup and a silent read of your inbox.</p>
-<p>Here's the uncomfortable part. Manifold says it first reported these problems back in May, and verified on July 7 that they were still reproducible in the latest build, version 1.0.80. The researchers note the vulnerable code is byte-identical to an earlier release. A two-month gap between a working proof of concept and no visible fix is a long time for a flaw that touches a user's email and CRM.</p>
-<p>This is the shape of a whole new class of problem. AI agents that act inside the browser inherit all the access we grant them, and the browser is a crowded room full of other extensions with their own permissions. The old assumption that a click means a human decided something breaks down when an agent is standing by to act on it. Expect a lot more of this as agentic browsing goes mainstream.</p>
-<p>If you run Claude for Chrome, turn off 'Act without asking' until there's a confirmed fix, and audit which extensions have permission to read or change data on claude.ai. That second step is good hygiene regardless of this particular bug.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Moonshot&apos;s Kimi K3 Is the Largest Open-Weight Model Yet at 2.8T</title>
-      <link>https://sabr-labs.com/article/moonshot-kimi-k3-largest-open-weight-model</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/moonshot-kimi-k3-largest-open-weight-model</guid>
-      <pubDate>Fri, 17 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Moonshot AI</category>
-      <category>Kimi K3</category>
-      <category>Open Weights</category>
-      <category>LLM</category>
-      <category>China</category>
-      <description>Moonshot AI unveiled Kimi K3, a 2.8-trillion-parameter mixture-of-experts model, with the weights due to be released by July 27.</description>
-      <content:encoded><![CDATA[<p>China's Moonshot AI has put out what it says is the largest open-weight model ever released: Kimi K3, a mixture-of-experts system with 2.8 trillion total parameters. The announcement landed this week, with the actual weights promised by July 27.</p>
-<p>Size alone isn't the story, and Moonshot knows it. The company's own benchmark table shows K3 mostly edging past last generation's closed models while trailing the current frontier from Anthropic and OpenAI. That's a familiar pattern for open releases: match the previous tier of proprietary systems, ship the weights, and let the price-to-performance argument do the rest.</p>
-<p>This is where open weights earn their keep. A model you can download and run yourself, without paying per token to a US lab, is a different proposition than one you can only rent through an API. For teams that want to fine-tune on private data or avoid sending prompts to someone else's servers, a capable 2.8T model with published weights is worth attention, even if it isn't the smartest thing available.</p>
-<p>The independent takes have been more measured than the launch numbers. Simon Willison, testing it on release day, flagged that K3 burns through reasoning tokens at an alarming rate, in one case spending over 13,000 tokens and about 25 cents to answer a simple prompt. Self-reported benchmarks also keep drifting away from real-world usefulness, and nobody has published a solid read on K3's agentic tool-calling yet. Impressive on paper doesn't always survive contact with a production workload.</p>
-<p>The bigger signal is momentum. Chinese labs keep shipping frontier-adjacent open models, and each release chips away at the idea that the best AI has to be closed and American. K3 won't dethrone anyone at the top of the leaderboard. It doesn't need to. It just needs to be good enough to run yourself, and the weights land in under two weeks.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>TSMC Posts a Record Quarter and Lifts 2026 Capex to $64 Billion</title>
-      <link>https://sabr-labs.com/article/tsmc-q2-2026-earnings-record-profit-capex</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/tsmc-q2-2026-earnings-record-profit-capex</guid>
-      <pubDate>Fri, 17 Jul 2026 10:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>TSMC</category>
-      <category>Semiconductors</category>
-      <category>AI</category>
-      <category>Earnings</category>
-      <category>Capex</category>
-      <description>TSMC reported $40.2 billion in Q2 revenue and raised its full-year spending plan, signaling the AI chip buildout hasn&apos;t slowed.</description>
-      <content:encoded><![CDATA[<p>Forty point two billion dollars in a single quarter. That's what TSMC pulled in for the three months ending in June, up about 37% from a year earlier, and it's the clearest signal yet that the AI chip buildout hasn't cooled.</p>
-<p>Profit hit a record, and the gross margin came in at 67.7%, the kind of number that reflects how much pricing power the world's leading foundry has right now. High-performance computing, the segment that captures AI accelerators, made up roughly two-thirds of revenue and grew about 20% from the prior quarter. When your biggest slice is also your fastest-growing, the story writes itself.</p>
-<p>The more telling part is what TSMC said about the rest of the year. Management raised full-year revenue growth guidance to slightly above 40% in dollar terms and lifted the 2026 capital spending plan to between $60 and $64 billion. Companies don't commit that much to new fabs and equipment unless they believe the orders are real and sustained.</p>
-<p>There's a reasonable question lurking under the good numbers: how long can this run? Every quarter of record capex raises the stakes if AI demand normalizes. TSMC's bet is that it won't, at least not soon, and management described the computational needs driving orders as a lasting shift rather than a spike. They've been right so far, which is why the whole supply chain hangs on these calls.</p>
-<p>For everyone downstream, from the accelerator designers to the cloud providers to the startups renting GPU time, TSMC's guidance is the tell. The foundry sits at the bottom of the stack, and its confidence is a proxy for the industry's. Right now that confidence is pointed straight up, energy and packaging constraints notwithstanding.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
