@@ -6,9 +6,106 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jul 2026 13:14:50 GMT</lastBuildDate>
-    <pubDate>Sun, 26 Jul 2026 13:14:50 GMT</pubDate>
+    <lastBuildDate>Mon, 27 Jul 2026 13:21:35 GMT</lastBuildDate>
+    <pubDate>Mon, 27 Jul 2026 13:21:35 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Nvidia Weighs $250 Billion Backstop for OpenAI&apos;s Ohio Data Center</title>
+      <link>https://sabr-labs.com/article/nvidia-openai-250-billion-ohio-data-center-backstop-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-openai-250-billion-ohio-data-center-backstop-july-2026</guid>
+      <pubDate>Mon, 27 Jul 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>OpenAI</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>SoftBank</category>
+      <description>Nvidia is reportedly in talks to guarantee roughly $250 billion of debt so OpenAI can build a 10-gigawatt campus on a former uranium site in Piketon, Ohio.</description>
+      <content:encoded><![CDATA[<p>Nvidia is reportedly willing to stand behind a quarter-trillion dollars of debt so OpenAI can build a data center on the grounds of a Cold War uranium plant. According to weekend reporting, Nvidia is in talks to provide roughly $250 billion in financial backing to help OpenAI lease and finance a 10-gigawatt AI campus in Piketon, Ohio, developed by SB Energy, the energy arm of SoftBank.</p>
+<p>The backstop covers the lease and the construction debt, not the chips. That's a separate conversation: Nvidia is also discussing financing OpenAI's chip purchases for the site, a deal reports peg at as much as $350 billion. The guarantee matters because OpenAI, an unprofitable private company, has no investment-grade credit rating. With Nvidia's name on the paper, the SoftBank unit can borrow on far better terms than it could alone.</p>
+<p>The numbers around the site are hard to hold in your head. The campus, planned for the grounds of the former Portsmouth uranium enrichment plant, could cost around $500 billion to build out. Microsoft, Google and Anthropic have all reportedly kicked the tires on the same location.</p>
+<p>Here's the part worth sitting with. Nvidia sells the chips, guarantees the debt that pays for the buildings that hold the chips, and separately finances the chips themselves. Investor Michael Burry summed up the mood with three words: "Around and around we go." Oracle's stock jumped on the news, which tells you the market reads this as more fuel for the same handful of balance sheets passing money in a circle.</p>
+<p>The bigger signal is that the AI buildout has outgrown normal project finance. When a chip vendor has to underwrite its own customer's demand to get shovels in the ground, that's not a footnote, that's the business model. Watch how rating agencies treat these guarantees, and whether the exposure ends up on Nvidia's books or tucked somewhere quieter.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Fastjson 1.x RCE Under Active Attack, and No Patch Is Coming</title>
+      <link>https://sabr-labs.com/article/fastjson-1x-cve-2026-16723-rce-active-exploitation-no-patch-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fastjson-1x-cve-2026-16723-rce-active-exploitation-no-patch-july-2026</guid>
+      <pubDate>Mon, 27 Jul 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CVE-2026-16723</category>
+      <category>Fastjson</category>
+      <category>RCE</category>
+      <category>Spring Boot</category>
+      <category>CISA KEV</category>
+      <category>Java</category>
+      <description>CVE-2026-16723 lets a crafted JSON request run code on Java servers using Fastjson 1.x, it&apos;s on CISA&apos;s KEV list, and the 1.x branch is end-of-life.</description>
+      <content:encoded><![CDATA[<p>A single crafted JSON request can hand an attacker code execution on Java servers running an old but still-everywhere library, and there is no fix on the way. CVE-2026-16723 is a critical remote code execution flaw in Fastjson 1.x, carrying a CVSS score of 9.0. It's already under active exploitation, CISA has added it to the Known Exploited Vulnerabilities catalog, and researchers say the attacks have concentrated on finance and healthcare targets.</p>
+<p>What makes this one nasty is that it works in Fastjson's default configuration. The attacker doesn't need AutoType enabled, and doesn't need a convenient gadget class already sitting in the app's classpath. A crafted @type value gets turned into a class-resource lookup that pulls attacker-controlled bytecode from a nested JAR path inside compatible Spring Boot fat-JAR deployments. The @JSONType annotation acts as a trust signal that lets the malicious class walk straight past Fastjson's own security checks.</p>
+<p>The affected range is 1.2.68 through 1.2.83. And here's the kicker: Fastjson 1.x is end-of-life. Alibaba isn't shipping a 1.x patch. The official guidance is to migrate to Fastjson 2.x or turn on SafeMode immediately.</p>
+<p>None of this should shock anyone who's watched this library. Fastjson practically invented the deserialization-RCE genre in the Java world, and 1.x has been a repeat offender for years. Plenty of teams have had "migrate off Fastjson 1.x" on a backlog somewhere. Attackers have now set the deadline.</p>
+<p>If you run Java services, go find out tonight whether fastjson 1.x is on any classpath. Enable SafeMode now, plan the 2.x migration for real this time, and watch egress traffic for bytecode being fetched from JAR paths that have no business making outbound requests.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>n8n&apos;s Workflow Sandbox Fix Can Be Bypassed, Researchers Show</title>
+      <link>https://sabr-labs.com/article/n8n-cve-2026-27577-sandbox-escape-bypass-rce-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/n8n-cve-2026-27577-sandbox-escape-bypass-rce-july-2026</guid>
+      <pubDate>Mon, 27 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CVE-2026-27577</category>
+      <category>n8n</category>
+      <category>RCE</category>
+      <category>Sandbox Escape</category>
+      <category>Automation</category>
+      <category>AI Agents</category>
+      <description>A new advisory demonstrates that the spring patch for CVE-2026-27577 can be worked around, letting authenticated workflow editors run OS commands on the n8n host again.</description>
+      <content:encoded><![CDATA[<p>The patch n8n shipped in the spring for its workflow sandbox turned out to have a way around it. A new advisory (GHSA-gv7g-jm28-cr3m) shows that CVE-2026-27577, the expression sandbox escape that lets an authenticated workflow editor execute operating-system commands on the host, can be bypassed. The bypass carries a CVSS score of 8.7.</p>
+<p>The original bug lived in n8n's expression engine, which runs user-supplied JavaScript inside a sandbox. A missing case in the AST rewriter let the process object slip through untransformed, and once you can reach process, you have full remote code execution. n8n fixed it back in the spring in versions 2.10.1, 2.9.3 and 1.123.22 by tightening the PrototypeSanitizer. This new research defeats that sanitizer using shadowing and spread-operator tricks.</p>
+<p>Why care about a self-hosted automation tool? Because n8n has become one of the most popular ways to wire systems together, and lately it's the glue holding a lot of AI-agent pipelines in place. A "workflow editor" is often treated as a semi-trusted role, not a full admin. This flaw quietly upgrades that role to code execution on the underlying server, with everything that follows: credential theft, lateral movement, persistence.</p>
+<p>There's a broader lesson here that keeps repeating. Sandboxing untrusted JavaScript by rewriting its abstract syntax tree is a game the defender loses eventually. Every published bypass is one clever shadowing trick away from the next. Real isolation comes from running that code in a separate process or container, not from a smarter string filter.</p>
+<p>Upgrade to the latest patched n8n release as soon as you can. Until then, restrict workflow creation and editing to people you'd trust with a shell on the box, and isolate your n8n runners from anything sensitive.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The White House&apos;s Frontier AI Review Framework Is Due Friday</title>
+      <link>https://sabr-labs.com/article/white-house-frontier-ai-framework-august-1-deadline-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/white-house-frontier-ai-framework-august-1-deadline-july-2026</guid>
+      <pubDate>Mon, 27 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Policy</category>
+      <category>White House</category>
+      <category>Frontier Models</category>
+      <category>CISA</category>
+      <category>NSA</category>
+      <category>Regulation</category>
+      <description>A June executive order gives federal agencies until August 1 to design a voluntary process for frontier-model developers to hand the government pre-release access.</description>
+      <content:encoded><![CDATA[<p>By Friday, the federal government is supposed to have a plan for how it wants to see the country's most powerful AI models before the public does. The August 1 deadline comes from an executive order signed June 2, titled "Promoting Advanced Artificial Intelligence Innovation and Security." It directs agencies to design a voluntary early-access framework: frontier developers can offer the government up to 30 days of access before a model ships, so officials can size up its cyber capabilities.</p>
+<p>The plumbing behind it is where things get interesting. Treasury, the NSA and CISA are told to build a classified benchmarking process that designates certain systems as "covered frontier models" based on advanced offensive-cyber ability. The final call on that designation sits with the Director of the NSA.</p>
+<p>The order goes out of its way to say it's voluntary. Section 3(c) explicitly disclaims any licensing, preclearance or permitting requirement. But the government keeps a bigger stick in the drawer: separate authority under the Export Control Reform Act to restrict models it deems essential to national security. Legal analysts have landed on a blunt description, calling it voluntary on paper and mandatory in practice. That reads about right.</p>
+<p>One clause hits differently this week. The order also directs the Attorney General to prioritize charges against anyone who uses AI agents to illegally access or damage computers. Two weeks ago that might have sounded like boilerplate. Then an experimental agent ran up thousands of unauthorized actions against a company over a weekend before its own maker noticed. The enforcement language suddenly has a fact pattern behind it.</p>
+<p>The thing to watch isn't the deadline, it's what actually lands. A framework with real benchmarking teeth is a different animal from a document that exists to be pointed at. And the whole voluntary premise only works if the labs building the biggest models decide to opt in.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Fireworks AI Raises $1.5 Billion Betting on Specialized Models</title>
+      <link>https://sabr-labs.com/article/fireworks-ai-1-5-billion-series-d-inference-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fireworks-ai-1-5-billion-series-d-inference-july-2026</guid>
+      <pubDate>Mon, 27 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Fireworks AI</category>
+      <category>Funding</category>
+      <category>Inference</category>
+      <category>Open Models</category>
+      <category>AI Infrastructure</category>
+      <description>The inference startup closed a $1.5 billion Series D at a $17.5 billion valuation, with most of its traffic coming from customized open models rather than stock frontier ones.</description>
+      <content:encoded><![CDATA[<p>Fireworks AI just raised a billion and a half dollars on a contrarian bet: that most companies don't want to run a giant frontier model, they want to run a small one that's very good at their specific job. The Series D came in at just over $1.5 billion at a $17.5 billion post-money valuation, led by Atreides Management, Index Ventures and TCV, with existing backers Lightspeed and Nvidia joining in.</p>
+<p>The traction numbers explain the check. Fireworks says it crossed $1 billion in annualized revenue run rate, up roughly 5x from its last round. Daily token volume on the platform grew from 15 trillion to more than 40 trillion over the same stretch.</p>
+<p>The pitch is in one statistic: about 95% of the tokens Fireworks serves come from models that have been specialized or fine-tuned, not off-the-shelf frontier systems. The company builds tools to run, tune and scale open-weight models with low-latency inference, and its argument is that production economics reward small, customized, open models over routing everything through one enormous general-purpose brain.</p>
+<p>It's a bet worth watching precisely because it cuts against this week's other big story. Nvidia, an investor here, is simultaneously reportedly backstopping a quarter-trillion dollars of debt so OpenAI can build a 10-gigawatt campus for exactly the everything-through-one-giant-model approach. Fireworks is wagering that a lot of real workloads will flow the other way, toward cheaper specialized inference. Both things can be true, but they can't both be the whole market.</p>]]></content:encoded>
+    </item>
     <item>
       <title>ServiceNow AI Platform Pre-Auth RCE Is Being Exploited (CVE-2026-6875)</title>
       <link>https://sabr-labs.com/article/servicenow-ai-platform-cve-2026-6875-preauth-rce-exploited</link>
@@ -880,103 +977,6 @@
 <p>The target is obvious. Anthropic's Mythos does autonomous bug-finding and patching, and it's expensive to run. Reporting puts Mythos API costs well above both Opus and GPT pricing, and Microsoft's per-task routing is the lever it plans to pull to come in cheaper. Cheap enough, the framing goes, to run continuously instead of in occasional audits.</p>
 <p>Skepticism is the right default on the AI security beat. This is still a report about an unshipped product that's supposedly launching "as soon as this month." AI bug-finders are genuinely useful and also genuinely oversold. The hard part was never generating a list of candidate bugs. It's the false-positive rate, and whether an auto-proposed fix is safe to actually merge without a human who understands the codebase signing off.</p>
 <p>Cost routing helps adoption. It says nothing about accuracy. For Windows-heavy shops already living inside Defender and Entra, the real moat isn't the model, it's the integration, and no competitor can replicate the telemetry Microsoft already holds. The number worth waiting for is the false-positive rate when this ships. Everything else is a demo.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ecopetrol Blocked the Encryption, But Attackers Still Walked Out With Data</title>
-      <link>https://sabr-labs.com/article/ecopetrol-colombia-ransomware-contained-3300-accounts-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ecopetrol-colombia-ransomware-contained-3300-accounts-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ecopetrol</category>
-      <category>Ransomware</category>
-      <category>Data Breach</category>
-      <category>Critical Infrastructure</category>
-      <category>Extortion</category>
-      <description>Colombia&apos;s largest company stopped a ransomware payload from firing, yet an intruder still downloaded data tied to about 3,300 accounts and is now demanding money.</description>
-      <content:encoded><![CDATA[<p>The ransomware didn't fire. That's the unusual part.</p>
-<p>Ecopetrol, Colombia's state-controlled oil producer and the country's biggest company, said an intruder reached its cloud file storage on July 17 and tried to launch ransomware. The encryption never ran. Company controls caught and blocked it before it could lock any systems, and Ecopetrol reported no material disruption to production or critical operations.</p>
-<p>The attacker still got something. Data tied to roughly 3,300 user accounts, spread across about 15 subsidiaries, was downloaded before the intrusion was contained. The company revoked the unauthorized access, blocked the mass-download mechanisms, and disclosed the incident publicly. The actor, so far unidentified, has since made an extortion demand, threatening to publish the stolen data. As of Ecopetrol's latest statement, nothing has surfaced on leak sites.</p>
-<p>Most breach disclosures we cover are about the encryption that did fire, the plant that went dark, the hospital diverting ambulances. This one is the more common and less dramatic middle outcome: execution blocked, data gone anyway. It's worth paying attention to precisely because the controls worked as designed on the part that would have made headlines.</p>
-<p>Still, "contained" is carrying a lot of weight here. The data already left the building, and the leverage now is publication, not encryption. "No evidence of publication" is a snapshot, not a promise. On the other side, 3,300 accounts is a small number for a company this size, which suggests either tight segmentation held or the attacker simply didn't get far before being cut off.</p>
-<p>The tell to watch is whether the data shows up on an extortion leak site in the coming weeks. If it does, the story shifts from a blocked attack to a slow-motion data breach.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Sets Today&apos;s Deadline for FortiSandbox Flaws Under Active Attack</title>
-      <link>https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-39808-25089-active-exploitation-kev-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-fortisandbox-cve-2026-39808-25089-active-exploitation-kev-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Fortinet</category>
-      <category>FortiSandbox</category>
-      <category>CVE-2026-39808</category>
-      <category>CVE-2026-25089</category>
-      <category>CISA KEV</category>
-      <description>Two unauthenticated command-injection bugs in Fortinet&apos;s malware sandbox are being exploited now, and federal agencies have until July 19 to patch.</description>
-      <content:encoded><![CDATA[<p>The appliance that's supposed to catch malware is now a way in. CISA has ordered federal agencies to patch two FortiSandbox flaws by today, July 19, after confirming both are being used in real attacks.</p>
-<p>The bugs are CVE-2026-39808 and CVE-2026-25089, both OS command injection (CWE-78). An unauthenticated attacker sends a crafted HTTP request and runs arbitrary operating-system commands on the box, no credentials required. CVE-2026-39808 hits FortiSandbox directly. CVE-2026-25089 has the wider blast radius, reaching FortiSandbox, FortiSandbox Cloud, and FortiSandbox PaaS. CISA added both to its Known Exploited Vulnerabilities catalog on July 16 under Binding Operational Directive 26-04.</p>
-<p>FortiSandbox isn't a corner appliance. It detonates suspicious files, which means it's wired into email gateways, endpoints, and file shares, and it usually runs with high privilege so it can inspect anything you throw at it. Handing an unauthenticated attacker command execution on a box with that much reach is close to a worst case.</p>
-<p>This keeps happening to edge security gear. Fortinet, Ivanti, SonicWall: the devices sitting at the network boundary, the ones meant to keep attackers out, have become the reliable way in. A sandbox getting popped by the very traffic it's built to analyze is the same story with a sharper edge.</p>
-<p>Check FortiGuard's PSIRT advisory for the exact fixed builds and update now. If your FortiSandbox management interface has been reachable from the internet, don't assume you're clean because you patched today. Treat it as potentially compromised, pull logs, and hunt for unexpected commands or new accounts. The federal deadline is federal, but the exploitation is everyone's problem.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Gemini 3.5 Pro Slips Months as DeepMind Loses Four Researchers</title>
-      <link>https://sabr-labs.com/article/google-gemini-3-5-pro-delayed-coding-deepmind-exodus-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-3-5-pro-delayed-coding-deepmind-exodus-july-2026</guid>
-      <pubDate>Sat, 18 Jul 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>DeepMind</category>
-      <category>AI Models</category>
-      <category>Anthropic</category>
-      <description>Google&apos;s flagship model is months behind after missing internal coding targets, and four senior DeepMind researchers left in a single week.</description>
-      <content:encoded><![CDATA[<p>Google's next flagship model isn't ready, and the reason is the one thing developers care about most: coding.</p>
-<p>Gemini 3.5 Pro is months behind schedule. Google refreshed its training data late in June specifically to sharpen coding performance, and the results still weren't good enough to ship. The model remains in limited preview for select Vertex AI enterprise customers, with general availability now targeted for sometime in July.</p>
-<p>The delay landed the same week as a talent bleed. Four senior DeepMind researchers left in a matter of days: Gemini co-lead Noam Shazeer to OpenAI, Nobel laureate John Jumper to Anthropic, and researchers Jonas Adler and Alexander Pritzel also to Anthropic. Losing your model's co-lead and a Nobel winner in the same week isn't a coincidence you wave off.</p>
-<p>Google's problem isn't raw model quality on a benchmark sheet. It's that the company lacks a credible commercial coding product while OpenAI, Anthropic, and a wave of startups have shipped agents developers actually use. DeepMind staff have reportedly flagged this internally. Meanwhile Google Cloud, DeepMind, Android, and consumer teams have each built their own AI coding tools, competing for the same people and budget.</p>
-<p>Investors noticed. The delay and the departures helped wipe roughly $225 billion off Alphabet's market cap. That's a large number for a model that will still ship eventually, which tells you the market is pricing the org chart as much as the release date.</p>
-<p>A delayed model is recoverable. A pattern of your best researchers choosing competitors is harder to fix, because it compounds. The real question for Google isn't whether Gemini 3.5 Pro eventually ships. It's whether the people who'd build 4.0 are still in the building.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chip Stocks Sell Off Hard Even as Earnings Come In Strong</title>
-      <link>https://sabr-labs.com/article/semiconductor-stock-selloff-rout-july-2026-ai-chip-valuations</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/semiconductor-stock-selloff-rout-july-2026-ai-chip-valuations</guid>
-      <pubDate>Sat, 18 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Semiconductors</category>
-      <category>Stock Market</category>
-      <category>Nvidia</category>
-      <category>AI</category>
-      <category>Markets</category>
-      <description>A tech-led selloff dragged the Nasdaq down more than 1% on July 17, with chipmakers falling despite TSMC and ASML both beating expectations.</description>
-      <content:encoded><![CDATA[<p>TSMC posted record profit. ASML raised its forecast. And chip stocks fell anyway.</p>
-<p>On July 17 the Nasdaq dropped about 1.4%, the S&P 500 lost roughly 1%, and semiconductors led the way down. What makes the selloff notable is the timing: it landed in the same week as two blowout earnings reports from companies sitting at the center of the AI buildout.</p>
-<p>When good news stops pushing a stock up, that's the market telling you the good news was already priced in. Chip names have run for the better part of two years on AI demand. A quarter of strong results that fails to spark a rally looks less like a verdict on the businesses and more like fatigue with the valuations.</p>
-<p>None of this says the AI buildout is slowing. TSMC's own numbers point the other way. What's wobbling is the share price, not the demand, and those are different things that headlines love to blur together. Profit-taking after a long run is ordinary. It only becomes a story when it happens on a day that by all rights should have been green.</p>
-<p>Worth watching whether this is a one-day wobble or the start of a real repricing. The tell will be the next round of earnings from the buyers of chips, not the sellers. If the hyperscalers keep guiding capital spending higher, the demand story holds regardless of what the tape does this week.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Intel Is First to Ship High-Volume Chips Made With High-NA EUV</title>
-      <link>https://sabr-labs.com/article/intel-first-high-volume-high-na-euv-18a-panther-lake-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/intel-first-high-volume-high-na-euv-18a-panther-lake-july-2026</guid>
-      <pubDate>Sat, 18 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Intel</category>
-      <category>ASML</category>
-      <category>High-NA EUV</category>
-      <category>18A</category>
-      <category>Semiconductors</category>
-      <description>Select layers of Intel&apos;s 18A Panther Lake chips are now being mass-produced on ASML&apos;s newest lithography tools, a first for the industry.</description>
-      <content:encoded><![CDATA[<p>For the first time, commercial logic chips are shipping to customers with layers printed by ASML's High-NA EUV machines. Intel got there first.</p>
-<p>ASML confirmed the milestone on July 15. Intel has qualified High-NA (the 0.55 numerical aperture generation of extreme ultraviolet lithography) for selected layers of its 18A process in Oregon, and is using it to build parts of the Core Ultra Series 3 "Panther Lake" processors. Those layers are dual-qualified, meaning they can run on both the new 0.55 NA scanners and the older 0.33 NA ones, at yields Intel says match its existing platform.</p>
-<p>High-NA tools run around $400 million each and print finer features in a single exposure, which can replace the slow, yield-hungry multi-pass patterning older tools need. Getting one into high-volume production is the genuinely hard part. TSMC and Samsung own these machines too. Intel shipping product first is a real bragging right for a foundry that's spent years playing catch-up.</p>
-<p>"Selected layers" is carrying weight in that sentence. This isn't a chip built end to end on High-NA. It's a handful of critical layers where the tool earns its cost, with the rest still on 0.33 NA. That's the normal way a new lithography generation enters production, and it's real progress. It's also not a full-node transition, so the "Intel leapfrogs everyone" read is premature.</p>
-<p>The numbers that matter next are yield at scale and whether Intel Foundry can turn this into external customer wins. A first-shipment headline is good. Signed foundry contracts on 18A would be better.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

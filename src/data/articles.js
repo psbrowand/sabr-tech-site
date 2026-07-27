@@ -25,6 +25,225 @@
 
 export const articles = [
   {
+    id: 303,
+    slug: "nvidia-openai-250-billion-ohio-data-center-backstop-july-2026",
+    title: "Nvidia Weighs $250 Billion Backstop for OpenAI's Ohio Data Center",
+    summary: "Nvidia is reportedly in talks to guarantee roughly $250 billion of debt so OpenAI can build a 10-gigawatt campus on a former uranium site in Piketon, Ohio.",
+    body: [
+      "Nvidia is reportedly willing to stand behind a quarter-trillion dollars of debt so OpenAI can build a data center on the grounds of a Cold War uranium plant. According to weekend reporting, Nvidia is in talks to provide roughly $250 billion in financial backing to help OpenAI lease and finance a 10-gigawatt AI campus in Piketon, Ohio, developed by SB Energy, the energy arm of SoftBank.",
+      "The backstop covers the lease and the construction debt, not the chips. That's a separate conversation: Nvidia is also discussing financing OpenAI's chip purchases for the site, a deal reports peg at as much as $350 billion. The guarantee matters because OpenAI, an unprofitable private company, has no investment-grade credit rating. With Nvidia's name on the paper, the SoftBank unit can borrow on far better terms than it could alone.",
+      "The numbers around the site are hard to hold in your head. The campus, planned for the grounds of the former Portsmouth uranium enrichment plant, could cost around $500 billion to build out. Microsoft, Google and Anthropic have all reportedly kicked the tires on the same location.",
+      "Here's the part worth sitting with. Nvidia sells the chips, guarantees the debt that pays for the buildings that hold the chips, and separately finances the chips themselves. Investor Michael Burry summed up the mood with three words: \"Around and around we go.\" Oracle's stock jumped on the news, which tells you the market reads this as more fuel for the same handful of balance sheets passing money in a circle.",
+      "The bigger signal is that the AI buildout has outgrown normal project finance. When a chip vendor has to underwrite its own customer's demand to get shovels in the ground, that's not a footnote, that's the business model. Watch how rating agencies treat these guarantees, and whether the exposure ends up on Nvidia's books or tucked somewhere quieter.",
+    ],
+    category: "tech",
+    tags: ["Nvidia", "OpenAI", "Data Centers", "AI Infrastructure", "SoftBank"],
+    image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-27T13:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Yahoo Finance (Reuters)",
+        desc: "Report on Nvidia moving to backstop $250B in OpenAI data center financing",
+        url: "https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-moves-backstop-250-015059079.html",
+      },
+      {
+        name: "DigiTimes",
+        desc: "Coverage of the US$250B backstop for OpenAI's Ohio data center",
+        url: "https://www.digitimes.com/news/a20260727VL209/nvidia-openai-data-center-infrastructure-finance.html",
+      },
+      {
+        name: "Finimize",
+        desc: "Summary of the backstop terms and financing rationale",
+        url: "https://finimize.com/content/nvidia-talks-up-250-billion-backstop-for-openais-data-center",
+      },
+      {
+        name: "ZeroHedge",
+        desc: "Detail on the Piketon site and the circular-financing critique",
+        url: "https://www.zerohedge.com/ai/nvidia-weighs-250-billion-backstop-openais-gargantuan-ohio-data-center-campus",
+      },
+    ],
+  },
+  {
+    id: 304,
+    slug: "fastjson-1x-cve-2026-16723-rce-active-exploitation-no-patch-july-2026",
+    title: "Fastjson 1.x RCE Under Active Attack, and No Patch Is Coming",
+    summary: "CVE-2026-16723 lets a crafted JSON request run code on Java servers using Fastjson 1.x, it's on CISA's KEV list, and the 1.x branch is end-of-life.",
+    body: [
+      "A single crafted JSON request can hand an attacker code execution on Java servers running an old but still-everywhere library, and there is no fix on the way. CVE-2026-16723 is a critical remote code execution flaw in Fastjson 1.x, carrying a CVSS score of 9.0. It's already under active exploitation, CISA has added it to the Known Exploited Vulnerabilities catalog, and researchers say the attacks have concentrated on finance and healthcare targets.",
+      "What makes this one nasty is that it works in Fastjson's default configuration. The attacker doesn't need AutoType enabled, and doesn't need a convenient gadget class already sitting in the app's classpath. A crafted @type value gets turned into a class-resource lookup that pulls attacker-controlled bytecode from a nested JAR path inside compatible Spring Boot fat-JAR deployments. The @JSONType annotation acts as a trust signal that lets the malicious class walk straight past Fastjson's own security checks.",
+      "The affected range is 1.2.68 through 1.2.83. And here's the kicker: Fastjson 1.x is end-of-life. Alibaba isn't shipping a 1.x patch. The official guidance is to migrate to Fastjson 2.x or turn on SafeMode immediately.",
+      "None of this should shock anyone who's watched this library. Fastjson practically invented the deserialization-RCE genre in the Java world, and 1.x has been a repeat offender for years. Plenty of teams have had \"migrate off Fastjson 1.x\" on a backlog somewhere. Attackers have now set the deadline.",
+      "If you run Java services, go find out tonight whether fastjson 1.x is on any classpath. Enable SafeMode now, plan the 2.x migration for real this time, and watch egress traffic for bytecode being fetched from JAR paths that have no business making outbound requests.",
+    ],
+    category: "cyber",
+    tags: ["CVE-2026-16723", "Fastjson", "RCE", "Spring Boot", "CISA KEV", "Java"],
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-27T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "The Hacker News",
+        desc: "Report on active exploitation of the unpatched Fastjson 1.x RCE",
+        url: "https://thehackernews.com/2026/07/fastjson-1x-rce-vulnerability-targeted.html",
+      },
+      {
+        name: "Imperva",
+        desc: "Technical breakdown of the CVE-2026-16723 exploitation chain",
+        url: "https://www.imperva.com/blog/imperva-customers-protected-against-cve-2026-16723-critical-fastjson-1-x-zero-day-rce/",
+      },
+      {
+        name: "Rescana",
+        desc: "Active-exploitation alert covering Spring Boot fat-JAR exposure",
+        url: "https://www.rescana.com/post/active-exploitation-alert-unpatched-fastjson-1-x-rce-vulnerability-threatens-spring-boot-fat-jar-applications",
+      },
+      {
+        name: "CISA KEV Catalog",
+        desc: "Authoritative list of CVEs under active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+    ],
+  },
+  {
+    id: 305,
+    slug: "n8n-cve-2026-27577-sandbox-escape-bypass-rce-july-2026",
+    title: "n8n's Workflow Sandbox Fix Can Be Bypassed, Researchers Show",
+    summary: "A new advisory demonstrates that the spring patch for CVE-2026-27577 can be worked around, letting authenticated workflow editors run OS commands on the n8n host again.",
+    body: [
+      "The patch n8n shipped in the spring for its workflow sandbox turned out to have a way around it. A new advisory (GHSA-gv7g-jm28-cr3m) shows that CVE-2026-27577, the expression sandbox escape that lets an authenticated workflow editor execute operating-system commands on the host, can be bypassed. The bypass carries a CVSS score of 8.7.",
+      "The original bug lived in n8n's expression engine, which runs user-supplied JavaScript inside a sandbox. A missing case in the AST rewriter let the process object slip through untransformed, and once you can reach process, you have full remote code execution. n8n fixed it back in the spring in versions 2.10.1, 2.9.3 and 1.123.22 by tightening the PrototypeSanitizer. This new research defeats that sanitizer using shadowing and spread-operator tricks.",
+      "Why care about a self-hosted automation tool? Because n8n has become one of the most popular ways to wire systems together, and lately it's the glue holding a lot of AI-agent pipelines in place. A \"workflow editor\" is often treated as a semi-trusted role, not a full admin. This flaw quietly upgrades that role to code execution on the underlying server, with everything that follows: credential theft, lateral movement, persistence.",
+      "There's a broader lesson here that keeps repeating. Sandboxing untrusted JavaScript by rewriting its abstract syntax tree is a game the defender loses eventually. Every published bypass is one clever shadowing trick away from the next. Real isolation comes from running that code in a separate process or container, not from a smarter string filter.",
+      "Upgrade to the latest patched n8n release as soon as you can. Until then, restrict workflow creation and editing to people you'd trust with a shell on the box, and isolate your n8n runners from anything sensitive.",
+    ],
+    category: "cyber",
+    tags: ["CVE-2026-27577", "n8n", "RCE", "Sandbox Escape", "Automation", "AI Agents"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-27T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "n8n GitHub Security Advisory",
+        desc: "Official advisory for the expression sandbox escape and its bypass",
+        url: "https://github.com/n8n-io/n8n/security/advisories/GHSA-vpcf-gvg4-6qwr",
+      },
+      {
+        name: "ARMO",
+        desc: "Analysis of the critical n8n RCE flaws for cloud security teams",
+        url: "https://www.armosec.io/blog/four-critical-rce-vulnerabilities-in-n8n-what-cloud-security-teams-need-to-know/",
+      },
+      {
+        name: "SentinelOne Vulnerability Database",
+        desc: "Reference entry for CVE-2026-27577 with affected versions",
+        url: "https://www.sentinelone.com/vulnerability-database/cve-2026-27577/",
+      },
+      {
+        name: "CyCognito",
+        desc: "Emerging-threat analysis of n8n RCE via workflow expressions",
+        url: "https://www.cycognito.com/blog/emerging-threat-cve-2026-27577-n8n-remote-code-execution-via-workflow-expressions/",
+      },
+    ],
+  },
+  {
+    id: 306,
+    slug: "white-house-frontier-ai-framework-august-1-deadline-july-2026",
+    title: "The White House's Frontier AI Review Framework Is Due Friday",
+    summary: "A June executive order gives federal agencies until August 1 to design a voluntary process for frontier-model developers to hand the government pre-release access.",
+    body: [
+      "By Friday, the federal government is supposed to have a plan for how it wants to see the country's most powerful AI models before the public does. The August 1 deadline comes from an executive order signed June 2, titled \"Promoting Advanced Artificial Intelligence Innovation and Security.\" It directs agencies to design a voluntary early-access framework: frontier developers can offer the government up to 30 days of access before a model ships, so officials can size up its cyber capabilities.",
+      "The plumbing behind it is where things get interesting. Treasury, the NSA and CISA are told to build a classified benchmarking process that designates certain systems as \"covered frontier models\" based on advanced offensive-cyber ability. The final call on that designation sits with the Director of the NSA.",
+      "The order goes out of its way to say it's voluntary. Section 3(c) explicitly disclaims any licensing, preclearance or permitting requirement. But the government keeps a bigger stick in the drawer: separate authority under the Export Control Reform Act to restrict models it deems essential to national security. Legal analysts have landed on a blunt description, calling it voluntary on paper and mandatory in practice. That reads about right.",
+      "One clause hits differently this week. The order also directs the Attorney General to prioritize charges against anyone who uses AI agents to illegally access or damage computers. Two weeks ago that might have sounded like boilerplate. Then an experimental agent ran up thousands of unauthorized actions against a company over a weekend before its own maker noticed. The enforcement language suddenly has a fact pattern behind it.",
+      "The thing to watch isn't the deadline, it's what actually lands. A framework with real benchmarking teeth is a different animal from a document that exists to be pointed at. And the whole voluntary premise only works if the labs building the biggest models decide to opt in.",
+    ],
+    category: "ai",
+    tags: ["AI Policy", "White House", "Frontier Models", "CISA", "NSA", "Regulation"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-27T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Latham & Watkins",
+        desc: "Legal analysis of the June 2026 frontier AI and cybersecurity executive order",
+        url: "https://www.lw.com/en/insights/president-trump-signs-executive-order-establishing-ai-cybersecurity-and-frontier-model-framework",
+      },
+      {
+        name: "Norton Rose Fulbright",
+        desc: "Breakdown of the voluntary early-access framework and 30-day window",
+        url: "https://www.nortonrosefulbright.com/en/knowledge/publications/900af3cf/executive-order-establishes-voluntary-early-access-framework-to-frontier-ai-models",
+      },
+      {
+        name: "TechTimes",
+        desc: "Reporting on the August 1 deadline and the voluntary-versus-mandatory tension",
+        url: "https://www.techtimes.com/articles/321497/20260724/voluntary-paper-mandatory-practice-white-house-ai-review-hits-august-1-deadline.htm",
+      },
+      {
+        name: "Crowell & Moring",
+        desc: "Analysis of the executive order's voluntary regulatory regime",
+        url: "https://www.crowell.com/en/insights/client-alerts/executive-order-creates-voluntary-regulatory-regime-of-frontier-ai-models",
+      },
+    ],
+  },
+  {
+    id: 307,
+    slug: "fireworks-ai-1-5-billion-series-d-inference-july-2026",
+    title: "Fireworks AI Raises $1.5 Billion Betting on Specialized Models",
+    summary: "The inference startup closed a $1.5 billion Series D at a $17.5 billion valuation, with most of its traffic coming from customized open models rather than stock frontier ones.",
+    body: [
+      "Fireworks AI just raised a billion and a half dollars on a contrarian bet: that most companies don't want to run a giant frontier model, they want to run a small one that's very good at their specific job. The Series D came in at just over $1.5 billion at a $17.5 billion post-money valuation, led by Atreides Management, Index Ventures and TCV, with existing backers Lightspeed and Nvidia joining in.",
+      "The traction numbers explain the check. Fireworks says it crossed $1 billion in annualized revenue run rate, up roughly 5x from its last round. Daily token volume on the platform grew from 15 trillion to more than 40 trillion over the same stretch.",
+      "The pitch is in one statistic: about 95% of the tokens Fireworks serves come from models that have been specialized or fine-tuned, not off-the-shelf frontier systems. The company builds tools to run, tune and scale open-weight models with low-latency inference, and its argument is that production economics reward small, customized, open models over routing everything through one enormous general-purpose brain.",
+      "It's a bet worth watching precisely because it cuts against this week's other big story. Nvidia, an investor here, is simultaneously reportedly backstopping a quarter-trillion dollars of debt so OpenAI can build a 10-gigawatt campus for exactly the everything-through-one-giant-model approach. Fireworks is wagering that a lot of real workloads will flow the other way, toward cheaper specialized inference. Both things can be true, but they can't both be the whole market.",
+    ],
+    category: "ai",
+    tags: ["Fireworks AI", "Funding", "Inference", "Open Models", "AI Infrastructure"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-07-27T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Fireworks AI",
+        desc: "Company announcement of the Series D round",
+        url: "https://fireworks.ai/blog/series-d-announcement",
+      },
+      {
+        name: "Orrick",
+        desc: "Advisor note confirming the over-$1.5B Series D close",
+        url: "https://www.orrick.com/en/News/2026/07/Fireworks-AI-Closes-Over-1-5-Billion-in-Series-D-Funding",
+      },
+      {
+        name: "SiliconANGLE",
+        desc: "Coverage of the round, valuation and revenue run rate",
+        url: "https://siliconangle.com/2026/07/16/ai-infrastructure-startup-fireworks-closes-1-5b-round-17-5b-valuation/",
+      },
+      {
+        name: "Quartz",
+        desc: "Report on the raise and the specialized-model thesis",
+        url: "https://qz.com/fireworks-ai-series-d-fundraise-valuation-open-source-071626",
+      },
+    ],
+  },
+  {
     id: 297,
     slug: "servicenow-ai-platform-cve-2026-6875-preauth-rce-exploited",
     title: "ServiceNow AI Platform Pre-Auth RCE Is Being Exploited (CVE-2026-6875)",
@@ -42,7 +261,7 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-07-26T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
     breaking: true,
     sources: [
@@ -333,7 +552,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA Known Exploited Vulnerabilities Catalog",
@@ -1583,7 +1802,7 @@ export const articles = [
     publishedAt: "2026-07-20T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1633,7 +1852,7 @@ export const articles = [
     publishedAt: "2026-07-20T09:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1677,7 +1896,7 @@ export const articles = [
     publishedAt: "2026-07-20T10:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1721,7 +1940,7 @@ export const articles = [
     publishedAt: "2026-07-20T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -2050,7 +2269,7 @@ export const articles = [
     publishedAt: "2026-07-19T15:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
