@@ -2,207 +2,243 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sabr-labs.com/</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/try</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/compare/boson-netsim-alternative</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/compare/packet-tracer-alternative</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/learning</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/news</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/tech-news</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/ai-news</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/cyber-security</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/qod</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/newsletter</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/about</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/contact</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/privacy</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/terms</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/refund</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/a-plus-core-1</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/a-plus-core-2</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/network-plus</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/security-plus</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/cysa-plus</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/pentest-plus</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/ccna</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/aruba-aca-campus-access</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/aruba-aca-switching</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/jncia-junos</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/aws-solutions-architect-associate</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/aws-developer-associate</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/azure-administrator</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/google-cloud-engineer</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/isc2-cc</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/cissp</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/practice/sc-900</loc>
-    <lastmod>2026-07-27T13:21:35.458Z</lastmod>
+    <lastmod>2026-07-28T13:18:54.372Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/arista-velocloud-orchestrator-cve-2026-16812-zero-day-exploited-july-2026</loc>
+    <lastmod>2026-07-28T12:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/romania-ancpi-land-registry-wiped-property-market-frozen-july-2026</loc>
+    <lastmod>2026-07-28T11:30:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/fortinet-fortios-cve-2025-68686-ssl-vpn-symlink-patch-bypass-kev-july-2026</loc>
+    <lastmod>2026-07-28T10:45:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/cxmt-shanghai-star-market-debut-466-percent-dram-july-2026</loc>
+    <lastmod>2026-07-28T10:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/apple-smart-glasses-delayed-privacy-camera-decision-july-2026</loc>
+    <lastmod>2026-07-28T09:15:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sabr-labs.com/article/nvidia-safe-superintelligence-vera-rubin-partnership-july-2026</loc>
+    <lastmod>2026-07-28T08:30:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sabr-labs.com/article/nvidia-openai-250-billion-ohio-data-center-backstop-july-2026</loc>

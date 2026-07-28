@@ -6,9 +6,133 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2026 13:21:35 GMT</lastBuildDate>
-    <pubDate>Mon, 27 Jul 2026 13:21:35 GMT</pubDate>
+    <lastBuildDate>Tue, 28 Jul 2026 13:18:54 GMT</lastBuildDate>
+    <pubDate>Tue, 28 Jul 2026 13:18:54 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CISA Flags a 10.0 VeloCloud Orchestrator Zero-Day Already in Use</title>
+      <link>https://sabr-labs.com/article/arista-velocloud-orchestrator-cve-2026-16812-zero-day-exploited-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/arista-velocloud-orchestrator-cve-2026-16812-zero-day-exploited-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Arista</category>
+      <category>SD-WAN</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>Command Injection</category>
+      <description>Arista patched an unauthenticated command injection flaw in on-premises VeloCloud Orchestrator that attackers exploited as a zero-day, and CISA added it to the KEV catalog on July 27.</description>
+      <content:encoded><![CDATA[<p>A CVSS 10.0 doesn't leave much room for interpretation. Arista's VeloCloud Orchestrator has one, and attackers were using it before there was a patch to apply.</p>
+<p>The bug is CVE-2026-16812, an OS command injection issue (CWE-78) that Arista scores at 10.0 under both CVSS v3.1 and v4.0. What earns it the top score is the absence of prerequisites. An attacker needs network access to the VCO web interface. That's the entire list. No tenant account, no operator credentials, no user interaction. Arista's advisory describes the flaw as remote access to privileged functionality intended only for internal use, which is a polite way of saying a management path that was never supposed to face the network ended up doing exactly that.</p>
+<p>Affected builds are on-premises VCO in the 5.2.x branch before 5.2.3.14, 6.1.x before 6.1.3.4, 6.4.x before 6.4.2.4, and 7.0.x before 7.0.0.1. Fixes are out for all four.</p>
+<p>If you're on Arista's hosted or dedicated Orchestrator service, this is already handled; the company patched those deployments before the advisory went public. Everyone running their own VCO is on their own clock. The advisory also states the issue was discovered externally and is known to be actively exploited, which is vendor phrasing for finding out from someone else, usually a victim.</p>
+<p>Arista published three attacker IP addresses (8.19.75.217, 206.72.242.124, and 206.72.242.162) and pointed administrators at web and system logs, looking for unexpected configuration changes, privileged operations, and unauthorized database access. If patching has to wait, restrict the VCO web interface to administrative networks and watch for outbound connections from the orchestrator host that nobody authorized.</p>
+<p>SD-WAN orchestrators are worth this kind of effort to an attacker for an obvious reason. Compromise the system that configures every edge device and you don't need to compromise the edge devices. CISA added the CVE to its Known Exploited Vulnerabilities catalog on July 27, the same day it added a FortiOS flaw. Two management-plane bugs in one afternoon is a fair snapshot of where the pressure sits right now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Hacker Wiped Romania&apos;s Land Registry and Froze the Property Market</title>
+      <link>https://sabr-labs.com/article/romania-ancpi-land-registry-wiped-property-market-frozen-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/romania-ancpi-land-registry-wiped-property-market-frozen-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Romania</category>
+      <category>Public Sector</category>
+      <category>Data Destruction</category>
+      <category>Extortion</category>
+      <category>Credential Abuse</category>
+      <description>A credential-based intrusion at Romania&apos;s cadastre agency ended with the attacker deleting the data, halting property transactions nationwide for about a week.</description>
+      <content:encoded><![CDATA[<p>Notaries across Romania spent the middle of July unable to do the one thing their job requires: confirm who owns a piece of land.</p>
+<p>The country's National Agency for Cadastre and Real Estate Advertising, ANCPI, watched its e-Terra platform go dark on July 14. The agency's first public explanation was a technical failure. It wasn't. Investigators later confirmed a cyberattack, and someone using the alias ByteToBreach claimed responsibility on a cybercrime forum, posting screenshots that appeared to show access to ANCPI infrastructure.</p>
+<p>The entry point wasn't exotic. It was valid credentials. According to reporting on the incident, the attacker signed in with working accounts, pulled out internal documents, employee credentials, and land registry data, then demanded payment. When the agency refused, he deleted what he'd taken from ANCPI's systems.</p>
+<p>Theft plus destruction is what turned an intrusion into a national problem. Romania's cadastral system is fully digital. There's no paper ledger in a basement serving as the fallback copy. With e-Terra down, notaries couldn't validate sales or mortgages, the agency couldn't register new transactions or process pending applications, and nobody could obtain the land registry extracts that Romanian property sales legally require. Transactions stopped countrywide for roughly a week, with a VAT deadline bearing down on the market.</p>
+<p>ANCPI has maintained that the data it manages was not breached. That position sat awkwardly next to a listing offering ANCPI data for sale that surfaced on July 15, one day after the outage started.</p>
+<p>Strip out the geography and the failure pattern is familiar. Credentials worked, so no exploit was necessary. Recovery either didn't exist at the right granularity or couldn't be restored fast enough to keep a national service on its feet. Public-sector digitization programs reliably fund the migration and treat restoration as a line item somebody will get to later.</p>
+<p>The market is still working through the backlog. Digitizing a public record is a real improvement right up to the moment the database becomes the only copy.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Fortinet&apos;s Symlink Persistence Fix Has a Bypass, and It&apos;s Being Used</title>
+      <link>https://sabr-labs.com/article/fortinet-fortios-cve-2025-68686-ssl-vpn-symlink-patch-bypass-kev-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/fortinet-fortios-cve-2025-68686-ssl-vpn-symlink-patch-bypass-kev-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 10:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Fortinet</category>
+      <category>FortiOS</category>
+      <category>SSL-VPN</category>
+      <category>CISA KEV</category>
+      <category>Persistence</category>
+      <description>CISA added CVE-2025-68686 to the KEV catalog after attackers found a way around Fortinet&apos;s patch for the FortiOS SSL-VPN symlink trick, though exploiting it still requires an already-compromised device.</description>
+      <content:encoded><![CDATA[<p>The most useful thing an attacker can steal from a firewall isn't data. It's a way back in after you patch.</p>
+<p>That's the story behind CVE-2025-68686, which CISA added to its Known Exploited Vulnerabilities catalog on July 27 alongside a maximum-severity Arista flaw. Fortinet classifies it as an exposure of sensitive information in FortiOS SSL-VPN, CWE-200. In plain terms, it's a bypass for a fix Fortinet had already shipped.</p>
+<p>The original problem is worth remembering. Attackers who had broken into FortiGate devices through older bugs planted a symbolic link in the SSL-VPN language files directory pointing at the device filesystem. Patching the entry-point vulnerability closed the door but left the symlink in place, so the intruders kept read access to configuration and credentials on boxes their owners believed were clean. Fortinet patched the symlink mechanism. CVE-2025-68686 gets around that patch using specially crafted HTTP requests.</p>
+<p>Here's the qualifier that should shape how you triage this. It isn't a fresh entry point. An attacker has to already hold filesystem-level access on the device, obtained through some other flaw, before the bypass does anything for them. Fortinet ties the activity to the long tail of CVE-2022-42475, CVE-2023-27997, and CVE-2024-21762, three FortiOS bugs that were heavily exploited and are still finding unpatched targets years on.</p>
+<p>So the population at risk is specific and probably larger than most teams would like to admit: FortiGate appliances compromised at some point since 2022 where the intrusion was patched but never actually investigated. Applying the update and declaring victory is exactly the behavior this technique was built to exploit.</p>
+<p>If you run FortiOS SSL-VPN and you've patched any of those three CVEs at any point without a forensic review, treat the device as suspect. Update to a fixed build, then audit the SSL-VPN language files directory for symlinks that have no business existing, rotate every credential stored on the appliance, and check the configuration against a known-good copy. A patched box with a stranger's link still in it is not a patched box.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CXMT Closed Up 466% and Became China&apos;s Most Valuable Listed Company</title>
+      <link>https://sabr-labs.com/article/cxmt-shanghai-star-market-debut-466-percent-dram-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cxmt-shanghai-star-market-debut-466-percent-dram-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>DRAM</category>
+      <category>China</category>
+      <category>IPO</category>
+      <category>Memory</category>
+      <description>China&apos;s leading DRAM maker ended its Shanghai debut at a $485 billion market value on the back of a 7.67% share of the global memory market.</description>
+      <content:encoded><![CDATA[<p>ChangXin Memory Technologies priced its IPO at 8.66 yuan a share. It opened at 49.50.</p>
+<p>By Monday's close on Shanghai's STAR Market, CXMT was up 466% and carried a market capitalization of about 3.28 trillion yuan, roughly $485 billion. That makes the Hefei-based DRAM manufacturer the most valuable company listed on mainland China's exchanges, ahead of Intel at around $464 billion and Cisco at around $450 billion.</p>
+<p>The offering itself set records before the stock ever traded. CXMT raised about 57.9 billion yuan ($8.6 billion), the largest listing in STAR Market history, beating SMIC's 53.2 billion yuan in 2020. It's Asia's biggest IPO of 2026 and the largest mainland listing since Agricultural Bank of China went public in 2010. If the over-allotment option is exercised in full, the total climbs toward 66.6 billion yuan.</p>
+<p>Now the part that deserves attention. CXMT's own prospectus puts its 2025 share of the global DRAM market at 7.67%. Samsung sits near 39%, SK Hynix near 29%, Micron near 22%. CXMT is the fourth-largest DRAM producer, and it just closed at a valuation the market has not extended to the three companies that make roughly nine out of every ten DRAM chips on earth.</p>
+<p>The enthusiasm isn't baseless. Memory is in the middle of a genuine shortage, with AI infrastructure absorbing capacity that used to flow to phones and laptops, and contract prices have moved sharply. A domestic DRAM supplier is also the exact thing Beijing's chip self-sufficiency push has been trying to produce for a decade, and Chinese retail investors priced that in with enthusiasm. During the IPO process the company was valued around $85.5 billion. One trading session multiplied that by more than five.</p>
+<p>The constraint nobody repriced is equipment. Export controls still limit what advanced lithography and process tooling CXMT can buy, which caps how fast it can close the technology gap with the leaders regardless of how much capital the listing raised. Money solves a lot of problems in semiconductors. It does not solve the ones that require a machine you're not allowed to purchase.</p>
+<p>For Micron in particular, a well-funded fourth player with state backing and a protected home market is a real competitive development. Whether it's a $485 billion one is a different question, and the answer arrives in capacity and yield data over the next several quarters, not in a debut-day print.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Delayed Its Smart Glasses Because It Can&apos;t Solve the Camera</title>
+      <link>https://sabr-labs.com/article/apple-smart-glasses-delayed-privacy-camera-decision-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-smart-glasses-delayed-privacy-camera-decision-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>Smart Glasses</category>
+      <category>Privacy</category>
+      <category>Wearables</category>
+      <category>Meta</category>
+      <description>Bloomberg reports Apple pushed back its smart glasses over privacy concerns, with engineers weighing whether to ship the device without a camera at all.</description>
+      <content:encoded><![CDATA[<p>Every company building smart glasses has the same unsolved problem, and it isn't battery life. It's the person standing in front of you who didn't agree to any of this.</p>
+<p>Apple has reportedly decided that problem is worth a delay. According to Bloomberg's Mark Gurman, the company has pushed back the launch of its glasses, internally known as N50, to spend more time on privacy, a slip of roughly six months from a previously reported late-2026 reveal. Teams working on the device are said to treat privacy as the top priority rather than a compliance checkbox bolted on before shipping.</p>
+<p>Two approaches are reportedly on the table, and both are more drastic than anything a competitor has attempted. The first removes the camera entirely, leaving glasses that handle AI features, calls, and audio but cannot capture a photo or record video. The second keeps the camera but blocks it from producing images at all, restricting it to gathering environmental data that feeds AI features.</p>
+<p>That second option is the interesting one. A sensor that perceives a room without ever writing a frame to storage is a meaningfully different product from a wearable camera, and it's a harder engineering problem than just adding a brighter recording light.</p>
+<p>The context is Meta, whose Ray-Ban glasses have taken sustained criticism precisely because the cameras are small enough that people nearby often don't register they're being recorded. Apple watching that reception and concluding the category needs a different answer is a reasonable read of the last two years.</p>
+<p>The skeptical read is also available. Apple is late to a category its rivals have been shipping into for a while, and privacy is a flattering explanation for a schedule that slipped. Both things can be true. Apple has also spent a decade making privacy a product argument rather than a policy statement, and it's the one company with enough on-device silicon to make a no-upload camera claim that a security researcher could actually verify.</p>
+<p>If Apple ships glasses with no camera, it will have made the loudest possible statement about what the rest of the category got wrong. It will also be selling AirPods with a frame, at a price that has to justify the frame.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia Is Backing a Startup With No Product and No Revenue</title>
+      <link>https://sabr-labs.com/article/nvidia-safe-superintelligence-vera-rubin-partnership-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-safe-superintelligence-vera-rubin-partnership-july-2026</guid>
+      <pubDate>Tue, 28 Jul 2026 08:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Nvidia</category>
+      <category>Safe Superintelligence</category>
+      <category>Ilya Sutskever</category>
+      <category>AI Funding</category>
+      <category>Vera Rubin</category>
+      <description>Nvidia and Safe Superintelligence announced a long-term partnership giving Ilya Sutskever&apos;s two-year-old lab access to the Vera Rubin platform, with Bloomberg reporting an investment near $5 billion.</description>
+      <content:encoded><![CDATA[<p>Safe Superintelligence has never shipped anything. It has no product, no revenue, and one stated goal. On Monday it became one of Nvidia's largest investments of the AI boom.</p>
+<p>The two companies announced a long-term strategic partnership on July 27. Nvidia's release doesn't name a figure; Bloomberg reported the investment at around $5 billion. The concrete part of the deal is compute. SSI gets access to Vera Rubin, Nvidia's next-generation platform, which the companies say will increase the lab's available compute by an order of magnitude. The two will also collaborate on the design of Nvidia's current and future platforms, with SSI feeding research insight back into the hardware roadmap.</p>
+<p>Ilya Sutskever's comment on the deal is more informative than these statements usually are. "We have research that is worthy of scaling up, and having access to a big NVIDIA computer will let us do so," he said. Read that as an admission: SSI believes it has found something, and the bottleneck has been machines rather than ideas. For a lab that has published essentially nothing since its 2024 founding, that's the closest thing to a progress report anyone has offered.</p>
+<p>Sutskever's track record is why the money shows up regardless. AlexNet, sequence-to-sequence learning, AlphaGo, the GPT line. Jensen Huang's quoted remarks lean entirely on that history, which is the honest framing available when the company you're funding has no product to describe.</p>
+<p>The pattern underneath deserves naming, though. Nvidia has spent this cycle investing in the companies that buy its hardware, and a chunk of that capital returns as purchase orders for Nvidia systems. That's not fraud and it's not unusual in capital-intensive industries, but it does mean some portion of AI infrastructure demand is being financed by the vendor selling the infrastructure. Investors reading Nvidia's revenue growth should know how much of it was seeded this way.</p>
+<p>SSI has raised from Andreessen Horowitz, DST Global, Greenoaks, and Sequoia, and it remains one of the strangest bets in the industry: a research lab that has explicitly declined to build intermediate commercial products, funded on the premise that the destination justifies skipping every stop along the way.</p>
+<p>The Vera Rubin allocation is the real test. An order of magnitude more compute removes the excuse. Whatever SSI has been working on for two years now has to survive contact with scale.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Nvidia Weighs $250 Billion Backstop for OpenAI&apos;s Ohio Data Center</title>
       <link>https://sabr-labs.com/article/nvidia-openai-250-billion-ohio-data-center-backstop-july-2026</link>
@@ -862,121 +986,6 @@
 <p>The name isn't marketing. This is the same class of bug as CitrixBleed, the 2023 flaw that leaked session tokens and let attackers ride authenticated sessions straight past multi-factor auth. The root cause this time is small and ugly: the parser didn't terminate unquoted XML attribute values when a newline followed, so it kept reading into whatever was next in memory.</p>
 <p>Researchers at watchTowr published a technical writeup the same day Citrix disclosed, and honeypot sensors recorded a working exploit within a roughly five-hour window spanning June 30 into July 1. That's the pattern now. When a memory-disclosure bug in an internet-facing VPN appliance gets full technical detail on day one, the window to mass exploitation is measured in hours, not weeks.</p>
 <p>Patch to the fixed NetScaler builds if you haven't. And if your appliance ran as a SAML IdP while exposed to the internet, patching alone won't save you. Rotate session secrets and terminate active sessions, because anything that leaked out of memory, tokens included, is already gone. CitrixBleed taught this exact lesson in 2023. The sequel has the same plot.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>EY Says Client Tax Files Stolen Through a Third-Party Help Desk</title>
-      <link>https://sabr-labs.com/article/ernst-young-ey-breach-client-tax-documents-third-party-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ernst-young-ey-breach-client-tax-documents-third-party-july-2026</guid>
-      <pubDate>Mon, 20 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ernst &amp; Young</category>
-      <category>Data Breach</category>
-      <category>Third-Party Risk</category>
-      <category>Tax Data</category>
-      <category>Identity Theft</category>
-      <description>Ernst &amp; Young disclosed that attackers accessed a third-party IT support platform and downloaded client tax documents, including Social Security numbers and investment holdings.</description>
-      <content:encoded><![CDATA[<p>The data in an accountant's support ticket is exactly the data a criminal wants: Social Security numbers, bank account codes, investment holdings, and the actual contents of people's tax filings. Ernst & Young just confirmed a batch of it walked out the door.</p>
-<p>EY, one of the Big Four, disclosed that an unauthorized party got into a third-party IT service management platform its staff used to support client tax work. The attackers had access from March 28 to April 12, and downloaded client documents during that window. EY spotted suspicious activity on April 23, filed a breach notification with California's Attorney General on July 15, and has notified at least four states.</p>
-<p>That's roughly a three-week gap between the intrusion and detection, and the stolen material is about as sensitive as personal data gets. According to the disclosures, it included Social Security numbers, financial account and routing codes, credit and debit account data, investment holdings, and the contents of client tax returns.</p>
-<p>EY hasn't named a threat actor or said whether ransomware was involved. What it has confirmed is the shape of the attack, and it's a familiar one in 2026: not EY's own network, but a vendor platform holding EY's data. The help-desk tool you trust with support tickets becomes the soft path to your clients' most sensitive records.</p>
-<p>EY is offering affected people 24 months of identity monitoring through Experian. If you're an EY tax client, don't wait on the letter. Assume the data is out, freeze your credit, and be ready for tax-fraud attempts and phishing that quotes real details from your filings to sound legitimate. Monitoring after the fact tells you when someone uses your data. It doesn't stop them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>An AI Agent Broke Into Hugging Face and Logged 17,000 Actions</title>
-      <link>https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach-17000-actions-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach-17000-actions-july-2026</guid>
-      <pubDate>Mon, 20 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Hugging Face</category>
-      <category>AI Security</category>
-      <category>Autonomous Agents</category>
-      <category>Data Breach</category>
-      <category>Supply Chain</category>
-      <description>Hugging Face says an autonomous AI agent breached its production infrastructure through a malicious dataset, harvested internal credentials, and ran end to end with no human at the keyboard.</description>
-      <content:encoded><![CDATA[<p>Seventeen thousand actions. That's how many moves an autonomous AI agent made inside Hugging Face's production infrastructure before the company pieced together what it had done.</p>
-<p>In a disclosure published July 20, the world's largest AI model repository described an intrusion unlike anything it had handled before. It wasn't a person with a keyboard. It was an autonomous agent framework, one that appears to have been built on an agentic security-research harness, running thousands of individual actions across a swarm of short-lived sandboxes.</p>
-<p>The way in was a dataset. A malicious dataset abused two code-execution paths, the remote-code dataset loader and a template injection in a dataset configuration, and both let attacker code run on a data-processing worker. From that worker the agent got node-level access, then harvested cloud and cluster credentials and moved laterally across internal clusters over a weekend.</p>
-<p>There is good news buried in the report. Hugging Face found no tampering with public, user-facing models, datasets, or Spaces, and it verified that container images and published packages were clean. The software supply chain held. The internal-cluster access is the part that should keep people up at night.</p>
-<p>The sharpest detail is about the defense. To reconstruct more than 17,000 events, Hugging Face ran its own LLM analysis agents over the attacker log. When it tried to use frontier model APIs for parts of that work, the models' safety guardrails balked at analyzing the attacker's actions, so the team fell back to a self-hosted open-weight model (GLM 5.2) on internal infrastructure and finished in hours. The attacker had no such guardrails. If your incident-response plan depends on a model that might refuse the job, you don't have an incident-response plan.</p>
-<p>The practical takeaway is old advice with new urgency. If you run pipelines that load untrusted datasets or render configs, treat those loaders and template paths as remote code execution surfaces: sandbox them hard and scope worker credentials to the minimum. The novelty here isn't the entry point. It's that the whole intrusion ran at machine speed with nobody steering it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Starship&apos;s Flight 13 Aborts at T-0 After Four Engines Refuse to Light</title>
-      <link>https://sabr-labs.com/article/spacex-starship-flight-13-t-zero-abort-engine-ignition-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-starship-flight-13-t-zero-abort-engine-ignition-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 15:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>SpaceX</category>
-      <category>Starship</category>
-      <category>Raptor</category>
-      <category>NASA</category>
-      <category>Rockets</category>
-      <description>SpaceX scrubbed Starship&apos;s 13th test flight a second before liftoff when four Raptor engines failed to ignite, triggering an automatic shutdown of the rest.</description>
-      <content:encoded><![CDATA[<p>Starship came within about a second of leaving the pad on Thursday, then didn't. Four of its 33 Raptor engines failed to ignite during the startup sequence, and the flight computer did exactly what it's supposed to do: it shut the other 29 down and kept the rocket bolted to the ground, wrapped in smoke and vapor.</p>
-<p>This was a first. For all the drama of earlier Starship tests, a full-scale vehicle had never triggered a last-second abort at T-0 like this. The automatic shutdown is the system working, not failing. Catching a bad ignition and standing down beats lifting off on 29 of 33 engines and finding out what happens next over the Gulf.</p>
-<p>Elon Musk said on X that two engines will be swapped out before the next attempt, and that the most probable launch window is early next week. At 407 feet with 33 main engines, Starship is the largest and most powerful rocket ever built, and getting all 33 to light in the right fraction of a second is exactly the kind of problem that doesn't fully show up until you're doing it for real.</p>
-<p>There's a NASA deadline hanging over this. Starship is the lander for returning astronauts to the Moon, and the program's schedule leans on these test flights going well and going soon. A scrub isn't a setback in engineering terms. It is one in calendar terms, and the calendar is the part NASA cares about.</p>
-<p>The retarget lands on July 20 if the window holds, which is a nice bit of timing. Apollo 11 touched down on the Moon on July 20, 1969. Watch the ignition sequence on the next attempt. That one second is where this flight lives or dies.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Report: US Pressed Samsung and SK Hynix to Share AI &apos;Excess Profits&apos;</title>
-      <link>https://sabr-labs.com/article/us-samsung-sk-hynix-ai-excess-profits-sharing-report-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/us-samsung-sk-hynix-ai-excess-profits-sharing-report-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Samsung</category>
-      <category>SK Hynix</category>
-      <category>Semiconductors</category>
-      <category>Trade Policy</category>
-      <category>AI Chips</category>
-      <description>Korean press reports say a US trade official told Seoul that Washington has a right to share in the memory-chip windfall driven by the AI boom, a claim the US has not confirmed.</description>
-      <content:encoded><![CDATA[<p>Washington reportedly wants a cut of the money South Korea's memory-chip makers are pulling in off the AI boom. According to reports out of Seoul, a US trade official told his Korean counterpart that the US has a right to share in the "excess profits" of Samsung Electronics and SK Hynix.</p>
-<p>The claim traces to a meeting in which Deputy US Trade Representative Rick Switzer reportedly raised the idea with Korea's trade minister. It has not been officially confirmed by the US side. The backdrop is real enough: South Korean semiconductor exports to the US jumped more than 90% year over year in the first half of 2026, and both companies sell the high-bandwidth memory that AI accelerators depend on.</p>
-<p>The numbers behind the demand are eye-catching, and worth a grain of salt. Reports cite projections of a massive jump in Samsung's 2026 profit and an even steeper climb for SK Hynix off a small 2025 base. These are forecasts, not booked results, so read them as the shape of the windfall rather than a settled figure.</p>
-<p>A foreign government asking to share in a private company's profits is unusual and legally murky. Korea's trade ministry said it was unaware of any such request. This reads less like a concrete policy and more like an opening position in a wider negotiation over tariffs and US investment commitments, the kind of maximalist ask that gets floated to see what sticks.</p>
-<p>If any of it is confirmed on the record, it's a new way of tying chip revenue to trade leverage. For now it's a report, and the thing to watch is whether either government says the words out loud.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic May Rent $10 Billion of Compute From a Direct Rival, Meta</title>
-      <link>https://sabr-labs.com/article/meta-anthropic-10-billion-compute-lease-talks-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-anthropic-10-billion-compute-lease-talks-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>Anthropic</category>
-      <category>Data Centers</category>
-      <category>AI Compute</category>
-      <category>Cloud</category>
-      <description>Anthropic is in early talks to lease up to $10 billion in data-center capacity from Meta, whose Llama models compete head-on with Claude.</description>
-      <content:encoded><![CDATA[<p>Anthropic is in early talks to rent up to $10 billion in computing capacity from Meta. That's the same Meta that builds the Llama models competing directly with Claude. Reuters and the New York Times reported the discussions this week.</p>
-<p>The terms are preliminary. The talks reportedly began in June on a proposal from Anthropic, with payments made in monthly increments over roughly two years, and either side can walk away before anything is signed. Nothing is final, and "up to $10 billion" is a ceiling, not a check that's been written.</p>
-<p>What makes this odd is the shape of it. Meta ships its own frontier models and would, under this arrangement, also become the landlord renting Anthropic the infrastructure to train and serve a rival. The logic on Meta's side is that hyperscalers have spent enormously on data centers, and leasing out spare capacity turns some of that capex into a revenue line. On Anthropic's side, it's about getting enough compute, from wherever it can, fast enough to keep up.</p>
-<p>Anthropic already leans on Amazon and Google for capacity. Adding Meta would be less about strategy and more about raw availability, which is the tell. When a company is willing to buy compute from a direct competitor, scarcity has clearly started to outweigh the awkwardness.</p>
-<p>Early-stage deals leak for a reason, so treat the number as a headline, not a done deal. If it does close, the signal matters more than the dollar figure: the fight for compute has gotten intense enough that rivals will do business with each other to get it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft&apos;s &apos;Project Perception&apos; Takes Aim at Anthropic&apos;s Mythos Bug Hunter</title>
-      <link>https://sabr-labs.com/article/microsoft-project-perception-ai-vulnerability-finder-mythos-rival-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-project-perception-ai-vulnerability-finder-mythos-rival-july-2026</guid>
-      <pubDate>Sun, 19 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Microsoft</category>
-      <category>Anthropic</category>
-      <category>AI Security</category>
-      <category>Vulnerability Management</category>
-      <category>OpenAI</category>
-      <description>Microsoft is reportedly readying an AI security product that finds and fixes software bugs across code, cloud, and endpoints, priced to undercut Anthropic&apos;s Mythos.</description>
-      <content:encoded><![CDATA[<p>Microsoft wants to find your software bugs with AI, fix them automatically, and charge less than Anthropic to do it. The company is preparing to launch a security product internally codenamed Project Perception, according to a report from The Information, and it's built to look across a company's code, cloud infrastructure, and endpoints, flag exploitable weaknesses, explain the impact, and propose concrete fixes.</p>
-<p>The interesting piece is how it's wired. Rather than betting on a single model, Perception reportedly uses a router that picks the best model per task, drawing on Microsoft's own models plus ones from OpenAI and Anthropic. It ties into the security estate Microsoft already sells: Defender XDR for endpoint signals, Defender for Cloud, Entra ID for identity, and GitHub for source. The pitch is that combining those inputs answers questions a standalone scanner can't.</p>
-<p>The target is obvious. Anthropic's Mythos does autonomous bug-finding and patching, and it's expensive to run. Reporting puts Mythos API costs well above both Opus and GPT pricing, and Microsoft's per-task routing is the lever it plans to pull to come in cheaper. Cheap enough, the framing goes, to run continuously instead of in occasional audits.</p>
-<p>Skepticism is the right default on the AI security beat. This is still a report about an unshipped product that's supposedly launching "as soon as this month." AI bug-finders are genuinely useful and also genuinely oversold. The hard part was never generating a list of candidate bugs. It's the false-positive rate, and whether an auto-proposed fix is safe to actually merge without a human who understands the codebase signing off.</p>
-<p>Cost routing helps adoption. It says nothing about accuracy. For Windows-heavy shops already living inside Defender and Entra, the real moat isn't the model, it's the integration, and no competitor can replicate the telemetry Microsoft already holds. The number worth waiting for is the false-positive rate when this ships. Everything else is a demo.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
