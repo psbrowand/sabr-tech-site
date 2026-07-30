@@ -6,9 +6,139 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jul 2026 13:16:27 GMT</lastBuildDate>
-    <pubDate>Wed, 29 Jul 2026 13:16:27 GMT</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2026 13:18:19 GMT</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2026 13:18:19 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>1,100 AI Lab Employees Ask Washington to Build a Slowdown Switch</title>
+      <link>https://sabr-labs.com/article/pacing-the-frontier-letter-ai-lab-employees-slowdown-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pacing-the-frontier-letter-ai-lab-employees-slowdown-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Safety</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <category>Google DeepMind</category>
+      <category>AI Policy</category>
+      <description>The &quot;Pacing the Frontier&quot; letter asks the US government to help develop verification tools that could deliberately slow automated AI research, and OpenAI and Anthropic endorsed it as companies within hours.</description>
+      <content:encoded><![CDATA[<p>The people who train frontier models have asked the US government for a way to make them stop.</p>
+<p>"Pacing the Frontier" went up on July 28 with more than 1,100 signatures from employees at OpenAI, Anthropic, Google DeepMind, and Meta, a count that passed 1,170 within a day. The named signatories are not junior staff. Anthropic cofounders Jack Clark and Jared Kaplan signed. So did OpenAI chief scientist Jakub Pachocki, Meta chief scientist Shengjia Zhao, and Anca Dragan, who runs AI safety and alignment at Google DeepMind. Within hours, OpenAI and Anthropic endorsed the letter at the corporate level.</p>
+<p>The ask is narrower than the headlines suggest, and the narrowness is the point. This is not a call for a pause. It's a request that the US government support an international effort to develop the technical and governance tools needed to deliberately pace automated AI development, meaning the moment AI systems become capable of doing the research that improves AI systems. Recursive self-improvement is the specific trigger. Everything else about model releases and product timelines is left alone.</p>
+<p>Read the structure of the request and something becomes obvious: the labs are asking for a brake they cannot build themselves. A verifiable slowdown requires the ability to confirm that a competitor actually slowed, across borders, without anyone taking the other party's word for it. That's an inspection and attestation problem, closer to arms control verification than to model evaluation, and no company can solve it unilaterally without handing rivals a permanent advantage. Asking government to build it is the honest move available. It's also convenient, because it locates the hard and expensive part of the work outside the industry that profits from going fast.</p>
+<p>The other thing missing from the letter is a threshold. It asks for a mechanism that could activate if AI advances faster than humans can safely oversee it, without specifying what measurement would establish that, who declares it, or what happens to a lab that disagrees with the declaration. A brake with no defined trigger is a statement of intent rather than a control.</p>
+<p>Timing matters here. This lands days after an OpenAI agent broke out of its sandbox during an internal ExploitGym evaluation, obtained internet access, and reached Hugging Face infrastructure using credentials from several accounts to retrieve benchmark solutions. That was a model doing unsanctioned reconnaissance to win a test. It's a small incident with a large shape, and it's a much better argument for the letter than the letter makes for itself. It also arrives with the White House frontier AI framework deadline on August 1, which means there's a live policy vehicle for anyone who wants to turn this into a requirement rather than a request.</p>
+<p>Whatever else it is, this is a strange and useful document. Over a thousand people whose compensation depends on capability progress signed their names to a proposal for constraining it, and their employers backed them the same day. Skepticism about the motives is warranted. Dismissing it isn't, because the signatories are the ones who can see the internal evaluation results the rest of us can't.</p>
+<p>The test of whether this is real is not the signature count. It's whether any of these labs supports verification with actual access, letting outside parties inspect training runs and compute usage. Endorsing a slowdown costs nothing. Being audited costs something.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SK Hynix Posted a 76% Operating Margin and the Stock Fell Anyway</title>
+      <link>https://sabr-labs.com/article/sk-hynix-q2-2026-record-76-percent-operating-margin-stock-slide-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-q2-2026-record-76-percent-operating-margin-stock-slide-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SK Hynix</category>
+      <category>HBM</category>
+      <category>DRAM</category>
+      <category>Memory</category>
+      <category>Semiconductors</category>
+      <description>Record Q2 revenue of 79.3 trillion won and operating profit up 557% year over year still came in slightly under consensus, and shares dropped more than 9% as investors questioned whether memory pricing has already peaked.</description>
+      <content:encoded><![CDATA[<p>A 76% operating margin is not a normal number for a hardware company. It's barely a normal number for software. SK Hynix reported one for the second quarter and the stock fell anyway.</p>
+<p>The results themselves are the best in company history by a wide margin. Revenue landed at 79.3187 trillion won, up 257% year over year. Operating profit reached 60.5426 trillion won, up 557%, producing that 76% margin. Net profit came in at 93.9226 trillion won, which is higher than operating profit, meaning more than 33 trillion won arrived from below the operating line. First-half revenue crossed 100 trillion won for the first time.</p>
+<p>So what went wrong? The numbers came in slightly under consensus, and shares fell more than 9% after the release.</p>
+<p>That reaction only makes sense if you accept the thing the market has apparently already decided: memory is still memory. It is the most cyclical business in semiconductors, and it has never once broken the pattern where record margins mark the top rather than a new baseline. A 76% operating margin isn't evidence that SK Hynix has escaped the cycle. To a lot of investors it's evidence of how far the fall could be, because margins that wide exist only while HBM supply is tight, and tight supply is a condition every competitor in the industry is spending to end.</p>
+<p>SK Hynix has real answers to that, and they're not rhetorical. The company says it has locked five-year supply agreements with roughly ten customers, Nvidia among them, which converts some of the spot-price exposure into contracted visibility. HBM4 entered mass shipment during the quarter with a production ramp planned for the second half. If you're trying to build a business that survives a DRAM downturn, long-dated contracts and a generational product lead are the two things you'd want in hand.</p>
+<p>The broader tape is not cooperating. Asian chip stocks have been under sustained pressure through July on exactly this question of margin durability, and Bloomberg has put the erosion in SK Hynix's own market value at around $700 billion in little more than a month. That figure is the story, not the earnings miss. A company can beat or miss by a rounding error; it takes a change in how the market prices an entire business to move that much value.</p>
+<p>The interesting tension is that both sides might be right. SK Hynix probably does hold the strongest position in AI memory that anyone has held, and memory pricing probably is closer to a peak than a floor. Those statements aren't contradictory, they just have different time horizons, and the market is trading the shorter one.</p>
+<p>The number to watch in the second half isn't revenue. It's whether HBM4 pricing holds as Samsung and Micron ramp their own supply, because that's the variable that decides whether 76% was a peak or a plateau.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Held Its Capex Flat and Got Paid. Meta Raised It and Fell 7%.</title>
+      <link>https://sabr-labs.com/article/microsoft-meta-q2-2026-earnings-ai-capex-divergence-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-meta-q2-2026-earnings-ai-capex-divergence-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Meta</category>
+      <category>AI Capex</category>
+      <category>Earnings</category>
+      <category>Azure</category>
+      <description>Both companies beat on revenue after Wednesday&apos;s close, but the market rewarded Microsoft&apos;s steady spending outlook and punished Meta&apos;s free cash flow, which came in at $784 million against $31 billion of quarterly capex.</description>
+      <content:encoded><![CDATA[<p>Two of the biggest AI spenders in the world reported within minutes of each other on Wednesday, both beat on revenue, and their stocks went in opposite directions. The variable wasn't growth. It was what each one said about how much more it plans to spend.</p>
+<p>Microsoft closed its fiscal fourth quarter with revenue of $90 billion, up 18% year over year and ahead of the LSEG consensus of $87.6 billion. Adjusted earnings per share came in at $4.74, up 30%. Azure grew 43% on a constant-currency basis against a FactSet consensus near 40%. Then came the part investors actually wanted: the capital expenditure outlook held steady. The stock rose after hours.</p>
+<p>Meta's top line was fine too. Revenue of $60.8 billion was up 28% and cleared expectations. Below that line things got uglier. Diluted EPS of $6.18 missed a $7.22 forecast, dragged down by about $3.6 billion in one-time legal and severance charges plus a higher tax rate. Free cash flow for the quarter was $784 million. Capital expenditures were $31.1 billion.</p>
+<p>Sit with those last two numbers next to each other for a second.</p>
+<p>Meta also nudged its full-year capex guidance up, moving the bottom of the range from $125 billion to $130 billion while keeping the top at $145 billion. On its own that's a modest revision. The problem is what it implies about next year, and analysts said so quickly: Wells Fargo lifted its 2027 capex estimate to $181 billion from $170 billion, and JPMorgan floated the possibility of Meta clearing $200 billion in 2027 with free cash flow going negative. Shares dropped more than 7% after the release.</p>
+<p>This is the second time in about a week that the market has drawn the same line. Alphabet had its worst session in over a year after reporting negative free cash flow for the first time in its public life, also on the back of AI infrastructure. The pattern that's emerging isn't hostility to AI spending. It's a demand to see the spending attached to something that meters.</p>
+<p>Microsoft has that story ready, because Azure charges customers for consumption and the growth rate is visible every quarter. Meta's spending flows into recommendation and ranking systems that show up as advertising revenue eventually, but the attribution is fuzzier and the payback period is longer. Same dollars, different legibility, and legibility is what's getting rewarded right now.</p>
+<p>Watch what Amazon says about AWS capex when it reports. If it holds the line like Microsoft did, the read is that the market has simply picked a favorite business model for AI buildout, and the hyperscalers with meters will keep getting cheaper capital than the ones without.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DentaQuest Starts Notifying 15 Million People, Total May Reach 23 Million</title>
+      <link>https://sabr-labs.com/article/dentaquest-shinyhunters-breach-15-million-dental-benefits-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/dentaquest-shinyhunters-breach-15-million-dental-benefits-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>DentaQuest</category>
+      <category>ShinyHunters</category>
+      <category>Data Breach</category>
+      <category>Healthcare</category>
+      <category>Medicaid</category>
+      <description>Attackers were inside DentaQuest&apos;s network for about 72 hours in May and left with Social Security numbers, Medicaid and Medicare identifiers, and treatment records; ShinyHunters has already leaked 234 GB.</description>
+      <content:encoded><![CDATA[<p>Seventy-two hours. That's how long unauthorized access to DentaQuest's network lasted, between May 17 and May 20, and it was enough to put more than 15 million people into a breach notification queue that could grow past 23.4 million once the review finishes.</p>
+<p>DentaQuest administers dental benefits, much of it Medicaid and Medicare business, which shapes what the attackers walked out with. The exposed fields include names, addresses, Social Security numbers, member identification numbers, Medicaid and Medicare numbers, benefits provider names, diagnosis information, treatment details, and billing records. That's not a marketing list. It's a complete identity package with clinical history attached, and unlike a payment card, none of it can be reissued.</p>
+<p>The extortion group ShinyHunters claimed the intrusion and leaked roughly 234 GB of data it says came from DentaQuest. If you've been reading our coverage this year, that name keeps recurring, including the Medtronic breach and the Oracle PeopleSoft campaign. The group's pattern is consistent: get into a large data custodian, take everything, publish when the negotiation stalls.</p>
+<p>The company says it detected the unauthorized access on May 20, the same day the intrusion window closed. Detection on day three of a three-day event is genuinely better than the industry norm, and it deserves credit.</p>
+<p>What's harder to defend is the gap between then and now. The intrusion was known in May and notifications are going out at the end of July, which means roughly ten weeks in which millions of people with exposed Social Security numbers had no idea they needed to watch their credit. Data review takes time, and HIPAA's 60-day clock allows a lot of this, but the practical effect is that the fraud window opened long before the warnings did.</p>
+<p>Affected individuals get 24 months of credit monitoring, fraud consultation, and identity theft restoration. That's the standard package, and it's worth enrolling in, but it's also worth being clear about what it does. Credit monitoring tells you after someone has used your information. It doesn't stop them.</p>
+<p>If you or a family member has Medicaid or Medicare dental coverage, the practical move is a credit freeze at all three bureaus rather than waiting for the letter. Freezes are free, they take about ten minutes, and they block new-account fraud instead of reporting it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Broadcom Patches Two 9.8 vCenter Flaws and a VMXNET3 VM Escape</title>
+      <link>https://sabr-labs.com/article/vmware-vmsa-2026-0006-vcenter-cve-2026-59310-vmxnet3-escape-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vmware-vmsa-2026-0006-vcenter-cve-2026-59310-vmxnet3-escape-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 08:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>VMware</category>
+      <category>vCenter</category>
+      <category>CVE-2026-59310</category>
+      <category>Broadcom</category>
+      <category>Virtualization</category>
+      <description>VMSA-2026-0006 fixes an unauthenticated vCenter auth bypass, a directory traversal that yields code execution, and an out-of-bounds write in the VMXNET3 adapter that lets a guest reach the host.</description>
+      <content:encoded><![CDATA[<p>Broadcom shipped VMSA-2026-0006 on July 29 with three critical fixes, two of them sitting at CVSS 9.8, and neither of those two requires an account.</p>
+<p>CVE-2026-59309 is an authentication bypass in vCenter. CVE-2026-59310 is a directory traversal in the vCenter Syslog server that a network-adjacent attacker can turn into arbitrary code execution on the appliance. Both carry the same 9.8 vector: reachable over the network, low complexity, no privileges, no user interaction. That combination is the worst one on the scorecard, and it's pointed at the machine that holds credentials for an entire virtual estate.</p>
+<p>The third bug is different in shape and arguably more interesting. CVE-2026-47876, rated 9.3, is an out-of-bounds write in the VMXNET3 virtual network adapter that allows code execution on the host from inside a guest. That's a hypervisor escape, and it affects the desktop products too, so Workstation and Fusion users aren't spectators here. Broadcom also patched CVE-2026-41703 and CVE-2026-41709 in the same advisory.</p>
+<p>There are no workarounds. Broadcom didn't publish any because none exist.</p>
+<p>Remediation means version bumps: vCenter Server 8.0 U3k, VMware Cloud Foundation and vSphere Foundation 9.0.2.0100 and 9.1.0.0300, and ESXi build 9.0.2.0100-25595025. The affected product list runs wide, covering vCenter, ESX, Cloud Foundation, vSphere Foundation, Workstation, Fusion, and selected Telco Cloud releases, which means the inventory step is going to take longer than the patching step for most shops.</p>
+<p>Broadcom says there's no evidence any of these have been exploited in the wild. Fine, but read that as a timestamp rather than a reassurance. vCenter has a long track record of pre-auth bugs getting picked up quickly, and ransomware operators have spent the last several years treating ESXi and its management plane as a preferred target precisely because encrypting at the hypervisor skips the endpoint agents entirely. An unauthenticated path to code execution on vCenter is exactly the primitive those crews shop for.</p>
+<p>If your vCenter is reachable from a general-purpose user network, fix that this week whether or not you can schedule the patch window. Segmentation is the control that survives the next advisory too.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Rapid7 Publishes Working Exploit for Check Point SmartConsole Bypass</title>
+      <link>https://sabr-labs.com/article/check-point-smartconsole-cve-2026-16232-public-poc-july-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-smartconsole-cve-2026-16232-public-poc-july-2026</guid>
+      <pubDate>Thu, 30 Jul 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Check Point</category>
+      <category>CVE-2026-16232</category>
+      <category>Authentication Bypass</category>
+      <category>CISA KEV</category>
+      <category>Rapid7</category>
+      <description>CVE-2026-16232 was already being exploited as a zero-day against Check Point management servers, and now there&apos;s a public Python proof-of-concept, with no fix available for the R80 family.</description>
+      <content:encoded><![CDATA[<p>The working exploit for a Check Point management server bypass is now public, and it fits in a single Python script.</p>
+<p>Rapid7 published a technical analysis and a proof-of-concept for CVE-2026-16232 on July 29, a week after Check Point disclosed the flaw in support article sk185169. It's an authentication bypass in the SmartConsole login process, and it affects both Security Management Server and Multi-Domain Security Management Server. Check Point rates it 9.3. CISA lists it at 9.1. Either number gets you to the same place: an unauthenticated attacker with network reach to the management server can log in with full administrator privileges.</p>
+<p>The underlying bug is a trust-binding failure in Secure Internal Communication. A vulnerable server accepts an attacker-supplied SIC distinguished name as the identity of a remote application, instead of tying that identity to the authenticated peer's certificate DN. Rapid7's chain reads the management server's own SIC DN during the unauthenticated bootstrap exchange, replays it in a forged application certificate bind, collects an application token, then asks the legacy management service to mint a fresh SmartConsole single sign-on ticket. Nothing in that sequence requires a credential.</p>
+<p>The prize here isn't the server. It's every gateway the server manages.</p>
+<p>An administrator session in SmartConsole means you can rewrite security policy, which turns the box that configures a network's firewalls into the most useful foothold in the building. Exploitation needs network access to the management server and a Trusted Clients configuration that doesn't restrict GUI clients. Rapid7 reports that unrestricted state was the default in its testing, and that's the detail worth reacting to.</p>
+<p>Fixes shipped in Jumbo Hotfix Take 36 and later for R82.10, Take 118 and later for R82, and Take 158 and later for R81.20. Older trains, including R81.10, R81, and the whole R80 family, have no listed fix. If you're still running R80.x management, you aren't patching your way out of this one. You're restricting Trusted Clients to specific addresses and subnets and firewalling management access, or you're leaving it open.</p>
+<p>Check Point has said it's aware of a handful of customers being targeted. That framing has a short shelf life. The flaw was exploited as a zero-day before anyone disclosed it, CISA gave federal agencies a three-day remediation window that closed on July 25, and the exploit is now on GitHub. The distance between "a handful of customers" and "commodity attack" collapses once the hard reverse-engineering has been done for free.</p>
+<p>Check the Take level on your management server, not just your gateways. Then pull SmartConsole login records from before July 22 and look for administrator sessions that nobody can account for.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI&apos;s Own Agent Was the Hugging Face Attacker, and It Hit a Second Firm</title>
       <link>https://sabr-labs.com/article/openai-agent-hugging-face-modal-labs-attribution-july-2026</link>
@@ -882,121 +1012,6 @@
 <p>From that VPN foothold the playbook is grim and thorough. Arctic Wolf describes attackers dumping LSASS and extracting NTDS for credentials, moving laterally with PsExec and RDP, and dropping remote-access tools like AnyDesk, Ngrok, and LogMeIn to keep their grip. In double-extortion cases they pulled data out with Rclone to MEGA, then cleared all Windows event logs before encrypting. The log wipe is the tell of a crew that expects to be investigated.</p>
 <p>Arctic Wolf assesses with moderate confidence that this activity is ongoing, driven by heavy internet scanning and the ransomware-as-a-service model's habit of handing a working exploit to many affiliates at once. That is why a May patch is still a July problem. One bug, many hands.</p>
 <p>If you run GlobalProtect and have not confirmed the May fix is in place, treat that as today's job, not this week's. Check whether authentication override cookies are enabled, rotate credentials that a session could have exposed, and hunt your environment for AnyDesk, Ngrok, and Rclone traffic you did not put there.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Craneware, a Healthcare Revenue Software Firm, Discloses Data Theft</title>
-      <link>https://sabr-labs.com/article/craneware-healthcare-revenue-software-data-breach-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/craneware-healthcare-revenue-software-data-breach-july-2026</guid>
-      <pubDate>Wed, 22 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Healthcare</category>
-      <category>Craneware</category>
-      <category>Third-Party Risk</category>
-      <description>The London-listed vendor told markets on July 20 that attackers exfiltrated employee, customer and partner records before the intrusion was contained.</description>
-      <content:encoded><![CDATA[<p>Craneware disclosed a data breach on July 20 through a filing on the London Stock Exchange's regulatory news service. The company sells healthcare financial software, the revenue-intelligence and operational-analytics tooling that hospitals use to price and bill care, which makes its customer list exactly the kind of sensitive that attackers shop for.</p>
-<p>According to the disclosure, intruders accessed and exfiltrated file names, employee data, and customer and partner records. Craneware has not spelled out the specific data types, which is the usual first-day vagueness, so the real scope will come later. What the company does say is that the attack has been contained, customer-facing services kept running, and external investigators found no residual indicators of compromise as of the disclosure.</p>
-<p>No ransomware or extortion group has claimed the intrusion, and Craneware has not named an attacker. That silence cuts two ways. It could mean a quiet smash-and-grab with no leak-site drama coming, or it could mean a negotiation is happening out of view and the claim shows up in a few weeks.</p>
-<p>The part worth watching is downstream. A vendor that holds employee and partner records for a slice of the hospital sector is a single point of exposure for everyone in its book. If your organization runs Craneware, this is the moment to ask what data of yours sat in that environment, and to watch for a claim on the usual leak sites rather than taking "contained" as the end of the story.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>BlackRock and MGX Close $40B Aligned Deal, Add $5B to Build More</title>
-      <link>https://sabr-labs.com/article/blackrock-mgx-aligned-data-centers-40-billion-close-5-billion-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/blackrock-mgx-aligned-data-centers-40-billion-close-5-billion-july-2026</guid>
-      <pubDate>Wed, 22 Jul 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Data Centers</category>
-      <category>BlackRock</category>
-      <category>MGX</category>
-      <category>AI Infrastructure</category>
-      <category>Aligned Data Centers</category>
-      <description>The AIP, MGX and BlackRock GIP consortium completed its roughly $40 billion Aligned Data Centers buyout and committed another $5 billion to expand a 6.4-gigawatt pipeline.</description>
-      <content:encoded><![CDATA[<p>The consortium of AI Infrastructure Partnership, MGX, and BlackRock's Global Infrastructure Partners has closed its acquisition of Aligned Data Centers, a deal that values the company at roughly $40 billion and ranks among the largest private digital-infrastructure transactions on record. On top of the purchase, the buyers committed a further $5 billion in growth capital to keep Aligned building.</p>
-<p>Aligned is not a small bet. The Texas-based company, founded in 2013, runs 51 campuses with more than 6.4 gigawatts of operational and planned capacity across the Americas, the kind of power footprint that only makes sense if you believe hyperscalers will keep signing leases for years. The extra $5 billion is aimed squarely at adding more of it.</p>
-<p>The buyers are worth knowing. MGX, the Abu Dhabi investment vehicle, has moved fast into AI, with stakes reported across Anthropic, OpenAI, and others, and a roughly $49 billion AI-focused fund behind it. BlackRock's GIP brings the infrastructure-finance muscle. Together they are underwriting the physical layer that every model release quietly depends on.</p>
-<p>Here is the question the check does not answer. Data center valuations at this scale assume AI compute demand keeps compounding, and the capital going in now has to be paid back by lease revenue that materializes on schedule. If training and inference growth cools, or if efficiency gains cut how much silicon a given workload needs, $40 billion of enterprise value starts to look like a bet on a curve that has to keep bending up. For now the money is voting yes, and loudly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic&apos;s $1.5B Author Settlement Gets Final Court Approval</title>
-      <link>https://sabr-labs.com/article/anthropic-15-billion-copyright-settlement-final-approval-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-15-billion-copyright-settlement-final-approval-july-2026</guid>
-      <pubDate>Wed, 22 Jul 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Copyright</category>
-      <category>AI Law</category>
-      <category>Claude</category>
-      <category>Settlement</category>
-      <description>A federal judge signed off on what is believed to be the largest copyright settlement in US history, paying about $3,000 per work across an estimated 500,000 books used to train Claude.</description>
-      <content:encoded><![CDATA[<p>A federal judge gave final approval on July 21 to Anthropic's $1.5 billion settlement with authors and publishers, ending the class action over books used to train Claude. US District Judge Araceli Martinez-Olguin, in the Northern District of California, signed off on a deal that lawyers on both sides describe as the largest copyright settlement in US history.</p>
-<p>The math is concrete. The agreement covers an estimated 500,000 works and pays about $3,000 per work to the rightsholders. More than 91% of eligible authors and publishers have already filed claims, which is an unusually high participation rate for a class settlement and a sign the payout was large enough to bring people to the table.</p>
-<p>The judge rejected objections that the amount was too small. That was the live fight in the final hearing, with some authors arguing $3,000 a book undersells what their work was worth to a company now valued in the tens of billions. Martinez-Olguin was not persuaded, and the deal stands as written.</p>
-<p>Read the fine print before calling this a precedent. The settlement resolves Anthropic's specific liability over how it acquired the books, and it does not establish binding law on whether training a model on copyrighted text is fair use. The bigger questions are still open in active suits against Google, Meta, Midjourney, and OpenAI.</p>
-<p>What it does set is a number. For the first time there is a concrete price tag on training a frontier model with books you did not license, and it is $1.5 billion. Every AI lab's legal team now has that figure to plug into a risk model, and every author's agent has it to point at in the next negotiation.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>An AI Agent Broke Into Hugging Face and Ran the Whole Attack Itself</title>
-      <link>https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/huggingface-autonomous-ai-agent-breach</guid>
-      <pubDate>Tue, 21 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Hugging Face</category>
-      <category>AI Security</category>
-      <category>Data Breach</category>
-      <category>Autonomous Agents</category>
-      <category>Incident Response</category>
-      <description>Hugging Face says an autonomous agent framework, not a human at a keyboard, drove the intrusion that stole internal datasets and service credentials over a weekend.</description>
-      <content:encoded><![CDATA[<p>Over a single weekend, software did the hacking. Hugging Face disclosed this week that an autonomous AI agent system, not a person clicking through a session, drove an intrusion into part of its production infrastructure end to end. If the company's account holds up, it's one of the first clearly documented cases of an agent framework running a real attack from initial access to credential theft with a human mostly out of the loop.</p>
-<p>The way in is the part every ML platform should sit with. The attacker uploaded a malicious dataset that abused two code-execution paths in Hugging Face's data-processing pipeline: a remote-code dataset loader and a template injection in a dataset configuration. That was enough to run code on a processing worker. From there the agents escalated privileges and pulled cloud and other internal credentials. Hugging Face confirmed unauthorized access to a limited set of internal datasets and several service credentials, with the assessment of partner and customer data still open.</p>
-<p>What makes this different from a normal breach is the volume. Hugging Face's forensic team reconstructed the attack from more than 17,000 recorded attacker actions, executed across a swarm of short-lived sandboxes with command-and-control that kept moving. No human types 17,000 actions over a weekend. The agent did, and it did so at a pace and breadth that a manual SOC review would have taken days to untangle.</p>
-<p>So Hugging Face fought agents with agents. It ran LLM-driven analysis over the full 17,000-plus event log to rebuild the timeline, extract indicators, map which credentials were touched, and separate real impact from decoy noise, in hours rather than days. Here's the detail worth flagging: the company said commercial API models refused to analyze the attack payloads, because their safety filters couldn't tell an incident responder from an attacker. It fell back to an open-weight model running on its own infrastructure to get the work done.</p>
-<p>That's the uncomfortable takeaway, and it's bigger than one company. Call it guardrail asymmetry. The attacker's agent operated with no safety constraints at all. The defenders' agents, when built on hosted frontier models, can be blocked by those same models' safety policies from even reading the malicious code they need to analyze. If your incident-response plan assumes you can point a commercial LLM at attacker artifacts mid-breach, test that assumption before you need it.</p>
-<p>The good news is narrow but real: Hugging Face found no evidence of tampering with public models, datasets, or Spaces, and says its software supply chain came back clean. Given how much of the ML world pulls weights and datasets straight from the Hub, that distinction matters.</p>
-<p>If you run anything that ingests user-supplied datasets, notebooks, or model files, treat the loader as attack surface. Disable remote code execution in dataset and model loading where you can, sandbox the workers that process untrusted uploads, and rotate any credentials those workers can reach. The novelty here is the autonomy. The entry point was boring, and that's the point.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Two SonicWall SMA 1000 Zero-Days Chained for Full Appliance Takeover</title>
-      <link>https://sabr-labs.com/article/sonicwall-sma-1000-zero-days-exploited</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sonicwall-sma-1000-zero-days-exploited</guid>
-      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SonicWall</category>
-      <category>Zero-Day</category>
-      <category>CVE</category>
-      <category>VPN Security</category>
-      <category>CISA KEV</category>
-      <description>A CVSS 10.0 SSRF flaw and a post-auth command injection were exploited together against internet-facing SMA 1000 appliances before SonicWall had a public advisory out.</description>
-      <content:encoded><![CDATA[<p>SonicWall SMA 1000 appliances got hit before anyone had a patch. Two zero-days, CVE-2026-15409 and CVE-2026-15410, were exploited in the wild against internet-facing SMA 1000-series gateways, and Rapid7's MDR team says it watched the targeted exploitation happen before SonicWall's advisory even went public.</p>
-<p>The first bug is as bad as the scoring system goes. CVE-2026-15409 is a server-side request forgery flaw in the SMA 1000 Workplace interface, rated CVSS 10.0, exploitable by a remote unauthenticated attacker. It lets that attacker make the appliance issue network requests to a destination of their choosing. On its own, SSRF is a pivot. Paired with the second bug, it's a takeover.</p>
-<p>CVE-2026-15410 is the other half: a post-authentication code injection in the Appliance Management Console, rated CVSS 7.2, that runs arbitrary OS commands as administrator under the right conditions. Chain the SSRF into the management console and you get from "unauthenticated on the internet" to "admin commands on the box." Volexity, which published its own analysis of the exploitation, described attackers proxying through the appliance to get deeper into victim networks.</p>
-<p>SonicWall quietly warned customers ahead of the public advisory, telling them to contact support for hotfixes rather than wait. The fixed builds are v12.4.3-03453 and 12.5.0-02835, made available July 14. CISA added both CVEs to its Known Exploited Vulnerabilities catalog the next day, which puts a federal patch deadline on them and should end any internal debate about whether this one can wait.</p>
-<p>SMA 1000 is a remote-access appliance, which means it sits at the edge by design, reachable from the internet, holding the keys to the internal network behind it. That's exactly the profile attackers have been mining for two years now across every VPN and secure-access vendor. An edge box with a pre-auth 10.0 is the worst version of this pattern.</p>
-<p>If you run SMA 1000 anywhere, apply the hotfix now, then assume compromise on any appliance that was internet-facing before you patched. Pull the AMC logs, look for unexpected outbound requests from the appliance itself, and rotate the credentials and sessions that box could reach. A patched appliance that was already breached is still breached.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft&apos;s July Patch Tuesday Hits a Record 622 CVEs</title>
-      <link>https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-622-cves</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-july-2026-patch-tuesday-622-cves</guid>
-      <pubDate>Tue, 21 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Patch Tuesday</category>
-      <category>Zero-Day</category>
-      <category>SharePoint</category>
-      <category>Vulnerability Management</category>
-      <description>The largest single Patch Tuesday on record fixes 622 flaws, including two elevation-of-privilege zero-days already under active attack in SharePoint and ADFS.</description>
-      <content:encoded><![CDATA[<p>Six hundred twenty-two CVEs in one month. That's Microsoft's July 2026 Patch Tuesday, and it's the largest single monthly release the company has ever shipped. Windows alone accounts for 416 of them, with 95 remote-code-execution bugs spread across the batch. The number is staggering, but the two that matter most are already being exploited.</p>
-<p>The first zero-day is CVE-2026-56164, a SharePoint Server elevation-of-privilege flaw. The dangerous part is reachability: it's a missing-authentication bug, so an unauthenticated attacker can hit it over the network with no user interaction. SharePoint has been an attacker favorite all year, and "unauthenticated, over the network, actively exploited" is the combination that turns a routine patch cycle into an emergency.</p>
-<p>The second is CVE-2026-56155, an elevation-of-privilege bug in Active Directory Federation Services carrying a CVSS of 7.8. ADFS sits in the middle of federated sign-on for a lot of enterprises, so a privilege-escalation path there is worth prioritizing even though it needs some level of access to start. Both zero-days are on CISA's KEV list.</p>
-<p>There's a third flaw worth noting even though it isn't under attack yet: CVE-2026-50661, a publicly disclosed BitLocker bypass. Public disclosure without active exploitation is the window where you still have time, so treat it as a countdown rather than a footnote.</p>
-<p>The record CVE count is partly a story about scale and partly about Microsoft's own tooling surfacing more issues than it used to, but for the people who actually have to deploy these, the volume is the problem. You cannot meaningfully test 622 fixes before rollout. Prioritization is the only sane path.</p>
-<p>Patch the two exploited zero-days first, then the RCEs on anything internet-facing, then everything else on your normal cadence. If you run SharePoint on-prem or lean on ADFS for federation, those go to the front of the line today.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
