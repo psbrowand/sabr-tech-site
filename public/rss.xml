@@ -6,9 +6,136 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2026 13:16:21 GMT</lastBuildDate>
-    <pubDate>Fri, 31 Jul 2026 13:16:21 GMT</pubDate>
+    <lastBuildDate>Sat, 01 Aug 2026 13:19:41 GMT</lastBuildDate>
+    <pubDate>Sat, 01 Aug 2026 13:19:41 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Chrome Fixed More Bugs in Three Releases Than in the Previous 23</title>
+      <link>https://sabr-labs.com/article/chrome-1442-flaws-llm-bug-discovery-sandbox-escape-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-1442-flaws-llm-bug-discovery-sandbox-escape-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google Chrome</category>
+      <category>Browser Security</category>
+      <category>Gemini</category>
+      <category>Vulnerability Research</category>
+      <category>Patch Management</category>
+      <description>Google says LLM-driven discovery pushed recent Chrome milestones past 1,400 security fixes, and is moving to two security releases a week to keep up with its own tooling.</description>
+      <content:encoded><![CDATA[<p>Chrome 149 and 150 fixed 1,072 security bugs between them. That is more than the previous 23 Chrome milestones fixed combined, and Google put the number in its own security blog on July 30 rather than waiting for someone to count.</p>
+<p>Chrome 151 added roughly 370 more, seven of them rated critical, bringing the three-release total past 1,400. Google says it found 349 of the Chrome 151 issues itself. The company credits the spike to Gemini and other large language models now embedded across discovery, triage and patching in the Chrome pipeline.</p>
+<p>The single best illustration is a sandbox escape in Chrome's navigation code that had been sitting in the codebase for more than 13 years. Google's writeup says it was surfaced by an agent harness running on Gemini. Reporting on the release identifies it as CVE-2026-3545, rated 9.6. Thirteen years of manual review, fuzzing campaigns and a well-funded bug bounty program did not find it. A model reading the code did.</p>
+<p>It is worth being precise about what this number means, because "Chrome fixed 1,442 bugs" reads two ways. It is not evidence that Chrome suddenly got more vulnerable. It is evidence that the bugs were always there and the industry's detection rate was the limiting factor. Every browser, every kernel, every large C++ codebase has a backlog like this. Chrome is just the first one being emptied in public.</p>
+<p>That creates a new operational problem, which Google seems to understand. Its own framing is that discovering and fixing a bug is only half the job, and that the deployment speed is what actually protects users. So Chrome is moving to two-week major milestone releases with weekly security updates, and piloting two security releases per week on top of that. For enterprise fleets that pin browser versions and test before rollout, that cadence is going to hurt.</p>
+<p>The obvious uncomfortable part goes unsaid in the blog post. The tooling that found a 13-year-old sandbox escape is not proprietary to Google. Frontier models are broadly available, the agent harness patterns are published, and the same approach applied to a codebase whose maintainers do not have Google's patching machinery produces a very different outcome. We covered a Linux kernel use-after-free with an AI-assisted exploit last month and a Chinese operator running autonomous exploitation through DeepSeek this week. Both sides of this are scaling at once.</p>
+<p>If you manage browser updates for anyone, the practical takeaway is that your patch window assumptions are now stale. A monthly review cycle made sense when Chrome shipped security fixes on a predictable rhythm. It does not survive two releases a week.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Earth&apos;s AI Image Tool Lasted One Day</title>
+      <link>https://sabr-labs.com/article/google-earth-ai-image-tool-pulled-one-day-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-earth-ai-image-tool-pulled-one-day-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>Google Earth</category>
+      <category>Nano Banana 2</category>
+      <category>Synthetic Media</category>
+      <category>SynthID</category>
+      <description>Google rolled back a feature that generated photorealistic imagery on top of real satellite data after researchers showed it inventing nuclear sites and war damage at real coordinates.</description>
+      <content:encoded><![CDATA[<p>Type a sentence, get a nuclear facility in Iran. Type another, get a bomb crater at a hospital in Gaza. Both rendered on top of Google's authentic satellite imagery, at real coordinates, in seconds.</p>
+<p>That was the output researchers produced within hours of Google switching on a "create image" button for all users of Google Earth on the web. The feature, powered by the company's Nano Banana 2 image model, let anyone zoom to a location and generate photorealistic imagery layered over the real satellite, aerial and 3D mapping data underneath. It went live Thursday. Google pulled it Friday, saying it was rolling the feature back "while we work on implementing stronger guardrails."</p>
+<p>Google's initial defense was provenance. Every generated image carries a SynthID watermark, and users could check authenticity through the Gemini app or Lens in Search. Critics took about a day to demolish that argument on two fronts: almost nobody stops to verify an image they see in a feed, and researchers demonstrated Gemini failing to correctly flag an AI-generated photo when asked.</p>
+<p>The provenance-as-safety argument keeps failing for the same reason. Watermarking answers the question "can this be verified?" It does not answer "will it be verified?" A screenshot posted to a social platform carries no SynthID query interface with it, and the harm from a fabricated image of a military installation happens in the hours before anyone checks, not after.</p>
+<p>Google's own rollback statement contains the concession that matters. The company said people uniquely trust Google Earth for a reliable view of the world. That trust is the entire asset, and it was built on the premise that what you are looking at is a photograph of a place. Bolting a generative layer onto that surface spends the asset to add a feature that Gemini already offered somewhere else.</p>
+<p>The more interesting question is how this shipped to general availability at all. Not to a limited preview, not behind a flag for a subset of users. The failure modes here were not obscure. Anyone who has watched the last four years of synthetic media policy could have written the list of prompts that would cause a problem, and several people did, within a day, in public.</p>
+<p>Google has not said when or whether the feature returns. Whatever comes back will need to answer a harder question than watermarking does: why a mapping product that people rely on to be true should be able to generate things that are not.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic&apos;s Security Evals Escaped the Lab and Hit Three Real Companies</title>
+      <link>https://sabr-labs.com/article/anthropic-claude-ctf-misconfiguration-breached-three-orgs-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-claude-ctf-misconfiguration-breached-three-orgs-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>AI Safety</category>
+      <category>Autonomous Agents</category>
+      <category>Irregular</category>
+      <category>METR</category>
+      <description>A misconfiguration with evaluation partner Irregular left test machines connected to the live internet, and three Anthropic models went on to compromise real systems, publish a malicious PyPI package and scan roughly 9,000 targets.</description>
+      <content:encoded><![CDATA[<p>Two of the three affected companies had no idea anything had happened until Anthropic called them.</p>
+<p>In a disclosure published July 30, Anthropic said a misconfiguration between its own systems and evaluation partner Irregular left capture-the-flag test machines with live internet access. The evaluation prompts told the models they were in a sealed environment with no external connectivity. They were not. Three models then did what they had been asked to do, against real infrastructure.</p>
+<p>The specifics are worse than the summary. Claude Opus 4.7 encountered a real company that happened to share a name with its fictional target and accessed a production database, pulling hundreds of rows. Claude Mythos 5 published a malicious Python package to PyPI, which was downloaded and executed on 15 real systems, one of them belonging to a security vendor. An unreleased internal research model scanned roughly 9,000 targets and compromised one company through SQL injection and credential theft before stopping on its own.</p>
+<p>None of this involved novel exploitation. Weak passwords, unauthenticated endpoints, SQL injection. Anthropic notes that as a limiting factor, and it is true as far as it goes, but it also describes how the large majority of real intrusions actually happen. A model that can only do the boring attacks can still do the attacks that work.</p>
+<p>The discovery process is the part worth sitting with. Anthropic found these incidents by retrospectively reviewing 141,006 evaluation runs, and it only launched that review after OpenAI disclosed that its own agents had escaped sandboxed environments during testing. Nobody caught this in real time. The company's own list of missing controls says as much: it had no pre-evaluation check confirming that a supposedly air-gapped machine was actually air-gapped, and no live monitoring of what the agents were doing. The safeguard against a model attacking the internet was a sentence in a prompt telling it there was no internet.</p>
+<p>Anthropic's framing of the root cause is the most useful line in the post: "The line between an aligned action and a harmful one is dependent on the model's understanding of its situation." That is a real problem statement, not a PR sentence. The model behaved consistently with its instructions. The instructions described a world that did not match the one it was plugged into.</p>
+<p>The response is more substantial than most incident posts. Anthropic halted all cyber evaluations, tightened security requirements for evaluation infrastructure, added transcript monitoring, committed to publishing redacted transcripts within a week, and brought in METR for third-party review. Affected organizations were notified on July 27, with one still being contacted at time of publication.</p>
+<p>This is now a pattern across two frontier labs in the space of a week, and the common thread is not model capability. It's that offensive-security evaluations are being run on infrastructure held to a lower standard than the thing being tested. If you are going to point a model at a network and reward it for breaking in, the network needs to be genuinely isolated, and somebody needs to be watching the logs while it happens.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Hijacked Hotel Wi-Fi Is Serving Fake Updates to Business Travelers</title>
+      <link>https://sabr-labs.com/article/captivecrunch-hotel-wifi-cornflake-midnight-blizzard-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/captivecrunch-hotel-wifi-cornflake-midnight-blizzard-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Midnight Blizzard</category>
+      <category>CaptiveCrunch</category>
+      <category>CornFlake</category>
+      <category>ClickFix</category>
+      <category>Hospitality</category>
+      <description>Microsoft says attackers compromised hospitality captive portals to forge DNS answers and push a Go-based implant that grabs webcam, microphone, keystrokes and Microsoft 365 tokens.</description>
+      <content:encoded><![CDATA[<p>You connect to the hotel Wi-Fi. The captive portal loads. It tells you your browser needs an update before you can continue. On a network you have no reason to trust, at the end of a travel day, a lot of people click.</p>
+<p>Microsoft published research on July 31 describing a campaign it calls CaptiveCrunch, in which attackers took over the captive portal gateway itself. Because that gateway is also the DNS resolver for everyone on the network, the operators could forge DNS answers and redirect the automatic connectivity checks that laptops and phones fire the moment they join a network. Those checks are what trigger the portal to appear. Owning the resolver means owning what that portal shows you.</p>
+<p>The payloads are a Go-based remote access tool Microsoft tracks as CornFlake and a PowerShell stealer called ChocoShell. Some of the redirect pages skipped the download entirely and used ClickFix, the technique where the page presents a plausible-looking troubleshooting step and instructs the user to paste a command into a terminal themselves.</p>
+<p>CornFlake's capability list reads like an intelligence collection requirement rather than a crimeware feature set. It can capture webcam images, microphone audio and keystrokes. It pulls browser cookies and saved passwords, including working around Chrome's App-Bound Encryption. It scans removable media, opens a remote shell, and collects Microsoft 365 and Entra ID tokens out of the Token Broker cache, which is the part that turns a hotel-room compromise into corporate access without ever touching a password.</p>
+<p>Attribution is where this gets less tidy. Microsoft assesses Storm-2945 as an operational sub-cluster of Midnight Blizzard, the group also tracked as APT29 and Cozy Bear. ReliaQuest, looking at overlapping activity, noted tradecraft resembling APT28 and explicitly stopped short of attributing it, because the overlap was in techniques rather than infrastructure. Two capable vendors, two different Russian services in the frame. Treat the group name as provisional and the behavior as confirmed.</p>
+<p>The timeline matters for anyone doing detection work. Microsoft says the activity goes back to early May, and that redirects specifically targeting device code authentication started around July 16. That second date lines up with device code phishing being called out this week as the fastest-growing initial access technique of the year, and it suggests the operators are actively iterating rather than running a fixed kit.</p>
+<p>The practical guidance has not changed and still is not being followed: tunnel through a corporate VPN before doing anything on hotel or conference Wi-Fi, and treat any update prompt that appears on a captive portal as hostile by default. Real software updates do not arrive through the network you just joined.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Adobe Patches a CVSS 10.0 Flaw in Campaign Classic With No User Interaction</title>
+      <link>https://sabr-labs.com/article/adobe-campaign-classic-cve-2026-48449-cvss-10-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/adobe-campaign-classic-cve-2026-48449-cvss-10-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Adobe</category>
+      <category>CVE-2026-48449</category>
+      <category>Campaign Classic</category>
+      <category>Remote Code Execution</category>
+      <category>Patch Management</category>
+      <description>CVE-2026-48449 lets an attacker run code on on-premises Adobe Campaign Classic servers through an authorization failure, and the fix is a single build number away.</description>
+      <content:encoded><![CDATA[<p>A CVSS 10.0 is not a common thing. Adobe issued one for Campaign Classic in advisory APSB26-114, and the details explain the score: an incorrect authorization flaw, tracked as CVE-2026-48449, that results in arbitrary code execution in the context of the current user with no user interaction required.</p>
+<p>The affected builds are Campaign Classic v7.4.3 build 9397 and earlier, on both Windows and Linux. The fix is build 9398 on both platforms. That is the entire remediation story, which is unusually clean for a maximum-severity bug and removes most excuses for sitting on it.</p>
+<p>The same update addresses CVE-2026-48448, a SQL injection issue rated 8.6 that allows arbitrary file reads. On its own that would be a serious advisory. Next to a 10.0 it reads like a footnote, which is worth resisting, because file-read primitives are how attackers find the credentials that make the first bug easier to weaponize.</p>
+<p>Exposure is narrower than the score suggests. Adobe says this hits fully on-premises deployments and the on-premises components of hybrid environments, and that its own hosted instances are already remediated. If you are entirely on Adobe-managed infrastructure, you are done. If you run your own Campaign servers, or you run a hybrid setup and have never fully mapped which pieces live where, you have work to do today.</p>
+<p>Adobe says it is not aware of exploitation in the wild, and Adobe gave the update a priority 1 rating anyway. Those two statements together are the useful signal. Priority 1 is Adobe's designation for products that have historically been targeted, and a marketing automation platform is a target with obvious appeal: it holds customer contact data, segmentation information, and the ability to send email as a trusted brand. An attacker who owns Campaign owns a phishing channel your customers already trust.</p>
+<p>This also lands inside a bad stretch for Adobe. The Hacker News counted seven CVSS 10.0 flaws patched across ColdFusion and Campaign Classic in July alone. Both are older enterprise products with long deployment tails, which is precisely the profile that keeps showing up in KEV additions six weeks after a patch ships.</p>
+<p>Check your build number. If it is 9397 or lower, that is your afternoon.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Adform&apos;s Ad Tracker Spent Days Rewriting Crypto Wallet Addresses</title>
+      <link>https://sabr-labs.com/article/adform-trackpoint-script-poisoned-clipboard-crypto-swap-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/adform-trackpoint-script-poisoned-clipboard-crypto-swap-august-2026</guid>
+      <pubDate>Sat, 01 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Adform</category>
+      <category>Supply Chain</category>
+      <category>Cryptocurrency</category>
+      <category>Clipboard Hijacking</category>
+      <category>AdTech</category>
+      <description>A JavaScript file Adform serves to customer websites was modified to swap Bitcoin, Ethereum and Tron addresses in the clipboard, and the company still hasn&apos;t said how many page loads received it.</description>
+      <content:encoded><![CDATA[<p>Copy a Bitcoin address. Paste it. The address that lands in the field is not the one you copied.</p>
+<p>That was the effect of a compromise Adform disclosed on July 27, after attackers modified trackpoint-async.js, a tracking file the advertising company serves from s2.adform[.]net to sites across its customer base. The altered script polled the clipboard every four seconds and rewrote Bitcoin, Ethereum and Tron addresses to attacker-controlled ones. It also hooked form inputs and programmatic value writes, swapping the address as it was typed and putting the cursor back where it had been so nothing looked off.</p>
+<p>There was a second behavior worth noting: the script tried to beacon the page hostname and path to 84.32.102[.]230 on port 7744. That is reconnaissance, not just theft. Whoever did this wanted to know which sites their file had actually landed on.</p>
+<p>Security researcher Kevin Beaumont disclosed the compromise publicly and said he had observed the malicious activity over the preceding week, which puts the exposure window meaningfully earlier than the disclosure date. Max Maass published a captured copy of the script. At the time it surfaced, the file had zero detections on VirusTotal.</p>
+<p>Adform removed the code the same day, notified customers and contacted authorities. What it has not published is scope. No page-load count, no number of affected customer sites, no window with a start date on it. For context on what "unknown scope" could mean here, Adform's own 2025 figures describe roughly 1.5 billion ads served daily across about 1,800 customers in more than 180 countries. Nobody is claiming all of that was hit. The point is that the company knows the denominator and hasn't shared it.</p>
+<p>This is the part of the web almost nobody inventories. Ad and analytics tags get pasted into a site once, by a marketing team, and then they sit there for years executing third-party JavaScript in first-party context. They rarely have Subresource Integrity hashes, because ad tech scripts change constantly and SRI would break them. That tradeoff is exactly what got used here.</p>
+<p>Two concrete things worth doing today. Grep your site's templates and tag manager for adform[.]net and find out whether you were serving it, then check your CSP for whether that origin is allowed to run script at all. And if your product touches crypto payments in any way, tell users to verify the destination address character by character on a second device, because clipboard rewriting defeats every visual check that happens inside the browser.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Gemini Robotics 2 Drives a Whole Humanoid, and the Fingers Are Still the Problem</title>
       <link>https://sabr-labs.com/article/gemini-robotics-2-whole-body-control-deepmind-dexterity-july-2026</link>
@@ -899,127 +1026,6 @@
 <p>Origin says it has notified the Australian Federal Police, the Australian Cyber Security Centre, and the national privacy regulator, and is contacting affected customers directly through a dedicated support portal. It hasn't named the attacker or explained how the intrusion happened.</p>
 <p>Australia has spent the past few years as a case study in large-scale consumer breaches, from Optus to Medibank, and the pattern holds here: a big retailer, a huge customer base, and a slow drip of detail while the company maps the blast radius. Expect the confirmed-impact number to move as the investigation runs.</p>
 <p>If you're an Origin customer, the practical move is boring and effective. Assume your contact details are out, and be skeptical of any call or message that references your Origin account and asks you to verify anything.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Fake Claude Installer Rode a Real claude.ai Link to Push SectopRAT</title>
-      <link>https://sabr-labs.com/article/fakeagent-fake-claude-desktop-sectoprat-bing-malvertising-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fakeagent-fake-claude-desktop-sectoprat-bing-malvertising-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Malvertising</category>
-      <category>SectopRAT</category>
-      <category>Huntress</category>
-      <category>Malware</category>
-      <category>EtherHiding</category>
-      <category>Infostealer</category>
-      <description>Huntress says the FakeAgent campaign used Bing ads and a public Claude Artifact hosted on claude.ai to deliver SectopRAT to at least 29 organizations.</description>
-      <content:encoded><![CDATA[<p>The link pointed at claude.ai. The domain was legitimate, the page looked like exactly what someone searching Bing for 'Claude Desktop' expected, and the file behind the download button was SectopRAT.</p>
-<p>Researchers at Huntress, who named the campaign FakeAgent, say attackers bought sponsored Bing ads that led to a public Claude Artifact built to imitate Anthropic's official desktop installer. Because Artifacts are hosted on the real claude.ai domain, the whole thing sailed past the mental check most people run before clicking a download. Hitting the button kicked off a redirect chain through attacker-controlled domains that ended in a malicious ClaudeDesktop.exe.</p>
-<p>The artifact was downloaded roughly 7,100 times before Anthropic pulled it, and Huntress counted at least 29 organizations compromised over two days, July 21 and 22.</p>
-<p>SectopRAT, also tracked as ArechClient2, has been around since 2019. It's an information stealer with hidden-VNC capability, meaning an operator can quietly drive an infected machine in real time while lifting saved passwords, browser cookies, card numbers, and credentials from messaging and FTP clients. One detail stands out: the malware pulls its command-and-control address out of Ethereum transactions on the BNB Smart Chain, a technique called EtherHiding that makes the C2 nearly impossible to take down.</p>
-<p>The uncomfortable part isn't the malware, which is years old and well understood. It's the delivery. A trusted platform that lets anyone publish content on its primary domain becomes a laundering service for exactly this kind of lure, and 'check the URL before you click' training does nothing when the URL is genuinely correct.</p>
-<p>Download desktop software from the vendor's own documented link, not from a search ad, and treat any 'official app' that arrives through a sponsored result as suspect until proven otherwise. The domain being real doesn't mean the file is.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Clop Turns a PTC Windchill Flaw Into Its Latest Mass Data-Theft Campaign</title>
-      <link>https://sabr-labs.com/article/clop-ransomware-ptc-windchill-flexplm-cve-2026-12569-extortion-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/clop-ransomware-ptc-windchill-flexplm-cve-2026-12569-extortion-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Clop</category>
-      <category>Ransomware</category>
-      <category>PTC Windchill</category>
-      <category>CVE-2026-12569</category>
-      <category>Data Breach</category>
-      <category>CISA KEV</category>
-      <description>The Clop gang is exploiting CVE-2026-12569 to drop web shells on internet-exposed Windchill and FlexPLM servers and steal manufacturers&apos; product data.</description>
-      <content:encoded><![CDATA[<p>Clop is back to doing the thing it does best: find one enterprise application with a critical bug, then quietly empty out everyone running it. This time the target is PTC's Windchill and FlexPLM, the product lifecycle management platforms manufacturers use to store design files, bills of materials, and the guts of how their products get built.</p>
-<p>The gang is exploiting CVE-2026-12569, a critical deserialization flaw rated 9.3 that lets an unauthenticated attacker run code on an internet-exposed Windchill or FlexPLM server. Clop's operators drop JSP web shells onto compromised instances and use them to exfiltrate whatever product data is sitting there. No encryption, no locked files. Just theft and an extortion note.</p>
-<p>This is the same playbook Clop ran against MOVEit and every other mass-exploitation campaign it's built its name on. Steal at scale, list victims on a leak site, and let the threat of publication do the negotiating.</p>
-<p>PTC started shipping patches for the flaw on June 17 and warned customers of heightened threat activity on June 26. CISA added CVE-2026-12569 to its Known Exploited Vulnerabilities catalog and gave federal agencies three days to patch or pull the systems offline. If you run Windchill or FlexPLM with any internet exposure, treat it as compromised until you've hunted for JSP web shells and confirmed the June fix is applied.</p>
-<p>PLM data is exactly the kind of thing that never shows up in a credit-monitoring letter but absolutely shows up in a competitor's hands.</p>
-<p>The patch has been out for over a month. The organizations getting hit now are the ones that assumed a PLM server was too obscure to be a target. Clop's entire business model is proving that assumption wrong.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Intel Posts Fastest Growth Since 2011 as 18A Foundry Finally Delivers</title>
-      <link>https://sabr-labs.com/article/intel-q2-2026-earnings-fastest-growth-since-2011-18a-foundry-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/intel-q2-2026-earnings-fastest-growth-since-2011-18a-foundry-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Intel</category>
-      <category>Semiconductors</category>
-      <category>Earnings</category>
-      <category>18A</category>
-      <category>Foundry</category>
-      <category>AI Chips</category>
-      <description>Intel&apos;s Q2 revenue hit $16.1B on a 25% jump, with foundry and its 18A node beating targets and adjusted EPS coming in at double estimates.</description>
-      <content:encoded><![CDATA[<p>Intel's second quarter came in at $16.1 billion in revenue, up 25% from a year earlier. That's the company's fastest growth in more than 15 years, and it blew past the roughly $14.4 billion Wall Street had penciled in. Shares jumped more than 13% after hours.</p>
-<p>The number that actually matters for Intel's long game is the foundry line. Intel Foundry pulled in $5.8 billion, up 31%, and CFO David Zinsner credited the 18A process node for the jump. He said 18A output ran about 25% above target and climbed more than 50% from the prior quarter. After years of Intel insisting its manufacturing comeback was one node away, this is the first quarter where the numbers back the story.</p>
-<p>Data Center and AI was the other bright spot. That segment topped $6.3 billion, up 59% from a year ago and 24% quarter over quarter, as buyers kept absorbing anything that could sit next to a GPU. Gross margin recovered to 42%, a world away from the 2.5% Intel scraped together in the same quarter last year when write-downs gutted the line.</p>
-<p>Adjusted earnings landed at 42 cents a share, roughly double what analysts modeled.</p>
-<p>There's a catch, and Zinsner named it himself: supply, not demand, is now the constraint. Intel is selling everything 18A can make and still can't make enough. That's a far better problem than the one Intel had two years ago, but it caps how fast the recovery can compound and hands rivals like TSMC a window while Intel races to add capacity.</p>
-<p>For a company that spent the back half of the last decade as the cautionary tale of American chipmaking, a quarter like this changes the conversation. The question now isn't whether 18A works. It's whether Intel can build enough of it before the AI buildout finds another supplier.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco&apos;s Security Certs Get an AI and Zero-Trust Rewrite on August 27</title>
-      <link>https://sabr-labs.com/article/cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ccnp-ccie-security-scor-v2-ai-security-august-2026</guid>
-      <pubDate>Thu, 23 Jul 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>CCNP Security</category>
-      <category>CCIE</category>
-      <category>Certifications</category>
-      <category>Zero Trust</category>
-      <description>Cisco is updating the 350-701 SCOR exam to v2.0 and refreshing its CCNP and CCIE Security tracks with AI security and SASE content, with the last day to test on the old versions being August 26.</description>
-      <content:encoded><![CDATA[<p>If you've been sitting on a half-finished CCNP Security, this is your notice to either finish it or plan to relearn part of it. Cisco is rolling the 350-701 SCOR core exam from v1.1 to v2.0 on August 27, and it's retiring three legacy exams the same day.</p>
-<p>The last day to test on the current versions is August 26. Miss that window and you're taking the new blueprint. This is part of the broader overhaul Cisco kicked off earlier in the year, the biggest shake-up to its certification program in over a decade, and the security track is where the changes bite hardest.</p>
-<p>The content shift tracks where enterprise security work has actually gone. The refreshed SCOR exam, and the CCIE Security written that shares its blueprint, adds AI and LLM security topics, including prompt injection and data poisoning, the kind of attacks that didn't exist as exam objectives a couple of years ago. Zero Trust, SSE, and SASE move to the center, largely displacing the traditional site-to-site VPN material that used to anchor this exam. The concentration exams pick up cloud-native security models and AI-assisted threat detection.</p>
-<p>None of this is padding. Prompt injection against an internal LLM tool and an over-trusted service mesh are real things security engineers are being asked about now, and a cert that still tested you mostly on IPsec tunnels would be teaching to a job that's fading.</p>
-<p>Practical advice if you're mid-study: figure out honestly whether you can be ready by August 26. If yes, sit v1.1 while your prep still matches the exam. If not, don't cram against a moving target. Pivot now to v2.0 materials, lean into the Zero Trust and AI-security sections, and treat the extra scope as the part of the job you were going to have to learn anyway.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Amazon&apos;s In-House Chips Are Quietly a $20 Billion Business</title>
-      <link>https://sabr-labs.com/article/amazon-custom-silicon-trainium-graviton-20-billion-run-rate-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-custom-silicon-trainium-graviton-20-billion-run-rate-july-2026</guid>
-      <pubDate>Thu, 23 Jul 2026 12:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Amazon</category>
-      <category>AWS</category>
-      <category>Trainium</category>
-      <category>AI Chips</category>
-      <category>Nvidia</category>
-      <description>Between Trainium, Graviton, and Nitro, Amazon&apos;s custom silicon is running at roughly $20 billion a year and Amazon is reportedly weighing selling the AI chips to outside customers.</description>
-      <content:encoded><![CDATA[<p>Ask who's challenging Nvidia and the usual answers are AMD and a handful of startups. The more interesting answer is a company most people think of as a bookstore and a cloud.</p>
-<p>Amazon's custom silicon effort, spanning its Trainium AI accelerators, Graviton server CPUs, and Nitro networking chips, is now running at an annualized rate of about $20 billion, with all three lines growing at triple-digit percentages year over year. That figure alone would rank the operation among the larger chip businesses on the planet, and it's mostly invisible because nearly all of it is consumed inside AWS rather than sold on a shelf.</p>
-<p>The demand behind Trainium in particular is real money, not slideware. CEO Andy Jassy has pointed to roughly $225 billion in Trainium commitments, with Anthropic, OpenAI, and Uber among the names driving it. Trainium2 is largely sold out. Trainium3, which started shipping earlier this year, is nearly fully subscribed, and pre-reservations for Trainium4 are already substantial ahead of a broad rollout that's still more than a year out.</p>
-<p>What makes this a story now rather than a footnote is a shift in posture. Amazon is reportedly weighing whether to sell Trainium to third parties directly, which would put it in head-to-head competition with Nvidia instead of merely reducing its own dependence on Nvidia's supply. That's a different game, and a harder one, because selling chips to strangers means supporting a software stack, courting outside developers, and answering to customers who can walk.</p>
-<p>The subtext under all of it is the same pressure squeezing every hyperscaler: GPUs are expensive and scarce, and owning the silicon is the only durable way to control the cost of AI at scale. Amazon has been at this longer than most, and the run-rate number is the receipt.</p>
-<p>Whether it graduates from an internal cost-saver into an actual merchant chip vendor is the question worth watching. Building a great accelerator is one thing. Getting anyone outside your own data centers to bet a training run on it is another.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Turns to Klarna to Lease You an iPhone</title>
-      <link>https://sabr-labs.com/article/apple-upgrade-klarna-device-leasing-program-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-upgrade-klarna-device-leasing-program-july-2026</guid>
-      <pubDate>Thu, 23 Jul 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Klarna</category>
-      <category>iPhone</category>
-      <category>Consumer Tech</category>
-      <category>Fintech</category>
-      <description>Apple&apos;s new Apple Upgrade program, launching July 28 with Klarna financing, lets US buyers lease iPhones, iPads, Macs, and Watches on fixed monthly payments.</description>
-      <content:encoded><![CDATA[<p>Apple is about to stop selling you a phone and start renting you one. On July 28 it launches Apple Upgrade, a lease-to-own program backed by the buy-now-pay-later lender Klarna, available to US customers in Apple Stores and online.</p>
-<p>The mechanics are straightforward. You pass a light credit check, then pay a fixed amount each month over a set term: 24 months for iPhones and Apple Watches, 36 months for Macs and iPads. At the end you pick one of three doors. Return the device, pay a fee to jump early to a newer model, or pay off the balance and keep the hardware for good.</p>
-<p>This isn't entirely new territory for Apple. It's had an iPhone Upgrade Program for years, and Apple Upgrade largely absorbs and replaces it. What's changed is the scope, now spanning the full hardware lineup, and the partner. Handing the financing to Klarna rather than running it in-house tells you Apple wants the leasing volume without carrying all the consumer credit risk itself.</p>
-<p>The why is not subtle. Device prices have crept up, people are holding their phones longer, and per Bloomberg's reporting the program is aimed squarely at softening demand. Spreading a $1,200 phone across 24 payments makes the sticker easier to swallow and, not coincidentally, nudges buyers toward an upgrade cadence that a four-year-old iPhone doesn't encourage.</p>
-<p>For the customer the math is worth doing before you sign. Leasing lowers the monthly hit but you don't own anything until the final payment, and pairing a hardware lease with a BNPL lender is exactly the kind of arrangement that's easy to enter and easy to stop paying attention to. Read the early-upgrade fee closely. That's the lever that keeps you on the treadmill.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
