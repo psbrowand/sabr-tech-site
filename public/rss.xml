@@ -6,9 +6,136 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Aug 2026 13:19:41 GMT</lastBuildDate>
-    <pubDate>Sat, 01 Aug 2026 13:19:41 GMT</pubDate>
+    <lastBuildDate>Sun, 02 Aug 2026 13:16:17 GMT</lastBuildDate>
+    <pubDate>Sun, 02 Aug 2026 13:16:17 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>NHTSA Clears Zoox to Charge for Rides in a Car With No Steering Wheel</title>
+      <link>https://sabr-labs.com/article/zoox-nhtsa-exemption-steering-wheel-free-robotaxi-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zoox-nhtsa-exemption-steering-wheel-free-robotaxi-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Autonomous Vehicles</category>
+      <category>Zoox</category>
+      <category>NHTSA</category>
+      <category>Regulation</category>
+      <category>Amazon</category>
+      <description>The first federal commercial exemption for a purpose-built robotaxi waives eight motor vehicle safety standards and caps Zoox at 2,500 vehicles a year for two years.</description>
+      <content:encoded><![CDATA[<p>Federal safety rules have assumed a steering wheel since there were federal safety rules. On July 30, NHTSA granted Amazon-owned Zoox a temporary exemption from eight of those standards and published the decision in the Federal Register the same day, clearing the company to put vehicles with no wheel and no pedals into commercial service.</p>
+<p>This is the first NHTSA commercial exemption for a purpose-built robotaxi. Earlier waivers covered testing. This one covers charging passengers money.</p>
+<p>The scope is deliberately bounded: up to 2,500 vehicles per year, for two years. That's a pilot dressed as an approval, and reasonably so. Zoox's vehicle isn't a retrofitted sedan with a sensor rack bolted to the roof. It's a bidirectional carriage-style pod with no front and no back, built from scratch for a use case where nobody in the cabin is responsible for anything.</p>
+<p>The list of waived standards is the funniest and most revealing part of the filing. Among the eight are rules governing windshield defrosting and light vehicle braking systems, written for a machine with a driver looking through glass and pressing a pedal. The federal rulebook doesn't have a category for what Zoox built, so the agency granted permission by subtraction. It waived the parts that don't apply rather than writing standards that do.</p>
+<p>That distinction matters. An exemption is not a finding that the vehicle is safe. It's a finding that the existing tests can't tell us either way, and that the agency is comfortable letting a capped fleet operate while everyone finds out. NHTSA administrator Jonathan Morrison framed it as balanced regulation, which is a description of the posture rather than an argument for it.</p>
+<p>The federal hurdle also wasn't the tall one. Zoox still needs Nevada and California regulators to sign off before it can collect fares, with Las Vegas targeted first and San Francisco behind it. Testing is already running in Atlanta, Dallas, Los Angeles, Phoenix, Seattle, and Washington, D.C., with Miami and Austin on the list. Every one of those markets has its own permitting process and its own city council.</p>
+<p>Waymo got here by making a Jaguar drive itself. Zoox is arguing the vehicle should be redesigned around the absence of a driver, and it just got the first federal permission slip to sell that argument to passengers. Two years and 5,000 vehicles is enough runway to find out whether the safety case holds, and short enough that the agency can walk it back.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>IonQ Just Bought a Chip Fab, and That&apos;s a Stranger Move Than It Sounds</title>
+      <link>https://sabr-labs.com/article/ionq-skywater-acquisition-closed-quantum-foundry-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ionq-skywater-acquisition-closed-quantum-foundry-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Quantum Computing</category>
+      <category>Semiconductors</category>
+      <category>IonQ</category>
+      <category>M&amp;A</category>
+      <category>Supply Chain</category>
+      <description>The $1.8 billion SkyWater acquisition closed July 31, giving IonQ its own domestic foundry for ion trap chips and ending the trapped-ion industry&apos;s shared dependence on a single German supplier.</description>
+      <content:encoded><![CDATA[<p>IonQ closed its acquisition of SkyWater Technology on July 31, a $1.8 billion cash-and-stock deal first struck back in January. SkyWater shareholders took $15.00 in cash plus 0.4883 IonQ shares for each share they held. The foundry stays intact as a wholly owned subsidiary under its own name and keeps serving its existing outside customers.</p>
+<p>The strategic logic is real, and it's narrower than the press release language about vertical integration suggests. Trapped-ion quantum computers need custom ion trap chips, and essentially every serious trapped-ion company, IonQ's closest competitor Quantinuum included, has those chips fabricated by Infineon in Germany. That's one supplier, one jurisdiction, and one queue for the entire architecture.</p>
+<p>IonQ just removed itself from that queue.</p>
+<p>SkyWater is the largest semiconductor foundry operating exclusively inside the United States and holds Defense Department trusted-foundry accreditation. For a company selling quantum systems to national labs and defense customers, owning an accredited domestic fab is worth something beyond supply chain tidiness. It's a procurement unlock.</p>
+<p>Now the harder question. IonQ has just taken on a merchant foundry, which is a capital-hungry, thin-margin manufacturing business with its own customer commitments and its own capex treadmill. Quantum hardware companies burn cash for a living. Adding fab operations to that burn is a bet that owning the process node matters more than the balance sheet strain, and it will be years before anyone can tell whether that was right.</p>
+<p>The regulatory path wasn't clean either. Bloomberg reported the FTC was split on the deal and let it close without imposing changes, which is a different thing from approving it enthusiastically. A divided commission clearing a vertical acquisition in a strategically sensitive sector is the kind of outcome that gets revisited if the politics shift.</p>
+<p>For everyone else building trapped-ion machines, the calculus changed on Friday. Their chip supplier is now one country away and their main rival owns a fab. Whether that produces a scramble for second-source capacity or just more Infineon orders is the thing to watch through the back half of the year.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepSeek&apos;s V4 Flash Refresh Is a Post-Training Update Wearing a Launch Costume</title>
+      <link>https://sabr-labs.com/article/deepseek-v4-flash-0731-agentic-open-weights-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-v4-flash-0731-agentic-open-weights-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>DeepSeek</category>
+      <category>Open Weights</category>
+      <category>AI Agents</category>
+      <category>Inference Pricing</category>
+      <category>Benchmarks</category>
+      <description>The 0731 build of DeepSeek V4 Flash posts strong agentic benchmark scores and keeps its $0.14 and $0.28 per million token pricing, but it&apos;s a retrain of an existing model rather than new architecture.</description>
+      <content:encoded><![CDATA[<p>DeepSeek pushed a new build of V4 Flash to public API beta on July 31, tagged 0731. Same weights class, same prices, better agent behavior. It's worth being precise about what changed, because the coverage is treating this like a model launch and it isn't one.</p>
+<p>The 0731 tag is a post-training and agent-tuning refresh on top of the existing V4 Flash foundation. Parameter count is unchanged at 284 billion total with 13 billion active, the context window stays at a million tokens, and the weights remain publicly available under MIT. Pricing didn't move either: $0.14 per million input tokens and $0.28 per million output tokens, the same rates that were already in place.</p>
+<p>What did move is agentic performance. Artificial Analysis puts the build at 50 on its Intelligence Index, roughly double the median of 25 for comparable open-weight models and third in its class. DeepSeek's own reported numbers on agentic harnesses are stronger still, with Terminal Bench 2.1 landing at 82.7.</p>
+<p>Treat that second number with the skepticism it deserves. Terminal Bench measures whether a model can drive a shell through scripted, verifiable tasks. It's a real signal for anyone building coding agents and a poor proxy for judgment, long-horizon planning, or knowing when to stop. A model can top a terminal benchmark and still confidently rm the wrong directory in a repo it doesn't understand.</p>
+<p>The pricing is the actual story. Output tokens at twenty-eight cents per million put this two orders of magnitude below what the top closed models charge, with weights you can download and run yourself. For a team building an agent that burns tokens in a loop, that difference isn't a discount. It's the difference between a product with margins and a demo.</p>
+<p>The competitive read is uncomfortable for the labs selling premium inference. DeepSeek isn't claiming the frontier. It's claiming that most of the work people actually pay agents to do doesn't need the frontier, and it's pricing accordingly. That argument gets stronger every time an open-weight refresh closes a bit more of the agentic gap without touching the architecture.</p>
+<p>If you're evaluating it, benchmark it on your own harness before believing anyone's index score, including this one. Post-training updates optimize for what they're measured on, and your workload is not the eval set.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amgen Says Patient Health Data Was Stolen From Vendor Cloud Systems</title>
+      <link>https://sabr-labs.com/article/amgen-cloud-breach-patient-phi-third-party-8k-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amgen-cloud-breach-patient-phi-third-party-8k-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Healthcare</category>
+      <category>Third-Party Risk</category>
+      <category>SEC Disclosure</category>
+      <category>PHI</category>
+      <description>Amgen told the SEC that attackers exfiltrated proprietary data and patient protected health information from cloud environments run by third-party providers, without naming the providers or the number of people affected.</description>
+      <content:encoded><![CDATA[<p>Amgen filed an 8-K describing a breach it had already decided was material two days earlier. The company detected unauthorized activity in July inside cloud environments operated by third-party service providers, determined materiality on July 29, and disclosed publicly on July 31.</p>
+<p>What left the building: proprietary data and patient protected health information, plus what the filing calls "other information." Amgen says it's still working out whether confidential business information, intellectual property, and R&D data were also taken. For a company whose value sits almost entirely in its pipeline, that's the sentence worth rereading.</p>
+<p>Almost everything else is blank. Amgen didn't name the cloud providers. It didn't say how the environments were compromised, how many patients are affected, or whether any known group is responsible. No threat actor has been named in the disclosure, and nobody has credibly claimed it.</p>
+<p>The company also included the line that shows up in nearly every one of these filings: it doesn't currently believe the incident is reasonably likely to materially affect its financial condition or operating results. Read that next to the July 29 materiality determination and you get the standard split that SEC cyber disclosure has settled into. Material enough to require a filing, immaterial enough not to move guidance.</p>
+<p>Amgen says it activated its response plan, implemented containment, and brought in outside forensics. Notification to affected patients will follow where required.</p>
+<p>Two clocks are now running. HIPAA breach notification obligations attach to the PHI regardless of whose infrastructure held it, and the SEC filing puts the incident on the record for shareholders. Neither clock cares that the compromised systems belonged to a vendor.</p>
+<p>That's the recurring lesson and nobody keeps learning it. When a pharma company puts patient data in a partner's cloud tenant, the partner's security posture becomes the pharma company's security posture. The breach notification letter still has Amgen's letterhead on it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Crafted Image Upload Can Read Any File Your Rails App Can Reach</title>
+      <link>https://sabr-labs.com/article/rails-active-storage-cve-2026-66066-libvips-file-read-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/rails-active-storage-cve-2026-66066-libvips-file-read-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ruby on Rails</category>
+      <category>CVE</category>
+      <category>Application Security</category>
+      <category>RCE</category>
+      <category>Open Source</category>
+      <description>CVE-2026-66066 lets an unauthenticated attacker pull arbitrary files out of a Rails server through Active Storage image processing, and stealing secret_key_base turns that read into code execution.</description>
+      <content:encoded><![CDATA[<p>Upload a picture. Get the contents of config/master.key back. That's the shape of CVE-2026-66066, patched by the Rails security team on July 29 and scored 9.5 by the researchers who reported it.</p>
+<p>The bug lives at the seam between Active Storage and libvips, the image-processing library Rails has used as the default variant processor since load_defaults 7.0. Active Storage handed uploaded attachments to the Vips analyzer and transformer without first blocking unsafe libvips operations. A crafted upload can invoke one of those operations and walk away with the contents of any file the Rails worker process can read.</p>
+<p>Fixed versions are 7.2.3.2, 8.0.5.1, and 8.1.3.1. If you're on 7.2.x, 8.0.x, or 8.1.x below those numbers, accept image uploads from users who aren't authenticated, and haven't switched the variant processor to MiniMagick, you're in scope. That's a very large slice of the Rails deployments running today.</p>
+<p>Arbitrary file read is bad on its own. What makes this one a genuine emergency is what's sitting in those files. A Rails process can read its own environment and its own credentials: secret_key_base, the master key, database passwords, S3 or GCS credentials, API tokens for whatever the app talks to.</p>
+<p>Once secret_key_base leaks, the attacker stops being an outsider. They can forge session cookies, sign global IDs, and craft serialized payloads the framework will happily trust and deserialize. Rapid7 and Ethiack both landed on the same conclusion and gave it the name KindaRails2Shell, which is a fair callback. The path from file read to remote code execution here is short and well documented.</p>
+<p>There's no reported in-the-wild exploitation yet. That's not much comfort. The vulnerability class is easy to understand, the write-ups are public and detailed, and the trigger is an ordinary image upload endpoint that most Rails apps expose by design. The gap between public analysis and mass scanning for something this simple usually gets measured in days.</p>
+<p>Patch, then rotate. Upgrading the gem closes the door, but if you were exposed and can't prove you weren't hit, secret_key_base and every credential reachable from the app's environment should be treated as burned. Rotating those is the part teams skip, and it's the part that decides whether an old read turns into a new session six weeks from now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Water Utilities in Seven States Hit as Attackers Lock Operators Out of PLCs</title>
+      <link>https://sabr-labs.com/article/water-utilities-plc-attacks-seven-states-cisa-fbi-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/water-utilities-plc-attacks-seven-states-cisa-fbi-august-2026</guid>
+      <pubDate>Sun, 02 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ICS</category>
+      <category>OT Security</category>
+      <category>CISA</category>
+      <category>Critical Infrastructure</category>
+      <category>PLC</category>
+      <description>CISA and the FBI say intruders changed PLC passwords and IP addresses at U.S. water systems, forcing boil-water notices and manual operation, with more than 30 Minnesota communities hit in a single weekend.</description>
+      <content:encoded><![CDATA[<p>Over one weekend in late July, more than 30 Minnesota community water systems found their programmable logic controllers unreachable. Not destroyed. Not ransomed. Just locked, with new passwords the operators didn't set and new IP addresses that took the devices off the network entirely.</p>
+<p>CISA published an alert on July 30 describing a sharp increase in attacks on internet-facing PLCs in the water and wastewater sector. The Minnesota incidents ran July 26 and 27. Since July 27, utilities in at least seven states have reported similar activity to the FBI. Some of it degraded operations badly enough to trigger boil-water notices and force plants into sustained manual control.</p>
+<p>The technique isn't sophisticated, which is the uncomfortable part. Attackers are finding PLCs that answer directly on the public internet, logging in with default or unchanged credentials, and then taking two simple actions: rotate the password so the operator can't get back in, and change the device's IP address so it drops off the control network. That's it. No exploit chain, no zero-day, no custom implant.</p>
+<p>The affected hardware spans three vendors. CISA named Rockwell Automation's Allen-Bradley line (CompactLogix, Micro850, and MicroLogix 1400), Schneider Electric's Modicon M340, and Siemens S7-1200 series controllers. The Schneider and Siemens additions came in a July 22 update to advisory AA26-097A, which also documented PLC project file exfiltration for the first time and added detection guidance for tampering with reusable code modules inside PLC programs.</p>
+<p>That project-file detail deserves more attention than it's getting. Stealing the logic that runs a treatment plant is reconnaissance for a much worse second act than a lockout.</p>
+<p>Attribution is deliberately unresolved. The original April 7 advisory tied this activity to Iranian-affiliated actors exploiting exposed Rockwell controllers across government services, water, and energy, with disruptions dating to at least March. Investigators haven't publicly connected the Minnesota cluster to any named group. Groups like CyberAv3ngers and Handala fit the profile, but fitting a profile isn't evidence, and federal agencies are right not to say more than they can support.</p>
+<p>The mitigation list from CISA reads like a checklist from 2015, because it is one. Get PLCs off the public internet. Put remote access behind a VPN or a properly configured gateway. Turn on password protection and change every default. Allowlist the IP addresses permitted to reach controllers. Keep clean PLC images so a locked device can be reflashed rather than negotiated with.</p>
+<p>If you run OT for a small utility, the honest question isn't whether you're a target. It's whether you know how many of your controllers are reachable from outside your network right now. Most of the operators in Minnesota would have said zero.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Chrome Fixed More Bugs in Three Releases Than in the Previous 23</title>
       <link>https://sabr-labs.com/article/chrome-1442-flaws-llm-bug-discovery-sandbox-escape-august-2026</link>
@@ -910,122 +1037,6 @@
 <p>This isn't a memory-corruption bug, and that's what makes it interesting. There's no heap grooming, no bypass of the usual kernel hardening. It corrupts data on disk directly, so the root you get persists across reboots and leaves the kind of thin forensic trail that makes incident response miserable.</p>
 <p>Three conditions have to line up: a kernel at v4.11 or later without the patch, an XFS volume with reflink=1 in its superblock, and a directory a normal user can write to alongside a file worth overwriting. That combination is common on modern server distributions where XFS with reflinks is the default. No in-the-wild use has been reported.</p>
 <p>Patch the kernel. If you can't reboot right away, the practical first step is knowing which of your boxes actually run XFS with reflinks, because that's the population that matters.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Hackers Sat in South Korea&apos;s Diplomat Training System for 10 Months</title>
-      <link>https://sabr-labs.com/article/south-korea-diplomatic-academy-breach-diplomats-worldwide-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/south-korea-diplomatic-academy-breach-diplomats-worldwide-july-2026</guid>
-      <pubDate>Sat, 25 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>South Korea</category>
-      <category>Espionage</category>
-      <category>Government</category>
-      <category>Diplomacy</category>
-      <description>Seoul disclosed a ten-month intrusion into the National Diplomatic Academy that exposed personal data on thousands of current and former diplomats.</description>
-      <content:encoded><![CDATA[<p>For ten months, someone had a quiet seat inside the system South Korea uses to train its diplomats, and nobody in Seoul noticed.</p>
-<p>The Foreign Ministry disclosed this week that attackers breached the National Diplomatic Academy's online education platform and pulled personal data on current and former ministry staff, including diplomats posted overseas. The intrusion ran from April 2025 until February 2026, when an outside government body flagged abnormal access and the ministry took the platform offline the same day.</p>
-<p>The official count is at least 6,000 people affected, including roughly 350 attaches currently stationed abroad. Korean media put the real number closer to 10,000. The exposed data covers IDs, names, email addresses, and hashed passwords. The ministry says national ID numbers, mobile numbers, photos, and home addresses were not in the haul.</p>
-<p>The part worth sitting with is the timeline. Seoul recognized the breach in February and said nothing publicly until July, citing the sensitivity of diplomatic and security matters. Five months of silence is a long time to leave several hundred officials abroad unaware that their credentials might be in a hostile hand.</p>
-<p>A training-academy portal sounds like a soft target, and it was, but the payoff was a roster of the country's diplomatic corps. Hashed passwords buy some time depending on the algorithm, not immunity. Anyone in that dataset should assume their login is known and move accordingly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AMD and Cerebras Team Up to Split AI Inference Across Their Chips</title>
-      <link>https://sabr-labs.com/article/amd-cerebras-ai-inference-partnership-helios-cloud-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amd-cerebras-ai-inference-partnership-helios-cloud-july-2026</guid>
-      <pubDate>Sat, 25 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>AMD</category>
-      <category>Cerebras</category>
-      <category>AI Inference</category>
-      <category>Data Centers</category>
-      <category>Semiconductors</category>
-      <description>A new deal divides inference workloads between AMD and Cerebras hardware, with AMD&apos;s Helios systems heading into Cerebras Cloud this year.</description>
-      <content:encoded><![CDATA[<p>AMD and Cerebras are splitting a single AI inference job across two very different chips, and betting the seam between them is where the speed hides.</p>
-<p>The two companies announced a technical partnership on July 23 for what they call a disaggregated inference system. AMD's Helios rackscale hardware handles the heavy front end, processing prompts and long context, while Cerebras's Wafer-Scale Engine takes over the low-latency decoding and token generation. The idea is to let each chip do the part it's best at instead of forcing one design to cover the whole pipeline.</p>
-<p>AMD and Cerebras say the combined setup can deliver up to 5x higher tokens per second per watt than a Cerebras-only configuration, based on their own July modeling. That's a vendor projection, not a measured result, so treat it as a target rather than a spec. The joint solution is slated to land through Cerebras Cloud in the second half of the year, with Cerebras deploying Helios systems in its own data centers.</p>
-<p>The timing says as much as the tech. This lands during a rough stretch for chip stocks, with the semiconductor sector down more than 20% from its June peak, and it follows AMD's recent inference deal with Anthropic. AMD shares still slipped a few percent on the news. The market's question right now isn't whether inference demand is real; it's whether current valuations already assumed all of it.</p>
-<p>Disaggregated inference is a genuinely interesting bet. The lead may not belong to whoever builds the biggest single chip, but to whoever divides the work most cleverly. The back half of the year will show whether customers actually want to buy their inference in two pieces.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Transformer-Chip Startup Etched Raises $300M at a $10.3B Valuation</title>
-      <link>https://sabr-labs.com/article/etched-300-million-series-c-transformer-asic-10-billion-valuation-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/etched-300-million-series-c-transformer-asic-10-billion-valuation-july-2026</guid>
-      <pubDate>Sat, 25 Jul 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Etched</category>
-      <category>AI Chips</category>
-      <category>Startups</category>
-      <category>Venture Capital</category>
-      <category>Nvidia</category>
-      <description>Etched closed a $300 million Series C at a $10.3 billion valuation for its Sohu ASICs built to run only transformer models.</description>
-      <content:encoded><![CDATA[<p>A chip that runs exactly one kind of AI model just raised $300 million, and the investors betting on it think that narrowness is the point.</p>
-<p>Etched closed a $300 million Series C at a $10.3 billion valuation, led by Sequoia with Andreessen Horowitz, Jane Street, Argo, and SK Hynix joining. Reuters noted it's the highest valuation on any Series C the firm has led. The figure roughly doubled from the company's reported $5 billion valuation earlier this year.</p>
-<p>Etched's pitch is a deliberate gamble. Its Sohu chip hardcodes the transformer architecture directly into silicon, trading the flexibility of a general-purpose GPU for raw efficiency on the one model shape that dominates AI right now. If transformers stay on top, Sohu runs them faster and cheaper than Nvidia's hardware. If the field moves to something else, a chip that only speaks transformer becomes a very expensive paperweight.</p>
-<p>The founders Gavin Uberti, Robert Wachen, and Chris Zhu started the company as Harvard dropouts in 2022. Etched says it's holding around $1 billion in contracts with racks shipping this summer, which is the detail that separates this round from pure story-stock territory.</p>
-<p>The raise fits a broader pattern this year, where roughly 60% of global startup funding has flowed into billion-dollar-plus rounds concentrated in AI and infrastructure. Specialized inference silicon is now a crowded, well-funded fight. Etched picked the boldest position in it, and just got the capital to find out if it's right.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Tesla Delivered a Record Quarter and Made Less Money Doing It</title>
-      <link>https://sabr-labs.com/article/tesla-q2-2026-earnings-record-deliveries-profit-miss-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-q2-2026-earnings-record-deliveries-profit-miss-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Tesla</category>
-      <category>Earnings</category>
-      <category>Electric Vehicles</category>
-      <category>AI</category>
-      <category>Robotics</category>
-      <description>Tesla beat on revenue with 480,126 deliveries but missed profit estimates as spending on AI and robotics pushed operating income down 57%.</description>
-      <content:encoded><![CDATA[<p>Tesla delivered a record 480,126 vehicles in the second quarter, up 25% from a year ago and well past the roughly 407,000 analysts expected. Revenue hit $28.24 billion. And the stock fell about 4% after hours anyway.</p>
-<p>The problem was the bottom line. Adjusted earnings came in at 33 cents a share against a consensus closer to 49, and operating profit fell 57% year over year even as sales rose. Operating expenses jumped 47% to $4.35 billion, most of it going into AI infrastructure and R&D rather than the car business.</p>
-<p>Tesla also burned cash, posting a free-cash-flow deficit of about $1.09 billion after a surplus in the prior quarter.</p>
-<p>The split screen is the whole story. Tesla is selling more cars than ever, at lower margins, while pouring the proceeds into the AI and robotics bets Elon Musk keeps telling investors are the real company. Whether that reads as visionary reinvestment or a car maker quietly getting less profitable depends entirely on whether the robots show up.</p>
-<p>For now, the market is being asked to pay a technology multiple for a company whose actual product got cheaper to sell this quarter. That's a bet, and Q2 didn't make it an easier one to hold.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Alphabet Beat Everything and Fell 6% on One Number: Capex</title>
-      <link>https://sabr-labs.com/article/alphabet-q2-2026-capex-205-billion-cloud-82-percent-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/alphabet-q2-2026-capex-205-billion-cloud-82-percent-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Alphabet</category>
-      <category>Google Cloud</category>
-      <category>AI Infrastructure</category>
-      <category>Capex</category>
-      <category>Earnings</category>
-      <category>Hyperscalers</category>
-      <description>Alphabet raised 2026 capital spending guidance to as much as $205 billion, spooking investors even as cloud revenue grew 82%.</description>
-      <content:encoded><![CDATA[<p>Alphabet beat on revenue, beat on profit, grew its cloud business 82% in a single year, and watched its stock drop more than 6%. The reason was one line on the guidance page. The company now expects to spend between $195 and $205 billion on capital expenditure this year, up from the $180 to $190 billion it guided a quarter ago.</p>
-<p>The quarter itself was enormous. Revenue hit $119.8 billion against expectations near $116.9 billion, earnings came in at $9.11 a share, and Google Cloud jumped to $24.77 billion in revenue, up 82% year over year as AI workloads filled capacity as fast as Alphabet could build it.</p>
-<p>Google spent $44.9 billion on infrastructure in the quarter alone, more than double a year ago.</p>
-<p>This is the tension sitting under every hyperscaler's earnings right now. Cloud demand is real and the growth is real, but the spend required to serve it is climbing faster than the revenue it produces, and Alphabet told investors 2027 capex will rise significantly on top of this year's. The market's 6% haircut wasn't a vote against AI. It was a question about when the bill stops growing faster than the return.</p>
-<p>For everyone downstream of these decisions, from chip suppliers to power utilities to the startups renting this capacity, the message is that the buildout isn't slowing. Alphabet just told the market it plans to spend more, sooner, and dared it to complain.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Origin Energy Confirms Breach; Attacker Claims 2 Million Customer Records</title>
-      <link>https://sabr-labs.com/article/origin-energy-data-breach-4-8-million-customers-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/origin-energy-data-breach-4-8-million-customers-july-2026</guid>
-      <pubDate>Fri, 24 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Origin Energy</category>
-      <category>Australia</category>
-      <category>Critical Infrastructure</category>
-      <category>Phishing</category>
-      <description>Australia&apos;s Origin Energy says an unknown attacker stole customer data including names, dates of birth, and partial card and bank details.</description>
-      <content:encoded><![CDATA[<p>Origin Energy, one of Australia's largest power and gas retailers, confirmed on July 23 that an unknown attacker got into its systems and made off with customer data. The company has about 4.8 million customers and is still working out how many were caught in the breach. A threat actor claiming responsibility says the haul covers 2 million of them.</p>
-<p>The exposed fields are the usual identity-theft starter kit: name, address, date of birth, phone number, and account details. More concerning is what came with it. For some customers the data includes the last four digits of a credit card or the last three of a bank account.</p>
-<p>That's not enough to drain an account on its own, but it's plenty to make a phishing call or a fake 'Origin billing' text sound convincing.</p>
-<p>Origin says it has notified the Australian Federal Police, the Australian Cyber Security Centre, and the national privacy regulator, and is contacting affected customers directly through a dedicated support portal. It hasn't named the attacker or explained how the intrusion happened.</p>
-<p>Australia has spent the past few years as a case study in large-scale consumer breaches, from Optus to Medibank, and the pattern holds here: a big retailer, a huge customer base, and a slow drip of detail while the company maps the blast radius. Expect the confirmed-impact number to move as the investigation runs.</p>
-<p>If you're an Origin customer, the practical move is boring and effective. Assume your contact details are out, and be skeptical of any call or message that references your Origin account and asks you to verify anything.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
