@@ -25,6 +25,293 @@
 
 export const articles = [
   {
+    id: 362,
+    slug: "teamcity-cve-2026-63077-cisa-kev-active-exploitation-august-2026",
+    title: "CISA Gives Federal Agencies Three Days to Patch TeamCity",
+    summary: "CVE-2026-63077 went from \"no known exploitation\" to the KEV catalog in nine days, and CISA set an August 8 deadline instead of the usual three weeks.",
+    body: [
+      "Nine days. That's how long it took CVE-2026-63077 to go from a JetBrains advisory that said nobody was exploiting it to a CISA catalog entry that says somebody is.",
+      "CISA added the TeamCity flaw to its Known Exploited Vulnerabilities catalog on August 5 and gave Federal Civilian Executive Branch agencies until August 8 to patch or pull the servers offline. Three days. The standard window under the binding operational directive is closer to three weeks, and CISA reserves the short clock for bugs it thinks are being used right now against targets that matter.",
+      "The vulnerability itself we covered when JetBrains published the advisory on July 27. It's a deserialization flaw in the agent polling protocol, CVSS 9.8, and it lets anyone who can reach a TeamCity On-Premises server over HTTP execute operating system commands as the server process. No credentials, no user interaction. Every on-prem version is affected. Fixes are in 2025.11.7 and 2026.1.3, and there's a security patch plugin that works back to 2017.1 for anyone who can't move versions this week. TeamCity Cloud was never in scope.",
+      "What CISA hasn't said is who's doing the exploiting or how many servers have fallen. The catalog entry is deliberately thin on that, which is normal, and neither JetBrains nor the firms tracking this have published victim counts or indicators. So the honest state of knowledge is: confirmed in the wild, scale unknown.",
+      "Patching is the easy half. A TeamCity server holds deploy keys, signing credentials, cloud tokens, and the environment variables every pipeline needs to reach production. If an attacker had command execution on that box for any window at all, they have those secrets, and upgrading the binary does exactly nothing about it. Rotate anything the server could read, then go look at your build history for jobs nobody scheduled.",
+      "The 2024 TeamCity authentication bypass followed the same arc, and internet-exposed instances were being backdoored before most teams finished reading the advisory. Two years later the shape of the problem hasn't changed: build servers sit on the internet because agents need to reach them, they run versions nobody wants to touch mid-sprint, and they're worth more to an attacker than most of the applications they build.",
+    ],
+    category: "cyber",
+    tags: ["JetBrains", "TeamCity", "CVE-2026-63077", "CISA KEV", "CI/CD"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "CISA Alert",
+        desc: "August 5 KEV addition for CVE-2026-63077",
+        url: "https://www.cisa.gov/news-events/alerts/2026/08/05/cisa-adds-one-known-exploited-vulnerability-catalog",
+      },
+      {
+        name: "JetBrains Security Advisory",
+        desc: "Vendor advisory with fixed versions and the patch plugin",
+        url: "https://blog.jetbrains.com/teamcity/2026/07/cve-2026-63077/",
+      },
+      {
+        name: "Rapid7",
+        desc: "Technical analysis of the agent polling protocol deserialization flaw",
+        url: "https://www.rapid7.com/blog/post/etr-cve-2026-63077-critical-unauthenticated-remote-code-execution-in-jetbrains-teamcity/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of the KEV listing and the August 8 federal deadline",
+        url: "https://thehackernews.com/2026/08/cisa-flags-teamcity-cve-2026-63077-rce.html",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Reporting on the shift from disclosure to confirmed exploitation",
+        url: "https://www.securityweek.com/hackers-start-exploiting-recent-jetbrains-teamcity-vulnerability/",
+      },
+    ],
+  },
+  {
+    id: 363,
+    slug: "ovswrap-cve-2026-64531-open-vswitch-kernel-local-root-august-2026",
+    title: "You Don't Run Open vSwitch. Your Kernel Will Load It Anyway.",
+    summary: "OVSwrap turns an ordinary local account into root on most default Linux installs, and a public exploit ships with prebuilt offsets for roughly 800 kernel builds.",
+    body: [
+      "The precondition list for OVSwrap is the story. You do not need Open vSwitch configured. You do not need ovs-vswitchd running, or a bridge, or CAP_NET_ADMIN, or a privileged container. You need a normal user account on the box.",
+      "CVE-2026-64531 is a length-field wrap in the kernel's Open vSwitch action validation path. Researcher Asim Manizada disclosed it on July 28. When the kernel builds a nested CLONE action containing hundreds of conntrack sub-actions, the 16-bit Netlink length field rolls past 65,535, and the parser picks back up inside bytes the attacker supplied. Those bytes then get validated and executed as legitimate OVS actions. From there it's kernel pointer leaks, arbitrary reads, and a targeted write.",
+      "CVSS puts it at 7.8, which undersells it. The published proof of concept chains the primitives into a full credential-corruption path that writes a sudoers entry and hands back a root shell, and it ships with prebuilt records for roughly 800 exact x86-64 kernel builds. That is not a research artifact. That is a tool.",
+      "The unsafe assignment has been sitting in the kernel for about thirteen years. A March 2025 change is what made it reachable, which is the usual shape of these: old code, new path, nobody re-derived the invariant.",
+      "Affected by default: AlmaLinux 9 and 10, Debian 12 and 13, Fedora 42 through 44, Ubuntu 22.04 and later, Alpine 3.22 through 3.24, and about fifteen more. Upstream fixes landed July 24 in 5.15.212, 6.1.178, 6.6.145, 6.12.97, 6.18.40 and 7.1.5. If you're on 6.13 through 6.17, 6.19, or 7.0, those trees are end of life and no fix is coming, so the upgrade isn't optional.",
+      "If you can't reboot into a patched kernel today, block the module. Writing 'install openvswitch /bin/false' into a file under /etc/modprobe.d/ stops the on-demand load that makes this reachable in the first place, and unless you're actually running OVS networking, nothing breaks. Live patches for the Enterprise Linux 9 family went out July 30 for anyone who buys that.",
+      "Local privilege escalation gets treated as a second-tier problem because it needs a foothold first. On a shared build runner, a CI container host, or any multi-tenant box where a web app runs as its own unprivileged user, that foothold is the cheap part.",
+    ],
+    category: "cyber",
+    tags: [
+      "Linux Kernel",
+      "CVE-2026-64531",
+      "Privilege Escalation",
+      "Open vSwitch",
+      "Patch Management",
+    ],
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T09:15:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "The Hacker News",
+        desc: "Technical writeup of the OVSwrap disclosure and affected distributions",
+        url: "https://thehackernews.com/2026/08/new-ovswrap-linux-kernel-flaw-lets.html",
+      },
+      {
+        name: "TuxCare",
+        desc: "Root-cause analysis and fixed kernel version list",
+        url: "https://tuxcare.com/blog/ovswrap-cve/",
+      },
+      {
+        name: "CloudLinux",
+        desc: "Vendor mitigation guidance including the modprobe blacklist",
+        url: "https://blog.cloudlinux.com/ovswrap-cve-2026-64531-mitigation/",
+      },
+      {
+        name: "Security Affairs",
+        desc: "Coverage of the thirteen-year-old flaw and public proof of concept",
+        url: "https://securityaffairs.com/196657/hacking/ovswrap-13-year-old-linux-kernel-flaw-lets-local-users-become-root.html",
+      },
+    ],
+  },
+  {
+    id: 364,
+    slug: "ransom-cartel-maksim-silnikau-16-year-sentence-august-2026",
+    title: "Ransom Cartel's Creator Got 16 Years and Never Ran an Attack",
+    summary: "Maksim Silnikau built the affiliate program, supplied the ransomware, and negotiated the payments, and a Virginia court sentenced him for all of it on August 5.",
+    body: [
+      "Maksim Silnikau didn't break into the medical technology startup that lost two months of operations in 2022. He didn't touch the law firms hit in May 2023 either. He built the thing that did, recruited the people who used it, and took a cut.",
+      "A federal judge in Alexandria, Virginia sentenced the 40-year-old Belarusian to 16 years on August 5 on charges including conspiracy and aggravated identity theft. Prosecutors tied Ransom Cartel to at least 18 companies between 2021 and 2023, roughly $6.7 million in identified losses, and another $5.2 million in extortion attempts that didn't land. The law firm intrusions alone carried demands between $125,000 and $300,000 apiece and cost victims about $2.2 million.",
+      "Ransom Cartel launched in December 2021 with code that overlapped noticeably with REvil, which was never really in dispute. Silnikau ran it as a service: he supplied the encryptor and stolen credentials, ran the affiliate site, ranked the affiliates, handled the negotiation with victims, and pushed payments through mixers to split the revenue. Under aliases including \"J.P. Morgan\" and \"lansky\" he'd been a fixture on Russian-speaking forums since 2005.",
+      "The ransomware is the late chapter, not the whole book. A separate District of New Jersey indictment charges Silnikau and two co-defendants over the Angler exploit kit and a malvertising operation that ran from October 2013 to March 2022, pushing scareware and locker malware to millions of users. Angler was the dominant exploit kit of its era. The UK's National Crime Agency put its annual take at around $34 million.",
+      "He was arrested in Spain in July 2023, then fled while extradition was pending and got picked up trying to cross from Poland into Belarus. Poland sent him to the Eastern District of Virginia.",
+      "Sixteen years is a real number, and it lands on someone who spent two decades treating extortion as a product management job. It also lands on one person out of a business model that hasn't slowed down. The affiliates who did the actual intrusions mostly aren't in custody, and the tooling they rented moved to other panels within weeks of the 2023 arrest.",
+    ],
+    category: "cyber",
+    tags: ["Ransomware", "Ransom Cartel", "Law Enforcement", "REvil", "Cybercrime"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "U.S. Department of Justice",
+        desc: "EDVA press release announcing the 16-year sentence",
+        url: "https://www.justice.gov/usao-edva/pr/belarusian-leader-international-ransomware-scheme-known-ransom-cartel-sentenced-16",
+      },
+      {
+        name: "U.S. Secret Service",
+        desc: "2024 release on the extradition and the malvertising charges",
+        url: "https://www.secretservice.gov/newsroom/releases/2024/08/leader-international-malvertising-and-ransomware-schemes-extradited",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Sentencing details, victim figures, and alias history",
+        url: "https://www.bleepingcomputer.com/news/security/ransom-cartel-ransomware-creator-sentenced-to-16-years-in-prison/",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Breakdown of Silnikau's role in the affiliate operation",
+        url: "https://thehackernews.com/2026/08/ransom-cartel-creator-gets-16-years-in.html",
+      },
+      {
+        name: "CyberScoop",
+        desc: "Court proceedings and prosecution context",
+        url: "https://cyberscoop.com/ransom-cartel-creator-sentenced-to-16-years-in-prison/",
+      },
+    ],
+  },
+  {
+    id: 365,
+    slug: "amd-acquires-taalas-hardwired-model-inference-silicon-august-2026",
+    title: "AMD Is Buying a Chip Company Whose Product Runs One Model",
+    summary: "Taalas etches model weights directly into silicon and hit roughly 17,000 tokens per second on Llama 3.1 8B, which is spectacular right up until the model changes.",
+    body: [
+      "Taalas built a chip that runs Llama 3.1 8B faster than anything Nvidia, Groq, or Cerebras will sell you. It also runs nothing else. AMD announced it's buying the company anyway.",
+      "The deal was confirmed on August 6, terms undisclosed. Taalas is a Toronto outfit founded in 2023 by Ljubisa Bajic, who founded Tenstorrent and did time at both AMD and Nvidia before that, and it has raised about $219 million across two rounds. The team goes into AMD's AI group under senior vice president Vamsi Boppana, who framed the buy as feeding into Instinct accelerators and the Helios rack systems.",
+      "The technical bet is worth understanding because it's genuinely different from what everyone else is doing. Instead of streaming weights from high-bandwidth memory into a general-purpose compute grid, Taalas bakes the weights into the die itself on TSMC's 6nm process. The memory wall doesn't get optimized around. It gets removed, because there's no external memory in the loop. The HC1 test chip served Llama 3.1 8B at north of 16,000 tokens per second per user at roughly a tenth of a GPU's power draw.",
+      "Now the catch. A hardwired model is a tapeout. Fine-tune the weights and you need new silicon. Ship a new model version and you need new silicon. In a field where the frontier moves every few months and even open-weight 8B models get replaced twice a year, an inference chip with a fixed model is a bet that some workloads stabilize long enough to be worth freezing. Speech recognition, embeddings, retrieval rerankers, safety classifiers, guardrail models sitting in front of a bigger system: those things do stabilize. The chatbot everyone actually thinks about when they hear inference does not.",
+      "AMD isn't buying a product line here so much as an approach and the people who built it, which is the honest reading of a deal with no disclosed price and a team folding into an existing org. Expect the ideas to show up as blocks inside future Instinct parts before they show up as a standalone hardwired accelerator you can order.",
+      "It's also a reasonable read on where AMD thinks it can compete. Beating Nvidia at general-purpose training silicon has not gone well for anyone. Beating it on cost per token for a narrow, high-volume inference job is a smaller target with a much clearer shot at it.",
+    ],
+    category: "tech",
+    tags: ["AMD", "Taalas", "AI Inference", "Semiconductors", "M&A"],
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T11:45:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "Deal announcement and AMD's stated rationale",
+        url: "https://www.cnbc.com/2026/08/06/amd-buys-taalas-startup-that-hardwires-ai-models-into-its-silicon.html",
+      },
+      {
+        name: "EE Times",
+        desc: "Technical background on the HC1 and Taalas's hardwired approach",
+        url: "https://www.eetimes.com/taalas-specializes-to-extremes-for-extraordinary-token-speed/",
+      },
+      {
+        name: "Data Center Dynamics",
+        desc: "Taalas funding history and HC1 performance claims",
+        url: "https://www.datacenterdynamics.com/en/news/ai-chip-startup-taalas-raises-169m-unveils-hc1-processor-optimized-for-llama-31-8b/",
+      },
+      {
+        name: "Evertiq",
+        desc: "Acquisition details and AMD executive comments",
+        url: "https://evertiq.com/news/2026-08-07-amd-acquires-canadian-ai-chip-startup-taalas",
+      },
+    ],
+  },
+  {
+    id: 366,
+    slug: "google-deepmind-hassabis-chief-scientist-kavukcuoglu-gemini-delay-august-2026",
+    title: "Hassabis Moves Up, Jeff Dean Walks Out, Gemini Is Still Late",
+    summary: "Alphabet restructured its AI leadership on August 5, handing daily control of DeepMind to Koray Kavukcuoglu while the delayed Gemini 3.5 Pro still hasn't shipped.",
+    body: [
+      "Alphabet shares dropped about 5% on the news that Demis Hassabis was being promoted. That tells you how the market read it.",
+      "The August 5 reshuffle moves Hassabis out of the DeepMind CEO seat and into two titles: chairman of DeepMind and chief scientist of Alphabet. Koray Kavukcuoglu, previously CTO and Alphabet's chief AI architect, takes operational control as senior vice president reporting to Sundar Pichai. Hassabis says he'll spend more of his time on AGI strategy and on Isomorphic Labs, the drug discovery arm.",
+      "Jeff Dean left the same week. Twenty-seven years at Google, chief scientist, and one of the people whose name is on the infrastructure the entire company runs on. He's co-founding a benefit corporation called Discovery Loop with Sanjay Ghemawat, Oriol Vinyals, and Quoc Le, which is not a junior lineup. Pichai publicly said he was glad to support it.",
+      "Read the departure list from the past year and the pattern is uncomfortable. Gemini co-lead Noam Shazeer went to OpenAI. Nobel laureate John Jumper went to Anthropic. Now Dean and three more senior researchers leave to start something of their own. That's not attrition at the edges.",
+      "The proximate cause is a model that won't ship. Gemini 3.5 Pro was targeted for June, got pulled back in July for more work on coding capability, and still isn't out in August. Google has spent the year watching Anthropic and OpenAI put frontier releases into the market on schedule while its own flagship slips, and a leadership restructure in the middle of that reads less like a promotion than like someone deciding the research org and the shipping org need different people running them.",
+      "Whether that's the right call is a real question. Splitting a visionary founder off into a chief scientist role while an operator runs delivery is a well-worn move, and it works often enough that it's a template. It also frequently precedes the founder leaving entirely, which is the outcome Alphabet can least afford right now.",
+    ],
+    category: "ai",
+    tags: ["Google DeepMind", "Alphabet", "Gemini", "Demis Hassabis", "Jeff Dean"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T13:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Fortune",
+        desc: "Details of the restructure, new titles, and the reporting line to Pichai",
+        url: "https://fortune.com/2026/08/05/demis-hassabis-steps-down-google-deepmind-ai-shakeup/",
+      },
+      {
+        name: "Axios",
+        desc: "Analysis of the leadership shuffle and Dean's departure",
+        url: "https://www.axios.com/2026/08/06/googles-ai-leadership-shuffle",
+      },
+      {
+        name: "Axios",
+        desc: "Earlier reporting on the Gemini delay and the race with OpenAI and Anthropic",
+        url: "https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race",
+      },
+      {
+        name: "Yahoo Finance",
+        desc: "Market reaction to the announcement",
+        url: "https://finance.yahoo.com/technology/article/google-stock-drops-amid-deepmind-leadership-shake-up-170219204.html",
+      },
+    ],
+  },
+  {
+    id: 367,
+    slug: "spacex-q2-2026-earnings-ai-compute-starlink-capex-august-2026",
+    title: "SpaceX Beat Its First Earnings Report and the Stock Fell 8%",
+    summary: "Revenue nearly doubled to $7.8 billion on Starlink growth and compute deals with Anthropic and Google, but capex hit $28 billion in six months and investors flinched.",
+    body: [
+      "Twenty-eight billion dollars. That's what SpaceX spent on capital expenditures in the first half of 2026, against seven billion in the same period last year, and it's the number that mattered more than any of the good ones.",
+      "The good ones were legitimately good. Q2 revenue came in at $7.8 billion, up 92% year over year and close to a billion dollars past what analysts expected, in the company's first report since its June listing at $135 a share. Starlink did $4.29 billion of that, up 66%. The AI and cloud services business did roughly $2.6 billion, and compute capacity is now around 1.4 gigawatts against 0.4 a year ago.",
+      "Shares fell about 8% after hours.",
+      "The mechanism is not subtle. SpaceX is renting orbital and terrestrial compute to other AI companies, with Anthropic and Google as named customers, and CFO Bret Johnsen pointed to another $6.7 billion of cloud services revenue under contract that starts ramping in October. Company-wide operating loss narrowed to $541 million. But the compute business is being built with cash spent years ahead of the revenue it books, and the market spent the last quarter learning to punish exactly that pattern wherever it appeared.",
+      "Johnsen also told investors to expect a $100 billion annualized run-rate by the end of the year and promised sub-one-year payback on new AI compute capital. Those are enormous claims from a company that did $18.67 billion in all of 2025, and the second one is the load-bearing part. If new capacity really pays back in under a year, the capex line is a feature. If it takes three, the story changes fast, and nothing in the quarter proves which it is yet.",
+      "What's genuinely interesting is that the rocket company's rocket business barely came up. Musk has said NASA will account for about 5% of revenue this year. SpaceX is now a connectivity and compute business that happens to own the cheapest way to put mass in orbit, and it's pricing itself accordingly.",
+    ],
+    category: "tech",
+    tags: ["SpaceX", "Starlink", "AI Infrastructure", "Earnings", "Capex"],
+    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-08-07T14:20:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "TechCrunch",
+        desc: "Revenue breakdown, capex figures, and the Anthropic and Google compute deals",
+        url: "https://techcrunch.com/2026/08/04/spacex-doubles-revenues-on-anthropic-and-google-compute-deals-starlink-growth/",
+      },
+      {
+        name: "CNBC",
+        desc: "Earnings takeaways and the after-hours reaction",
+        url: "https://www.cnbc.com/2026/08/04/spacex-spcx-earnings-live-updates-q2-2026.html",
+      },
+      {
+        name: "Fortune",
+        desc: "Reporting on the 92% revenue jump versus expectations",
+        url: "https://fortune.com/2026/08/04/spacex-revenue-surges-92-to-7-8-billion-blowing-past-wall-street-expectations-by-nearly-1-billion/",
+      },
+      {
+        name: "CNN Business",
+        desc: "Investor concerns over AI spending despite the revenue beat",
+        url: "https://www.cnn.com/2026/08/04/business/spacex-earnings-q2-2026",
+      },
+    ],
+  },
+  {
     id: 356,
     slug: "claude-mythos-5-aisi-backdoor-sockpuppet-open-source-august-2026",
     title: "Claude Mythos 5 Backdoored a Real Repo, Then Posed as Its Own Reviewer",
@@ -45,9 +332,9 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-08-05T08:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "AI Security Institute",
@@ -93,7 +380,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA Known Exploited Vulnerabilities Catalog",
@@ -311,7 +598,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Aikido Security",
@@ -357,7 +644,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "N-able Security Update",
@@ -1435,7 +1722,7 @@ export const articles = [
     publishedAt: "2026-07-31T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1481,7 +1768,7 @@ export const articles = [
     publishedAt: "2026-07-31T09:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1573,7 +1860,7 @@ export const articles = [
     publishedAt: "2026-07-31T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1665,7 +1952,7 @@ export const articles = [
     publishedAt: "2026-07-31T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1718,7 +2005,7 @@ export const articles = [
     publishedAt: "2026-07-30T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1769,7 +2056,7 @@ export const articles = [
     publishedAt: "2026-07-30T08:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1815,7 +2102,7 @@ export const articles = [
     publishedAt: "2026-07-30T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1862,7 +2149,7 @@ export const articles = [
     publishedAt: "2026-07-30T10:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

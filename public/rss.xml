@@ -6,9 +6,130 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2026 13:17:03 GMT</lastBuildDate>
-    <pubDate>Wed, 05 Aug 2026 13:17:03 GMT</pubDate>
+    <lastBuildDate>Fri, 07 Aug 2026 13:18:12 GMT</lastBuildDate>
+    <pubDate>Fri, 07 Aug 2026 13:18:12 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>SpaceX Beat Its First Earnings Report and the Stock Fell 8%</title>
+      <link>https://sabr-labs.com/article/spacex-q2-2026-earnings-ai-compute-starlink-capex-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-q2-2026-earnings-ai-compute-starlink-capex-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 14:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SpaceX</category>
+      <category>Starlink</category>
+      <category>AI Infrastructure</category>
+      <category>Earnings</category>
+      <category>Capex</category>
+      <description>Revenue nearly doubled to $7.8 billion on Starlink growth and compute deals with Anthropic and Google, but capex hit $28 billion in six months and investors flinched.</description>
+      <content:encoded><![CDATA[<p>Twenty-eight billion dollars. That's what SpaceX spent on capital expenditures in the first half of 2026, against seven billion in the same period last year, and it's the number that mattered more than any of the good ones.</p>
+<p>The good ones were legitimately good. Q2 revenue came in at $7.8 billion, up 92% year over year and close to a billion dollars past what analysts expected, in the company's first report since its June listing at $135 a share. Starlink did $4.29 billion of that, up 66%. The AI and cloud services business did roughly $2.6 billion, and compute capacity is now around 1.4 gigawatts against 0.4 a year ago.</p>
+<p>Shares fell about 8% after hours.</p>
+<p>The mechanism is not subtle. SpaceX is renting orbital and terrestrial compute to other AI companies, with Anthropic and Google as named customers, and CFO Bret Johnsen pointed to another $6.7 billion of cloud services revenue under contract that starts ramping in October. Company-wide operating loss narrowed to $541 million. But the compute business is being built with cash spent years ahead of the revenue it books, and the market spent the last quarter learning to punish exactly that pattern wherever it appeared.</p>
+<p>Johnsen also told investors to expect a $100 billion annualized run-rate by the end of the year and promised sub-one-year payback on new AI compute capital. Those are enormous claims from a company that did $18.67 billion in all of 2025, and the second one is the load-bearing part. If new capacity really pays back in under a year, the capex line is a feature. If it takes three, the story changes fast, and nothing in the quarter proves which it is yet.</p>
+<p>What's genuinely interesting is that the rocket company's rocket business barely came up. Musk has said NASA will account for about 5% of revenue this year. SpaceX is now a connectivity and compute business that happens to own the cheapest way to put mass in orbit, and it's pricing itself accordingly.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Hassabis Moves Up, Jeff Dean Walks Out, Gemini Is Still Late</title>
+      <link>https://sabr-labs.com/article/google-deepmind-hassabis-chief-scientist-kavukcuoglu-gemini-delay-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-deepmind-hassabis-chief-scientist-kavukcuoglu-gemini-delay-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google DeepMind</category>
+      <category>Alphabet</category>
+      <category>Gemini</category>
+      <category>Demis Hassabis</category>
+      <category>Jeff Dean</category>
+      <description>Alphabet restructured its AI leadership on August 5, handing daily control of DeepMind to Koray Kavukcuoglu while the delayed Gemini 3.5 Pro still hasn&apos;t shipped.</description>
+      <content:encoded><![CDATA[<p>Alphabet shares dropped about 5% on the news that Demis Hassabis was being promoted. That tells you how the market read it.</p>
+<p>The August 5 reshuffle moves Hassabis out of the DeepMind CEO seat and into two titles: chairman of DeepMind and chief scientist of Alphabet. Koray Kavukcuoglu, previously CTO and Alphabet's chief AI architect, takes operational control as senior vice president reporting to Sundar Pichai. Hassabis says he'll spend more of his time on AGI strategy and on Isomorphic Labs, the drug discovery arm.</p>
+<p>Jeff Dean left the same week. Twenty-seven years at Google, chief scientist, and one of the people whose name is on the infrastructure the entire company runs on. He's co-founding a benefit corporation called Discovery Loop with Sanjay Ghemawat, Oriol Vinyals, and Quoc Le, which is not a junior lineup. Pichai publicly said he was glad to support it.</p>
+<p>Read the departure list from the past year and the pattern is uncomfortable. Gemini co-lead Noam Shazeer went to OpenAI. Nobel laureate John Jumper went to Anthropic. Now Dean and three more senior researchers leave to start something of their own. That's not attrition at the edges.</p>
+<p>The proximate cause is a model that won't ship. Gemini 3.5 Pro was targeted for June, got pulled back in July for more work on coding capability, and still isn't out in August. Google has spent the year watching Anthropic and OpenAI put frontier releases into the market on schedule while its own flagship slips, and a leadership restructure in the middle of that reads less like a promotion than like someone deciding the research org and the shipping org need different people running them.</p>
+<p>Whether that's the right call is a real question. Splitting a visionary founder off into a chief scientist role while an operator runs delivery is a well-worn move, and it works often enough that it's a template. It also frequently precedes the founder leaving entirely, which is the outcome Alphabet can least afford right now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AMD Is Buying a Chip Company Whose Product Runs One Model</title>
+      <link>https://sabr-labs.com/article/amd-acquires-taalas-hardwired-model-inference-silicon-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amd-acquires-taalas-hardwired-model-inference-silicon-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>AMD</category>
+      <category>Taalas</category>
+      <category>AI Inference</category>
+      <category>Semiconductors</category>
+      <category>M&amp;A</category>
+      <description>Taalas etches model weights directly into silicon and hit roughly 17,000 tokens per second on Llama 3.1 8B, which is spectacular right up until the model changes.</description>
+      <content:encoded><![CDATA[<p>Taalas built a chip that runs Llama 3.1 8B faster than anything Nvidia, Groq, or Cerebras will sell you. It also runs nothing else. AMD announced it's buying the company anyway.</p>
+<p>The deal was confirmed on August 6, terms undisclosed. Taalas is a Toronto outfit founded in 2023 by Ljubisa Bajic, who founded Tenstorrent and did time at both AMD and Nvidia before that, and it has raised about $219 million across two rounds. The team goes into AMD's AI group under senior vice president Vamsi Boppana, who framed the buy as feeding into Instinct accelerators and the Helios rack systems.</p>
+<p>The technical bet is worth understanding because it's genuinely different from what everyone else is doing. Instead of streaming weights from high-bandwidth memory into a general-purpose compute grid, Taalas bakes the weights into the die itself on TSMC's 6nm process. The memory wall doesn't get optimized around. It gets removed, because there's no external memory in the loop. The HC1 test chip served Llama 3.1 8B at north of 16,000 tokens per second per user at roughly a tenth of a GPU's power draw.</p>
+<p>Now the catch. A hardwired model is a tapeout. Fine-tune the weights and you need new silicon. Ship a new model version and you need new silicon. In a field where the frontier moves every few months and even open-weight 8B models get replaced twice a year, an inference chip with a fixed model is a bet that some workloads stabilize long enough to be worth freezing. Speech recognition, embeddings, retrieval rerankers, safety classifiers, guardrail models sitting in front of a bigger system: those things do stabilize. The chatbot everyone actually thinks about when they hear inference does not.</p>
+<p>AMD isn't buying a product line here so much as an approach and the people who built it, which is the honest reading of a deal with no disclosed price and a team folding into an existing org. Expect the ideas to show up as blocks inside future Instinct parts before they show up as a standalone hardwired accelerator you can order.</p>
+<p>It's also a reasonable read on where AMD thinks it can compete. Beating Nvidia at general-purpose training silicon has not gone well for anyone. Beating it on cost per token for a narrow, high-volume inference job is a smaller target with a much clearer shot at it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ransom Cartel&apos;s Creator Got 16 Years and Never Ran an Attack</title>
+      <link>https://sabr-labs.com/article/ransom-cartel-maksim-silnikau-16-year-sentence-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ransom-cartel-maksim-silnikau-16-year-sentence-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Ransom Cartel</category>
+      <category>Law Enforcement</category>
+      <category>REvil</category>
+      <category>Cybercrime</category>
+      <description>Maksim Silnikau built the affiliate program, supplied the ransomware, and negotiated the payments, and a Virginia court sentenced him for all of it on August 5.</description>
+      <content:encoded><![CDATA[<p>Maksim Silnikau didn't break into the medical technology startup that lost two months of operations in 2022. He didn't touch the law firms hit in May 2023 either. He built the thing that did, recruited the people who used it, and took a cut.</p>
+<p>A federal judge in Alexandria, Virginia sentenced the 40-year-old Belarusian to 16 years on August 5 on charges including conspiracy and aggravated identity theft. Prosecutors tied Ransom Cartel to at least 18 companies between 2021 and 2023, roughly $6.7 million in identified losses, and another $5.2 million in extortion attempts that didn't land. The law firm intrusions alone carried demands between $125,000 and $300,000 apiece and cost victims about $2.2 million.</p>
+<p>Ransom Cartel launched in December 2021 with code that overlapped noticeably with REvil, which was never really in dispute. Silnikau ran it as a service: he supplied the encryptor and stolen credentials, ran the affiliate site, ranked the affiliates, handled the negotiation with victims, and pushed payments through mixers to split the revenue. Under aliases including "J.P. Morgan" and "lansky" he'd been a fixture on Russian-speaking forums since 2005.</p>
+<p>The ransomware is the late chapter, not the whole book. A separate District of New Jersey indictment charges Silnikau and two co-defendants over the Angler exploit kit and a malvertising operation that ran from October 2013 to March 2022, pushing scareware and locker malware to millions of users. Angler was the dominant exploit kit of its era. The UK's National Crime Agency put its annual take at around $34 million.</p>
+<p>He was arrested in Spain in July 2023, then fled while extradition was pending and got picked up trying to cross from Poland into Belarus. Poland sent him to the Eastern District of Virginia.</p>
+<p>Sixteen years is a real number, and it lands on someone who spent two decades treating extortion as a product management job. It also lands on one person out of a business model that hasn't slowed down. The affiliates who did the actual intrusions mostly aren't in custody, and the tooling they rented moved to other panels within weeks of the 2023 arrest.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>You Don&apos;t Run Open vSwitch. Your Kernel Will Load It Anyway.</title>
+      <link>https://sabr-labs.com/article/ovswrap-cve-2026-64531-open-vswitch-kernel-local-root-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ovswrap-cve-2026-64531-open-vswitch-kernel-local-root-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Linux Kernel</category>
+      <category>CVE-2026-64531</category>
+      <category>Privilege Escalation</category>
+      <category>Open vSwitch</category>
+      <category>Patch Management</category>
+      <description>OVSwrap turns an ordinary local account into root on most default Linux installs, and a public exploit ships with prebuilt offsets for roughly 800 kernel builds.</description>
+      <content:encoded><![CDATA[<p>The precondition list for OVSwrap is the story. You do not need Open vSwitch configured. You do not need ovs-vswitchd running, or a bridge, or CAP_NET_ADMIN, or a privileged container. You need a normal user account on the box.</p>
+<p>CVE-2026-64531 is a length-field wrap in the kernel's Open vSwitch action validation path. Researcher Asim Manizada disclosed it on July 28. When the kernel builds a nested CLONE action containing hundreds of conntrack sub-actions, the 16-bit Netlink length field rolls past 65,535, and the parser picks back up inside bytes the attacker supplied. Those bytes then get validated and executed as legitimate OVS actions. From there it's kernel pointer leaks, arbitrary reads, and a targeted write.</p>
+<p>CVSS puts it at 7.8, which undersells it. The published proof of concept chains the primitives into a full credential-corruption path that writes a sudoers entry and hands back a root shell, and it ships with prebuilt records for roughly 800 exact x86-64 kernel builds. That is not a research artifact. That is a tool.</p>
+<p>The unsafe assignment has been sitting in the kernel for about thirteen years. A March 2025 change is what made it reachable, which is the usual shape of these: old code, new path, nobody re-derived the invariant.</p>
+<p>Affected by default: AlmaLinux 9 and 10, Debian 12 and 13, Fedora 42 through 44, Ubuntu 22.04 and later, Alpine 3.22 through 3.24, and about fifteen more. Upstream fixes landed July 24 in 5.15.212, 6.1.178, 6.6.145, 6.12.97, 6.18.40 and 7.1.5. If you're on 6.13 through 6.17, 6.19, or 7.0, those trees are end of life and no fix is coming, so the upgrade isn't optional.</p>
+<p>If you can't reboot into a patched kernel today, block the module. Writing 'install openvswitch /bin/false' into a file under /etc/modprobe.d/ stops the on-demand load that makes this reachable in the first place, and unless you're actually running OVS networking, nothing breaks. Live patches for the Enterprise Linux 9 family went out July 30 for anyone who buys that.</p>
+<p>Local privilege escalation gets treated as a second-tier problem because it needs a foothold first. On a shared build runner, a CI container host, or any multi-tenant box where a web app runs as its own unprivileged user, that foothold is the cheap part.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Gives Federal Agencies Three Days to Patch TeamCity</title>
+      <link>https://sabr-labs.com/article/teamcity-cve-2026-63077-cisa-kev-active-exploitation-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/teamcity-cve-2026-63077-cisa-kev-active-exploitation-august-2026</guid>
+      <pubDate>Fri, 07 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>JetBrains</category>
+      <category>TeamCity</category>
+      <category>CVE-2026-63077</category>
+      <category>CISA KEV</category>
+      <category>CI/CD</category>
+      <description>CVE-2026-63077 went from &quot;no known exploitation&quot; to the KEV catalog in nine days, and CISA set an August 8 deadline instead of the usual three weeks.</description>
+      <content:encoded><![CDATA[<p>Nine days. That's how long it took CVE-2026-63077 to go from a JetBrains advisory that said nobody was exploiting it to a CISA catalog entry that says somebody is.</p>
+<p>CISA added the TeamCity flaw to its Known Exploited Vulnerabilities catalog on August 5 and gave Federal Civilian Executive Branch agencies until August 8 to patch or pull the servers offline. Three days. The standard window under the binding operational directive is closer to three weeks, and CISA reserves the short clock for bugs it thinks are being used right now against targets that matter.</p>
+<p>The vulnerability itself we covered when JetBrains published the advisory on July 27. It's a deserialization flaw in the agent polling protocol, CVSS 9.8, and it lets anyone who can reach a TeamCity On-Premises server over HTTP execute operating system commands as the server process. No credentials, no user interaction. Every on-prem version is affected. Fixes are in 2025.11.7 and 2026.1.3, and there's a security patch plugin that works back to 2017.1 for anyone who can't move versions this week. TeamCity Cloud was never in scope.</p>
+<p>What CISA hasn't said is who's doing the exploiting or how many servers have fallen. The catalog entry is deliberately thin on that, which is normal, and neither JetBrains nor the firms tracking this have published victim counts or indicators. So the honest state of knowledge is: confirmed in the wild, scale unknown.</p>
+<p>Patching is the easy half. A TeamCity server holds deploy keys, signing credentials, cloud tokens, and the environment variables every pipeline needs to reach production. If an attacker had command execution on that box for any window at all, they have those secrets, and upgrading the binary does exactly nothing about it. Rotate anything the server could read, then go look at your build history for jobs nobody scheduled.</p>
+<p>The 2024 TeamCity authentication bypass followed the same arc, and internet-exposed instances were being backdoored before most teams finished reading the advisory. Two years later the shape of the problem hasn't changed: build servers sit on the internet because agents need to reach them, they run versions nobody wants to touch mid-sprint, and they're worth more to an attacker than most of the applications they build.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Three CCNP Security Concentration Exams Retire on August 26</title>
       <link>https://sabr-labs.com/article/cisco-ccnp-security-scor-350-701-v2-svpn-retirement-august-2026</link>
@@ -934,130 +1055,6 @@
 <p>The precedent is recent enough that nobody has an excuse. When a TeamCity authentication bypass was disclosed in 2024, mass exploitation followed within days, and internet-exposed servers were being backdoored before most teams had finished reading the advisory.</p>
 <p>JetBrains says it isn't aware of exploitation as of the advisory, and credits Antoni Tremblay with reporting the flaw privately on July 10 under coordinated disclosure. That's a seventeen-day turnaround from report to fix, which is genuinely good work.</p>
 <p>It also means the clock started on July 27. Patch the server, then check whether it should have been reachable from the internet in the first place. For most teams the honest answer is no.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Patched 87 Bugs in iOS and 155 in macOS Tahoe</title>
-      <link>https://sabr-labs.com/article/apple-ios-26-6-macos-tahoe-155-vulnerabilities-imageio-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-ios-26-6-macos-tahoe-155-vulnerabilities-imageio-july-2026</guid>
-      <pubDate>Wed, 29 Jul 2026 10:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Apple</category>
-      <category>iOS</category>
-      <category>macOS</category>
-      <category>Patch Management</category>
-      <category>ImageIO</category>
-      <description>The July update covers every Apple operating system, and the flaws worth patching first are the file-parsing bugs in ImageIO and SceneKit.</description>
-      <content:encoded><![CDATA[<p>Apple pushed patches across its entire operating system range this week, and the numbers are large even by Apple's standards. iOS 26.6 and iPadOS 26.6 fix 87 vulnerabilities. macOS Tahoe 26.6 fixes 155. The older Mac branches get similar volume, with 138 issues resolved in Sequoia 15.7.8 and 127 in Sonoma 14.8.8. watchOS, tvOS, and visionOS each land around 100.</p>
-<p>Volume isn't the interesting part. Composition is.</p>
-<p>The flaws to look at first are in the file-parsing paths: CVE-2026-43818 in ImageIO, CVE-2026-43776 in AppleDouble, and CVE-2026-64763 through CVE-2026-64766 in SceneKit. In each case, processing a maliciously crafted file can crash the app or lead to arbitrary code execution. ImageIO is the component that renders image data across the system, which means the attack surface includes content that arrives on its own. A message thread, an email preview, a web page. You don't have to tap anything for the parser to run.</p>
-<p>That's the pattern behind most of the serious iPhone compromises of the last several years. The mercenary spyware vendors have consistently gone after image and font decoders, because those are the components that touch attacker-controlled bytes before the user makes a decision.</p>
-<p>Apple's advisories don't cite in-the-wild exploitation for anything in this batch, and there's no indication these were found in active attacks. Treat that as a reason to patch on a normal schedule, not a reason to wait. Public advisories with CVE numbers are a starting gun for anyone willing to diff the fix against the previous build.</p>
-<p>If you manage a fleet, prioritize the devices that handle untrusted inbound content: shared phones, executive devices, anything doing customer support or intake. Everything else can ride the normal window.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI Sped Up a Linux Kernel Root Exploit, Just Not the Hard Part</title>
-      <link>https://sabr-labs.com/article/linux-kernel-cve-2026-53264-net-sched-uaf-ai-assisted-exploit-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/linux-kernel-cve-2026-53264-net-sched-uaf-ai-assisted-exploit-july-2026</guid>
-      <pubDate>Wed, 29 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Linux Kernel</category>
-      <category>CVE-2026-53264</category>
-      <category>Privilege Escalation</category>
-      <category>Use-After-Free</category>
-      <category>AI Security</category>
-      <description>A use-after-free in the kernel&apos;s packet scheduler gives local users root, and the researcher used AI tooling for discovery and race tuning while doing the exploitation logic by hand.</description>
-      <content:encoded><![CDATA[<p>CVE-2026-53264 is a use-after-free in the Linux kernel's net/sched subsystem, the code that handles traffic control queuing disciplines and actions. An unprivileged local user can turn it into root. It's rated 7.8, and it's already fixed in the stable tree.</p>
-<p>The bug is a locking mismatch in tcf_idr_check_alloc(), the function that looks up shared traffic control actions by index. Lookups happen under rcu_read_lock(), but action objects can be freed under different locks without waiting out an RCU grace period. That leaves a window where a freed tc_action object gets reclaimed before its reference count is checked, and reclaimed memory under attacker control is the whole ballgame. It's a classic shape: two subsystems disagreeing about who owns an object's lifetime.</p>
-<p>What makes it worth writing about is how the exploit got built. The researcher used AI tooling across several stages of the pipeline, including finding the bug, generating a KASAN proof of concept, and tuning the timing on the race. The finished product was a reliable local root exploit against CentOS Stream 9 Desktop, developed for TyphoonPwn 2026.</p>
-<p>Now the part that keeps getting dropped from the headlines. The researcher was explicit that manual analysis stayed essential, specifically for refining the exploitation logic and validating that the thing actually worked on a real system. AI compressed the iteration cycles. It did not replace the judgment.</p>
-<p>That distinction matters because the industry is currently telling two incompatible stories. One says AI has collapsed the cost of offensive research to nothing. The other says it's a marginal productivity aid. This case sits between them, and the honest read is that the tedious, parallelizable work got much cheaper while the parts requiring a mental model of kernel memory did not.</p>
-<p>Which is still a meaningful shift. Race conditions in particular have always been gated by patience, and timing optimization is exactly the kind of grinding search that machines do better than people. Expect more UAF races to become practical exploits rather than theoretical ones.</p>
-<p>Update your kernels. If you run multi-tenant Linux where untrusted users get shell access, this is the category of bug that erases the boundary you're relying on.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Lawmakers Want CXMT on the Entity List Days After Its Shanghai Debut</title>
-      <link>https://sabr-labs.com/article/cxmt-entity-list-moolenaar-letter-lutnick-apple-memory-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cxmt-entity-list-moolenaar-letter-lutnick-apple-memory-july-2026</guid>
-      <pubDate>Wed, 29 Jul 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>CXMT</category>
-      <category>Semiconductors</category>
-      <category>DRAM</category>
-      <category>Export Controls</category>
-      <category>Apple</category>
-      <description>House China Committee leaders are asking Commerce to blacklist CXMT and bar US firms including Apple from buying Chinese memory, two days after the DRAM maker became China&apos;s most valuable listed company.</description>
-      <content:encoded><![CDATA[<p>CXMT's 466% first-day pop made it the most valuable company listed in mainland China, worth roughly $489 billion. It also made it a target in Washington, and the response arrived within 48 hours.</p>
-<p>House Select Committee on China Chairman John Moolenaar and Representative George Whitesides wrote to Commerce Secretary Howard Lutnick asking the administration to cut US buyers off from Chinese memory. The specific asks are concrete: put CXMT on the Bureau of Industry and Security Entity List, widen the existing restrictions on YMTC, and issue an executive order barring US entities from sourcing memory components from firms designated as Chinese military companies.</p>
-<p>Apple gets named directly. Moolenaar, joined by House Foreign Affairs Chair Brian Mast, has publicly called any sourcing from CXMT or YMTC a "grave mistake," which is unusually blunt language to aim at a single American company in a letter about export policy. Apple has spent two years navigating whether it can use Chinese DRAM in devices sold outside the US without triggering exactly this.</p>
-<p>The market pressure behind the politics is real. Research cited by Tom's Hardware puts CXMT close to matching Micron's memory output this year, which would make China the world's second-largest DRAM producer. Memory is the commodity layer of the AI buildout. If it becomes cheap and abundant from a Chinese supplier while US and Korean fabs price for scarcity, the export-control strategy starts leaking at the bottom.</p>
-<p>None of this is new ground. Back in 2023, then-Representative Mike Gallagher pushed for CXMT's entity listing after Beijing retaliated against Micron. That request went nowhere for three years while CXMT built capacity and, this week, raised $8.6 billion on a public exchange.</p>
-<p>The letter is a request, not a rule. Commerce has to decide whether to act, and an entity listing on a company this large invites retaliation against US firms with substantial revenue inside China. That calculation is why the last three years produced letters instead of listings.</p>
-<p>Watch Commerce's response and watch Apple's supply chain disclosures. Those two will tell you more than any hearing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Puts Red, Blue, and Green Agents to Work in the SOC</title>
-      <link>https://sabr-labs.com/article/microsoft-project-perception-mai-cyber-1-flash-agentic-security-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-project-perception-mai-cyber-1-flash-agentic-security-july-2026</guid>
-      <pubDate>Wed, 29 Jul 2026 08:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Project Perception</category>
-      <category>AI Agents</category>
-      <category>Security Operations</category>
-      <category>MAI-Cyber-1-Flash</category>
-      <description>Project Perception coordinates three classes of security agents around MAI-Cyber-1-Flash, Microsoft&apos;s first model built specifically for finding and fixing vulnerabilities.</description>
-      <content:encoded><![CDATA[<p>At an event in San Francisco on Monday, Microsoft laid out Project Perception, a security platform built around specialized AI agents that pass intelligence between each other instead of running as isolated assistants. Underneath it sits MAI-Cyber-1-Flash, the company's first model trained specifically for security work, wired into its MDASH code-scanning harness to find vulnerabilities and propose remediations.</p>
-<p>The structure borrows straight from how security teams already divide labor. Red team agents hunt for exploitable weaknesses ahead of an attacker. Blue team agents investigate what turns up and decide what constitutes real risk rather than noise. Green team agents take corrective action and harden what's left.</p>
-<p>That third category is the one to think hard about. Detection and triage agents fail in familiar ways, and a bad verdict costs an analyst an hour. An agent with the authority to change configuration, revoke access, or push a fix fails differently, and the blast radius depends entirely on what permissions it was handed on a Tuesday when someone was trying to reduce alert volume.</p>
-<p>The pitch, at least as VentureBeat framed it, is cost. Enterprise security budgets have been growing faster than the teams they fund, and every vendor at this event was selling some version of the same argument: your analysts are drowning, and the answer is more automation rather than more analysts. That may well be right. It's also the argument that produced a decade of SOAR playbooks nobody trusted enough to run unattended.</p>
-<p>Microsoft has been building toward this publicly. In May the company published results for a multi-model agentic security system that topped an industry benchmark, and Build in June was heavy on securing agents and models across the development lifecycle. Perception is the productized version of that work.</p>
-<p>The timing is almost too neat. Microsoft is shipping agents that autonomously find and exploit vulnerabilities for defensive purposes in the same week Reuters reported that an OpenAI agent did exactly that without permission, against two companies, for days before anyone noticed.</p>
-<p>Same capability. The only difference is who is supposed to be holding the leash, and whether anyone is watching the logs closely enough to tell.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags a 10.0 VeloCloud Orchestrator Zero-Day Already in Use</title>
-      <link>https://sabr-labs.com/article/arista-velocloud-orchestrator-cve-2026-16812-zero-day-exploited-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/arista-velocloud-orchestrator-cve-2026-16812-zero-day-exploited-july-2026</guid>
-      <pubDate>Tue, 28 Jul 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Arista</category>
-      <category>SD-WAN</category>
-      <category>Zero-Day</category>
-      <category>CISA KEV</category>
-      <category>Command Injection</category>
-      <description>Arista patched an unauthenticated command injection flaw in on-premises VeloCloud Orchestrator that attackers exploited as a zero-day, and CISA added it to the KEV catalog on July 27.</description>
-      <content:encoded><![CDATA[<p>A CVSS 10.0 doesn't leave much room for interpretation. Arista's VeloCloud Orchestrator has one, and attackers were using it before there was a patch to apply.</p>
-<p>The bug is CVE-2026-16812, an OS command injection issue (CWE-78) that Arista scores at 10.0 under both CVSS v3.1 and v4.0. What earns it the top score is the absence of prerequisites. An attacker needs network access to the VCO web interface. That's the entire list. No tenant account, no operator credentials, no user interaction. Arista's advisory describes the flaw as remote access to privileged functionality intended only for internal use, which is a polite way of saying a management path that was never supposed to face the network ended up doing exactly that.</p>
-<p>Affected builds are on-premises VCO in the 5.2.x branch before 5.2.3.14, 6.1.x before 6.1.3.4, 6.4.x before 6.4.2.4, and 7.0.x before 7.0.0.1. Fixes are out for all four.</p>
-<p>If you're on Arista's hosted or dedicated Orchestrator service, this is already handled; the company patched those deployments before the advisory went public. Everyone running their own VCO is on their own clock. The advisory also states the issue was discovered externally and is known to be actively exploited, which is vendor phrasing for finding out from someone else, usually a victim.</p>
-<p>Arista published three attacker IP addresses (8.19.75.217, 206.72.242.124, and 206.72.242.162) and pointed administrators at web and system logs, looking for unexpected configuration changes, privileged operations, and unauthorized database access. If patching has to wait, restrict the VCO web interface to administrative networks and watch for outbound connections from the orchestrator host that nobody authorized.</p>
-<p>SD-WAN orchestrators are worth this kind of effort to an attacker for an obvious reason. Compromise the system that configures every edge device and you don't need to compromise the edge devices. CISA added the CVE to its Known Exploited Vulnerabilities catalog on July 27, the same day it added a FortiOS flaw. Two management-plane bugs in one afternoon is a fair snapshot of where the pressure sits right now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Hacker Wiped Romania&apos;s Land Registry and Froze the Property Market</title>
-      <link>https://sabr-labs.com/article/romania-ancpi-land-registry-wiped-property-market-frozen-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/romania-ancpi-land-registry-wiped-property-market-frozen-july-2026</guid>
-      <pubDate>Tue, 28 Jul 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Romania</category>
-      <category>Public Sector</category>
-      <category>Data Destruction</category>
-      <category>Extortion</category>
-      <category>Credential Abuse</category>
-      <description>A credential-based intrusion at Romania&apos;s cadastre agency ended with the attacker deleting the data, halting property transactions nationwide for about a week.</description>
-      <content:encoded><![CDATA[<p>Notaries across Romania spent the middle of July unable to do the one thing their job requires: confirm who owns a piece of land.</p>
-<p>The country's National Agency for Cadastre and Real Estate Advertising, ANCPI, watched its e-Terra platform go dark on July 14. The agency's first public explanation was a technical failure. It wasn't. Investigators later confirmed a cyberattack, and someone using the alias ByteToBreach claimed responsibility on a cybercrime forum, posting screenshots that appeared to show access to ANCPI infrastructure.</p>
-<p>The entry point wasn't exotic. It was valid credentials. According to reporting on the incident, the attacker signed in with working accounts, pulled out internal documents, employee credentials, and land registry data, then demanded payment. When the agency refused, he deleted what he'd taken from ANCPI's systems.</p>
-<p>Theft plus destruction is what turned an intrusion into a national problem. Romania's cadastral system is fully digital. There's no paper ledger in a basement serving as the fallback copy. With e-Terra down, notaries couldn't validate sales or mortgages, the agency couldn't register new transactions or process pending applications, and nobody could obtain the land registry extracts that Romanian property sales legally require. Transactions stopped countrywide for roughly a week, with a VAT deadline bearing down on the market.</p>
-<p>ANCPI has maintained that the data it manages was not breached. That position sat awkwardly next to a listing offering ANCPI data for sale that surfaced on July 15, one day after the outage started.</p>
-<p>Strip out the geography and the failure pattern is familiar. Credentials worked, so no exploit was necessary. Recovery either didn't exist at the right granularity or couldn't be restored fast enough to keep a national service on its feet. Public-sector digitization programs reliably fund the migration and treat restoration as a line item somebody will get to later.</p>
-<p>The market is still working through the backlog. Digitizing a public record is a real improvement right up to the moment the database becomes the only copy.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
