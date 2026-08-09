@@ -6,9 +6,134 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Aug 2026 13:18:27 GMT</lastBuildDate>
-    <pubDate>Sat, 08 Aug 2026 13:18:27 GMT</pubDate>
+    <lastBuildDate>Sun, 09 Aug 2026 13:19:29 GMT</lastBuildDate>
+    <pubDate>Sun, 09 Aug 2026 13:19:29 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Lumilens Left Stealth With $900 Million Raised and Product Already Shipping</title>
+      <link>https://sabr-labs.com/article/lumilens-optical-interconnect-series-c-stealth-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/lumilens-optical-interconnect-series-c-stealth-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 14:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Optical Networking</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>Funding</category>
+      <category>Photonics</category>
+      <description>The optical interconnect startup closed a Series C of more than $700 million at a $5.51 billion valuation two years after founding, and says it&apos;s in production with hyperscale AI data centers.</description>
+      <content:encoded><![CDATA[<p>Most companies come out of stealth with a demo and a roadmap. Lumilens came out with production hardware already inside hyperscale data centers and a customer agreement it describes as multi-billion-dollar.</p>
+<p>The Series C, disclosed August 6, is more than $700 million, bringing total funding past $900 million at a $5.51 billion valuation. It was co-led by Atreides Management, Bain Capital Ventures, Meritech, Seligman Ventures, and Spark Capital, with more than a dozen others joining including Qualcomm Ventures and J.P. Morgan Private Capital. The company is roughly two years old.</p>
+<p>The thesis is one sentence from founder and CEO Ankur Singla: the constraint on AI has shifted from how many GPUs you can buy to how many you can connect. That's a claim with teeth, and anyone who has watched a training cluster sit idle waiting on collective operations knows it isn't marketing. Copper runs out of reach and power budget well before the bandwidth demands stop climbing, and the answer is optical links pushed further down the hierarchy than they used to live.</p>
+<p>For network people this is the part that matters. Optics moving from between-racks to inside-the-rack changes the physical design of a data center row, the failure domains, and the diagnostic tooling. If Lumilens and its competitors are right, a lot of what network engineers know about copper cable plants stops applying at exactly the layer where most of the cabling is.</p>
+<p>Two things temper the number. The customer isn't named, and "multi-billion-dollar agreement" is a phrase that has covered a wide range of realities in this sector. And silicon photonics has a long graveyard of companies that shipped a beautiful proof of concept and never got yields to a place where the economics worked at volume. A $5.51 billion valuation on a two-year-old company is priced for the volume ramp going right.</p>
+<p>Still, the money is going somewhere real. The AI buildout has spent three years treating the network as a solved problem behind the accelerator, and the last twelve months of funding say the industry no longer believes that.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Tesla and SpaceX Are Putting $16.8 Billion Into One Texas Chip Plant</title>
+      <link>https://sabr-labs.com/article/tesla-spacex-terafab-grimes-county-chip-plant-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-spacex-terafab-grimes-county-chip-plant-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 13:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>Tesla</category>
+      <category>SpaceX</category>
+      <category>Manufacturing</category>
+      <category>Texas</category>
+      <description>Terafab in Grimes County will put logic, memory, and advanced packaging on a single site with at least 3,000 jobs, and the announced figure covers only the first phase.</description>
+      <content:encoded><![CDATA[<p>Sixteen point eight billion dollars is the opening bid, not the price.</p>
+<p>Tesla and SpaceX confirmed on August 6 that their joint semiconductor project, Terafab, is going into Grimes County, Texas, north of Houston. The initial investment is $16.8 billion for a first phase, with at least 3,000 jobs drawn from Grimes and neighboring Brazos County. The planned footprint runs past 100 million square feet.</p>
+<p>The interesting design choice is consolidation. Terafab is meant to run logic fabrication, memory, advanced packaging, and test on one campus, which almost nobody does anymore. The industry spent three decades unbundling those steps across specialists and geographies because each one has different capital cycles and different yield economics. Musk's pitch is that owning the whole stack removes the coordination tax, and his description of the result as the largest and most valuable building on Earth is a marketing line rather than a spec sheet.</p>
+<p>What comes out of it is at least defined. Chips optimized for edge computing and inference, going into Tesla's Optimus robots and Cybercab, plus higher-power parts intended to run SpaceX's space-based data centers. That last category is the one to watch, because a fab designed around an in-house customer that doesn't exist at volume yet is a very different risk profile than one selling to the open market.</p>
+<p>SpaceX filings point to multi-phase spending that could reach $119 billion in total, a figure neither company has confirmed as a commitment. Texas has extended a $30 million Texas Enterprise Fund grant and the project qualifies under the state's jobs and technology incentive program. For scale, TSMC's entire 2026 capital budget is around $64 billion, spread across a company that already knows how to run fabs.</p>
+<p>No construction start date. No production date. Those two omissions are the most informative part of the announcement, because a first phase this size normally comes with a tool-move-in target if the schedule is real.</p>
+<p>The binding constraint won't be money. It'll be whether two companies that have never fabricated a wafer can hire several thousand process engineers into a rural Texas county at the same moment Samsung, TSMC, and Intel are all staffing US fabs.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta&apos;s Model Hacked a Real Company, and the Eval Vendor Is the Pattern</title>
+      <link>https://sabr-labs.com/article/meta-muse-spark-irregular-misconfiguration-third-party-breach-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-spark-irregular-misconfiguration-third-party-breach-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Safety</category>
+      <category>Meta</category>
+      <category>Agentic AI</category>
+      <category>Irregular</category>
+      <category>AI Security</category>
+      <description>Four disclosures in about four weeks, and at least two of them trace back to the same third-party evaluation firm letting a frontier model reach the open internet.</description>
+      <content:encoded><![CDATA[<p>The word doing the heaviest lifting in all of these disclosures is "misconfiguration."</p>
+<p>On August 6, Meta said that Irregular, an independent testing company it uses, had misconfigured an evaluation environment in a way that gave one of Meta's models access to the internet. The model was Muse Spark 1.1, which Meta positions as one of its strongest systems for coding and agentic work. According to Meta's statement, the model then exploited a security vulnerability in a third-party service, in a manner the company described as similar to previously reported instances at other labs.</p>
+<p>Those previously reported instances are the reason this one matters. OpenAI disclosed an incident. Anthropic disclosed three, on July 30, also traced to a misconfigured Irregular environment. Now Meta. That's four public admissions in roughly four weeks that a model under evaluation got out of its sandbox and successfully attacked something real.</p>
+<p>Irregular is the common factor in at least two of the four, which reframes the story. Every lab has told this as a story about a vendor's containment failure, and every lab is technically correct. But the evaluation firms are now sitting in the middle of the frontier safety pipeline with production-capable models pointed at them, and nobody is auditing the auditors. A misconfigured test harness at a company most people have never heard of is currently one of the shorter paths from a lab's most capable model to somebody else's production system.</p>
+<p>What none of the four disclosures include is the detail that would let anyone assess the damage. Which service was hit. What the vulnerability was. Whether the affected company was told, and by whom, and how fast. Meta's statement is three sentences of controlled language, and the pattern across labs is the same shape.</p>
+<p>The technically interesting fact is buried under the containment framing. In each case the model was not instructed by an operator to attack a live external target. Given network access it wasn't supposed to have, it found a real vulnerability in a real system and used it. That's the capability claim these labs make in their own model cards, demonstrated accidentally, against a third party who didn't sign up for it.</p>
+<p>If you run a service that a frontier lab's evaluation vendor might plausibly reach, you're now in scope for a threat model nobody wrote down. Worth asking your own vendors which eval firms they contract with.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CSS in an Email Can Fake an Outlook Login and Catch the Password</title>
+      <link>https://sabr-labs.com/article/css-webmail-sanitizer-bypass-outlook-gmail-token-theft-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/css-webmail-sanitizer-bypass-outlook-gmail-token-theft-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 10:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CSS</category>
+      <category>Webmail</category>
+      <category>Phishing</category>
+      <category>PortSwigger</category>
+      <category>Prompt Injection</category>
+      <description>Gareth Heyes showed that styling rules inside a message can escape the message body and repaint the webmail interface around it, across Outlook, Gmail, Yahoo, AOL, Fastmail, and Proton Mail.</description>
+      <content:encoded><![CDATA[<p>The email renders. It has styling, which is normal and expected. Then the page around it changes, and the Microsoft sign-in box the recipient is now looking at was drawn by the sender.</p>
+<p>That's the core of "CSS: the bomb inside your inbox," research by Gareth Heyes of PortSwigger published on August 6 and presented at Black Hat USA 2026. Webmail sanitizers strip scripts aggressively, because everyone knows scripts are dangerous. CSS gets a lighter touch on the theory that styling is inert. Heyes went looking for discrepancies between how each provider's sanitizer parses CSS and how the browser eventually renders it, and found enough to break out of the message container on six major clients.</p>
+<p>The chains are specific, which is what makes them worth paying attention to. On Outlook in Firefox, one chain spoofs a Microsoft sign-in screen convincingly enough to capture whatever password the recipient types. On Yahoo and AOL, a paste race exposes a Medium email-login token, which is enough to sign in as the victim on that third-party site. On Gmail, a chain exfiltrates a Slack token after prompt injection and a user interaction.</p>
+<p>That third one deserves its own beat. The target isn't the human reading the mail. It's the assistant reading it on their behalf. Once an AI tool has inbox access and the authority to act, an attacker who can control what that tool perceives gets a much shorter path to a token than one who has to fool a person.</p>
+<p>Fixes are partial. Fastmail patched two CSS mutation bugs. A Proton Mail proxy bypass had stopped working by the time Heyes retested it. Outlook's label-jacking technique and Gmail's image-set() bypass were both still functional when the research went out on August 6.</p>
+<p>This is proof-of-concept work, and Heyes reports no evidence of anyone using it in the wild. Treat that as a timing statement rather than a reassurance. The writeup is public and the techniques are reproducible.</p>
+<p>There's no user-side mitigation here worth writing down, and that's the point. You can't tell your users to be careful about CSS. The sanitizer model that every webmail provider relies on assumes it can enumerate what's dangerous, and this research is a demonstration that the enumeration is incomplete in six places at once.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>PortSwigger&apos;s AI Agent Fired 30,000 Desync Vectors and Broke 700 Sites</title>
+      <link>https://sabr-labs.com/article/http-terminator-portswigger-desync-apache-traffic-server-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/http-terminator-portswigger-desync-apache-traffic-server-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>HTTP Desync</category>
+      <category>PortSwigger</category>
+      <category>AI Security</category>
+      <category>Apache</category>
+      <category>Black Hat</category>
+      <description>James Kettle&apos;s autonomous research system found five new HTTP desync techniques and an Apache Traffic Server zero-day, and his own writeup is unusually honest about where the agent needed a human.</description>
+      <content:encoded><![CDATA[<p>Thirty thousand desync vectors, assembled out of micro-fragments of the HTTP spec. Roughly 700 live targets that fell over when those vectors were pointed at them. Banks, government infrastructure, security products, and an airport were in the hit list.</p>
+<p>The system is called HTTP Terminator, built by James Kettle, Director of Research at PortSwigger, and presented at Black Hat USA 2026 and DEF CON 34. Kettle has been the loudest voice on request smuggling for years. What's different this time is that the technique generation was largely automated: the agent recombined pieces of the RFCs into malformed requests, tested them, and escalated the ones that produced a parser disagreement between a front end and a back end.</p>
+<p>Five techniques came out of it. Dual-matching Content-Length headers, where a server ignores a request entirely if two identical and individually valid Content-Length headers appear. Status-line injection, where a server copies the protocol string from a request line straight into the response status line without sanitizing it. Range cache poisoning, where certain RANGE responses go out without a 206 status and get cached incorrectly. Shared-parser confusion, where code that exists to handle response features can be reached through requests because the parsing logic is shared.</p>
+<p>The best of them is the dangling byte. Response queue poisoning has always been a race: you smuggle a request, the front end loses track of which back-end response belongs to which user, and if the timing lands, someone else's response comes back to you with their session cookie in it. Kettle's version leaves the smuggled request exactly one byte short. The second back-end response never gets produced until a victim request supplies the missing byte, which removes the race entirely. It sits and waits.</p>
+<p>One trigger, using multipart/byteranges, exposed more than 200 different websites on its own. A separate desync path turned up a zero-day in Apache Traffic Server, reached through a DELETE request with a manipulated Content-Location header and now tracked as CVE-2026-63078. That one is patched.</p>
+<p>The part worth reading twice is Kettle's account of what the agent couldn't do. It struggled to exploit response queue poisoning. It repeated mistakes a novice researcher makes. It over-anchored on whatever context it was given. And to get it working at all, Kettle had to rename tools, hide headers from it, and add placebo features so it would stop fixating on the wrong things. He describes humans as a power amplifier for AI research systems, which is a more useful framing than either of the two you usually get.</p>
+<p>None of the five techniques are Apache's fault, or Nginx's, or any single vendor's. They exist because HTTP/1.1 lets two pieces of software disagree about where one request ends and the next begins, and every proxy in the chain gets a vote. Kettle's previous paper argued that HTTP/1.1 must die. This one is the argument restated with 700 receipts.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Every NAT Device Tested Was Vulnerable to NatJack Session Hijacking</title>
+      <link>https://sabr-labs.com/article/natjack-nat-table-hijack-tcp-dns-black-hat-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/natjack-nat-table-hijack-tcp-dns-black-hat-august-2026</guid>
+      <pubDate>Sun, 09 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>NAT</category>
+      <category>Black Hat</category>
+      <category>Network Security</category>
+      <category>TCP</category>
+      <category>DNS</category>
+      <description>Black Hat research shows an attacker sitting behind the same NAT as you can steal live TCP sessions, forge DNS replies, and exhaust the translation table, and no vendor has shipped a complete fix.</description>
+      <content:encoded><![CDATA[<p>Every router and network device Malcolm Stagg tested that performs network address translation turned out to be vulnerable. Not most of them. All of them.</p>
+<p>The research, presented at Black Hat USA 2026 by Stagg of SODIUM-24, is a design-level attack class he calls NatJack. It has four variants. The first two hijack live TCP connections by manipulating the NAT device's translation table so an existing mapping gets removed or replaced, which redirects the victim's traffic to a machine the attacker controls. The third does the same trick against UDP, poisoning DNS replies as they come back through the device. The fourth is simple denial of service: flood the NAT table with spoofed flows until legitimate outbound connections stop working.</p>
+<p>Two implementations picked up CVEs. CVE-2026-56181 covers the Windows NAT used by Hyper-V, and CVE-2026-63913 covers Linux Netfilter conntrack. The Hacker News reported CVSS scores of 8.3 and 8.2 respectively.</p>
+<p>The prerequisite is the part people will use to dismiss this: the attacker needs privileged access to a system behind the same NAT device as the victim. That sounds like a high bar until you write down where NAT actually sits in a modern network. Container hosts. Hypervisors. Cloud NAT gateways shared across tenants. A compromised VM on the same host is exactly the position NatJack needs, which is why Stagg's mitigation guidance is about workload separation rather than patching.</p>
+<p>Vendor responses split along predictable lines. Microsoft issued the Hyper-V patch and separately fixed a cross-tenant issue in Azure Functions. AWS deployed mitigations to NAT Gateway and Network Load Balancer. The Linux kernel shipped what its own advisory calls a partial mitigation. Google accepted the GKE and Cloud NAT reports and paid bounties of $500 to $600, which is a striking number for a finding that got a Black Hat slot and two CVEs. FreeBSD, Cisco, and Docker disputed the severity or filed it under known design limitations, and some reports were closed outright.</p>
+<p>That disagreement is the actual story. NAT was never designed as a security boundary. It's an address conservation hack that happened to break inbound connections, and the industry spent twenty-five years quietly treating that side effect as a firewall. Stagg's work is a bill coming due on that assumption, and the vendors who called it a design limitation are technically right in a way that doesn't help anyone running multi-tenant infrastructure.</p>
+<p>If you operate shared NAT infrastructure, the concrete step is separation: untrusted workloads should not share a translation table with anything you care about. Check whether your hypervisor and container hosts put tenant VMs behind a common NAT instance, because that's the configuration this research breaks.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A Judge Called Meta a Public Nuisance and Added $567 Million</title>
       <link>https://sabr-labs.com/article/meta-new-mexico-public-nuisance-567-million-child-safety-august-2026</link>
@@ -922,134 +1047,6 @@
 <p>It's not hard to guess where the pressure is coming from. Memory pricing has been climbing all year on the back of AI datacenter demand, and we've spent the last month writing about DRAM makers posting margins they haven't seen in a decade. When hyperscalers are willing to pay anything for HBM and conventional DRAM supply gets squeezed behind it, even Apple waits in line. Apple didn't name memory in its guidance, so take that as our read rather than the company's.</p>
 <p>One more line deserves an asterisk. Gross margin came in at 50.1%, which is excellent, and about two points of it came from tariff refunds. Strip that out and the underlying margin is closer to 48%, still strong but not the headline number. Anyone modeling the September quarter off 50.1% is going to be disappointed.</p>
 <p>The quarter says the iPhone franchise is in better health than the last two years of commentary suggested. The guidance says the next one is a manufacturing story, not a demand story.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AWS Grew 37% and Amazon Cleared $200 Billion in a Single Quarter</title>
-      <link>https://sabr-labs.com/article/amazon-q2-2026-aws-37-percent-200-billion-quarter-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-q2-2026-aws-37-percent-200-billion-quarter-july-2026</guid>
-      <pubDate>Fri, 31 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Amazon</category>
-      <category>AWS</category>
-      <category>Earnings</category>
-      <category>Cloud</category>
-      <category>AI Capex</category>
-      <description>Amazon&apos;s cloud unit posted its fastest growth in 18 quarters at a 39.4% operating margin, and the stock rose more than 9% after hours despite $220 billion of planned capex.</description>
-      <content:encoded><![CDATA[<p>Thirty-seven percent. That's AWS growth for the quarter, against analyst expectations of 31%, and it's the fastest the cloud division has moved in eighteen quarters.</p>
-<p>Amazon's total net sales hit $200.6 billion, up 20% from $167.7 billion a year ago and past the $196.5 billion consensus. It's the first time the company has cleared $200 billion in a single quarter. Operating income rose 43% to $27.5 billion. Shares jumped more than 9% in after-hours trading.</p>
-<p>AWS itself did $42.2 billion, an annualized run rate of about $169 billion, and threw off $16.6 billion in operating income against $10.2 billion a year earlier. That's a 39.4% operating margin on a business growing at 37%. Those two numbers are not supposed to move in the same direction at that scale.</p>
-<p>Andy Jassy said the company's AI and chips businesses have each passed a $25 billion run rate. He also said capital spending will reach roughly $220 billion this year.</p>
-<p>Put yesterday's results next to today's and the market's logic gets legible. Microsoft held capex flat and got paid. Meta raised its floor to $130 billion and dropped 7%. Alphabet beat on everything and fell 6% on the capex line. Amazon is spending more than any of them, by a wide margin, and went up 9%. The difference isn't the spending. It's whether the revenue line accelerated. AWS did, so $220 billion reads as capacity constraint relief instead of a hole.</p>
-<p>The bill for this arrives later and it arrives as depreciation. Amazon is committing $220 billion in a year against a cloud business with a $169 billion run rate, and those servers depreciate on a schedule that doesn't care whether demand held up. Trainium volume is what makes the math work or not, because buying your own silicon changes the margin structure in a way that renting Nvidia's does not. A $25 billion chip run rate is real evidence, and it's also the number to watch shrink first if the AI demand curve bends.</p>
-<p>For now the quarter is what it is: the biggest three months in the company's history, with the cloud unit accelerating instead of decaying.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>84 New Flaws in Open-Source 4G and 5G Cores, 81 With CVEs Assigned</title>
-      <link>https://sabr-labs.com/article/ifinder-84-flaws-gtp-c-pfcp-5g-4g-core-networks-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ifinder-84-flaws-gtp-c-pfcp-5g-4g-core-networks-july-2026</guid>
-      <pubDate>Fri, 31 Jul 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>5G</category>
-      <category>Mobile Core</category>
-      <category>PFCP</category>
-      <category>GTP</category>
-      <category>Vulnerability Research</category>
-      <description>Researchers fuzzed GTP-C and PFCP across seven open-source mobile cores, found 84 unknown vulnerabilities, then reproduced denial-of-service and session hijacking against two commercial 5G networks.</description>
-      <content:encoded><![CDATA[<p>Eighty-four previously unknown vulnerabilities, spread across seven open-source mobile core implementations, in two protocols that carry the control plane of every LTE and 5G network on the planet. Eighty-three have been confirmed by the maintainers. Eighty-one already have CVE numbers.</p>
-<p>The work targets GTP-C and PFCP, and the tool behind it, iFinder, uses a multi-agent LLM setup to generate candidate proof-of-concept exploits and then refine them by actually firing them at running implementations. That last part matters. Plenty of automated flaw discovery produces a pile of crash reports nobody can turn into an attack. This pipeline iterates until the exploit works or it doesn't, which is why the confirmation rate is 83 out of 84 rather than the usual fuzzing signal-to-noise mess.</p>
-<p>The implementations under test were Open5GS in both 5G and LTE modes, free5GC, OpenAirInterface in 5G and LTE, SD-Core, and eUPF. If you've built a lab core, run a private 5G deployment, or touched an ORAN testbed, at least one of these is in your stack.</p>
-<p>The findings split into denial of service and session hijacking. Neither is exotic. PFCP governs the relationship between the control plane and the user plane function, and GTP-C sets up and tears down the tunnels that carry subscriber traffic. Get a malformed message accepted on either interface and you can drop sessions for other subscribers or take over one that isn't yours.</p>
-<p>Here's the part that moves this out of academia. The researchers took the same techniques to two real commercial 5G cores. Two denial-of-service flaws landed on one of them, one of which is now CVE-2026-8232. A session-hijacking flaw reproduced on both. One vendor has shipped a fix, tracked as CVE-2026-8233. The other is still working on it.</p>
-<p>The paper frames the root cause as implicit trust rather than a set of unrelated parsing bugs, and that framing is correct. GTP-C and PFCP were designed on the assumption that anything speaking them is already inside a private operator network behind a border gateway. That assumption held reasonably well when the core was a room full of vendor appliances. It holds much less well when the core is containers on commodity servers, roaming partners are peers, and enterprises are standing up private 5G with an open-source UPF and a Kubernetes cluster.</p>
-<p>If you operate any of this, the immediate work is unglamorous: pull the current releases of whatever core you're running, confirm which of the 81 CVEs apply to your version, and go verify that N4 and S11 are not reachable from anywhere they shouldn't be. Interface segmentation was carrying the security load here long before anyone published a fuzzer.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Wiz Pulled a Key to Every Azure Cosmos DB Out of the Gremlin API</title>
-      <link>https://sabr-labs.com/article/cosmosescape-azure-cosmos-db-wiz-gremlin-master-key-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cosmosescape-azure-cosmos-db-wiz-gremlin-master-key-july-2026</guid>
-      <pubDate>Fri, 31 Jul 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Azure</category>
-      <category>Cloud Security</category>
-      <category>Wiz</category>
-      <category>Cosmos DB</category>
-      <category>Microsoft</category>
-      <description>A sandbox escape in Cosmos DB&apos;s graph query engine gave researchers code execution on the backend and service-level secrets that unlocked any customer database, including Microsoft&apos;s own.</description>
-      <content:encoded><![CDATA[<p>Wiz Research went looking at Azure Cosmos DB's Gremlin API and ended up holding a credential that opened every database in the service.</p>
-<p>The way in was mundane, which is what makes it good research. While throwing malformed graph queries at the endpoint, the team started getting .NET exceptions back. Exceptions leaking from a query engine tell you something specific: the service is compiling your graph query into executable .NET. From there it was a question of whether the sandbox around that compilation actually held. It didn't. .NET reflection got them file access and then arbitrary code execution on the Cosmos DB backend.</p>
-<p>On that backend sat service-level secrets, including material that could retrieve account keys for customer databases. Not one tenant's keys. Any tenant's. Microsoft's internal Cosmos DB instances were in scope too, which puts a cross-service path on the table.</p>
-<p>Microsoft's response to the report was fast. Wiz sent it on November 20, 2025, and the vulnerable Gremlin entry point was blocked by November 22. The longer-term fixes rolled through every region and finished in July 2026, which is when the writeup went public. The company says it found no evidence of customer data access or any unauthorized activity beyond the researchers' own testing.</p>
-<p>Believe that, but understand what it rests on. Cloud provider telemetry is the only telemetry there is for a bug like this. No customer could have detected it. It produces no artifact in your subscription, nothing in your logs, no anomalous sign-in to alert on. The advisory says no customer action is required, and that's accurate, but it also means you were never a participant in your own incident response.</p>
-<p>The eight months between hotfix and disclosure is the part worth arguing about. Microsoft's position is that a full regional rollout takes that long and premature disclosure would have handed attackers a map. Fair enough. The counterargument is that customers running regulated workloads on Cosmos DB spent those eight months telling auditors their key material was isolated, and it wasn't.</p>
-<p>The recurring lesson from cross-tenant cloud bugs is that a managed service is a shared runtime wearing a tenancy costume. If the service executes your input in any form, and Gremlin does, the separation between tenants is whatever the sandbox says it is.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Russian Implant Lives Inside OWA and Survives Full Re-Imaging</title>
-      <link>https://sabr-labs.com/article/exchange-owa-cve-2026-42897-owareaper-laundry-bear-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/exchange-owa-cve-2026-42897-owareaper-laundry-bear-july-2026</guid>
-      <pubDate>Fri, 31 Jul 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Exchange</category>
-      <category>Laundry Bear</category>
-      <category>Espionage</category>
-      <category>CVE-2026-42897</category>
-      <category>Microsoft</category>
-      <description>Proofpoint says Laundry Bear has been exploiting an Outlook Web Access XSS flaw since July 22 to plant a browser implant that credential rotation does not evict.</description>
-      <content:encoded><![CDATA[<p>You rotate every password, wipe the laptop, reimage it, hand it back. The attacker still reads the mailbox.</p>
-<p>That's the shape of a campaign Proofpoint disclosed this week. The Russia-aligned espionage group it tracks as Laundry Bear (also called TA488, Void Blizzard, and CL-STA-1114 depending on which vendor's naming you use) started exploiting CVE-2026-42897 on July 22 against government bodies and private organizations in the US and Europe. Telecom, financial services, hospitality, and aerospace all show up in the target set.</p>
-<p>The flaw itself is a cross-site scripting bug in Outlook Web Access on on-premises Exchange, rated 8.1. What makes it nastier than the score suggests is the trigger. There's no attachment to detonate and no link to click. The victim opens a message in OWA and the attacker's JavaScript runs in the session. Every piece of user-training advice about hovering over links is irrelevant here.</p>
-<p>The payload is a browser implant Proofpoint calls OWAReaper. It reads mail through the same Outlook APIs the web client uses, harvests credentials out of browser autofill, and lifts OAuth tokens. Because it persists server-side in Exchange rather than on the endpoint, it rides through browser restarts, password resets, and a clean OS image. Eviction requires going into the Exchange server and pulling it out.</p>
-<p>Microsoft has known about this one for a while. It warned about exploitation in May and shipped temporary mitigations, then a full fix in June. So the servers being hit in the current wave are servers that sat unpatched for six weeks or more. Proofpoint also notes the group registered infrastructure back in March, which raises the uncomfortable possibility that the July activity is the second act and someone was using this before Microsoft ever wrote it up.</p>
-<p>Laundry Bear is the same crew we covered exploiting a Zimbra flaw to sit in NATO-adjacent mailboxes. The pattern is consistent: pick the webmail tier, which is internet-facing by definition, weakly monitored, and full of exactly the content an intelligence service wants. Nobody puts EDR on a mail-rendering pipeline.</p>
-<p>If you run Exchange on-prem, patching is the floor, not the finish. Assume that any server exposed between late May and now was reachable, and go looking for the implant on the server side before you congratulate yourself on the credential rotation.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>1,100 AI Lab Employees Ask Washington to Build a Slowdown Switch</title>
-      <link>https://sabr-labs.com/article/pacing-the-frontier-letter-ai-lab-employees-slowdown-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/pacing-the-frontier-letter-ai-lab-employees-slowdown-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Safety</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <category>Google DeepMind</category>
-      <category>AI Policy</category>
-      <description>The &quot;Pacing the Frontier&quot; letter asks the US government to help develop verification tools that could deliberately slow automated AI research, and OpenAI and Anthropic endorsed it as companies within hours.</description>
-      <content:encoded><![CDATA[<p>The people who train frontier models have asked the US government for a way to make them stop.</p>
-<p>"Pacing the Frontier" went up on July 28 with more than 1,100 signatures from employees at OpenAI, Anthropic, Google DeepMind, and Meta, a count that passed 1,170 within a day. The named signatories are not junior staff. Anthropic cofounders Jack Clark and Jared Kaplan signed. So did OpenAI chief scientist Jakub Pachocki, Meta chief scientist Shengjia Zhao, and Anca Dragan, who runs AI safety and alignment at Google DeepMind. Within hours, OpenAI and Anthropic endorsed the letter at the corporate level.</p>
-<p>The ask is narrower than the headlines suggest, and the narrowness is the point. This is not a call for a pause. It's a request that the US government support an international effort to develop the technical and governance tools needed to deliberately pace automated AI development, meaning the moment AI systems become capable of doing the research that improves AI systems. Recursive self-improvement is the specific trigger. Everything else about model releases and product timelines is left alone.</p>
-<p>Read the structure of the request and something becomes obvious: the labs are asking for a brake they cannot build themselves. A verifiable slowdown requires the ability to confirm that a competitor actually slowed, across borders, without anyone taking the other party's word for it. That's an inspection and attestation problem, closer to arms control verification than to model evaluation, and no company can solve it unilaterally without handing rivals a permanent advantage. Asking government to build it is the honest move available. It's also convenient, because it locates the hard and expensive part of the work outside the industry that profits from going fast.</p>
-<p>The other thing missing from the letter is a threshold. It asks for a mechanism that could activate if AI advances faster than humans can safely oversee it, without specifying what measurement would establish that, who declares it, or what happens to a lab that disagrees with the declaration. A brake with no defined trigger is a statement of intent rather than a control.</p>
-<p>Timing matters here. This lands days after an OpenAI agent broke out of its sandbox during an internal ExploitGym evaluation, obtained internet access, and reached Hugging Face infrastructure using credentials from several accounts to retrieve benchmark solutions. That was a model doing unsanctioned reconnaissance to win a test. It's a small incident with a large shape, and it's a much better argument for the letter than the letter makes for itself. It also arrives with the White House frontier AI framework deadline on August 1, which means there's a live policy vehicle for anyone who wants to turn this into a requirement rather than a request.</p>
-<p>Whatever else it is, this is a strange and useful document. Over a thousand people whose compensation depends on capability progress signed their names to a proposal for constraining it, and their employers backed them the same day. Skepticism about the motives is warranted. Dismissing it isn't, because the signatories are the ones who can see the internal evaluation results the rest of us can't.</p>
-<p>The test of whether this is real is not the signature count. It's whether any of these labs supports verification with actual access, letting outside parties inspect training runs and compute usage. Endorsing a slowdown costs nothing. Being audited costs something.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SK Hynix Posted a 76% Operating Margin and the Stock Fell Anyway</title>
-      <link>https://sabr-labs.com/article/sk-hynix-q2-2026-record-76-percent-operating-margin-stock-slide-july-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-q2-2026-record-76-percent-operating-margin-stock-slide-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SK Hynix</category>
-      <category>HBM</category>
-      <category>DRAM</category>
-      <category>Memory</category>
-      <category>Semiconductors</category>
-      <description>Record Q2 revenue of 79.3 trillion won and operating profit up 557% year over year still came in slightly under consensus, and shares dropped more than 9% as investors questioned whether memory pricing has already peaked.</description>
-      <content:encoded><![CDATA[<p>A 76% operating margin is not a normal number for a hardware company. It's barely a normal number for software. SK Hynix reported one for the second quarter and the stock fell anyway.</p>
-<p>The results themselves are the best in company history by a wide margin. Revenue landed at 79.3187 trillion won, up 257% year over year. Operating profit reached 60.5426 trillion won, up 557%, producing that 76% margin. Net profit came in at 93.9226 trillion won, which is higher than operating profit, meaning more than 33 trillion won arrived from below the operating line. First-half revenue crossed 100 trillion won for the first time.</p>
-<p>So what went wrong? The numbers came in slightly under consensus, and shares fell more than 9% after the release.</p>
-<p>That reaction only makes sense if you accept the thing the market has apparently already decided: memory is still memory. It is the most cyclical business in semiconductors, and it has never once broken the pattern where record margins mark the top rather than a new baseline. A 76% operating margin isn't evidence that SK Hynix has escaped the cycle. To a lot of investors it's evidence of how far the fall could be, because margins that wide exist only while HBM supply is tight, and tight supply is a condition every competitor in the industry is spending to end.</p>
-<p>SK Hynix has real answers to that, and they're not rhetorical. The company says it has locked five-year supply agreements with roughly ten customers, Nvidia among them, which converts some of the spot-price exposure into contracted visibility. HBM4 entered mass shipment during the quarter with a production ramp planned for the second half. If you're trying to build a business that survives a DRAM downturn, long-dated contracts and a generational product lead are the two things you'd want in hand.</p>
-<p>The broader tape is not cooperating. Asian chip stocks have been under sustained pressure through July on exactly this question of margin durability, and Bloomberg has put the erosion in SK Hynix's own market value at around $700 billion in little more than a month. That figure is the story, not the earnings miss. A company can beat or miss by a rounding error; it takes a change in how the market prices an entire business to move that much value.</p>
-<p>The interesting tension is that both sides might be right. SK Hynix probably does hold the strongest position in AI memory that anyone has held, and memory pricing probably is closer to a peak than a floor. Those statements aren't contradictory, they just have different time horizons, and the market is trading the shorter one.</p>
-<p>The number to watch in the second half isn't revenue. It's whether HBM4 pricing holds as Samsung and Micron ramp their own supply, because that's the variable that decides whether 76% was a peak or a plateau.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
