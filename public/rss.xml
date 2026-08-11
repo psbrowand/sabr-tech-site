@@ -6,9 +6,136 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Aug 2026 13:19:18 GMT</lastBuildDate>
-    <pubDate>Mon, 10 Aug 2026 13:19:18 GMT</pubDate>
+    <lastBuildDate>Tue, 11 Aug 2026 13:18:28 GMT</lastBuildDate>
+    <pubDate>Tue, 11 Aug 2026 13:18:28 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Mozilla Rotated Its Firefox Signing Key After Committing It in the Clear</title>
+      <link>https://sabr-labs.com/article/mozilla-gpg-signing-subkey-rotation-firefox-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mozilla-gpg-signing-subkey-rotation-firefox-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 14:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Mozilla</category>
+      <category>Firefox</category>
+      <category>Code Signing</category>
+      <category>Open Source</category>
+      <category>Secrets Management</category>
+      <description>An unencrypted copy of the GPG subkey that signs Firefox and Thunderbird Linux builds was committed to a private GitHub repository, so Mozilla revoked it and issued a replacement.</description>
+      <content:encoded><![CDATA[<p>Somebody at Mozilla committed an unencrypted copy of a GPG signing subkey to a private GitHub repository. That key signs the Linux tarballs, RPM packages, and checksum files for Firefox and Thunderbird releases.</p>
+<p>Mozilla published the disclosure on August 10 along with a replacement subkey, fingerprint 827E 6586 0867 9618 CD34 9F93 678E 455D 7676 7AA3, which expires August 5, 2028. The old subkey is revoked.</p>
+<p>The audit came back clean. Mozilla reviewed available access records and found no evidence anyone unauthorized touched the key, and notes that repository access was limited to a small internal group who already had authorized access to the key through other means. That's a genuinely low-risk exposure by the usual standards.</p>
+<p>Revoking anyway is the right call, and it's worth naming as such because plenty of organizations would have written the same audit findings and quietly moved on. The standard for a code signing key is not "we found no evidence of compromise." It's "the key left its boundary," and this one did.</p>
+<p>For most people nothing changes. Firefox and Thunderbird update as normal and the signature check happens somewhere you don't look. If you verify signatures manually, you need the new key and the revocation for the old one. RPM users on Fedora 42 and earlier, or on RHEL, Rocky, and AlmaLinux, have to remove the old key by hand before importing the replacement, and openSUSE users need the same removal followed by a zypper refresh.</p>
+<p>The failure mode here is about as mundane as it gets. A secret ended up in a repo because someone needed it available to a tool, and the repo was private, so it felt fine. Every organization reading this has that exact key sitting in that exact place right now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Intel Is Selling $15 Billion in Stock, Its First Offering Since 1971</title>
+      <link>https://sabr-labs.com/article/intel-15-billion-share-sale-ai-capex-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/intel-15-billion-share-sale-ai-capex-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Intel</category>
+      <category>Semiconductors</category>
+      <category>TSMC</category>
+      <category>AI Infrastructure</category>
+      <category>Capital Markets</category>
+      <description>Intel is raising $15 billion in common stock to fund a capital budget it just lifted to $20 billion, and the order book reportedly ran past $100 billion.</description>
+      <content:encoded><![CDATA[<p>Intel has not sold common stock to the public since it listed in 1971. It's doing it now, for $15 billion.</p>
+<p>The underwritten offering went out August 10, with a 30-day option for underwriters to take up to $2.25 billion more. Bloomberg reported orders exceeded $100 billion and that the deal could grow toward $20 billion. Intel's stated use of proceeds is general corporate purposes including capital expenditures and working capital, which is the standard language and tells you nothing.</p>
+<p>What tells you something is the capex number. Intel raised its 2026 capital spending forecast to roughly $20 billion, with most of it going into factory tooling. That's a company buying machines, not buying time.</p>
+<p>The stock fell on the news, which is what happens when you dilute holders by about 3% after a run of more than 400%. Anyone reading that as a verdict on the business is reading it wrong. It's a verdict on the price they paid last week.</p>
+<p>The demand Intel is pointing at is real, and TSMC's numbers are the proof. TSMC posted NT$467.58 billion in July revenue, up 44.7% from a year earlier and 5.6% month over month, with January through July running 37% ahead of 2025. That puts TSMC ahead of its own full-year guidance of slightly above 40% growth in dollar terms. Advanced packaging and AI accelerator demand are not slowing down.</p>
+<p>The question Intel still has to answer is whether tools translate into customers. Foundry capacity you built is not foundry capacity someone booked, and the external wafer business is where the last several years of Intel strategy have consistently come up short. Physical AI and purpose-built silicon are the growth areas the company named, and both are markets where the design win comes years before the revenue.</p>
+<p>Raising money into a hot tape is good management. Intel spent a decade unable to fund what it needed. It can fund it now, and the next two years are about execution rather than balance sheet.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Poisoned Banner Feed Made Rogue Admins on WordPress Sites</title>
+      <link>https://sabr-labs.com/article/bdthemes-poisoned-json-wordpress-rogue-admins-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/bdthemes-poisoned-json-wordpress-rogue-admins-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>Supply Chain</category>
+      <category>Wordfence</category>
+      <category>Web Shell</category>
+      <category>BdThemes</category>
+      <description>Attackers took over BdThemes&apos; promotional JSON endpoint and used a five-month-old XSS bug to create hidden administrator accounts and drop web shells, without touching a single plugin file.</description>
+      <content:encoded><![CDATA[<p>No plugin update. No modified file on disk. No malicious code in any repository.</p>
+<p>The BdThemes compromise Wordfence disclosed this week worked entirely through data. Several BdThemes plugins ship an internal component called Biggopti that pulls promotional banner content as JSON from a DigitalOcean Spaces bucket and renders it inside the WordPress admin. Attackers got write access to that bucket's contents and replaced the legitimate response at the api-data-all-records endpoint with a payload.</p>
+<p>What made the payload land was a cross-site scripting flaw in how Biggopti parses the display_id parameter. Wordfence rates it 5.4, medium severity. It was introduced in Prime Slider 4.1.9 on March 1 and spread into other BdThemes products from there. Five months as an unremarkable medium-severity finding, then somebody took the JSON feed and it became remote administrator access on every site running the plugin.</p>
+<p>The first-stage script called out to a C2 server, created rogue administrator accounts, wrote a PHP web shell named emer-run.php, and installed persistence modules into the mu-plugins directory, which loads automatically and cannot be disabled from the admin interface. A second script generated deterministic credentials derived from the victim's hostname, so the operator can compute the login for any compromised site without keeping a list. There's also a magic-login backdoor that grants admin access from an unauthenticated URL parameter, and a stealth module that hides the rogue accounts from the user list.</p>
+<p>Affected plugins include Element Pack Addons for Elementor at over 100,000 installs, Prime Slider, Pixel Gallery, Ultimate Post Kit, Ultimate Store Kit, Live Copy Paste, and Smart Admin Assistant. Wordfence was notified August 7. The WordPress plugins team pulled the affected downloads on August 7 and 8 pending review.</p>
+<p>Wordfence has tied the C2 infrastructure to two other campaigns, including the Advanced Responsive Video Embedder issue tracked as CVE-2026-18072 and an OptinMonster backdoor. Same operator, different vendors, same shape of attack.</p>
+<p>The uncomfortable lesson is about severity scoring. A 5.4 XSS in an admin banner widget is the kind of finding that sits in a backlog for a quarter. It only stayed a 5.4 as long as the remote content feeding it was trustworthy, and nobody was watching that bucket.</p>
+<p>If you run any of these plugins: update, then check your user list for accounts matching bd_ followed by a short hash, look in wp-content/mu-plugins for anything you didn't put there, and search the webroot for emer-run.php. The stealth module means the admin user list alone is not sufficient evidence.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Reached a Polish Turbine Through a Private Cellular Network</title>
+      <link>https://sabr-labs.com/article/cert-polska-private-apn-chp-plant-turbine-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cert-polska-private-apn-chp-plant-turbine-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>OT Security</category>
+      <category>ICS</category>
+      <category>CERT Polska</category>
+      <category>Siemens PLC</category>
+      <category>Critical Infrastructure</category>
+      <description>CERT Polska&apos;s report on a December 29 intrusion traces the path from a wind farm&apos;s FortiGate VPN through a cellular router into a distribution operator&apos;s private APN, ending with Siemens PLCs locked in STOP mode.</description>
+      <content:encoded><![CDATA[<p>A steam turbine at a Polish combined heat and power plant went into STOP mode on December 29 and stayed there, along with the process water treatment system, because someone had put the PLCs into stop and set a password on them.</p>
+<p>CERT Polska published the full account on Tuesday. It reads less like a nation-state operation and more like a chain of ordinary mistakes that happened to line up end to end.</p>
+<p>The start was a FortiGate appliance at a wind farm substation doing double duty as firewall and VPN concentrator. Its internet-facing VPN accepted locally configured accounts with no multi-factor requirement. From inside that network the attacker found a Teltonika RUTX50 cellular router attached to a distribution system operator's private APN, and built an SSH tunnel through it. On the far side sat a WAGO PFC200 controller with an integrated cellular modem, still running default administrator credentials. From there it was S7 protocol traffic to Siemens S7-300, S7-1200, and S7-1500 controllers at the heat plant.</p>
+<p>CERT Polska says this is the first time it has observed a private APN used as the pivot into an OT network in a real attack. That's the finding worth carrying forward, because private APNs are sold to utilities on exactly the premise that they're isolated from the internet. They are. They're also a flat network where a SIM card is the credential, and the devices holding those SIMs are field equipment that nobody patches.</p>
+<p>The plant supplies heat to roughly 50,000 residents. Operators brought the installation back before customers lost heat or power, which is the only reason this is a technical report and not a national story. There's no attribution.</p>
+<p>It's the second Polish energy facility sabotaged through this route. The initial access was a VPN without MFA and a controller with default credentials, which means every mitigation here is something the industry has been writing on slides since roughly 2015. The novel part was the middle of the chain, not the ends.</p>
+<p>If you run distributed generation, inventory the cellular routers first. Find every device with a SIM in it, find out which APN it sits on, and find out what else is reachable on that APN. Most operators cannot answer the third question today.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gunra Ransomware Is Getting In Through Fortinet VPNs and Power Meters</title>
+      <link>https://sabr-labs.com/article/gunra-ransomware-joint-advisory-fortinet-schneider-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gunra-ransomware-joint-advisory-fortinet-schneider-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Gunra</category>
+      <category>CISA</category>
+      <category>Fortinet</category>
+      <category>Schneider Electric</category>
+      <description>A joint US and South Korean advisory names two already-patched CVEs, CVE-2025-24472 in FortiOS and CVE-2024-5559 in Schneider Electric PowerLogic P5, as Gunra&apos;s primary way in.</description>
+      <content:encoded><![CDATA[<p>Both of the bugs Gunra uses to get into your network have been patched for over a year.</p>
+<p>That's the part of Tuesday's joint advisory worth sitting with. The FBI, CISA, NSA, the DoD Cyber Crime Center, the Secret Service, and South Korea's National Police Agency put out AA26-222A on the Gunra ransomware operation, and the initial access section lists two CVEs: CVE-2025-24472, an authentication bypass in Fortinet FortiOS and FortiProxy, and CVE-2024-5559 in internet-facing Schneider Electric PowerLogic P5 devices. Neither is a zero-day. Both have vendor fixes available.</p>
+<p>Gunra showed up in April 2025 running on leaked Conti source code, which is the same starting point half the current ransomware field used. By January 2026 the operators had built a proper affiliate program, advertising a configurable builder, a management panel, cross-platform payloads, and documentation on dark web forums. They've been recruiting penetration testers to work as initial access brokers. Ransomware.Live counts 51 victims so far, concentrated in Australia, East Asia, and Europe.</p>
+<p>The post-access playbook is unglamorous and effective. Impacket does the lateral movement, with psexec.py and smbclient.py over SMB and secretsdump.py pulling credentials off domain controllers. Exfiltration runs through a purpose-built executable that reaches into Microsoft OneDrive and SharePoint, with terabyte-scale archives pushed to MEGA. Persistence is OpenSSH. Then double extortion, with a five to seven day window before the data goes up.</p>
+<p>The MFA handling is the detail defenders should read twice. The advisory describes SSL-VPN session hijacking and multi-factor bypass achieved by tampering with the files that process authentication on the appliance itself. If your VPN concentrator is compromised, the second factor is running on the attacker's box. That's not an MFA failure so much as a reminder about where MFA actually lives.</p>
+<p>Targeted sectors are healthcare and public health, financial services, government services and facilities, and professional and nonprofit organizations. The through line is organizations with edge appliances and thin patching bandwidth, which describes most regional hospitals and county governments in the country.</p>
+<p>Three things to do this week: confirm FortiOS and FortiProxy are on fixed builds and audit for local VPN accounts that skip MFA, get PowerLogic P5 management interfaces off the public internet entirely, and hunt for unexpected OpenSSH services on hosts adjacent to your VPN termination points.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s Exploit-Writing Model Is Real, and You Probably Can&apos;t Have It</title>
+      <link>https://sabr-labs.com/article/openai-gpt-5-6-cyber-daybreak-red-access-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-cyber-daybreak-red-access-august-2026</guid>
+      <pubDate>Tue, 11 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-5.6</category>
+      <category>Offensive Security</category>
+      <category>Vulnerability Research</category>
+      <category>AI Safety</category>
+      <description>GPT-5.6-Cyber completes 95% of OpenAI&apos;s advanced offensive security benchmark versus 1.5% for the general model, and access is restricted to vetted partners under the Daybreak program.</description>
+      <content:encoded><![CDATA[<p>Ninety-five percent. That's the share of tasks GPT-5.6-Cyber cleared on OpenAI's Advanced Cybersecurity Completion Rate benchmark, which covers exploit chain development, authentication bypass, and privilege escalation. The general-purpose GPT-5.6 Sol scores 1.5% on the same set. The previous cyber model, GPT-5.5-Cyber, managed 57.3%.</p>
+<p>The model shipped August 10 and is not something you can turn on. Access runs through OpenAI's Daybreak program, split into two tiers: Daybreak Blue for broad defensive work, and Daybreak Red for offensive testing that OpenAI wants governed closely. Approved partners include Accenture, IBM, Capgemini, Cognizant, EY, KPMG, PwC, NCC Group, and SpecterOps, plus security vendors like Palo Alto Networks, CrowdStrike, Cisco, Sophos, Akamai, Fortinet, and Cloudflare. If you're an end customer, you get the output through one of those partners. The model access stays with them.</p>
+<p>What makes this different from a general model with a jailbreak isn't raw capability. It's refusals. OpenAI trained the thing to stop declining legitimate but dual-use requests, which is the actual complaint every pentester has had about frontier models for two years. You're allowed to test the production system you were hired to test. The model finally believes you.</p>
+<p>OpenAI ran it against real targets to make the case. The company says it used GPT-5.6-Cyber to find two previously unknown bugs in Chrome's V8 JavaScript engine that chain together to escape the V8 heap sandbox, disclosed to Google and fixed as CVE-2026-15903. It also reports at least five findings in a widely used mobile operating system, including a privilege escalation chain that takes a restricted app to full administrator.</p>
+<p>The benchmark deserves the usual caveat: it's OpenAI's benchmark, measuring OpenAI's model, on a task set OpenAI defined. ExploitGym results and a couple of disclosed CVEs are more persuasive than a percentage, and both point the same direction. But a 95% completion rate is not a claim about correctness or exploit quality. It's a claim about how often the model produced an answer at all.</p>
+<p>The gating is doing double duty here, and it's worth saying out loud. It's a real safety control, and it's also a moat. OpenAI rates the model High for cybersecurity capability under its Preparedness Framework, short of the Critical threshold that got the Astra release paused earlier this month. Daybreak Red users face identity verification, scoped engagements, logging, and mandatory hardware security keys starting September 1.</p>
+<p>Pricing tells you who this is for. It runs $12.50 per million input tokens and $75 per million output, with a 400,000-token context window and support only through the Responses API. That's roughly an order of magnitude above what general models cost, aimed at firms that bill by the engagement.</p>
+<p>The interesting question isn't whether this helps defenders. It will. It's what happens when the second and third labs ship equivalents without a partner list in front of them.</p>]]></content:encoded>
+    </item>
     <item>
       <title>AI Review Tools Made Linux 7.2-rc7 One of the Biggest in Years</title>
       <link>https://sabr-labs.com/article/linux-7-2-rc7-torvalds-ai-review-fixes-new-normal-august-2026</link>
@@ -922,133 +1049,6 @@
 <p>Now the harder question. IonQ has just taken on a merchant foundry, which is a capital-hungry, thin-margin manufacturing business with its own customer commitments and its own capex treadmill. Quantum hardware companies burn cash for a living. Adding fab operations to that burn is a bet that owning the process node matters more than the balance sheet strain, and it will be years before anyone can tell whether that was right.</p>
 <p>The regulatory path wasn't clean either. Bloomberg reported the FTC was split on the deal and let it close without imposing changes, which is a different thing from approving it enthusiastically. A divided commission clearing a vertical acquisition in a strategically sensitive sector is the kind of outcome that gets revisited if the politics shift.</p>
 <p>For everyone else building trapped-ion machines, the calculus changed on Friday. Their chip supplier is now one country away and their main rival owns a fab. Whether that produces a scramble for second-source capacity or just more Infineon orders is the thing to watch through the back half of the year.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepSeek&apos;s V4 Flash Refresh Is a Post-Training Update Wearing a Launch Costume</title>
-      <link>https://sabr-labs.com/article/deepseek-v4-flash-0731-agentic-open-weights-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-v4-flash-0731-agentic-open-weights-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>DeepSeek</category>
-      <category>Open Weights</category>
-      <category>AI Agents</category>
-      <category>Inference Pricing</category>
-      <category>Benchmarks</category>
-      <description>The 0731 build of DeepSeek V4 Flash posts strong agentic benchmark scores and keeps its $0.14 and $0.28 per million token pricing, but it&apos;s a retrain of an existing model rather than new architecture.</description>
-      <content:encoded><![CDATA[<p>DeepSeek pushed a new build of V4 Flash to public API beta on July 31, tagged 0731. Same weights class, same prices, better agent behavior. It's worth being precise about what changed, because the coverage is treating this like a model launch and it isn't one.</p>
-<p>The 0731 tag is a post-training and agent-tuning refresh on top of the existing V4 Flash foundation. Parameter count is unchanged at 284 billion total with 13 billion active, the context window stays at a million tokens, and the weights remain publicly available under MIT. Pricing didn't move either: $0.14 per million input tokens and $0.28 per million output tokens, the same rates that were already in place.</p>
-<p>What did move is agentic performance. Artificial Analysis puts the build at 50 on its Intelligence Index, roughly double the median of 25 for comparable open-weight models and third in its class. DeepSeek's own reported numbers on agentic harnesses are stronger still, with Terminal Bench 2.1 landing at 82.7.</p>
-<p>Treat that second number with the skepticism it deserves. Terminal Bench measures whether a model can drive a shell through scripted, verifiable tasks. It's a real signal for anyone building coding agents and a poor proxy for judgment, long-horizon planning, or knowing when to stop. A model can top a terminal benchmark and still confidently rm the wrong directory in a repo it doesn't understand.</p>
-<p>The pricing is the actual story. Output tokens at twenty-eight cents per million put this two orders of magnitude below what the top closed models charge, with weights you can download and run yourself. For a team building an agent that burns tokens in a loop, that difference isn't a discount. It's the difference between a product with margins and a demo.</p>
-<p>The competitive read is uncomfortable for the labs selling premium inference. DeepSeek isn't claiming the frontier. It's claiming that most of the work people actually pay agents to do doesn't need the frontier, and it's pricing accordingly. That argument gets stronger every time an open-weight refresh closes a bit more of the agentic gap without touching the architecture.</p>
-<p>If you're evaluating it, benchmark it on your own harness before believing anyone's index score, including this one. Post-training updates optimize for what they're measured on, and your workload is not the eval set.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Amgen Says Patient Health Data Was Stolen From Vendor Cloud Systems</title>
-      <link>https://sabr-labs.com/article/amgen-cloud-breach-patient-phi-third-party-8k-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amgen-cloud-breach-patient-phi-third-party-8k-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Healthcare</category>
-      <category>Third-Party Risk</category>
-      <category>SEC Disclosure</category>
-      <category>PHI</category>
-      <description>Amgen told the SEC that attackers exfiltrated proprietary data and patient protected health information from cloud environments run by third-party providers, without naming the providers or the number of people affected.</description>
-      <content:encoded><![CDATA[<p>Amgen filed an 8-K describing a breach it had already decided was material two days earlier. The company detected unauthorized activity in July inside cloud environments operated by third-party service providers, determined materiality on July 29, and disclosed publicly on July 31.</p>
-<p>What left the building: proprietary data and patient protected health information, plus what the filing calls "other information." Amgen says it's still working out whether confidential business information, intellectual property, and R&D data were also taken. For a company whose value sits almost entirely in its pipeline, that's the sentence worth rereading.</p>
-<p>Almost everything else is blank. Amgen didn't name the cloud providers. It didn't say how the environments were compromised, how many patients are affected, or whether any known group is responsible. No threat actor has been named in the disclosure, and nobody has credibly claimed it.</p>
-<p>The company also included the line that shows up in nearly every one of these filings: it doesn't currently believe the incident is reasonably likely to materially affect its financial condition or operating results. Read that next to the July 29 materiality determination and you get the standard split that SEC cyber disclosure has settled into. Material enough to require a filing, immaterial enough not to move guidance.</p>
-<p>Amgen says it activated its response plan, implemented containment, and brought in outside forensics. Notification to affected patients will follow where required.</p>
-<p>Two clocks are now running. HIPAA breach notification obligations attach to the PHI regardless of whose infrastructure held it, and the SEC filing puts the incident on the record for shareholders. Neither clock cares that the compromised systems belonged to a vendor.</p>
-<p>That's the recurring lesson and nobody keeps learning it. When a pharma company puts patient data in a partner's cloud tenant, the partner's security posture becomes the pharma company's security posture. The breach notification letter still has Amgen's letterhead on it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Crafted Image Upload Can Read Any File Your Rails App Can Reach</title>
-      <link>https://sabr-labs.com/article/rails-active-storage-cve-2026-66066-libvips-file-read-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/rails-active-storage-cve-2026-66066-libvips-file-read-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ruby on Rails</category>
-      <category>CVE</category>
-      <category>Application Security</category>
-      <category>RCE</category>
-      <category>Open Source</category>
-      <description>CVE-2026-66066 lets an unauthenticated attacker pull arbitrary files out of a Rails server through Active Storage image processing, and stealing secret_key_base turns that read into code execution.</description>
-      <content:encoded><![CDATA[<p>Upload a picture. Get the contents of config/master.key back. That's the shape of CVE-2026-66066, patched by the Rails security team on July 29 and scored 9.5 by the researchers who reported it.</p>
-<p>The bug lives at the seam between Active Storage and libvips, the image-processing library Rails has used as the default variant processor since load_defaults 7.0. Active Storage handed uploaded attachments to the Vips analyzer and transformer without first blocking unsafe libvips operations. A crafted upload can invoke one of those operations and walk away with the contents of any file the Rails worker process can read.</p>
-<p>Fixed versions are 7.2.3.2, 8.0.5.1, and 8.1.3.1. If you're on 7.2.x, 8.0.x, or 8.1.x below those numbers, accept image uploads from users who aren't authenticated, and haven't switched the variant processor to MiniMagick, you're in scope. That's a very large slice of the Rails deployments running today.</p>
-<p>Arbitrary file read is bad on its own. What makes this one a genuine emergency is what's sitting in those files. A Rails process can read its own environment and its own credentials: secret_key_base, the master key, database passwords, S3 or GCS credentials, API tokens for whatever the app talks to.</p>
-<p>Once secret_key_base leaks, the attacker stops being an outsider. They can forge session cookies, sign global IDs, and craft serialized payloads the framework will happily trust and deserialize. Rapid7 and Ethiack both landed on the same conclusion and gave it the name KindaRails2Shell, which is a fair callback. The path from file read to remote code execution here is short and well documented.</p>
-<p>There's no reported in-the-wild exploitation yet. That's not much comfort. The vulnerability class is easy to understand, the write-ups are public and detailed, and the trigger is an ordinary image upload endpoint that most Rails apps expose by design. The gap between public analysis and mass scanning for something this simple usually gets measured in days.</p>
-<p>Patch, then rotate. Upgrading the gem closes the door, but if you were exposed and can't prove you weren't hit, secret_key_base and every credential reachable from the app's environment should be treated as burned. Rotating those is the part teams skip, and it's the part that decides whether an old read turns into a new session six weeks from now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Water Utilities in Seven States Hit as Attackers Lock Operators Out of PLCs</title>
-      <link>https://sabr-labs.com/article/water-utilities-plc-attacks-seven-states-cisa-fbi-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/water-utilities-plc-attacks-seven-states-cisa-fbi-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ICS</category>
-      <category>OT Security</category>
-      <category>CISA</category>
-      <category>Critical Infrastructure</category>
-      <category>PLC</category>
-      <description>CISA and the FBI say intruders changed PLC passwords and IP addresses at U.S. water systems, forcing boil-water notices and manual operation, with more than 30 Minnesota communities hit in a single weekend.</description>
-      <content:encoded><![CDATA[<p>Over one weekend in late July, more than 30 Minnesota community water systems found their programmable logic controllers unreachable. Not destroyed. Not ransomed. Just locked, with new passwords the operators didn't set and new IP addresses that took the devices off the network entirely.</p>
-<p>CISA published an alert on July 30 describing a sharp increase in attacks on internet-facing PLCs in the water and wastewater sector. The Minnesota incidents ran July 26 and 27. Since July 27, utilities in at least seven states have reported similar activity to the FBI. Some of it degraded operations badly enough to trigger boil-water notices and force plants into sustained manual control.</p>
-<p>The technique isn't sophisticated, which is the uncomfortable part. Attackers are finding PLCs that answer directly on the public internet, logging in with default or unchanged credentials, and then taking two simple actions: rotate the password so the operator can't get back in, and change the device's IP address so it drops off the control network. That's it. No exploit chain, no zero-day, no custom implant.</p>
-<p>The affected hardware spans three vendors. CISA named Rockwell Automation's Allen-Bradley line (CompactLogix, Micro850, and MicroLogix 1400), Schneider Electric's Modicon M340, and Siemens S7-1200 series controllers. The Schneider and Siemens additions came in a July 22 update to advisory AA26-097A, which also documented PLC project file exfiltration for the first time and added detection guidance for tampering with reusable code modules inside PLC programs.</p>
-<p>That project-file detail deserves more attention than it's getting. Stealing the logic that runs a treatment plant is reconnaissance for a much worse second act than a lockout.</p>
-<p>Attribution is deliberately unresolved. The original April 7 advisory tied this activity to Iranian-affiliated actors exploiting exposed Rockwell controllers across government services, water, and energy, with disruptions dating to at least March. Investigators haven't publicly connected the Minnesota cluster to any named group. Groups like CyberAv3ngers and Handala fit the profile, but fitting a profile isn't evidence, and federal agencies are right not to say more than they can support.</p>
-<p>The mitigation list from CISA reads like a checklist from 2015, because it is one. Get PLCs off the public internet. Put remote access behind a VPN or a properly configured gateway. Turn on password protection and change every default. Allowlist the IP addresses permitted to reach controllers. Keep clean PLC images so a locked device can be reflashed rather than negotiated with.</p>
-<p>If you run OT for a small utility, the honest question isn't whether you're a target. It's whether you know how many of your controllers are reachable from outside your network right now. Most of the operators in Minnesota would have said zero.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chrome Fixed More Bugs in Three Releases Than in the Previous 23</title>
-      <link>https://sabr-labs.com/article/chrome-1442-flaws-llm-bug-discovery-sandbox-escape-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-1442-flaws-llm-bug-discovery-sandbox-escape-august-2026</guid>
-      <pubDate>Sat, 01 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google Chrome</category>
-      <category>Browser Security</category>
-      <category>Gemini</category>
-      <category>Vulnerability Research</category>
-      <category>Patch Management</category>
-      <description>Google says LLM-driven discovery pushed recent Chrome milestones past 1,400 security fixes, and is moving to two security releases a week to keep up with its own tooling.</description>
-      <content:encoded><![CDATA[<p>Chrome 149 and 150 fixed 1,072 security bugs between them. That is more than the previous 23 Chrome milestones fixed combined, and Google put the number in its own security blog on July 30 rather than waiting for someone to count.</p>
-<p>Chrome 151 added roughly 370 more, seven of them rated critical, bringing the three-release total past 1,400. Google says it found 349 of the Chrome 151 issues itself. The company credits the spike to Gemini and other large language models now embedded across discovery, triage and patching in the Chrome pipeline.</p>
-<p>The single best illustration is a sandbox escape in Chrome's navigation code that had been sitting in the codebase for more than 13 years. Google's writeup says it was surfaced by an agent harness running on Gemini. Reporting on the release identifies it as CVE-2026-3545, rated 9.6. Thirteen years of manual review, fuzzing campaigns and a well-funded bug bounty program did not find it. A model reading the code did.</p>
-<p>It is worth being precise about what this number means, because "Chrome fixed 1,442 bugs" reads two ways. It is not evidence that Chrome suddenly got more vulnerable. It is evidence that the bugs were always there and the industry's detection rate was the limiting factor. Every browser, every kernel, every large C++ codebase has a backlog like this. Chrome is just the first one being emptied in public.</p>
-<p>That creates a new operational problem, which Google seems to understand. Its own framing is that discovering and fixing a bug is only half the job, and that the deployment speed is what actually protects users. So Chrome is moving to two-week major milestone releases with weekly security updates, and piloting two security releases per week on top of that. For enterprise fleets that pin browser versions and test before rollout, that cadence is going to hurt.</p>
-<p>The obvious uncomfortable part goes unsaid in the blog post. The tooling that found a 13-year-old sandbox escape is not proprietary to Google. Frontier models are broadly available, the agent harness patterns are published, and the same approach applied to a codebase whose maintainers do not have Google's patching machinery produces a very different outcome. We covered a Linux kernel use-after-free with an AI-assisted exploit last month and a Chinese operator running autonomous exploitation through DeepSeek this week. Both sides of this are scaling at once.</p>
-<p>If you manage browser updates for anyone, the practical takeaway is that your patch window assumptions are now stale. A monthly review cycle made sense when Chrome shipped security fixes on a predictable rhythm. It does not survive two releases a week.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Earth&apos;s AI Image Tool Lasted One Day</title>
-      <link>https://sabr-labs.com/article/google-earth-ai-image-tool-pulled-one-day-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-earth-ai-image-tool-pulled-one-day-august-2026</guid>
-      <pubDate>Sat, 01 Aug 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>Google Earth</category>
-      <category>Nano Banana 2</category>
-      <category>Synthetic Media</category>
-      <category>SynthID</category>
-      <description>Google rolled back a feature that generated photorealistic imagery on top of real satellite data after researchers showed it inventing nuclear sites and war damage at real coordinates.</description>
-      <content:encoded><![CDATA[<p>Type a sentence, get a nuclear facility in Iran. Type another, get a bomb crater at a hospital in Gaza. Both rendered on top of Google's authentic satellite imagery, at real coordinates, in seconds.</p>
-<p>That was the output researchers produced within hours of Google switching on a "create image" button for all users of Google Earth on the web. The feature, powered by the company's Nano Banana 2 image model, let anyone zoom to a location and generate photorealistic imagery layered over the real satellite, aerial and 3D mapping data underneath. It went live Thursday. Google pulled it Friday, saying it was rolling the feature back "while we work on implementing stronger guardrails."</p>
-<p>Google's initial defense was provenance. Every generated image carries a SynthID watermark, and users could check authenticity through the Gemini app or Lens in Search. Critics took about a day to demolish that argument on two fronts: almost nobody stops to verify an image they see in a feed, and researchers demonstrated Gemini failing to correctly flag an AI-generated photo when asked.</p>
-<p>The provenance-as-safety argument keeps failing for the same reason. Watermarking answers the question "can this be verified?" It does not answer "will it be verified?" A screenshot posted to a social platform carries no SynthID query interface with it, and the harm from a fabricated image of a military installation happens in the hours before anyone checks, not after.</p>
-<p>Google's own rollback statement contains the concession that matters. The company said people uniquely trust Google Earth for a reliable view of the world. That trust is the entire asset, and it was built on the premise that what you are looking at is a photograph of a place. Bolting a generative layer onto that surface spends the asset to add a feature that Gemini already offered somewhere else.</p>
-<p>The more interesting question is how this shipped to general availability at all. Not to a limited preview, not behind a flag for a subset of users. The failure modes here were not obscure. Anyone who has watched the last four years of synthetic media policy could have written the list of prompts that would cause a problem, and several people did, within a day, in public.</p>
-<p>Google has not said when or whether the feature returns. Whatever comes back will need to answer a harder question than watermarking does: why a mapping product that people rely on to be true should be able to generate things that are not.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
