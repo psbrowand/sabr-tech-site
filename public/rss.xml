@@ -6,9 +6,138 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Aug 2026 13:18:28 GMT</lastBuildDate>
-    <pubDate>Tue, 11 Aug 2026 13:18:28 GMT</pubDate>
+    <lastBuildDate>Wed, 12 Aug 2026 13:18:12 GMT</lastBuildDate>
+    <pubDate>Wed, 12 Aug 2026 13:18:12 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A Pentagon Memo Routes Up to $244M to Palantir Without a Competition</title>
+      <link>https://sabr-labs.com/article/palantir-pentagon-244-million-no-bid-memo-feinberg-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/palantir-pentagon-244-million-no-bid-memo-feinberg-august-2026</guid>
+      <pubDate>Wed, 12 Aug 2026 14:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Palantir</category>
+      <category>Pentagon</category>
+      <category>Government Contracts</category>
+      <category>AI</category>
+      <category>Procurement</category>
+      <description>Deputy Defense Secretary Stephen Feinberg signed an August 4 memo directing subordinates to buy Palantir analytics, and an oversight group says it skips a justification federal law requires.</description>
+      <content:encoded><![CDATA[<p>The number is $243.9 million through March 31, 2027, and the memo doesn't stop there. It also tells Pentagon subordinates to go find additional funding options covering April 2027 through the end of 2028. No competition, no solicitation, no other vendors considered.</p>
+<p>The memo is dated August 4 and signed by Stephen Feinberg, the deputy secretary of defense, on Department of War letterhead. What it buys is Palantir's data analytics work aimed at the defense industrial base, specifically understanding why munitions and vehicle production runs late. That's a genuine problem. Anyone who has looked at US artillery production timelines over the past few years knows the bottlenecks are real and poorly instrumented.</p>
+<p>The objection isn't to the goal. It's to the procedure.</p>
+<p>Greg Williams, who directs the Center for Defense Information, points out that sole-source awards of this size require a written justification under 10 USC 3204, and the memo doesn't reference one. His read is pointed: the absence suggests officials are either unaware of the statutory requirement for competition, or don't consider it important. Neither option is comfortable.</p>
+<p>A Department of War official pushed back, framing the arrangement as ordinary practice under a program called Business Operators for National Defense, or BOND, and saying similar work happens with industry partners across the board. That answer addresses whether the department has a habit of doing this. It does not address whether the statute was satisfied in this instance, which is the actual question on the table.</p>
+<p>Palantir hardly needs the money. The company already holds an Army enterprise agreement worth as much as $10 billion over a decade, and the department has been moving toward treating its software as core infrastructure rather than one tool among several. That's the part worth tracking. Once analytics become the layer everything else reports through, the procurement decision stops being about a contract and starts being about a dependency that's very hard to unwind.</p>
+<p>Sole-source awards exist for good reasons and sometimes they're the right call. The reason the justification requirement exists is that the government has to write down what the reason was. On a memo directing spending into 2028, that's not paperwork.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Mojo Reached 1.0 With Its Compiler Still Closed and Qualcomm Holding the Keys</title>
+      <link>https://sabr-labs.com/article/modular-mojo-1-0-qualcomm-compiler-still-closed-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/modular-mojo-1-0-qualcomm-compiler-still-closed-august-2026</guid>
+      <pubDate>Wed, 12 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Mojo</category>
+      <category>Modular</category>
+      <category>Qualcomm</category>
+      <category>Programming Languages</category>
+      <category>Open Source</category>
+      <category>AI Infrastructure</category>
+      <description>Modular declared its Python-like systems language production-ready three years after launch, but the compiler open-sourcing it promised for 2026 still hasn&apos;t landed.</description>
+      <content:encoded><![CDATA[<p>Mojo is 1.0 as of the Modular 26.5 release, which means the language Modular has been building since 2023 now carries a stability commitment. Syntax you write today should still compile next year. For anyone who has been waiting to put Mojo anywhere near production, that promise was the blocker, and it's gone.</p>
+<p>The pitch has stayed consistent: Python's readability with Rust-style memory safety and enough systems-level control to write the kind of code that currently forces people into C++ or CUDA. That's a real gap. The AI stack is a Python front end bolted onto hand-tuned kernels written in a completely different language by a much smaller group of people, and every team that has tried to cross that boundary knows how it goes.</p>
+<p>The awkward part of the 1.0 announcement is what's still missing. Modular committed to open-sourcing the Mojo compiler and toolchain in 2026. The standard library has been out under Apache 2.0 with LLVM exceptions for a while, but the compiler itself remains closed, with hints that ModCon next week might be the moment. Declaring 1.0 stability on a closed compiler is a specific kind of ask: trust the stability guarantee, but don't ask to read it.</p>
+<p>Then there's the owner. Qualcomm agreed in June to buy Modular for roughly $3.9 billion in stock. The strategic logic is not subtle. Mojo and Modular's MAX platform are the most credible attempt anyone has made at a portable programming model that isn't CUDA, and Qualcomm would very much like AI inference to run somewhere other than Nvidia silicon.</p>
+<p>Not everyone reads the acquisition as good news for the language. The tinygrad account put it bluntly, calling Qualcomm a poor steward for open source software and arguing Modular raised too much money to stay independent long enough to win. That's a partisan take from a competing project. It's also the exact concern any team evaluating Mojo should be pricing in, because a portability layer owned by a chip vendor has an obvious conflict at its center.</p>
+<p>The compiler release is the thing to watch. If it lands under a real open source license, Mojo has a shot at being infrastructure. If it slips past 2026 or arrives with a source-available license and a usage carve-out, then 1.0 was a stability guarantee on a product, not a foundation, and the difference matters a lot to whoever inherits your codebase.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Adobe Shipped Three CVSS 10.0 Fixes for ColdFusion and Campaign Classic</title>
+      <link>https://sabr-labs.com/article/adobe-coldfusion-campaign-classic-cvss-10-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/adobe-coldfusion-campaign-classic-cvss-10-august-2026</guid>
+      <pubDate>Wed, 12 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Adobe</category>
+      <category>ColdFusion</category>
+      <category>Campaign Classic</category>
+      <category>Patch Management</category>
+      <category>Code Execution</category>
+      <description>Seven critical flaws across ColdFusion, Campaign Classic, and Commerce got Priority 1 ratings and a 72-hour install recommendation, with no exploitation reported yet.</description>
+      <content:encoded><![CDATA[<p>Three perfect tens in one release. CVE-2026-48362 is an OS command injection bug in ColdFusion, and CVE-2026-71398 and CVE-2026-27302 are authorization bypasses in Campaign Classic that end in arbitrary code execution. All three sit at CVSS 10.0, which is the score you get when the attack is remote, unauthenticated, trivial, and total.</p>
+<p>The rest of the batch is barely a step down. ColdFusion also picks up CVE-2026-48273, an eval injection at 9.9, and CVE-2026-71384, an authorization bypass leading to denial of service at 9.6. Campaign Classic gets CVE-2026-48381, a SQL injection at 9.0. Adobe Commerce contributes CVE-2026-71362, an authorization bypass enabling privilege escalation at 9.1.</p>
+<p>Fixed builds are ColdFusion 2025.0.12 and 2023.0.23, and Campaign Classic v7 7.4.4 build 9400. Adobe rated the updates Priority 1 and recommends installing within 72 hours. The Campaign Classic issues apply to on-premise deployments, so hosted customers are covered by Adobe's own update cycle.</p>
+<p>Adobe says there's no evidence of exploitation in the wild. Treat that as a statement about Tuesday, not a forecast.</p>
+<p>ColdFusion has been one of the more reliable entry points in the ransomware playbook for years, and the pattern is consistent enough to plan around: a critical pre-auth bug drops, a proof of concept follows inside a week or two, and mass scanning finds the servers nobody remembered were still running. ColdFusion boxes are frequently in that category. They're old, they work, and the person who deployed them left.</p>
+<p>Campaign Classic is a different flavor of the same problem. It's a marketing automation platform, which means it lives near customer databases and is often administered by a team that doesn't report to security. An authorization bypass that reaches code execution on that host is a data breach with extra steps.</p>
+<p>If you run either product on-premise, this is a same-week job. Start by confirming you actually know where all the instances are, because on the evidence of previous ColdFusion cycles, that's the step that takes longest.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>One HTTP Request Is Rebooting Cisco Firewalls, and Federal Agencies Have Until Friday</title>
+      <link>https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-20349-ssl-vpn-crash-kev-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-20349-ssl-vpn-crash-kev-august-2026</guid>
+      <pubDate>Wed, 12 Aug 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>ASA</category>
+      <category>Firepower</category>
+      <category>VPN</category>
+      <category>CISA KEV</category>
+      <category>Denial of Service</category>
+      <description>CVE-2026-20349 lets an unauthenticated attacker crash Cisco ASA and FTD devices with a crafted request to the SSL VPN service, and it&apos;s already being used in the wild.</description>
+      <content:encoded><![CDATA[<p>A crafted HTTP request to the Remote Access SSL VPN service is enough to make a Cisco Secure Firewall reload. No credentials, no user interaction, no foothold. Just a request that the device fails to error-check properly, and then your perimeter firewall restarts.</p>
+<p>CVE-2026-20349 is a heap inspection flaw in Cisco Secure Firewall ASA and Secure Firewall Threat Defense, rated 8.6. The trigger condition is narrow in the sense that it requires SSL listen sockets enabled on the remote access service, and wide in the sense that this describes an enormous number of production firewalls doing exactly the job they were bought to do.</p>
+<p>It's being exploited now. CISA added it to the Known Exploited Vulnerabilities catalog on August 11 and set the federal remediation deadline for August 14, which is a three-day window and a fair signal of how the agency reads the risk.</p>
+<p>Denial of service gets treated as the boring outcome in vulnerability triage, somewhere below remote code execution and credential theft on most severity worksheets. That ranking makes less sense when the target is the device terminating your remote access VPN. A reload loop on that box is an outage for every remote worker and a blind spot in your logging while it happens.</p>
+<p>This is also the same product family that has spent the past couple of years absorbing sustained attention from state-linked actors, and Cisco maintains a standing resource page for continued attacks against ASA and FTD. A DoS bug arriving in that context is worth asking a second question about: crashing a firewall is sometimes the goal, and sometimes it's the noise generated while something else finishes.</p>
+<p>Patch it. If you can't patch inside the window, the practical mitigation is to restrict who can reach the SSL VPN listener at all, which for most organizations means an access list in front of the appliance rather than a config change on it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>North Korea Was Already Using the WinSock Bug Microsoft Just Fixed</title>
+      <link>https://sabr-labs.com/article/microsoft-patch-tuesday-august-2026-winsock-cve-2026-68820-lazarus</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-patch-tuesday-august-2026-winsock-cve-2026-68820-lazarus</guid>
+      <pubDate>Wed, 12 Aug 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Patch Tuesday</category>
+      <category>Zero-Day</category>
+      <category>Lazarus</category>
+      <category>Windows</category>
+      <category>CISA KEV</category>
+      <description>August&apos;s Patch Tuesday closes an actively exploited use-after-free in afd.sys that Check Point attributes to Lazarus, alongside roughly 400 other CVEs.</description>
+      <content:encoded><![CDATA[<p>The one that matters out of Tuesday's pile is CVE-2026-68820, a use-after-free in the Ancillary Function Driver for WinSock. That's afd.sys, the kernel-mode driver sitting under the Windows Sockets API on every Windows box in your estate. Attackers have been using it to walk a local foothold up to SYSTEM, and Check Point attributes that exploitation to Lazarus, the North Korean group.</p>
+<p>CVSS puts it at 7.0, which undersells it. Privilege escalation bugs rarely score high because they need local access first, but local access is the cheap part of a modern intrusion. Phishing gets you a user session. This gets you the kernel.</p>
+<p>CISA agreed on the urgency and added CVE-2026-68820 to the Known Exploited Vulnerabilities catalog the same day the patch shipped, which puts federal agencies on a binding remediation clock.</p>
+<p>Two more zero-days were publicly disclosed before a fix existed, though neither has known exploitation. CVE-2026-62832 is an elevation of privilege flaw in the Windows User Profile Service at CVSS 7.8. CVE-2026-72971 is a tampering issue in the Container Isolation FS Filter Driver at 5.5, which is low-severity on paper and more interesting than that if you run containerized workloads on Windows hosts.</p>
+<p>The headline count depends on who's counting. Tenable tallied 398 CVEs with 42 rated critical, other outlets landed on 400 and 421 depending on whether Edge and third-party components got folded in. Pick a number, it's still one of the heaviest months on record and it is not a number any patch window absorbs gracefully.</p>
+<p>Two critical remote code execution bugs deserve a look even without exploitation reports. CVE-2026-62893 in Windows Deployment Services TFTP carries a 9.8, and CVE-2026-62823 hits the Windows DHCP Server at 8.8. Both live on infrastructure that tends to be old, quietly load-bearing, and owned by whoever inherited it last.</p>
+<p>Order of operations for this cycle: afd.sys first on anything with interactive users, then WDS and DHCP on the server side. The rest can follow your normal ring schedule.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Weaker Model Will Happily Decrypt a Stronger Model&apos;s Private Reasoning</title>
+      <link>https://sabr-labs.com/article/stealing-reasoning-traces-openai-anthropic-google-encrypted-blocks-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/stealing-reasoning-traces-openai-anthropic-google-encrypted-blocks-august-2026</guid>
+      <pubDate>Wed, 12 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>LLM Security</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <category>Google</category>
+      <category>Prompt Injection</category>
+      <category>Credential Leaks</category>
+      <description>Researchers pulled 182 credentials and hundreds of PII artifacts out of the encrypted thinking blocks that OpenAI, Anthropic, and Google return to developers as opaque data.</description>
+      <content:encoded><![CDATA[<p>Sixty-two API keys. Thirty-three passwords. Seven private keys. All of it sitting inside encrypted "thinking" blocks that OpenAI, Anthropic, and Google hand back through their APIs as sealed, unreadable data, and all of it recoverable by anyone who bothered to ask the right model nicely.</p>
+<p>The attack comes from a paper posted August 10 titled "Stealing Reasoning Traces from Proprietary LLM APIs," by Alexander Panfilov, David Schmotz, Ilia Shumailov, Luca Beurer-Kellner, Joachim Schaeffer, Ameya Prabhu, Jonas Geiping, and Maksym Andriushchenko. The finding is architectural rather than cryptographic. Nobody broke the encryption. The researchers found that the encrypted reasoning objects a provider returns are interchangeable across sessions, across users, and across models inside that provider's own platform.</p>
+<p>So you take a sealed reasoning blob produced by a provider's flagship model, hand it to a cheaper and less heavily guarded sibling model on the same platform, and ask that model to continue the thought. It decrypts the blob as a matter of normal operation and says the quiet part out loud. The anti-distillation protection that hides reasoning from customers turns out to hide nothing from a customer holding a second API key.</p>
+<p>The scale of the harvest is what makes this more than a clever trick. The team decoded 315,320 thinking blocks from 6,708 publicly published agent trajectories, recovering 367 PII artifacts and 182 credentials including API keys, passwords, access tokens, and private keys. Every one of those secrets belonged to somebody who published an agent trace believing the reasoning portion was unreadable. It was unreadable to them. That's not the same thing.</p>
+<p>There's a second failure mode worth sitting with. If reasoning blocks are opaque to the developer but readable by the model, they're an ideal carrier for prompt injection. Content nobody can inspect gets fed straight into the next turn. The same opacity also means a model can reject a request in its visible output while the hazardous detail it worked through stays intact in the block that gets passed along.</p>
+<p>The vendor response is where this gets thin. The main extraction attack is reportedly no longer reproducible as of this month, which suggests somebody quietly changed something, but no provider has publicly acknowledged the issue or published a fix note. Anthropic's own guidance already told developers to strip thinking blocks when switching models. That reads like an interoperability footnote, not a security control, and it was apparently the only thing standing between published agent logs and a credential dump.</p>
+<p>The researchers are honest about their limits: they have no ground-truth plaintext to check their reconstructions against, so "we decoded it" means "a model produced text consistent with the block," not a verified match. Fair caveat. It doesn't help the 62 API keys.</p>
+<p>If your team publishes agent trajectories, evaluation runs, or debugging traces anywhere public, strip the reasoning blocks before they leave your machine. Treat them as plaintext, because to a second model on the same platform, that's exactly what they are.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Mozilla Rotated Its Firefox Signing Key After Committing It in the Clear</title>
       <link>https://sabr-labs.com/article/mozilla-gpg-signing-subkey-rotation-firefox-august-2026</link>
@@ -922,133 +1051,6 @@
 <p>The reason this took so long is that enterprise policy was designed with an actual enterprise in mind. Chrome had no reliable way to distinguish a managed fleet from a laptop where malware wrote a registry key ten minutes ago, so it did the conservative thing and honored the policy. Google's own framing now calls consumer PCs low-trust environments, which is a blunt way of admitting the trust model was backwards for anyone not in a corporate domain.</p>
 <p>Two details matter for admins. Extensions installed this way get automatically uninstalled if a device loses management status, closing the gap where a machine leaves a fleet but keeps the forced extension. And there's an escape-hatch policy so genuinely managed environments that need a search or New Tab override can still have one.</p>
 <p>Extensions users install themselves are untouched, and this doesn't address the broader problem that local policy keys are writable by anything running with the right privileges. It closes the most profitable door, not the hallway.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Shipped Machine-Checkable Proofs Before It Shipped the Model</title>
-      <link>https://sabr-labs.com/article/openai-astra-ten-math-proofs-lean-certificates-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-astra-ten-math-proofs-lean-certificates-august-2026</guid>
-      <pubDate>Mon, 03 Aug 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>Astra</category>
-      <category>Lean</category>
-      <category>Formal Verification</category>
-      <category>Mathematics</category>
-      <description>OpenAI published a 249-page manuscript and Lean 4 certificates for ten long-open math problems it says an unreleased model called Astra solved, and anyone can run the checker themselves.</description>
-      <content:encoded><![CDATA[<p>The proofs are public. The model is not. OpenAI put out a 249-page manuscript and a set of Lean 4 proof certificates on GitHub under Apache 2.0, credited to an internal research model called Astra that has no release date and, by the company's own admission, no settled name.</p>
-<p>The claimed results cover ten problems in mathematics and theoretical computer science that had gone at least a decade without movement on their central questions: high-dimensional geometry, coding theory, arithmetic circuit complexity, group theory, quantum complexity, lattice cryptography, extremal combinatorics. The headline item is an explicit construction of a non-sofic group, a question left open since Mikhail Gromov introduced soficity in 1999. There are also new sphere packing bounds and resolutions of several problems from Paul Erdős.</p>
-<p>The Lean certificates are the part that separates this from the usual model-capability announcement. Formalized proofs either compile or they don't. The repository's `sorry` count is zero, meaning no step is left as an unproven placeholder, and anyone with a Lean 4 install can check every line without taking OpenAI's word for anything. That is a meaningfully higher bar than a benchmark score, which is a number you have to trust the grader on.</p>
-<p>It is not the same as peer review, and none of the ten results has been through any. A proof can be formally valid and still be a curiosity. Whether these constructions matter is a judgment mathematicians make over months, not something a compiler decides. Thomas Bloom, the Manchester mathematician who maintains erdosproblems.com, called the results big news and said they were larger as constructions than the unit-distance counterexample OpenAI floated earlier, which is a real endorsement from someone with standing to give one.</p>
-<p>The workflow also deserves a closer read than the headline gives it. Human researchers prepared the arguments as manuscripts, and Astra formalized them into Lean. That is a collaboration, and "Astra solved ten open problems" compresses it in a direction that flatters the model.</p>
-<p>OpenAI put the token cost of finding all ten solutions at roughly $2,000 at Sol API rates. It's a good line and it will get repeated everywhere. Treat it as the cost of the runs that worked, not the cost of the search.</p>
-<p>As a product, Astra is pitched at long-running work where multiple agents split a problem into pieces and grind on them. OpenAI hasn't decided whether it becomes GPT-5.7, GPT-6, or something else, and may split it into consumer and restricted tiers. Announcing a capability before you've named the thing is a positioning choice, not an engineering one.</p>
-<p>Still, this is the rare AI claim that doesn't need a press cycle to adjudicate. Download the repo, run the checker, decide for yourself. More of this, please.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Thermo Fisher Patches a Flaw That Let DNA Evidence Files Be Edited Silently</title>
-      <link>https://sabr-labs.com/article/thermo-fisher-cve-2026-17583-dna-evidence-file-tampering-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/thermo-fisher-cve-2026-17583-dna-evidence-file-tampering-august-2026</guid>
-      <pubDate>Mon, 03 Aug 2026 13:05:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Forensics</category>
-      <category>Thermo Fisher</category>
-      <category>Data Integrity</category>
-      <category>CVE</category>
-      <category>CISA</category>
-      <description>Raw output files from Applied Biosystems genetic analyzers could be altered before analysis without the software noticing, and a researcher merged two DNA profiles into one file in about 45 minutes.</description>
-      <content:encoded><![CDATA[<p>It took a researcher roughly 45 minutes to blend two separate DNA profiles into a single evidence file. The analysis software that forensic labs across the country use to read that file raised no warning at all.</p>
-<p>Thermo Fisher published a bulletin on July 31 covering the issue, tracked as CVE-2026-17583 and rated High with a CVSS v4.0 score of 8.2. The problem is in the .fsa and .hid files that Applied Biosystems human identification instruments write out. Those files hold the raw capillary electrophoresis traces that everything downstream depends on, and until this patch there was nothing in them that would reveal after-the-fact modification.</p>
-<p>Five supported product lines got updates. Data Collection Software for the 3500 and 3500xL series moves to 4.0.3, the 3730 and 3730xL series to 5.0.3, SeqStudio Genetic Analyzer to 1.2.6, SeqStudio Flex instrument software to 1.2.1, and GeneMapper ID-X to 1.7.4. The remediation is digital signatures on the output files, which is another way of saying that a file format underpinning criminal convictions has been unsigned this whole time.</p>
-<p>Three end-of-life data collection products get nothing. Labs still running those are left with process controls: file custody, restricted storage, tighter access and privilege, and keeping the instrument workstations off general-purpose networks. Reasonable advice, and thin comfort for a lab whose budget cycle does not care that a vendor sunset a product.</p>
-<p>Thermo Fisher's framing is that the tampering scenario requires laboratory controls to be circumvented first. That's accurate, and it's also the threat model forensic evidence is supposed to assume. Chain of custody exists precisely because the people with access are the ones who could alter something. A file format that trusts everyone who can reach it is not a defense-in-depth layer, it's a gap that was papered over by the assumption that nobody would try.</p>
-<p>Credit goes to Nathan Adams of Forensic Bioinformatics along with Kevin Dyer and Laura Gaydosh Combs, who coordinated the disclosure with CISA. No exploitation has been confirmed, and there's no indication anyone has used this in a real case.</p>
-<p>The part worth watching isn't the patch. It's what happens the first time a defense expert asks, in discovery, whether the .fsa files in a pending case were generated before or after August 2026.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Coldcard&apos;s Wallet Seeds Weren&apos;t Random, and $88 Million in Bitcoin Is Gone</title>
-      <link>https://sabr-labs.com/article/coldcard-rng-fallback-seed-entropy-bitcoin-theft-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/coldcard-rng-fallback-seed-entropy-bitcoin-theft-august-2026</guid>
-      <pubDate>Mon, 03 Aug 2026 12:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Bitcoin</category>
-      <category>Hardware Wallet</category>
-      <category>Cryptography</category>
-      <category>Coldcard</category>
-      <category>Entropy</category>
-      <description>A firmware integration error made Coldcard hardware wallets fall back to a deterministic software PRNG when generating seeds, and attackers drained about 1,370 bitcoin over three days.</description>
-      <content:encoded><![CDATA[<p>Forty-one minutes. That's how long it took, on July 30, to empty roughly 1,196 Coldcard-generated bitcoin addresses in the first wave of what became a three-day drain totaling about 1,370 BTC, worth roughly $88 million at the time. Galaxy Research and Chainalysis tracked the movement; the pattern was too clean to be phishing.</p>
-<p>The cause is one of those bugs that looks like nothing in a code review. Coldcard's firmware calls into libngu for randomness, and libngu guarded its hardware RNG path with `#ifndef MICROPY_HW_ENABLE_RNG`. That tests whether the macro is defined, not whether it's set to anything useful. The macro was defined and set to zero, so the preprocessor took the fallback branch, and `ngu.random` quietly served output from MicroPython's Yasmarang generator instead of the STM32's hardware entropy source sitting right there on the die.</p>
-<p>Yasmarang is a fine non-cryptographic PRNG. It is not a seed generator. The firmware did XOR two Yasmarang streams together, but the second instance was initialized from hardcoded public constants, and XORing two deterministic streams with known starting states gets you a deterministic stream. Block's bitcoin engineering and security teams, who found the flaw and reported it to Coinkite on July 30, put the practical result at roughly 40 bits of security on Mk3 devices and around 72 bits on Mk4, Mk5, and Q. The standard those seeds were supposed to hit is 128.</p>
-<p>Forty bits is a laptop weekend. Seventy-two is expensive but not theoretical for anyone who can watch the blockchain and see how much is waiting at the end.</p>
-<p>Coinkite has shipped fixed firmware: 4.2.0 and later for Mk2 and Mk3, 5.6.0 for Mk4 and Mk5, 1.5.0Q for Q. It also destroyed devices in its shipping queue that carried affected code and emailed customers with migration instructions. Destroying inventory is the right call and an expensive one, and the company deserves credit for not quietly rotating it into stock.</p>
-<p>The harder question is how this survived years of firmware releases in a product whose entire pitch is that you don't have to trust anything else in the chain. Coldcard is air-gapped, open source, and audited by a genuinely adversarial user base. None of that catches a preprocessor directive that fails open into a working-looking random number generator. Deterministic output is the one class of crypto bug that looks completely healthy from the outside.</p>
-<p>If you hold a Coldcard, the fix is not just a firmware update. Update, then generate a brand new seed on the patched firmware, then move your funds to the new wallet. Keep the old backup somewhere safe until the transfer confirms. A seed produced by broken entropy stays broken no matter what firmware the device is running now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Take Over N-central Servers After N-able&apos;s First Fix Fell Short</title>
-      <link>https://sabr-labs.com/article/nable-ncentral-cve-2026-18577-incomplete-patch-exploited-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nable-ncentral-cve-2026-18577-incomplete-patch-exploited-august-2026</guid>
-      <pubDate>Mon, 03 Aug 2026 12:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>N-able</category>
-      <category>RMM</category>
-      <category>MSP</category>
-      <category>Vulnerability</category>
-      <category>Active Exploitation</category>
-      <description>N-able&apos;s hotfix for a critical N-central authentication bypass left an alternate path open, and attackers are using it to seize MSP consoles and reach downstream endpoints.</description>
-      <content:encoded><![CDATA[<p>Managed service providers spent the weekend yanking their N-central consoles off the public internet. The reason is about as bad as it gets for a remote monitoring and management platform: attackers are logging in with full administrative rights and no credentials at all.</p>
-<p>The first flaw, CVE-2026-18556, was an authentication bypass that N-able moved to patch after it began investigating a run of unusual licensing errors on July 31. That patch turned out to be incomplete. CVE-2026-18577 covers the alternate path attackers found to the same outcome, classified as authentication bypass through an alternate channel, and it affects N-central builds before 2026.3.1.7. Both cloud-hosted and on-premises deployments are in scope. The working hotfix landed on August 2.</p>
-<p>What happens after the login is the part that should worry anyone running this stack. Huntress, which published a rapid response on August 3, documented attackers pushing scripts and jobs down to managed endpoints, opening Take Control remote sessions into customer systems, and installing Cloudflare tunnels as persistent services so they keep access even after the console is cleaned up. They also modified roles, accounts, and security policies inside N-central itself.</p>
-<p>That chain is why an RMM bug is not the same as a garden-variety appliance bug. Compromising a firewall gets you one network. Compromising an MSP's N-central instance gets you every network that MSP manages, with a legitimate agent already installed on every box and a sanctioned reason to be running remote sessions at 3 a.m.</p>
-<p>N-able says a limited number of customers were affected. It has declined to say how many, or which ones. That is a defensible position while an investigation is live, but paired with a fix that didn't hold on the first attempt, it leaves defenders doing their own math about whether they're in the blast radius. Finland's national cyber security center thought the risk was serious enough to issue its own advisory on August 2.</p>
-<p>If you run N-central, the order of operations is straightforward. Get to build 2026.3.1.7. Enforce MFA on every console account. Put the console behind a firewall or VPN rather than leaving it reachable from anywhere. Then go hunting, because patching does not evict anyone who already got in.</p>
-<p>Huntress published indicators worth grepping for: connections from 173.249.252.200, 87.249.138.34, and 37.19.210.32, plus callbacks to Synology QuickConnect and synology.me hostnames including mousears.synology.me. Several of the source addresses are commercial VPN exit nodes, so treat them as leads rather than attribution. Check your remote-control session logs against your own change tickets, and assume anything you can't account for was someone else.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>NHTSA Clears Zoox to Charge for Rides in a Car With No Steering Wheel</title>
-      <link>https://sabr-labs.com/article/zoox-nhtsa-exemption-steering-wheel-free-robotaxi-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/zoox-nhtsa-exemption-steering-wheel-free-robotaxi-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Autonomous Vehicles</category>
-      <category>Zoox</category>
-      <category>NHTSA</category>
-      <category>Regulation</category>
-      <category>Amazon</category>
-      <description>The first federal commercial exemption for a purpose-built robotaxi waives eight motor vehicle safety standards and caps Zoox at 2,500 vehicles a year for two years.</description>
-      <content:encoded><![CDATA[<p>Federal safety rules have assumed a steering wheel since there were federal safety rules. On July 30, NHTSA granted Amazon-owned Zoox a temporary exemption from eight of those standards and published the decision in the Federal Register the same day, clearing the company to put vehicles with no wheel and no pedals into commercial service.</p>
-<p>This is the first NHTSA commercial exemption for a purpose-built robotaxi. Earlier waivers covered testing. This one covers charging passengers money.</p>
-<p>The scope is deliberately bounded: up to 2,500 vehicles per year, for two years. That's a pilot dressed as an approval, and reasonably so. Zoox's vehicle isn't a retrofitted sedan with a sensor rack bolted to the roof. It's a bidirectional carriage-style pod with no front and no back, built from scratch for a use case where nobody in the cabin is responsible for anything.</p>
-<p>The list of waived standards is the funniest and most revealing part of the filing. Among the eight are rules governing windshield defrosting and light vehicle braking systems, written for a machine with a driver looking through glass and pressing a pedal. The federal rulebook doesn't have a category for what Zoox built, so the agency granted permission by subtraction. It waived the parts that don't apply rather than writing standards that do.</p>
-<p>That distinction matters. An exemption is not a finding that the vehicle is safe. It's a finding that the existing tests can't tell us either way, and that the agency is comfortable letting a capped fleet operate while everyone finds out. NHTSA administrator Jonathan Morrison framed it as balanced regulation, which is a description of the posture rather than an argument for it.</p>
-<p>The federal hurdle also wasn't the tall one. Zoox still needs Nevada and California regulators to sign off before it can collect fares, with Las Vegas targeted first and San Francisco behind it. Testing is already running in Atlanta, Dallas, Los Angeles, Phoenix, Seattle, and Washington, D.C., with Miami and Austin on the list. Every one of those markets has its own permitting process and its own city council.</p>
-<p>Waymo got here by making a Jaguar drive itself. Zoox is arguing the vehicle should be redesigned around the absence of a driver, and it just got the first federal permission slip to sell that argument to passengers. Two years and 5,000 vehicles is enough runway to find out whether the safety case holds, and short enough that the agency can walk it back.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>IonQ Just Bought a Chip Fab, and That&apos;s a Stranger Move Than It Sounds</title>
-      <link>https://sabr-labs.com/article/ionq-skywater-acquisition-closed-quantum-foundry-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ionq-skywater-acquisition-closed-quantum-foundry-august-2026</guid>
-      <pubDate>Sun, 02 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Quantum Computing</category>
-      <category>Semiconductors</category>
-      <category>IonQ</category>
-      <category>M&amp;A</category>
-      <category>Supply Chain</category>
-      <description>The $1.8 billion SkyWater acquisition closed July 31, giving IonQ its own domestic foundry for ion trap chips and ending the trapped-ion industry&apos;s shared dependence on a single German supplier.</description>
-      <content:encoded><![CDATA[<p>IonQ closed its acquisition of SkyWater Technology on July 31, a $1.8 billion cash-and-stock deal first struck back in January. SkyWater shareholders took $15.00 in cash plus 0.4883 IonQ shares for each share they held. The foundry stays intact as a wholly owned subsidiary under its own name and keeps serving its existing outside customers.</p>
-<p>The strategic logic is real, and it's narrower than the press release language about vertical integration suggests. Trapped-ion quantum computers need custom ion trap chips, and essentially every serious trapped-ion company, IonQ's closest competitor Quantinuum included, has those chips fabricated by Infineon in Germany. That's one supplier, one jurisdiction, and one queue for the entire architecture.</p>
-<p>IonQ just removed itself from that queue.</p>
-<p>SkyWater is the largest semiconductor foundry operating exclusively inside the United States and holds Defense Department trusted-foundry accreditation. For a company selling quantum systems to national labs and defense customers, owning an accredited domestic fab is worth something beyond supply chain tidiness. It's a procurement unlock.</p>
-<p>Now the harder question. IonQ has just taken on a merchant foundry, which is a capital-hungry, thin-margin manufacturing business with its own customer commitments and its own capex treadmill. Quantum hardware companies burn cash for a living. Adding fab operations to that burn is a bet that owning the process node matters more than the balance sheet strain, and it will be years before anyone can tell whether that was right.</p>
-<p>The regulatory path wasn't clean either. Bloomberg reported the FTC was split on the deal and let it close without imposing changes, which is a different thing from approving it enthusiastically. A divided commission clearing a vertical acquisition in a strategically sensitive sector is the kind of outcome that gets revisited if the politics shift.</p>
-<p>For everyone else building trapped-ion machines, the calculus changed on Friday. Their chip supplier is now one country away and their main rival owns a fab. Whether that produces a scramble for second-source capacity or just more Infineon orders is the thing to watch through the back half of the year.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
