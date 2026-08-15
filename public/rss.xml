@@ -6,30 +6,9 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2026 13:15:40 GMT</lastBuildDate>
-    <pubDate>Sat, 15 Aug 2026 13:15:40 GMT</pubDate>
+    <lastBuildDate>Sat, 15 Aug 2026 13:23:27 GMT</lastBuildDate>
+    <pubDate>Sat, 15 Aug 2026 13:23:27 GMT</pubDate>
     <ttl>60</ttl>
-    <item>
-      <title>Cisco Refreshes the CCNP Security Core on August 27. Decide This Week.</title>
-      <link>https://sabr-labs.com/article/cisco-ccnp-security-scor-350-701-v2-august-27-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ccnp-security-scor-350-701-v2-august-27-2026</guid>
-      <pubDate>Sat, 15 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>CCNP Security</category>
-      <category>Certification</category>
-      <category>CCIE</category>
-      <category>Exam Updates</category>
-      <description>SCOR 350-701 moves to v2.0 and three other Security exams get new versions on August 27, with August 26 the last day to sit the current editions.</description>
-      <content:encoded><![CDATA[<p>If you've been grinding SCOR for the last few months, you have eleven days to decide whether to sit it or restart.</p>
-<p>Cisco is rolling four CCNP Security exam updates live on August 27, 2026. The big one is 350-701 SCOR, going from v1.1 to v2.0. Alongside it, 300-710 SNCF and 300-715 SISE both step from v1.1 to v1.2, and 300-740 SCAZT moves to v2.0. August 26 is the last day to test on the outgoing versions across all four.</p>
-<p>SCOR is the piece that makes this more than a routine blueprint refresh. It's the core exam for CCNP Security and it's also the qualifying written exam on the CCIE Security path, so a version bump there ripples through two certifications at once. Cisco published this as a combined CCNP and CCIE Security program update for exactly that reason.</p>
-<p>The direction of the changes isn't hard to read from the exam names. Cisco's Security track has spent the past year pulling in secure service edge, ZTNA, and identity work through ISE, and SCAZT is literally titled around designing secure cloud access for users and endpoints. A v2.0 core in that context means the blueprint is catching up to how Cisco now sells security, which is as cloud-delivered access control rather than a stack of appliances.</p>
-<p>So, the practical call. If you're within striking distance on v1.1, book the seat and go. You know the blueprint, your practice material matches the exam, and the version you pass on stops mattering the moment you pass it. Cramming three weeks of study into eleven days to beat a deadline is a different story, and it's usually a bad trade. A rushed fail on the 25th costs you the fee and the retake wait, and you end up studying v2.0 anyway.</p>
-<p>If you haven't started, start on v2.0 and don't look back. Buying v1.1 material now means buying content with a two-week shelf life.</p>
-<p>One thing to actually verify before you commit either way: check the published blueprint diff on Cisco's site rather than trusting a third-party summary of what changed. Certification content farms have been publishing confident v2.0 topic lists for months, and a fair number of them are guessing. Cisco U. and the Cisco Learning Partners have the updated training aligned to the new versions.</p>]]></content:encoded>
-    </item>
     <item>
       <title>Claude Now Watermarks Its Text, Including When It Only Fixes Your Typos</title>
       <link>https://sabr-labs.com/article/anthropic-claude-text-watermarking-eu-ai-act-c2pa-august-2026</link>
@@ -52,7 +31,7 @@
 <p>Credit where it's due: this is a real compliance implementation shipped on a real deadline, not a research paper about a future capability, and doing it across cloud partner deployments was the harder engineering path. The failure mode to watch for isn't the technology. It's the first institution that treats a watermark hit as proof of misconduct.</p>]]></content:encoded>
     </item>
     <item>
-      <title>OpenAI Puts GPT-5.6 Sol on Cerebras Wafers at 750 Tokens a Second</title>
+      <title>OpenAI Turns Its Cerebras Speed Run Into a Tier You Still Can&apos;t Buy</title>
       <link>https://sabr-labs.com/article/openai-ultrafast-cerebras-gpt-5-6-sol-750-tokens-august-2026</link>
       <guid isPermaLink="true">https://sabr-labs.com/article/openai-ultrafast-cerebras-gpt-5-6-sol-750-tokens-august-2026</guid>
       <pubDate>Sat, 15 Aug 2026 11:45:00 GMT</pubDate>
@@ -63,14 +42,14 @@
       <category>AI Infrastructure</category>
       <category>Inference</category>
       <category>Semiconductors</category>
-      <description>The new Ultrafast API tier runs the same model up to 14 times quicker than standard inference by moving it off GPUs entirely, though OpenAI hasn&apos;t published a price or a general availability date.</description>
-      <content:encoded><![CDATA[<p>Seven hundred fifty output tokens per second. That's the ceiling OpenAI is quoting for Ultrafast, a new API service tier for GPT-5.6 Sol that runs on Cerebras hardware instead of GPUs, and it's roughly 14 times what the standard tier delivers.</p>
-<p>The important detail is that this is not a smaller or distilled model. OpenAI and Cerebras both say Ultrafast runs the same GPT-5.6 Sol with the same intelligence as Standard. The only variable being changed is the silicon underneath, which makes this one of the cleaner public demonstrations of how much of an LLM's latency is an architecture problem rather than a model problem.</p>
-<p>Cerebras builds Wafer-Scale Engine chips that keep 44 GB of SRAM on the die itself. Token generation is memory-bandwidth bound, not compute bound, and a conventional GPU spends most of its time waiting on weights to arrive from HBM. Put the weights in on-chip SRAM and that wait mostly disappears. The tradeoff is that 44 GB is not a lot of room for a frontier model, which is why wafer-scale inference has historically been a niche play rather than the default.</p>
-<p>This isn't a fresh relationship. The two companies signed a multiyear agreement in January to deploy up to 750 megawatts of Cerebras inference systems in stages through 2028, a deal Reuters put at north of $10 billion. Ultrafast is the first customer-visible output of that spend.</p>
-<p>Now the parts OpenAI didn't say. There's no price. Fast mode currently lists at $10 per million input tokens and $60 per million output, and OpenAI has explicitly not committed to those numbers or those guarantees applying to Ultrafast. There's also no general availability date. Access is a limited preview for a hand-picked set of customers, expanding "as capacity grows," which is the standard phrasing for a product gated by how much hardware is actually racked.</p>
-<p>That combination puts this closer to a capacity milestone than a launch. A tier you cannot buy at a price you cannot see is a signal to investors and a recruiting tool for design partners, not something you build a roadmap on.</p>
-<p>Still, the speed is real and it changes what a certain class of application can do. Voice agents, live coding assistance, and anything where a human is waiting on the cursor have been shaped around the assumption that frontier-model latency is a fixed cost. If 750 tokens per second becomes generally purchasable at a sane price, a lot of interfaces that were designed to hide latency stop needing to.</p>]]></content:encoded>
+      <description>Ultrafast makes GPT-5.6 Sol on Cerebras hardware an official API service tier, but OpenAI published no price and no general availability date alongside it.</description>
+      <content:encoded><![CDATA[<p>The 750 tokens per second figure isn't news. OpenAI has been quoting it since July, when it started serving GPT-5.6 Sol on Cerebras wafer-scale hardware. What changed this week is that the arrangement got a name, a spot in the API, and a set of numbers to compare itself against.</p>
+<p>The tier is called Ultrafast, and it's in limited preview. OpenAI frames it as up to 14 times the speed of Standard processing on the same model, with the same intelligence. That last part matters. This isn't a distilled or quantized variant trading accuracy for latency. It's the identical model with different silicon underneath, which makes the comparison a fairly clean measurement of how much of an LLM's response time is an infrastructure choice.</p>
+<p>Cerebras published the engineering side. Its Wafer-Scale Engine keeps 44 GB of SRAM on the die, so the weights sit next to the compute instead of across a memory bus. Token generation is bandwidth-bound rather than compute-bound, and a conventional GPU spends much of its time waiting on data from HBM. Remove that wait and throughput jumps. The constraint is that 44 GB is a small budget for a frontier model, which is why this approach spreads a model across a large number of wafers and why it has stayed a specialty deployment rather than the industry default.</p>
+<p>None of that is a surprise if you followed the January agreement, in which OpenAI committed to deploying up to 750 megawatts of Cerebras inference systems in stages through 2028. Reuters put the value above $10 billion. Ultrafast is the first thing customers can point at from that spend.</p>
+<p>Now the gaps. OpenAI did not publish a price. Its Fast tier lists at $10 per million input tokens and $60 per million output, and OpenAI has pointedly not said that those rates or those latency guarantees carry over to Ultrafast. There's no general availability date either. Access goes to a selected group and widens "as capacity grows," which is how you describe a product limited by how many wafers are physically installed.</p>
+<p>Read that together and the announcement is a capacity update wearing a product launch's clothes. The performance was demonstrated a month ago. What OpenAI is signaling now is that enough hardware is racked to start onboarding design partners, and it's reserving the right to price the tier once it knows what supply looks like.</p>
+<p>The speed itself is worth taking seriously even if you can't buy it yet. A whole category of interface design exists to disguise model latency: streaming placeholders, optimistic UI, chunked responses that arrive before the model has finished thinking. If sub-second frontier responses become routinely purchasable, a lot of that scaffolding turns into dead weight. That's a real shift for anyone building voice agents or live coding tools, and it's the thing to plan for rather than the throughput number.</p>]]></content:encoded>
     </item>
     <item>
       <title>Trump Memo Clears Vetted US Firms to Hack Foreign Criminal Networks</title>
@@ -1053,6 +1032,27 @@
 <p>That's what makes this a shared hosting problem rather than a single-server problem. On a machine with 300 customer accounts, any one of those 300 can reach every other customer's data. The isolation model that shared hosting sells is exactly the thing that breaks here, and the blast radius is whoever else happened to buy space on the same hardware.</p>
 <p>All supported versions of cPanel and WHM are affected, along with WP Squared. The patched builds are 11.110.0.137, 11.118.0.71, 11.126.0.78, 11.134.0.48 and 11.136.0.32, plus WP Squared 138.1.6. Credit for the report goes to researcher Vincent55 Yang, and CISA's enrichment recorded no observed exploitation as of August 4.</p>
 <p>No observed exploitation is a snapshot, not a forecast, and this one is going to be easy to weaponize once someone writes it up properly. Anyone can rent an account on a target host for a few dollars a month. If you run cPanel, take the update tonight rather than at the end of your maintenance window.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A GitHub Issue Was Enough to Make Google&apos;s ADK Bot Attack Its Own CI</title>
+      <link>https://sabr-labs.com/article/google-adk-python-workflows-deleted-adk-bot-privilege-escalation-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-adk-python-workflows-deleted-adk-bot-privilege-escalation-august-2026</guid>
+      <pubDate>Wed, 05 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>AI Agents</category>
+      <category>GitHub Actions</category>
+      <category>CI/CD</category>
+      <category>Prompt Injection</category>
+      <description>Google quietly removed three agentic workflows from its Agent Development Kit repository after Pillar Security showed that an outsider could steer the trusted adk-bot account into triggering a privileged auto-fix job.</description>
+      <content:encoded><![CDATA[<p>The trick wasn't breaking into Google's CI. It was getting Google's own bot to do it on your behalf.</p>
+<p>Pillar Security disclosed the chain this week, and it's a clean example of a confused deputy problem wearing new clothes. Google's Agent Development Kit repository, google/adk-python, ran three automation workflows: issue-analyze.yml, issue-fix.yml and pr-analyze.yml. Anyone could open a public issue. That issue triggered issue-analyze.yml, which handed the text to Google's Antigravity agent for analysis, and the agent posted its findings back to the thread as the adk-bot account.</p>
+<p>adk-bot is a collaborator. And the privileged workflow, issue-fix.yml, would execute a /adk-issue-fix command when it saw one posted by an owner, member or collaborator.</p>
+<p>You can see the shape of it. Write an issue whose text steers the analyzing agent into emitting /adk-issue-fix in its comment, and the privileged workflow fires. The permission check wasn't broken exactly. It checked who posted the command and got the right answer: a collaborator did. What it never checked was whether that collaborator had been driven there by an untrusted stranger. Pillar's proof of concept reached arbitrary code execution on the CI runners, which put the bot's PAT, Google API keys and service-account credentials in reach.</p>
+<p>The timeline is the part that bothers me. Commit metadata puts the fix at June 9. A researcher confirmed the workflows were gone on July 2. Google acknowledged the fix on July 21. The public writeup landed August 4. Nearly two months passed between the silent deletion and anyone outside telling downstream users what had happened, and ADK is a kit thousands of teams copied wholesale, workflow files included.</p>
+<p>That's the real exposure. Google fixed Google's repo by deleting the workflows. It didn't fix the copies. If you forked adk-python at 2.2.0 or earlier, or lifted its GitHub Actions setup as a starting point for your own agentic automation, those YAML files are still sitting in your repository doing exactly what they did in Google's.</p>
+<p>The general lesson is worth more than the specific bug: when an agent posts under a privileged identity, every input that agent reads is an input to your permission model. Treat comments written by your own bots as untrusted, or stop letting bot output trigger privileged jobs.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
