@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2026 13:23:27 GMT</lastBuildDate>
-    <pubDate>Sat, 15 Aug 2026 13:23:27 GMT</pubDate>
+    <lastBuildDate>Sun, 16 Aug 2026 13:19:16 GMT</lastBuildDate>
+    <pubDate>Sun, 16 Aug 2026 13:19:16 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Qwen3.8-27B Landed With Vision, 262K Context and Apache 2.0</title>
+      <link>https://sabr-labs.com/article/qwen38-27b-apache-open-weights-multimodal-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/qwen38-27b-apache-open-weights-multimodal-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Alibaba</category>
+      <category>Qwen</category>
+      <category>Open Weights</category>
+      <category>Multimodal</category>
+      <category>Local Inference</category>
+      <description>Alibaba shipped the small open-weight model it promised, and the license plus the size matter considerably more than the benchmark table attached to it.</description>
+      <content:encoded><![CDATA[<p>When Alibaba put Qwen3.8-Max on the table at the start of the month, it mentioned a smaller sibling going open. That model showed up on Hugging Face on August 14, and it's more than the consolation prize the phrasing implied.</p>
+<p>Qwen3.8-27B is 27 billion parameters across 64 layers, with a vision encoder handling native image and video input, 262,144 tokens of native context, and Apache 2.0 weights. Not a research license, not a custom community license with a user-count clause. Apache 2.0, the one your legal team already knows how to approve.</p>
+<p>The architecture is where the context window comes from. Layers alternate between Gated DeltaNet blocks, which are linear attention and therefore cheap over long sequences, and standard Gated Attention blocks, in a repeating three-to-one pattern. That hybrid is the difference between a quarter-million tokens of context being a spec sheet claim and being something you can actually afford to run on hardware you own. The "extensible to 1M" line in the model card is a context-extension technique rather than a native property, and should be treated as such until someone measures recall at that length.</p>
+<p>Alibaba reports 61.7 on SWE-bench Pro, 89.2 on GPQA Diamond, 73.0 on Terminal Bench 2.1, 84.3 on OSWorld-Verified and 64.8 on WebArena-Verified. Those are strong for the size class. They are also self-reported agentic scores, which at this point carry roughly the informational content of a press release, because the harness, the retry policy and the scaffolding around the model account for enormous swings on exactly these tests and none of it gets published alongside the number.</p>
+<p>GPQA Diamond at 89.2 is a good example of the problem. The test is saturated near the top, everyone clusters within a few points, and the ranking is now measuring evaluation noise. Citing it as evidence of anything is a habit worth retiring.</p>
+<p>Here's what isn't noise. A dense multimodal model in the 27B tier fits on a single high-end GPU with quantization, which means every organization that can't send data to an API just got a genuinely capable option that runs behind their own firewall. Regulated industries, government work, anyone with a data residency clause in their contracts. For that audience the license and the parameter count are the entire story and the leaderboard is decoration.</p>
+<p>Alibaba has now shipped near-frontier capability into open weights on a cadence no American lab is matching, and the strategic read is uncomfortable if you think open-weight availability shapes which models the next decade of developers actually learn to build on. Run it on your own workload before you believe any table, this one included. But download it while you're deciding.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Wants 15% of Purchases That Leave the App Store</title>
+      <link>https://sabr-labs.com/article/apple-app-store-linkout-commission-15-percent-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-app-store-linkout-commission-15-percent-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 12:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>App Store</category>
+      <category>Epic v. Apple</category>
+      <category>Antitrust</category>
+      <category>Developers</category>
+      <description>Hours after the Supreme Court refused to pause the case, Apple told a federal court it should be allowed to charge 15, 10 or 5 percent on link-out purchases that currently cost developers nothing.</description>
+      <content:encoded><![CDATA[<p>The Supreme Court declined on Thursday to pause proceedings in Apple's long-running App Store fight. Apple filed its commission proposal with the Northern District of California the same day. That sequence tells you roughly everything about how voluntary this filing was.</p>
+<p>The numbers: 15 percent on link-out purchases for standard developers, 10 percent for participants in the Video, News and Mini Apps partner programs, 10 percent on subscription renewals, and 5 percent for developers in the Small Business Program. Link-outs are the buttons inside an iOS app that send you to a website to pay, which developers have been allowed to include since a 2025 contempt ruling found Apple's previous 27 percent charge on those purchases violated the court's injunction.</p>
+<p>Right now that rate is zero. Apple takes nothing when a US developer sends a customer to their own checkout, and has taken nothing for over a year. So the proposal is not a discount from 27 percent, however much the filing would like it read that way. It's a request to reinstate a fee the court removed.</p>
+<p>Apple's argument leans on comparison. Google Play charges 20 percent on equivalent external purchases, 15 percent for special programs, 10 percent on renewals. Against that, 15 percent looks restrained, and Apple would like the court to see a company voluntarily pricing below its only real competitor.</p>
+<p>The comparison has a hole in it. Google's rate wasn't set by a court that found the company in contempt for its previous attempt at the same thing. The question in front of this judge isn't whether 15 percent is reasonable next to Android, it's whether any commission on a transaction that happens entirely on someone else's website, through someone else's payment processor, is compatible with an injunction written specifically to stop Apple from taxing that path.</p>
+<p>Developers should read the tiering carefully rather than the headline. A small studio under the Small Business Program threshold pays 5 percent, which is genuinely close to payment processing costs and hard to be furious about. A mid-size subscription business pays 10 percent on renewals forever, on infrastructure Apple isn't running. That's the tier where the money actually is, and it's the one getting the least attention.</p>
+<p>Nothing changes until the court rules. Anyone who rebuilt their checkout flow around a zero percent link-out should start modeling what 15 percent does to their margins now, because the filing makes clear Apple has no intention of leaving it at zero.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia&apos;s $10 Billion xAI Bet Is Now a $21 Billion SpaceX Stake</title>
+      <link>https://sabr-labs.com/article/nvidia-13f-spacex-stake-21-billion-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-13f-spacex-stake-21-billion-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>SpaceX</category>
+      <category>xAI</category>
+      <category>13F Filings</category>
+      <category>AI Investment</category>
+      <description>A quarterly holdings filing shows Nvidia owning roughly 122.8 million SpaceX shares, a position it never bought and that was already worth $4 billion less by the day it disclosed it.</description>
+      <content:encoded><![CDATA[<p>Nvidia's quarterly holdings filing landed on August 14 with a line item that wasn't there before: roughly 122.8 million Class A shares of SpaceX. At the June 30 mark of $170.86 a share, that's about $21 billion, and roughly a third of Nvidia's entire disclosed equity portfolio.</p>
+<p>Nvidia never bought a share of SpaceX. In January it put $10 billion into xAI. SpaceX acquired xAI in February at a reported $1.25 trillion valuation, the xAI position converted, and Nvidia woke up as one of the larger outside holders of a rocket company. On paper the bet has doubled in seven months.</p>
+<p>On paper is doing real work in that sentence. Quarterly filings are a snapshot of June 30, and SpaceX closed at $140 on August 14, the day the filing went out. Same share count, about $17.2 billion. The $21 billion headline was already roughly four billion dollars stale by the time anyone read it.</p>
+<p>The position now trails only Nvidia's Intel stake among its disclosed holdings, which produces a portfolio that is difficult to describe as diversified in any conventional sense. Nvidia's two largest equity bets are in a rocket-and-AI conglomerate and a chipmaker, and both of them buy chips from Nvidia.</p>
+<p>That's the part worth sitting with. The AI trade has spent two years generating arrangements where the same company supplies the compute, funds the buyer, and books the appreciation, and each individual deal has a perfectly reasonable explanation. Nvidia invested in xAI because xAI needed GPUs and Nvidia wanted the relationship. Fine. But when the aggregate is a supplier holding tens of billions in equity across its own customer base, the returns and the revenue stop being independent readings of how healthy the business is.</p>
+<p>None of which is an accusation of anything improper. Quarterly filings exist precisely so this is visible, and Nvidia disclosed it on schedule. It's just worth noticing that the single largest new position on the filing arrived without a purchase decision, was marked at a price that had already fallen 18 percent, and sits in a company that is also a customer. Three separate reasons to read the number carefully.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Turning On Chrome&apos;s Debugger From Inside Beats Cookie Encryption</title>
+      <link>https://sabr-labs.com/article/chrome-devtools-protocol-session-hijack-specterops-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-devtools-protocol-session-hijack-specterops-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Chrome</category>
+      <category>Session Hijacking</category>
+      <category>SpecterOps</category>
+      <category>Post-Exploitation</category>
+      <category>Detection Engineering</category>
+      <description>SpecterOps released a Beacon Object File that starts Chrome&apos;s remote debugging server inside a running browser process, handing an attacker live authenticated sessions.</description>
+      <content:encoded><![CDATA[<p>Google spent two years hardening Chrome against cookie theft. App-Bound Encryption tied the cookie database to the machine. Chrome 136 stopped honoring remote debugging flags unless you also pointed the browser at a non-default user data directory. Both changes worked, in the sense that attackers went looking for a different door.</p>
+<p>SpecterOps published that door on August 13. The research, titled "Return of the Cookie Monster," comes with a Beacon Object File called CDP-Enable-BOF that skips the command line entirely and switches on the debugging server from inside a chrome.exe or msedge.exe process that's already running.</p>
+<p>The mechanics are more surgical than the usual injection. The BOF finds the target browser process and its top-level window, locates the loaded chrome.dll or msedge.dll, resolves internal Chromium symbols using masked byte signatures, allocates remote memory for two small stubs and a context block, temporarily installs a remote window procedure so the code executes on the browser's UI thread, and from there calls Chromium's internal StartRemoteDebuggingServer on whatever port the operator asked for. It was tested against Chrome 147.0.7727.102 and Edge 147.0.3912.98 on x64.</p>
+<p>Once that port is listening, the Chrome DevTools Protocol does the rest, and it does a lot. Storage.getCookies dumps session cookies. History, bookmarks and installed extensions come out. Saved passwords can be pulled by driving the autofill workflow. Screenshots of whatever the user is looking at, on request.</p>
+<p>This is not a Chrome vulnerability and SpecterOps doesn't claim it is. You need code execution on the box first. But that framing undersells why it matters, because it defeats a control most organizations are quietly relying on. App-Bound Encryption protects cookies at rest. It has nothing to say about an attacker operating inside the authenticated browser context, where the cookies are already decrypted because the browser needs them that way. Google itself flagged the shift back in March 2025, noting a rise in attackers using remote debugging once encryption made the database route painful.</p>
+<p>So the honest read is that encrypting the cookie jar bought time, not safety. The control that actually breaks this class of attack is Device Bound Session Credentials, in Chrome 146 and later, which ties session refresh to a hardware-backed key so a stolen cookie stops being portable to the attacker's machine. If DBSC isn't on your rollout plan, this research is the argument for putting it there.</p>
+<p>For detection, the technique leaves reasonably distinctive tracks: Sysmon Event ID 8 for CreateRemoteThread against chrome.exe or msedge.exe, and Event ID 10 for process access to the same. Neither is exotic, and neither is likely to be noisy in an environment where nothing legitimate injects into browsers. Write the rule this week.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A New Mirai Fork Is Farming Routers for Proxy Traffic, Not DDoS</title>
+      <link>https://sabr-labs.com/article/evooo1bot-mirai-linux-botnet-socks5-proxy-relay-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/evooo1bot-mirai-linux-botnet-socks5-proxy-relay-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Botnet</category>
+      <category>Mirai</category>
+      <category>Linux Malware</category>
+      <category>Routers</category>
+      <category>Fortinet</category>
+      <description>Fortinet&apos;s Evooo1Bot ships 16 flood methods it barely needs, because the real product is a SOCKS relay and a credential sniffer running on your edge gear.</description>
+      <content:encoded><![CDATA[<p>Fortinet researcher Yi Ping Lin published an analysis on August 13 of a Linux botnet nobody had documented before. It's called Evooo1Bot, after a hardcoded string sitting in every binary, and it's been working internet-facing devices since July.</p>
+<p>Underneath, it's Mirai. The DDoS engine is lifted straight from the leaked source, and it carries 16 flood methods across UDP, DNS, SYN, ACK, GRE and HTTP. That part is unremarkable. Mirai forks have been recycling that code for a decade.</p>
+<p>What's bolted on around it is the interesting bit. Evooo1Bot runs a SOCKS relay module, a credential sniffer that watches for HTTP Basic Auth headers and cookies passing through the device, an SSH brute-forcer working a list of 150 username and password pairs aimed at enterprise accounts, an interactive shell, and file transfer. Command and control is encrypted and rides port 443, so it blends into whatever else is leaving the network.</p>
+<p>Look at what that combination is actually for. Flood capacity has been a commodity for years and sells for very little. Clean residential and small-business IP space does not. A compromised router that relays somebody else's traffic is worth more per month to a proxy reseller than the same router screaming UDP packets at a Minecraft server, and it draws far less attention while doing it. The DDoS engine at this point looks less like the business and more like inherited code they didn't bother to strip.</p>
+<p>The target list is broader than the usual consumer junk drawer. Routers from Alcatel, NETGEAR, Tenda, D-Link, Telesquare and Mitsubishi Electric, plus Hikvision cameras, Zyxel firewalls and D-Link NAS boxes. But the exploit arsenal also reaches Atlassian Confluence, WSO2 products, PHP-CGI and Kubernetes ingress-nginx. That last one should get your attention. This is not an IoT-only problem anymore.</p>
+<p>Persistence is thorough to the point of being obnoxious: systemd units, SysV init scripts, shell profiles, rc.local, and a cron job that re-downloads the payload every five minutes. Kill the process without finding all five and it's back before your next coffee. Twelve builds exist for different CPU architectures, which is the tell of an operator who intends to keep collecting devices rather than run one campaign and disappear.</p>
+<p>The credential sniffer deserves its own paragraph. A router sitting between users and an internal app sees any Basic Auth or session cookie that isn't wrapped in TLS, and plenty of internal tooling still isn't. If one of these landed on a branch gateway, the DDoS traffic is not your incident.</p>
+<p>Fortinet's guidance is the usual list: patch firmware, kill default credentials, turn off internet-facing management panels, replace gear the vendor stopped supporting. All correct, all things most organizations have been told for years. The one worth actually acting on is the last one. A router that hasn't had a firmware release since 2021 isn't a device you're securing, it's a device you're hoping nobody scans.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Clop Names Shell, Philips and GE in Its Windchill Extortion Round</title>
+      <link>https://sabr-labs.com/article/clop-leak-site-shell-philips-ge-windchill-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/clop-leak-site-shell-philips-ge-windchill-august-2026</guid>
+      <pubDate>Sun, 16 Aug 2026 07:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Clop</category>
+      <category>Ransomware</category>
+      <category>CVE-2026-12569</category>
+      <category>PTC Windchill</category>
+      <category>Data Extortion</category>
+      <description>The gang posted 43 victims from its PTC Windchill campaign and claims 89GB of engineering data from Shell, which says it is investigating a potential incident.</description>
+      <content:encoded><![CDATA[<p>Eighty-nine gigabytes of engineering drawings, facility test reports, site photos and project plans. That's what Clop says it pulled out of Shell, and Shell isn't saying it didn't happen.</p>
+<p>The gang dropped roughly 43 new names onto its leak site this week, and the list reads like a manufacturing conference attendee sheet: Shell, Philips, GE, Fiserv. All of them trace back to the same campaign against internet-exposed PTC Windchill and FlexPLM servers that started in June.</p>
+<p>The bug is CVE-2026-12569, a deserialization of untrusted data flaw in Windchill PDMlink and FlexPLM. NVD scores it 9.8 under CVSS 3.1 and 9.3 under 4.0, and it needs no credentials. PTC shipped fixes in advisory CS473270 with 11.0 M030 as the baseline, and CISA put it in the Known Exploited Vulnerabilities catalog back in June with a federal patch deadline of June 28.</p>
+<p>A Shell spokesperson said the company is aware of a potential incident and is working with its security teams and outside experts to investigate. That's the standard phrasing you use when you know something is wrong and haven't finished scoping it yet.</p>
+<p>The gap is the part worth staring at. Nearly two months passed between the KEV deadline and the day these names went public. Clop doesn't extort on the same timeline it exploits. It breaks in during the window between disclosure and patching, quietly copies what it can reach, then sits on the data until it's ready to negotiate. Which means "we patched in June" answers a question nobody is asking. The question is what left the building before you patched.</p>
+<p>PLM data also has a loss profile most incident response plans aren't built for. There's no consumer PII to notify about, no credit monitoring letter to send, often no regulator with jurisdiction. What's in there instead is CAD geometry, bills of materials, supplier pricing, and qualification test results, which is to say the actual instructions for building the product. That kind of theft stays quiet and shows up later in a competitor's roadmap or a state-backed manufacturing program.</p>
+<p>If you run Windchill or FlexPLM and had any internet exposure this summer, the useful work now is retrospective. Pull egress logs for June and July, hunt for JSP web shells under the Windchill install directories, and audit what service accounts did during that window. Confirming the patch is applied takes ten minutes and tells you nothing about whether you're on the next list.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Claude Now Watermarks Its Text, Including When It Only Fixes Your Typos</title>
       <link>https://sabr-labs.com/article/anthropic-claude-text-watermarking-eu-ai-act-c2pa-august-2026</link>
@@ -930,129 +1056,6 @@
 <p>Now the catch. A hardwired model is a tapeout. Fine-tune the weights and you need new silicon. Ship a new model version and you need new silicon. In a field where the frontier moves every few months and even open-weight 8B models get replaced twice a year, an inference chip with a fixed model is a bet that some workloads stabilize long enough to be worth freezing. Speech recognition, embeddings, retrieval rerankers, safety classifiers, guardrail models sitting in front of a bigger system: those things do stabilize. The chatbot everyone actually thinks about when they hear inference does not.</p>
 <p>AMD isn't buying a product line here so much as an approach and the people who built it, which is the honest reading of a deal with no disclosed price and a team folding into an existing org. Expect the ideas to show up as blocks inside future Instinct parts before they show up as a standalone hardwired accelerator you can order.</p>
 <p>It's also a reasonable read on where AMD thinks it can compete. Beating Nvidia at general-purpose training silicon has not gone well for anyone. Beating it on cost per token for a narrow, high-volume inference job is a smaller target with a much clearer shot at it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ransom Cartel&apos;s Creator Got 16 Years and Never Ran an Attack</title>
-      <link>https://sabr-labs.com/article/ransom-cartel-maksim-silnikau-16-year-sentence-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ransom-cartel-maksim-silnikau-16-year-sentence-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Ransom Cartel</category>
-      <category>Law Enforcement</category>
-      <category>REvil</category>
-      <category>Cybercrime</category>
-      <description>Maksim Silnikau built the affiliate program, supplied the ransomware, and negotiated the payments, and a Virginia court sentenced him for all of it on August 5.</description>
-      <content:encoded><![CDATA[<p>Maksim Silnikau didn't break into the medical technology startup that lost two months of operations in 2022. He didn't touch the law firms hit in May 2023 either. He built the thing that did, recruited the people who used it, and took a cut.</p>
-<p>A federal judge in Alexandria, Virginia sentenced the 40-year-old Belarusian to 16 years on August 5 on charges including conspiracy and aggravated identity theft. Prosecutors tied Ransom Cartel to at least 18 companies between 2021 and 2023, roughly $6.7 million in identified losses, and another $5.2 million in extortion attempts that didn't land. The law firm intrusions alone carried demands between $125,000 and $300,000 apiece and cost victims about $2.2 million.</p>
-<p>Ransom Cartel launched in December 2021 with code that overlapped noticeably with REvil, which was never really in dispute. Silnikau ran it as a service: he supplied the encryptor and stolen credentials, ran the affiliate site, ranked the affiliates, handled the negotiation with victims, and pushed payments through mixers to split the revenue. Under aliases including "J.P. Morgan" and "lansky" he'd been a fixture on Russian-speaking forums since 2005.</p>
-<p>The ransomware is the late chapter, not the whole book. A separate District of New Jersey indictment charges Silnikau and two co-defendants over the Angler exploit kit and a malvertising operation that ran from October 2013 to March 2022, pushing scareware and locker malware to millions of users. Angler was the dominant exploit kit of its era. The UK's National Crime Agency put its annual take at around $34 million.</p>
-<p>He was arrested in Spain in July 2023, then fled while extradition was pending and got picked up trying to cross from Poland into Belarus. Poland sent him to the Eastern District of Virginia.</p>
-<p>Sixteen years is a real number, and it lands on someone who spent two decades treating extortion as a product management job. It also lands on one person out of a business model that hasn't slowed down. The affiliates who did the actual intrusions mostly aren't in custody, and the tooling they rented moved to other panels within weeks of the 2023 arrest.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>You Don&apos;t Run Open vSwitch. Your Kernel Will Load It Anyway.</title>
-      <link>https://sabr-labs.com/article/ovswrap-cve-2026-64531-open-vswitch-kernel-local-root-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ovswrap-cve-2026-64531-open-vswitch-kernel-local-root-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Linux Kernel</category>
-      <category>CVE-2026-64531</category>
-      <category>Privilege Escalation</category>
-      <category>Open vSwitch</category>
-      <category>Patch Management</category>
-      <description>OVSwrap turns an ordinary local account into root on most default Linux installs, and a public exploit ships with prebuilt offsets for roughly 800 kernel builds.</description>
-      <content:encoded><![CDATA[<p>The precondition list for OVSwrap is the story. You do not need Open vSwitch configured. You do not need ovs-vswitchd running, or a bridge, or CAP_NET_ADMIN, or a privileged container. You need a normal user account on the box.</p>
-<p>CVE-2026-64531 is a length-field wrap in the kernel's Open vSwitch action validation path. Researcher Asim Manizada disclosed it on July 28. When the kernel builds a nested CLONE action containing hundreds of conntrack sub-actions, the 16-bit Netlink length field rolls past 65,535, and the parser picks back up inside bytes the attacker supplied. Those bytes then get validated and executed as legitimate OVS actions. From there it's kernel pointer leaks, arbitrary reads, and a targeted write.</p>
-<p>CVSS puts it at 7.8, which undersells it. The published proof of concept chains the primitives into a full credential-corruption path that writes a sudoers entry and hands back a root shell, and it ships with prebuilt records for roughly 800 exact x86-64 kernel builds. That is not a research artifact. That is a tool.</p>
-<p>The unsafe assignment has been sitting in the kernel for about thirteen years. A March 2025 change is what made it reachable, which is the usual shape of these: old code, new path, nobody re-derived the invariant.</p>
-<p>Affected by default: AlmaLinux 9 and 10, Debian 12 and 13, Fedora 42 through 44, Ubuntu 22.04 and later, Alpine 3.22 through 3.24, and about fifteen more. Upstream fixes landed July 24 in 5.15.212, 6.1.178, 6.6.145, 6.12.97, 6.18.40 and 7.1.5. If you're on 6.13 through 6.17, 6.19, or 7.0, those trees are end of life and no fix is coming, so the upgrade isn't optional.</p>
-<p>If you can't reboot into a patched kernel today, block the module. Writing 'install openvswitch /bin/false' into a file under /etc/modprobe.d/ stops the on-demand load that makes this reachable in the first place, and unless you're actually running OVS networking, nothing breaks. Live patches for the Enterprise Linux 9 family went out July 30 for anyone who buys that.</p>
-<p>Local privilege escalation gets treated as a second-tier problem because it needs a foothold first. On a shared build runner, a CI container host, or any multi-tenant box where a web app runs as its own unprivileged user, that foothold is the cheap part.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Gives Federal Agencies Three Days to Patch TeamCity</title>
-      <link>https://sabr-labs.com/article/teamcity-cve-2026-63077-cisa-kev-active-exploitation-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/teamcity-cve-2026-63077-cisa-kev-active-exploitation-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>JetBrains</category>
-      <category>TeamCity</category>
-      <category>CVE-2026-63077</category>
-      <category>CISA KEV</category>
-      <category>CI/CD</category>
-      <description>CVE-2026-63077 went from &quot;no known exploitation&quot; to the KEV catalog in nine days, and CISA set an August 8 deadline instead of the usual three weeks.</description>
-      <content:encoded><![CDATA[<p>Nine days. That's how long it took CVE-2026-63077 to go from a JetBrains advisory that said nobody was exploiting it to a CISA catalog entry that says somebody is.</p>
-<p>CISA added the TeamCity flaw to its Known Exploited Vulnerabilities catalog on August 5 and gave Federal Civilian Executive Branch agencies until August 8 to patch or pull the servers offline. Three days. The standard window under the binding operational directive is closer to three weeks, and CISA reserves the short clock for bugs it thinks are being used right now against targets that matter.</p>
-<p>The vulnerability itself we covered when JetBrains published the advisory on July 27. It's a deserialization flaw in the agent polling protocol, CVSS 9.8, and it lets anyone who can reach a TeamCity On-Premises server over HTTP execute operating system commands as the server process. No credentials, no user interaction. Every on-prem version is affected. Fixes are in 2025.11.7 and 2026.1.3, and there's a security patch plugin that works back to 2017.1 for anyone who can't move versions this week. TeamCity Cloud was never in scope.</p>
-<p>What CISA hasn't said is who's doing the exploiting or how many servers have fallen. The catalog entry is deliberately thin on that, which is normal, and neither JetBrains nor the firms tracking this have published victim counts or indicators. So the honest state of knowledge is: confirmed in the wild, scale unknown.</p>
-<p>Patching is the easy half. A TeamCity server holds deploy keys, signing credentials, cloud tokens, and the environment variables every pipeline needs to reach production. If an attacker had command execution on that box for any window at all, they have those secrets, and upgrading the binary does exactly nothing about it. Rotate anything the server could read, then go look at your build history for jobs nobody scheduled.</p>
-<p>The 2024 TeamCity authentication bypass followed the same arc, and internet-exposed instances were being backdoored before most teams finished reading the advisory. Two years later the shape of the problem hasn't changed: build servers sit on the internet because agents need to reach them, they run versions nobody wants to touch mid-sprint, and they're worth more to an attacker than most of the applications they build.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Three CCNP Security Concentration Exams Retire on August 26</title>
-      <link>https://sabr-labs.com/article/cisco-ccnp-security-scor-350-701-v2-svpn-retirement-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ccnp-security-scor-350-701-v2-svpn-retirement-august-2026</guid>
-      <pubDate>Wed, 05 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>CCNP Security</category>
-      <category>Certification</category>
-      <category>SCOR 350-701</category>
-      <category>Career</category>
-      <description>Cisco moves SCOR 350-701 to v2.0 on August 27 and permanently retires the SESA, SWSA and SVPN concentration exams, leaving current candidates three weeks to test on the version they studied for.</description>
-      <content:encoded><![CDATA[<p>If you've been grinding SVPN, stop reading the blueprint and go book the exam. August 26 is the last day it exists.</p>
-<p>Cisco is refreshing the CCNP Security track on August 27, and three concentration exams don't survive the transition: 300-720 SESA (email security), 300-725 SWSA (web security appliance) and 300-730 SVPN (VPN solutions). They're retired, not replaced. The core exam, 350-701 SCOR, goes from v1.1 to v2.0 the same day. Two concentrations get updated rather than killed: 300-710 SNCF and 300-715 SISE both move from v1.1 to v1.2.</p>
-<p>The last day to test on any current version is August 26. The first day for the new ones is August 27. There's no overlap window, which is the part that catches people out.</p>
-<p>SVPN is the loss worth complaining about. It was the one exam in the track that made you actually understand IKEv2, DMVPN and FlexVPN rather than clicking through a management console, and plenty of engineers took it specifically for that. Cisco's direction of travel is toward SASE and SSE, where the tunnel is somebody else's problem, so the retirement is coherent with the strategy. It still removes the deepest protocol exam in the security portfolio.</p>
-<p>What's coming in is roughly what you'd guess: Security Cloud Control, Splunk integration, AI-assisted threat intelligence, Zero Trust architecture and SASE/SSE. SNCF picks up more troubleshooting depth. SISE leans harder into identity-driven policy, BYOD lifecycle and posture. This is Cisco reorganizing the exams around the products it's actually selling in 2026, which is what certification refreshes always are.</p>
-<p>So what do you do? If you're within a few weeks of ready on any current version, test before August 26. A pass on v1.1 counts toward CCNP Security exactly the same as a pass on v2.0, and you'll be studying material that has years of accumulated books, labs and forum threads behind it. If you're more than a month out, skip the scramble and start on v2.0. Cramming toward a hard deadline on a version you're not prepared for is how people burn an exam fee and their confidence in the same afternoon.</p>
-<p>The awkward middle case is SCOR itself, since it's the core for CCNP Security and the qualifying exam for CCIE Security. If SCOR is your gateway to a CCIE attempt, the v2.0 content is going to define your written for the next several years. Passing v1.1 in the next three weeks gets you the certification, but you'll be relearning the new material anyway. That one's worth taking on the new version.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Renaming a Database in cPanel Runs Your SQL as Root</title>
-      <link>https://sabr-labs.com/article/cpanel-cve-2026-58048-database-rename-sql-root-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cpanel-cve-2026-58048-database-rename-sql-root-august-2026</guid>
-      <pubDate>Wed, 05 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>cPanel</category>
-      <category>Web Hosting</category>
-      <category>Privilege Escalation</category>
-      <category>MySQL</category>
-      <category>Vulnerability</category>
-      <description>CVE-2026-58048 lets any hosting customer with MySQL access execute commands in the database root context, affecting all supported cPanel and WHM builds.</description>
-      <content:encoded><![CDATA[<p>cPanel patched a 9.4 this week that turns one of the most boring operations in shared hosting into a full database takeover.</p>
-<p>The flaw is CVE-2026-58048, and the vendor's description is refreshingly blunt: SQL mode is not preserved when a database is renamed, causing SQL to execute in root context. Rename a database through the control panel, and whatever you've arranged to run alongside that operation runs with the database server's root privileges instead of your own account's.</p>
-<p>The bar to reach it is low. You need a valid cPanel account with the MySQL or MariaDB feature enabled, which describes essentially every hosting customer on a shared box. You don't need to already be an administrator, and you don't need to compromise anything first. You just need to be a paying tenant.</p>
-<p>That's what makes this a shared hosting problem rather than a single-server problem. On a machine with 300 customer accounts, any one of those 300 can reach every other customer's data. The isolation model that shared hosting sells is exactly the thing that breaks here, and the blast radius is whoever else happened to buy space on the same hardware.</p>
-<p>All supported versions of cPanel and WHM are affected, along with WP Squared. The patched builds are 11.110.0.137, 11.118.0.71, 11.126.0.78, 11.134.0.48 and 11.136.0.32, plus WP Squared 138.1.6. Credit for the report goes to researcher Vincent55 Yang, and CISA's enrichment recorded no observed exploitation as of August 4.</p>
-<p>No observed exploitation is a snapshot, not a forecast, and this one is going to be easy to weaponize once someone writes it up properly. Anyone can rent an account on a target host for a few dollars a month. If you run cPanel, take the update tonight rather than at the end of your maintenance window.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A GitHub Issue Was Enough to Make Google&apos;s ADK Bot Attack Its Own CI</title>
-      <link>https://sabr-labs.com/article/google-adk-python-workflows-deleted-adk-bot-privilege-escalation-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-adk-python-workflows-deleted-adk-bot-privilege-escalation-august-2026</guid>
-      <pubDate>Wed, 05 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>AI Agents</category>
-      <category>GitHub Actions</category>
-      <category>CI/CD</category>
-      <category>Prompt Injection</category>
-      <description>Google quietly removed three agentic workflows from its Agent Development Kit repository after Pillar Security showed that an outsider could steer the trusted adk-bot account into triggering a privileged auto-fix job.</description>
-      <content:encoded><![CDATA[<p>The trick wasn't breaking into Google's CI. It was getting Google's own bot to do it on your behalf.</p>
-<p>Pillar Security disclosed the chain this week, and it's a clean example of a confused deputy problem wearing new clothes. Google's Agent Development Kit repository, google/adk-python, ran three automation workflows: issue-analyze.yml, issue-fix.yml and pr-analyze.yml. Anyone could open a public issue. That issue triggered issue-analyze.yml, which handed the text to Google's Antigravity agent for analysis, and the agent posted its findings back to the thread as the adk-bot account.</p>
-<p>adk-bot is a collaborator. And the privileged workflow, issue-fix.yml, would execute a /adk-issue-fix command when it saw one posted by an owner, member or collaborator.</p>
-<p>You can see the shape of it. Write an issue whose text steers the analyzing agent into emitting /adk-issue-fix in its comment, and the privileged workflow fires. The permission check wasn't broken exactly. It checked who posted the command and got the right answer: a collaborator did. What it never checked was whether that collaborator had been driven there by an untrusted stranger. Pillar's proof of concept reached arbitrary code execution on the CI runners, which put the bot's PAT, Google API keys and service-account credentials in reach.</p>
-<p>The timeline is the part that bothers me. Commit metadata puts the fix at June 9. A researcher confirmed the workflows were gone on July 2. Google acknowledged the fix on July 21. The public writeup landed August 4. Nearly two months passed between the silent deletion and anyone outside telling downstream users what had happened, and ADK is a kit thousands of teams copied wholesale, workflow files included.</p>
-<p>That's the real exposure. Google fixed Google's repo by deleting the workflows. It didn't fix the copies. If you forked adk-python at 2.2.0 or earlier, or lifted its GitHub Actions setup as a starting point for your own agentic automation, those YAML files are still sitting in your repository doing exactly what they did in Google's.</p>
-<p>The general lesson is worth more than the specific bug: when an agent posts under a privileged identity, every input that agent reads is an input to your permission model. Treat comments written by your own bots as untrusted, or stop letting bot output trigger privileged jobs.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
