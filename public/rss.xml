@@ -6,9 +6,131 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2026 13:19:16 GMT</lastBuildDate>
-    <pubDate>Sun, 16 Aug 2026 13:19:16 GMT</pubDate>
+    <lastBuildDate>Mon, 17 Aug 2026 13:17:12 GMT</lastBuildDate>
+    <pubDate>Mon, 17 Aug 2026 13:17:12 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Wispr Raises $280 Million at a $2 Billion Valuation to Outgrow Dictation</title>
+      <link>https://sabr-labs.com/article/wispr-280-million-series-b-menlo-ventures-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wispr-280-million-series-b-menlo-ventures-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Wispr</category>
+      <category>Venture Capital</category>
+      <category>Voice Interfaces</category>
+      <category>Menlo Ventures</category>
+      <category>Startups</category>
+      <description>Menlo Ventures led a round that values the voice input startup at roughly eighty times what it raised nine months ago, betting that the company becomes an input layer rather than a better microphone button.</description>
+      <content:encoded><![CDATA[<p>Nine months ago Wispr raised $25 million. On Monday it closed $280 million at a $2 billion valuation, bringing total funding to $361 million.</p>
+<p>Menlo Ventures led. The returning list includes Notable Capital, NEA, Neo Ventures, 8VC and MVP Ventures, joined by new money from Acrew, Forerunner, Goodwater, Peak XV, Together Fund and PLUS Capital. That's a crowded cap table for a company whose flagship product, Wispr Flow, is a dictation tool.</p>
+<p>And that's the problem the round has to answer. Dictation ships free in macOS, Windows, iOS and Android. It has for years. Building a business on top of a feature the platform owners give away is a hard place to stand, and a $2 billion price implies the investors think Wispr is standing somewhere else.</p>
+<p>The company's answer has two parts. The first is accuracy. Wispr says its new Canto model cuts dictation error rates from around 30% to under 10%. That's the company's own figure and hasn't been independently benchmarked, so hold it loosely. But if it holds up in normal use, it's the difference between a tool you fight with and a tool you can actually think through. Built-in dictation fails at exactly the rate where correcting the output costs more than typing would have.</p>
+<p>The second part is hardware and scope. Wispr shipped an Android app in February, added a meeting note-taker that pulls out action items, and is expanding into India and the U.K. More interesting is a partnership around the Oasis ring for quiet dictation, plus an internal group called Wispr Interface Labs working on other ways to get intent into a computer.</p>
+<p>Read together, the bet isn't dictation at all. It's that voice becomes a primary input method for agent-driven software, where you're describing a task rather than typing a command, and that whoever owns the capture layer owns something durable. Plausible. It also requires the platform vendors to stay slow, which is not a thing they have historically agreed to do.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amodei Says the AI Backlash Is a Trust Problem the Industry Made Itself</title>
+      <link>https://sabr-labs.com/article/amodei-ai-backlash-crisis-of-trust-gavin-baker-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amodei-ai-backlash-crisis-of-trust-gavin-baker-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Dario Amodei</category>
+      <category>AI Policy</category>
+      <category>Regulation</category>
+      <category>AI Safety</category>
+      <description>Anthropic&apos;s CEO conceded that AI companies including his own have not delivered on their promises, then proposed regulation that would slow frontier labs while helping smaller competitors.</description>
+      <content:encoded><![CDATA[<p>Buried in a weekend thread from Dario Amodei is the most useful sentence an AI executive has produced in months: the most accurate criticism of AI companies, including Anthropic, is that they haven't yet delivered on their big promises.</p>
+<p>The thread was a reply. Investor Gavin Baker had gone after Amodei on the All-In podcast and on X for talking up AI's dangers, and Amodei answered in a series of posts over August 15 and 16, arguing his public messaging has been roughly balanced between risk and benefit. Whether that's true is a matter of tape, and reasonable people who've watched his last three years of interviews will land in different places.</p>
+<p>His headline framing is that the public souring on AI is "fundamentally a crisis of trust" in companies, governments and the tech industry generally. It's a clean line, and it does convenient work. Recast as a trust problem, the backlash becomes a question of how people feel about institutions rather than a question about whether the products are good, whether the job displacement is real, or whether the capital being spent has a return behind it. The admission in the first paragraph is the honest version. The trust framing is the comfortable one.</p>
+<p>The more substantive claim is structural. Amodei argues AI is a technology that inherently concentrates power, which is a real position with real implications and not one most frontier lab CEOs will say out loud. If you accept it, the case for external constraint follows almost automatically, including constraint on Anthropic.</p>
+<p>Then comes the proposal, and this is where it gets slippery. Amodei says Anthropic will craft policy suggestions "very carefully" so that they slow frontier AI development while advantaging smaller competitors. Read that again with the source in mind. A company at the frontier is proposing rules that bind the frontier, and asking to be trusted on the drafting. That can be principle and it can be a moat, and the only way to tell is to read the text.</p>
+<p>So read the text when it exists. Anthropic hasn't published the proposal yet, and everything above is a description of intent. The specific things worth checking on arrival: what compute or capability threshold triggers the constraint, whether it lands above or below where Anthropic's own models sit, and whether the exemptions for smaller developers have a revenue ceiling or just a parameter count. Those three details will say more than the thread did.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DDoS Attacks Took Threema Offline for Four Hours, Then Kept Shifting</title>
+      <link>https://sabr-labs.com/article/threema-ddos-outage-nine-hosting-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/threema-ddos-outage-nine-hosting-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 12:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Threema</category>
+      <category>DDoS</category>
+      <category>Encrypted Messaging</category>
+      <category>Availability</category>
+      <category>Switzerland</category>
+      <description>The Swiss encrypted messenger and its colocation provider absorbed a multi-day denial-of-service campaign that changed patterns overnight, taking down availability while leaving message confidentiality intact.</description>
+      <content:encoded><![CDATA[<p>Threema went completely unreachable from 7:30 to 11:30 p.m. CEST on Tuesday. Four hours of nothing, for a messenger whose users largely picked it because the alternatives felt too exposed.</p>
+<p>The company attributes the outage to a series of large-scale distributed denial-of-service attacks that hit both Threema and Nine, the Swiss colocation provider hosting it. Knocking over the upstream host is the more telling detail of the two. Whoever ran this went after the infrastructure layer, not just the application.</p>
+<p>It didn't stop at Tuesday night. Threema reported further short disruptions through Wednesday morning as the attack patterns shifted, with all services back to normal at 12:23 p.m. CEST. That kind of adaptation across a multi-day window is not a booter service someone rented for an evening.</p>
+<p>The company says the incident affected availability only, and that neither its systems nor user data were compromised. That claim is easy to believe on the merits, since end-to-end encryption means the servers Threema operates don't hold plaintext to lose. It's also the cheapest possible statement to issue after an outage, so it's worth noting that Threema published a timeline with specific timestamps rather than a paragraph of reassurance.</p>
+<p>There's a design lesson buried in this. Encryption is a confidentiality control, and it did its job perfectly during an incident where confidentiality was never the target. Availability was, and for a journalist or an activist who moved to Threema precisely because they're at risk, four hours of silence is not a minor inconvenience. It's the failure mode that actually costs something.</p>
+<p>Threema customers running the OnPrem product saw none of this, because that deployment lives on infrastructure they control. Expect that fact to appear in the sales material shortly, and expect it to be a fair point. The company has since added upstream filtering that drops hostile traffic before it reaches core infrastructure. No group has claimed the attacks and no attribution has been offered.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AmnesiaStealer Gives Attackers Live Control of a Mac&apos;s Logged-In Browser</title>
+      <link>https://sabr-labs.com/article/amnesiastealer-macos-headless-browser-session-hijack-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amnesiastealer-macos-headless-browser-session-hijack-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>macOS</category>
+      <category>Infostealer</category>
+      <category>ClickFix</category>
+      <category>Session Hijacking</category>
+      <category>Malware</category>
+      <description>A new macOS infostealer spread through fake GitHub download pages doesn&apos;t just exfiltrate cookies, it drives the victim&apos;s own browser through the DevTools Protocol so hijacked sessions keep the right fingerprint.</description>
+      <content:encoded><![CDATA[<p>The interesting thing about AmnesiaStealer isn't what it steals. It's that it doesn't need to steal much at all. The malware copies your Chromium profile into a headless instance of your own browser and hands an operator the wheel, cookies and all, from inside your machine.</p>
+<p>Jamf's threat team documented the family on August 13. Delivery is ClickFix, the social engineering pattern that refuses to die: a counterfeit GitHub page with a "Download for macOS" button, reproducing the dark theme, the Octocat, and a "Verified Publisher" badge closely enough to pass a glance. The button doesn't download anything. It gives you a command to paste into Terminal. People keep pasting.</p>
+<p>From there the chain runs in three parts. A shell script dropper pulls the payload, a Rust-based stealer does the collection work, and a third component Jamf calls the stream module sets up remote control. That last stage is the one worth reading twice.</p>
+<p>The stream module launches the genuine browser binary with the legacy headless flag and attaches over the Chrome DevTools Protocol. The operator gets a live view, can inject keystrokes and mouse input, and can export cookies in the clear. Everything happens in the victim's real browser, on the victim's real host, from the victim's real IP.</p>
+<p>That combination is what defeats the controls most organizations are relying on. Session tokens lifted and replayed from a rented VPS trip device and geolocation checks. Session tokens driven from the original endpoint with the original browser fingerprint do not. Multi-factor authentication at login is irrelevant here, because the attacker arrives after the login. Anyone who read the DevTools Protocol hijacking research that circulated earlier this month is watching that technique show up in a commodity stealer inside two weeks.</p>
+<p>The collection side is thorough in a way that suggests real development budget: 16 Chromium-family browsers including Chrome, Brave, Arc and Edge, plus keychain passwords, Safari cookies, Apple Notes, Telegram sessions, cryptocurrency wallets and loose documents. Persistence is a root LaunchDaemon dropped in /Library/LaunchDaemons/ under a name impersonating Apple's crash reporting, installed with credentials the malware phished from the user through a fake prompt. No threat actor has been named.</p>
+<p>Two detections are worth building today. Alert on any browser process spawned with headless or remote-debugging arguments outside of your CI runners, and audit /Library/LaunchDaemons/ for crash-reporter lookalikes that no MDM policy put there. Both are cheap, and both catch this before the operator ever opens a session.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Unisoc Video Call Exploit Chain Reaches Android Kernel, No Patch Available</title>
+      <link>https://sabr-labs.com/article/unisoc-volte-video-call-kernel-exploit-chain-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/unisoc-volte-video-call-kernel-exploit-chain-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Unisoc</category>
+      <category>Android</category>
+      <category>VoLTE</category>
+      <category>Baseband</category>
+      <category>Mobile Security</category>
+      <description>Researchers completed a two-stage chain that turns an answered VoLTE video call into full Android kernel access on Unisoc-powered budget phones, and the chipmaker has not responded to any disclosure attempt.</description>
+      <content:encoded><![CDATA[<p>Answer a video call, lose the kernel. That's the practical result of an advisory SSD Secure Disclosure published Monday, which completes an exploit chain against Unisoc modem firmware that the same team started five months ago.</p>
+<p>Stage one landed in March. A malformed SDP body inside SIP signaling triggers memory corruption in the modem firmware, giving the attacker native code execution on the baseband processor. Monday's stage two takes that foothold and escalates it into full Android kernel access by manipulating the ARM Memory Protection Unit that's supposed to keep the two worlds apart. The work is credited to a researcher going by 0x50594d.</p>
+<p>That MPU detail is the whole story. On these designs the modem runs as its own processor with its own firmware, and the security model assumes a compromised baseband stays fenced off from the application processor. Reprogramming the protection regions is what collapses the fence. There's no CVE for the escalation, only a CWE-1189 classification for improper isolation of a shared resource. A related flaw in the same chipset family did get an ID last October, CVE-2025-31718, rated 7.5.</p>
+<p>Affected silicon includes the Unisoc T606, T612 and T7250. In consumer terms that's the Motorola E13, the Realme C33 and the Xiaomi Redmi A5, which is to say the sub-$120 tier that Unisoc sells into more than 140 countries. These are not niche parts. They're the phones that show up by the million in markets where a device gets one firmware update in its life, if that.</p>
+<p>The prerequisites are real and worth stating plainly, because the coverage will skip past them. An attacker needs to operate the cellular network the victim is attached to, and the victim has to answer the call. This is not a drive-by. But a private 4G network is no longer exotic equipment, and "attacker controls the local cell" describes a border crossing, a hotel in the wrong country, or anywhere a rogue base station can outshout the real one.</p>
+<p>The vendor response is the part that should bother you. SSD says it tried email and LinkedIn and got nothing back. Unisoc's product security bulletin page carries no entry for this. Five months between the two advisories was ample time to ship something, and what shipped was silence.</p>
+<p>If you manage a fleet with Unisoc devices in it, VoLTE is the attack surface and disabling it where the carrier still permits fallback is the only mitigation on the table. There's no patch to wait for and no evidence one is coming.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Stripe Buys OpenRouter for Over $7 Billion, Five Times Its May Price</title>
+      <link>https://sabr-labs.com/article/stripe-openrouter-7-billion-acquisition-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/stripe-openrouter-7-billion-acquisition-august-2026</guid>
+      <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Stripe</category>
+      <category>OpenRouter</category>
+      <category>AI Infrastructure</category>
+      <category>M&amp;A</category>
+      <category>APIs</category>
+      <description>Stripe is acquiring the AI model router that sits between developers and roughly 400 models, a deal that turns model selection into a billing problem Stripe already knows how to solve.</description>
+      <content:encoded><![CDATA[<p>Seven billion dollars for a company that was valued at $1.3 billion in May. That's the reported price Stripe is paying for OpenRouter, the service that sits between developers and roughly 400 AI models and decides which one answers the call.</p>
+<p>Bloomberg reported the finalized deal on Sunday, and Fortune and TechCrunch have since matched it. Stripe hasn't issued a press release and the final figure could still move, so treat the number as reported rather than confirmed. What isn't in dispute is the trajectory: OpenRouter closed a $113 million Series B in May at a reported $1.3 billion valuation. Three months later it's changing hands for more than five times that.</p>
+<p>If you haven't used it, OpenRouter is a single API endpoint that fans out to models from OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek and a long tail of open-weights hosts. You write one integration, then route by price, latency, context window, or whatever else matters that week. The company says it serves around 8 million users. For a lot of small teams it's the reason switching models is a config change instead of a sprint.</p>
+<p>The strategic logic is less about AI than it looks. Every model call is a metered transaction with variable unit pricing, per-token accounting, and a settlement problem at the end of the month. That is precisely the shape of business Stripe has spent fifteen years building infrastructure for. Buying OpenRouter doesn't get Stripe into AI so much as it puts Stripe's meter on the wire where the AI money actually moves.</p>
+<p>Here's the part worth watching. A big reason developers trusted OpenRouter was that it had no horse in the race. It was a neutral broker ranking models on merit and price, and it published the usage rankings to prove it. That neutrality now belongs to a company that also processes payments for several of the providers being ranked. Nobody has to act in bad faith for the incentives to drift.</p>
+<p>The concrete question for anyone with OpenRouter in production is whether routing behavior and pricing survive the integration intact. Watch the fee structure and the model rankings over the next two quarters. Those are the two places where a change in ownership shows up first.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Qwen3.8-27B Landed With Vision, 262K Context and Apache 2.0</title>
       <link>https://sabr-labs.com/article/qwen38-27b-apache-open-weights-multimodal-august-2026</link>
@@ -934,128 +1056,6 @@
 <p>PromptArmor reported the issue to Atlassian on May 23. Atlassian acknowledged it and issued a ticket ID. Then, by the researchers' account, more than two months passed without further communication, and the flaw was still unpatched when the writeup went public. Sitting on a zero-click data exfiltration bug in an assistant this widely deployed for a full quarter is hard to defend.</p>
 <p>Scale matters here. Atlassian's own marketing puts Rovo past five million monthly active users and inside roughly three-quarters of the Fortune 500. Jira and Confluence are where companies keep incident postmortems, unreleased roadmaps, customer escalations, and an alarming amount of pasted credentials.</p>
 <p>Indirect prompt injection is not a bug class anyone has solved, and vendors shipping agents with read access to the entire corporate wiki are making a bet on that changing. Until it does, the honest posture is to treat any AI assistant with broad document access and outbound network capability as a data egress path, and to monitor it like one. If you run Rovo, the question to ask your Atlassian rep this week is which specific controls actually cut off outbound requests, because the obvious one doesn't.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>An 18-Year-Old Linux SCTP Bug Gives Root and Escapes Containers</title>
-      <link>https://sabr-labs.com/article/sctphantom-cve-2026-64564-linux-sctp-container-escape-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sctphantom-cve-2026-64564-linux-sctp-container-escape-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Linux Kernel</category>
-      <category>Use-After-Free</category>
-      <category>Container Escape</category>
-      <category>Privilege Escalation</category>
-      <category>SCTP</category>
-      <description>CVE-2026-64564 is a use-after-free in the kernel&apos;s SCTP address-reconfiguration code that has been reachable since 2008 and needs no elevated capabilities to exploit.</description>
-      <content:encoded><![CDATA[<p>The wildcard-handling behavior that makes SCTPhantom work landed in Linux 2.6.25. That kernel shipped in April 2008. It has been sitting in the SCTP stack ever since, and Tencent's Zhuque Lab found it with an automated bug-hunting pipeline called Corvus.</p>
-<p>Tracked as CVE-2026-64564 and scored 8.5 on CVSS v4.0, the flaw lives in SCTP's Dynamic Address Reconfiguration path, the ASCONF machinery that lets an association add and remove IP addresses while it's running. The root cause is inconsistent identity handling during a DEL-IP operation. An attacker-controlled ASCONF message can name one address for source validation and a different one to select the transport used later in processing. Order the deletions carefully and the selected transport gets freed while the association still holds a stale reference to it, at which point a wildcard deletion path happily reuses the cached pointer. The association's primary_path and active_path end up aimed at memory that no longer belongs to them.</p>
-<p>Use-after-free in a network protocol handler is a well-worn road to root, and that's where this one goes.</p>
-<p>What makes it worse than the usual local privilege escalation writeup is the environment it works in. The researchers report reaching root without CAP_NET_ADMIN or CAP_SYS_ADMIN, under a default seccomp profile, and in certain configurations breaking out of a container onto the host underneath. The comforting assumption that a container needs extra capabilities before kernel bugs become your problem does not hold here. The original attack path required the net.sctp.addip_enable and net.sctp.addip_noauth_enable sysctls, which most distributions leave off, but a later refinement reached the same code through per-socket enablement and sidestepped that requirement.</p>
-<p>Fixes went out fast. Stable kernels 7.1.6, 6.18.42, 6.12.101, and 6.6.148 all shipped on August 3, the Linux kernel CVE team assigned the identifier on August 4, and the public writeup followed on August 6. Private disclosure had started back on July 12. Debian 13 users got it bundled with a fix for a second kernel flaw the researchers named Zapscape.</p>
-<p>As of now there's no public exploit code and the CVE is not in CISA's KEV catalog. That's a reason to patch on a normal maintenance cadence rather than a reason to relax, because the writeup is detailed enough that the gap between publication and a working proof of concept is measured in days for anyone motivated.</p>
-<p>One practical note for teams that don't think they run SCTP. You might. It's common in telecom signaling and some clustering setups, and on many distributions the module autoloads the moment something opens an SCTP socket. If you have no use for it, blacklisting the module removes the attack surface entirely and costs you nothing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Flags Kemp LoadMaster Command Injection After 792 Attempts</title>
-      <link>https://sabr-labs.com/article/kemp-loadmaster-cve-2026-8037-cisa-kev-command-injection-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/kemp-loadmaster-cve-2026-8037-cisa-kev-command-injection-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CISA KEV</category>
-      <category>Progress Kemp</category>
-      <category>Load Balancer</category>
-      <category>Command Injection</category>
-      <category>Patch Management</category>
-      <description>CVE-2026-8037 lets an unauthenticated attacker run commands on a Progress Kemp LoadMaster appliance, and federal agencies have until August 10 to patch it.</description>
-      <content:encoded><![CDATA[<p>Sixty-five IP addresses across eighteen countries spent forty-one days throwing the same exploit at internet-facing load balancers. That's the shape of the activity KEVIntel logged against CVE-2026-8037, with the most recent attempt recorded on August 4.</p>
-<p>The bug is a command injection in Progress Kemp LoadMaster, scored 9.6, reachable without credentials. The root cause is unglamorous in the way that the worst bugs usually are: a sanitizing function called escape_quotes() fails to properly null-terminate the string it just cleaned, and unsanitized input rides through into multiple API command endpoints. An attacker who gets it right executes arbitrary commands on the appliance.</p>
-<p>Think about where a LoadMaster actually sits. It's the thing in front of your application servers, terminating TLS, holding certificates, seeing traffic in the clear. Code execution there is not a foothold on some forgotten box in a branch office.</p>
-<p>The timeline is the uncomfortable part. watchTowr Labs published analysis in June, the flaw was disclosed on June 4, and public proof-of-concept code landed on June 29. Exploitation attempts started the same day the PoC dropped. CISA added the CVE to the Known Exploited Vulnerabilities catalog this week, setting a federal remediation deadline of August 10 under BOD 26-04. That's roughly five weeks between working public exploit code and the government telling agencies to move.</p>
-<p>Credit where it's due on the attacker side of the ledger: it doesn't appear to be working very well. eSentire's Threat Response Unit characterized the July attempts as largely unsuccessful and found no post-compromise activity. Nobody has confirmed a successful breach through this flaw yet. That gap between attempt volume and actual compromise usually means the exploit is finicky, the scanning is indiscriminate, or both.</p>
-<p>Don't read that as permission to wait. Volume like this means the target list is already assembled and someone will eventually refine the technique. Patch to Progress's current release, and if your LoadMaster management interface is reachable from the public internet, fix that too while you're in there.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Metabase Zero-Day Scored 10.0 Breached Framework and Tally</title>
-      <link>https://sabr-labs.com/article/metabase-zero-day-sql-injection-framework-tally-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/metabase-zero-day-sql-injection-framework-tally-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Metabase</category>
-      <category>SQL Injection</category>
-      <category>Zero-Day</category>
-      <category>Data Breach</category>
-      <category>Supply Chain</category>
-      <description>An unauthenticated SQL injection in Metabase&apos;s password-reset endpoint handed attackers admin control of self-hosted instances, and at least three companies have now confirmed data theft.</description>
-      <content:encoded><![CDATA[<p>Framework learned its customer data was gone when Metabase called on August 6. The intrusion had already happened on August 3, and the laptop maker was not the only one on the list.</p>
-<p>The flaw sits in Metabase's business intelligence server, and it is about as bad as the scoring system allows: CVSS 10.0. An unauthenticated attacker sends a crafted POST to the /api/session/reset_password endpoint and injects arbitrary SQL against the application database. From there they can promote themselves to administrator, read the stored credentials for every connected data warehouse, and pull whatever those connections can reach. Metabase caught it being used against its own Cloud environment before anyone had a name for it.</p>
-<p>Versions 1.58 and above are vulnerable. Anything below 58 is not. Metabase shipped fixes across every supported line at once, which is the tell of a vendor that knows it is on fire: v0.58.24, v0.59.21, v0.60.17, v0.61.11, v0.62.9, and v0.63.5.</p>
-<p>The victim list is what makes this more than a patch note. Framework says attackers took full names, email addresses, login IP addresses, billing and shipping addresses, phone numbers, and company names. Tally, the form builder, confirmed exposure of email addresses and password hashes, though it says form content and submissions were untouched. LexisNexis disclosed an attack against a third-party vendor's Metabase API, disconnected the affected systems, and brought in a forensic firm. That investigation is still open.</p>
-<p>Here is the part worth being annoyed about. This vulnerability has no CVE. It has a GitHub advisory identifier, GHSA-vwf4-m7j8-wcjf, and nothing else. A maximum-severity, actively exploited, pre-authentication flaw in software that sits directly on top of production data warehouses should be trivially greppable in every vulnerability management pipeline on the planet. Instead, teams scanning for CVE identifiers will find nothing.</p>
-<p>The sequencing deserves scrutiny too. Metabase Cloud instances were already patched by the time the advisory went public, which is the correct order of operations for a hosted product and cold comfort for everyone running the self-hosted build. Those operators were exposed for the entire window between detection and disclosure, and unlike Metabase they had no telemetry telling them something was wrong.</p>
-<p>If you run Metabase yourself, go look now. The log pattern to hunt for is a POST to /api/session/reset_password returning 400, followed shortly by a GET to /api/user/current returning 200. That sequence means someone authenticated as a user they should not be. Upgrade first, then revoke active sessions, audit API keys, review the admin account list for entries you did not create, rotate every database credential Metabase stored, and pull query history and warehouse-side logs to work out what actually got read.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX Beat Its First Earnings Report and the Stock Fell 8%</title>
-      <link>https://sabr-labs.com/article/spacex-q2-2026-earnings-ai-compute-starlink-capex-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-q2-2026-earnings-ai-compute-starlink-capex-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SpaceX</category>
-      <category>Starlink</category>
-      <category>AI Infrastructure</category>
-      <category>Earnings</category>
-      <category>Capex</category>
-      <description>Revenue nearly doubled to $7.8 billion on Starlink growth and compute deals with Anthropic and Google, but capex hit $28 billion in six months and investors flinched.</description>
-      <content:encoded><![CDATA[<p>Twenty-eight billion dollars. That's what SpaceX spent on capital expenditures in the first half of 2026, against seven billion in the same period last year, and it's the number that mattered more than any of the good ones.</p>
-<p>The good ones were legitimately good. Q2 revenue came in at $7.8 billion, up 92% year over year and close to a billion dollars past what analysts expected, in the company's first report since its June listing at $135 a share. Starlink did $4.29 billion of that, up 66%. The AI and cloud services business did roughly $2.6 billion, and compute capacity is now around 1.4 gigawatts against 0.4 a year ago.</p>
-<p>Shares fell about 8% after hours.</p>
-<p>The mechanism is not subtle. SpaceX is renting orbital and terrestrial compute to other AI companies, with Anthropic and Google as named customers, and CFO Bret Johnsen pointed to another $6.7 billion of cloud services revenue under contract that starts ramping in October. Company-wide operating loss narrowed to $541 million. But the compute business is being built with cash spent years ahead of the revenue it books, and the market spent the last quarter learning to punish exactly that pattern wherever it appeared.</p>
-<p>Johnsen also told investors to expect a $100 billion annualized run-rate by the end of the year and promised sub-one-year payback on new AI compute capital. Those are enormous claims from a company that did $18.67 billion in all of 2025, and the second one is the load-bearing part. If new capacity really pays back in under a year, the capex line is a feature. If it takes three, the story changes fast, and nothing in the quarter proves which it is yet.</p>
-<p>What's genuinely interesting is that the rocket company's rocket business barely came up. Musk has said NASA will account for about 5% of revenue this year. SpaceX is now a connectivity and compute business that happens to own the cheapest way to put mass in orbit, and it's pricing itself accordingly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Hassabis Moves Up, Jeff Dean Walks Out, Gemini Is Still Late</title>
-      <link>https://sabr-labs.com/article/google-deepmind-hassabis-chief-scientist-kavukcuoglu-gemini-delay-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-deepmind-hassabis-chief-scientist-kavukcuoglu-gemini-delay-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google DeepMind</category>
-      <category>Alphabet</category>
-      <category>Gemini</category>
-      <category>Demis Hassabis</category>
-      <category>Jeff Dean</category>
-      <description>Alphabet restructured its AI leadership on August 5, handing daily control of DeepMind to Koray Kavukcuoglu while the delayed Gemini 3.5 Pro still hasn&apos;t shipped.</description>
-      <content:encoded><![CDATA[<p>Alphabet shares dropped about 5% on the news that Demis Hassabis was being promoted. That tells you how the market read it.</p>
-<p>The August 5 reshuffle moves Hassabis out of the DeepMind CEO seat and into two titles: chairman of DeepMind and chief scientist of Alphabet. Koray Kavukcuoglu, previously CTO and Alphabet's chief AI architect, takes operational control as senior vice president reporting to Sundar Pichai. Hassabis says he'll spend more of his time on AGI strategy and on Isomorphic Labs, the drug discovery arm.</p>
-<p>Jeff Dean left the same week. Twenty-seven years at Google, chief scientist, and one of the people whose name is on the infrastructure the entire company runs on. He's co-founding a benefit corporation called Discovery Loop with Sanjay Ghemawat, Oriol Vinyals, and Quoc Le, which is not a junior lineup. Pichai publicly said he was glad to support it.</p>
-<p>Read the departure list from the past year and the pattern is uncomfortable. Gemini co-lead Noam Shazeer went to OpenAI. Nobel laureate John Jumper went to Anthropic. Now Dean and three more senior researchers leave to start something of their own. That's not attrition at the edges.</p>
-<p>The proximate cause is a model that won't ship. Gemini 3.5 Pro was targeted for June, got pulled back in July for more work on coding capability, and still isn't out in August. Google has spent the year watching Anthropic and OpenAI put frontier releases into the market on schedule while its own flagship slips, and a leadership restructure in the middle of that reads less like a promotion than like someone deciding the research org and the shipping org need different people running them.</p>
-<p>Whether that's the right call is a real question. Splitting a visionary founder off into a chief scientist role while an operator runs delivery is a well-worn move, and it works often enough that it's a template. It also frequently precedes the founder leaving entirely, which is the outcome Alphabet can least afford right now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AMD Is Buying a Chip Company Whose Product Runs One Model</title>
-      <link>https://sabr-labs.com/article/amd-acquires-taalas-hardwired-model-inference-silicon-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amd-acquires-taalas-hardwired-model-inference-silicon-august-2026</guid>
-      <pubDate>Fri, 07 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>AMD</category>
-      <category>Taalas</category>
-      <category>AI Inference</category>
-      <category>Semiconductors</category>
-      <category>M&amp;A</category>
-      <description>Taalas etches model weights directly into silicon and hit roughly 17,000 tokens per second on Llama 3.1 8B, which is spectacular right up until the model changes.</description>
-      <content:encoded><![CDATA[<p>Taalas built a chip that runs Llama 3.1 8B faster than anything Nvidia, Groq, or Cerebras will sell you. It also runs nothing else. AMD announced it's buying the company anyway.</p>
-<p>The deal was confirmed on August 6, terms undisclosed. Taalas is a Toronto outfit founded in 2023 by Ljubisa Bajic, who founded Tenstorrent and did time at both AMD and Nvidia before that, and it has raised about $219 million across two rounds. The team goes into AMD's AI group under senior vice president Vamsi Boppana, who framed the buy as feeding into Instinct accelerators and the Helios rack systems.</p>
-<p>The technical bet is worth understanding because it's genuinely different from what everyone else is doing. Instead of streaming weights from high-bandwidth memory into a general-purpose compute grid, Taalas bakes the weights into the die itself on TSMC's 6nm process. The memory wall doesn't get optimized around. It gets removed, because there's no external memory in the loop. The HC1 test chip served Llama 3.1 8B at north of 16,000 tokens per second per user at roughly a tenth of a GPU's power draw.</p>
-<p>Now the catch. A hardwired model is a tapeout. Fine-tune the weights and you need new silicon. Ship a new model version and you need new silicon. In a field where the frontier moves every few months and even open-weight 8B models get replaced twice a year, an inference chip with a fixed model is a bet that some workloads stabilize long enough to be worth freezing. Speech recognition, embeddings, retrieval rerankers, safety classifiers, guardrail models sitting in front of a bigger system: those things do stabilize. The chatbot everyone actually thinks about when they hear inference does not.</p>
-<p>AMD isn't buying a product line here so much as an approach and the people who built it, which is the honest reading of a deal with no disclosed price and a team folding into an existing org. Expect the ideas to show up as blocks inside future Instinct parts before they show up as a standalone hardwired accelerator you can order.</p>
-<p>It's also a reasonable read on where AMD thinks it can compete. Beating Nvidia at general-purpose training silicon has not gone well for anyone. Beating it on cost per token for a narrow, high-volume inference job is a smaller target with a much clearer shot at it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
