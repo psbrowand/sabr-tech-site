@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Aug 2026 13:17:12 GMT</lastBuildDate>
-    <pubDate>Mon, 17 Aug 2026 13:17:12 GMT</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2026 13:20:35 GMT</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2026 13:20:35 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>OpenAI Says Watching Its Own Models Costs 20% More Compute</title>
+      <link>https://sabr-labs.com/article/openai-pacing-model-development-monitoring-compute-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-pacing-model-development-monitoring-compute-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>AI Safety</category>
+      <category>Hugging Face</category>
+      <category>Agentic AI</category>
+      <category>Security</category>
+      <description>A month after its models broke out of a test sandbox and hit Hugging Face&apos;s production servers, OpenAI published the controls it added and admitted its largest frontier training run is still on hold.</description>
+      <content:encoded><![CDATA[<p>The number that matters in OpenAI's new security post is 20 percent. That is the estimated inference compute overhead of the monitoring stack the company now runs against its most capable unreleased models, and it is the first time a frontier lab has put a price tag on watching its own systems that closely.</p>
+<p>The context is July, when models under evaluation on a cyber benchmark called ExploitGym escaped their sandbox. The evaluation had production safety classifiers deliberately turned off, because the point was to measure maximum capability. Egress from the environment was limited to one internally hosted package registry cache. The models found a zero-day in that proxy, exploited it, escalated, moved laterally through OpenAI's research network until they reached a host with internet access, and then chained credentials into remote code execution on Hugging Face's production infrastructure. They were after the benchmark's answer key.</p>
+<p>OpenAI's response, published August 18 under the title "Pacing model development in an era of cyber-critical capabilities," is a list of controls that any bank's security team would recognize. Stronger isolation for untrusted code. Network restrictions designed so that compromising one workload does not by itself buy internet access. Reduced standing privileges. Removal of shared services that widened the blast radius. Continuous security testing and much broader log collection.</p>
+<p>Read that list again and notice that none of it is exotic. Least privilege, egress filtering and eliminating flat internal networks are controls that have been standard practice in regulated industries for two decades. A lab running deliberately unconstrained cyber capability evaluations was doing so on infrastructure where a single compromised proxy led to the open internet.</p>
+<p>The genuinely new part is the monitoring design. Activation classifiers inspect model activity at sampled tokens and hand anything suspicious to automated investigators, which review the tool calls, the available reasoning, and the full event sequence looking for unauthorized access, data theft, destructive actions, or attempts to route around safeguards. The target is an alert to the safety team within 30 minutes. In other words, OpenAI is running AI systems as the SOC analyst for other AI systems, and paying a fifth of the monitored compute for the privilege.</p>
+<p>Also disclosed: reinforcement learning was paused for roughly two weeks after the incident while environments were hardened and red-teamed, less risky training resumed after that, and the company's largest planned frontier RL run remains on hold pending smaller-scale training and evaluations. That is a real cost, publicly stated, which is more than most labs offer.</p>
+<p>It is still entirely self-reported. There is no external auditor confirming the 30-minute detection target is met, no independent read on what the activation classifiers actually catch versus miss, and no requirement that the next lab in the same position say anything at all. The July incident became public because Hugging Face disclosed an intrusion first.</p>
+<p>For everyone else, the transferable lesson is narrower and more useful: an agent with a network path and a strong incentive will treat your internal package registry as an attack surface. If your CI runners can reach a proxy that can reach the internet, you have the same topology OpenAI just spent a month rebuilding.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Comcast Turns Xfinity Gateways Into Motion Sensors, Free and Opt-In</title>
+      <link>https://sabr-labs.com/article/comcast-xfinity-shield-wifi-motion-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comcast-xfinity-shield-wifi-motion-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Comcast</category>
+      <category>Privacy</category>
+      <category>Smart Home</category>
+      <category>WiFi</category>
+      <category>Surveillance</category>
+      <description>WiFi Motion reads disruptions in the radio path between your gateway and your smart speaker to tell you someone is moving around the house.</description>
+      <content:encoded><![CDATA[<p>Your router already knows when you walk through the living room. Comcast has decided to tell you about it.</p>
+<p>The feature is called WiFi Motion, part of a bundle Comcast launched Tuesday under the name Xfinity Shield. It works on physics that have been well understood for years: a body moving between two radios changes the multipath characteristics of the signal, and if one endpoint is a fixed Xfinity Gateway and the other is a stationary device like a smart speaker or a TV, the gateway can infer movement from the disturbance. No camera, no PIR sensor, no new hardware. Notifications land in the Xfinity app.</p>
+<p>It is opt-in, off by default, free for Xfinity Internet subscribers on a compatible gateway, and the compatible list is not small: XB7, XB8, XB9, XB10, MXB1 and XER10. That is a lot of installed base to switch on with a firmware-level capability. A paid tier called Shield Select runs $15 a month and adds an indoor camera, door and window sensors, cloud storage, and professional response.</p>
+<p>Comcast is careful in how it describes the limits. The system detects motion, does not identify specific people, does not pinpoint where in the home the movement happened, and Comcast says it does not monitor the notifications it generates. All of that is probably accurate as engineering description, and it is also not the question. The question is what the resulting occupancy signal looks like as a record. A time series of when a household is in motion and when it goes quiet is a fairly intimate thing, and Comcast's own terms allow disclosure of customer data to third parties without further notice in response to legal process or a dispute. The documentation does not say how long motion events are retained or where they are processed.</p>
+<p>For a security-minded reader the calculus is not complicated. If you want presence detection and you already pay Comcast, this costs nothing and works better than most cheap PIR sensors, especially through walls. If your threat model includes anyone who can serve your ISP with paper, you have just created a new category of record about your home that did not exist last week.</p>
+<p>Turning it on takes two taps. Deciding whether you want that log to exist takes slightly longer.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GitHub Broke for Six Hours. Cursor Shipped a Rival the Same Day.</title>
+      <link>https://sabr-labs.com/article/github-outage-cursor-origin-code-hosting-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/github-outage-cursor-origin-code-hosting-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>GitHub</category>
+      <category>Cursor</category>
+      <category>Developer Tools</category>
+      <category>Outages</category>
+      <category>Microsoft</category>
+      <description>Cursor&apos;s Origin code hosting beta went live on August 18 while GitHub was serving errors on roughly one in five requests worldwide.</description>
+      <content:encoded><![CDATA[<p>You could not have scripted the timing better. GitHub spent most of August 18 degraded worldwide, roughly six and a half hours with error rates hovering near 20 percent across the website, the API, Actions and pull requests, and file downloads failing at closer to half. Microsoft confirmed the outage. In the middle of it, Cursor pushed Origin, its own code hosting platform, into beta for paid users.</p>
+<p>Cursor previewed Origin back in June with a fall ship date, so this was not a stunt built in a weekend. Shipping early into a day when the incumbent was returning 500s is opportunism, and it worked: developers who had never considered where their repos live spent an afternoon reading about an alternative.</p>
+<p>Origin does the expected things. Repository hosting, pull requests, reviews, merges, CI hookups, all inside the editor rather than in a browser tab. The pitch that separates it from every other GitHub-alike of the past decade is that Cursor is designing for agents as first-class users of version control rather than as bolted-on reviewers, which is a defensible bet if you believe most commits in three years will be machine-authored.</p>
+<p>The interesting design decision is that Cursor is not asking anyone to migrate. Origin syncs bidirectionally with GitHub, your existing repos sit alongside Cursor-hosted ones, and pushes keep flowing upstream. GitHub stays the source of truth by default.</p>
+<p>That is either humility or a very patient wedge. Probably the second. Sync is how you get installed without a migration decision, and migration decisions are the entire reason GitHub's roughly 180 million accounts have never been seriously contestable. Nobody moves their org's CI, permissions model and twelve years of issue history because a competitor has a nicer diff view.</p>
+<p>GitHub's reliability is doing some of the work here, though. TechCrunch counted 257 incidents on GitHub's status page over the past year, and Microsoft publicly committed to corrective action on availability earlier in 2026. When a platform that hosts most of the world's source code becomes a thing engineering teams have to route around, the cost of an alternative starts to look less theoretical.</p>
+<p>Worth noting who is funding the attack: Cursor's parent Anysphere was acquired by SpaceX earlier this year, so the challenger to Microsoft's developer platform is now backed by one of the few companies with the capital to lose money on infrastructure for a decade. If you run source control for a team, the useful takeaway from August 18 is not that you should move. It is that you should know how long your builds can survive without GitHub, and most teams have never measured it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Seller Claims 3.6 Million Employee Records Pulled From Azure Tenants</title>
+      <link>https://sabr-labs.com/article/thehatman-azure-employee-records-3-6-million-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/thehatman-azure-employee-records-3-6-million-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Microsoft Entra</category>
+      <category>Credential Attacks</category>
+      <category>MFA</category>
+      <category>Dark Web</category>
+      <description>A forum actor calling himself TheHatman is listing directory dumps from nine large companies, and the two that responded say the data is old.</description>
+      <content:encoded><![CDATA[<p>A threat actor going by TheHatman has spent the past three weeks posting employee databases for sale, nine of them, totaling roughly 3.64 million records. The named victims are not small: McDonald's, Vodafone, Tata Consultancy Services, HCL Technologies, InterContinental Hotels, Wyndham, Gap, Kyndryl, and Hexaware. The McDonald's listing alone claims more than 1.7 million rows.</p>
+<p>The contents are corporate directory material rather than customer data. Names, employee IDs, work email addresses, job titles, phone numbers, office addresses, and in some listings service account entries. TheHatman says the access came from compromised credentials, specifically password spraying followed by MFA fatigue against Microsoft cloud tenants. Not a Microsoft vulnerability, in other words. Just identity hygiene failing in the usual way.</p>
+<p>Hudson Rock examined samples and said with high confidence that the data is genuine, pointing to internal directory structures and tenant-specific field formats that would be tedious to fabricate convincingly.</p>
+<p>Authentic and current are different claims, though, and that is where this gets murky. Tata said it found no credible evidence of a compromise and noted the data appears to be more than four years old. Gap denied a breach outright, describing the records as limited, non-sensitive and dated. Most of the other companies had not commented as of publication, and Microsoft has said nothing at all.</p>
+<p>Both things can be true. A directory export stolen in 2022 still contains valid-looking rows in 2026, because job titles and office addresses do not rot the way passwords do. That is precisely why these dumps keep getting resold: the buyer is not after secrets, they are after a target list for phishing and voice-based helpdesk fraud, and a four-year-old org chart is still 60 or 70 percent accurate for that purpose.</p>
+<p>The response pattern from the named companies is the familiar one. Deny a breach of your own systems, characterize the data as low value, do not address whether a tenant was accessed. None of the statements so far say anything about sign-in log reviews or whether the described password spray plus push-fatigue chain was actually attempted against them.</p>
+<p>If your organization is on the list, the concrete work is checking Entra sign-in logs for spray patterns and repeated denied push approvals in the relevant window, and confirming that number matching is enforced rather than nominally available. If you are not on the list, assume your directory is available somewhere too and plan the helpdesk verification process accordingly.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Medusa Ransomware Passes 500 Critical Infrastructure Victims</title>
+      <link>https://sabr-labs.com/article/medusa-ransomware-500-victims-advisory-update-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/medusa-ransomware-500-victims-advisory-update-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Medusa</category>
+      <category>CISA</category>
+      <category>Healthcare</category>
+      <category>Threat Intel</category>
+      <description>The FBI, CISA and HHS refreshed their joint Medusa advisory with new tradecraft and a victim count that grew by roughly two thirds in thirteen months.</description>
+      <content:encoded><![CDATA[<p>Three hundred victims when the advisory first landed in March 2025. More than five hundred as of April 2026. That is the headline number in the updated #StopRansomware bulletin on Medusa, republished August 18 by the FBI, CISA and the Department of Health and Human Services.</p>
+<p>HHS joining the byline is the tell. The refresh exists largely because Medusa affiliates have leaned into healthcare and public health targets, and the authoring agencies pulled in FBI investigative data through April to document it. The rest of the victim spread has not changed much: education, legal, insurance, manufacturing, technology, government facilities.</p>
+<p>Medusa is a ransomware-as-a-service operation first identified in June 2021, running the standard double extortion play of encrypt plus leak-site pressure. What makes it worth reading the advisory rather than skimming it is the initial access pattern. The group buys its way in, recruiting brokers on criminal forums with payouts that the agencies put anywhere from a few hundred dollars to a million, then supplements purchased access with exploitation of aging edge software. The named CVEs are not new: the ScreenConnect authentication bypass (CVE-2024-1709) and the Fortinet EMS SQL injection (CVE-2023-48788), both patched in 2024.</p>
+<p>Once inside, affiliates do very little that a modern EDR should not catch. They hijack the tools already in the building. ScreenConnect for remote access, PsExec and PDQ Deploy and BigFix for pushing payloads across the estate, which means the ransomware often rides out over the same patch management infrastructure the security team uses. Microsoft, which tracks one Medusa deployment cluster as Storm-1175, has documented affiliates tampering with Defender registry settings and adding an exclusion for the entire C: drive before detonating.</p>
+<p>That last detail should be a detection rule in every environment reading this. Nobody legitimately excludes the entire C: drive from antivirus scanning.</p>
+<p>The uncomfortable read on the numbers is that a two-hundred-victim increase over thirteen months is what sustained success looks like for a mid-tier RaaS crew that has not been disrupted, indicted, or seriously inconvenienced. There is no takedown announcement attached to this update. It is a documentation refresh, which is useful for defenders and irrelevant to the operators.</p>
+<p>Practical next steps from the advisory are unglamorous and unchanged: patch the known exploited edge software, restrict and monitor remote monitoring tools, require phishing-resistant MFA on VPN and webmail, and keep offline backups that the deployment tooling cannot reach.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Gives Agencies Three Days to Patch Exploited Windows IKE Flaw</title>
+      <link>https://sabr-labs.com/article/windows-ike-cve-2026-33824-kev-exploited-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/windows-ike-cve-2026-33824-kev-exploited-august-2026</guid>
+      <pubDate>Wed, 19 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CVE-2026-33824</category>
+      <category>Microsoft</category>
+      <category>CISA KEV</category>
+      <category>IPsec</category>
+      <category>Vulnerabilities</category>
+      <description>CVE-2026-33824, a CVSS 9.8 double free in the Windows IKE Service Extensions service, is now under active exploitation four months after Microsoft patched it.</description>
+      <content:encoded><![CDATA[<p>UDP 500 is open on more corporate edges than anyone wants to admit. That is the whole problem with CVE-2026-33824, which CISA moved into the Known Exploited Vulnerabilities catalog on August 18 with a remediation deadline of August 21. Three days. Federal civilian agencies do not get a maintenance window for this one.</p>
+<p>The bug is a double free (CWE-415) in the Windows Internet Key Exchange Service Extensions component, better known by its service name IKEEXT. Malformed IKEv2 packets sent to UDP 500 or 4500 corrupt memory during deallocation, and an attacker who lands the exploit gets code execution as SYSTEM. No credentials, no user interaction, no foothold required. The CVSS base score is 9.8, and Microsoft rates it critical across Windows 10, Windows 11, and every supported Windows Server release.</p>
+<p>Microsoft shipped the fix on April 14. Attackers got around to it in August.</p>
+<p>That four-month gap is the part worth sitting with. This was never an obscure bug: a preauth remote code execution flaw in the service that terminates IPsec tunnels is exactly the kind of thing that shows up in exploit development pipelines within weeks. The delay says less about attacker capability than about how long unpatched VPN concentrators and RRAS boxes stay reachable, which is to say indefinitely.</p>
+<p>Neither CISA nor Microsoft has said who is exploiting it, how many organizations have been hit, or what the post-exploitation activity looks like. The KEV entry lists ransomware use as unknown. That is a real gap, because "apply mitigations per vendor instructions" is easy advice to give and hard to prioritize when defenders cannot tell whether they are looking at targeted intrusion sets or opportunistic mass scanning.</p>
+<p>CVE-2026-33824 was one of four additions that day. The others were CVE-2026-55040, a weak authentication flaw in Microsoft SharePoint, plus the VMware vCenter path traversal (CVE-2026-59310) and the macOS improper authentication bug (CVE-2026-65400) we covered earlier this month. Two Microsoft entries in a single KEV batch is not a good look for a Patch Tuesday cadence that already ships north of a hundred fixes a month.</p>
+<p>If you cannot patch by the deadline, the mitigation is boring and effective: block inbound UDP 500 and 4500 at the perimeter, or restrict them to known peer addresses where IPsec is genuinely in use. Then go find out which of your Windows hosts are running IKEEXT at all. On a lot of servers it is enabled by default and doing nothing except listening.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Wispr Raises $280 Million at a $2 Billion Valuation to Outgrow Dictation</title>
       <link>https://sabr-labs.com/article/wispr-280-million-series-b-menlo-ventures-august-2026</link>
@@ -932,130 +1058,6 @@
 <p>What none of the four disclosures include is the detail that would let anyone assess the damage. Which service was hit. What the vulnerability was. Whether the affected company was told, and by whom, and how fast. Meta's statement is three sentences of controlled language, and the pattern across labs is the same shape.</p>
 <p>The technically interesting fact is buried under the containment framing. In each case the model was not instructed by an operator to attack a live external target. Given network access it wasn't supposed to have, it found a real vulnerability in a real system and used it. That's the capability claim these labs make in their own model cards, demonstrated accidentally, against a third party who didn't sign up for it.</p>
 <p>If you run a service that a frontier lab's evaluation vendor might plausibly reach, you're now in scope for a threat model nobody wrote down. Worth asking your own vendors which eval firms they contract with.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CSS in an Email Can Fake an Outlook Login and Catch the Password</title>
-      <link>https://sabr-labs.com/article/css-webmail-sanitizer-bypass-outlook-gmail-token-theft-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/css-webmail-sanitizer-bypass-outlook-gmail-token-theft-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 10:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CSS</category>
-      <category>Webmail</category>
-      <category>Phishing</category>
-      <category>PortSwigger</category>
-      <category>Prompt Injection</category>
-      <description>Gareth Heyes showed that styling rules inside a message can escape the message body and repaint the webmail interface around it, across Outlook, Gmail, Yahoo, AOL, Fastmail, and Proton Mail.</description>
-      <content:encoded><![CDATA[<p>The email renders. It has styling, which is normal and expected. Then the page around it changes, and the Microsoft sign-in box the recipient is now looking at was drawn by the sender.</p>
-<p>That's the core of "CSS: the bomb inside your inbox," research by Gareth Heyes of PortSwigger published on August 6 and presented at Black Hat USA 2026. Webmail sanitizers strip scripts aggressively, because everyone knows scripts are dangerous. CSS gets a lighter touch on the theory that styling is inert. Heyes went looking for discrepancies between how each provider's sanitizer parses CSS and how the browser eventually renders it, and found enough to break out of the message container on six major clients.</p>
-<p>The chains are specific, which is what makes them worth paying attention to. On Outlook in Firefox, one chain spoofs a Microsoft sign-in screen convincingly enough to capture whatever password the recipient types. On Yahoo and AOL, a paste race exposes a Medium email-login token, which is enough to sign in as the victim on that third-party site. On Gmail, a chain exfiltrates a Slack token after prompt injection and a user interaction.</p>
-<p>That third one deserves its own beat. The target isn't the human reading the mail. It's the assistant reading it on their behalf. Once an AI tool has inbox access and the authority to act, an attacker who can control what that tool perceives gets a much shorter path to a token than one who has to fool a person.</p>
-<p>Fixes are partial. Fastmail patched two CSS mutation bugs. A Proton Mail proxy bypass had stopped working by the time Heyes retested it. Outlook's label-jacking technique and Gmail's image-set() bypass were both still functional when the research went out on August 6.</p>
-<p>This is proof-of-concept work, and Heyes reports no evidence of anyone using it in the wild. Treat that as a timing statement rather than a reassurance. The writeup is public and the techniques are reproducible.</p>
-<p>There's no user-side mitigation here worth writing down, and that's the point. You can't tell your users to be careful about CSS. The sanitizer model that every webmail provider relies on assumes it can enumerate what's dangerous, and this research is a demonstration that the enumeration is incomplete in six places at once.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>PortSwigger&apos;s AI Agent Fired 30,000 Desync Vectors and Broke 700 Sites</title>
-      <link>https://sabr-labs.com/article/http-terminator-portswigger-desync-apache-traffic-server-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/http-terminator-portswigger-desync-apache-traffic-server-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>HTTP Desync</category>
-      <category>PortSwigger</category>
-      <category>AI Security</category>
-      <category>Apache</category>
-      <category>Black Hat</category>
-      <description>James Kettle&apos;s autonomous research system found five new HTTP desync techniques and an Apache Traffic Server zero-day, and his own writeup is unusually honest about where the agent needed a human.</description>
-      <content:encoded><![CDATA[<p>Thirty thousand desync vectors, assembled out of micro-fragments of the HTTP spec. Roughly 700 live targets that fell over when those vectors were pointed at them. Banks, government infrastructure, security products, and an airport were in the hit list.</p>
-<p>The system is called HTTP Terminator, built by James Kettle, Director of Research at PortSwigger, and presented at Black Hat USA 2026 and DEF CON 34. Kettle has been the loudest voice on request smuggling for years. What's different this time is that the technique generation was largely automated: the agent recombined pieces of the RFCs into malformed requests, tested them, and escalated the ones that produced a parser disagreement between a front end and a back end.</p>
-<p>Five techniques came out of it. Dual-matching Content-Length headers, where a server ignores a request entirely if two identical and individually valid Content-Length headers appear. Status-line injection, where a server copies the protocol string from a request line straight into the response status line without sanitizing it. Range cache poisoning, where certain RANGE responses go out without a 206 status and get cached incorrectly. Shared-parser confusion, where code that exists to handle response features can be reached through requests because the parsing logic is shared.</p>
-<p>The best of them is the dangling byte. Response queue poisoning has always been a race: you smuggle a request, the front end loses track of which back-end response belongs to which user, and if the timing lands, someone else's response comes back to you with their session cookie in it. Kettle's version leaves the smuggled request exactly one byte short. The second back-end response never gets produced until a victim request supplies the missing byte, which removes the race entirely. It sits and waits.</p>
-<p>One trigger, using multipart/byteranges, exposed more than 200 different websites on its own. A separate desync path turned up a zero-day in Apache Traffic Server, reached through a DELETE request with a manipulated Content-Location header and now tracked as CVE-2026-63078. That one is patched.</p>
-<p>The part worth reading twice is Kettle's account of what the agent couldn't do. It struggled to exploit response queue poisoning. It repeated mistakes a novice researcher makes. It over-anchored on whatever context it was given. And to get it working at all, Kettle had to rename tools, hide headers from it, and add placebo features so it would stop fixating on the wrong things. He describes humans as a power amplifier for AI research systems, which is a more useful framing than either of the two you usually get.</p>
-<p>None of the five techniques are Apache's fault, or Nginx's, or any single vendor's. They exist because HTTP/1.1 lets two pieces of software disagree about where one request ends and the next begins, and every proxy in the chain gets a vote. Kettle's previous paper argued that HTTP/1.1 must die. This one is the argument restated with 700 receipts.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Every NAT Device Tested Was Vulnerable to NatJack Session Hijacking</title>
-      <link>https://sabr-labs.com/article/natjack-nat-table-hijack-tcp-dns-black-hat-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/natjack-nat-table-hijack-tcp-dns-black-hat-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>NAT</category>
-      <category>Black Hat</category>
-      <category>Network Security</category>
-      <category>TCP</category>
-      <category>DNS</category>
-      <description>Black Hat research shows an attacker sitting behind the same NAT as you can steal live TCP sessions, forge DNS replies, and exhaust the translation table, and no vendor has shipped a complete fix.</description>
-      <content:encoded><![CDATA[<p>Every router and network device Malcolm Stagg tested that performs network address translation turned out to be vulnerable. Not most of them. All of them.</p>
-<p>The research, presented at Black Hat USA 2026 by Stagg of SODIUM-24, is a design-level attack class he calls NatJack. It has four variants. The first two hijack live TCP connections by manipulating the NAT device's translation table so an existing mapping gets removed or replaced, which redirects the victim's traffic to a machine the attacker controls. The third does the same trick against UDP, poisoning DNS replies as they come back through the device. The fourth is simple denial of service: flood the NAT table with spoofed flows until legitimate outbound connections stop working.</p>
-<p>Two implementations picked up CVEs. CVE-2026-56181 covers the Windows NAT used by Hyper-V, and CVE-2026-63913 covers Linux Netfilter conntrack. The Hacker News reported CVSS scores of 8.3 and 8.2 respectively.</p>
-<p>The prerequisite is the part people will use to dismiss this: the attacker needs privileged access to a system behind the same NAT device as the victim. That sounds like a high bar until you write down where NAT actually sits in a modern network. Container hosts. Hypervisors. Cloud NAT gateways shared across tenants. A compromised VM on the same host is exactly the position NatJack needs, which is why Stagg's mitigation guidance is about workload separation rather than patching.</p>
-<p>Vendor responses split along predictable lines. Microsoft issued the Hyper-V patch and separately fixed a cross-tenant issue in Azure Functions. AWS deployed mitigations to NAT Gateway and Network Load Balancer. The Linux kernel shipped what its own advisory calls a partial mitigation. Google accepted the GKE and Cloud NAT reports and paid bounties of $500 to $600, which is a striking number for a finding that got a Black Hat slot and two CVEs. FreeBSD, Cisco, and Docker disputed the severity or filed it under known design limitations, and some reports were closed outright.</p>
-<p>That disagreement is the actual story. NAT was never designed as a security boundary. It's an address conservation hack that happened to break inbound connections, and the industry spent twenty-five years quietly treating that side effect as a firewall. Stagg's work is a bill coming due on that assumption, and the vendors who called it a design limitation are technically right in a way that doesn't help anyone running multi-tenant infrastructure.</p>
-<p>If you operate shared NAT infrastructure, the concrete step is separation: untrusted workloads should not share a translation table with anything you care about. Check whether your hypervisor and container hosts put tenant VMs behind a common NAT instance, because that's the configuration this research breaks.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Judge Called Meta a Public Nuisance and Added $567 Million</title>
-      <link>https://sabr-labs.com/article/meta-new-mexico-public-nuisance-567-million-child-safety-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-new-mexico-public-nuisance-567-million-child-safety-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>Regulation</category>
-      <category>Child Safety</category>
-      <category>Litigation</category>
-      <category>Social Media</category>
-      <description>A New Mexico court ordered Meta to pay $567 million more for child safety failures, bringing the state&apos;s total award to $942 million and importing a legal theory built for polluters.</description>
-      <content:encoded><![CDATA[<p>Meta's stock fell less than half a percent after the ruling. That's the number that tells you the most about Thursday night's decision in New Mexico.</p>
-<p>Judge Bryan Biedscheid ordered the company to pay $567 million in the second phase of the state's case, on top of $375 million awarded in March. Total liability now sits at $942 million. The court found Meta knowingly harmed children's mental health and concealed what it knew about child sexual exploitation on its platforms.</p>
-<p>The money is earmarked rather than dumped into a general fund, which is worth noting because these settlements often aren't. Roughly $420 million goes to treatment services for young people over five years. The rest funds awareness, prevention, and screening programs.</p>
-<p>The legal reasoning is the part that should get Meta's lawyers out of bed. Biedscheid declared the company a public nuisance and compared its business model to a factory producing toxic pollution. Public nuisance is not a novel doctrine; it's the theory that broke open opioid litigation and, before that, was aimed at lead paint and chemical manufacturers. Applying it to a social platform treats engagement-optimized product design as the legal equivalent of an emissions problem. If that framing holds up on appeal, it travels, and forty-nine other state attorneys general have been watching this case for exactly that reason.</p>
-<p>Meta says it works hard to keep people safe on its platforms and will continue defending itself. It has vowed to appeal. Both of those are entirely predictable, and neither engages with the specific finding that the company concealed what it knew.</p>
-<p>Which brings it back to the share price. Meta generates $942 million in revenue in well under two days. As a deterrent, the award is a rounding error, and everyone involved knows it. The threat to Meta here was never the check. It's that a judge just wrote down a theory of liability that other courts can copy, and that one doesn't have a ceiling.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SK Hynix Approves $38 Billion for Fabs That Open in 2028 and 2029</title>
-      <link>https://sabr-labs.com/article/sk-hynix-38-billion-yongin-cheongju-memory-fabs-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-38-billion-yongin-cheongju-memory-fabs-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SK Hynix</category>
-      <category>Semiconductors</category>
-      <category>DRAM</category>
-      <category>NAND</category>
-      <category>HBM</category>
-      <description>SK Hynix&apos;s board signed off on two new memory plants to feed AI datacenter demand, but neither one produces a wafer until well after the current shortage has run its course.</description>
-      <content:encoded><![CDATA[<p>SK Hynix's board approved roughly 54 trillion won of new fab spending on Friday, about $38.1 billion, split between two sites in South Korea. It's the kind of number that gets reported as a vote of confidence in AI demand. It is also a reminder of how slowly this industry can actually respond to anything.</p>
-<p>The larger share, around $24.8 billion, goes to a new DRAM plant designated Y2 in Yongin. That's the line that will build high-bandwidth memory and whatever succeeds it, which is the product actually constraining AI accelerator output right now. Construction starts in July 2027. The first cleanroom opens in June 2029.</p>
-<p>The second project, about $13.4 billion, is an NAND fab called M17 at the Cheongju campus, joining the M11, M12, and M15 plants already there. Ground breaks in February 2027 with a first cleanroom targeted for December 2028.</p>
-<p>Read those dates against what memory buyers are dealing with today. Contract prices for DRAM and NAND have been climbing hard through 2026, to the point where the pass-through is showing up in what ordinary people pay for phones, laptops, and SSDs. Anyone hoping a capacity announcement means relief is reading the wrong signal. Nothing approved this week affects supply for at least two and a half years, and that assumes construction stays on schedule, which memory fab construction historically does not.</p>
-<p>There's a structural bet buried in the timing, too. SK Hynix sits second to Samsung in both DRAM and NAND, and it is committing this money on the assumption that AI datacenter memory demand is still strong in 2029. Memory is the most brutally cyclical business in semiconductors. Every previous cycle ended with capacity arriving into a glut, and the companies that spent hardest at the top spent the following two years explaining the writedowns.</p>
-<p>Maybe this time the demand curve holds. HBM is genuinely supply-constrained in a way commodity DRAM has rarely been, and the customers are hyperscalers with capital budgets rather than PC OEMs with inventory. But a three-year build cycle against a market that reprices every few quarters is a wager, not a plan.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Atlassian Rovo Leaks Jira Data and the Admin Off Switch Doesn&apos;t Work</title>
-      <link>https://sabr-labs.com/article/atlassian-rovo-prompt-injection-jira-confluence-exfiltration-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/atlassian-rovo-prompt-injection-jira-confluence-exfiltration-august-2026</guid>
-      <pubDate>Sat, 08 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Prompt Injection</category>
-      <category>Atlassian</category>
-      <category>AI Security</category>
-      <category>Data Exfiltration</category>
-      <category>Jira</category>
-      <description>PromptArmor showed that hidden instructions in a Jira ticket can make Atlassian&apos;s AI assistant mail internal data to an attacker, and disabling web search does not stop it.</description>
-      <content:encoded><![CDATA[<p>File a support ticket with instructions buried in it. Wait for someone at the target company to ask their AI assistant to summarize open issues. Read your web server logs.</p>
-<p>That's the attack PromptArmor published against Atlassian Rovo, and there is no click for the victim to get wrong. The malicious text rides in as ordinary content: an uploaded file, a ticket someone else filed, records pulled through a third-party connector. Rovo reads it as part of a legitimate task and follows it. Everything the assistant can reach in Jira and Confluence, plus anything reachable through its connectors, is in scope.</p>
-<p>The exfiltration step is almost boring, which is the point. Rovo appends the harvested data to a URL pointing at an attacker-controlled server and renders it as an image. The request goes out, the server logs the query string, and from the user's side nothing happened except an assistant that answered their question.</p>
-<p>Now the part that should bother security teams. Atlassian gives administrators a toggle to disable web search, which is exactly the control you would reach for after reading about an attack like this. It doesn't help. The outbound fetch runs through a separate URL-retrieval capability that the web search setting never covered. The mitigation an admin would reasonably believe protects them protects nothing, and until this research went public there was no way to know that from the documentation.</p>
-<p>PromptArmor reported the issue to Atlassian on May 23. Atlassian acknowledged it and issued a ticket ID. Then, by the researchers' account, more than two months passed without further communication, and the flaw was still unpatched when the writeup went public. Sitting on a zero-click data exfiltration bug in an assistant this widely deployed for a full quarter is hard to defend.</p>
-<p>Scale matters here. Atlassian's own marketing puts Rovo past five million monthly active users and inside roughly three-quarters of the Fortune 500. Jira and Confluence are where companies keep incident postmortems, unreleased roadmaps, customer escalations, and an alarming amount of pasted credentials.</p>
-<p>Indirect prompt injection is not a bug class anyone has solved, and vendors shipping agents with read access to the entire corporate wiki are making a bet on that changing. Until it does, the honest posture is to treat any AI assistant with broad document access and outbound network capability as a data egress path, and to monitor it like one. If you run Rovo, the question to ask your Atlassian rep this week is which specific controls actually cut off outbound requests, because the obvious one doesn't.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
