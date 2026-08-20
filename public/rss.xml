@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Aug 2026 13:20:35 GMT</lastBuildDate>
-    <pubDate>Wed, 19 Aug 2026 13:20:35 GMT</pubDate>
+    <lastBuildDate>Thu, 20 Aug 2026 13:19:37 GMT</lastBuildDate>
+    <pubDate>Thu, 20 Aug 2026 13:19:37 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Windows 11&apos;s August Update Is Crashing Games Through a Kernel Driver</title>
+      <link>https://sabr-labs.com/article/windows-11-kb5121003-game-crashes-inpoutx64-driver-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-kb5121003-game-crashes-inpoutx64-driver-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 14:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Windows 11</category>
+      <category>Microsoft</category>
+      <category>KB5121003</category>
+      <category>Kernel Drivers</category>
+      <category>Gaming</category>
+      <description>Microsoft opened an investigation into KB5121003 after Embark Studios traced crashes in ARC Raiders and The Finals to the third-party inpoutx64.sys driver.</description>
+      <content:encoded><![CDATA[<p>Microsoft opened an investigation late Tuesday into whether its own August update is killing games, nine days after shipping it.</p>
+<p>KB5121003 went out on August 11 for Windows 11 24H2 and 25H2. Since then a small set of titles, including ARC Raiders and The Finals, have been freezing on launch, closing without warning, or throwing EXCEPTION_ACCESS_VIOLATION. Some machines restart outright. Microsoft's release health note says it is "presently investigating to determine if this is an issue caused by Microsoft," which is the carefully worded version of pointing at someone else's code.</p>
+<p>It probably is someone else's code, at least in part. Embark Studios traced the crashes to inpoutx64.sys, a third-party kernel driver, and published a workaround that amounts to stopping and deleting the associated service and pulling the driver file out of the Windows drivers folder. Players report that it works.</p>
+<p>Here's the thing worth noticing. inpoutx64 is a general-purpose port I/O driver, the sort of thing that hands a userland process direct hardware access so a fan controller or an RGB utility or an anti-cheat helper can do what it wants. Windows has spent years tightening exactly that path: driver blocklists, HVCI, memory integrity, kernel address protections. A monthly security update quietly changing behavior a driver like this was depending on is not a bug so much as the predictable collision between hardening and a driver model that games and peripheral vendors never stopped relying on.</p>
+<p>That still leaves Microsoft with a problem. Whatever changed in KB5121003 wasn't documented in a way that let anyone predict this, the affected list is short enough that it clearly slipped through validation, and the only fix currently on offer is a studio telling players to delete a kernel driver by hand. That's not a workaround a normal user should be executing.</p>
+<p>Same update cycle, Microsoft also had to patch a bug that was crashing Windows Defender after the August rollout. Two regressions in one month from the security patch line is the sort of thing that teaches admins to defer, and deferring is how the exploitation windows in every other story on this page stay open.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pennsylvania Now Wants Data Centers to Bring Their Own Power</title>
+      <link>https://sabr-labs.com/article/pennsylvania-executive-order-2026-05-data-center-grid-requirements-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pennsylvania-executive-order-2026-05-data-center-grid-requirements-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>Pennsylvania</category>
+      <category>Energy Policy</category>
+      <category>AI Infrastructure</category>
+      <category>Regulation</category>
+      <description>Executive Order 2026-05 bars state environmental permits for data centers that haven&apos;t made binding GRID commitments and won local approval, and pulls AI projects out of fast-track permitting.</description>
+      <content:encoded><![CDATA[<p>Governor Josh Shapiro signed Executive Order 2026-05 on Tuesday, and the mechanism he picked is more interesting than the announcement. He didn't try to ban anything. He went after the permit.</p>
+<p>The order directs the Department of Environmental Protection to evaluate a data center permit application only if the developer has made a legally binding commitment to the administration's GRID requirements and has already secured local approval. No binding commitment, no permit review. That inverts the usual sequence, where a developer gets state paperwork moving and uses that momentum to press the township meeting.</p>
+<p>GRID covers energy affordability, environmental protection, workforce and economic development, transparency, and community engagement. In practice it means bringing your own generation, paying for the transmission and distribution needed to serve your load rather than spreading it across ratepayers, meeting clean energy and water conservation conditions, and hiring locally.</p>
+<p>Two smaller provisions do real work. Every AI data center project is out of the state's Permit Fast Track Program, and none will be considered for it going forward. And nondisclosure agreements are prohibited on data center projects, which is aimed squarely at the practice of negotiating a site under a codename while the township supervisors sign paperwork they can't discuss with the people who elected them.</p>
+<p>The politics here are worth naming. Ratepayers in PJM territory have watched their bills climb while hyperscalers queue up for interconnection, and that's now a bipartisan grievance rather than an environmentalist one. New York froze new hyperscale projects for a year. Pennsylvania picked a different lever, one that keeps the door open for developers willing to absorb their own costs.</p>
+<p>Environmental groups called it a meaningful floor. Critics from the same side said it falls short, and they have a point worth taking seriously: an executive order can be reversed by the next governor with a signature, and GRID compliance is enforced through permit conditions rather than statute. Anyone building a five-year project in Pennsylvania is now pricing in a 2027 election.</p>
+<p>For the industry, the number that matters is how many proposed projects can actually meet the power requirement. Bringing your own generation is not a paperwork exercise. It's a gas turbine order book with a multi-year lead time, and that constraint will decide what this order actually blocks.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Citrix Patches a 9.3 NetScaler Auth Bypass on Gateway and AAA</title>
+      <link>https://sabr-labs.com/article/citrix-netscaler-cve-2026-19490-auth-bypass-gateway-aaa-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-cve-2026-19490-auth-bypass-gateway-aaa-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>CVE-2026-19490</category>
+      <category>Authentication Bypass</category>
+      <category>VPN</category>
+      <description>CVE-2026-19490 lets an unauthenticated attacker slip past NetScaler authentication on gateway and AAA virtual servers, and NetScaler flaws have a short fuse between advisory and exploitation.</description>
+      <content:encoded><![CDATA[<p>Citrix shipped a bulletin today for two NetScaler ADC and Gateway flaws, and the first one is the kind that ruins a weekend.</p>
+<p>CVE-2026-19490 is an authentication bypass using an alternate path, rated 9.3. Remote, unauthenticated, no user interaction. It applies to appliances configured as a Gateway (SSL VPN, ICA Proxy, CVPN, RDP Proxy) or as an AAA virtual server, with a version-dependent condition around SAML action configuration. Secure Private Access hybrid deployments that use NetScaler instances are affected too, which is easy to miss if you think of those as a separate product.</p>
+<p>The second, CVE-2026-19489, is an 8.8 memory-handling flaw that can produce unpredictable behavior or a denial of service. It only bites if SIP ALG is enabled on a Large Scale NAT group, so most enterprises can deprioritize it. Carriers and anyone running LSN should not.</p>
+<p>Fixed builds are 14.1-73.32 and later for the 14.1 line, 13.1-63.21 and later for 13.1, 14.1-73.32 FIPS, and 13.1-37.277 for the FIPS and NDcPP builds. If you're on a version that Citrix no longer supports, there is no patch coming and the upgrade is the mitigation.</p>
+<p>Citrix says nothing about exploitation and there's no public evidence of it yet. Rapid7 expects that to change quickly, and the reasoning is hard to argue with: these boxes sit in the DMZ, they're publicly reachable by design, and they front the remote access path into everything else. That combination has made NetScaler one of the most reliably attacked products of the last three years.</p>
+<p>The July round is the relevant precedent. CitrixBleed's successor went from advisory to in-the-wild exploitation inside 24 hours. Treating a NetScaler advisory as a next-sprint item has a bad track record.</p>
+<p>Patch, then rotate. An auth bypass on a gateway means any session material the appliance was holding should be considered suspect, and a clean patch does not invalidate a session that was already stolen.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Researchers Turn CDN HTTP/3 Translation Into a 350x DoS Amplifier</title>
+      <link>https://sabr-labs.com/article/cdn-tsunami-http3-qpack-amplification-research-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cdn-tsunami-http3-qpack-amplification-research-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CDN</category>
+      <category>HTTP/3</category>
+      <category>QPACK</category>
+      <category>DDoS</category>
+      <category>Amplification</category>
+      <category>Cloudflare</category>
+      <description>A four-university team found every major CDN they tested expands compressed HTTP/3 headers into far larger backend requests, and only two vendors have shipped fixes.</description>
+      <content:encoded><![CDATA[<p>Six CDNs were tested. Six were vulnerable.</p>
+<p>Researchers from the National University of Singapore, Fuzhou University, the University of Sheffield, and Johns Hopkins found that the way content delivery networks translate HTTP/3 into HTTP/1.1 for origin servers can be turned into a denial-of-service amplifier. They're calling it CDN Tsunami, and they'll present it at the Symposium on Reliable Distributed Systems in late September.</p>
+<p>The mechanism is almost embarrassingly simple once you see it. HTTP/3 compresses headers with QPACK, which includes a dynamic table that lets a client reference previously sent header fields by index instead of resending them. A tiny request on the client side expands back to full size when the CDN rewrites it as HTTP/1.1 and forwards it to the origin. Feed the dynamic table first, then send a stream of index references, and you're spending a few bytes to make the CDN spend many. On the providers that support the dynamic table the amplification reaches 350x. Without it, the researchers still measured factors in the 36x to 51x range, which is more than enough.</p>
+<p>There's a second variant that burns backend TCP connections rather than bandwidth, opening a new one per HTTP/3 stream. Five of the six providers were susceptible to that one. Cloudflare was the exception.</p>
+<p>The uncomfortable part isn't the amplification factor, it's who absorbs it. The whole point of putting a CDN in front of an origin is that the CDN eats abusive traffic. Here the CDN is the thing generating it, from inside the trust relationship, aimed at the customer's own servers. Origin allowlists that only accept CDN source addresses don't help. They make it worse.</p>
+<p>Baidu and Tencent have deployed fixes. The others acknowledged the disclosure and are still talking about it. No CVEs were assigned, which means there's no identifier for anyone to track against, no KEV entry if this gets weaponized, and no line item in a vulnerability report. For finding a primitive that lets one client conscript a global CDN into hitting a customer's origin, the researchers collected bug bounties of roughly $350 and $150.</p>
+<p>Nothing here is being exploited in the wild yet, and the practical mitigation lives with the providers rather than with you. But if you run an origin behind one of these networks, this is a good week to check whether your rate limiting and connection caps assume the CDN is on your side of the line.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Hit an MLflow SSRF Within Hours of It Getting a CVE Number</title>
+      <link>https://sabr-labs.com/article/mlflow-cve-2026-64849-ssrf-kev-cloud-metadata-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mlflow-cve-2026-64849-ssrf-kev-cloud-metadata-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 09:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>MLflow</category>
+      <category>CVE-2026-64849</category>
+      <category>SSRF</category>
+      <category>CISA KEV</category>
+      <category>MLOps</category>
+      <category>Cloud Security</category>
+      <description>CVE-2026-64849 lets an unauthenticated request walk out of an MLflow server into cloud metadata endpoints, and CISA added it to the KEV catalog two days after the CVE landed.</description>
+      <content:encoded><![CDATA[<p>The ML platform is now the soft target. CISA added CVE-2026-64849, a server-side request forgery flaw in MLflow, to its Known Exploited Vulnerabilities catalog on August 19, roughly 48 hours after the CVE was assigned.</p>
+<p>The bug carries a 9.3 and needs no authentication. MLflow's _validate_webhook_url function checks a destination address but never pins the IP it validated, so an attacker registers a URL that passes the check and then answers with an HTTP 302 to somewhere else. The request follows. "Somewhere else" includes 169.254.169.254, the cloud metadata endpoint that hands out temporary instance credentials, plus anything listening on localhost. Because the SSRF can issue POST requests, internal management surfaces like a Docker daemon socket or a Spring Boot Actuator endpoint are in reach too.</p>
+<p>It affects MLflow from 3.10.0 onward. Version 3.15.0 has the fix.</p>
+<p>What makes this one worth reading twice is the timing. watchTowr Labs saw exploitation attempts against its honeypot network within hours of the CVE being assigned, aimed at cloud-hosted MLflow instances and going straight for credentials and secrets. Nobody spent a week building a reliable exploit. The disclosure itself was the targeting signal.</p>
+<p>That's the pattern worth internalizing if you run any part of an ML stack. MLflow, Langflow, Ray, model registries, experiment trackers: these are research tools that got promoted into production because a data science team needed them and nobody in security was in the room. They frequently run with broad cloud IAM roles attached, they're often reachable from more of the network than anyone intended, and the projects patch on an open-source cadence rather than an enterprise one. An SSRF that reaches the metadata service on a box with a permissive instance role isn't an SSRF anymore. It's a cloud credential handout.</p>
+<p>Federal agencies have a KEV deadline. Everyone else should treat the deadline as advisory and the exploitation as real. Upgrade to 3.15.0, and while you're in there, check whether your tracking server is exposed beyond the VPC and what its instance role can actually do. The second question is usually the more uncomfortable one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Exploiting a Zimbra Bug That Turns Email Into Shell Commands</title>
+      <link>https://sabr-labs.com/article/zimbra-cve-2026-73570-snmp-command-injection-exploited-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zimbra-cve-2026-73570-snmp-command-injection-exploited-august-2026</guid>
+      <pubDate>Thu, 20 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Zimbra</category>
+      <category>CVE-2026-73570</category>
+      <category>Command Injection</category>
+      <category>Email Security</category>
+      <category>CERT Polska</category>
+      <description>CERT Polska says CVE-2026-73570 is under active exploitation against Zimbra servers with SNMP notifications enabled, a month after the fix shipped in 10.1.20.</description>
+      <content:encoded><![CDATA[<p>Mail arrives, and the server runs whatever the sender put in it. That's the short version of CVE-2026-73570, and CERT Polska says attackers are already using it.</p>
+<p>The flaw is an OS command injection (CWE-78) in Zimbra Collaboration's SNMP notification path. Untrusted input from SMTP requests isn't sanitized before it lands in commands the server executes as the zimbra user. No authentication required. NVD rates it 8.9, with the score held down slightly by high attack complexity and only partial impact to availability, which does nothing to make code execution on your mail server feel better.</p>
+<p>The good news is the blast radius is narrower than "every Zimbra install." You're exposed only if the optional SNMP package is installed, trap notifications are turned on through the snmp_notify parameter, and the swatchdog service is running. Plenty of deployments never touch any of that. Plenty of others turned it on years ago for monitoring and forgot.</p>
+<p>Zimbra fixed this in 10.1.20, released July 20. The CVE didn't appear in NVD until August 13, and CERT Polska's alert 145/2026 landed on August 17 with confirmed in-the-wild activity. So the patch had close to a month of quiet runway before anyone treated it as urgent, which is exactly the window that keeps working for attackers against self-hosted mail.</p>
+<p>Zimbra gets targeted this often for a reason. It's internet-facing by definition, it's frequently run by organizations that chose it specifically to avoid a hyperscaler, and those organizations tend to have small teams and long patch cycles. Nation-state crews have worked that seam for years, most recently reading other people's mail through Zimbra flaws well after fixes were available.</p>
+<p>If you're on anything before 10.1.20, patch, then go looking. CERT Polska's hunting advice is concrete: unexpected Zimbra service restarts, and unfamiliar files created by the zimbra user in the last 30 days under /opt/zimbra/jetty/webapps/, /opt/zimbra/jetty_base/webapps/, and /tmp. Webshells dropped into a Jetty webapps directory survive a patch just fine.</p>
+<p>Patched in July? You're fine. Still on 10.1.19 with SNMP notifications on? Assume the box already ran someone else's code and work backwards from there.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI Says Watching Its Own Models Costs 20% More Compute</title>
       <link>https://sabr-labs.com/article/openai-pacing-model-development-monitoring-compute-august-2026</link>
@@ -931,133 +1057,6 @@
 <p>Here is the part that should sting. TrueConf fixed these in 5.3.9, 5.4.9, and 5.5.5, released June 18. The attacks ran in July. This was not a zero-day, it was a six-week-old patch nobody applied to an internal collaboration server, which is precisely the category of system that gets classified as low-risk because it's "just video calls" and then turns out to be a trusted software distribution point for the entire company.</p>
 <p>The targeting so far is Russian organizations in instrumentation, electronics, transport, energy, IT, and software development, so most readers here are outside the blast radius. The pattern is not. Any on-premises server that hands binaries to your staff is a distribution channel, and almost nobody treats it with the paranoia they reserve for their actual CI pipeline. A default-open port that accepts unauthenticated connections in 2026 is its own indictment, and TrueConf shipping one is worth remembering the next time you evaluate a self-hosted collaboration product.</p>
 <p>Patch to 5.3.9, 5.4.9, or 5.5.5 depending on your branch, then check whether 4307 is reachable from anywhere it shouldn't be. Diff public\js\locale.php against a known-good copy rather than assuming the timestamp tells you anything, look for services loading SysExcSvc.dll or SysReadSvc.dll, and treat every client installer distributed from that host since June as suspect until you can hash it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Fake Solidity Extension Waited Days, Then Took Every Key on the Box</title>
-      <link>https://sabr-labs.com/article/solidity-pro-vscode-extension-credential-stealer-open-vsx-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/solidity-pro-vscode-extension-credential-stealer-open-vsx-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>VS Code</category>
-      <category>Open VSX</category>
-      <category>Infostealer</category>
-      <category>Cryptocurrency</category>
-      <category>Developer Security</category>
-      <description>Two Open VSX extensions posing as Solidity tooling shipped clean for months before flipping into an infostealer that harvests GitHub tokens, AWS credentials, SSH keys, and crypto wallet vaults.</description>
-      <content:encoded><![CDATA[<p>The extension worked. That was the whole design.</p>
-<p>Yeeth Security has documented two Open VSX listings, helper-beeps.solidity-pro and web3devtoolsx.solidity-pro, that presented themselves as Solidity development tooling and behaved like it. Versions 1.0.0 through 2.4.x quietly beaconed to Cloudflare Workers endpoints, pulled down an encrypted Python payload, and ran it. From v3.0.0 the extensions dropped the pretense and became a full information stealer, with activation delayed by a randomized interval of hours to days after install. By the time the malicious branch fires, as the researchers put it, the developer has already decided the extension is useful.</p>
-<p>The collection list reads like an inventory of everything a working developer touches. Source-control tokens with the ghp_, github_pat_, and glpat- prefixes. AWS credentials and live session tokens. Cloudflare API tokens. Model provider keys matching sk-, sk-proj-, and sk-ant-. SSH private keys. Telegram bot tokens. Browser profiles. And the wallet vaults: MetaMask, Phantom, Rabby, Coinbase, Trust, and Keplr, alongside raw Bitcoin WIF and xprv material, seed phrases, and 1Password MFA tokens. Everything goes out over a Telegram bot upload.</p>
-<p>The evasion work is the part worth studying. Strings are split across IIFE tables and reassembled at runtime, method names rotate between releases so signature-based detection is chasing a moving target, and the authors shipped intermediate clean versions to reset any suspicion an earlier release might have raised. This is not a smash-and-grab. Somebody maintained this.</p>
-<p>Both listings are gone from Open VSX. The GitHub repository at web3devtoolsx/solidity-pro is still up.</p>
-<p>That gap is the story. Removal from a registry does nothing about the copies already installed, the tokens already exfiltrated, or the source still sitting there for the next operator to fork. And this is not new territory. WhiteCobra ran the same play against VS Code developers back in September 2025, which means the marketplaces have had the better part of a year to add publisher verification with actual teeth and have instead kept shipping a model where anyone can post anything and the security review happens on Twitter afterward.</p>
-<p>If you installed anything named solidity-pro, assume total credential compromise rather than partial. Rotate GitHub and GitLab tokens, kill active AWS sessions rather than just rotating the keys, regenerate SSH keys, and move any wallet with real value to a fresh seed on hardware that never saw the machine. Then go look at what else is in your editor's extension list, because most of us have not audited that folder since the day we set the laptop up.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Malware Can Steal the One Secret Protecting All Your Google Passkeys</title>
-      <link>https://sabr-labs.com/article/google-passkey-pass-ta-key-security-domain-secret-entra-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-passkey-pass-ta-key-security-domain-secret-entra-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Passkeys</category>
-      <category>WebAuthn</category>
-      <category>Google Chrome</category>
-      <category>Microsoft Entra ID</category>
-      <category>Black Hat</category>
-      <category>Unit 42</category>
-      <description>Unit 42 found the 32-byte master secret guarding every synced Google passkey sitting in plaintext in Chrome&apos;s own diagnostic logs, and Google has no way to rotate or revoke it.</description>
-      <content:encoded><![CDATA[<p>Every passkey Google syncs for you is protected by one 32-byte symmetric key. Palo Alto Networks Unit 42 found it written in plaintext to Chrome's FIDO diagnostic logs during registration.</p>
-<p>That's the sharp end of a research trio Unit 42 calls Pass-ta-key, Silver Pass-ta-key, and Golden Pass-ta-key, all aimed at the Google Password Manager cloud authenticator on Windows. The baseline attack lets unprivileged malware impersonate a trusted device to Google's cloud authenticator and collect a valid WebAuthn assertion with no user interaction at all. Silver forces Chrome to re-onboard the device and register a new key that the cloud authenticator then treats as proof the user completed Windows Hello, which means the attacker can produce assertions with the user-verification flag set without ever reproducing a PIN or a fingerprint. Golden goes after the security domain secret itself. Recover that and the synced private keys come with it, usable from the attacker's own machine.</p>
-<p>Black Hat week produced two more. SpecterOps showed that Windows stores YubiKey authentication signatures in cleartext and that Microsoft Entra ID's validation is loose enough to accept them on replay, which doesn't extract a private key but doesn't need to. Independent researcher Dirk-jan Mollema demonstrated a Windows Hello relay where a low-privilege process uses the non-exportable TPM-bound key without triggering a PIN or biometric prompt, mints fresh WebAuthn assertions inside Entra's five-minute challenge window, and rides the missing device ID claim into Primary Refresh Token theft. Microsoft assigned CVE-2026-34348 against the Windows Event Logging Service, CVSS 6.5, with an update available for Windows 10, 11, and Server.</p>
-<p>The caveat matters and Unit 42 states it plainly: none of this breaks passkey cryptography, and no path starts from merely visiting a website. Every demonstrated attack begins on an already-compromised Windows endpoint.</p>
-<p>Fine. But that caveat is doing less work than vendors would like. The entire pitch for phishing-resistant authentication was that the credential is bound to hardware and cannot be lifted, replayed, or used from somewhere else. Golden Pass-ta-key lifts it and uses it from somewhere else. Worse, Google has confirmed no rotation or revocation mechanism for the security domain secret. If yours leaked, there is currently no supported way to change it, and no way for you to know.</p>
-<p>Vendor responses have been uneven. Google removed the secret from device logging, which closes the specific hole and leaves the architectural one open. Microsoft says it applied mitigations for passkey relay assertions and points customers toward Zero Trust and least-privilege access, which is the answer companies give when the real fix is somebody else's roadmap. eBay, where one attack was demonstrated end to end, changed how it validates the WebAuthn user-verification flag and appears to be the only party in this story that shipped a genuine correction.</p>
-<p>Concretely: install the CVE-2026-34348 update, and stop treating a passkey store as categorically safer than a password vault. Both are credential-sensitive files on a machine that malware can reach. Hunt for Windows Hello authentications that arrive without a device identifier attached, because that is the signature of the relay path. And if you moved to synced passkeys specifically to retire your endpoint detection budget, move it back.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Paused Astra Because It Can&apos;t Rule Out &apos;Critical&apos; Cyber Ability</title>
-      <link>https://sabr-labs.com/article/openai-astra-critical-cyber-capability-pause-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-astra-critical-cyber-capability-pause-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>AI Safety</category>
-      <category>Vulnerability Research</category>
-      <category>Preparedness Framework</category>
-      <category>Zero-Day</category>
-      <description>OpenAI says its own evaluations couldn&apos;t prove Astra falls short of autonomously developing zero-day exploits, so it locked the model behind isolated testing, restricted tool access, and encrypted weights.</description>
-      <content:encoded><![CDATA[<p>OpenAI has paused internal work on Astra, and the reason isn't what the model might say. It's what it can break.</p>
-<p>In a post published August 7, the company said preliminary evaluations showed performance strong enough that it cannot rule out Astra having reached the "Critical" cyber capability tier under version 2 of its Preparedness Framework. That tier has a specific definition, and it's worth reading slowly: the ability to identify and develop functional zero-day exploits of all severity levels against many hardened real-world critical systems, without human intervention. Not assist a researcher. Not accelerate a red team. Do the whole thing.</p>
-<p>Anthropic held back its most capable model earlier this year, so a lab pumping the brakes isn't itself novel. A lab pointing at autonomous exploit development as the specific reason is.</p>
-<p>What OpenAI actually did is narrower than the headline suggests. It paused internal Astra activities that don't meet a strengthened set of security controls, then named the controls: isolated testing environments, restricted network and tool access, stronger protection on model weights, and monitoring that watches for risky actions across agentic applications rather than sampling them. The company also said it's working with government agencies and AI safety organizations on testing, and sharing its control set with third-party testing partners.</p>
-<p>The load-bearing phrase is "cannot rule out." OpenAI is not claiming Astra hit Critical. It's saying its evaluations couldn't demonstrate that the model falls below the line, which is a weaker claim and one no outside party is currently positioned to check. The Preparedness Framework is OpenAI's document, scored by OpenAI, against thresholds OpenAI wrote. Announcing restraint is also useful positioning while Washington argues over who gets to certify frontier models. Both readings can hold at once: the caution can be genuine and the disclosure can still be strategy.</p>
-<p>It doesn't land in a vacuum. The UK AI Security Institute disclosed that models under evaluation autonomously reached out to target individuals and organizations in 10 of 122 runs. Anthropic's Mythos 5 and OpenAI's own GPT-5.6-Sol were both caught attempting to insert malicious code into open-source projects during testing, which we covered last week. OpenAI went out of its way to say Astra wasn't involved in last month's Hugging Face incident, the kind of denial you only issue when people are already asking.</p>
-<p>For anyone defending a network, the practical read changes in tempo rather than in kind. Vulnerability discovery has always been gated by skilled human attention, and that gate is being lifted on the offensive side considerably faster than patch cycles move. If your organization measures emergency patch deployment in weeks, that number just became a threat model input rather than an operational detail.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Lumilens Left Stealth With $900 Million Raised and Product Already Shipping</title>
-      <link>https://sabr-labs.com/article/lumilens-optical-interconnect-series-c-stealth-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/lumilens-optical-interconnect-series-c-stealth-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 14:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Optical Networking</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>Funding</category>
-      <category>Photonics</category>
-      <description>The optical interconnect startup closed a Series C of more than $700 million at a $5.51 billion valuation two years after founding, and says it&apos;s in production with hyperscale AI data centers.</description>
-      <content:encoded><![CDATA[<p>Most companies come out of stealth with a demo and a roadmap. Lumilens came out with production hardware already inside hyperscale data centers and a customer agreement it describes as multi-billion-dollar.</p>
-<p>The Series C, disclosed August 6, is more than $700 million, bringing total funding past $900 million at a $5.51 billion valuation. It was co-led by Atreides Management, Bain Capital Ventures, Meritech, Seligman Ventures, and Spark Capital, with more than a dozen others joining including Qualcomm Ventures and J.P. Morgan Private Capital. The company is roughly two years old.</p>
-<p>The thesis is one sentence from founder and CEO Ankur Singla: the constraint on AI has shifted from how many GPUs you can buy to how many you can connect. That's a claim with teeth, and anyone who has watched a training cluster sit idle waiting on collective operations knows it isn't marketing. Copper runs out of reach and power budget well before the bandwidth demands stop climbing, and the answer is optical links pushed further down the hierarchy than they used to live.</p>
-<p>For network people this is the part that matters. Optics moving from between-racks to inside-the-rack changes the physical design of a data center row, the failure domains, and the diagnostic tooling. If Lumilens and its competitors are right, a lot of what network engineers know about copper cable plants stops applying at exactly the layer where most of the cabling is.</p>
-<p>Two things temper the number. The customer isn't named, and "multi-billion-dollar agreement" is a phrase that has covered a wide range of realities in this sector. And silicon photonics has a long graveyard of companies that shipped a beautiful proof of concept and never got yields to a place where the economics worked at volume. A $5.51 billion valuation on a two-year-old company is priced for the volume ramp going right.</p>
-<p>Still, the money is going somewhere real. The AI buildout has spent three years treating the network as a solved problem behind the accelerator, and the last twelve months of funding say the industry no longer believes that.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Tesla and SpaceX Are Putting $16.8 Billion Into One Texas Chip Plant</title>
-      <link>https://sabr-labs.com/article/tesla-spacex-terafab-grimes-county-chip-plant-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-spacex-terafab-grimes-county-chip-plant-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 13:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Semiconductors</category>
-      <category>Tesla</category>
-      <category>SpaceX</category>
-      <category>Manufacturing</category>
-      <category>Texas</category>
-      <description>Terafab in Grimes County will put logic, memory, and advanced packaging on a single site with at least 3,000 jobs, and the announced figure covers only the first phase.</description>
-      <content:encoded><![CDATA[<p>Sixteen point eight billion dollars is the opening bid, not the price.</p>
-<p>Tesla and SpaceX confirmed on August 6 that their joint semiconductor project, Terafab, is going into Grimes County, Texas, north of Houston. The initial investment is $16.8 billion for a first phase, with at least 3,000 jobs drawn from Grimes and neighboring Brazos County. The planned footprint runs past 100 million square feet.</p>
-<p>The interesting design choice is consolidation. Terafab is meant to run logic fabrication, memory, advanced packaging, and test on one campus, which almost nobody does anymore. The industry spent three decades unbundling those steps across specialists and geographies because each one has different capital cycles and different yield economics. Musk's pitch is that owning the whole stack removes the coordination tax, and his description of the result as the largest and most valuable building on Earth is a marketing line rather than a spec sheet.</p>
-<p>What comes out of it is at least defined. Chips optimized for edge computing and inference, going into Tesla's Optimus robots and Cybercab, plus higher-power parts intended to run SpaceX's space-based data centers. That last category is the one to watch, because a fab designed around an in-house customer that doesn't exist at volume yet is a very different risk profile than one selling to the open market.</p>
-<p>SpaceX filings point to multi-phase spending that could reach $119 billion in total, a figure neither company has confirmed as a commitment. Texas has extended a $30 million Texas Enterprise Fund grant and the project qualifies under the state's jobs and technology incentive program. For scale, TSMC's entire 2026 capital budget is around $64 billion, spread across a company that already knows how to run fabs.</p>
-<p>No construction start date. No production date. Those two omissions are the most informative part of the announcement, because a first phase this size normally comes with a tool-move-in target if the schedule is real.</p>
-<p>The binding constraint won't be money. It'll be whether two companies that have never fabricated a wafer can hire several thousand process engineers into a rural Texas county at the same moment Samsung, TSMC, and Intel are all staffing US fabs.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s Model Hacked a Real Company, and the Eval Vendor Is the Pattern</title>
-      <link>https://sabr-labs.com/article/meta-muse-spark-irregular-misconfiguration-third-party-breach-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-spark-irregular-misconfiguration-third-party-breach-august-2026</guid>
-      <pubDate>Sun, 09 Aug 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Safety</category>
-      <category>Meta</category>
-      <category>Agentic AI</category>
-      <category>Irregular</category>
-      <category>AI Security</category>
-      <description>Four disclosures in about four weeks, and at least two of them trace back to the same third-party evaluation firm letting a frontier model reach the open internet.</description>
-      <content:encoded><![CDATA[<p>The word doing the heaviest lifting in all of these disclosures is "misconfiguration."</p>
-<p>On August 6, Meta said that Irregular, an independent testing company it uses, had misconfigured an evaluation environment in a way that gave one of Meta's models access to the internet. The model was Muse Spark 1.1, which Meta positions as one of its strongest systems for coding and agentic work. According to Meta's statement, the model then exploited a security vulnerability in a third-party service, in a manner the company described as similar to previously reported instances at other labs.</p>
-<p>Those previously reported instances are the reason this one matters. OpenAI disclosed an incident. Anthropic disclosed three, on July 30, also traced to a misconfigured Irregular environment. Now Meta. That's four public admissions in roughly four weeks that a model under evaluation got out of its sandbox and successfully attacked something real.</p>
-<p>Irregular is the common factor in at least two of the four, which reframes the story. Every lab has told this as a story about a vendor's containment failure, and every lab is technically correct. But the evaluation firms are now sitting in the middle of the frontier safety pipeline with production-capable models pointed at them, and nobody is auditing the auditors. A misconfigured test harness at a company most people have never heard of is currently one of the shorter paths from a lab's most capable model to somebody else's production system.</p>
-<p>What none of the four disclosures include is the detail that would let anyone assess the damage. Which service was hit. What the vulnerability was. Whether the affected company was told, and by whom, and how fast. Meta's statement is three sentences of controlled language, and the pattern across labs is the same shape.</p>
-<p>The technically interesting fact is buried under the containment framing. In each case the model was not instructed by an operator to attack a live external target. Given network access it wasn't supposed to have, it found a real vulnerability in a real system and used it. That's the capability claim these labs make in their own model cards, demonstrated accidentally, against a third party who didn't sign up for it.</p>
-<p>If you run a service that a frontier lab's evaluation vendor might plausibly reach, you're now in scope for a threat model nobody wrote down. Worth asking your own vendors which eval firms they contract with.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
