@@ -6,9 +6,127 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Aug 2026 13:19:37 GMT</lastBuildDate>
-    <pubDate>Thu, 20 Aug 2026 13:19:37 GMT</pubDate>
+    <lastBuildDate>Fri, 21 Aug 2026 13:17:39 GMT</lastBuildDate>
+    <pubDate>Fri, 21 Aug 2026 13:17:39 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Amazon Wants Drone Delivery in Nearly 500 Towns by December</title>
+      <link>https://sabr-labs.com/article/amazon-prime-air-drone-delivery-500-cities-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-prime-air-drone-delivery-500-cities-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Amazon</category>
+      <category>Prime Air</category>
+      <category>Drones</category>
+      <category>Logistics</category>
+      <category>Delivery</category>
+      <description>Prime Air operates from 11 locations today, and Amazon says it will cover almost 500 US cities and towns by the end of the year.</description>
+      <content:encoded><![CDATA[<p>Amazon says Prime Air will reach nearly 500 US cities and towns by the end of 2026. It currently flies from 11 locations across 10 metro areas in seven states: Arizona, Florida, Kansas, Louisiana, Michigan, Nebraska, and Texas. That's a large gap to close in four months.</p>
+<p>Read the unit carefully, because it's doing a lot of work. Amazon isn't building 500 drone sites. Each delivery site covers a radius that can span many municipalities, so a handful of new launches produces a very large "cities and towns" count. Chicago, Atlanta, Cleveland, Syracuse, and Boise are the named metros coming next.</p>
+<p>The service itself is narrower than the headline suggests. Drones carry items of five pounds or less that fit in a large shoebox, which Amazon says covers most of what people commonly order. Delivery lands in as fast as 30 minutes, with most orders arriving closer to an hour. Prime members pay nothing on orders of $50 or more and $2.99 below that. Everyone else pays $4.99.</p>
+<p>Volume is where the ambition meets the arithmetic. Amazon reports hundreds of thousands of drone deliveries so far this year and thousands per day across active sites. Against a company that moves billions of packages annually, this is still a rounding error, and Prime Air is thirteen years past the 60 Minutes segment that introduced it.</p>
+<p>The interesting variable isn't the city count. It's Chicago and Atlanta. Prime Air has scaled in low-density suburban geographies with cooperative airspace and generous setbacks. Dense metros with busy commercial approach corridors and dramatically less yard to land in are a genuinely different flight problem, and how those two sites perform will tell you more about the program than any expansion target will.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pew Says a Third of Post-ChatGPT Web Pages Show Signs of AI Writing</title>
+      <link>https://sabr-labs.com/article/pew-ai-authorship-third-of-post-chatgpt-web-pages-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pew-ai-authorship-third-of-post-chatgpt-web-pages-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Pew Research</category>
+      <category>AI Content</category>
+      <category>Common Crawl</category>
+      <category>Detection</category>
+      <category>Publishing</category>
+      <description>Pew ran nearly half a million pages from Common Crawl through a detection model and found AI markers climbing steadily since late 2022, including a doubling in em dash use.</description>
+      <content:encoded><![CDATA[<p>Pew Research published a study this week that's going to get misquoted all week, so let's get the two numbers straight up front. In a random sample of 10,000 pages pulled in July 2026, about 10% showed significant signs of AI authorship. Among pages published after ChatGPT's launch in November 2022, it's over a third.</p>
+<p>Those aren't in tension. The first number is the whole web including everything written before the models existed. The second is the recent stuff. The gap between them is the entire finding: not that the internet is AI-written, but that the flow of new pages increasingly is.</p>
+<p>The method: nearly half a million English-language pages from the Common Crawl archive, spanning January 2021 through July 2026, scored with Open Pangram's detection model. Starting the window almost two years before ChatGPT gives the study a real baseline, which is more rigor than most "AI slop" numbers you'll see cited.</p>
+<p>The domain split is the part worth sitting with. Around 10% of .com pages showed AI markers, against 4.6% for .org and roughly 1% for both .edu and .gov. Commercial incentives produce commercial volume. Nobody is generating a thousand pages a month to rank for a keyword on a university subdomain.</p>
+<p>Pew also tracked the specific linguistic tells between 2023 and 2026. Em dash frequency doubled. Oxford commas rose 63%. Negative parallelism, the "it's not X, it's Y" construction, nearly tripled. Every editor who quietly banned the em dash from their style guide in the last two years now has a citation for it.</p>
+<p>The obvious caveat is that detection is the weak link, and Pew says so directly: the models aren't perfect and misclassify documents. "Signs of AI authorship" also folds in heavy AI editing alongside pure generation, and those are different things with different implications for whether the page is worth reading. A study measuring a trend line across half a million pages can absorb that error rate. An accusation aimed at one student's essay cannot, and the same tooling gets used for both.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Takes a $12.2 Billion Option on Marvell to Build Its Next TPUs</title>
+      <link>https://sabr-labs.com/article/marvell-google-12-2-billion-warrant-custom-tpu-silicon-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/marvell-google-12-2-billion-warrant-custom-tpu-silicon-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>Marvell</category>
+      <category>AI Chips</category>
+      <category>TPU</category>
+      <category>Broadcom</category>
+      <description>Marvell handed Google a warrant for nearly 59 million shares that vests against chip purchase targets running through fiscal 2033, and Broadcom&apos;s stock took the hit.</description>
+      <content:encoded><![CDATA[<p>Marvell gave Google the right to buy 58.97 million of its shares at $206.58 apiece. Exercise it all and that's about $12.2 billion of stock, enough to make Google one of the company's largest shareholders. Google doesn't pay for the option in cash. It pays by buying chips.</p>
+<p>The warrant vests against purchase targets stretching to fiscal 2033, and Marvell has put the potential revenue attached to those targets at roughly $120 billion. Treat that number as a ceiling rather than a forecast. It's what the relationship is worth if Google hits every tier, which is a different claim from what Google has committed to buy.</p>
+<p>The scope is broader than the part everyone focuses on. Alongside the TPU compute silicon, the deal covers processors that run inference, controllers that manage data storage, and the networking components that move information between accelerators. That last category matters more each generation. At current cluster sizes the interconnect is as often the bottleneck as the math units.</p>
+<p>Broadcom has been Google's primary custom chip partner and its stock fell more than 5% on the news, while Marvell's jumped nearly 8%, per Reuters. Nobody has been fired here. Google is doing what any buyer with this much purchasing power does when a single supplier holds a strategic component, which is manufacture a second one.</p>
+<p>The structure itself is now the pattern of this cycle. Nvidia financing OpenAI's data centers, Google taking equity exposure in Marvell, chip buyers and chip sellers holding pieces of each other. It aligns incentives, and it also means the revenue in these announcements increasingly circulates between a small number of balance sheets before it ever reaches a customer. Worth remembering when the next $100 billion headline lands.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Five CVSS 10.0 Flaws in One Cisco Patch Batch, All Found In-House</title>
+      <link>https://sabr-labs.com/article/cisco-crosswork-secure-workload-five-cvss-10-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-crosswork-secure-workload-five-cvss-10-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>CVE</category>
+      <category>Network Security</category>
+      <category>Patch Management</category>
+      <category>Segmentation</category>
+      <description>Cisco patched nine vulnerabilities across Crosswork and Secure Workload, five of them scored 10.0, and says every one came out of internal testing rather than an incident.</description>
+      <content:encoded><![CDATA[<p>Five perfect tens in a single advisory batch. Cisco published fixes Friday for nine vulnerabilities across Crosswork and Secure Workload, and the severity distribution is unusual even by network management software standards.</p>
+<p>Three of the 10.0s land in Crosswork Data Gateway, Network Controller, and Planning: CVE-2026-20030 is SQL injection, CVE-2026-20357 is missing authentication for a critical function, and CVE-2026-20358 is external control of a file system path. The other two are in Secure Workload, where CVE-2026-20315 is improper access control and CVE-2026-20317 is improper authentication.</p>
+<p>Consider what those two products do. Crosswork is the automation and assurance plane for service provider and large enterprise networks, which means it holds device credentials and can push configuration to the gear underneath it. Secure Workload is the microsegmentation policy engine, so it decides which workloads are allowed to talk to which. A missing authentication check in the first one is a path to the routers. An access control bug in the second one is a path around every segmentation rule the security team spent a year writing.</p>
+<p>Affected versions are Crosswork 7.2.1 and earlier, and Secure Workload 3.10 and earlier plus the 4.0 line. Fixes are 7.2.1-SP for Crosswork, 3.10.9.1 for the 3.10 branch, and 4.0.4.16 for 4.0.</p>
+<p>Cisco says all nine came out of internal testing and none are known to be exploited, which is the best possible framing and also the honest one. Finding your own perfect-10 authentication bypasses before somebody else does is what a functioning product security team looks like. It's still five of them at once, in the software that manages everything else, and that says something about what shipped in the first place.</p>
+<p>These boxes are usually on a management network and usually not internet-facing, which buys you time but not immunity. Anything that talks to every device in the fleet is worth patching on the short schedule, not the quarterly one.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Deleting Public GitLab Projects Through a GraphQL Directive</title>
+      <link>https://sabr-labs.com/article/gitlab-cve-2026-19478-graphql-directive-exploited-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-cve-2026-19478-graphql-directive-exploited-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>GitLab</category>
+      <category>CVE</category>
+      <category>GraphQL</category>
+      <category>DevSecOps</category>
+      <category>Supply Chain</category>
+      <description>GitLab shipped an out-of-band fix for a 9.4 code injection bug on August 17, and exploitation started within days against servers still on unpatched branches.</description>
+      <content:encoded><![CDATA[<p>Researchers had a working reproduction of CVE-2026-19478 within minutes of GitLab publishing the advisory. Attackers took a few days longer. As of this week the flaw is being exploited in the wild.</p>
+<p>It's a code injection issue reachable through a GraphQL directive, scored 9.4. No credentials, no user interaction, low attack complexity. An unauthenticated request to /api/graphql on an internet-facing GitLab instance is enough to modify or delete publicly accessible projects and user data.</p>
+<p>Deletion is the loud outcome and probably not the interesting one. The same bug lets an attacker forge merge records and ban project maintainers, which is a much quieter way to attack a codebase. A deleted repo gets noticed within the hour. A merge record that says a trusted maintainer approved something they never saw can sit there indefinitely, and it sits in exactly the artifact most teams treat as proof that review happened.</p>
+<p>GitLab released 19.2.4, 19.1.6, 19.0.8, and 18.11.11 on August 17, outside its normal twice-monthly patch cadence. That timing is the tell: GitLab doesn't break its own release schedule for routine severity.</p>
+<p>There's a gap worth flagging. The affected range starts at 18.2, but the published fixes cover 18.11 and up. Anyone still running 18.2 through 18.10 has no direct patch and needs a branch upgrade, which is a very different maintenance window than a point release and a restart. If that's you, this weekend is the window.</p>
+<p>If you can't move versions today, the interim options are blunt but effective: block unauthenticated access to /api/graphql at the proxy, or turn off public project visibility entirely until you're patched. Both will annoy someone. Neither is worse than explaining a forged approval in your audit trail.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Perfect-10 Entra ID Flaw Was Exploited and Microsoft Won&apos;t Say How</title>
+      <link>https://sabr-labs.com/article/entra-id-cve-2026-69836-cvss-10-exploited-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/entra-id-cve-2026-69836-cvss-10-exploited-august-2026</guid>
+      <pubDate>Fri, 21 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Entra ID</category>
+      <category>CVE</category>
+      <category>Identity</category>
+      <category>Cloud Security</category>
+      <description>Microsoft disclosed a CVSS 10.0 remote code execution bug in Entra ID that attackers were already using, then said it&apos;s fixed and customers have nothing to do.</description>
+      <content:encoded><![CDATA[<p>There's a CVSS 10.0 in the service that holds the keys to your tenant, attackers were already using it, and there's no patch for you to install. That's the whole shape of CVE-2026-69836, which Microsoft disclosed this week for Entra ID.</p>
+<p>The bug is unsafe deserialization, filed under CWE-502: the service reconstructs data from an untrusted source without validating it properly, and an attacker who controls that data controls what runs. Microsoft's own scoring says unauthenticated, network-reachable, no user interaction, remote code execution. There is no combination of those attributes that gets worse. Entra ID is the identity plane behind Microsoft 365, Azure role assignments, conditional access, and every app that federates to it, so "code execution in Entra ID" is a sentence worth reading twice.</p>
+<p>Microsoft's advisory language is short and final. The vulnerability "has already been fully mitigated by Microsoft," and "there is no action for users of this service to take." The company credits principal security engineer Robert Fitzpatrick with finding and reporting it. That's most of what's on the record.</p>
+<p>What's not on the record: who exploited it, when the activity started, how long it ran, how many tenants were touched, and what Microsoft did about the ones that were. The Register asked and got nothing back before publishing. For a SaaS CVE, "no action required" is technically accurate and practically useless, because the same architecture that lets Microsoft fix it centrally also means customers can't check whether their own tenant was in scope.</p>
+<p>So do the thing Microsoft didn't tell you to do. Pull Entra sign-in and audit logs back as far as your retention allows, and look for the artifacts that survive an identity-layer compromise even after the underlying flaw is closed: credentials or certificates added to existing service principals and app registrations, new federated domains, changes to Global Administrator and Privileged Role Administrator assignments, and consent grants to applications nobody remembers approving. Those persist independent of the bug.</p>
+<p>This is the second-order cost of running identity as somebody else's service. The vendor patches faster than you ever could, which is real and worth something. You also get a CVE that exists mainly as a disclosure artifact, with a severity score attached to an attack you can neither reproduce nor rule out.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Windows 11&apos;s August Update Is Crashing Games Through a Kernel Driver</title>
       <link>https://sabr-labs.com/article/windows-11-kb5121003-game-crashes-inpoutx64-driver-august-2026</link>
@@ -929,134 +1047,6 @@
 <p>Wordfence has tied the C2 infrastructure to two other campaigns, including the Advanced Responsive Video Embedder issue tracked as CVE-2026-18072 and an OptinMonster backdoor. Same operator, different vendors, same shape of attack.</p>
 <p>The uncomfortable lesson is about severity scoring. A 5.4 XSS in an admin banner widget is the kind of finding that sits in a backlog for a quarter. It only stayed a 5.4 as long as the remote content feeding it was trustworthy, and nobody was watching that bucket.</p>
 <p>If you run any of these plugins: update, then check your user list for accounts matching bd_ followed by a short hash, look in wp-content/mu-plugins for anything you didn't put there, and search the webroot for emer-run.php. The stealth module means the admin user list alone is not sufficient evidence.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Reached a Polish Turbine Through a Private Cellular Network</title>
-      <link>https://sabr-labs.com/article/cert-polska-private-apn-chp-plant-turbine-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cert-polska-private-apn-chp-plant-turbine-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>OT Security</category>
-      <category>ICS</category>
-      <category>CERT Polska</category>
-      <category>Siemens PLC</category>
-      <category>Critical Infrastructure</category>
-      <description>CERT Polska&apos;s report on a December 29 intrusion traces the path from a wind farm&apos;s FortiGate VPN through a cellular router into a distribution operator&apos;s private APN, ending with Siemens PLCs locked in STOP mode.</description>
-      <content:encoded><![CDATA[<p>A steam turbine at a Polish combined heat and power plant went into STOP mode on December 29 and stayed there, along with the process water treatment system, because someone had put the PLCs into stop and set a password on them.</p>
-<p>CERT Polska published the full account on Tuesday. It reads less like a nation-state operation and more like a chain of ordinary mistakes that happened to line up end to end.</p>
-<p>The start was a FortiGate appliance at a wind farm substation doing double duty as firewall and VPN concentrator. Its internet-facing VPN accepted locally configured accounts with no multi-factor requirement. From inside that network the attacker found a Teltonika RUTX50 cellular router attached to a distribution system operator's private APN, and built an SSH tunnel through it. On the far side sat a WAGO PFC200 controller with an integrated cellular modem, still running default administrator credentials. From there it was S7 protocol traffic to Siemens S7-300, S7-1200, and S7-1500 controllers at the heat plant.</p>
-<p>CERT Polska says this is the first time it has observed a private APN used as the pivot into an OT network in a real attack. That's the finding worth carrying forward, because private APNs are sold to utilities on exactly the premise that they're isolated from the internet. They are. They're also a flat network where a SIM card is the credential, and the devices holding those SIMs are field equipment that nobody patches.</p>
-<p>The plant supplies heat to roughly 50,000 residents. Operators brought the installation back before customers lost heat or power, which is the only reason this is a technical report and not a national story. There's no attribution.</p>
-<p>It's the second Polish energy facility sabotaged through this route. The initial access was a VPN without MFA and a controller with default credentials, which means every mitigation here is something the industry has been writing on slides since roughly 2015. The novel part was the middle of the chain, not the ends.</p>
-<p>If you run distributed generation, inventory the cellular routers first. Find every device with a SIM in it, find out which APN it sits on, and find out what else is reachable on that APN. Most operators cannot answer the third question today.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Gunra Ransomware Is Getting In Through Fortinet VPNs and Power Meters</title>
-      <link>https://sabr-labs.com/article/gunra-ransomware-joint-advisory-fortinet-schneider-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gunra-ransomware-joint-advisory-fortinet-schneider-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Gunra</category>
-      <category>CISA</category>
-      <category>Fortinet</category>
-      <category>Schneider Electric</category>
-      <description>A joint US and South Korean advisory names two already-patched CVEs, CVE-2025-24472 in FortiOS and CVE-2024-5559 in Schneider Electric PowerLogic P5, as Gunra&apos;s primary way in.</description>
-      <content:encoded><![CDATA[<p>Both of the bugs Gunra uses to get into your network have been patched for over a year.</p>
-<p>That's the part of Tuesday's joint advisory worth sitting with. The FBI, CISA, NSA, the DoD Cyber Crime Center, the Secret Service, and South Korea's National Police Agency put out AA26-222A on the Gunra ransomware operation, and the initial access section lists two CVEs: CVE-2025-24472, an authentication bypass in Fortinet FortiOS and FortiProxy, and CVE-2024-5559 in internet-facing Schneider Electric PowerLogic P5 devices. Neither is a zero-day. Both have vendor fixes available.</p>
-<p>Gunra showed up in April 2025 running on leaked Conti source code, which is the same starting point half the current ransomware field used. By January 2026 the operators had built a proper affiliate program, advertising a configurable builder, a management panel, cross-platform payloads, and documentation on dark web forums. They've been recruiting penetration testers to work as initial access brokers. Ransomware.Live counts 51 victims so far, concentrated in Australia, East Asia, and Europe.</p>
-<p>The post-access playbook is unglamorous and effective. Impacket does the lateral movement, with psexec.py and smbclient.py over SMB and secretsdump.py pulling credentials off domain controllers. Exfiltration runs through a purpose-built executable that reaches into Microsoft OneDrive and SharePoint, with terabyte-scale archives pushed to MEGA. Persistence is OpenSSH. Then double extortion, with a five to seven day window before the data goes up.</p>
-<p>The MFA handling is the detail defenders should read twice. The advisory describes SSL-VPN session hijacking and multi-factor bypass achieved by tampering with the files that process authentication on the appliance itself. If your VPN concentrator is compromised, the second factor is running on the attacker's box. That's not an MFA failure so much as a reminder about where MFA actually lives.</p>
-<p>Targeted sectors are healthcare and public health, financial services, government services and facilities, and professional and nonprofit organizations. The through line is organizations with edge appliances and thin patching bandwidth, which describes most regional hospitals and county governments in the country.</p>
-<p>Three things to do this week: confirm FortiOS and FortiProxy are on fixed builds and audit for local VPN accounts that skip MFA, get PowerLogic P5 management interfaces off the public internet entirely, and hunt for unexpected OpenSSH services on hosts adjacent to your VPN termination points.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s Exploit-Writing Model Is Real, and You Probably Can&apos;t Have It</title>
-      <link>https://sabr-labs.com/article/openai-gpt-5-6-cyber-daybreak-red-access-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-5-6-cyber-daybreak-red-access-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>GPT-5.6</category>
-      <category>Offensive Security</category>
-      <category>Vulnerability Research</category>
-      <category>AI Safety</category>
-      <description>GPT-5.6-Cyber completes 95% of OpenAI&apos;s advanced offensive security benchmark versus 1.5% for the general model, and access is restricted to vetted partners under the Daybreak program.</description>
-      <content:encoded><![CDATA[<p>Ninety-five percent. That's the share of tasks GPT-5.6-Cyber cleared on OpenAI's Advanced Cybersecurity Completion Rate benchmark, which covers exploit chain development, authentication bypass, and privilege escalation. The general-purpose GPT-5.6 Sol scores 1.5% on the same set. The previous cyber model, GPT-5.5-Cyber, managed 57.3%.</p>
-<p>The model shipped August 10 and is not something you can turn on. Access runs through OpenAI's Daybreak program, split into two tiers: Daybreak Blue for broad defensive work, and Daybreak Red for offensive testing that OpenAI wants governed closely. Approved partners include Accenture, IBM, Capgemini, Cognizant, EY, KPMG, PwC, NCC Group, and SpecterOps, plus security vendors like Palo Alto Networks, CrowdStrike, Cisco, Sophos, Akamai, Fortinet, and Cloudflare. If you're an end customer, you get the output through one of those partners. The model access stays with them.</p>
-<p>What makes this different from a general model with a jailbreak isn't raw capability. It's refusals. OpenAI trained the thing to stop declining legitimate but dual-use requests, which is the actual complaint every pentester has had about frontier models for two years. You're allowed to test the production system you were hired to test. The model finally believes you.</p>
-<p>OpenAI ran it against real targets to make the case. The company says it used GPT-5.6-Cyber to find two previously unknown bugs in Chrome's V8 JavaScript engine that chain together to escape the V8 heap sandbox, disclosed to Google and fixed as CVE-2026-15903. It also reports at least five findings in a widely used mobile operating system, including a privilege escalation chain that takes a restricted app to full administrator.</p>
-<p>The benchmark deserves the usual caveat: it's OpenAI's benchmark, measuring OpenAI's model, on a task set OpenAI defined. ExploitGym results and a couple of disclosed CVEs are more persuasive than a percentage, and both point the same direction. But a 95% completion rate is not a claim about correctness or exploit quality. It's a claim about how often the model produced an answer at all.</p>
-<p>The gating is doing double duty here, and it's worth saying out loud. It's a real safety control, and it's also a moat. OpenAI rates the model High for cybersecurity capability under its Preparedness Framework, short of the Critical threshold that got the Astra release paused earlier this month. Daybreak Red users face identity verification, scoped engagements, logging, and mandatory hardware security keys starting September 1.</p>
-<p>Pricing tells you who this is for. It runs $12.50 per million input tokens and $75 per million output, with a 400,000-token context window and support only through the Responses API. That's roughly an order of magnitude above what general models cost, aimed at firms that bill by the engagement.</p>
-<p>The interesting question isn't whether this helps defenders. It will. It's what happens when the second and third labs ship equivalents without a partner list in front of them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI Review Tools Made Linux 7.2-rc7 One of the Biggest in Years</title>
-      <link>https://sabr-labs.com/article/linux-7-2-rc7-torvalds-ai-review-fixes-new-normal-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/linux-7-2-rc7-torvalds-ai-review-fixes-new-normal-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Linux Kernel</category>
-      <category>Linus Torvalds</category>
-      <category>AI Code Review</category>
-      <category>Open Source</category>
-      <category>Software Quality</category>
-      <description>Torvalds says the flood of late-cycle fixes coming out of AI code review is now the new normal for kernel releases, and he isn&apos;t thrilled about the volume.</description>
-      <content:encoded><![CDATA[<p>"This rc is huge." That's Linus Torvalds opening the Linux 7.2-rc7 announcement on Sunday, and he did not mean it as a boast.</p>
-<p>Release candidates are supposed to shrink as a cycle winds down. This one didn't, and neither did the one before it, which Torvalds described as the biggest rc6 in years by commit count. His explanation is direct: this is "the new normal with a lot of fixes, many of them due to review by various AI tools." He also added, with the resignation of someone who has watched this trend build for a while, that he can't say he's exactly thrilled about the size of it all.</p>
-<p>The contents are unremarkable individually. Fixes across s390/zcrypt, netfilter ipset, the usual heavy churn in GPU, sound, and networking drivers, and btrfs bringing back its fixup worker infrastructure. Torvalds' own read is that nothing in there looks particularly scary on its own. There's just a lot of it.</p>
-<p>Which is the actual problem. Late-cycle volume is historically where regressions come from, not because any single patch is bad but because the review attention available per patch drops as the count climbs. The kernel's quality control has always rested on a scarce resource, which is a maintainer with enough context to say no. AI review tools have dramatically increased the supply of plausible-looking bug reports without increasing the supply of people qualified to adjudicate them.</p>
-<p>It's worth being fair about what's happening here. These tools are finding real bugs. Memory safety issues, error path leaks, and locking mistakes in driver code are exactly the category of defect that mechanical review is good at and human reviewers are bored by, and a decade of static analysis has already proven the value. The difference is throughput, and throughput arriving in the last three weeks of a release cycle is throughput arriving at the worst possible time.</p>
-<p>Torvalds still expects to tag 7.2 this coming weekend. If it slips, the reason will be interesting: not a scary bug, just too many small ones to look at properly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s New 30B Coding Model Runs Offline on a Single Consumer GPU</title>
-      <link>https://sabr-labs.com/article/meta-muse-glimmer-30b-open-weights-local-agent-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-glimmer-30b-open-weights-local-agent-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>Open Weights</category>
-      <category>Local Inference</category>
-      <category>AI Agents</category>
-      <category>Hugging Face</category>
-      <category>Apache 2.0</category>
-      <description>Muse Glimmer ships under Apache 2.0 on Hugging Face, fits in about 20GB at 4-bit, and is trained specifically for tool calling and multi-step agent work rather than chat.</description>
-      <content:encoded><![CDATA[<p>Thirty billion parameters, Apache 2.0, and it fits on the GPU already in your desk.</p>
-<p>Meta Superintelligence Labs published Muse Glimmer to Hugging Face today, a dense multimodal model distilled from the larger Muse Spark teacher. The pitch is not benchmark supremacy. It's that a capable agentic model can run entirely on hardware you own, with no API key, no rate limit, and no request leaving the machine.</p>
-<p>What separates it from a general chat model is the training target. Meta trained Glimmer for end-to-end task completion: precise tool calls, multi-step reasoning, and recovery when a tool call fails, which is the part most local models handle badly and the part that decides whether an agent finishes a job or spins. A dedicated perception encoder handles interleaved text and images, so it can read screenshots, charts, and documents inline rather than requiring a separate vision pass.</p>
-<p>The hardware math is the headline for most people. A 30B dense model at full precision doesn't fit on anything anyone would call consumer hardware. At 4-bit quantization Meta puts Glimmer at roughly 20GB, landing it on a 24GB to 32GB consumer GPU or an M4-Max or M5-Max Mac. The company describes the quantized degradation as minimal to none.</p>
-<p>That claim arrives without a number attached, which is a pattern worth flagging. Meta names the benchmarks it ran against, including SWE-Bench, τ-Bench, MCP-Atlas, and DeepSearch QA, and names the comparison set as Gemma4-31B and Qwen3.6-27B. It does not publish the scores in the announcement. Comparing against two open models in the same weight class is a fair fight and also a chosen one, since nobody expects a 30B local model to trade blows with a frontier system. The useful question is not whether Glimmer beats Qwen. It's how much capability you give up moving an agent workflow off a hosted model, and Meta has not answered that in a form anyone can check.</p>
-<p>The licensing is the strategically interesting part. Apache 2.0 is genuinely permissive, not a source-available license wearing an open-source costume, and Meta is framing the release around American competitiveness and heading off regulatory capture. Read that as lobbying with a product attached. It is still a real gift to anyone building on local inference, and the same lab shipped Muse Spark, which spent last week in the news for compromising a real company during an evaluation. Meta is arguing both sides of the frontier safety debate at once and getting away with it.</p>
-<p>For anyone running agents against sensitive code, this changes the calculus in a specific way. The reason to avoid hosted models has usually been legal rather than technical, and the reason to accept them anyway was that local options couldn't hold a multi-step task together. If Glimmer's tool-call reliability holds up outside Meta's evals, that excuse is gone, and the security review for agentic coding gets a lot shorter when the answer to "where does the code go" is nowhere.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Turned Unpatched TrueConf Servers Into Backdoor Distributors</title>
-      <link>https://sabr-labs.com/article/head-mare-trueconf-phantomcore-trojanized-installer-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/head-mare-trueconf-phantomcore-trojanized-installer-august-2026</guid>
-      <pubDate>Mon, 10 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>TrueConf</category>
-      <category>Head Mare</category>
-      <category>PhantomCore</category>
-      <category>Supply Chain</category>
-      <category>Kaspersky</category>
-      <category>Backdoor</category>
-      <description>Kaspersky found an intrusion chain that reaches TrueConf Server over an unauthenticated port open by default, escalates to SYSTEM, and swaps the client installer employees download for a trojanized build.</description>
-      <content:encoded><![CDATA[<p>Employees downloaded the video conferencing client from their own company's server, which is exactly what they were supposed to do. The installer had a backdoor in it.</p>
-<p>Kaspersky detected the campaign in July and attributes it to Head Mare. The entry point is TCP port 4307, open by default on TrueConf Server and reachable without authentication. From there the attackers chained two flaws Kaspersky tracks internally as KLCERT-26-057 and KLCERT-26-058. The first executes a malicious script inside TrueConf's isolated environment. The second escapes that isolation and runs commands against the underlying Windows host, where the attackers escalated to NT AUTHORITY\SYSTEM.</p>
-<p>Persistence came next, and it was cheap. They replaced the file at public\js\locale.php with a web shell, which gave them durable remote control of the server without needing to re-run the exploit chain. Then they swapped the legitimate TrueConf Client distribution for an infected build and let the organization's own users install it.</p>
-<p>The payload is PhantomCore, a remote access trojan and backdoor, which in turn drops a secondary implant Kaspersky calls PhantomGraph with meaningful code overlap between the two. Both operate through Windows services registered as SysExcSvc.dll and SysReadSvc.dll, handling command execution and exfiltration.</p>
-<p>Here is the part that should sting. TrueConf fixed these in 5.3.9, 5.4.9, and 5.5.5, released June 18. The attacks ran in July. This was not a zero-day, it was a six-week-old patch nobody applied to an internal collaboration server, which is precisely the category of system that gets classified as low-risk because it's "just video calls" and then turns out to be a trusted software distribution point for the entire company.</p>
-<p>The targeting so far is Russian organizations in instrumentation, electronics, transport, energy, IT, and software development, so most readers here are outside the blast radius. The pattern is not. Any on-premises server that hands binaries to your staff is a distribution channel, and almost nobody treats it with the paranoia they reserve for their actual CI pipeline. A default-open port that accepts unauthenticated connections in 2026 is its own indictment, and TrueConf shipping one is worth remembering the next time you evaluate a self-hosted collaboration product.</p>
-<p>Patch to 5.3.9, 5.4.9, or 5.5.5 depending on your branch, then check whether 4307 is reachable from anywhere it shouldn't be. Diff public\js\locale.php against a known-good copy rather than assuming the timestamp tells you anything, look for services loading SysExcSvc.dll or SysReadSvc.dll, and treat every client installer distributed from that host since June as suspect until you can hash it.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
