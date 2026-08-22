@@ -6,9 +6,133 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Aug 2026 13:17:39 GMT</lastBuildDate>
-    <pubDate>Fri, 21 Aug 2026 13:17:39 GMT</pubDate>
+    <lastBuildDate>Sat, 22 Aug 2026 13:17:38 GMT</lastBuildDate>
+    <pubDate>Sat, 22 Aug 2026 13:17:38 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Apple Music Is Putting &apos;Made With AI&apos; Labels on Songs</title>
+      <link>https://sabr-labs.com/article/apple-music-made-with-ai-labels-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-music-made-with-ai-labels-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Apple</category>
+      <category>Generative AI</category>
+      <category>Music</category>
+      <category>Content Provenance</category>
+      <category>Disclosure</category>
+      <description>Apple told creators that the AI transparency tags it began requiring in March will surface as visible &apos;Made With AI&apos; labels on tracks later this year.</description>
+      <content:encoded><![CDATA[<p>Apple has been quietly collecting AI disclosure metadata on Apple Music since March. Later this year that metadata stops being invisible. Tracks, artwork, compositions, and music videos where AI did a material portion of the work get a visible 'Made With AI' label in front of listeners.</p>
+<p>The underlying rule hasn't changed. Apple has required an AI Transparency Tag since March whenever AI contributed a material portion of a new work. What changed in August is the surfacing: the tag moves from a metadata field only Apple and the distributor see to something on the listener's screen.</p>
+<p>Apple isn't detecting anything here. It's asking labels and distributors to self-report, on the reasoning that they're best positioned to know how a track was made. That's true, and it's also the entire weakness. A disclosure regime with no verification layer catches the honest and the sloppy. It doesn't catch anyone with a reason to lie, and when AI tracks are competing for the same playlist placements as everything else, the reason to lie is right there.</p>
+<p>The scale is what makes it worth doing anyway. More than a third of monthly deliveries to the service are now fully AI-generated. Listening to them sits under half a percent. That gap is the actual story: the flood is real and the demand for it isn't, which means the cost lands on search, discovery, and the royalty pool rather than on anybody's ears.</p>
+<p>The phrase 'material portion' is going to carry enormous weight, and Apple hasn't defined it publicly. Autotune obviously isn't AI generation. A vocal synthesized end to end obviously is. Between those sits stem separation, AI mastering, generated drum parts, and a synth patch trained on somebody's sample library. Where Apple draws that line decides whether the badge means something or ends up stamped on half the catalog.</p>
+<p>A label that appears on nearly everything communicates nothing. Apple gets roughly one shot at drawing the boundary tightly enough for the badge to carry information, and it's drawing that boundary using data supplied by the people the badge is about.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Samsung Is Raising Foundry Prices Up to 15%, and Customers Are Paying</title>
+      <link>https://sabr-labs.com/article/samsung-foundry-price-increase-4nm-5nm-8nm-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/samsung-foundry-price-increase-4nm-5nm-8nm-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Semiconductors</category>
+      <category>Samsung</category>
+      <category>TSMC</category>
+      <category>Foundry</category>
+      <category>Supply Chain</category>
+      <description>Samsung has lifted pricing on new 4nm, 5nm, and 8nm orders by as much as 15%, with Chinese and U.S. customers reportedly absorbing the steepest increases.</description>
+      <content:encoded><![CDATA[<p>Samsung Foundry spent most of the last decade discounting to pull work away from TSMC. It just raised prices on new orders by up to 15%, and the orders are still coming.</p>
+<p>The increases, reported this month and applied to orders placed in July, hit the 4nm node hardest: 10% to 15% for customers in China and the United States, 5% to 10% for customers in Taiwan. The SF5 node moved in the same 10% to 15% band. Older SF8 went up as much as 10%, propped up partly by Nvidia's continued RTX 3060 volume on that line.</p>
+<p>This is capacity pricing, not confidence pricing. Samsung's Pyeongtaek 4nm line has reportedly been running full since late 2024, and TSMC's advanced nodes are booked out with AI silicon. When the leader has no slots left, the second source stops being a discount and starts being the only supply.</p>
+<p>Samsung's customer roster now reads Tesla, Apple, Broadcom, Nvidia, Google, and Qualcomm. Two years ago the running story about this business was yield problems and customer defections. The story now is a waitlist.</p>
+<p>Two caveats worth holding onto. The increases apply to new clients and new orders rather than existing contracts, so the revenue effect arrives with a lag measured in quarters, not weeks. And pricing power borrowed from someone else's congestion is exactly that. TSMC's Arizona fabs and expanded Taiwan capacity come online over the next two years, and if AI order growth flattens before that capacity does, Samsung will be holding higher prices into a loosening market.</p>
+<p>For anyone buying silicon downstream, the near-term read is simpler. Mature nodes are no longer the stable price floor they've been for years. An 8nm process going up 10% because a five-year-old GPU still sells tells you how tight the whole chain has gotten.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nevada Just Approved 5,000 Tesla Robotaxis. In July It Allowed 10.</title>
+      <link>https://sabr-labs.com/article/nevada-robotaxi-permits-tesla-waymo-uber-clark-county-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nevada-robotaxi-permits-tesla-waymo-uber-clark-county-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Autonomous Vehicles</category>
+      <category>Tesla</category>
+      <category>Waymo</category>
+      <category>Regulation</category>
+      <category>Uber</category>
+      <description>Nevada regulators unanimously cleared Tesla, Waymo, and Uber to run paid robotaxi service in Clark County, lifting Tesla&apos;s vehicle cap from 10 to 5,000.</description>
+      <content:encoded><![CDATA[<p>A few weeks ago Tesla asked Nevada for permission to run 5,000 robotaxis around Las Vegas and got 10, with a 45 mph speed cap and no airport trips. On August 20 the state handed over the 5,000.</p>
+<p>Nevada's transportation regulator approved three applications unanimously, covering Tesla, Waymo, and Uber for paid service in Clark County. Waymo's authorization tops out at 1,000 vehicles over the next twelve months. Tesla's 5,000-vehicle permit reportedly extends statewide as long as the company notifies the agency before expanding beyond the Las Vegas area.</p>
+<p>Tesla doesn't expect to hit the number. The company said it would be very happy to reach roughly 2,500 vehicles within the year. File that away, because the 5,000 figure is going to get quoted as a fleet size, and a permit ceiling is not a car on the road.</p>
+<p>Clark County is close to the ideal case for this technology. Flat, gridded, well lit, dry most of the year, and packed with people who arrived without a vehicle and need to get somewhere. If autonomy can't make the economics work there, the geofence arguments get considerably harder everywhere else.</p>
+<p>The more interesting detail is that all three approvals landed together. Waymo runs lidar and years of supervised miles. Tesla runs cameras and has bet the product on not needing the rest. Uber isn't building a stack at all, it's the demand layer renting someone else's. Nevada declined to pick a technical winner and put the question to one metro area to sort out.</p>
+<p>Going from a 10-vehicle interim permit to a 5,000-vehicle authorization in roughly a month is a large jump on a short evidence window. The July restrictions on speed, geography, and airport access existed for a reason, and nothing public yet explains what changed in the operational data between then and now. The agency's own record of the decision is the document worth reading when it posts.</p>
+<p>Watch the disengagement and incident reporting, not the fleet counts. That's the only place the camera-only and lidar approaches get compared on the same streets under the same rules.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Malware Found on Car Head Units, Delivered by the Car&apos;s Own Updater</title>
+      <link>https://sabr-labs.com/article/jarservice-android-car-head-unit-malware-moyu-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/jarservice-android-car-head-unit-malware-moyu-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Android</category>
+      <category>Automotive</category>
+      <category>Botnet</category>
+      <category>Supply Chain</category>
+      <category>Kaspersky</category>
+      <description>Kaspersky found a dropper it calls JarService riding DoFun&apos;s Android head-unit update channel and turning vehicles into ad-fraud bots and proxy relay nodes.</description>
+      <content:encoded><![CDATA[<p>Your car's infotainment system runs Android, takes software over the air, and almost nobody is watching it. Kaspersky has published what it describes as the first documented case of malware on a car head unit with an infection chain built specifically for that hardware.</p>
+<p>The team, led by researcher Dmitry Kalinin, found the campaign in June 2026. It targets Android head units running DoFun firmware, which turns up across a range of vehicle models. The entry point is TWCore, a legitimate system app that handles analytics and software updates. The attackers reached it through the MQTT broker that updater listens to, hosted on a cardoor[.]cn subdomain, and pushed a UI-less dropper Kaspersky named JarService.</p>
+<p>From there it's a loader, a call home, and staged payloads. Nine commands, covering unwanted ad display, ad fraud, clipboard access, arbitrary JavaScript execution, and a reverse proxy module called zhima that turns the vehicle into a relay node. Kaspersky recovered seven distinct payload variants.</p>
+<p>Attribution goes to the MoYu Group, which HUMAN's Satori team previously tied to the BADBOX botnet running on cheap Android TV boxes. Same playbook, different hardware. Find a low-margin device with an OEM firmware supply chain nobody audits, ride the update mechanism in, then monetize through ad fraud and residential proxy resale.</p>
+<p>Nothing in the research shows this malware reaching the CAN bus or touching anything safety-related, and that's worth saying clearly before somebody writes the hacked-brakes headline. What it does show is an always-on compute node with cellular connectivity, microphone access, and location data, running in a place where the owner has no way to install an endpoint agent and no way to check what's on it.</p>
+<p>DoFun addressed the distribution abuse after disclosure, which is the right outcome and also the whole problem in one sentence. The fix depends on a firmware vendor most drivers have never heard of, reached through an automaker that bought the head unit as a component, delivered over an OTA channel with no user-visible patch level. There is no Patch Tuesday for your dashboard.</p>
+<p>If you buy vehicles for a fleet, the head unit is now an asset worth tracking. Ask who ships its firmware, how updates are signed, and how long the vendor commits to supporting it. Most procurement teams cannot answer any of those three today.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>9,308 Leaked AWS Keys Still Work. 768 of Them Are Full Admin.</title>
+      <link>https://sabr-labs.com/article/leaked-aws-keys-still-valid-trufflesecurity-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/leaked-aws-keys-still-valid-trufflesecurity-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>AWS</category>
+      <category>Cloud Security</category>
+      <category>Secrets Management</category>
+      <category>IAM</category>
+      <category>Supply Chain</category>
+      <description>Truffle Security re-tested more than 10,000 AWS access keys that had leaked publicly since 2022 and found that 88% of them still authenticate.</description>
+      <content:encoded><![CDATA[<p>Eighty-eight percent. That's the share of publicly leaked AWS access keys that still authenticated when Truffle Security re-tested them on August 10.</p>
+<p>The researchers pulled 64,024 unique access key pairs out of 431,875 publicly reported findings, resampled 10,616 of them, and got 9,308 successful authentications. Of the live keys, 817 belonged to companies rather than individuals. 768 of those corporate keys carried full administrative control: 526 root credentials and 242 users holding AdministratorAccess.</p>
+<p>Root credentials deserve their own paragraph. They sit outside IAM entirely, which means no permission boundary, no service control policy, and no least-privilege design applies to them. Across the full dataset roughly one in six keys was a root credential. If one of those is sitting in a public Git history, the account isn't partially exposed. It's owned.</p>
+<p>Where the keys leaked from is the genuinely new finding. Git history is the source everyone expects and it's well represented, but Hugging Face was the single largest source in this dataset. That tracks with how fast ML teams have been shipping notebooks, model cards, and datasets that never went through the review a production repo gets. Docker image layers, package registries, and CI/CD logs filled out the rest.</p>
+<p>These are not fresh mistakes. Most of the still-active keys are more than five years old. Where creation dates were visible, the median key had been alive around 1,831 days, and the oldest was created more than 17 years ago and still works.</p>
+<p>AWS does scan public sources and applies a quarantine policy to keys it finds, and this dataset is decent evidence that the coverage isn't wide enough. Some of that is scope, since Amazon isn't crawling every Hugging Face dataset and every Docker layer on the internet. Some of it is design: quarantine restricts a key rather than killing it, and a restricted key that still authenticates is still useful reconnaissance for whoever holds it.</p>
+<p>Deleting the commit does nothing. The key lives on in the fork, the clone, the CI log, and whatever scraper got there first. Rotate it, then confirm the old one is actually dead by trying to use it. And if you've never audited your account for long-lived static keys, that's this week's work: replace them with IAM roles or short-lived credentials, and turn on alerting for any use of a root key at all.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Defender&apos;s Own Boot Driver Can Delete Defender. There&apos;s No Patch Coming.</title>
+      <link>https://sabr-labs.com/article/defender-btr-reforged-kernel-primitive-august-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/defender-btr-reforged-kernel-primitive-august-2026</guid>
+      <pubDate>Sat, 22 Aug 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Windows</category>
+      <category>Microsoft Defender</category>
+      <category>EDR Bypass</category>
+      <category>Kernel</category>
+      <category>Black Hat</category>
+      <description>Check Point&apos;s BTR Reforged research turns BTR.sys, the signed remediation driver bundled inside Microsoft Defender, into a kernel-level file and registry primitive that survives Tamper Protection, and Microsoft has declined to fix it.</description>
+      <content:encoded><![CDATA[<p>Every fully patched Windows 11 machine ships with a Microsoft-signed driver capable of deleting Microsoft Defender. Jiri Vinopal of Check Point Research spent the run-up to Black Hat USA 2026 proving it, and the proof-of-concept tool is sitting on GitHub.</p>
+<p>BTR.sys is the Boot Time Removal Tool. Defender keeps it as a resource called BOOTTIMETOOL inside MpEngine.dll and drops it to disk when remediation has to finish after a reboot, usually because the malware it wants to delete is holding a file lock Windows won't break while it's running. That's a legitimate job. The problem is the window it runs in.</p>
+<p>Check Point calls that window golden, and the name is literal. The filesystem is writable and Defender's own user-mode services haven't started yet. Anything driving BTR.sys during that interval can physically remove WdFilter.sys and MsMpEng.exe before they get the chance to lock themselves. Vinopal's BTR_CLI tool did exactly that against a fully patched Windows 11 25H2 install with Tamper Protection enabled. The Defender stack was gone when the machine came back up.</p>
+<p>The research documents the undocumented transaction protocol BTR.sys speaks, along with a hardcoded RC4 key that hasn't changed across 18 distinct 64-bit builds going back to Windows 7. Once you can speak that protocol from user mode, you have arbitrary Ring-0 file and registry operations on effectively every modern Windows install. WDAC has nothing to say about it, because the driver is Microsoft's own.</p>
+<p>Microsoft's response is the part worth arguing about. MSRC confirmed the findings but said they don't meet the bar for immediate servicing, since pulling this off requires local administrator rights plus SeLoadDriverPrivilege. The GitHub repository states plainly that no patch is planned.</p>
+<p>That reasoning is defensible on paper and thin in practice. Admin-to-kernel is not supposed to be a free upgrade. That premise is why Tamper Protection, protected process light, and the vulnerable-driver blocklist exist at all. Microsoft built all three and then shipped a driver that walks past them, and BTR.sys can't go on the blocklist because Defender needs it to do its job.</p>
+<p>So detection is the job instead. Watch for BOOTTIMETOOL being extracted outside a genuine Defender remediation cycle, for service registrations that load BTR.sys, and for boot-time deletion of your own EDR binaries. If your telemetry only starts when user-mode services come up, you're watching the wrong side of the golden window. A different bug in this same driver, CVE-2021-24092, got patched back in February 2021. This time there's nothing to install.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Amazon Wants Drone Delivery in Nearly 500 Towns by December</title>
       <link>https://sabr-labs.com/article/amazon-prime-air-drone-delivery-500-cities-august-2026</link>
@@ -918,135 +1042,6 @@
 <p>ColdFusion has been one of the more reliable entry points in the ransomware playbook for years, and the pattern is consistent enough to plan around: a critical pre-auth bug drops, a proof of concept follows inside a week or two, and mass scanning finds the servers nobody remembered were still running. ColdFusion boxes are frequently in that category. They're old, they work, and the person who deployed them left.</p>
 <p>Campaign Classic is a different flavor of the same problem. It's a marketing automation platform, which means it lives near customer databases and is often administered by a team that doesn't report to security. An authorization bypass that reaches code execution on that host is a data breach with extra steps.</p>
 <p>If you run either product on-premise, this is a same-week job. Start by confirming you actually know where all the instances are, because on the evidence of previous ColdFusion cycles, that's the step that takes longest.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>One HTTP Request Is Rebooting Cisco Firewalls, and Federal Agencies Have Until Friday</title>
-      <link>https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-20349-ssl-vpn-crash-kev-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-20349-ssl-vpn-crash-kev-august-2026</guid>
-      <pubDate>Wed, 12 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>ASA</category>
-      <category>Firepower</category>
-      <category>VPN</category>
-      <category>CISA KEV</category>
-      <category>Denial of Service</category>
-      <description>CVE-2026-20349 lets an unauthenticated attacker crash Cisco ASA and FTD devices with a crafted request to the SSL VPN service, and it&apos;s already being used in the wild.</description>
-      <content:encoded><![CDATA[<p>A crafted HTTP request to the Remote Access SSL VPN service is enough to make a Cisco Secure Firewall reload. No credentials, no user interaction, no foothold. Just a request that the device fails to error-check properly, and then your perimeter firewall restarts.</p>
-<p>CVE-2026-20349 is a heap inspection flaw in Cisco Secure Firewall ASA and Secure Firewall Threat Defense, rated 8.6. The trigger condition is narrow in the sense that it requires SSL listen sockets enabled on the remote access service, and wide in the sense that this describes an enormous number of production firewalls doing exactly the job they were bought to do.</p>
-<p>It's being exploited now. CISA added it to the Known Exploited Vulnerabilities catalog on August 11 and set the federal remediation deadline for August 14, which is a three-day window and a fair signal of how the agency reads the risk.</p>
-<p>Denial of service gets treated as the boring outcome in vulnerability triage, somewhere below remote code execution and credential theft on most severity worksheets. That ranking makes less sense when the target is the device terminating your remote access VPN. A reload loop on that box is an outage for every remote worker and a blind spot in your logging while it happens.</p>
-<p>This is also the same product family that has spent the past couple of years absorbing sustained attention from state-linked actors, and Cisco maintains a standing resource page for continued attacks against ASA and FTD. A DoS bug arriving in that context is worth asking a second question about: crashing a firewall is sometimes the goal, and sometimes it's the noise generated while something else finishes.</p>
-<p>Patch it. If you can't patch inside the window, the practical mitigation is to restrict who can reach the SSL VPN listener at all, which for most organizations means an access list in front of the appliance rather than a config change on it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>North Korea Was Already Using the WinSock Bug Microsoft Just Fixed</title>
-      <link>https://sabr-labs.com/article/microsoft-patch-tuesday-august-2026-winsock-cve-2026-68820-lazarus</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-patch-tuesday-august-2026-winsock-cve-2026-68820-lazarus</guid>
-      <pubDate>Wed, 12 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Patch Tuesday</category>
-      <category>Zero-Day</category>
-      <category>Lazarus</category>
-      <category>Windows</category>
-      <category>CISA KEV</category>
-      <description>August&apos;s Patch Tuesday closes an actively exploited use-after-free in afd.sys that Check Point attributes to Lazarus, alongside roughly 400 other CVEs.</description>
-      <content:encoded><![CDATA[<p>The one that matters out of Tuesday's pile is CVE-2026-68820, a use-after-free in the Ancillary Function Driver for WinSock. That's afd.sys, the kernel-mode driver sitting under the Windows Sockets API on every Windows box in your estate. Attackers have been using it to walk a local foothold up to SYSTEM, and Check Point attributes that exploitation to Lazarus, the North Korean group.</p>
-<p>CVSS puts it at 7.0, which undersells it. Privilege escalation bugs rarely score high because they need local access first, but local access is the cheap part of a modern intrusion. Phishing gets you a user session. This gets you the kernel.</p>
-<p>CISA agreed on the urgency and added CVE-2026-68820 to the Known Exploited Vulnerabilities catalog the same day the patch shipped, which puts federal agencies on a binding remediation clock.</p>
-<p>Two more zero-days were publicly disclosed before a fix existed, though neither has known exploitation. CVE-2026-62832 is an elevation of privilege flaw in the Windows User Profile Service at CVSS 7.8. CVE-2026-72971 is a tampering issue in the Container Isolation FS Filter Driver at 5.5, which is low-severity on paper and more interesting than that if you run containerized workloads on Windows hosts.</p>
-<p>The headline count depends on who's counting. Tenable tallied 398 CVEs with 42 rated critical, other outlets landed on 400 and 421 depending on whether Edge and third-party components got folded in. Pick a number, it's still one of the heaviest months on record and it is not a number any patch window absorbs gracefully.</p>
-<p>Two critical remote code execution bugs deserve a look even without exploitation reports. CVE-2026-62893 in Windows Deployment Services TFTP carries a 9.8, and CVE-2026-62823 hits the Windows DHCP Server at 8.8. Both live on infrastructure that tends to be old, quietly load-bearing, and owned by whoever inherited it last.</p>
-<p>Order of operations for this cycle: afd.sys first on anything with interactive users, then WDS and DHCP on the server side. The rest can follow your normal ring schedule.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Weaker Model Will Happily Decrypt a Stronger Model&apos;s Private Reasoning</title>
-      <link>https://sabr-labs.com/article/stealing-reasoning-traces-openai-anthropic-google-encrypted-blocks-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/stealing-reasoning-traces-openai-anthropic-google-encrypted-blocks-august-2026</guid>
-      <pubDate>Wed, 12 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>LLM Security</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <category>Google</category>
-      <category>Prompt Injection</category>
-      <category>Credential Leaks</category>
-      <description>Researchers pulled 182 credentials and hundreds of PII artifacts out of the encrypted thinking blocks that OpenAI, Anthropic, and Google return to developers as opaque data.</description>
-      <content:encoded><![CDATA[<p>Sixty-two API keys. Thirty-three passwords. Seven private keys. All of it sitting inside encrypted "thinking" blocks that OpenAI, Anthropic, and Google hand back through their APIs as sealed, unreadable data, and all of it recoverable by anyone who bothered to ask the right model nicely.</p>
-<p>The attack comes from a paper posted August 10 titled "Stealing Reasoning Traces from Proprietary LLM APIs," by Alexander Panfilov, David Schmotz, Ilia Shumailov, Luca Beurer-Kellner, Joachim Schaeffer, Ameya Prabhu, Jonas Geiping, and Maksym Andriushchenko. The finding is architectural rather than cryptographic. Nobody broke the encryption. The researchers found that the encrypted reasoning objects a provider returns are interchangeable across sessions, across users, and across models inside that provider's own platform.</p>
-<p>So you take a sealed reasoning blob produced by a provider's flagship model, hand it to a cheaper and less heavily guarded sibling model on the same platform, and ask that model to continue the thought. It decrypts the blob as a matter of normal operation and says the quiet part out loud. The anti-distillation protection that hides reasoning from customers turns out to hide nothing from a customer holding a second API key.</p>
-<p>The scale of the harvest is what makes this more than a clever trick. The team decoded 315,320 thinking blocks from 6,708 publicly published agent trajectories, recovering 367 PII artifacts and 182 credentials including API keys, passwords, access tokens, and private keys. Every one of those secrets belonged to somebody who published an agent trace believing the reasoning portion was unreadable. It was unreadable to them. That's not the same thing.</p>
-<p>There's a second failure mode worth sitting with. If reasoning blocks are opaque to the developer but readable by the model, they're an ideal carrier for prompt injection. Content nobody can inspect gets fed straight into the next turn. The same opacity also means a model can reject a request in its visible output while the hazardous detail it worked through stays intact in the block that gets passed along.</p>
-<p>The vendor response is where this gets thin. The main extraction attack is reportedly no longer reproducible as of this month, which suggests somebody quietly changed something, but no provider has publicly acknowledged the issue or published a fix note. Anthropic's own guidance already told developers to strip thinking blocks when switching models. That reads like an interoperability footnote, not a security control, and it was apparently the only thing standing between published agent logs and a credential dump.</p>
-<p>The researchers are honest about their limits: they have no ground-truth plaintext to check their reconstructions against, so "we decoded it" means "a model produced text consistent with the block," not a verified match. Fair caveat. It doesn't help the 62 API keys.</p>
-<p>If your team publishes agent trajectories, evaluation runs, or debugging traces anywhere public, strip the reasoning blocks before they leave your machine. Treat them as plaintext, because to a second model on the same platform, that's exactly what they are.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Mozilla Rotated Its Firefox Signing Key After Committing It in the Clear</title>
-      <link>https://sabr-labs.com/article/mozilla-gpg-signing-subkey-rotation-firefox-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/mozilla-gpg-signing-subkey-rotation-firefox-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Mozilla</category>
-      <category>Firefox</category>
-      <category>Code Signing</category>
-      <category>Open Source</category>
-      <category>Secrets Management</category>
-      <description>An unencrypted copy of the GPG subkey that signs Firefox and Thunderbird Linux builds was committed to a private GitHub repository, so Mozilla revoked it and issued a replacement.</description>
-      <content:encoded><![CDATA[<p>Somebody at Mozilla committed an unencrypted copy of a GPG signing subkey to a private GitHub repository. That key signs the Linux tarballs, RPM packages, and checksum files for Firefox and Thunderbird releases.</p>
-<p>Mozilla published the disclosure on August 10 along with a replacement subkey, fingerprint 827E 6586 0867 9618 CD34 9F93 678E 455D 7676 7AA3, which expires August 5, 2028. The old subkey is revoked.</p>
-<p>The audit came back clean. Mozilla reviewed available access records and found no evidence anyone unauthorized touched the key, and notes that repository access was limited to a small internal group who already had authorized access to the key through other means. That's a genuinely low-risk exposure by the usual standards.</p>
-<p>Revoking anyway is the right call, and it's worth naming as such because plenty of organizations would have written the same audit findings and quietly moved on. The standard for a code signing key is not "we found no evidence of compromise." It's "the key left its boundary," and this one did.</p>
-<p>For most people nothing changes. Firefox and Thunderbird update as normal and the signature check happens somewhere you don't look. If you verify signatures manually, you need the new key and the revocation for the old one. RPM users on Fedora 42 and earlier, or on RHEL, Rocky, and AlmaLinux, have to remove the old key by hand before importing the replacement, and openSUSE users need the same removal followed by a zypper refresh.</p>
-<p>The failure mode here is about as mundane as it gets. A secret ended up in a repo because someone needed it available to a tool, and the repo was private, so it felt fine. Every organization reading this has that exact key sitting in that exact place right now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Intel Is Selling $15 Billion in Stock, Its First Offering Since 1971</title>
-      <link>https://sabr-labs.com/article/intel-15-billion-share-sale-ai-capex-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/intel-15-billion-share-sale-ai-capex-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Intel</category>
-      <category>Semiconductors</category>
-      <category>TSMC</category>
-      <category>AI Infrastructure</category>
-      <category>Capital Markets</category>
-      <description>Intel is raising $15 billion in common stock to fund a capital budget it just lifted to $20 billion, and the order book reportedly ran past $100 billion.</description>
-      <content:encoded><![CDATA[<p>Intel has not sold common stock to the public since it listed in 1971. It's doing it now, for $15 billion.</p>
-<p>The underwritten offering went out August 10, with a 30-day option for underwriters to take up to $2.25 billion more. Bloomberg reported orders exceeded $100 billion and that the deal could grow toward $20 billion. Intel's stated use of proceeds is general corporate purposes including capital expenditures and working capital, which is the standard language and tells you nothing.</p>
-<p>What tells you something is the capex number. Intel raised its 2026 capital spending forecast to roughly $20 billion, with most of it going into factory tooling. That's a company buying machines, not buying time.</p>
-<p>The stock fell on the news, which is what happens when you dilute holders by about 3% after a run of more than 400%. Anyone reading that as a verdict on the business is reading it wrong. It's a verdict on the price they paid last week.</p>
-<p>The demand Intel is pointing at is real, and TSMC's numbers are the proof. TSMC posted NT$467.58 billion in July revenue, up 44.7% from a year earlier and 5.6% month over month, with January through July running 37% ahead of 2025. That puts TSMC ahead of its own full-year guidance of slightly above 40% growth in dollar terms. Advanced packaging and AI accelerator demand are not slowing down.</p>
-<p>The question Intel still has to answer is whether tools translate into customers. Foundry capacity you built is not foundry capacity someone booked, and the external wafer business is where the last several years of Intel strategy have consistently come up short. Physical AI and purpose-built silicon are the growth areas the company named, and both are markets where the design win comes years before the revenue.</p>
-<p>Raising money into a hot tape is good management. Intel spent a decade unable to fund what it needed. It can fund it now, and the next two years are about execution rather than balance sheet.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Poisoned Banner Feed Made Rogue Admins on WordPress Sites</title>
-      <link>https://sabr-labs.com/article/bdthemes-poisoned-json-wordpress-rogue-admins-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bdthemes-poisoned-json-wordpress-rogue-admins-august-2026</guid>
-      <pubDate>Tue, 11 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>Supply Chain</category>
-      <category>Wordfence</category>
-      <category>Web Shell</category>
-      <category>BdThemes</category>
-      <description>Attackers took over BdThemes&apos; promotional JSON endpoint and used a five-month-old XSS bug to create hidden administrator accounts and drop web shells, without touching a single plugin file.</description>
-      <content:encoded><![CDATA[<p>No plugin update. No modified file on disk. No malicious code in any repository.</p>
-<p>The BdThemes compromise Wordfence disclosed this week worked entirely through data. Several BdThemes plugins ship an internal component called Biggopti that pulls promotional banner content as JSON from a DigitalOcean Spaces bucket and renders it inside the WordPress admin. Attackers got write access to that bucket's contents and replaced the legitimate response at the api-data-all-records endpoint with a payload.</p>
-<p>What made the payload land was a cross-site scripting flaw in how Biggopti parses the display_id parameter. Wordfence rates it 5.4, medium severity. It was introduced in Prime Slider 4.1.9 on March 1 and spread into other BdThemes products from there. Five months as an unremarkable medium-severity finding, then somebody took the JSON feed and it became remote administrator access on every site running the plugin.</p>
-<p>The first-stage script called out to a C2 server, created rogue administrator accounts, wrote a PHP web shell named emer-run.php, and installed persistence modules into the mu-plugins directory, which loads automatically and cannot be disabled from the admin interface. A second script generated deterministic credentials derived from the victim's hostname, so the operator can compute the login for any compromised site without keeping a list. There's also a magic-login backdoor that grants admin access from an unauthenticated URL parameter, and a stealth module that hides the rogue accounts from the user list.</p>
-<p>Affected plugins include Element Pack Addons for Elementor at over 100,000 installs, Prime Slider, Pixel Gallery, Ultimate Post Kit, Ultimate Store Kit, Live Copy Paste, and Smart Admin Assistant. Wordfence was notified August 7. The WordPress plugins team pulled the affected downloads on August 7 and 8 pending review.</p>
-<p>Wordfence has tied the C2 infrastructure to two other campaigns, including the Advanced Responsive Video Embedder issue tracked as CVE-2026-18072 and an OptinMonster backdoor. Same operator, different vendors, same shape of attack.</p>
-<p>The uncomfortable lesson is about severity scoring. A 5.4 XSS in an admin banner widget is the kind of finding that sits in a backlog for a quarter. It only stayed a 5.4 as long as the remote content feeding it was trustworthy, and nobody was watching that bucket.</p>
-<p>If you run any of these plugins: update, then check your user list for accounts matching bd_ followed by a short hash, look in wp-content/mu-plugins for anything you didn't put there, and search the webroot for emer-run.php. The stealth module means the admin user list alone is not sufficient evidence.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
