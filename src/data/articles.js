@@ -25,6 +25,288 @@
 
 export const articles = [
   {
+    id: 445,
+    slug: "nvidia-hugging-face-12-9-billion-acquisition-september-2026",
+    title: "Nvidia Confirms $12.9B Hugging Face Deal, Says the Hub Stays Open",
+    summary: "Nvidia is buying the default distribution point for open model weights, which keeps it in the path even when customers build their own accelerators.",
+    body: [
+      "Nvidia is paying $12.9 billion for a place where developers download other companies' models. Jensen Huang confirmed the Hugging Face acquisition on September 3, and it is comfortably the largest deal Nvidia has ever done.",
+      "The structure: roughly $11.9 billion to Hugging Face shareholders, plus up to $1 billion in equity-based retention awards for employees who come along. Nvidia expects to close in the first half of 2027, subject to regulatory approval. Reports of advanced talks surfaced in late August, and Hugging Face's CEO told CNBC the company approached Huang weeks before the agreement was signed.",
+      "What Nvidia is actually buying is a registry. Hugging Face hosts more than 3 million models, 500,000 datasets and a million applications, used by something north of 18 million developers and researchers. The revenue attached to that is not what justifies thirteen billion dollars. The position is.",
+      "Here is the strategic problem it solves. Nvidia's largest customers are the ones most aggressively building around it: Google's custom TPU silicon work, Amazon's Trainium, the whole wave of in-house accelerators that Nvidia has been watching form for two years. Owning the place where open weights get published and pulled keeps Nvidia in the workflow even on days it doesn't sell the chip. It's the same instinct behind NVLink Fusion, which puts Nvidia interconnect inside systems whose main processor Nvidia didn't design.",
+      "Huang says the Hub stays open, that developers keep their choice of models, frameworks, clouds and compute, and that Nvidia hardware will not be required to build or deploy there. Fine. Every acquirer says that, and most of them mean it on day one. Neutrality on a platform like this doesn't die by decree, it erodes through defaults: which runtime the deploy button reaches for, whose quantized builds land first, which inference container is one click away and which is three. Watch the defaults, not the press statement.",
+      "The other open question is whether the deal closes as described. An eighteen-month runway to a first-half-2027 close is a long time to sit in front of antitrust reviewers who have already shown interest in AI infrastructure concentration, and \"the acquirer promised to keep it open\" is a commitment regulators have heard before.",
+      "If you publish or pull models from the Hub, the practical question for the next year is boring and important: does your deployment path change? If it doesn't, this was an expensive way to buy insurance. If it does, you'll notice it in your CI logs before you read it in a blog post.",
+    ],
+    category: "tech",
+    tags: ["Nvidia", "Hugging Face", "Open Source AI", "M&A", "GPUs"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "TechCrunch",
+        desc: "Confirmation of the deal and terms, September 3",
+        url: "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
+      },
+      {
+        name: "CNBC",
+        desc: "Huang interview and Hugging Face CEO on how the deal started",
+        url: "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
+      },
+      {
+        name: "CNBC (August 27)",
+        desc: "Initial report that Nvidia had agreed to terms",
+        url: "https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html",
+      },
+      {
+        name: "Fox Business",
+        desc: "Deal breakdown and platform strategy context",
+        url: "https://www.foxbusiness.com/technology/nvidia-buy-ai-platform-hugging-face-nearly-13b",
+      },
+    ],
+  },
+  {
+    id: 446,
+    slug: "sonicwall-sma1000-cve-2026-83548-83549-zero-days-exploited-september-2026",
+    title: "SonicWall SMA1000 Zero-Days Chain Into Unauthenticated RCE",
+    summary: "SonicWall confirmed both flaws are under active attack and shipped fixes, but published no indicators of compromise for defenders to hunt with.",
+    body: [
+      "SonicWall says attackers are chaining two SMA1000 bugs into unauthenticated remote code execution. It disclosed them on September 1 in SNWLID-2026-0016 and did not publish a single indicator of compromise.",
+      "The first is CVE-2026-83548, a server-side request forgery in the Work Place interface, scored CVSS 10.0 and reachable without credentials. The second is CVE-2026-83549, OS command injection in the Appliance Management Console, scored 7.8 because on its own it requires an authenticated administrator. Chained, that authentication requirement stops mattering: the SSRF gives an attacker a path to the management console, and the command injection runs from there. Two moderate-sounding preconditions collapse into one unauthenticated shell.",
+      "Affected hardware is SMA 6210, SMA 7210 and the SMA 8200v virtual appliance, running 12.4.3-03453 platform-hotfix and earlier or 12.5.0-02835 and earlier. Fixes are in 12.4.3-03526 and 12.5.0-02952. There is no configuration workaround worth the name here, so this is a patch-now item on an appliance that by definition sits at your perimeter.",
+      "CISA added both CVEs to the Known Exploited Vulnerabilities catalog on September 2 and gave federal civilian agencies until September 5 to remediate. That is a three-day clock, which tells you how CISA is reading the exploitation reporting.",
+      "The SonicWall pair arrived in a batch of seven KEV additions, and the rest of that batch is worth a look because it isn't edge appliances. CISA also added an unauthenticated SQL injection in Sangoma Switchvox (CVE-2026-9586, which reportedly yields code execution as the PostgreSQL superuser on SMB Edition 8.3), HTTP request smuggling in Starlette, OS command injection in Kestra, and improper authentication in both LiteLLM and JFrog Artifactory. Reverse shells and crypto miners in the reported post-exploitation activity. Following MLflow's KEV entry last month, the pattern is clear enough: the AI and CI/CD plumbing teams stood up in the last three years is now getting the same attention perimeter gear has had for a decade, and most of it was never threat-modeled as an internet-facing service.",
+      "Back to SonicWall, and this is where the disclosure falls short. The company confirms exploitation in the wild but has published no IOCs, no proof-of-concept details, and no attribution. Rapid7 noted the same gap. Patching closes the door; it does not tell you whether someone already walked through it. Defenders are left to build their own hunt from first principles on an appliance with limited logging and a bad few years of history.",
+      "So patch, then go look. Pull AMC access logs and look for administrative actions you can't tie to a person, check for outbound connections from the appliance to anything that isn't a SonicWall update endpoint, and treat any credential that touched that box as burned. Assume the compromise window opened before your patch did.",
+    ],
+    category: "cyber",
+    tags: ["SonicWall", "Zero-Day", "CISA KEV", "VPN", "Remote Code Execution"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T09:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "CISA KEV alert",
+        desc: "The September 2 addition of seven exploited vulnerabilities",
+        url: "https://www.cisa.gov/news-events/alerts/2026/09/02/cisa-adds-seven-known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "Rapid7",
+        desc: "Technical analysis of the chain and affected build numbers",
+        url: "https://www.rapid7.com/blog/post/etr-critical-sonicwall-sma1000-vulnerabilities-cve-2026-83548-cve-2026-83549-exploited-in-the-wild/",
+      },
+      {
+        name: "Sophos",
+        desc: "Exploitation detail and detection guidance",
+        url: "https://www.sophos.com/en-us/blog/sonicwall-83548-83549",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "SonicWall's zero-day warning and disclosure timeline",
+        url: "https://www.securityweek.com/sonicwall-warns-of-two-sma1000-zero-days-exploited-in-attacks/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Affected models and patched versions",
+        url: "https://www.bleepingcomputer.com/news/security/sonicwall-warns-of-actively-exploited-sma1000-zero-day-flaws/",
+      },
+    ],
+  },
+  {
+    id: 447,
+    slug: "cisco-nexus-9000-cve-2026-20212-silicon-one-root-rce-september-2026",
+    title: "Cisco Nexus 9000 Flaw Hands Root to Anyone Who Reaches Port 43210",
+    summary: "CVE-2026-20212 scores 9.8 and affects Silicon One based Nexus 9000 switches on NX-OS 10.3(1) through 10.6(3s), with an ACL workaround for anyone who can't patch this week.",
+    body: [
+      "There is a service on certain Nexus 9000 switches that listens on TCP 43210 and 43211, answers anyone who can reach it in the default Layer 3 VRF, and executes what it's handed as root.",
+      "Cisco published that as CVE-2026-20212 on September 2, CVSS 9.8, in advisory cisco-sa-n9k-s1-rce-EH8dEtr. An unauthenticated remote attacker sends crafted input to either port and gets code execution with root privileges. Failing that, they can reload the device, which on a data center spine is its own kind of outage.",
+      "Scope is narrower than the headline suggests, and worth getting right before you panic-schedule a maintenance window. Only Nexus 9000 models built on Silicon One ASICs are affected: N9324C-SE1U, N9348Y2C6D-SE1U, the N9364E-SG2-O and -Q, N9396T12C-SE1, N9348Y12C-SE1, N9396Y12C-SE1, N9336C-SE1, and the modular N9K-C9804 and N9K-C9808. Cisco states that other Nexus 9000 models are not affected, and Nexus 9000 fabric switches running in ACI mode are not vulnerable either. On the software side the exposure runs from NX-OS 10.3(1) through 10.6(3s), which the CVE record counts as 45 releases. 10.6(4) and later are clean.",
+      "If you can't get to a fixed train immediately, Cisco tested an infrastructure ACL that permits only required management and control-plane traffic and denies TCP 43210 and 43211. There's also a Live Protect shield, lp00031, but it only applies to 10.6(3) and 10.6(3s). Cisco PSIRT said it was not aware of malicious use or public exploit code as of publication.",
+      "The part that should bother network engineers isn't the severity number. It's the shape of the bug. This isn't an obscure parser overflow buried in a protocol daemon. It's an internal service bound to an unrestricted address, sitting in the default VRF, running as root, with no authentication in front of it. That is a shipping decision, and it survived through more than three years of NX-OS releases.",
+      "What has kept this from being a disaster so far is architecture rather than code quality. Data center spines usually aren't reachable from the internet, and shops with genuinely separated out-of-band management have a much smaller problem than the summary implies. The shops that don't are the story: flat management VLANs, jump boxes with a foot in both networks, lab gear cabled into production for convenience two years ago and never re-homed.",
+      "Run the Software Checker against your exact release, write the ACL today regardless, and if this bug makes you realize your management plane and your production default VRF are the same network, treat that as the actual finding.",
+    ],
+    category: "cyber",
+    tags: ["Cisco", "NX-OS", "Nexus 9000", "Network Security", "CVE"],
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Cisco Security Advisory",
+        desc: "The primary advisory for CVE-2026-20212 with affected models and workarounds",
+        url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-n9k-s1-rce-EH8dEtr",
+      },
+      {
+        name: "Cisco advance notification",
+        desc: "Cisco's notice for the September 2, 2026 advisory bundle",
+        url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-notice-f2SiMFxl",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Affected release count and workaround detail",
+        url: "https://thehackernews.com/2026/09/critical-cisco-nexus-9000-flaw-lets.html",
+      },
+      {
+        name: "eSecurity Planet",
+        desc: "Summary of the remote root execution risk",
+        url: "https://www.esecurityplanet.com/news/news-cisco-nexus-9000-vulnerability/",
+      },
+    ],
+  },
+  {
+    id: 448,
+    slug: "openai-astra-critical-cyber-threshold-preparedness-september-2026",
+    title: "OpenAI Says Astra Is Its First Model at the Critical Cyber Tier",
+    summary: "Astra can find unknown flaws and build working exploits without step-by-step direction, and OpenAI is limiting access to those capabilities at release.",
+    body: [
+      "OpenAI put one of its own models in the highest cyber risk tier its framework defines. The framework is also OpenAI's, which is worth holding onto while reading the rest of this.",
+      "The model is called Astra, and the disclosure went up September 1. Critical, under the Preparedness Framework, means a model can identify previously unknown flaws in real-world software and develop ways to exploit them across many well-protected systems without a person guiding each step. No OpenAI model has been placed there before.",
+      "The evidence OpenAI offered is specific. Astra scored 100% on ExploitBench. Tested against 20 high-severity vulnerabilities disclosed in mid-2026, it found and chained two zero-days inside a working exploit chain. Red teamers reported a full browser compromise chain, a sandbox escape, command execution on the host, and privilege escalation from a standard user to root.",
+      "OpenAI paused Astra's development last month when these capabilities showed up, and only resumed after putting new controls around it. Those include chain-of-thought monitoring meant to catch and stop actions that exceed what the model was authorized to do, plus safety training that pushed the refusal rate on cyber jailbreak evaluations to 91.5%, up from 59% in GPT-5.6 Sol. Access to the raw cyber capability will be restricted at launch, going first to a selected group under the Daybreak Blue program.",
+      "Two of those numbers deserve pushback. A 91.5% refusal rate means roughly one attempt in twelve got through, measured by the vendor, on the vendor's own eval set, against the vendor's own red team. That's a meaningful improvement over 59% and it is nowhere near a control you'd stake a threat model on. And a 100% score on ExploitBench mostly tells you the benchmark is done. Saturated benchmarks stop measuring the thing they were built to measure, which is inconvenient right at the moment the capability gets interesting.",
+      "This is the second frontier lab in about six months to ship a model with its most dangerous capability behind an allowlist rather than an API key, after Anthropic gated Mythos. Whatever you think of the labs' self-assessments, the practical consequence is real: capability that would previously have arrived as a general release is now arriving as a vetted program, and the vetting criteria are private.",
+      "For defenders the number to care about isn't the benchmark. It's the interval between a patch shipping and a working exploit existing for it. That gap has been closing for two years, and Astra is the first model release explicitly built around closing it further. Whether it closes faster for attackers or defenders depends entirely on who gets into Daybreak Blue.",
+    ],
+    category: "ai",
+    tags: [
+      "OpenAI",
+      "AI Safety",
+      "Exploit Development",
+      "Preparedness Framework",
+      "Offensive Security",
+    ],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "CNBC",
+        desc: "OpenAI's disclosure that Astra crosses the Critical cyber threshold",
+        url: "https://www.cnbc.com/2026/09/01/open-ai-astra-cyber-model.html",
+      },
+      {
+        name: "Security Boulevard",
+        desc: "Benchmark results, red team findings and refusal-rate figures",
+        url: "https://securityboulevard.com/2026/09/openai-reveals-astra-its-first-ai-model-to-reach-critical-cybersecurity-risk-threshold/",
+      },
+      {
+        name: "PYMNTS",
+        desc: "Preparedness Framework definition and access restrictions",
+        url: "https://www.pymnts.com/news/artificial-intelligence/2026/openai-says-new-model-meets-its-critical-cybersecurity-threshold",
+      },
+      {
+        name: "Trending Topics",
+        desc: "Summary of the Critical classification and safeguards",
+        url: "https://www.trendingtopics.eu/astra-openai-model-critical/",
+      },
+    ],
+  },
+  {
+    id: 449,
+    slug: "texas-ercot-data-center-interconnection-freeze-474-gw-september-2026",
+    title: "Texas Froze Data Center Grid Hookups After Requests Hit 474 GW",
+    summary: "ERCOT's interconnection queue is more than five times the record peak demand Texas has ever served, and most of it may not be real.",
+    body: [
+      "Four hundred seventy-four gigawatts. That's what sits in ERCOT's interconnection queue from data centers and other large loads, and it is more than five times the highest peak demand Texas has ever actually served.",
+      "Governor Greg Abbott's August 3 directive froze new grid connections for those facilities pending a verification and audit process, with the Public Utility Commission of Texas and ERCOT running it. Roughly 90% of the queue is data centers. In 2023 the same queue held about 48 gigawatts. Texas is the first major hub to stop and count.",
+      "The industry term for the gap is ghost demand. Filing an interconnection request costs very little, so developers file many of them, at multiple utilities, for sites they may never build, largely to hold queue position while they shop for customers and financing. The 474 number isn't demand. It's optionality, priced at roughly nothing.",
+      "The audit asks the questions that separate the two. Does the project bring its own generation or lean on the grid? What does it do to water, and how does that square against community supply? Is it depending on tax abatements, grants or other public money? Abbott's language was blunt: projects that fail the verification and audit process must be denied.",
+      "The freeze has already rippled into planning. ERCOT delayed its Batch Zero transmission planning review and went to its August 20 open meeting seeking a good-cause exemption, because you cannot plan transmission against a number you don't believe. Pennsylvania moved in the same direction on August 18, when Governor Josh Shapiro signed an order adding stricter permitting for projects at 25 megawatts and above along with disclosure of project plans and end users. Reuters read the two together on September 1 as the start of a national reckoning, which sounds about right.",
+      "The industry pushback, fairly summarized by Data Center Coalition executive vice president Dan Diorio urging the PUCT and ERCOT to move swiftly given the investment and jobs at stake, is a real concern that dodges the actual problem. Nobody is arguing the queue should be slow. The argument is that a free queue fills with speculation, and then grid operators, transmission planners and ratepayers all commit capital against a fiction.",
+      "The thing to watch is whether Texas attaches a financial commitment to queue position. Deposits that hurt, forfeited on withdrawal, would drain the ghost demand out of that 474 faster than any audit. Whether the PUCT is willing to do that to the state's fastest-growing industry is the actual question here.",
+    ],
+    category: "tech",
+    tags: ["Data Centers", "ERCOT", "Energy", "Texas", "AI Infrastructure"],
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T14:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Utility Dive",
+        desc: "Details of Abbott's directive, the queue figures and ERCOT's planning delay",
+        url: "https://www.utilitydive.com/news/texas-hits-pause-data-center-interconnections/827046/",
+      },
+      {
+        name: "Reuters via BNN Bloomberg",
+        desc: "Analysis of ghost demand and the national picture",
+        url: "https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/09/01/texas-halt-on-powering-data-centres-reflects-us-reckoning-over-ghost-demand/",
+      },
+      {
+        name: "Reuters via U.S. News",
+        desc: "Queue growth since 2023 and the Pennsylvania comparison",
+        url: "https://www.usnews.com/news/top-news/articles/2026-09-01/analysis-texas-halt-on-powering-data-centers-reflects-us-reckoning-over-ghost-demand",
+      },
+      {
+        name: "Texas Tribune",
+        desc: "Background on ERCOT, the PUC and large-load growth",
+        url: "https://www.texastribune.org/2025/10/30/texas-ercot-power-grid-data-centers-puc/",
+      },
+    ],
+  },
+  {
+    id: 450,
+    slug: "cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026",
+    title: "Cisco Retired SVPN 300-730 and Replaced SCOR With v2.0",
+    summary: "The VPN concentration exam is gone with no replacement, SCOR v1.1 stopped being testable on August 26, and the official v2.0 training only lands this month.",
+    body: [
+      "Cisco retired SVPN. If you were studying for 300-730, the last day to sit it was August 26, and there is no replacement concentration exam.",
+      "The same date closed out SCOR v1.1. Version 2.0 went live August 27, and per Cisco's learning blog the new blueprint is built around cloud-delivered security, secure service edge and AI-era infrastructure rather than the 2020-era product set the old version was organized around. That's a real rewrite, not a renumber.",
+      "VPN content didn't disappear, it moved. Fundamentals stay in the core exam, while configuring VPNs on firewalls shifts into SNCF. So the skill still counts toward a CCNP Security; it just no longer has its own badge. Read that how you like, but the honest reading is that Cisco no longer thinks remote-access VPN is a specialty. SSE ate it.",
+      "Two more changes worth knowing. SCAZT is now SSCA, with exam number 300-740 unchanged, and its scope narrowed to secure cloud access built on SSE and Cisco Secure Access, with the security operations and incident response material removed. SISE got a light refresh, and SDSI is unchanged.",
+      "The timing problem is training. SCOR v2.0 training and new ICSA Secure Access training arrive in September, with the consolidated SNCF course (previously two separate five-day courses), updated SSCA training and a SCOR practice exam not landing until later in the year. Anyone with a September exam date is studying a blueprint whose official material is shipping the same month. That gap is where third-party study guides get sold, and where they get things wrong.",
+      "Cisco's post also doesn't spell out what happens to candidates caught mid-path, the people who passed SVPN but haven't finished the core. Standard practice would credit a passed exam for its normal validity window, but standard practice is not a published policy. Check your certification tracker before you assume, and open a case with Cisco if the tracker disagrees with what you expected.",
+      "If you're choosing a concentration right now, SNCF and SSCA are where Cisco is putting its content budget for the rest of 2026. That's usually a better signal about where a track is going than the blueprint itself.",
+    ],
+    category: "learning",
+    tags: ["Cisco", "CCNP Security", "Certification", "SCOR", "Exam Updates"],
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-03T15:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Cisco Learning blog",
+        desc: "The August 27 post detailing SCOR v2.0, the SVPN retirement and the SSCA rename",
+        url: "https://blogs.cisco.com/learning/cisco-security-certification-updates-your-questions-answered",
+      },
+      {
+        name: "Cisco security certifications",
+        desc: "Official landing page for CCNP Security, CCIE Security and specialist tracks",
+        url: "https://www.cisco.com/site/us/en/learn/training-certifications/certifications/security/index.html",
+      },
+      {
+        name: "Cisco Live: Certifications Portfolio Updates",
+        desc: "Session deck covering the 2026 portfolio changes",
+        url: "https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2026/pdf/CISCOU-2272.pdf",
+      },
+    ],
+  },
+  {
     id: 439,
     slug: "defender-btr-reforged-kernel-primitive-august-2026",
     title: "Defender's Own Boot Driver Can Delete Defender. There's No Patch Coming.",
@@ -44,8 +326,8 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-08-22T08:00:00Z",
     readingTime: 3,
-    featured: true,
-    trending: true,
+    featured: false,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -91,7 +373,7 @@ export const articles = [
     publishedAt: "2026-08-22T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -137,8 +419,8 @@ export const articles = [
     publishedAt: "2026-08-22T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
-    breaking: true,
+    trending: false,
+    breaking: false,
     sources: [
       {
         name: "Kaspersky Securelist",
@@ -178,7 +460,7 @@ export const articles = [
     publishedAt: "2026-08-22T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -308,8 +590,8 @@ export const articles = [
     publishedAt: "2026-08-21T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
-    breaking: true,
+    trending: false,
+    breaking: false,
     sources: [
       {
         name: "Microsoft Security Update Guide",
@@ -353,8 +635,8 @@ export const articles = [
     publishedAt: "2026-08-21T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
-    breaking: true,
+    trending: false,
+    breaking: false,
     sources: [
       {
         name: "GitLab Patch Release",
@@ -398,7 +680,7 @@ export const articles = [
     publishedAt: "2026-08-21T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -437,7 +719,7 @@ export const articles = [
     publishedAt: "2026-08-21T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -578,7 +860,7 @@ export const articles = [
     publishedAt: "2026-08-20T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -623,7 +905,7 @@ export const articles = [
     publishedAt: "2026-08-20T09:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -669,7 +951,7 @@ export const articles = [
     publishedAt: "2026-08-20T10:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -710,7 +992,7 @@ export const articles = [
     publishedAt: "2026-08-20T11:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -848,7 +1130,7 @@ export const articles = [
     publishedAt: "2026-08-19T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -894,7 +1176,7 @@ export const articles = [
     publishedAt: "2026-08-19T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -940,7 +1222,7 @@ export const articles = [
     publishedAt: "2026-08-19T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -986,7 +1268,7 @@ export const articles = [
     publishedAt: "2026-08-19T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1123,7 +1405,7 @@ export const articles = [
     publishedAt: "2026-08-17T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1169,7 +1451,7 @@ export const articles = [
     publishedAt: "2026-08-17T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1215,7 +1497,7 @@ export const articles = [
     publishedAt: "2026-08-17T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1305,7 +1587,7 @@ export const articles = [
     publishedAt: "2026-08-17T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1386,7 +1668,7 @@ export const articles = [
     publishedAt: "2026-08-16T07:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1438,7 +1720,7 @@ export const articles = [
     publishedAt: "2026-08-16T09:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1490,7 +1772,7 @@ export const articles = [
     publishedAt: "2026-08-16T10:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1530,7 +1812,7 @@ export const articles = [
     publishedAt: "2026-08-16T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2026 13:17:38 GMT</lastBuildDate>
-    <pubDate>Sat, 22 Aug 2026 13:17:38 GMT</pubDate>
+    <lastBuildDate>Thu, 03 Sep 2026 19:05:17 GMT</lastBuildDate>
+    <pubDate>Thu, 03 Sep 2026 19:05:17 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco Retired SVPN 300-730 and Replaced SCOR With v2.0</title>
+      <link>https://sabr-labs.com/article/cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Cisco</category>
+      <category>CCNP Security</category>
+      <category>Certification</category>
+      <category>SCOR</category>
+      <category>Exam Updates</category>
+      <description>The VPN concentration exam is gone with no replacement, SCOR v1.1 stopped being testable on August 26, and the official v2.0 training only lands this month.</description>
+      <content:encoded><![CDATA[<p>Cisco retired SVPN. If you were studying for 300-730, the last day to sit it was August 26, and there is no replacement concentration exam.</p>
+<p>The same date closed out SCOR v1.1. Version 2.0 went live August 27, and per Cisco's learning blog the new blueprint is built around cloud-delivered security, secure service edge and AI-era infrastructure rather than the 2020-era product set the old version was organized around. That's a real rewrite, not a renumber.</p>
+<p>VPN content didn't disappear, it moved. Fundamentals stay in the core exam, while configuring VPNs on firewalls shifts into SNCF. So the skill still counts toward a CCNP Security; it just no longer has its own badge. Read that how you like, but the honest reading is that Cisco no longer thinks remote-access VPN is a specialty. SSE ate it.</p>
+<p>Two more changes worth knowing. SCAZT is now SSCA, with exam number 300-740 unchanged, and its scope narrowed to secure cloud access built on SSE and Cisco Secure Access, with the security operations and incident response material removed. SISE got a light refresh, and SDSI is unchanged.</p>
+<p>The timing problem is training. SCOR v2.0 training and new ICSA Secure Access training arrive in September, with the consolidated SNCF course (previously two separate five-day courses), updated SSCA training and a SCOR practice exam not landing until later in the year. Anyone with a September exam date is studying a blueprint whose official material is shipping the same month. That gap is where third-party study guides get sold, and where they get things wrong.</p>
+<p>Cisco's post also doesn't spell out what happens to candidates caught mid-path, the people who passed SVPN but haven't finished the core. Standard practice would credit a passed exam for its normal validity window, but standard practice is not a published policy. Check your certification tracker before you assume, and open a case with Cisco if the tracker disagrees with what you expected.</p>
+<p>If you're choosing a concentration right now, SNCF and SSCA are where Cisco is putting its content budget for the rest of 2026. That's usually a better signal about where a track is going than the blueprint itself.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Texas Froze Data Center Grid Hookups After Requests Hit 474 GW</title>
+      <link>https://sabr-labs.com/article/texas-ercot-data-center-interconnection-freeze-474-gw-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/texas-ercot-data-center-interconnection-freeze-474-gw-september-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>ERCOT</category>
+      <category>Energy</category>
+      <category>Texas</category>
+      <category>AI Infrastructure</category>
+      <description>ERCOT&apos;s interconnection queue is more than five times the record peak demand Texas has ever served, and most of it may not be real.</description>
+      <content:encoded><![CDATA[<p>Four hundred seventy-four gigawatts. That's what sits in ERCOT's interconnection queue from data centers and other large loads, and it is more than five times the highest peak demand Texas has ever actually served.</p>
+<p>Governor Greg Abbott's August 3 directive froze new grid connections for those facilities pending a verification and audit process, with the Public Utility Commission of Texas and ERCOT running it. Roughly 90% of the queue is data centers. In 2023 the same queue held about 48 gigawatts. Texas is the first major hub to stop and count.</p>
+<p>The industry term for the gap is ghost demand. Filing an interconnection request costs very little, so developers file many of them, at multiple utilities, for sites they may never build, largely to hold queue position while they shop for customers and financing. The 474 number isn't demand. It's optionality, priced at roughly nothing.</p>
+<p>The audit asks the questions that separate the two. Does the project bring its own generation or lean on the grid? What does it do to water, and how does that square against community supply? Is it depending on tax abatements, grants or other public money? Abbott's language was blunt: projects that fail the verification and audit process must be denied.</p>
+<p>The freeze has already rippled into planning. ERCOT delayed its Batch Zero transmission planning review and went to its August 20 open meeting seeking a good-cause exemption, because you cannot plan transmission against a number you don't believe. Pennsylvania moved in the same direction on August 18, when Governor Josh Shapiro signed an order adding stricter permitting for projects at 25 megawatts and above along with disclosure of project plans and end users. Reuters read the two together on September 1 as the start of a national reckoning, which sounds about right.</p>
+<p>The industry pushback, fairly summarized by Data Center Coalition executive vice president Dan Diorio urging the PUCT and ERCOT to move swiftly given the investment and jobs at stake, is a real concern that dodges the actual problem. Nobody is arguing the queue should be slow. The argument is that a free queue fills with speculation, and then grid operators, transmission planners and ratepayers all commit capital against a fiction.</p>
+<p>The thing to watch is whether Texas attaches a financial commitment to queue position. Deposits that hurt, forfeited on withdrawal, would drain the ghost demand out of that 474 faster than any audit. Whether the PUCT is willing to do that to the state's fastest-growing industry is the actual question here.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Says Astra Is Its First Model at the Critical Cyber Tier</title>
+      <link>https://sabr-labs.com/article/openai-astra-critical-cyber-threshold-preparedness-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-astra-critical-cyber-threshold-preparedness-september-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>AI Safety</category>
+      <category>Exploit Development</category>
+      <category>Preparedness Framework</category>
+      <category>Offensive Security</category>
+      <description>Astra can find unknown flaws and build working exploits without step-by-step direction, and OpenAI is limiting access to those capabilities at release.</description>
+      <content:encoded><![CDATA[<p>OpenAI put one of its own models in the highest cyber risk tier its framework defines. The framework is also OpenAI's, which is worth holding onto while reading the rest of this.</p>
+<p>The model is called Astra, and the disclosure went up September 1. Critical, under the Preparedness Framework, means a model can identify previously unknown flaws in real-world software and develop ways to exploit them across many well-protected systems without a person guiding each step. No OpenAI model has been placed there before.</p>
+<p>The evidence OpenAI offered is specific. Astra scored 100% on ExploitBench. Tested against 20 high-severity vulnerabilities disclosed in mid-2026, it found and chained two zero-days inside a working exploit chain. Red teamers reported a full browser compromise chain, a sandbox escape, command execution on the host, and privilege escalation from a standard user to root.</p>
+<p>OpenAI paused Astra's development last month when these capabilities showed up, and only resumed after putting new controls around it. Those include chain-of-thought monitoring meant to catch and stop actions that exceed what the model was authorized to do, plus safety training that pushed the refusal rate on cyber jailbreak evaluations to 91.5%, up from 59% in GPT-5.6 Sol. Access to the raw cyber capability will be restricted at launch, going first to a selected group under the Daybreak Blue program.</p>
+<p>Two of those numbers deserve pushback. A 91.5% refusal rate means roughly one attempt in twelve got through, measured by the vendor, on the vendor's own eval set, against the vendor's own red team. That's a meaningful improvement over 59% and it is nowhere near a control you'd stake a threat model on. And a 100% score on ExploitBench mostly tells you the benchmark is done. Saturated benchmarks stop measuring the thing they were built to measure, which is inconvenient right at the moment the capability gets interesting.</p>
+<p>This is the second frontier lab in about six months to ship a model with its most dangerous capability behind an allowlist rather than an API key, after Anthropic gated Mythos. Whatever you think of the labs' self-assessments, the practical consequence is real: capability that would previously have arrived as a general release is now arriving as a vetted program, and the vetting criteria are private.</p>
+<p>For defenders the number to care about isn't the benchmark. It's the interval between a patch shipping and a working exploit existing for it. That gap has been closing for two years, and Astra is the first model release explicitly built around closing it further. Whether it closes faster for attackers or defenders depends entirely on who gets into Daybreak Blue.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cisco Nexus 9000 Flaw Hands Root to Anyone Who Reaches Port 43210</title>
+      <link>https://sabr-labs.com/article/cisco-nexus-9000-cve-2026-20212-silicon-one-root-rce-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-nexus-9000-cve-2026-20212-silicon-one-root-rce-september-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>NX-OS</category>
+      <category>Nexus 9000</category>
+      <category>Network Security</category>
+      <category>CVE</category>
+      <description>CVE-2026-20212 scores 9.8 and affects Silicon One based Nexus 9000 switches on NX-OS 10.3(1) through 10.6(3s), with an ACL workaround for anyone who can&apos;t patch this week.</description>
+      <content:encoded><![CDATA[<p>There is a service on certain Nexus 9000 switches that listens on TCP 43210 and 43211, answers anyone who can reach it in the default Layer 3 VRF, and executes what it's handed as root.</p>
+<p>Cisco published that as CVE-2026-20212 on September 2, CVSS 9.8, in advisory cisco-sa-n9k-s1-rce-EH8dEtr. An unauthenticated remote attacker sends crafted input to either port and gets code execution with root privileges. Failing that, they can reload the device, which on a data center spine is its own kind of outage.</p>
+<p>Scope is narrower than the headline suggests, and worth getting right before you panic-schedule a maintenance window. Only Nexus 9000 models built on Silicon One ASICs are affected: N9324C-SE1U, N9348Y2C6D-SE1U, the N9364E-SG2-O and -Q, N9396T12C-SE1, N9348Y12C-SE1, N9396Y12C-SE1, N9336C-SE1, and the modular N9K-C9804 and N9K-C9808. Cisco states that other Nexus 9000 models are not affected, and Nexus 9000 fabric switches running in ACI mode are not vulnerable either. On the software side the exposure runs from NX-OS 10.3(1) through 10.6(3s), which the CVE record counts as 45 releases. 10.6(4) and later are clean.</p>
+<p>If you can't get to a fixed train immediately, Cisco tested an infrastructure ACL that permits only required management and control-plane traffic and denies TCP 43210 and 43211. There's also a Live Protect shield, lp00031, but it only applies to 10.6(3) and 10.6(3s). Cisco PSIRT said it was not aware of malicious use or public exploit code as of publication.</p>
+<p>The part that should bother network engineers isn't the severity number. It's the shape of the bug. This isn't an obscure parser overflow buried in a protocol daemon. It's an internal service bound to an unrestricted address, sitting in the default VRF, running as root, with no authentication in front of it. That is a shipping decision, and it survived through more than three years of NX-OS releases.</p>
+<p>What has kept this from being a disaster so far is architecture rather than code quality. Data center spines usually aren't reachable from the internet, and shops with genuinely separated out-of-band management have a much smaller problem than the summary implies. The shops that don't are the story: flat management VLANs, jump boxes with a foot in both networks, lab gear cabled into production for convenience two years ago and never re-homed.</p>
+<p>Run the Software Checker against your exact release, write the ACL today regardless, and if this bug makes you realize your management plane and your production default VRF are the same network, treat that as the actual finding.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SonicWall SMA1000 Zero-Days Chain Into Unauthenticated RCE</title>
+      <link>https://sabr-labs.com/article/sonicwall-sma1000-cve-2026-83548-83549-zero-days-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sonicwall-sma1000-cve-2026-83548-83549-zero-days-exploited-september-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SonicWall</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>VPN</category>
+      <category>Remote Code Execution</category>
+      <description>SonicWall confirmed both flaws are under active attack and shipped fixes, but published no indicators of compromise for defenders to hunt with.</description>
+      <content:encoded><![CDATA[<p>SonicWall says attackers are chaining two SMA1000 bugs into unauthenticated remote code execution. It disclosed them on September 1 in SNWLID-2026-0016 and did not publish a single indicator of compromise.</p>
+<p>The first is CVE-2026-83548, a server-side request forgery in the Work Place interface, scored CVSS 10.0 and reachable without credentials. The second is CVE-2026-83549, OS command injection in the Appliance Management Console, scored 7.8 because on its own it requires an authenticated administrator. Chained, that authentication requirement stops mattering: the SSRF gives an attacker a path to the management console, and the command injection runs from there. Two moderate-sounding preconditions collapse into one unauthenticated shell.</p>
+<p>Affected hardware is SMA 6210, SMA 7210 and the SMA 8200v virtual appliance, running 12.4.3-03453 platform-hotfix and earlier or 12.5.0-02835 and earlier. Fixes are in 12.4.3-03526 and 12.5.0-02952. There is no configuration workaround worth the name here, so this is a patch-now item on an appliance that by definition sits at your perimeter.</p>
+<p>CISA added both CVEs to the Known Exploited Vulnerabilities catalog on September 2 and gave federal civilian agencies until September 5 to remediate. That is a three-day clock, which tells you how CISA is reading the exploitation reporting.</p>
+<p>The SonicWall pair arrived in a batch of seven KEV additions, and the rest of that batch is worth a look because it isn't edge appliances. CISA also added an unauthenticated SQL injection in Sangoma Switchvox (CVE-2026-9586, which reportedly yields code execution as the PostgreSQL superuser on SMB Edition 8.3), HTTP request smuggling in Starlette, OS command injection in Kestra, and improper authentication in both LiteLLM and JFrog Artifactory. Reverse shells and crypto miners in the reported post-exploitation activity. Following MLflow's KEV entry last month, the pattern is clear enough: the AI and CI/CD plumbing teams stood up in the last three years is now getting the same attention perimeter gear has had for a decade, and most of it was never threat-modeled as an internet-facing service.</p>
+<p>Back to SonicWall, and this is where the disclosure falls short. The company confirms exploitation in the wild but has published no IOCs, no proof-of-concept details, and no attribution. Rapid7 noted the same gap. Patching closes the door; it does not tell you whether someone already walked through it. Defenders are left to build their own hunt from first principles on an appliance with limited logging and a bad few years of history.</p>
+<p>So patch, then go look. Pull AMC access logs and look for administrative actions you can't tie to a person, check for outbound connections from the appliance to anything that isn't a SonicWall update endpoint, and treat any credential that touched that box as burned. Assume the compromise window opened before your patch did.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nvidia Confirms $12.9B Hugging Face Deal, Says the Hub Stays Open</title>
+      <link>https://sabr-labs.com/article/nvidia-hugging-face-12-9-billion-acquisition-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nvidia-hugging-face-12-9-billion-acquisition-september-2026</guid>
+      <pubDate>Thu, 03 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Nvidia</category>
+      <category>Hugging Face</category>
+      <category>Open Source AI</category>
+      <category>M&amp;A</category>
+      <category>GPUs</category>
+      <description>Nvidia is buying the default distribution point for open model weights, which keeps it in the path even when customers build their own accelerators.</description>
+      <content:encoded><![CDATA[<p>Nvidia is paying $12.9 billion for a place where developers download other companies' models. Jensen Huang confirmed the Hugging Face acquisition on September 3, and it is comfortably the largest deal Nvidia has ever done.</p>
+<p>The structure: roughly $11.9 billion to Hugging Face shareholders, plus up to $1 billion in equity-based retention awards for employees who come along. Nvidia expects to close in the first half of 2027, subject to regulatory approval. Reports of advanced talks surfaced in late August, and Hugging Face's CEO told CNBC the company approached Huang weeks before the agreement was signed.</p>
+<p>What Nvidia is actually buying is a registry. Hugging Face hosts more than 3 million models, 500,000 datasets and a million applications, used by something north of 18 million developers and researchers. The revenue attached to that is not what justifies thirteen billion dollars. The position is.</p>
+<p>Here is the strategic problem it solves. Nvidia's largest customers are the ones most aggressively building around it: Google's custom TPU silicon work, Amazon's Trainium, the whole wave of in-house accelerators that Nvidia has been watching form for two years. Owning the place where open weights get published and pulled keeps Nvidia in the workflow even on days it doesn't sell the chip. It's the same instinct behind NVLink Fusion, which puts Nvidia interconnect inside systems whose main processor Nvidia didn't design.</p>
+<p>Huang says the Hub stays open, that developers keep their choice of models, frameworks, clouds and compute, and that Nvidia hardware will not be required to build or deploy there. Fine. Every acquirer says that, and most of them mean it on day one. Neutrality on a platform like this doesn't die by decree, it erodes through defaults: which runtime the deploy button reaches for, whose quantized builds land first, which inference container is one click away and which is three. Watch the defaults, not the press statement.</p>
+<p>The other open question is whether the deal closes as described. An eighteen-month runway to a first-half-2027 close is a long time to sit in front of antitrust reviewers who have already shown interest in AI infrastructure concentration, and "the acquirer promised to keep it open" is a commitment regulators have heard before.</p>
+<p>If you publish or pull models from the Hub, the practical question for the next year is boring and important: does your deployment path change? If it doesn't, this was an expensive way to buy insurance. If it does, you'll notice it in your CI logs before you read it in a blog post.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Apple Music Is Putting &apos;Made With AI&apos; Labels on Songs</title>
       <link>https://sabr-labs.com/article/apple-music-made-with-ai-labels-august-2026</link>
@@ -918,130 +1044,6 @@
 <p>It's also the part worth staring at. Data center economics rest on long-duration leases, and long-duration leases are only as good as the tenant's ability to pay for fifteen years. Vantage's marquee counterparty is a company whose revenue history is measured in single-digit years and whose spending commitments are measured in hundreds of billions. Private capital priced that risk when it was private. An IPO moves it onto public balance sheets.</p>
 <p>That's the actual story in the queue forming: Silver Lake, DigitalBridge and their peers built these assets during the cheapest and most certain phase of the AI buildout, and they're now looking for the exit while demand still looks infinite. Retail and index funds get to hold the second half.</p>
 <p>Watch whether Vantage files with signed contract terms disclosed or keeps them behind a materiality threshold. That single choice will tell you more about the durability of these leases than any analyst note about AI demand.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ShinyHunters Dumped 280GB of RingCentral Data After the Company Refused to Pay</title>
-      <link>https://sabr-labs.com/article/ringcentral-shinyhunters-280gb-leak-1-6-million-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ringcentral-shinyhunters-280gb-leak-1-6-million-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>RingCentral</category>
-      <category>ShinyHunters</category>
-      <category>Data Breach</category>
-      <category>Extortion</category>
-      <category>Social Engineering</category>
-      <description>Roughly 1.6 million email addresses along with names, physical addresses and phone numbers are now public, while RingCentral still describes the incident as affecting a limited portion of customers.</description>
-      <content:encoded><![CDATA[<p>RingCentral said no. ShinyHunters published anyway, and Have I Been Pwned has now indexed 1.6 million unique email addresses from the archive, each paired with a name, a physical address and a phone number.</p>
-<p>The intrusion happened in July. RingCentral's own notice attributes it to a sophisticated social engineering campaign, which is the phrasing companies reach for when someone talked their way past a help desk or an employee approved an MFA prompt they shouldn't have. ShinyHunters added RingCentral to its leak site on July 27, claiming more than 623GB. What actually got published was a 280GB archive.</p>
-<p>There's a gap worth naming here. RingCentral's public position is that the incident affected "a limited portion" of its customers and that anyone not contacted directly is unaffected. The leaked dataset contains 1.6 million distinct email addresses. Both statements can technically be true if you count business accounts rather than individuals, but a customer reading that notice would reasonably conclude they were fine, and 1.6 million of them are not.</p>
-<p>No passwords, no payment data, no call recordings have surfaced in what's been analyzed so far. That sounds like relief and mostly isn't. Name, work email, phone number and physical address is precisely the bundle that makes voice phishing work, and RingCentral customers are by definition organizations that run their phone systems in the cloud.</p>
-<p>Expect the follow-on wave to be calls and emails that reference a real RingCentral account, quote a real address, and ask someone to verify credentials or approve a change. That pretext is now backed by accurate data for a million and a half people.</p>
-<p>If your organization uses RingCentral, tell your help desk this week that the caller who knows your office address and main line number has probably read it in a leak. Then check whether your account recovery process can actually withstand someone who has all of that.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>An Unpatched GeoServer SQL Injection Is Already Being Sprayed at the Internet</title>
-      <link>https://sabr-labs.com/article/geoserver-jsonarraycontains-sql-injection-zero-day-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/geoserver-jsonarraycontains-sql-injection-zero-day-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>GeoServer</category>
-      <category>Zero-Day</category>
-      <category>SQL Injection</category>
-      <category>Open Source</category>
-      <category>watchTowr</category>
-      <description>A researcher dropped the GeoServer jsonArrayContains flaw on X with no vendor fix available, and watchTowr saw exploitation attempts within hours.</description>
-      <content:encoded><![CDATA[<p>The disclosure went out at 10:46 UTC on August 12, posted to X by a researcher going by q1uf3ng. There was no CVE, no coordinated advisory, and no patch. By the end of the day watchTowr was counting exploitation attempts in the hundreds.</p>
-<p>The bug lives in jsonArrayContains, a GeoServer filter expression that checks whether a JSON array field contains a given value. User-supplied arguments reach the database query without proper sanitization, which is textbook SQL injection. Depending on the backing database and how the instance is configured, that injection escalates into remote code execution.</p>
-<p>GeoServer is the open-source engine behind an enormous amount of public mapping infrastructure: municipal GIS portals, utility asset maps, environmental monitoring dashboards, transit systems. These are internet-facing by design, run by teams that are usually GIS specialists first and security engineers a distant second, and frequently sitting on database credentials with more privilege than the application needs.</p>
-<p>watchTowr says the attempts are coming from a small pool of IPs, which is what opportunistic scanning looks like in its first 48 hours. The interesting question is what happens when that pool widens.</p>
-<p>There's still no patch. That makes this a genuinely awkward situation for defenders, because the usual advice of "apply the update" doesn't exist yet. What you can do: find your exposed instances, put authentication or a network boundary in front of anything that doesn't need to be public, and watch query logs for jsonArrayContains showing up in places it has no business appearing. If your GeoServer talks to a database using an account that can write files or execute commands, fix that today regardless of this bug.</p>
-<p>Full disclosure without a fix is a defensible choice in some situations. This isn't obviously one of them. A SQL injection in a widely deployed, internet-exposed platform with a plausible path to RCE is exactly the case where a few weeks of coordination costs the researcher very little and saves a lot of people a bad week. The attackers, as usual, moved faster than the maintainers could.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Needed Five Days to Turn a vCenter Patch Into 361 Victims</title>
-      <link>https://sabr-labs.com/article/vmware-vcenter-cve-2026-59310-reverse-ssh-361-victims-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/vmware-vcenter-cve-2026-59310-reverse-ssh-361-victims-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>VMware</category>
-      <category>vCenter</category>
-      <category>CVE-2026-59310</category>
-      <category>Broadcom</category>
-      <category>APT</category>
-      <description>A directory traversal flaw in vCenter&apos;s Syslog service is being used to plant reverse SSH backdoors on hosts in 47 countries, and the compromises started five days after Broadcom shipped the fix.</description>
-      <content:encoded><![CDATA[<p>Broadcom published the advisory on July 29. The first compromised hosts started calling attacker infrastructure on August 3. That's the entire window enterprise virtualization teams got, and almost nobody patches vCenter in five days.</p>
-<p>CVE-2026-59310 is a directory traversal bug in the vCenter Syslog server carrying a CVSS score of 9.8. A remote, unauthenticated attacker can read and write arbitrary files on the appliance and walk that into code execution. It shipped as part of VMSA-2026-0006, a five-vulnerability bundle covering the VMware Directory Service, the Syslog server, the VMXNET3 virtual adapter, and two ESX issues. Broadcom said plainly that there are no workarounds for either of the two critical vCenter flaws. Patch or stay exposed.</p>
-<p>Fixed builds are vCenter Server 8.0 U3k and 8.0 U2f, plus VMware Cloud Foundation and vSphere Foundation 9.1.0.0300 and 9.0.2.0100.</p>
-<p>Quirso, a German digital forensics firm, tracked the exploitation. The pattern is consistent: path traversal to get a foothold, a malicious cron job for persistence, then reverse_ssh, an open-source reverse shell framework normally used by pentesters. That last choice is deliberate. reverse_ssh looks like an administrator's own tooling in process listings and generates outbound SSH that most egress rules already permit.</p>
-<p>The spread was fast and then it stopped. One victim on August 3, another 151 on August 4, and roughly 95 percent of the 361 known victim IPs were already compromised by August 5. Germany, the United States, Turkey, Iran and France account for 185 of them between them. That shape says mass scanning against a pre-built target list, not careful targeting, and Quirso's read is that a suspected APT is behind it.</p>
-<p>Broadcom noted it had seen no exploitation when the advisory went out, which was true and also beside the point. Publishing an advisory for an unauthenticated pre-auth RCE in a management plane is itself the starting gun. Anyone diffing the patch had a working exploit long before most shops had finished scheduling a maintenance window.</p>
-<p>If you run vCenter, go look now rather than scheduling a review. Check for cron entries you didn't create on the appliance, outbound SSH from vCenter to anything that isn't yours, and any unexpected files under the Syslog service paths. A patched appliance that was reachable during the first week of August is not automatically a clean one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Pentagon Memo Routes Up to $244M to Palantir Without a Competition</title>
-      <link>https://sabr-labs.com/article/palantir-pentagon-244-million-no-bid-memo-feinberg-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/palantir-pentagon-244-million-no-bid-memo-feinberg-august-2026</guid>
-      <pubDate>Wed, 12 Aug 2026 14:20:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Palantir</category>
-      <category>Pentagon</category>
-      <category>Government Contracts</category>
-      <category>AI</category>
-      <category>Procurement</category>
-      <description>Deputy Defense Secretary Stephen Feinberg signed an August 4 memo directing subordinates to buy Palantir analytics, and an oversight group says it skips a justification federal law requires.</description>
-      <content:encoded><![CDATA[<p>The number is $243.9 million through March 31, 2027, and the memo doesn't stop there. It also tells Pentagon subordinates to go find additional funding options covering April 2027 through the end of 2028. No competition, no solicitation, no other vendors considered.</p>
-<p>The memo is dated August 4 and signed by Stephen Feinberg, the deputy secretary of defense, on Department of War letterhead. What it buys is Palantir's data analytics work aimed at the defense industrial base, specifically understanding why munitions and vehicle production runs late. That's a genuine problem. Anyone who has looked at US artillery production timelines over the past few years knows the bottlenecks are real and poorly instrumented.</p>
-<p>The objection isn't to the goal. It's to the procedure.</p>
-<p>Greg Williams, who directs the Center for Defense Information, points out that sole-source awards of this size require a written justification under 10 USC 3204, and the memo doesn't reference one. His read is pointed: the absence suggests officials are either unaware of the statutory requirement for competition, or don't consider it important. Neither option is comfortable.</p>
-<p>A Department of War official pushed back, framing the arrangement as ordinary practice under a program called Business Operators for National Defense, or BOND, and saying similar work happens with industry partners across the board. That answer addresses whether the department has a habit of doing this. It does not address whether the statute was satisfied in this instance, which is the actual question on the table.</p>
-<p>Palantir hardly needs the money. The company already holds an Army enterprise agreement worth as much as $10 billion over a decade, and the department has been moving toward treating its software as core infrastructure rather than one tool among several. That's the part worth tracking. Once analytics become the layer everything else reports through, the procurement decision stops being about a contract and starts being about a dependency that's very hard to unwind.</p>
-<p>Sole-source awards exist for good reasons and sometimes they're the right call. The reason the justification requirement exists is that the government has to write down what the reason was. On a memo directing spending into 2028, that's not paperwork.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Mojo Reached 1.0 With Its Compiler Still Closed and Qualcomm Holding the Keys</title>
-      <link>https://sabr-labs.com/article/modular-mojo-1-0-qualcomm-compiler-still-closed-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/modular-mojo-1-0-qualcomm-compiler-still-closed-august-2026</guid>
-      <pubDate>Wed, 12 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Mojo</category>
-      <category>Modular</category>
-      <category>Qualcomm</category>
-      <category>Programming Languages</category>
-      <category>Open Source</category>
-      <category>AI Infrastructure</category>
-      <description>Modular declared its Python-like systems language production-ready three years after launch, but the compiler open-sourcing it promised for 2026 still hasn&apos;t landed.</description>
-      <content:encoded><![CDATA[<p>Mojo is 1.0 as of the Modular 26.5 release, which means the language Modular has been building since 2023 now carries a stability commitment. Syntax you write today should still compile next year. For anyone who has been waiting to put Mojo anywhere near production, that promise was the blocker, and it's gone.</p>
-<p>The pitch has stayed consistent: Python's readability with Rust-style memory safety and enough systems-level control to write the kind of code that currently forces people into C++ or CUDA. That's a real gap. The AI stack is a Python front end bolted onto hand-tuned kernels written in a completely different language by a much smaller group of people, and every team that has tried to cross that boundary knows how it goes.</p>
-<p>The awkward part of the 1.0 announcement is what's still missing. Modular committed to open-sourcing the Mojo compiler and toolchain in 2026. The standard library has been out under Apache 2.0 with LLVM exceptions for a while, but the compiler itself remains closed, with hints that ModCon next week might be the moment. Declaring 1.0 stability on a closed compiler is a specific kind of ask: trust the stability guarantee, but don't ask to read it.</p>
-<p>Then there's the owner. Qualcomm agreed in June to buy Modular for roughly $3.9 billion in stock. The strategic logic is not subtle. Mojo and Modular's MAX platform are the most credible attempt anyone has made at a portable programming model that isn't CUDA, and Qualcomm would very much like AI inference to run somewhere other than Nvidia silicon.</p>
-<p>Not everyone reads the acquisition as good news for the language. The tinygrad account put it bluntly, calling Qualcomm a poor steward for open source software and arguing Modular raised too much money to stay independent long enough to win. That's a partisan take from a competing project. It's also the exact concern any team evaluating Mojo should be pricing in, because a portability layer owned by a chip vendor has an obvious conflict at its center.</p>
-<p>The compiler release is the thing to watch. If it lands under a real open source license, Mojo has a shot at being infrastructure. If it slips past 2026 or arrives with a source-available license and a usage carve-out, then 1.0 was a stability guarantee on a product, not a foundation, and the difference matters a lot to whoever inherits your codebase.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Adobe Shipped Three CVSS 10.0 Fixes for ColdFusion and Campaign Classic</title>
-      <link>https://sabr-labs.com/article/adobe-coldfusion-campaign-classic-cvss-10-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/adobe-coldfusion-campaign-classic-cvss-10-august-2026</guid>
-      <pubDate>Wed, 12 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Adobe</category>
-      <category>ColdFusion</category>
-      <category>Campaign Classic</category>
-      <category>Patch Management</category>
-      <category>Code Execution</category>
-      <description>Seven critical flaws across ColdFusion, Campaign Classic, and Commerce got Priority 1 ratings and a 72-hour install recommendation, with no exploitation reported yet.</description>
-      <content:encoded><![CDATA[<p>Three perfect tens in one release. CVE-2026-48362 is an OS command injection bug in ColdFusion, and CVE-2026-71398 and CVE-2026-27302 are authorization bypasses in Campaign Classic that end in arbitrary code execution. All three sit at CVSS 10.0, which is the score you get when the attack is remote, unauthenticated, trivial, and total.</p>
-<p>The rest of the batch is barely a step down. ColdFusion also picks up CVE-2026-48273, an eval injection at 9.9, and CVE-2026-71384, an authorization bypass leading to denial of service at 9.6. Campaign Classic gets CVE-2026-48381, a SQL injection at 9.0. Adobe Commerce contributes CVE-2026-71362, an authorization bypass enabling privilege escalation at 9.1.</p>
-<p>Fixed builds are ColdFusion 2025.0.12 and 2023.0.23, and Campaign Classic v7 7.4.4 build 9400. Adobe rated the updates Priority 1 and recommends installing within 72 hours. The Campaign Classic issues apply to on-premise deployments, so hosted customers are covered by Adobe's own update cycle.</p>
-<p>Adobe says there's no evidence of exploitation in the wild. Treat that as a statement about Tuesday, not a forecast.</p>
-<p>ColdFusion has been one of the more reliable entry points in the ransomware playbook for years, and the pattern is consistent enough to plan around: a critical pre-auth bug drops, a proof of concept follows inside a week or two, and mass scanning finds the servers nobody remembered were still running. ColdFusion boxes are frequently in that category. They're old, they work, and the person who deployed them left.</p>
-<p>Campaign Classic is a different flavor of the same problem. It's a marketing automation platform, which means it lives near customer databases and is often administered by a team that doesn't report to security. An authorization bypass that reaches code execution on that host is a data breach with extra steps.</p>
-<p>If you run either product on-premise, this is a same-week job. Start by confirming you actually know where all the instances are, because on the evidence of previous ColdFusion cycles, that's the step that takes longest.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
