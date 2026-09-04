@@ -6,9 +6,134 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Sep 2026 19:05:17 GMT</lastBuildDate>
-    <pubDate>Thu, 03 Sep 2026 19:05:17 GMT</pubDate>
+    <lastBuildDate>Fri, 04 Sep 2026 13:15:08 GMT</lastBuildDate>
+    <pubDate>Fri, 04 Sep 2026 13:15:08 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Google Patches Sixth Actively Exploited Chrome Zero-Day of 2026</title>
+      <link>https://sabr-labs.com/article/chrome-152-cve-2026-85046-v8-zero-day-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-152-cve-2026-85046-v8-zero-day-exploited-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Chrome</category>
+      <category>Zero-Day</category>
+      <category>V8</category>
+      <category>Google</category>
+      <category>Patch Management</category>
+      <description>CVE-2026-85046 is a type confusion bug in V8 with a working exploit in the wild, fixed in Chrome 152.0.7977.82 for Windows, macOS, and Linux.</description>
+      <content:encoded><![CDATA[<p>Six. That's how many Chrome zero-days have been exploited in the wild this year, and we're only four days into September.</p>
+<p>The latest is CVE-2026-85046, a type confusion flaw in V8 that Google patched Thursday in a Stable channel update carrying twelve security fixes. Google's advisory uses the language it reserves for the bad ones: an exploit for the bug exists in the wild. Rated 8.8, it lets a remote attacker run arbitrary code inside the renderer sandbox from nothing more than a crafted HTML page.</p>
+<p>The technical shape of it is familiar to anyone who has followed V8 bug classes for the last few years. A compiler flaw causes an array holding PACKED_ELEMENTS to be handed the map for PACKED_SMI_ELEMENTS, which means the engine believes it's looking at small integers when it's actually looking at pointers. From there you get arbitrary read and write across the JavaScript heap, which is the foundation every serious browser exploit chain is built on.</p>
+<p>Fixed builds are 152.0.7977.82 and .83 on Windows and macOS, and 152.0.7977.82 on Linux. Google says the rollout will reach users over the coming days and weeks, which is the part that always gets lost. Chrome downloads the update quietly but doesn't apply it until you restart the browser, and plenty of people have not restarted Chrome since July. Check chrome://settings/help and relaunch.</p>
+<p>One detail worth sitting with: the bug was reported on August 4 by an independent researcher, Salvatore Gulizia, who goes by Serotav. The payout was $1,000. A V8 type confusion that yields heap read/write and then shows up in real attacks is worth considerably more than four figures on any market that isn't Google's, and the gap between what a vendor pays and what an exploit broker pays is the whole reason bugs like this keep landing in someone else's hands first.</p>
+<p>Google isn't saying who's using the exploit or against whom, which is standard while the patch propagates. What the disclosure does tell you is that the in-the-wild activity was found separately from the August report, so at minimum two parties had this bug at the same time.</p>
+<p>If you run a Chromium fleet, the V8 flaw travels downstream. Edge, Brave, Vivaldi, Opera, and anything else riding the same engine need their own vendor builds, and those trail Chrome by days. Electron apps are the ones people forget entirely.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Thomson Reuters Breach Exposed Sealed Court Records in 11 States</title>
+      <link>https://sabr-labs.com/article/thomson-reuters-c-track-court-records-breach-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/thomson-reuters-c-track-court-records-breach-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 11:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Thomson Reuters</category>
+      <category>Court Records</category>
+      <category>Third-Party Risk</category>
+      <category>PII</category>
+      <description>An intruder reached C-Track case management data in March, went undetected until June 30, and touched records that courts had deliberately sealed or redacted.</description>
+      <content:encoded><![CDATA[<p>Sealed records are sealed for a reason. A judge decided that a name, an address, a juvenile file, or a witness identity should not be publicly reachable, and that decision is supposed to hold.</p>
+<p>Thomson Reuters has now disclosed that an unauthorized party obtained files from C-Track, the court case management platform sold by its West Publishing Corporation unit, and that the material accessed included records marked confidential, redacted, and sealed. The company says the exposed data spans courts in 11 U.S. states, the U.S. Virgin Islands, and Ontario, Canada.</p>
+<p>The affected states named in the disclosure are Alabama, Kentucky, Montana, Nevada, New Hampshire, North Dakota, Ohio, Pennsylvania, South Carolina, Tennessee, and Wyoming. Depending on the record, exposed fields may include names, Social Security numbers, driver's license numbers, dates of birth, medical information, and health insurance information. Thomson Reuters says it has no evidence that systems handling financial transactions were involved.</p>
+<p>Now the timeline, which is the part that should bother you. The intrusion happened in March. Thomson Reuters says it discovered the activity on June 30. Notifications started going out in early September. That's roughly four months of dwell time inside a platform holding court records, and another two months before the people in those records heard about it.</p>
+<p>US-side notifications come with 12 months of Experian IdentityWorks, with enrollment open through the end of the year; in Canada, Thomson Reuters Canada is offering TransUnion monitoring with a dedicated call center. Credit monitoring is the standard reflex after a breach, and it is close to useless here. A monitoring service tells you when someone opens a line of credit in your name. It does nothing at all about a sealed juvenile record or a redacted witness address sitting in an attacker's archive, because that harm doesn't show up on a credit file.</p>
+<p>There's a structural problem underneath this incident. Court systems across a dozen jurisdictions ran their case management through one vendor, so one compromise at that vendor reached all of them at once. Every state that bought C-Track made a reasonable individual procurement decision, and collectively they built a single point of failure across state lines and an international border.</p>
+<p>If you work in or around any of the affected court systems, the practical action is not enrolling in credit monitoring. It's asking your clerk of courts which record classes were in the exported set, and whether any sealed matters in your jurisdiction now need to be treated as compromised.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Adds Seven Exploited Bugs, and Four Are Developer Plumbing</title>
+      <link>https://sabr-labs.com/article/cisa-kev-seven-flaws-litellm-kestra-starlette-jfrog-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisa-kev-seven-flaws-litellm-kestra-starlette-jfrog-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 10:15:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CISA KEV</category>
+      <category>LiteLLM</category>
+      <category>Starlette</category>
+      <category>JFrog Artifactory</category>
+      <category>Supply Chain</category>
+      <description>LiteLLM, Kestra, Starlette, and JFrog Artifactory all landed in the KEV catalog this week, which says attackers have moved from the edge to the build pipeline.</description>
+      <content:encoded><![CDATA[<p>CISA added seven vulnerabilities to the Known Exploited Vulnerabilities catalog on Wednesday. Two of them are the SonicWall SMA1000 pair everyone already spent the week patching. The other five are more interesting, because four of them are not appliances at all. They're the software your engineers install with a package manager and then forget about.</p>
+<p>The full list: CVE-2026-9586 in Sangoma Switchvox (SQL injection), CVE-2026-48710 in Starlette (HTTP request/response smuggling), CVE-2026-49869 in Kestra OSS (OS command injection), CVE-2026-59822 in BerriAI's LiteLLM (improper authentication), CVE-2026-82329 in JFrog Artifactory (improper authentication), plus SonicWall's CVE-2026-83548 and CVE-2026-83549.</p>
+<p>Look at what LiteLLM is for a second. It's the proxy a lot of teams stood up in the last two years to sit between their applications and every model provider they use, which means it holds the API keys for all of them in one place. An authentication bypass in that box isn't a bug in a side service. It's a key vault with a front door problem, and the keys inside bill by the token.</p>
+<p>Starlette is the one with the widest blast radius and the lowest name recognition. Most people running it don't know they are, because it's the ASGI layer underneath FastAPI. Request smuggling in that position means a front-end proxy and the application behind it disagree about where one HTTP request ends and the next begins, which is how attackers get requests past authentication checks that never saw them.</p>
+<p>Reporting on the exploitation activity describes attackers using the Switchvox and Artifactory flaws to drop reverse shells and mint admin tokens, then enumerating users, groups, credential sets, and federated access relationships. That last part matters more than the shell does. Artifactory sits in the middle of the build pipeline and typically federates out to cloud accounts and CI systems, so an admin token there is a map of everywhere else you can go.</p>
+<p>CISA's alert points federal agencies at Binding Operational Directive 26-04 for remediation timelines. The rest of us get the catalog as a prioritization signal, which is really what KEV is good for: proof that someone is already using the bug, not a theoretical CVSS argument about whether they might.</p>
+<p>The practical takeaway is a question about inventory. You almost certainly know whether you run SonicWall SMA1000 appliances. Do you know, this afternoon, which of your services pull in Starlette transitively, or which team stood up a LiteLLM proxy last quarter on a VM nobody put in the asset database? Those are the two answers this KEV batch is actually testing.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Broadcom&apos;s AI Silicon Now Outsells Everything Else It Makes</title>
+      <link>https://sabr-labs.com/article/broadcom-q3-fy2026-ai-revenue-16-7-billion-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/broadcom-q3-fy2026-ai-revenue-16-7-billion-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Broadcom</category>
+      <category>AI Chips</category>
+      <category>Semiconductors</category>
+      <category>Earnings</category>
+      <category>Data Center</category>
+      <description>AI semiconductor revenue hit $16.7 billion in Q3, 56% of company revenue, and management is guiding to roughly $230 billion in fiscal 2028.</description>
+      <content:encoded><![CDATA[<p>Broadcom is no longer a networking company that also does AI chips. As of this quarter it's an AI chip company that also does networking, and the crossover happened faster than almost anyone modeled.</p>
+<p>Q3 fiscal 2026 revenue came in at $29.6 billion, up 86% year over year. Net income more than tripled to $13.09 billion, or $2.68 per share, against $4.14 billion and 85 cents a year ago. The number driving all of it is AI semiconductor revenue: $16.7 billion for the quarter, up 221%, and now 56% of everything the company sells.</p>
+<p>The guidance is where it gets genuinely strange. Management is calling for $21.7 billion in AI semiconductor revenue in Q4 alone, roughly $58 billion for the full fiscal year, then approximately $115 billion in fiscal 2027 and around $230 billion in fiscal 2028. To put that last figure in context, it would make Broadcom's AI segment by itself larger than the entire annual revenue of nearly every other semiconductor company on earth.</p>
+<p>Broadcom's business here is custom accelerators and the networking silicon that stitches them together, sold to a short list of buyers building their own chips rather than renting Nvidia's. The company named Google, Anthropic, and OpenAI among the customers behind long-term agreements. That's the strength and the risk in one sentence. Custom silicon means multi-year design wins that competitors can't unseat mid-cycle, and it also means a handful of customers can move the entire segment by changing their minds about a roadmap.</p>
+<p>Treat the fiscal 2028 projection with the skepticism it deserves. Some portion of it reflects committed orders, and some portion reflects what management believes those customers will keep buying two years out, in a market where the buyers are themselves spending ahead of demand they haven't proven yet. Broadcom's numbers are only as good as the assumption that AI capital spending compounds through 2028 without a pause.</p>
+<p>For anyone working in a data center, the operational read is simpler than the financial one. Custom accelerators from a merchant vendor mean more heterogeneous fleets, more vendor-specific interconnect, and networking gear that is increasingly designed around one workload. The uniform x86-and-Ethernet rack is getting rarer every quarter.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepMind&apos;s WeatherNext 3 Skips the Analysis Step Entirely</title>
+      <link>https://sabr-labs.com/article/google-deepmind-weathernext-3-hourly-5km-forecasts-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-deepmind-weathernext-3-hourly-5km-forecasts-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 08:45:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google DeepMind</category>
+      <category>Weather Forecasting</category>
+      <category>Machine Learning</category>
+      <category>Earth Engine</category>
+      <category>Benchmarks</category>
+      <description>Google&apos;s new weather model ingests raw satellite and station observations rather than a processed analysis, producing hourly 15-day forecasts at 5-kilometer resolution.</description>
+      <content:encoded><![CDATA[<p>The interesting thing about WeatherNext 3 isn't the resolution. It's where the data comes from.</p>
+<p>Google DeepMind and Google Research released the model this week, and the headline specs are real: 15-day global probabilistic forecasts across 64 ensemble members, refreshed hourly, with key surface variables like temperature and moisture at 5-kilometer resolution. Other surface variables land at 10 kilometers and atmospheric variables such as wind speed at 25 kilometers. Google claims up to 50% better precipitation forecasting a day or more out.</p>
+<p>Previous AI weather models, DeepMind's included, mostly learned from reanalysis data. That's the cleaned, gridded, physics-assimilated product that national weather agencies generate after the fact, and training on it means an AI model inherits both the strengths and the built-in assumptions of the numerical system that produced it. WeatherNext 3 feeds real-time satellite observations directly into the model alongside that analysis data, and trains on sparse weather station readings as well.</p>
+<p>That's a meaningful architectural shift. Skipping straight from observation to forecast removes a processing stage that adds latency and smooths away local detail, which is exactly the detail that matters if you're trying to predict whether it rains on a specific city block in six hours.</p>
+<p>The accuracy claim has some independent support. WeatherNext 3 currently sits at the top of Operational WeatherBench, a live leaderboard run by the AI weather startup Brightband that scores both AI and conventional models against what actually happened. Live evaluation is a much harder test than a benchmark on a frozen historical set, and it's the right thing to be judged on.</p>
+<p>Google is wiring the model into Search, the Gemini app, Google Maps, and the Maps Platform Weather API, and the underlying data is queryable through BigQuery and Earth Engine or downloadable from Cloud Storage in Zarr format. That last part is the piece researchers will care about, because a forecast you can only see through a consumer app is not something anyone can verify.</p>
+<p>Worth keeping in view: national meteorological agencies still run the observation networks these models learn from. Satellites, radiosondes, buoys, and surface stations are public infrastructure, funded by governments, and a private model trained on that feed is a layer on top of it, not a replacement for it. If the observation budget shrinks, so does everything built above it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Moonshot AI Files Confidentially for a $3 Billion Hong Kong IPO</title>
+      <link>https://sabr-labs.com/article/moonshot-ai-hong-kong-ipo-filing-50-billion-valuation-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/moonshot-ai-hong-kong-ipo-filing-50-billion-valuation-september-2026</guid>
+      <pubDate>Fri, 04 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Moonshot AI</category>
+      <category>IPO</category>
+      <category>Hong Kong</category>
+      <category>China Tech</category>
+      <category>AI Funding</category>
+      <description>The Kimi model maker is reportedly seeking to raise $3 billion at a $50 billion valuation, after restructuring from an offshore holding company to an onshore China domicile.</description>
+      <content:encoded><![CDATA[<p>Moonshot AI reportedly filed confidentially for a Hong Kong listing on Wednesday, targeting a raise of about $3 billion against a valuation near $50 billion in its ongoing pre-IPO round. Goldman Sachs, CICC, and Deutsche Bank are said to be running the deal.</p>
+<p>Start with the arithmetic, because it's the whole story. Moonshot's Kimi K3 is reported to be driving roughly $300 million in annualized revenue. A $50 billion valuation against that run rate is somewhere north of 150 times revenue. Software companies have carried triple-digit multiples before, usually briefly and usually on the way to a correction, and this one is being asked of public market investors rather than late-stage private funds who can hold through a repricing.</p>
+<p>The structural detail that got less attention is more consequential than the number. Before filing, Moonshot unwound its offshore incorporation and moved to an onshore China domicile. Chinese tech companies spent two decades building variable interest entity structures in the Cayman Islands specifically so foreign capital could reach them and so a US listing stayed possible. Undoing that is a decision, not paperwork. It closes the door on a New York listing and signals that the company would rather be legible to Beijing regulators than accessible to American investors.</p>
+<p>Moonshot was founded in 2023 by the researcher Yang Zhilin, and the Kimi line has been one of the few Chinese model families to build a real consumer following at home rather than existing mainly as a benchmark entry.</p>
+<p>The comparison set is unflattering, though. DeepSeek has been valued around $74 billion and Z.AI around $66 billion, both above Moonshot. If the point of listing first is to claim the capital before your competitors do, the pricing suggests Moonshot is going public from third position in its own market.</p>
+<p>A confidential filing also means nobody outside the deal has seen the financials. The revenue figure, the valuation, and the raise target are all coming through people briefed on the process rather than a prospectus. Until the document goes public, treat every number here as an interested party's estimate.</p>
+<p>What to actually watch: whether the listing clears at the reported valuation or gets marked down before pricing. Hong Kong has been the venue of choice for Chinese AI companies this year, and a haircut on the first big model-lab IPO would set the anchor for everyone lining up behind it.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Cisco Retired SVPN 300-730 and Replaced SCOR With v2.0</title>
       <link>https://sabr-labs.com/article/cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026</link>
@@ -918,132 +1043,6 @@
 <p>Now the gaps. OpenAI did not publish a price. Its Fast tier lists at $10 per million input tokens and $60 per million output, and OpenAI has pointedly not said that those rates or those latency guarantees carry over to Ultrafast. There's no general availability date either. Access goes to a selected group and widens "as capacity grows," which is how you describe a product limited by how many wafers are physically installed.</p>
 <p>Read that together and the announcement is a capacity update wearing a product launch's clothes. The performance was demonstrated a month ago. What OpenAI is signaling now is that enough hardware is racked to start onboarding design partners, and it's reserving the right to price the tier once it knows what supply looks like.</p>
 <p>The speed itself is worth taking seriously even if you can't buy it yet. A whole category of interface design exists to disguise model latency: streaming placeholders, optimistic UI, chunked responses that arrive before the model has finished thinking. If sub-second frontier responses become routinely purchasable, a lot of that scaffolding turns into dead weight. That's a real shift for anyone building voice agents or live coding tools, and it's the thing to plan for rather than the throughput number.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Trump Memo Clears Vetted US Firms to Hack Foreign Criminal Networks</title>
-      <link>https://sabr-labs.com/article/trump-memo-private-sector-offensive-hacking-tco-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/trump-memo-private-sector-offensive-hacking-tco-august-2026</guid>
-      <pubDate>Sat, 15 Aug 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Policy</category>
-      <category>Offensive Security</category>
-      <category>Government</category>
-      <category>Ransomware</category>
-      <category>Hack Back</category>
-      <description>A new national security memo lets private companies run surveillance and disruption operations against foreign criminal hacking groups under federal contract, reversing a prohibition every previous administration kept in place.</description>
-      <content:encoded><![CDATA[<p>Hacking back has been the thing American companies were not allowed to do. That changed this week.</p>
-<p>President Trump signed a national security memorandum directing the National Coordination Center to stand up a program authorizing vetted private companies to conduct offensive cyber operations against foreign cyber-enabled transnational criminal organizations. The memo covers both cyber surveillance operations and what it calls cyber effects operations, which is the polite term for breaking things. Participating firms sign contracts with either the Justice Department or DHS and go through vetting before they touch anything.</p>
-<p>Previous administrations of both parties looked at this idea and declined, for a reason that has not gone away: a private company misreading attribution and hitting the wrong network is a foreign policy incident that the company does not have to clean up. Ransomware crews run their infrastructure on the same hosting providers as everyone else. The distance between a criminal command-and-control server and a hospital's billing system can be one shared IP block.</p>
-<p>The memo does build in tripwires. If an operation exceeds its approved parameters, the classic example being that it starts touching a US person or a US-based system, the company has to stop, run minimization procedures, and immediately notify the NCC, which then loops in DOJ. That is a real control, and it's more structure than the freelance hack-back proposals that have floated around Washington for a decade.</p>
-<p>It also puts the burden of noticing in exactly the wrong place. The company running the operation is the party that decides whether it has crossed the line, and it's the party with a contract to keep. Self-reporting regimes work when the reporter has no stake in the answer.</p>
-<p>The legal foundation here has never been tested in court. The Computer Fraud and Abuse Act does not carve out an exception for contractors with a federal blessing, and nobody has litigated what happens when an authorized operation causes collateral damage abroad. The first company to find out will be doing so as a defendant.</p>
-<p>For defenders, the practical read is narrower than the headlines suggest. This is not permission for your SOC to counterattack. It's a contracting program for a small set of vetted firms working against a specific target class. If your incident response plan gets rewritten because of this memo, someone has misread it.</p>
-<p>Watch which companies sign up. The list of firms willing to put their name on federal offensive operations, and the insurance market's reaction to it, will say more about whether this program is real than the memo does.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Exposed Macs Are Getting Rooted Through Screen Sharing and Mined for Monero</title>
-      <link>https://sabr-labs.com/article/macos-screen-sharing-cve-2026-65400-monero-miner-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/macos-screen-sharing-cve-2026-65400-monero-miner-august-2026</guid>
-      <pubDate>Sat, 15 Aug 2026 09:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Apple</category>
-      <category>macOS</category>
-      <category>CVE-2026-65400</category>
-      <category>Active Exploitation</category>
-      <category>Cryptomining</category>
-      <description>CVE-2026-65400 gives pre-authentication code execution on any Mac with Screen Sharing reachable from the internet, and the Dutch NCSC says attackers are already using it to install cryptominers.</description>
-      <content:encoded><![CDATA[<p>Anyone still running macOS Screen Sharing on a box reachable from the open internet has probably already lost it. The Netherlands' National Cyber Security Centre says it has confirmed reports of active abuse across multiple systems, and in every case the outcome was the same: root access, followed by a Monero miner.</p>
-<p>The vulnerability is CVE-2026-65400, rated 9.8. It lives in how the Screen Sharing daemon implements Secure Remote Password, the protocol that's supposed to prove you know the password before anything else happens. According to Huntress, which published the technical breakdown, the daemon's frame-length validator returns a stale success status when it shouldn't. An attacker never has to answer the authentication challenge correctly. The service just waves them through into pre-authenticated remote code execution.</p>
-<p>Apple shipped fixes on August 6 across three trains: macOS Tahoe 26.6.1, Sequoia 15.7.9, and Sonoma 14.8.9. Everything older is still exposed.</p>
-<p>The same updates also closed CVE-2026-43760, a quieter companion bug. That one needs valid legacy VNC credentials, but once you have them it lets you read and create any file on the system as root. It's less dramatic than a pre-auth hole and considerably more useful to someone who already has a foothold.</p>
-<p>What turned this from a patch-cycle item into an incident was public exploit code. The NCSC's observed cases all involved port 5900 accessible from the internet, which is the classic Screen Sharing listener. Cryptomining is the payload of least ambition here. Whoever is running these campaigns has pre-auth root on Macs and is choosing to spend it on Monero, which means the same access is available to anyone with a more interesting agenda.</p>
-<p>Huntress is blunt about the mitigation ranking, and it's worth repeating: normal hardening does not save you from the pre-auth bug. If you can't patch today, turn Screen Sharing off entirely. Restricting which accounts may connect doesn't matter when the attacker never authenticates in the first place.</p>
-<p>The practical move for anyone running a fleet: scan your own perimeter for 5900 before someone else does. Mac minis quietly acting as build agents and jump hosts are exactly the kind of asset that ends up on a public IP without anyone signing off on it, and they're the ones that will still be unpatched next month.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SAP Commerce Cloud Flaw Attacked Three Days After the Patch Shipped</title>
-      <link>https://sabr-labs.com/article/sap-commerce-cloud-cve-2026-58231-exploited-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sap-commerce-cloud-cve-2026-58231-exploited-august-2026</guid>
-      <pubDate>Sat, 15 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SAP</category>
-      <category>CVE-2026-58231</category>
-      <category>Vulnerabilities</category>
-      <category>Active Exploitation</category>
-      <category>Enterprise Software</category>
-      <description>CVE-2026-58231 carries a CVSS 10.0, needs no credentials, and honeypots caught the first exploitation attempts within 72 hours of SAP&apos;s August patch day.</description>
-      <content:encoded><![CDATA[<p>Three days. That's the gap between SAP shipping a fix for CVE-2026-58231 and attackers throwing the first exploitation attempts at internet-facing Commerce Cloud installs.</p>
-<p>The bug sits in the Data Hub Adapter extension, a core piece of Commerce Cloud rather than an optional add-on. It's an improper authorization weakness: an unauthenticated attacker abuses a default authentication client, then feeds specially crafted input to functions that never validate it properly. The result is arbitrary code execution. No credentials, no existing privileges, low attack complexity, and full impact across confidentiality, integrity and availability. That combination is why the CVSS lands at a clean 10.0, which SAP hands out rarely.</p>
-<p>SAP published the fix as Security Note 3771065 on its August patch day. Customers need to be on Commerce Cloud 2211.55 or 2211-jdk21.17, or later. If you're on anything earlier and the storefront touches the public internet, you're in the target set right now.</p>
-<p>The exploitation report comes from Defused, whose honeypots logged the first attempts against the vulnerability three days after the patch dropped. SAP has not updated its own advisory to flag active exploitation.</p>
-<p>That gap matters more than it sounds. Plenty of security teams gate their emergency patching on vendor confirmation, and the window between "a researcher's sensors are seeing it" and "the vendor says so officially" routinely runs a week or longer. Treating the honeypot data as the signal rather than waiting for SAP to catch up is the difference between patching on a Saturday and patching after an incident call.</p>
-<p>If you can't get the upgrade through change control immediately, SAP's guidance is to configure an IP Filter Set restricting access to the affected endpoint. It's a real mitigation, not a fig leaf, but it only helps if you actually know which of your instances expose the Data Hub Adapter.</p>
-<p>There's a broader pattern worth naming here. SAP patch notes are terse by design, and researchers have gotten very good at diffing the fixes to reconstruct the bug. A max-severity, pre-auth flaw in a widely deployed enterprise product is going to get reverse-engineered in days, not months. Assume the patch itself is the exploit roadmap and plan your maintenance windows accordingly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepSeek&apos;s V4-Pro Refresh Posts Big Agent Scores From a Harness Nobody Can See</title>
-      <link>https://sabr-labs.com/article/deepseek-v4-pro-0813-agent-benchmarks-unreleased-harness-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-v4-pro-0813-agent-benchmarks-unreleased-harness-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>DeepSeek</category>
-      <category>V4-Pro</category>
-      <category>Benchmarks</category>
-      <category>AI Agents</category>
-      <category>Open Weights</category>
-      <description>The 0813 checkpoint claims 87.9 on Terminal-Bench 2.1 and 60 percent on Humanity&apos;s Last Exam with tools, but DeepSeek ran the code-agent evaluations through its own unreleased harness.</description>
-      <content:encoded><![CDATA[<p>DeepSeek pushed V4-Pro-0813 to general availability on August 13 across its app, web interface and API. The pitch is agents: tool use, code execution, multi-step workflows that finish without a human nudging them along.</p>
-<p>The numbers DeepSeek published are strong. Terminal-Bench 2.1 lands at 87.9, Toolathlon-Verified at 74.1, CyberGym at 83.3. On the coding side it reports 62.7 on DeepSWE and 61.5 on NL2Repo. The model keeps the V4 family's 1-million-token context window and can emit up to 384,000 tokens, running in either thinking or non-thinking mode.</p>
-<p>Then there's Humanity's Last Exam: 42.7 percent without tools, 60 percent with them. Treat those as two different measurements rather than one improved score. The with-tools figure is a system result, not a model result, and it isn't comparable to the no-tools numbers other labs quote unless you know exactly what the tools were and how many calls the model got.</p>
-<p>Which is the problem, because you don't. DeepSeek ran its code-agent evaluations through an internal harness it hasn't released. Agent benchmarks are enormously sensitive to scaffolding: retry budgets, timeout handling, how the harness parses a malformed tool call, whether a failed command counts as a failed task. Two harnesses can produce a fifteen-point spread on the same model. Without the harness, these scores are useful for comparing V4-Pro against other DeepSeek models and close to meaningless for comparing it against anything else.</p>
-<p>DeepSeek has usually been better than this. The April V4-Pro release put its weights on Hugging Face under an MIT license, which is about as open as a frontier model gets and made independent verification genuinely possible. There's no 0813 checkpoint in that repository, so the specific model that produced these scores isn't currently something an outside evaluator can download and test.</p>
-<p>Artificial Analysis has it roughly one point above V4-Flash on its intelligence index. One point is measurement noise, not a generation.</p>
-<p>None of this means the model is bad. It very likely is good, and DeepSeek's track record on price-to-capability is the reason anyone cares. But an agent score published by the vendor, generated by the vendor's own unpublished harness, against a checkpoint the vendor hasn't shipped, is a marketing claim wearing a lab coat. Wait for the weights or wait for a third-party run.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Pixel 11 Pro Holds at $1,099 and Quietly Kills the 128GB Tier</title>
-      <link>https://sabr-labs.com/article/pixel-11-pro-tensor-g6-2nm-1099-storage-floor-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/pixel-11-pro-tensor-g6-2nm-1099-storage-floor-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>Pixel 11</category>
-      <category>Tensor G6</category>
-      <category>Smartphones</category>
-      <category>Hardware</category>
-      <description>Tensor G6 moves to a 2nm process with half again the TPU throughput, but the claim Google actually leads with this year is battery life.</description>
-      <content:encoded><![CDATA[<p>The Pixel 11, 11 Pro, 11 Pro XL and 11 Pro Fold went official on August 12. The Pro starts at $1,099, which reads as a price hold until you notice the 128GB option is gone across the entire lineup. Same sticker as last year's 256GB Pro, higher floor for everyone who used to buy the cheap one.</p>
-<p>Tensor G6 is the headline silicon change, moving to a 2nm process with roughly 50 percent more TPU throughput than its predecessor. Google pairs it with 12GB of RAM as the new baseline, up to 16GB on higher configurations. That baseline is worth flagging: it's a step down from what the entry tier carried last year, at a moment when on-device model inference is the whole pitch.</p>
-<p>Battery is where Google spent its actual marketing energy. The Pixel 11 Pro carries a 4,850mAh cell and every device in the series is rated at 30 hours or more, against the 24 hours Google claimed for the Pixel 10 Pro. App opening is about 25 percent faster year over year, per Google's own numbers.</p>
-<p>A 2nm node buying you battery life rather than benchmark wins is the honest outcome, and Google is being unusually straightforward about it. Efficiency gains are what a process shrink actually delivers when you're not chasing peak clocks.</p>
-<p>The TPU number is the one to be careful with. Fifty percent more throughput is real engineering, but it's throughput for a feature set most buyers can't name, and Tensor has never been the reason anyone chose a Pixel. The camera pipeline and the software are. Google keeps leading with the chip because the chip is the differentiator on a spec sheet, not because it's the differentiator in a pocket.</p>
-<p>If you're on a Pixel 9 or older, the battery jump alone probably justifies the upgrade. If you're on a 10 Pro, you're being asked to pay $1,099 for six more hours and a faster app launcher.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Vantage Is Sizing Up a $100 Billion Listing, and It Isn&apos;t the Only One</title>
-      <link>https://sabr-labs.com/article/vantage-data-centers-100-billion-ipo-silver-lake-digitalbridge-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/vantage-data-centers-100-billion-ipo-silver-lake-digitalbridge-august-2026</guid>
-      <pubDate>Fri, 14 Aug 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Vantage Data Centers</category>
-      <category>IPO</category>
-      <category>Data Centers</category>
-      <category>Silver Lake</category>
-      <category>Stargate</category>
-      <description>Reuters reports Vantage Data Centers could raise around $10 billion at a $100 billion valuation as soon as next year, with Switch and CyrusOne queued behind it.</description>
-      <content:encoded><![CDATA[<p>Three data center operators are now lined up for public listings, and between them they'd be asking markets to absorb something close to $200 billion of AI infrastructure valuation.</p>
-<p>Vantage is the biggest. Backed by Silver Lake and DigitalBridge, the company has held preliminary talks with advisers about raising roughly $10 billion at a valuation near $100 billion, according to Reuters, which would be the largest data center IPO ever done. A sale or a stake sale is also on the table. Nothing is committed and the timeline is "as soon as next year," which in banker language means the decision hasn't been made.</p>
-<p>Switch has already hired banks, targeting up to $10 billion at about $80 billion. CyrusOne is preparing for a listing that could come in 2027.</p>
-<p>What makes Vantage the interesting one is its Stargate exposure. The company is building a Wisconsin campus alongside Oracle and OpenAI, part of the SoftBank-Oracle-OpenAI joint venture that has talked about up to $500 billion and 10 gigawatts of capacity. That contract is a large part of why a $100 billion number is sayable out loud.</p>
-<p>It's also the part worth staring at. Data center economics rest on long-duration leases, and long-duration leases are only as good as the tenant's ability to pay for fifteen years. Vantage's marquee counterparty is a company whose revenue history is measured in single-digit years and whose spending commitments are measured in hundreds of billions. Private capital priced that risk when it was private. An IPO moves it onto public balance sheets.</p>
-<p>That's the actual story in the queue forming: Silver Lake, DigitalBridge and their peers built these assets during the cheapest and most certain phase of the AI buildout, and they're now looking for the exit while demand still looks infinite. Retail and index funds get to hold the second half.</p>
-<p>Watch whether Vantage files with signed contract terms disclosed or keeps them behind a materiality threshold. That single choice will tell you more about the durability of these leases than any analyst note about AI demand.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
