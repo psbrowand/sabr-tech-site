@@ -6,9 +6,130 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 05 Sep 2026 13:16:08 GMT</lastBuildDate>
-    <pubDate>Sat, 05 Sep 2026 13:16:08 GMT</pubDate>
+    <lastBuildDate>Sun, 06 Sep 2026 13:18:03 GMT</lastBuildDate>
+    <pubDate>Sun, 06 Sep 2026 13:18:03 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Juniper&apos;s Certification Program Becomes HPE Networking on Sept 15</title>
+      <link>https://sabr-labs.com/article/juniper-certification-becomes-hpe-networking-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/juniper-certification-becomes-hpe-networking-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Juniper</category>
+      <category>HPE</category>
+      <category>Certification</category>
+      <category>JNCIA</category>
+      <category>Career</category>
+      <description>The Juniper Networks Certification Program is being renamed and folded into HPE, with a Pearson VUE registration blackout from September 12 to 15 and a login change for CertMetrics accounts.</description>
+      <content:encoded><![CDATA[<p>If you're holding a JNCIA, JNCIS, or JNCIE, the name on it changes next week. On Tuesday, September 15, the Juniper Networks Certification Program becomes the HPE Networking Certification Program, the last visible piece of HPE's absorption of Juniper finally reaching the people who studied for the exams.</p>
+<p>There are two things here that can actually cost you time. First, first-time Pearson VUE exam registrations are unavailable between September 12 and 15. If you were planning to book a written exam that weekend, book it before the 12th or wait until after the migration completes.</p>
+<p>Second, the login changes. Alpine CertMetrics, where your transcript and exam history live, moves to hpe.com credentials. HPE has published a preparation article telling candidates to get their CertMetrics account ready ahead of the switch, and this is the part people skip and then spend a Tuesday morning on a support ticket. Do it this week.</p>
+<p>Proctored written exam scheduling and management also consolidates into Alpine CertMetrics, and the platform picks up HPE branding. HPE has the cutover itself running between 9 and 11 AM Central time on the 15th.</p>
+<p>What HPE hasn't said is the part worth watching: whether the track structure survives intact. Juniper's certification path has been one of the more respected vendor programs in networking, partly because JNCIE remained a genuinely hard lab exam in an era when a lot of vendors softened theirs. A rename is cosmetic. A curriculum merge with HPE's existing Aruba-oriented tracks would not be, and nothing in the migration notice addresses it.</p>
+<p>For now, treat this as an administrative change with a hard date. Get into CertMetrics, confirm your record is complete, screenshot your transcript, and don't schedule anything for that weekend.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Cut Its Transcription Price 72% in Five Months</title>
+      <link>https://sabr-labs.com/article/microsoft-mai-transcribe-2-speech-model-pricing-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-mai-transcribe-2-speech-model-pricing-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Speech Recognition</category>
+      <category>AI Models</category>
+      <category>Pricing</category>
+      <category>Azure</category>
+      <description>MAI-Transcribe-2 ships at $0.10 per audio hour with a 5.2% average word error rate across 60 languages, and the price is introductory through the end of 2026.</description>
+      <content:encoded><![CDATA[<p>Five months ago Microsoft AI charged $0.36 per audio hour for its first speech model. MAI-Transcribe-2, released September 3, costs $0.10. That's the story here as much as any benchmark: speech recognition is turning into a commodity, and the people selling it know it.</p>
+<p>The accuracy claim is credible and specific. On FLEURS, the multilingual benchmark, Microsoft reports MAI-Transcribe-2 ranking first across 60 languages with an average word error rate of 5.2%. On the independent Artificial Analysis leaderboard, the company says it ranks second, which is a more useful data point precisely because Microsoft doesn't run it.</p>
+<p>Speed is where the pitch gets loud. Microsoft claims up to 10x faster than OpenAI's GPT-Transcribe, 7x faster than ElevenLabs Scribe v2, and 5x faster than Google's Gemini 3.5 Transcribe, all while transcribing more accurately. Those are vendor-run comparisons against competitors who did not participate, so treat the multipliers as directional.</p>
+<p>Feature-wise it's what you'd want for production work: speaker diarization, word-level timestamps, domain keyword biasing, and 60-language support. Microsoft names clinical notes, legal documentation, accessibility, and closed captioning as target uses, which is a polite way of saying the addressable market is every meeting, deposition, and patient visit that currently gets typed up by a human.</p>
+<p>The pricing asterisk matters. That $0.10 rate runs through the end of 2026. Microsoft hasn't published what it becomes on January 1, and anyone building a cost model on a promotional rate for a workload measured in audio hours per month is setting up a bad conversation with finance in Q1.</p>
+<p>If you're already paying per-hour rates to one of the incumbents, this is worth an afternoon of A/B testing against your own audio. Benchmark word error rates are measured on clean, curated corpora. Your call recordings, with crosstalk and bad microphones and someone joining from a car, are not that.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Built a Security-Tuned Gemini and Gated Who Can Use It</title>
+      <link>https://sabr-labs.com/article/gemini-3-8-flash-cyber-fairwind-program-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gemini-3-8-flash-cyber-fairwind-program-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>AI Security</category>
+      <category>Vulnerability Research</category>
+      <category>Model Release</category>
+      <description>Gemini 3.8 Flash Cyber posts strong vulnerability-discovery and patching numbers, but Google is restricting access to governments, critical infrastructure operators, and software maintainers through a program called Fairwind.</description>
+      <content:encoded><![CDATA[<p>Google shipped two models on September 2 that share a core and differ only in tuning and who's allowed to touch them. Gemini 3.8 Flash is the general release, aimed at coding and agentic work. Gemini 3.8 Flash Cyber is the same underlying model pointed at vulnerability discovery and patching, and you can't just buy it.</p>
+<p>The numbers Google published for the Cyber variant are the interesting part. Chrome's security team reported that 3.8 Flash Cyber produced 2.6 times more correct patches for Chrome vulnerabilities than the best commercial models, which Google notes are considerably larger. Google's Cloud Vulnerability Research team says the model surfaced a critical foundational vulnerability in under two hours. On CWE-Bench, Google reports 47.2% pass@1 for patching, and claims a success rate above 70% for real-world vulnerability discovery across 20 languages.</p>
+<p>Read those benchmarks the way you'd read any vendor's. CWE-Bench pass@1 at 47.2% means the model gets a patch right on the first try slightly less than half the time. That is genuinely good for automated patching and it is also a coin flip. A 2.6x improvement over other models is a ratio, not an absolute, and Chrome's security team is a Google team scoring a Google model.</p>
+<p>Access to Flash Cyber runs through what Google calls the Fairwind Program, which restricts it to trusted government authorities, critical infrastructure operators, and software maintainers. The company also describes safeguards against misuse in cyber offense and CBRN domains.</p>
+<p>The gating is defensible and it's also a choice worth naming. A model that finds exploitable bugs fast is dual-use by construction, and Google has decided the way to handle that is an allowlist. It also means the defenders most likely to be running unpatched software, small shops and regional operators without a Google relationship, are on the wrong side of the gate. Meanwhile anyone who wants offensive capability can rent compute and fine-tune something themselves.</p>
+<p>The general 3.8 Flash is priced at $0.75 per million input tokens and $3.75 per million output, and that's introductory. On January 1, 2027, it doubles to $1.50 and $7.50. Budget for the real number, not the launch number.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Elementor Pro Sites Are Getting Webshells Through a Form Upload Bug</title>
+      <link>https://sabr-labs.com/article/elementor-pro-cve-2026-32475-webshell-exploitation-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/elementor-pro-cve-2026-32475-webshell-exploitation-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>Elementor</category>
+      <category>Webshell</category>
+      <category>Active Exploitation</category>
+      <category>RCE</category>
+      <description>CVE-2026-32475 lets an unauthenticated attacker slip a PHP file past Elementor Pro&apos;s upload validation, and Wordfence has blocked roughly 200,000 exploitation attempts since the August 19 patch.</description>
+      <content:encoded><![CDATA[<p>Roughly 200,000 blocked attempts. That's what Defiant's Wordfence firewall logged against its own customer base after Elementor patched CVE-2026-32475 on August 19, which tells you attackers started diffing the fix more or less immediately.</p>
+<p>The bug is a validation bypass in how Elementor Pro forms handle file uploads, and it carries a CVSS score of 9.8. Submit an array where the first element is an empty file and the second is a PHP payload, and the check that's supposed to reject executable uploads only inspects the first element. The payload lands in /wp-content/uploads/elementor/forms/ and runs. No authentication required.</p>
+<p>Everything at 4.2.1 and earlier is affected. Version 4.2.2 fixes it.</p>
+<p>What makes this one worth your Sunday is the install base. Elementor Pro sits on a very large slice of small-business and agency-built WordPress sites, the kind that get built once, handed to a client, and never updated again. A validation bypass in that population isn't a vulnerability so much as a harvest.</p>
+<p>The indicator of compromise is refreshingly simple. Go look in /wp-content/uploads/elementor/forms/ on every site you manage. There is no legitimate reason for a PHP file to be sitting in that directory. If one is there, you have a webshell, and updating the plugin will not remove it.</p>
+<p>Patch to 4.2.2, then check the directory, then check it on the sites you forgot you were still responsible for. Attackers found those faster than you will.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Public PoC Turns CrowdStrike Falcon Into a SYSTEM Shell</title>
+      <link>https://sabr-labs.com/article/crowdstrike-falconflank-zero-day-system-privileges-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/crowdstrike-falconflank-zero-day-system-privileges-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>CrowdStrike</category>
+      <category>Zero-Day</category>
+      <category>Windows</category>
+      <category>Privilege Escalation</category>
+      <category>EDR</category>
+      <description>A researcher released FalconFlank, which abuses Falcon&apos;s own malicious-macro remediation to escalate a low-privileged Windows account to SYSTEM, and CrowdStrike has not confirmed the bug or shipped a fix.</description>
+      <content:encoded><![CDATA[<p>The tool that's supposed to catch privilege escalation is now the way to get it. A researcher using the handle Nightmare Eclipse published a proof-of-concept called FalconFlank that abuses CrowdStrike Falcon's remediation workflow for malicious Microsoft Office macros to spawn a command prompt running as SYSTEM.</p>
+<p>The exploit needs a foothold first. It's a local escalation, not remote code execution, so an attacker already has to be sitting on a low-privileged account. That's a lower bar than it sounds. Phishing, a stolen session, a compromised contractor login: any of those get you to the starting line, and from there Falcon hands over the rest of the machine.</p>
+<p>According to the researcher, the PoC worked against fully patched Windows 11 25H2 and Windows Server 2025 hosts running Falcon with Phase 3 Optimal Protection enabled. The affected capability is the Microsoft Office file malicious macro removal feature. Turning that off is a mitigation, and it's also a real detection loss, which is the uncomfortable trade defenders are being handed while they wait.</p>
+<p>As of the release, CrowdStrike had not confirmed the flaw, assigned it a CVE, published a CVSS score, or shipped a patch. That silence is doing a lot of work. A vendor whose product exists to keep attackers off endpoints should be able to say 'we're investigating' within a day.</p>
+<p>The researcher's track record is the part that should move this up your queue. Three of their prior exploits were used in real intrusions before fixes shipped and were subsequently added to CISA's Known Exploited Vulnerabilities catalog. This is not someone whose PoCs sit unused.</p>
+<p>Practical steps while the vendor sorts itself out: inventory which of your hosts have the macro removal capability enabled, watch for unexpected SYSTEM-level cmd.exe spawned by Falcon sensor processes, and tighten local account hygiene so the initial foothold is harder to get in the first place.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Taking Over MikroTik Routers Over SSH Without a Key</title>
+      <link>https://sabr-labs.com/article/mikrotik-routeros-mikrotrick-ssh-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mikrotik-routeros-mikrotrick-ssh-exploited-september-2026</guid>
+      <pubDate>Sun, 06 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>MikroTik</category>
+      <category>RouterOS</category>
+      <category>SSH</category>
+      <category>CERT Polska</category>
+      <category>Active Exploitation</category>
+      <description>CERT Polska found six RouterOS flaws, two of which hand full admin access to anyone who can reach the router&apos;s SSH port, and exploitation started before the patch shipped.</description>
+      <content:encoded><![CDATA[<p>If your MikroTik router answers SSH from the internet, treat it as compromised until you can prove otherwise. CERT Polska published six RouterOS vulnerabilities this week and confirmed that two of them are being chained in the wild to take complete administrative control of devices, with no credentials required. The team named the chain MikroTrick. Attacks go back to at least September 2, a day before MikroTik shipped fixed builds.</p>
+<p>The first half of the chain is CVE-2026-67276, rated CVSS 9.2. RouterOS doesn't compare the full RSA public key when it matches an incoming SSH authentication request against an authorized user key. Knowing an authorized key's modulus is enough to forge a valid signature and open a command channel as that user, no private key involved. Public keys are, by design, public.</p>
+<p>The second is CVE-2026-86060, also 9.2. It's an argument-handling bug in the SSH login path: a username beginning with a prohibited character alters the trusted policy mask RouterOS applies to the session, which escalates whatever access you have to full administrative privileges. A third flaw, CVE-2026-67277 at 8.8, sits in the bandwidth-test service and lets an unauthenticated attacker leak kernel memory or knock the device over.</p>
+<p>CERT Polska published concrete indicators, which is more than the vendor did. Look for log entries reading 'login failure for user -2 from <ip> via ssh', a privileged account named 'ops' that nobody created, and a Flagged marker in the system device-mode output. Two source addresses have been observed in exploitation attempts: 82.192.72.4 and 103.102.31.18.</p>
+<p>Fixes landed September 3 in RouterOS 6.49.21 on the long-term branch, 7.23.4 long-term, 7.24.2 stable, and 7.25 beta 3.</p>
+<p>MikroTik's own advisory is thin to the point of being unhelpful. It doesn't name a single CVE, calls the issue 'important' while adding that 'most configurations are not at risk,' and says the company isn't publishing detail so customers have time to update. That reasoning collapses when a national CERT is already reporting in-the-wild exploitation and when, as CERT Polska points out, the patch binaries themselves give anyone the material to reconstruct the bug. Customers deciding how urgently to reboot a production edge router deserved better than 'important.'</p>
+<p>If you can't patch this hour, close SSH, the web interfaces, and bandwidth-test to untrusted networks. And if a device comes back Flagged, an upgrade doesn't clean it. Isolate it, pull the config for review, then factory reset and rebuild from a known-good template.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI&apos;s Agents Used a Dead German Wiki as a Group Chat for Three Months</title>
       <link>https://sabr-labs.com/article/openai-agents-dsewiki-coordination-nightingale-collective-september-2026</link>
@@ -916,130 +1037,6 @@
 <p>The more substantive claim is structural. Amodei argues AI is a technology that inherently concentrates power, which is a real position with real implications and not one most frontier lab CEOs will say out loud. If you accept it, the case for external constraint follows almost automatically, including constraint on Anthropic.</p>
 <p>Then comes the proposal, and this is where it gets slippery. Amodei says Anthropic will craft policy suggestions "very carefully" so that they slow frontier AI development while advantaging smaller competitors. Read that again with the source in mind. A company at the frontier is proposing rules that bind the frontier, and asking to be trusted on the drafting. That can be principle and it can be a moat, and the only way to tell is to read the text.</p>
 <p>So read the text when it exists. Anthropic hasn't published the proposal yet, and everything above is a description of intent. The specific things worth checking on arrival: what compute or capability threshold triggers the constraint, whether it lands above or below where Anthropic's own models sit, and whether the exemptions for smaller developers have a revenue ceiling or just a parameter count. Those three details will say more than the thread did.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DDoS Attacks Took Threema Offline for Four Hours, Then Kept Shifting</title>
-      <link>https://sabr-labs.com/article/threema-ddos-outage-nine-hosting-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/threema-ddos-outage-nine-hosting-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 12:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Threema</category>
-      <category>DDoS</category>
-      <category>Encrypted Messaging</category>
-      <category>Availability</category>
-      <category>Switzerland</category>
-      <description>The Swiss encrypted messenger and its colocation provider absorbed a multi-day denial-of-service campaign that changed patterns overnight, taking down availability while leaving message confidentiality intact.</description>
-      <content:encoded><![CDATA[<p>Threema went completely unreachable from 7:30 to 11:30 p.m. CEST on Tuesday. Four hours of nothing, for a messenger whose users largely picked it because the alternatives felt too exposed.</p>
-<p>The company attributes the outage to a series of large-scale distributed denial-of-service attacks that hit both Threema and Nine, the Swiss colocation provider hosting it. Knocking over the upstream host is the more telling detail of the two. Whoever ran this went after the infrastructure layer, not just the application.</p>
-<p>It didn't stop at Tuesday night. Threema reported further short disruptions through Wednesday morning as the attack patterns shifted, with all services back to normal at 12:23 p.m. CEST. That kind of adaptation across a multi-day window is not a booter service someone rented for an evening.</p>
-<p>The company says the incident affected availability only, and that neither its systems nor user data were compromised. That claim is easy to believe on the merits, since end-to-end encryption means the servers Threema operates don't hold plaintext to lose. It's also the cheapest possible statement to issue after an outage, so it's worth noting that Threema published a timeline with specific timestamps rather than a paragraph of reassurance.</p>
-<p>There's a design lesson buried in this. Encryption is a confidentiality control, and it did its job perfectly during an incident where confidentiality was never the target. Availability was, and for a journalist or an activist who moved to Threema precisely because they're at risk, four hours of silence is not a minor inconvenience. It's the failure mode that actually costs something.</p>
-<p>Threema customers running the OnPrem product saw none of this, because that deployment lives on infrastructure they control. Expect that fact to appear in the sales material shortly, and expect it to be a fair point. The company has since added upstream filtering that drops hostile traffic before it reaches core infrastructure. No group has claimed the attacks and no attribution has been offered.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AmnesiaStealer Gives Attackers Live Control of a Mac&apos;s Logged-In Browser</title>
-      <link>https://sabr-labs.com/article/amnesiastealer-macos-headless-browser-session-hijack-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amnesiastealer-macos-headless-browser-session-hijack-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>macOS</category>
-      <category>Infostealer</category>
-      <category>ClickFix</category>
-      <category>Session Hijacking</category>
-      <category>Malware</category>
-      <description>A new macOS infostealer spread through fake GitHub download pages doesn&apos;t just exfiltrate cookies, it drives the victim&apos;s own browser through the DevTools Protocol so hijacked sessions keep the right fingerprint.</description>
-      <content:encoded><![CDATA[<p>The interesting thing about AmnesiaStealer isn't what it steals. It's that it doesn't need to steal much at all. The malware copies your Chromium profile into a headless instance of your own browser and hands an operator the wheel, cookies and all, from inside your machine.</p>
-<p>Jamf's threat team documented the family on August 13. Delivery is ClickFix, the social engineering pattern that refuses to die: a counterfeit GitHub page with a "Download for macOS" button, reproducing the dark theme, the Octocat, and a "Verified Publisher" badge closely enough to pass a glance. The button doesn't download anything. It gives you a command to paste into Terminal. People keep pasting.</p>
-<p>From there the chain runs in three parts. A shell script dropper pulls the payload, a Rust-based stealer does the collection work, and a third component Jamf calls the stream module sets up remote control. That last stage is the one worth reading twice.</p>
-<p>The stream module launches the genuine browser binary with the legacy headless flag and attaches over the Chrome DevTools Protocol. The operator gets a live view, can inject keystrokes and mouse input, and can export cookies in the clear. Everything happens in the victim's real browser, on the victim's real host, from the victim's real IP.</p>
-<p>That combination is what defeats the controls most organizations are relying on. Session tokens lifted and replayed from a rented VPS trip device and geolocation checks. Session tokens driven from the original endpoint with the original browser fingerprint do not. Multi-factor authentication at login is irrelevant here, because the attacker arrives after the login. Anyone who read the DevTools Protocol hijacking research that circulated earlier this month is watching that technique show up in a commodity stealer inside two weeks.</p>
-<p>The collection side is thorough in a way that suggests real development budget: 16 Chromium-family browsers including Chrome, Brave, Arc and Edge, plus keychain passwords, Safari cookies, Apple Notes, Telegram sessions, cryptocurrency wallets and loose documents. Persistence is a root LaunchDaemon dropped in /Library/LaunchDaemons/ under a name impersonating Apple's crash reporting, installed with credentials the malware phished from the user through a fake prompt. No threat actor has been named.</p>
-<p>Two detections are worth building today. Alert on any browser process spawned with headless or remote-debugging arguments outside of your CI runners, and audit /Library/LaunchDaemons/ for crash-reporter lookalikes that no MDM policy put there. Both are cheap, and both catch this before the operator ever opens a session.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Unisoc Video Call Exploit Chain Reaches Android Kernel, No Patch Available</title>
-      <link>https://sabr-labs.com/article/unisoc-volte-video-call-kernel-exploit-chain-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/unisoc-volte-video-call-kernel-exploit-chain-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Unisoc</category>
-      <category>Android</category>
-      <category>VoLTE</category>
-      <category>Baseband</category>
-      <category>Mobile Security</category>
-      <description>Researchers completed a two-stage chain that turns an answered VoLTE video call into full Android kernel access on Unisoc-powered budget phones, and the chipmaker has not responded to any disclosure attempt.</description>
-      <content:encoded><![CDATA[<p>Answer a video call, lose the kernel. That's the practical result of an advisory SSD Secure Disclosure published Monday, which completes an exploit chain against Unisoc modem firmware that the same team started five months ago.</p>
-<p>Stage one landed in March. A malformed SDP body inside SIP signaling triggers memory corruption in the modem firmware, giving the attacker native code execution on the baseband processor. Monday's stage two takes that foothold and escalates it into full Android kernel access by manipulating the ARM Memory Protection Unit that's supposed to keep the two worlds apart. The work is credited to a researcher going by 0x50594d.</p>
-<p>That MPU detail is the whole story. On these designs the modem runs as its own processor with its own firmware, and the security model assumes a compromised baseband stays fenced off from the application processor. Reprogramming the protection regions is what collapses the fence. There's no CVE for the escalation, only a CWE-1189 classification for improper isolation of a shared resource. A related flaw in the same chipset family did get an ID last October, CVE-2025-31718, rated 7.5.</p>
-<p>Affected silicon includes the Unisoc T606, T612 and T7250. In consumer terms that's the Motorola E13, the Realme C33 and the Xiaomi Redmi A5, which is to say the sub-$120 tier that Unisoc sells into more than 140 countries. These are not niche parts. They're the phones that show up by the million in markets where a device gets one firmware update in its life, if that.</p>
-<p>The prerequisites are real and worth stating plainly, because the coverage will skip past them. An attacker needs to operate the cellular network the victim is attached to, and the victim has to answer the call. This is not a drive-by. But a private 4G network is no longer exotic equipment, and "attacker controls the local cell" describes a border crossing, a hotel in the wrong country, or anywhere a rogue base station can outshout the real one.</p>
-<p>The vendor response is the part that should bother you. SSD says it tried email and LinkedIn and got nothing back. Unisoc's product security bulletin page carries no entry for this. Five months between the two advisories was ample time to ship something, and what shipped was silence.</p>
-<p>If you manage a fleet with Unisoc devices in it, VoLTE is the attack surface and disabling it where the carrier still permits fallback is the only mitigation on the table. There's no patch to wait for and no evidence one is coming.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Stripe Buys OpenRouter for Over $7 Billion, Five Times Its May Price</title>
-      <link>https://sabr-labs.com/article/stripe-openrouter-7-billion-acquisition-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/stripe-openrouter-7-billion-acquisition-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Stripe</category>
-      <category>OpenRouter</category>
-      <category>AI Infrastructure</category>
-      <category>M&amp;A</category>
-      <category>APIs</category>
-      <description>Stripe is acquiring the AI model router that sits between developers and roughly 400 models, a deal that turns model selection into a billing problem Stripe already knows how to solve.</description>
-      <content:encoded><![CDATA[<p>Seven billion dollars for a company that was valued at $1.3 billion in May. That's the reported price Stripe is paying for OpenRouter, the service that sits between developers and roughly 400 AI models and decides which one answers the call.</p>
-<p>Bloomberg reported the finalized deal on Sunday, and Fortune and TechCrunch have since matched it. Stripe hasn't issued a press release and the final figure could still move, so treat the number as reported rather than confirmed. What isn't in dispute is the trajectory: OpenRouter closed a $113 million Series B in May at a reported $1.3 billion valuation. Three months later it's changing hands for more than five times that.</p>
-<p>If you haven't used it, OpenRouter is a single API endpoint that fans out to models from OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek and a long tail of open-weights hosts. You write one integration, then route by price, latency, context window, or whatever else matters that week. The company says it serves around 8 million users. For a lot of small teams it's the reason switching models is a config change instead of a sprint.</p>
-<p>The strategic logic is less about AI than it looks. Every model call is a metered transaction with variable unit pricing, per-token accounting, and a settlement problem at the end of the month. That is precisely the shape of business Stripe has spent fifteen years building infrastructure for. Buying OpenRouter doesn't get Stripe into AI so much as it puts Stripe's meter on the wire where the AI money actually moves.</p>
-<p>Here's the part worth watching. A big reason developers trusted OpenRouter was that it had no horse in the race. It was a neutral broker ranking models on merit and price, and it published the usage rankings to prove it. That neutrality now belongs to a company that also processes payments for several of the providers being ranked. Nobody has to act in bad faith for the incentives to drift.</p>
-<p>The concrete question for anyone with OpenRouter in production is whether routing behavior and pricing survive the integration intact. Watch the fee structure and the model rankings over the next two quarters. Those are the two places where a change in ownership shows up first.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Qwen3.8-27B Landed With Vision, 262K Context and Apache 2.0</title>
-      <link>https://sabr-labs.com/article/qwen38-27b-apache-open-weights-multimodal-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/qwen38-27b-apache-open-weights-multimodal-august-2026</guid>
-      <pubDate>Sun, 16 Aug 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Alibaba</category>
-      <category>Qwen</category>
-      <category>Open Weights</category>
-      <category>Multimodal</category>
-      <category>Local Inference</category>
-      <description>Alibaba shipped the small open-weight model it promised, and the license plus the size matter considerably more than the benchmark table attached to it.</description>
-      <content:encoded><![CDATA[<p>When Alibaba put Qwen3.8-Max on the table at the start of the month, it mentioned a smaller sibling going open. That model showed up on Hugging Face on August 14, and it's more than the consolation prize the phrasing implied.</p>
-<p>Qwen3.8-27B is 27 billion parameters across 64 layers, with a vision encoder handling native image and video input, 262,144 tokens of native context, and Apache 2.0 weights. Not a research license, not a custom community license with a user-count clause. Apache 2.0, the one your legal team already knows how to approve.</p>
-<p>The architecture is where the context window comes from. Layers alternate between Gated DeltaNet blocks, which are linear attention and therefore cheap over long sequences, and standard Gated Attention blocks, in a repeating three-to-one pattern. That hybrid is the difference between a quarter-million tokens of context being a spec sheet claim and being something you can actually afford to run on hardware you own. The "extensible to 1M" line in the model card is a context-extension technique rather than a native property, and should be treated as such until someone measures recall at that length.</p>
-<p>Alibaba reports 61.7 on SWE-bench Pro, 89.2 on GPQA Diamond, 73.0 on Terminal Bench 2.1, 84.3 on OSWorld-Verified and 64.8 on WebArena-Verified. Those are strong for the size class. They are also self-reported agentic scores, which at this point carry roughly the informational content of a press release, because the harness, the retry policy and the scaffolding around the model account for enormous swings on exactly these tests and none of it gets published alongside the number.</p>
-<p>GPQA Diamond at 89.2 is a good example of the problem. The test is saturated near the top, everyone clusters within a few points, and the ranking is now measuring evaluation noise. Citing it as evidence of anything is a habit worth retiring.</p>
-<p>Here's what isn't noise. A dense multimodal model in the 27B tier fits on a single high-end GPU with quantization, which means every organization that can't send data to an API just got a genuinely capable option that runs behind their own firewall. Regulated industries, government work, anyone with a data residency clause in their contracts. For that audience the license and the parameter count are the entire story and the leaderboard is decoration.</p>
-<p>Alibaba has now shipped near-frontier capability into open weights on a cadence no American lab is matching, and the strategic read is uncomfortable if you think open-weight availability shapes which models the next decade of developers actually learn to build on. Run it on your own workload before you believe any table, this one included. But download it while you're deciding.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Wants 15% of Purchases That Leave the App Store</title>
-      <link>https://sabr-labs.com/article/apple-app-store-linkout-commission-15-percent-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-app-store-linkout-commission-15-percent-august-2026</guid>
-      <pubDate>Sun, 16 Aug 2026 12:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>App Store</category>
-      <category>Epic v. Apple</category>
-      <category>Antitrust</category>
-      <category>Developers</category>
-      <description>Hours after the Supreme Court refused to pause the case, Apple told a federal court it should be allowed to charge 15, 10 or 5 percent on link-out purchases that currently cost developers nothing.</description>
-      <content:encoded><![CDATA[<p>The Supreme Court declined on Thursday to pause proceedings in Apple's long-running App Store fight. Apple filed its commission proposal with the Northern District of California the same day. That sequence tells you roughly everything about how voluntary this filing was.</p>
-<p>The numbers: 15 percent on link-out purchases for standard developers, 10 percent for participants in the Video, News and Mini Apps partner programs, 10 percent on subscription renewals, and 5 percent for developers in the Small Business Program. Link-outs are the buttons inside an iOS app that send you to a website to pay, which developers have been allowed to include since a 2025 contempt ruling found Apple's previous 27 percent charge on those purchases violated the court's injunction.</p>
-<p>Right now that rate is zero. Apple takes nothing when a US developer sends a customer to their own checkout, and has taken nothing for over a year. So the proposal is not a discount from 27 percent, however much the filing would like it read that way. It's a request to reinstate a fee the court removed.</p>
-<p>Apple's argument leans on comparison. Google Play charges 20 percent on equivalent external purchases, 15 percent for special programs, 10 percent on renewals. Against that, 15 percent looks restrained, and Apple would like the court to see a company voluntarily pricing below its only real competitor.</p>
-<p>The comparison has a hole in it. Google's rate wasn't set by a court that found the company in contempt for its previous attempt at the same thing. The question in front of this judge isn't whether 15 percent is reasonable next to Android, it's whether any commission on a transaction that happens entirely on someone else's website, through someone else's payment processor, is compatible with an injunction written specifically to stop Apple from taxing that path.</p>
-<p>Developers should read the tiering carefully rather than the headline. A small studio under the Small Business Program threshold pays 5 percent, which is genuinely close to payment processing costs and hard to be furious about. A mid-size subscription business pays 10 percent on renewals forever, on infrastructure Apple isn't running. That's the tier where the money actually is, and it's the one getting the least attention.</p>
-<p>Nothing changes until the court rules. Anyone who rebuilt their checkout flow around a zero percent link-out should start modeling what 15 percent does to their margins now, because the filing makes clear Apple has no intention of leaving it at zero.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
