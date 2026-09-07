@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Sep 2026 13:18:03 GMT</lastBuildDate>
-    <pubDate>Sun, 06 Sep 2026 13:18:03 GMT</pubDate>
+    <lastBuildDate>Mon, 07 Sep 2026 13:17:43 GMT</lastBuildDate>
+    <pubDate>Mon, 07 Sep 2026 13:17:43 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>The ISC2 CC Exam Just Changed for the First Time Since 2022</title>
+      <link>https://sabr-labs.com/article/isc2-cc-exam-outline-update-governance-ai-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/isc2-cc-exam-outline-update-governance-ai-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>ISC2</category>
+      <category>Certified in Cybersecurity</category>
+      <category>Certification</category>
+      <category>Study Guide</category>
+      <category>Entry Level</category>
+      <description>The new Certified in Cybersecurity outline took effect September 1, adding a standalone governance domain, cloud content, and AI concepts across all five domains.</description>
+      <content:encoded><![CDATA[<p>If you've been sitting on an ISC2 CC voucher, the outline you studied is not the one you'll be tested on. The refresh went live September 1.</p>
+<p>This is the first real content update since the certification launched in August 2022, and ISC2 didn't just sprinkle new objectives into the existing structure. The exam still has five domains, but four of them were renamed and all five were reweighted. Access Controls Concepts is now Identity and Access Management Concepts, dropping from 22% to 20%. Network Security became Networking and Cloud Security Concepts at 21.3%, down from 24%. Security Principles slid from 26% to 24%.</p>
+<p>The two moves that actually matter are structural. Business Continuity, Disaster Recovery and Incident Response was a standalone 10% domain; it's gone, absorbed into a renamed Security Operations and Incident Response domain worth 17.3%. In its place sits Security Governance, brand new, at 17.3% of the exam. Governance went from a footnote to a sixth of your score.</p>
+<p>The content additions read like someone finally reconciled the CC with what entry-level job postings ask for. Governance, risk and compliance gets real estate. Identity lifecycle management and IAM frameworks are named explicitly. Cloud deployment and service models and the shared responsibility split are in. So are zero trust and modern segmentation, threat intelligence, incident response planning, red, blue and purple team testing, data masking and sanitization, and quantum-resistant cryptography.</p>
+<p>AI is the change ISC2 is promoting hardest, and it's threaded through all five domains rather than parked in one. Applying the CIA triad to AI systems, protecting training data against model poisoning, backing up model weights as a continuity concern, treating model drift as a business continuity risk, authenticating AI agents and service accounts, least privilege for ML pipelines. None of it is deep, and it shouldn't be at this level, but it does mean a candidate can no longer skip AI entirely and pass.</p>
+<p>Practically, here's what that means for your prep. Any study material published before September is misaligned on roughly a third of the exam weighting, and the gap is concentrated in the two places that are hardest to self-teach from an old book: governance and cloud. ISC2's own self-paced training tracks the new outline. Third-party courses and practice banks will take weeks to catch up, and some will just relabel the old content. Check whether a course lists Security Governance as a domain before you pay for it.</p>
+<p>There's no decision to make about which version to sit. The old outline is retired, so the only option is to study to the new one. If you were planning to test in the next month, push your date out a couple of weeks and spend that time on governance and cloud rather than re-drilling ports and protocols you already know.</p>
+<p>The CC has always been a reasonable first credential that nobody should mistake for a job qualification on its own. This version is closer to what a SOC analyst posting actually lists. That's an improvement, and it's worth the extra study time.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CrowdStrike&apos;s New Security Models Include One Built to Attack You</title>
+      <link>https://sabr-labs.com/article/crowdstrike-safemind-red-tempest-blue-solano-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/crowdstrike-safemind-red-tempest-blue-solano-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>CrowdStrike</category>
+      <category>NVIDIA</category>
+      <category>AI Security</category>
+      <category>Offensive Security</category>
+      <category>Nemotron</category>
+      <description>SafeMind pairs an offensive model called Red Tempest with a defensive one called Blue Solano, trained on Falcon telemetry and benchmarked entirely by CrowdStrike.</description>
+      <content:encoded><![CDATA[<p>Half of CrowdStrike's new model family is designed to break into things.</p>
+<p>SafeMind went live September 1 out of a newly stood-up Cyber Superintelligence Lab, announced at the company's Fal.Con conference. It's two purpose-built models plus the harnesses to run them. Red Tempest is the offensive side, built to emulate advanced attack scenarios and AI-driven adversaries. Blue Solano is the defensive counterpart. Both are built on NVIDIA Nemotron open models with NVIDIA as design partner, both run natively inside Falcon, and standalone access goes through an application program CrowdStrike is calling Project QuiltWorks.</p>
+<p>The training data is where this gets genuinely interesting. CrowdStrike fed these models Falcon sensor telemetry, its threat intelligence corpus, event annotations from Falcon Complete MDR engagements, and fifteen years of incident response fieldwork. No general-purpose lab has that. You can buy compute and you can hire researchers, but you cannot retroactively acquire a decade and a half of watching real intrusions land on real endpoints. If SafeMind outperforms a frontier model on security tasks, that's the reason, and it's a defensible one.</p>
+<p>The numbers attached to the launch are less defensible. CrowdStrike claims a 29% higher detection rate, remediation six times faster, and 99% lower cost against 'leading frontier models.' Those come from internal evaluations, against unnamed competitors, on tasks CrowdStrike selected, scored against telemetry CrowdStrike owns. That's not a benchmark. It's a marketing figure wearing a benchmark's clothes, and every AI security vendor is publishing them right now.</p>
+<p>Then there's Red Tempest. The press materials mention safeguards and describe the red and blue models operating in a closed loop as a system designed to deliver AI safety, which is a sentence that sounds like an answer without containing one. Nothing published says what technically prevents the offensive model from being aimed somewhere it shouldn't be. The gate appears to be an application form.</p>
+<p>That's now the industry pattern rather than an outlier. OpenAI put its less-restricted cyber model behind a vetted access program a few days earlier. Anthropic went the other direction and held capability back. Access programs are a governance control, not a security control, and the difference matters the first time a QuiltWorks account gets phished.</p>
+<p>Two things worth watching. Whether CrowdStrike publishes the criteria for QuiltWorks access, and whether anyone outside the company gets to run those detection numbers on a corpus CrowdStrike didn't pick.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Seattle Times and Newsday Want a Court to Destroy OpenAI&apos;s Models</title>
+      <link>https://sabr-labs.com/article/seattle-times-newsday-openai-microsoft-copyright-suit-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/seattle-times-newsday-openai-microsoft-copyright-suit-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>OpenAI</category>
+      <category>Microsoft</category>
+      <category>Copyright</category>
+      <category>Media</category>
+      <category>Litigation</category>
+      <description>The two papers filed copyright and trademark claims against OpenAI and Microsoft in Manhattan federal court, asking for damages and the impoundment or destruction of models trained on their work.</description>
+      <content:encoded><![CDATA[<p>Damages are the boring part of this complaint. The Seattle Times and Newsday are also asking a federal judge to order the impoundment or destruction of the training datasets and models built on their journalism.</p>
+<p>The two papers filed September 4 in the Southern District of New York, naming both OpenAI and Microsoft. The core allegation is familiar by now: that the companies scraped the publishers' sites, including content behind paywalls, and folded those articles into the datasets used to train and run ChatGPT, Microsoft Copilot and Bing's AI features, without permission or payment.</p>
+<p>The trademark claim is the part worth reading twice. The papers allege OpenAI diluted their marks by generating fabricated content and attributing it to them. That reframes hallucinated citations from a product quality problem into a legal exposure, and it's a theory that doesn't depend on winning the fair use fight at all. If a model invents a Seattle Times story that never ran, the copyright analysis is beside the point.</p>
+<p>Microsoft said it was surprised by the suit and would be happy to sit down and find a solution. Surprised is doing heavy lifting there, roughly three years into a queue of nearly identical filings. OpenAI repeated its standard position: the models train on publicly available data and the use is fair.</p>
+<p>What's changed is who's filing. The early cases came from the largest national outlets with the deepest legal budgets. Regional dailies joining means the calculation has shifted for papers that can't fund a multi-year federal case on principle alone, which usually signals either contingency counsel getting comfortable with the theory or a belief that a settlement number now exists.</p>
+<p>Nobody is going to delete GPT-6. Asking for it anyway is how you establish that the alternative to a licensing check is an outcome the defendant cannot survive. That's the negotiation, and it's being conducted in a filing rather than a conference room because the conference room didn't produce a number.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A CVSS 10 in ASUS Control Center Hands Over Every Managed Machine</title>
+      <link>https://sabr-labs.com/article/asus-control-center-cve-2026-75754-unauthenticated-root-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/asus-control-center-cve-2026-75754-unauthenticated-root-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ASUS</category>
+      <category>CVE-2026-75754</category>
+      <category>Hard-Coded Credentials</category>
+      <category>Endpoint Management</category>
+      <category>SSRF</category>
+      <description>CVE-2026-75754 chains missing authentication, SSRF and hard-coded credentials into unauthenticated root on the console that manages an organization&apos;s entire PC fleet.</description>
+      <content:encoded><![CDATA[<p>Ask the server for an encryption key over plain HTTP. A local service reacts by opening SSH on port 2222. Log in with credentials that shipped inside the product. You now have a root shell on the box that manages every workstation in the building.</p>
+<p>That's CVE-2026-75754, disclosed in an ASUS advisory dated September 4 and scored 10.0 under CVSS 4.0. It affects ASUS Control Center Enterprise version 4.0.0.2 and earlier. ACC is the fleet management console ASUS sells into commercial deployments, so the blast radius isn't one server. It's every endpoint that server can push software and commands to.</p>
+<p>The 10.0 comes from stacking three separate weaknesses: missing authentication on a function that should never have been reachable anonymously, a server-side request forgery that completes the path, and hard-coded credentials sitting in the product. Hard-coded credentials in an enterprise management platform in 2026 is the detail that should end up in somebody's postmortem.</p>
+<p>ASUS's advisory is thinner than the score deserves. Secondhand write-ups have already diverged on which build actually contains the fix, with at least one citing a 3.1.x version as the remedy for something described as affecting 4.0.0.2 and earlier. Don't take a version number off an aggregator for this one. Pull it from ASUS's own product security advisory page and confirm the build you install is newer than what you're running.</p>
+<p>No confirmed in-the-wild exploitation and no public proof-of-concept have surfaced yet. That's the current state, not a forecast. A pre-auth root chain against a management console with a fixed password is exactly the shape of bug that shows up in scanner traffic within days of the writeups landing.</p>
+<p>Concrete steps for tonight: get the ACC interface off anything reachable from user VLANs or the internet, block 2222 at the host firewall regardless of patch status, and grep your auth logs for root sessions on that server that nobody can account for. If ACC has been internet-facing, assume the fleet it manages needs a look too.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Carnival Took Nearly Five Months to Tell 6 Million People About Its Breach</title>
+      <link>https://sabr-labs.com/article/carnival-data-breach-shinyhunters-six-million-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/carnival-data-breach-shinyhunters-six-million-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Carnival</category>
+      <category>Data Breach</category>
+      <category>ShinyHunters</category>
+      <category>Social Engineering</category>
+      <category>Help Desk</category>
+      <description>A social engineering call got an intruder into Carnival&apos;s IT environment in April; the notification to 5,995,277 customers landed this week, with ShinyHunters claiming credit.</description>
+      <content:encoded><![CDATA[<p>Someone talked their way into a Carnival employee's account on April 10. The company noticed four days later. Customers found out this week.</p>
+<p>Carnival Corporation's filing puts the number at 5,995,277 people. The intrusion started with social engineering against a single employee, which gave the intruder access to what Carnival describes as a limited portion of its IT systems. ShinyHunters has claimed the breach and says it took more than 8.7 million records plus terabytes of internal corporate data, a figure well above what Carnival has acknowledged. Treat the attacker's number as a claim, not a count.</p>
+<p>The exposed categories are names, dates of birth, gender, email addresses, geographic information, and loyalty program details tied to Holland America Line's Mariner Society. Carnival has not disclosed payment card exposure. Local reporting says affected customers are being offered two years of TransUnion monitoring and a dedicated call center line.</p>
+<p>Four days from intrusion to detection is not a terrible number. Five months from detection to notification is the part that should bother people.</p>
+<p>This is also the third or fourth time this year we've written about the same playbook. ShinyHunters and the crews adjacent to it are not burning zero-days to get into Fortune 500 environments. They're calling help desks, impersonating employees, and getting a password reset or an MFA re-enrollment out of a human being who is measured on ticket close times. It worked at Carnival. It worked in the PeopleSoft campaign in August. It will work again next month.</p>
+<p>For defenders, the practical fallout is phishing fuel. A list of names, birth dates, email addresses and cruise loyalty tiers is a very good starting point for messages that say your Mariner Society booking needs verification. Expect those, and expect them to be well-written.</p>
+<p>The uncomfortable part is that identity verification at the help desk is still treated as a customer service workflow rather than an authentication control. Until it gets budget, staffing and an actual failure mode that isn't 'make the caller happy,' the rest of the security program is decorative.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Magento Zero-Day Is Backdooring Stores and Adobe Hasn&apos;t Shipped a Fix</title>
+      <link>https://sabr-labs.com/article/magento-adobe-commerce-stylesmuggler-zero-day-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/magento-adobe-commerce-stylesmuggler-zero-day-september-2026</guid>
+      <pubDate>Mon, 07 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Magento</category>
+      <category>Adobe Commerce</category>
+      <category>Zero-Day</category>
+      <category>RCE</category>
+      <category>E-Commerce</category>
+      <category>Sansec</category>
+      <description>Sansec&apos;s StyleSmuggler chain gives unauthenticated attackers code execution on every current Magento and Adobe Commerce build, including fully patched 2.4.9 installs.</description>
+      <content:encoded><![CDATA[<p>The first store Sansec confirmed compromised was running Magento 2.4.6-p15 with the July and August security patches already applied. Being current didn't help.</p>
+<p>Dutch e-commerce security firm Sansec disclosed the flaw on September 5 and named it StyleSmuggler. It's an unauthenticated remote code execution chain, and the firm says live attacks started the day before disclosure. Sansec reproduced the full chain on clean installs of Magento Open Source 2.4.7, 2.4.8 and 2.4.9, so this isn't a story about neglected stores running abandoned builds. Every current version is in scope.</p>
+<p>The mechanism is the interesting part. Stage one smuggles PHP into a file Magento itself writes, abusing a styles parameter in a GraphQL request to slip code past the platform's existing sanitizers and into generated report and log output. Stage two triggers Magento's own 'Payment Transaction Failed Reminder' email. Rendering that template walks Magento's dependency-injection code scanners, which pull in the poisoned file and execute what's inside it.</p>
+<p>Nobody has to open the email. The code runs while the platform builds the message.</p>
+<p>As of September 6 there is no CVE, no Adobe advisory, and no official workaround. Adobe's most recent Commerce security bulletin is still dated August 11. The next scheduled security release is September 8, and Adobe hasn't said whether it will cover this. Sitting on the regular calendar while stores are actively being backdoored reads like process winning over judgment.</p>
+<p>Sansec's interim guidance is blunt and operational: turn off GraphQL until there's a patch, add nginx or Apache rules that block the exploit parameters, put CLI-context guards on the dependency-injection scanner methods, disable PHP's proc_open, and mount /tmp, /var/tmp and /dev/shm with noexec. Several of those will break things for someone in your org. Do them anyway, and tell that person why.</p>
+<p>If you run Magento, treat this as assumed compromise rather than a patching exercise. Go read the generated report and var directories for PHP that shouldn't be there, check the admin user table for accounts nobody created, and rotate integration tokens and API keys. Waiting for a CVE identifier to justify the work is the wrong order of operations here.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Juniper&apos;s Certification Program Becomes HPE Networking on Sept 15</title>
       <link>https://sabr-labs.com/article/juniper-certification-becomes-hpe-networking-september-2026</link>
@@ -913,130 +1039,6 @@
 <p>Comcast is careful in how it describes the limits. The system detects motion, does not identify specific people, does not pinpoint where in the home the movement happened, and Comcast says it does not monitor the notifications it generates. All of that is probably accurate as engineering description, and it is also not the question. The question is what the resulting occupancy signal looks like as a record. A time series of when a household is in motion and when it goes quiet is a fairly intimate thing, and Comcast's own terms allow disclosure of customer data to third parties without further notice in response to legal process or a dispute. The documentation does not say how long motion events are retained or where they are processed.</p>
 <p>For a security-minded reader the calculus is not complicated. If you want presence detection and you already pay Comcast, this costs nothing and works better than most cheap PIR sensors, especially through walls. If your threat model includes anyone who can serve your ISP with paper, you have just created a new category of record about your home that did not exist last week.</p>
 <p>Turning it on takes two taps. Deciding whether you want that log to exist takes slightly longer.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GitHub Broke for Six Hours. Cursor Shipped a Rival the Same Day.</title>
-      <link>https://sabr-labs.com/article/github-outage-cursor-origin-code-hosting-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/github-outage-cursor-origin-code-hosting-august-2026</guid>
-      <pubDate>Wed, 19 Aug 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>GitHub</category>
-      <category>Cursor</category>
-      <category>Developer Tools</category>
-      <category>Outages</category>
-      <category>Microsoft</category>
-      <description>Cursor&apos;s Origin code hosting beta went live on August 18 while GitHub was serving errors on roughly one in five requests worldwide.</description>
-      <content:encoded><![CDATA[<p>You could not have scripted the timing better. GitHub spent most of August 18 degraded worldwide, roughly six and a half hours with error rates hovering near 20 percent across the website, the API, Actions and pull requests, and file downloads failing at closer to half. Microsoft confirmed the outage. In the middle of it, Cursor pushed Origin, its own code hosting platform, into beta for paid users.</p>
-<p>Cursor previewed Origin back in June with a fall ship date, so this was not a stunt built in a weekend. Shipping early into a day when the incumbent was returning 500s is opportunism, and it worked: developers who had never considered where their repos live spent an afternoon reading about an alternative.</p>
-<p>Origin does the expected things. Repository hosting, pull requests, reviews, merges, CI hookups, all inside the editor rather than in a browser tab. The pitch that separates it from every other GitHub-alike of the past decade is that Cursor is designing for agents as first-class users of version control rather than as bolted-on reviewers, which is a defensible bet if you believe most commits in three years will be machine-authored.</p>
-<p>The interesting design decision is that Cursor is not asking anyone to migrate. Origin syncs bidirectionally with GitHub, your existing repos sit alongside Cursor-hosted ones, and pushes keep flowing upstream. GitHub stays the source of truth by default.</p>
-<p>That is either humility or a very patient wedge. Probably the second. Sync is how you get installed without a migration decision, and migration decisions are the entire reason GitHub's roughly 180 million accounts have never been seriously contestable. Nobody moves their org's CI, permissions model and twelve years of issue history because a competitor has a nicer diff view.</p>
-<p>GitHub's reliability is doing some of the work here, though. TechCrunch counted 257 incidents on GitHub's status page over the past year, and Microsoft publicly committed to corrective action on availability earlier in 2026. When a platform that hosts most of the world's source code becomes a thing engineering teams have to route around, the cost of an alternative starts to look less theoretical.</p>
-<p>Worth noting who is funding the attack: Cursor's parent Anysphere was acquired by SpaceX earlier this year, so the challenger to Microsoft's developer platform is now backed by one of the few companies with the capital to lose money on infrastructure for a decade. If you run source control for a team, the useful takeaway from August 18 is not that you should move. It is that you should know how long your builds can survive without GitHub, and most teams have never measured it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Seller Claims 3.6 Million Employee Records Pulled From Azure Tenants</title>
-      <link>https://sabr-labs.com/article/thehatman-azure-employee-records-3-6-million-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/thehatman-azure-employee-records-3-6-million-august-2026</guid>
-      <pubDate>Wed, 19 Aug 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Microsoft Entra</category>
-      <category>Credential Attacks</category>
-      <category>MFA</category>
-      <category>Dark Web</category>
-      <description>A forum actor calling himself TheHatman is listing directory dumps from nine large companies, and the two that responded say the data is old.</description>
-      <content:encoded><![CDATA[<p>A threat actor going by TheHatman has spent the past three weeks posting employee databases for sale, nine of them, totaling roughly 3.64 million records. The named victims are not small: McDonald's, Vodafone, Tata Consultancy Services, HCL Technologies, InterContinental Hotels, Wyndham, Gap, Kyndryl, and Hexaware. The McDonald's listing alone claims more than 1.7 million rows.</p>
-<p>The contents are corporate directory material rather than customer data. Names, employee IDs, work email addresses, job titles, phone numbers, office addresses, and in some listings service account entries. TheHatman says the access came from compromised credentials, specifically password spraying followed by MFA fatigue against Microsoft cloud tenants. Not a Microsoft vulnerability, in other words. Just identity hygiene failing in the usual way.</p>
-<p>Hudson Rock examined samples and said with high confidence that the data is genuine, pointing to internal directory structures and tenant-specific field formats that would be tedious to fabricate convincingly.</p>
-<p>Authentic and current are different claims, though, and that is where this gets murky. Tata said it found no credible evidence of a compromise and noted the data appears to be more than four years old. Gap denied a breach outright, describing the records as limited, non-sensitive and dated. Most of the other companies had not commented as of publication, and Microsoft has said nothing at all.</p>
-<p>Both things can be true. A directory export stolen in 2022 still contains valid-looking rows in 2026, because job titles and office addresses do not rot the way passwords do. That is precisely why these dumps keep getting resold: the buyer is not after secrets, they are after a target list for phishing and voice-based helpdesk fraud, and a four-year-old org chart is still 60 or 70 percent accurate for that purpose.</p>
-<p>The response pattern from the named companies is the familiar one. Deny a breach of your own systems, characterize the data as low value, do not address whether a tenant was accessed. None of the statements so far say anything about sign-in log reviews or whether the described password spray plus push-fatigue chain was actually attempted against them.</p>
-<p>If your organization is on the list, the concrete work is checking Entra sign-in logs for spray patterns and repeated denied push approvals in the relevant window, and confirming that number matching is enforced rather than nominally available. If you are not on the list, assume your directory is available somewhere too and plan the helpdesk verification process accordingly.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Medusa Ransomware Passes 500 Critical Infrastructure Victims</title>
-      <link>https://sabr-labs.com/article/medusa-ransomware-500-victims-advisory-update-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/medusa-ransomware-500-victims-advisory-update-august-2026</guid>
-      <pubDate>Wed, 19 Aug 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Medusa</category>
-      <category>CISA</category>
-      <category>Healthcare</category>
-      <category>Threat Intel</category>
-      <description>The FBI, CISA and HHS refreshed their joint Medusa advisory with new tradecraft and a victim count that grew by roughly two thirds in thirteen months.</description>
-      <content:encoded><![CDATA[<p>Three hundred victims when the advisory first landed in March 2025. More than five hundred as of April 2026. That is the headline number in the updated #StopRansomware bulletin on Medusa, republished August 18 by the FBI, CISA and the Department of Health and Human Services.</p>
-<p>HHS joining the byline is the tell. The refresh exists largely because Medusa affiliates have leaned into healthcare and public health targets, and the authoring agencies pulled in FBI investigative data through April to document it. The rest of the victim spread has not changed much: education, legal, insurance, manufacturing, technology, government facilities.</p>
-<p>Medusa is a ransomware-as-a-service operation first identified in June 2021, running the standard double extortion play of encrypt plus leak-site pressure. What makes it worth reading the advisory rather than skimming it is the initial access pattern. The group buys its way in, recruiting brokers on criminal forums with payouts that the agencies put anywhere from a few hundred dollars to a million, then supplements purchased access with exploitation of aging edge software. The named CVEs are not new: the ScreenConnect authentication bypass (CVE-2024-1709) and the Fortinet EMS SQL injection (CVE-2023-48788), both patched in 2024.</p>
-<p>Once inside, affiliates do very little that a modern EDR should not catch. They hijack the tools already in the building. ScreenConnect for remote access, PsExec and PDQ Deploy and BigFix for pushing payloads across the estate, which means the ransomware often rides out over the same patch management infrastructure the security team uses. Microsoft, which tracks one Medusa deployment cluster as Storm-1175, has documented affiliates tampering with Defender registry settings and adding an exclusion for the entire C: drive before detonating.</p>
-<p>That last detail should be a detection rule in every environment reading this. Nobody legitimately excludes the entire C: drive from antivirus scanning.</p>
-<p>The uncomfortable read on the numbers is that a two-hundred-victim increase over thirteen months is what sustained success looks like for a mid-tier RaaS crew that has not been disrupted, indicted, or seriously inconvenienced. There is no takedown announcement attached to this update. It is a documentation refresh, which is useful for defenders and irrelevant to the operators.</p>
-<p>Practical next steps from the advisory are unglamorous and unchanged: patch the known exploited edge software, restrict and monitor remote monitoring tools, require phishing-resistant MFA on VPN and webmail, and keep offline backups that the deployment tooling cannot reach.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Gives Agencies Three Days to Patch Exploited Windows IKE Flaw</title>
-      <link>https://sabr-labs.com/article/windows-ike-cve-2026-33824-kev-exploited-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/windows-ike-cve-2026-33824-kev-exploited-august-2026</guid>
-      <pubDate>Wed, 19 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CVE-2026-33824</category>
-      <category>Microsoft</category>
-      <category>CISA KEV</category>
-      <category>IPsec</category>
-      <category>Vulnerabilities</category>
-      <description>CVE-2026-33824, a CVSS 9.8 double free in the Windows IKE Service Extensions service, is now under active exploitation four months after Microsoft patched it.</description>
-      <content:encoded><![CDATA[<p>UDP 500 is open on more corporate edges than anyone wants to admit. That is the whole problem with CVE-2026-33824, which CISA moved into the Known Exploited Vulnerabilities catalog on August 18 with a remediation deadline of August 21. Three days. Federal civilian agencies do not get a maintenance window for this one.</p>
-<p>The bug is a double free (CWE-415) in the Windows Internet Key Exchange Service Extensions component, better known by its service name IKEEXT. Malformed IKEv2 packets sent to UDP 500 or 4500 corrupt memory during deallocation, and an attacker who lands the exploit gets code execution as SYSTEM. No credentials, no user interaction, no foothold required. The CVSS base score is 9.8, and Microsoft rates it critical across Windows 10, Windows 11, and every supported Windows Server release.</p>
-<p>Microsoft shipped the fix on April 14. Attackers got around to it in August.</p>
-<p>That four-month gap is the part worth sitting with. This was never an obscure bug: a preauth remote code execution flaw in the service that terminates IPsec tunnels is exactly the kind of thing that shows up in exploit development pipelines within weeks. The delay says less about attacker capability than about how long unpatched VPN concentrators and RRAS boxes stay reachable, which is to say indefinitely.</p>
-<p>Neither CISA nor Microsoft has said who is exploiting it, how many organizations have been hit, or what the post-exploitation activity looks like. The KEV entry lists ransomware use as unknown. That is a real gap, because "apply mitigations per vendor instructions" is easy advice to give and hard to prioritize when defenders cannot tell whether they are looking at targeted intrusion sets or opportunistic mass scanning.</p>
-<p>CVE-2026-33824 was one of four additions that day. The others were CVE-2026-55040, a weak authentication flaw in Microsoft SharePoint, plus the VMware vCenter path traversal (CVE-2026-59310) and the macOS improper authentication bug (CVE-2026-65400) we covered earlier this month. Two Microsoft entries in a single KEV batch is not a good look for a Patch Tuesday cadence that already ships north of a hundred fixes a month.</p>
-<p>If you cannot patch by the deadline, the mitigation is boring and effective: block inbound UDP 500 and 4500 at the perimeter, or restrict them to known peer addresses where IPsec is genuinely in use. Then go find out which of your Windows hosts are running IKEEXT at all. On a lot of servers it is enabled by default and doing nothing except listening.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Wispr Raises $280 Million at a $2 Billion Valuation to Outgrow Dictation</title>
-      <link>https://sabr-labs.com/article/wispr-280-million-series-b-menlo-ventures-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/wispr-280-million-series-b-menlo-ventures-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Wispr</category>
-      <category>Venture Capital</category>
-      <category>Voice Interfaces</category>
-      <category>Menlo Ventures</category>
-      <category>Startups</category>
-      <description>Menlo Ventures led a round that values the voice input startup at roughly eighty times what it raised nine months ago, betting that the company becomes an input layer rather than a better microphone button.</description>
-      <content:encoded><![CDATA[<p>Nine months ago Wispr raised $25 million. On Monday it closed $280 million at a $2 billion valuation, bringing total funding to $361 million.</p>
-<p>Menlo Ventures led. The returning list includes Notable Capital, NEA, Neo Ventures, 8VC and MVP Ventures, joined by new money from Acrew, Forerunner, Goodwater, Peak XV, Together Fund and PLUS Capital. That's a crowded cap table for a company whose flagship product, Wispr Flow, is a dictation tool.</p>
-<p>And that's the problem the round has to answer. Dictation ships free in macOS, Windows, iOS and Android. It has for years. Building a business on top of a feature the platform owners give away is a hard place to stand, and a $2 billion price implies the investors think Wispr is standing somewhere else.</p>
-<p>The company's answer has two parts. The first is accuracy. Wispr says its new Canto model cuts dictation error rates from around 30% to under 10%. That's the company's own figure and hasn't been independently benchmarked, so hold it loosely. But if it holds up in normal use, it's the difference between a tool you fight with and a tool you can actually think through. Built-in dictation fails at exactly the rate where correcting the output costs more than typing would have.</p>
-<p>The second part is hardware and scope. Wispr shipped an Android app in February, added a meeting note-taker that pulls out action items, and is expanding into India and the U.K. More interesting is a partnership around the Oasis ring for quiet dictation, plus an internal group called Wispr Interface Labs working on other ways to get intent into a computer.</p>
-<p>Read together, the bet isn't dictation at all. It's that voice becomes a primary input method for agent-driven software, where you're describing a task rather than typing a command, and that whoever owns the capture layer owns something durable. Plausible. It also requires the platform vendors to stay slow, which is not a thing they have historically agreed to do.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Amodei Says the AI Backlash Is a Trust Problem the Industry Made Itself</title>
-      <link>https://sabr-labs.com/article/amodei-ai-backlash-crisis-of-trust-gavin-baker-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amodei-ai-backlash-crisis-of-trust-gavin-baker-august-2026</guid>
-      <pubDate>Mon, 17 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Dario Amodei</category>
-      <category>AI Policy</category>
-      <category>Regulation</category>
-      <category>AI Safety</category>
-      <description>Anthropic&apos;s CEO conceded that AI companies including his own have not delivered on their promises, then proposed regulation that would slow frontier labs while helping smaller competitors.</description>
-      <content:encoded><![CDATA[<p>Buried in a weekend thread from Dario Amodei is the most useful sentence an AI executive has produced in months: the most accurate criticism of AI companies, including Anthropic, is that they haven't yet delivered on their big promises.</p>
-<p>The thread was a reply. Investor Gavin Baker had gone after Amodei on the All-In podcast and on X for talking up AI's dangers, and Amodei answered in a series of posts over August 15 and 16, arguing his public messaging has been roughly balanced between risk and benefit. Whether that's true is a matter of tape, and reasonable people who've watched his last three years of interviews will land in different places.</p>
-<p>His headline framing is that the public souring on AI is "fundamentally a crisis of trust" in companies, governments and the tech industry generally. It's a clean line, and it does convenient work. Recast as a trust problem, the backlash becomes a question of how people feel about institutions rather than a question about whether the products are good, whether the job displacement is real, or whether the capital being spent has a return behind it. The admission in the first paragraph is the honest version. The trust framing is the comfortable one.</p>
-<p>The more substantive claim is structural. Amodei argues AI is a technology that inherently concentrates power, which is a real position with real implications and not one most frontier lab CEOs will say out loud. If you accept it, the case for external constraint follows almost automatically, including constraint on Anthropic.</p>
-<p>Then comes the proposal, and this is where it gets slippery. Amodei says Anthropic will craft policy suggestions "very carefully" so that they slow frontier AI development while advantaging smaller competitors. Read that again with the source in mind. A company at the frontier is proposing rules that bind the frontier, and asking to be trusted on the drafting. That can be principle and it can be a moat, and the only way to tell is to read the text.</p>
-<p>So read the text when it exists. Anthropic hasn't published the proposal yet, and everything above is a description of intent. The specific things worth checking on arrival: what compute or capability threshold triggers the constraint, whether it lands above or below where Anthropic's own models sit, and whether the exemptions for smaller developers have a revenue ceiling or just a parameter count. Those three details will say more than the thread did.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
