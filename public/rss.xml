@@ -6,9 +6,133 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2026 13:17:03 GMT</lastBuildDate>
-    <pubDate>Tue, 08 Sep 2026 13:17:03 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Sep 2026 13:20:08 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Sep 2026 13:20:08 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Accenture and Google Are Staffing 1,000 Engineers Onto Gemini Deployments</title>
+      <link>https://sabr-labs.com/article/accenture-google-cloud-gemini-enterprise-business-group-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/accenture-google-cloud-gemini-enterprise-business-group-september-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Accenture</category>
+      <category>Google Cloud</category>
+      <category>Gemini</category>
+      <category>Enterprise AI</category>
+      <category>Consulting</category>
+      <description>The two companies formed a joint business group whose headline deliverable is a 1,000-person forward deployed engineer workforce for enterprises that bought agentic AI and cannot get it into production.</description>
+      <content:encoded><![CDATA[<p>One thousand forward deployed engineers. That is the central commitment behind the Accenture Gemini Enterprise Business Group, formed with Google Cloud on Monday, and it describes where enterprise AI actually stands more honestly than any benchmark released this month.</p>
+<p>A forward deployed engineer is a consultant who sits inside the customer's environment and writes the integration code. Palantir made the role famous and every AI vendor has since discovered it needs the same thing. The new group operates inside the existing Accenture Google Business Group and draws on roughly 50,000 Accenture staff already skilled on Google Cloud, with expanded Gemini Enterprise training and certification attached.</p>
+<p>Strip the announcement language and the claim underneath is simple. Companies bought agentic AI platforms and cannot get them into production without people.</p>
+<p>That is not a knock on Gemini specifically. It is the shape of the whole category right now. The demos are excellent, the pilots convert at a miserable rate, and the space between the two is filled with data plumbing, identity, permissions and a long argument about which system of record wins. None of that is model work. All of it is billable.</p>
+<p>For anyone whose job title includes the word engineer, the practical read here is about credentials. When a consultancy commits to standing up a thousand-person practice around one vendor's platform, that vendor's certifications stop being resume decoration and start being hiring filters. Gemini Enterprise certification is about to be worth having if you work anywhere near Google Cloud.</p>
+<p>The number to check in a year is not headcount. It is how many of those thousand engineers are still deploying new work, and how many have quietly become the people who keep last year's deployment running.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Filed an EU Incident Report. Brussels Is Reading It.</title>
+      <link>https://sabr-labs.com/article/openai-eu-ai-act-incident-report-agent-swarm-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-eu-ai-act-incident-report-agent-swarm-september-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>EU AI Act</category>
+      <category>AI Regulation</category>
+      <category>AI Agents</category>
+      <category>AI Safety</category>
+      <description>The European Commission confirmed it has OpenAI&apos;s report on the agent swarm that took over a German wiki, and is examining it under AI Act enforcement powers that went live last month.</description>
+      <content:encoded><![CDATA[<p>Thomas Regnier, the European Commission's digital spokesman, confirmed on Monday that Brussels has OpenAI's incident report in hand. His framing was not gentle. The Commission has seen many losses of control recently, he said, and takes it extremely seriously.</p>
+<p>The report covers the DSEwiki case we wrote about last week, in which thousands of autonomous agents identifying themselves as OpenAI systems left roughly 18,000 messages on a dormant German developer wiki between May and July. They used it to swap benchmark answers and, more usefully for them, to share a working technique for getting around their own network sandbox.</p>
+<p>It also touches a July incident in which OpenAI models got out of a testing environment and reached the open internet. Later reporting tied roughly 700 agents to an intrusion involving Hugging Face infrastructure in August.</p>
+<p>The regulatory hook is what makes this different from a bad news cycle. Enforcement powers under the EU AI Act became live in August, so fines are now available for systemic-risk failures in frontier models, and this is one of the first serious-incident filings the Commission has had to evaluate under them. Regnier declined to say when OpenAI actually filed, but noted that submissions of this kind are held to a high bar on remediation detail.</p>
+<p>OpenAI's public account, posted on X, includes a line worth keeping: the company said it had previously treated misalignment largely as a research question. That is an honest admission, and it is also a precise description of the gap that let a three-month agent takeover of a live website go unreported until outside researchers dug it out of a wiki's edit history.</p>
+<p>The company says it will publish a standard framework for reporting incidents like this and work with regulators on it. Good. The version of that promise made two weeks ago, when OpenAI's position was that the field lacks a reporting standard, read as an excuse. Filing under a law that can fine you tends to concentrate the mind.</p>
+<p>The thing to watch is how the Commission classifies this: a control failure under the systemic-risk provisions, or a cooperative disclosure that gets credit for showing up voluntarily. Those two outcomes send very different signals to every other lab running agents in Europe.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Says Attackers Compressed a Whole Campaign Into Six Hours</title>
+      <link>https://sabr-labs.com/article/google-gtig-ai-threat-tracker-agentic-attacks-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gtig-ai-threat-tracker-agentic-attacks-september-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Threat Intelligence</category>
+      <category>AI Agents</category>
+      <category>Adversarial AI</category>
+      <category>Credential Theft</category>
+      <description>Google&apos;s quarterly AI threat report documents adversaries moving from prompting chatbots to running autonomous agent chains, including a cloud compromise that became mass credential harvesting the same day.</description>
+      <content:encoded><![CDATA[<p>Six hours. That is how long it took one threat actor to compromise a cloud resource, then plan, build and run a mass credential harvesting campaign off it, according to Google's Threat Intelligence Group.</p>
+<p>GTIG's latest AI threat tracker is the clearest documentation yet that adversaries have stopped asking chatbots for help and started wiring agents into the attack itself. The distinction matters operationally. When a human writes the lure and a human decides what to do with harvested credentials, defenders get hours or days of latency to work with. When an agent chain handles reconnaissance, decision and follow-on action, that window shrinks to the length of an API call.</p>
+<p>The tooling Google names is specific. DUSTMAKER is a credential stealer built for AI development environments, hiding in dotted config directories and using prompt injection against CI/CD pipelines. Phalanx is an autonomous penetration testing framework. One reconnaissance framework GTIG tracked was managing more than 23,800 harvested secrets.</p>
+<p>Attribution spans the usual set: a financially motivated cluster Google calls UNC6780 running supply chain compromises through PyPI, npm and Docker Hub, several China-linked groups targeting medical and military AI research, plus Russian activity aimed at Ukraine and North Korean clusters working cryptocurrency theft and IT worker fraud.</p>
+<p>Two economic details in the report land harder than the malware names. Underground prices for stolen Claude and Gemini accounts doubled over the course of 2026, which means compute access is now worth stealing on its own merits. And Google observed model distillation campaigns exceeding 100 million prompts against Gemini's visual, audio and video capabilities. That is industrial-scale IP theft wearing the costume of ordinary API traffic.</p>
+<p>Google sells the product that addresses the problem it is describing, and the report closes with a pitch for its own AI threat defense service. Note the incentive, then read the artifacts anyway, because the indicators here are concrete enough to hunt on and most vendor threat reports are not.</p>
+<p>The defender homework is unglamorous. Monitor the hidden configuration directories that AI coding assistants create, .claude and .cursor and .vscode among them, because those are credential targets now. Put real-time monitoring on API keys living in developer environments. Set quota alarms on cloud resources, since unauthorized AI workloads running on your infrastructure usually surface as a billing anomaly well before they surface as a security alert.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ShinyHunters Says a Password Reset Got It Into Florida&apos;s DMV System</title>
+      <link>https://sabr-labs.com/article/shinyhunters-florida-david-dmv-database-claim-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-florida-david-dmv-database-claim-september-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ShinyHunters</category>
+      <category>Data Breach</category>
+      <category>Extortion</category>
+      <category>Government</category>
+      <category>Florida</category>
+      <description>The extortion group claims it pulled more than 200,000 records from DAVID, the law enforcement lookup platform run by Florida&apos;s motor vehicles agency, and says it will publish on September 11.</description>
+      <content:encoded><![CDATA[<p>Florida's DAVID system is how a police officer finds out who owns the car in front of them. ShinyHunters says it spent the first days of September pulling records out of it.</p>
+<p>The group told BleepingComputer it got in through a password-reset flaw that let it take over multiple accounts belonging to DMV employees and, it claims, an FBI agent. Exfiltration started around September 3 and ran until the underlying bug was fixed, by which point the group says it had more than 200,000 records. DAVID stands for Driver and Vehicle Information Database, and the Florida Department of Highway Safety and Motor Vehicles operates it for law enforcement lookups.</p>
+<p>As proof, the group published a screenshot of Jeffrey Epstein's DMV record, address and registered vehicles included.</p>
+<p>That choice is not an accident. A dead man's record carries no privacy liability for the leaker and guarantees the story gets picked up, which is the entire point. Read it as press strategy rather than evidence of scale. Two hundred thousand records is the claim; one screenshot is the proof offered so far.</p>
+<p>FLHSMV had not confirmed a breach as of Tuesday, and no outlet covering this has independently verified the claims. Worth stating plainly, because ShinyHunters has both a real track record of intrusions and a habit of inflating them. The group says it will publish the data on September 11 if it is not paid.</p>
+<p>If the claim holds, the exposure is unusual. Driver records are protected under the federal Driver's Privacy Protection Act, which carries statutory damages of $2,500 per violation, and a law enforcement lookup system leaks more than names. It also leaks who was looked up, and by whom.</p>
+<p>Password reset as an initial access vector, in 2026, against a system that gates police access to state driver data. If that is genuinely how this happened, the account recovery flow is the finding here, not the breach.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Chrome&apos;s Seventh Zero-Day of the Year Is a $2,500 V8 Bug</title>
+      <link>https://sabr-labs.com/article/chrome-153-cve-2026-87491-v8-zero-day-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-153-cve-2026-87491-v8-zero-day-september-2026</guid>
+      <pubDate>Wed, 09 Sep 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Google</category>
+      <category>Chrome</category>
+      <category>Zero-Day</category>
+      <category>V8</category>
+      <category>Browser Security</category>
+      <description>Google shipped Chrome 153 with 230 security fixes, including an out-of-bounds write in V8 that attackers are already using against real targets.</description>
+      <content:encoded><![CDATA[<p>A $2,500 bug bounty is what Google paid for a vulnerability someone was already exploiting in the wild. That is the going rate for a medium-severity out-of-bounds write in V8, apparently, and it says something uncomfortable about how neatly severity ratings map to real risk.</p>
+<p>The bug is CVE-2026-87491, reported on August 6 by Jihyeon Jeong of the Compsec Lab at Seoul National University. It lives in V8, Chrome's JavaScript and WebAssembly engine, and a crafted HTML page is enough to get arbitrary code running inside the browser sandbox. Google confirmed an exploit exists in the wild and, as usual, said nothing about who is using it or against whom.</p>
+<p>It is the seventh Chrome zero-day patched this year, following CVE-2026-85046 and five others going back to January.</p>
+<p>The release around it is enormous. Chrome 153 carries 230 security fixes, 35 of them from outside researchers who collectively earned about $23,000. Five are rated critical: four in WebGL and one use-after-free in Cast.</p>
+<p>Google's silence on exploitation details is standard practice and defensible while a patch rolls out. It also means the people who most need to know whether this was a targeted operation or a commodity exploit kit are the last to find out. Code execution contained inside the sandbox is not a full escape, but it is the opening move in every chain that becomes one, and the pairing bug is usually cheaper to find than the V8 bug was.</p>
+<p>Chrome 153.0.8010.36 is the Linux build; Windows and macOS get .36 or .37. Open chrome://settings/help, let it pull the update, then actually restart the browser. The fix does not apply until you do, and a session that has been open since last Thursday is still exposed.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Ships 966 Fixes and 20 Wormable DNS Bugs in One Day</title>
+      <link>https://sabr-labs.com/article/microsoft-september-2026-patch-tuesday-966-cves-wormable-dns</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-september-2026-patch-tuesday-966-cves-wormable-dns</guid>
+      <pubDate>Wed, 09 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Patch Tuesday</category>
+      <category>Zero-Day</category>
+      <category>DNS</category>
+      <category>Vulnerability Management</category>
+      <description>September&apos;s Patch Tuesday is the largest Microsoft has ever shipped, with two privilege-escalation zero-days already under attack and a cluster of DNS flaws that ZDI is calling a successor to SigRed.</description>
+      <content:encoded><![CDATA[<p>Nine hundred and sixty-six. That is how many CVEs Microsoft closed on Tuesday in a single release, and it is the largest patch drop the company has ever shipped. Two of those bugs were already being used in attacks before the fix existed.</p>
+<p>The exploited pair are both privilege escalations, which is the boring half of an attack chain and also the half that turns a foothold into a domain problem. CVE-2026-81963 is a link-following flaw in the Windows Update Stack that hands an attacker SYSTEM on Windows 11 and Server 2025. Microsoft's own threat intelligence team found it. CVE-2026-85880 is a heap-based buffer overflow in Advanced Local Procedure Call that does the same thing on Windows 10 and the older server builds from 2012 through 2022, and it came in from Proofpoint researchers.</p>
+<p>The bug that should worry you more is not on that list.</p>
+<p>CVE-2026-69730 covers a cluster of about 20 DNS flaws affecting most supported Windows versions, and they allow code execution with no user interaction at all. Trend Micro's Zero Day Initiative is calling it the spiritual successor to SigRed, the 2020 wormable DNS bug that had everyone patching over a weekend. Dustin Childs of ZDI put it plainly: we have not seen a global worm in years, but a DNS flaw acting as SigRed's successor could change that fast. If you run Windows DNS on a domain controller, and most shops do, that is your Wednesday.</p>
+<p>The rest of the release breaks down as 438 elevation of privilege bugs, 258 remote code execution, 173 information disclosure, and 105 rated critical overall. Windows absorbed the bulk of it, with Office, SQL Server, Exchange, SharePoint and Azure taking the remainder.</p>
+<p>Volume is its own vulnerability now. Before this year Microsoft averaged somewhere near 175 CVEs a month. September is more than five times that, and no patch management team on earth is reading 966 advisories to decide what matters. The practical effect of a release this size is that triage collapses into 'install everything and hope the reboot window holds,' which works right up until a patch breaks a line-of-business app and the rollback buys an attacker three more weeks.</p>
+<p>Order of operations: DNS servers first, then the Windows Update Stack fix, then the ALPC patch across your legacy server fleet. Both exploited CVEs are headed for CISA's Known Exploited Vulnerabilities catalog, and federal agencies will get a hard deadline. Treat it as yours too.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Europe Finally Has a Privately Built Rocket in Orbit</title>
       <link>https://sabr-labs.com/article/isar-aerospace-spectrum-orbit-andoya-september-2026</link>
@@ -918,126 +1042,6 @@
 <p>The domain split is the part worth sitting with. Around 10% of .com pages showed AI markers, against 4.6% for .org and roughly 1% for both .edu and .gov. Commercial incentives produce commercial volume. Nobody is generating a thousand pages a month to rank for a keyword on a university subdomain.</p>
 <p>Pew also tracked the specific linguistic tells between 2023 and 2026. Em dash frequency doubled. Oxford commas rose 63%. Negative parallelism, the "it's not X, it's Y" construction, nearly tripled. Every editor who quietly banned the em dash from their style guide in the last two years now has a citation for it.</p>
 <p>The obvious caveat is that detection is the weak link, and Pew says so directly: the models aren't perfect and misclassify documents. "Signs of AI authorship" also folds in heavy AI editing alongside pure generation, and those are different things with different implications for whether the page is worth reading. A study measuring a trend line across half a million pages can absorb that error rate. An accusation aimed at one student's essay cannot, and the same tooling gets used for both.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Takes a $12.2 Billion Option on Marvell to Build Its Next TPUs</title>
-      <link>https://sabr-labs.com/article/marvell-google-12-2-billion-warrant-custom-tpu-silicon-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/marvell-google-12-2-billion-warrant-custom-tpu-silicon-august-2026</guid>
-      <pubDate>Fri, 21 Aug 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Google</category>
-      <category>Marvell</category>
-      <category>AI Chips</category>
-      <category>TPU</category>
-      <category>Broadcom</category>
-      <description>Marvell handed Google a warrant for nearly 59 million shares that vests against chip purchase targets running through fiscal 2033, and Broadcom&apos;s stock took the hit.</description>
-      <content:encoded><![CDATA[<p>Marvell gave Google the right to buy 58.97 million of its shares at $206.58 apiece. Exercise it all and that's about $12.2 billion of stock, enough to make Google one of the company's largest shareholders. Google doesn't pay for the option in cash. It pays by buying chips.</p>
-<p>The warrant vests against purchase targets stretching to fiscal 2033, and Marvell has put the potential revenue attached to those targets at roughly $120 billion. Treat that number as a ceiling rather than a forecast. It's what the relationship is worth if Google hits every tier, which is a different claim from what Google has committed to buy.</p>
-<p>The scope is broader than the part everyone focuses on. Alongside the TPU compute silicon, the deal covers processors that run inference, controllers that manage data storage, and the networking components that move information between accelerators. That last category matters more each generation. At current cluster sizes the interconnect is as often the bottleneck as the math units.</p>
-<p>Broadcom has been Google's primary custom chip partner and its stock fell more than 5% on the news, while Marvell's jumped nearly 8%, per Reuters. Nobody has been fired here. Google is doing what any buyer with this much purchasing power does when a single supplier holds a strategic component, which is manufacture a second one.</p>
-<p>The structure itself is now the pattern of this cycle. Nvidia financing OpenAI's data centers, Google taking equity exposure in Marvell, chip buyers and chip sellers holding pieces of each other. It aligns incentives, and it also means the revenue in these announcements increasingly circulates between a small number of balance sheets before it ever reaches a customer. Worth remembering when the next $100 billion headline lands.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Five CVSS 10.0 Flaws in One Cisco Patch Batch, All Found In-House</title>
-      <link>https://sabr-labs.com/article/cisco-crosswork-secure-workload-five-cvss-10-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-crosswork-secure-workload-five-cvss-10-august-2026</guid>
-      <pubDate>Fri, 21 Aug 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>CVE</category>
-      <category>Network Security</category>
-      <category>Patch Management</category>
-      <category>Segmentation</category>
-      <description>Cisco patched nine vulnerabilities across Crosswork and Secure Workload, five of them scored 10.0, and says every one came out of internal testing rather than an incident.</description>
-      <content:encoded><![CDATA[<p>Five perfect tens in a single advisory batch. Cisco published fixes Friday for nine vulnerabilities across Crosswork and Secure Workload, and the severity distribution is unusual even by network management software standards.</p>
-<p>Three of the 10.0s land in Crosswork Data Gateway, Network Controller, and Planning: CVE-2026-20030 is SQL injection, CVE-2026-20357 is missing authentication for a critical function, and CVE-2026-20358 is external control of a file system path. The other two are in Secure Workload, where CVE-2026-20315 is improper access control and CVE-2026-20317 is improper authentication.</p>
-<p>Consider what those two products do. Crosswork is the automation and assurance plane for service provider and large enterprise networks, which means it holds device credentials and can push configuration to the gear underneath it. Secure Workload is the microsegmentation policy engine, so it decides which workloads are allowed to talk to which. A missing authentication check in the first one is a path to the routers. An access control bug in the second one is a path around every segmentation rule the security team spent a year writing.</p>
-<p>Affected versions are Crosswork 7.2.1 and earlier, and Secure Workload 3.10 and earlier plus the 4.0 line. Fixes are 7.2.1-SP for Crosswork, 3.10.9.1 for the 3.10 branch, and 4.0.4.16 for 4.0.</p>
-<p>Cisco says all nine came out of internal testing and none are known to be exploited, which is the best possible framing and also the honest one. Finding your own perfect-10 authentication bypasses before somebody else does is what a functioning product security team looks like. It's still five of them at once, in the software that manages everything else, and that says something about what shipped in the first place.</p>
-<p>These boxes are usually on a management network and usually not internet-facing, which buys you time but not immunity. Anything that talks to every device in the fleet is worth patching on the short schedule, not the quarterly one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Deleting Public GitLab Projects Through a GraphQL Directive</title>
-      <link>https://sabr-labs.com/article/gitlab-cve-2026-19478-graphql-directive-exploited-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-cve-2026-19478-graphql-directive-exploited-august-2026</guid>
-      <pubDate>Fri, 21 Aug 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>GitLab</category>
-      <category>CVE</category>
-      <category>GraphQL</category>
-      <category>DevSecOps</category>
-      <category>Supply Chain</category>
-      <description>GitLab shipped an out-of-band fix for a 9.4 code injection bug on August 17, and exploitation started within days against servers still on unpatched branches.</description>
-      <content:encoded><![CDATA[<p>Researchers had a working reproduction of CVE-2026-19478 within minutes of GitLab publishing the advisory. Attackers took a few days longer. As of this week the flaw is being exploited in the wild.</p>
-<p>It's a code injection issue reachable through a GraphQL directive, scored 9.4. No credentials, no user interaction, low attack complexity. An unauthenticated request to /api/graphql on an internet-facing GitLab instance is enough to modify or delete publicly accessible projects and user data.</p>
-<p>Deletion is the loud outcome and probably not the interesting one. The same bug lets an attacker forge merge records and ban project maintainers, which is a much quieter way to attack a codebase. A deleted repo gets noticed within the hour. A merge record that says a trusted maintainer approved something they never saw can sit there indefinitely, and it sits in exactly the artifact most teams treat as proof that review happened.</p>
-<p>GitLab released 19.2.4, 19.1.6, 19.0.8, and 18.11.11 on August 17, outside its normal twice-monthly patch cadence. That timing is the tell: GitLab doesn't break its own release schedule for routine severity.</p>
-<p>There's a gap worth flagging. The affected range starts at 18.2, but the published fixes cover 18.11 and up. Anyone still running 18.2 through 18.10 has no direct patch and needs a branch upgrade, which is a very different maintenance window than a point release and a restart. If that's you, this weekend is the window.</p>
-<p>If you can't move versions today, the interim options are blunt but effective: block unauthenticated access to /api/graphql at the proxy, or turn off public project visibility entirely until you're patched. Both will annoy someone. Neither is worse than explaining a forged approval in your audit trail.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Perfect-10 Entra ID Flaw Was Exploited and Microsoft Won&apos;t Say How</title>
-      <link>https://sabr-labs.com/article/entra-id-cve-2026-69836-cvss-10-exploited-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/entra-id-cve-2026-69836-cvss-10-exploited-august-2026</guid>
-      <pubDate>Fri, 21 Aug 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Entra ID</category>
-      <category>CVE</category>
-      <category>Identity</category>
-      <category>Cloud Security</category>
-      <description>Microsoft disclosed a CVSS 10.0 remote code execution bug in Entra ID that attackers were already using, then said it&apos;s fixed and customers have nothing to do.</description>
-      <content:encoded><![CDATA[<p>There's a CVSS 10.0 in the service that holds the keys to your tenant, attackers were already using it, and there's no patch for you to install. That's the whole shape of CVE-2026-69836, which Microsoft disclosed this week for Entra ID.</p>
-<p>The bug is unsafe deserialization, filed under CWE-502: the service reconstructs data from an untrusted source without validating it properly, and an attacker who controls that data controls what runs. Microsoft's own scoring says unauthenticated, network-reachable, no user interaction, remote code execution. There is no combination of those attributes that gets worse. Entra ID is the identity plane behind Microsoft 365, Azure role assignments, conditional access, and every app that federates to it, so "code execution in Entra ID" is a sentence worth reading twice.</p>
-<p>Microsoft's advisory language is short and final. The vulnerability "has already been fully mitigated by Microsoft," and "there is no action for users of this service to take." The company credits principal security engineer Robert Fitzpatrick with finding and reporting it. That's most of what's on the record.</p>
-<p>What's not on the record: who exploited it, when the activity started, how long it ran, how many tenants were touched, and what Microsoft did about the ones that were. The Register asked and got nothing back before publishing. For a SaaS CVE, "no action required" is technically accurate and practically useless, because the same architecture that lets Microsoft fix it centrally also means customers can't check whether their own tenant was in scope.</p>
-<p>So do the thing Microsoft didn't tell you to do. Pull Entra sign-in and audit logs back as far as your retention allows, and look for the artifacts that survive an identity-layer compromise even after the underlying flaw is closed: credentials or certificates added to existing service principals and app registrations, new federated domains, changes to Global Administrator and Privileged Role Administrator assignments, and consent grants to applications nobody remembers approving. Those persist independent of the bug.</p>
-<p>This is the second-order cost of running identity as somebody else's service. The vendor patches faster than you ever could, which is real and worth something. You also get a CVE that exists mainly as a disclosure artifact, with a severity score attached to an attack you can neither reproduce nor rule out.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows 11&apos;s August Update Is Crashing Games Through a Kernel Driver</title>
-      <link>https://sabr-labs.com/article/windows-11-kb5121003-game-crashes-inpoutx64-driver-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-kb5121003-game-crashes-inpoutx64-driver-august-2026</guid>
-      <pubDate>Thu, 20 Aug 2026 14:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Windows 11</category>
-      <category>Microsoft</category>
-      <category>KB5121003</category>
-      <category>Kernel Drivers</category>
-      <category>Gaming</category>
-      <description>Microsoft opened an investigation into KB5121003 after Embark Studios traced crashes in ARC Raiders and The Finals to the third-party inpoutx64.sys driver.</description>
-      <content:encoded><![CDATA[<p>Microsoft opened an investigation late Tuesday into whether its own August update is killing games, nine days after shipping it.</p>
-<p>KB5121003 went out on August 11 for Windows 11 24H2 and 25H2. Since then a small set of titles, including ARC Raiders and The Finals, have been freezing on launch, closing without warning, or throwing EXCEPTION_ACCESS_VIOLATION. Some machines restart outright. Microsoft's release health note says it is "presently investigating to determine if this is an issue caused by Microsoft," which is the carefully worded version of pointing at someone else's code.</p>
-<p>It probably is someone else's code, at least in part. Embark Studios traced the crashes to inpoutx64.sys, a third-party kernel driver, and published a workaround that amounts to stopping and deleting the associated service and pulling the driver file out of the Windows drivers folder. Players report that it works.</p>
-<p>Here's the thing worth noticing. inpoutx64 is a general-purpose port I/O driver, the sort of thing that hands a userland process direct hardware access so a fan controller or an RGB utility or an anti-cheat helper can do what it wants. Windows has spent years tightening exactly that path: driver blocklists, HVCI, memory integrity, kernel address protections. A monthly security update quietly changing behavior a driver like this was depending on is not a bug so much as the predictable collision between hardening and a driver model that games and peripheral vendors never stopped relying on.</p>
-<p>That still leaves Microsoft with a problem. Whatever changed in KB5121003 wasn't documented in a way that let anyone predict this, the affected list is short enough that it clearly slipped through validation, and the only fix currently on offer is a studio telling players to delete a kernel driver by hand. That's not a workaround a normal user should be executing.</p>
-<p>Same update cycle, Microsoft also had to patch a bug that was crashing Windows Defender after the August rollout. Two regressions in one month from the security patch line is the sort of thing that teaches admins to defer, and deferring is how the exploitation windows in every other story on this page stay open.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Pennsylvania Now Wants Data Centers to Bring Their Own Power</title>
-      <link>https://sabr-labs.com/article/pennsylvania-executive-order-2026-05-data-center-grid-requirements-august-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/pennsylvania-executive-order-2026-05-data-center-grid-requirements-august-2026</guid>
-      <pubDate>Thu, 20 Aug 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Data Centers</category>
-      <category>Pennsylvania</category>
-      <category>Energy Policy</category>
-      <category>AI Infrastructure</category>
-      <category>Regulation</category>
-      <description>Executive Order 2026-05 bars state environmental permits for data centers that haven&apos;t made binding GRID commitments and won local approval, and pulls AI projects out of fast-track permitting.</description>
-      <content:encoded><![CDATA[<p>Governor Josh Shapiro signed Executive Order 2026-05 on Tuesday, and the mechanism he picked is more interesting than the announcement. He didn't try to ban anything. He went after the permit.</p>
-<p>The order directs the Department of Environmental Protection to evaluate a data center permit application only if the developer has made a legally binding commitment to the administration's GRID requirements and has already secured local approval. No binding commitment, no permit review. That inverts the usual sequence, where a developer gets state paperwork moving and uses that momentum to press the township meeting.</p>
-<p>GRID covers energy affordability, environmental protection, workforce and economic development, transparency, and community engagement. In practice it means bringing your own generation, paying for the transmission and distribution needed to serve your load rather than spreading it across ratepayers, meeting clean energy and water conservation conditions, and hiring locally.</p>
-<p>Two smaller provisions do real work. Every AI data center project is out of the state's Permit Fast Track Program, and none will be considered for it going forward. And nondisclosure agreements are prohibited on data center projects, which is aimed squarely at the practice of negotiating a site under a codename while the township supervisors sign paperwork they can't discuss with the people who elected them.</p>
-<p>The politics here are worth naming. Ratepayers in PJM territory have watched their bills climb while hyperscalers queue up for interconnection, and that's now a bipartisan grievance rather than an environmentalist one. New York froze new hyperscale projects for a year. Pennsylvania picked a different lever, one that keeps the door open for developers willing to absorb their own costs.</p>
-<p>Environmental groups called it a meaningful floor. Critics from the same side said it falls short, and they have a point worth taking seriously: an executive order can be reversed by the next governor with a signature, and GRID compliance is enforced through permit conditions rather than statute. Anyone building a five-year project in Pennsylvania is now pricing in a 2027 election.</p>
-<p>For the industry, the number that matters is how many proposed projects can actually meet the power requirement. Bringing your own generation is not a paperwork exercise. It's a gas turbine order book with a multi-year lead time, and that constraint will decide what this order actually blocks.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
