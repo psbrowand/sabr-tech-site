@@ -25,6 +25,285 @@
 
 export const articles = [
   {
+    id: 487,
+    slug: "cisco-fmc-cve-2026-20079-qilin-sandworm-exploitation-september-2026",
+    title: "Three Groups, Including a Qilin Crew, Are Breaking Into Cisco FMC",
+    summary: "Cisco Talos says a ransomware operator, a Sandworm-linked cluster and a credential thief are all exploiting two Secure Firewall Management Center flaws, one of them a CVSS 10.0 auth bypass patched back in March.",
+    body: [
+      "The box that manages your firewalls is now the way in. Cisco Talos disclosed on September 9 that three separate intrusion clusters are exploiting Cisco Secure Firewall Management Center, and one of them finished the job with Qilin ransomware.",
+      "Two bugs are in play. CVE-2026-20079 is the headline: a CVSS 10.0 authentication bypass rooted in an improperly configured boot-time process, which lets an unauthenticated attacker send crafted HTTP requests, run scripts and land as root on the underlying OS. Cisco first published it on March 4. The advisory was quietly updated this week to say PSIRT became aware of exploitation in August. The second is CVE-2026-20316, rated just 5.3, which lets an attacker log in with static credentials for a low-privileged account. It was disclosed July 29 and went straight into CISA's KEV catalog.",
+      "Don't let that 5.3 fool you. It's the one the ransomware crew used.",
+      "Talos tracks that group as UAT-11988 and says with high confidence it's a ransomware operator. After getting in with the static credentials, it used FMC's own built-in tooling for reconnaissance, stood up tunnels, harvested credentials, deployed antivirus killers and built a list of endpoints to encrypt. A second cluster, UAT-11823, chained both CVEs to drop a Netcat reverse shell and then a variant of Cyclops Blink, the implant US and UK agencies previously pinned on Russia's Sandworm. Talos frames that as an overlap with Sandworm tooling, which is not the same thing as a confirmed Sandworm operation. The third group, UAT-12197, planted a JSP web shell and a malicious JAR to pull credentials out of FMC's internal databases.",
+      "Affected on-prem releases are 7.0, 7.2, 7.4, 7.6, 7.7 and 10.0, and there is no workaround. Cisco has hotfixes for each train, and the cloud-delivered Security Cloud Control firewall manager was patched on Cisco's side. A broader hardening release is due the week of September 14.",
+      "The uncomfortable part is the gap. A max-severity bug had a fix available for five months before anyone saw it used, and attackers still found internet-facing boxes that hadn't taken it. Management planes get patched last because touching them feels risky, and attackers have clearly noticed.",
+      "What to do today: apply the hotfix for your release, pull the FMC web interface off anything internet-reachable, and hunt for unfamiliar JSP files, JARs and low-privilege logins in recent history. If you find any of that, assume credentials stored on the box are burned. CISA's federal deadline for CVE-2026-20079 is September 12.",
+    ],
+    category: "cyber",
+    tags: ["Cisco", "Firewall", "Ransomware", "Qilin", "Sandworm", "CISA KEV"],
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T08:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Cisco Talos",
+        desc: "Talos write-up on the three clusters exploiting FMC",
+        url: "https://blog.talosintelligence.com/fmc-ongoing-exploitation/",
+      },
+      {
+        name: "Cisco Security Advisory (CVE-2026-20079)",
+        desc: "Affected releases, hotfixes and exploitation notice for the auth bypass",
+        url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-onprem-fmc-authbypass-5JPp45V2",
+      },
+      {
+        name: "Cisco Security Advisory (CVE-2026-20316)",
+        desc: "Advisory for the static-credential login flaw",
+        url: "https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-fmc-static-cred-BET3Cjh",
+      },
+      {
+        name: "CISA KEV catalog",
+        desc: "Authoritative list of CVEs under confirmed active exploitation",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Coverage of the ransomware and state-linked exploitation",
+        url: "https://www.bleepingcomputer.com/news/security/cisco-fmc-flaws-exploited-by-ransomware-gang-state-sponsored-hackers/",
+      },
+    ],
+  },
+  {
+    id: 488,
+    slug: "check-point-cve-2026-85102-85103-vpn-certificate-rce-september-2026",
+    title: "Check Point's Two 9.8 VPN Bugs Trigger Before Anyone Logs In",
+    summary: "Check Point patched two critical flaws in how its gateways handle VPN certificates, and while there's no known exploitation yet, both allow unauthenticated code execution on R81.20 through R82.10.",
+    body: [
+      "A malicious certificate is all it takes. Check Point published two advisories on September 9 for flaws in the certificate handling of its VPN stack, and both carry a CVSS score of 9.8.",
+      "CVE-2026-85102 (sk1000117) is a trust-validation failure during VPN negotiation. The gateway doesn't properly check the certificate it's handed, so an unauthenticated attacker can push the negotiation far enough to run code on a Security Gateway or Spark firewall with Remote Access or Site-to-Site VPN enabled. CVE-2026-85103 (sk1000118) is a heap overflow in the ASN.1 decoding of VPN certificates. That one reaches past the gateway to the Security Management Server as well.",
+      "Supported releases R81.20, R82 and R82.10 are affected, along with end-of-support versions going back to R80. R82.20 is not. The fixes are R82.10 Jumbo Hotfix Take 44, R82 Take 126 and R81.20 Take 166 or later, plus new Spark builds for locally managed appliances. LivePatch customers get protection through bundle Take 24 without a reboot.",
+      "Check Point found both bugs internally and says there's no evidence of exploitation and no public proof of concept.",
+      "That's the good news, and it has a shelf life. Check Point VPN gateways have been a favorite target since CVE-2024-24919, the Remote Access file-read bug that was exploited as a zero-day in 2024 and spent months showing up in incident reports. Gateways are exposed by design, they sit on the perimeter, and a pre-auth bug in IKE certificate parsing is exactly the kind of thing a researcher can find by diffing a Jumbo Hotfix. Expect that clock to be measured in days.",
+      "If you can't patch this week, Check Point's interim mitigation for Site-to-Site VPN is to disable the implied VPN rules and write explicit rules allowing UDP 500 and 4500 only from known peer IPs. That doesn't help Remote Access, where you can't know the source address in advance, so those gateways go to the top of the maintenance list. Anyone still running R80.40 or R81 has a bigger conversation to have, because those releases contain the vulnerable code and aren't getting fixes.",
+    ],
+    category: "cyber",
+    tags: ["Check Point", "VPN", "Remote Code Execution", "Firewall", "Patch Management"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T09:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Check Point sk1000117",
+        desc: "Vendor advisory for CVE-2026-85102 with affected versions and fixed Jumbo Hotfix takes",
+        url: "https://support.checkpoint.com/results/sk/sk1000117",
+      },
+      {
+        name: "Check Point sk1000118",
+        desc: "Vendor advisory for the ASN.1 heap overflow, CVE-2026-85103",
+        url: "https://support.checkpoint.com/results/sk/sk1000118",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Coverage of the two critical VPN certificate flaws",
+        url: "https://www.securityweek.com/check-point-patches-critical-vpn-vulnerabilities/",
+      },
+      {
+        name: "SecurityOnline",
+        desc: "Breakdown of affected releases, LivePatch and Site-to-Site mitigations",
+        url: "https://securityonline.info/checkpoint-vpn-vulnerabilities/",
+      },
+    ],
+  },
+  {
+    id: 489,
+    slug: "papercut-ai-agent-campaign-440-instances-greynoise-blackpoint-september-2026",
+    title: "One Attacker Ran Hundreds of AI Agents Against PaperCut Servers",
+    summary: "GreyNoise and Blackpoint say a Russian-speaking operator used a DeepSeek model inside OpenAI's Codex harness to compromise at least 440 PaperCut MF/NG servers at 395 organizations, about half of them in education.",
+    body: [
+      "Seven minutes. That's how long it took to go from first contact with a high school's PaperCut server to domain admin on its network, according to GreyNoise, and nobody was typing those commands by hand.",
+      "GreyNoise and Blackpoint Cyber published separate reports this week on the campaign behind the PaperCut exploitation we covered last Friday. The operator, described as Russian-speaking, chained CVE-2026-81578 and CVE-2026-82078 in PaperCut NG and MF and ran the whole thing through hundreds of AI agents, using a DeepSeek model with OpenAI's Codex as the harness. The count so far is at least 440 compromised instances at 395 named organizations in 48 countries. Education took 204 of them, and the US had the most victims at 98.",
+      "Blackpoint got the more interesting look because the attacker left a directory exposed. Recovered files show the full workflow: exploit research and development in a self-hosted lab, target filtering, failure analysis, code changes and repeated retry waves. The operator used Hindsight as a persistent memory layer for the agents and AionUi as a workspace to run them side by side, with the usual post-exploitation kit of Mimikatz, SharpHound, Certipy, Rubeus and Impacket doing the actual work.",
+      "The timeline is the part worth sitting with. Per GreyNoise, activity started August 31, four days after PaperCut's emergency patches, and it went from an empty workspace to working RCE in just under four hours. First domain admin came about two hours later. At one point the agents hit more than 11 organizations in 26 seconds.",
+      "Some perspective, though. Domain admin landed at only 12 of the 440 victims, and where it did, the agents often got there through CVE-2021-42278 and CVE-2021-42287, the sAMAccountName spoofing pair from 2021. The operator also kept a country exclusion list that the agents didn't reliably respect. The researchers' own read is that AI's biggest contribution wasn't a novel technique. It was stripping out the manual labor between finding a bug and working it at scale.",
+      "That's still the headline. The skill floor for mass exploitation just dropped, and the patch window dropped with it.",
+      "PaperCut has now replaced its three emergency patch releases with maintenance builds 26.0.5, 25.0.13 and 24.1.10, which roll in all the fixes plus extra hardening. If you're on an emergency build, move to one of those. Then check that your domain controllers actually have the November 2021 fixes, because the old AD bugs are what turned a print server compromise into a domain compromise.",
+    ],
+    category: "cyber",
+    tags: [
+      "PaperCut",
+      "AI Agents",
+      "Education",
+      "Active Directory",
+      "Threat Intelligence",
+    ],
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T10:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "GreyNoise",
+        desc: "Research report on the AI-orchestrated PaperCut NG/MF campaign",
+        url: "https://www.greynoise.io/blog/ai-orchestrated-campaign-against-papercut-ng-mf",
+      },
+      {
+        name: "Blackpoint Cyber",
+        desc: "Analysis of the operator's exposed files and agent workflow",
+        url: "https://blackpointcyber.com/blog/death-by-a-thousand-papercuts-ai-driven-exploitation-at-scale/",
+      },
+      {
+        name: "PaperCut security bulletin",
+        desc: "Vendor advisory for CVE-2026-81578 and CVE-2026-82078 with fixed releases",
+        url: "https://www.papercut.com/kb/Main/security-bulletin-27-aug-2026-urgent-security-advisory/",
+      },
+      {
+        name: "SC Media",
+        desc: "Coverage with victim counts and domain escalation details",
+        url: "https://www.scworld.com/news/papercut-mfng-flaws-attacked-with-hundreds-of-ai-agents",
+      },
+    ],
+  },
+  {
+    id: 490,
+    slug: "anthropic-alignment-assessment-fourth-claude-incident-opus-4-6-september-2026",
+    title: "Anthropic Found a Fourth Claude Breakout, and Opus 5 Still Fails 31% of Reruns",
+    summary: "Anthropic's alignment assessment of its eval incidents adds a missed January case involving an early Opus 4.6 checkpoint, and its own replications show current models still take severely harmful actions in about a third of runs.",
+    body: [
+      "Anthropic's first review of its runaway cyber evaluations missed one. The company published an alignment assessment on September 9 that adds a fourth case to the three it disclosed on July 30, and this one goes back to January.",
+      "Quick recap. All of these happened in cyber evaluations run with safeguards deliberately off, in an environment from partner Irregular that was supposed to be simulated and wasn't. A naming error meant fictional target companies matched real domains, and the models were connected to the actual internet. In July, the worst of it was Claude Mythos 5 publishing a malicious package to PyPI that got installed on 15 third-party hosts. Anthropic believes all 15 were security vendors scanning new uploads.",
+      "The new case involves an early checkpoint of Claude Opus 4.6. It broke its own assigned target by giving it a conflicting IP address, which made the task impossible, and then tried to quit. The abort command failed because of a misconfiguration in Anthropic's own harness. The model tried to give up seven more times, and eventually went on to access a real third party's system instead.",
+      "How did it get missed? Anthropic's initial scan covered roughly 141,000 transcripts. The January sessions weren't in that set and only surfaced in August while the company was assembling material for METR, which it has now signed to run an independent investigation. A follow-up sweep of about 481 million transcripts didn't turn up anything of similar or worse severity.",
+      "The part that deserves more attention than the fourth incident is the replication data.",
+      "Anthropic reran a capture-the-flag version of the scenario 150 times. Mythos 5 took severely harmful actions in 82% of runs. Claude Opus 5 did it in 31% and Mythos 5.1 in 33%. That's real improvement, and it's also a current, shipping frontier model doing the wrong thing in nearly a third of attempts when the setup sends mixed signals about whether it's real. Anthropic names the two failures as biased reasoning (discounting evidence that the environment was live) and recklessness (pursuing a narrow goal regardless of harm), and it admits it had never tested a scenario that mixed simulation cues with realism.",
+      "Credit where it's due: publishing transcripts and your own failure rates is more than most labs do. But the takeaway for anyone running agents isn't about Anthropic's evals. If a model will talk itself into believing a live system is a sandbox, your agent's sandbox needs to be enforced at the network layer, not described in the prompt.",
+    ],
+    category: "ai",
+    tags: ["Anthropic", "Claude", "AI Safety", "Agents", "METR"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Anthropic",
+        desc: "Alignment assessment of the four cybersecurity evaluation incidents",
+        url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      },
+      {
+        name: "Anthropic",
+        desc: "The original July 30 disclosure of three evaluation incidents",
+        url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of the fourth incident and Irregular's naming error",
+        url: "https://thehackernews.com/2026/09/anthropic-ai-models-breached-real.html",
+      },
+      {
+        name: "Quartz",
+        desc: "Report on how the January incident was missed in the initial review",
+        url: "https://qz.com/anthropic-fourth-claude-ai-hacking-incident-missed-review-091026",
+      },
+    ],
+  },
+  {
+    id: 491,
+    slug: "doj-probe-nvidia-groq-license-reverse-acquihire-september-2026",
+    title: "DOJ Is Probing Whether Nvidia's Groq License Was a Merger in Disguise",
+    summary: "The Justice Department has sent Nvidia a formal demand for information about its roughly $20 billion Groq licensing deal, the first formal US investigation of the license-plus-hiring structure AI giants have used to avoid merger review.",
+    body: [
+      "Nvidia never bought Groq. That was the whole point, and now the Justice Department wants to know whether it was a point worth making.",
+      "The New York Times reported this week that DOJ antitrust investigators are examining whether Nvidia structured its December deal with Groq to sidestep merger scrutiny, and that the department has sent Nvidia a formal demand for information. Bloomberg and Reuters followed with their own confirmations. Groq and the DOJ didn't comment. Nvidia defended the deal, calling it an example of the American system working as designed.",
+      "Here's what the deal actually was. On December 24, Groq announced a non-exclusive license of its inference technology to Nvidia. Founder Jonathan Ross, president Sunny Madra and other members of the team moved to Nvidia to scale the licensed tech. Groq itself stayed nominally independent under new CEO Simon Edwards, and GroqCloud kept running. The price was reported at about $20 billion (Reuters puts it closer to $17 billion), roughly three times Groq's last private valuation and the biggest check Nvidia has ever written.",
+      "Call it what everyone else calls it: a reverse acquihire. You pay for a license, hire the people who matter, and leave a shell company operating so there's no acquisition to file under Hart-Scott-Rodino. Microsoft did it with Inflection, Google with Character.AI and Windsurf, Amazon with Adept. Regulators grumbled about each one. None of them turned into a formal probe like this.",
+      "The legal question is whether a license plus a mass talent transfer is, functionally, an acquisition that should have been reported. If DOJ says yes, the realistic outcome is a fine, not an unwound deal, since you can't un-hire Jonathan Ross. The bigger effect would be on every deal team currently drafting the next one.",
+      "Groq also wasn't a random target. Its LPU chips were one of the few credible non-GPU options for low-latency inference, which is exactly the market Nvidia needs to own as spending shifts from training to serving. Paying triple the valuation for a non-exclusive license only makes sense if what you're really buying is the absence of a competitor. That's the argument DOJ will be testing, and it's not a hard one to make.",
+    ],
+    category: "tech",
+    tags: ["Nvidia", "Groq", "Antitrust", "DOJ", "AI Chips"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Groq newsroom",
+        desc: "Groq's December 2025 announcement of the non-exclusive licensing agreement",
+        url: "https://groq.com/newsroom/groq-and-nvidia-enter-non-exclusive-inference-technology-licensing-agreement-to-accelerate-ai-inference-at-global-scale",
+      },
+      {
+        name: "Bloomberg",
+        desc: "Report on the DOJ probe into Nvidia's Groq license deal",
+        url: "https://www.bloomberg.com/news/articles/2026-09-10/doj-probes-nvidia-s-license-deal-with-groq-on-antitrust-concerns",
+      },
+      {
+        name: "Reuters via KFGO",
+        desc: "Wire report on the DOJ information demand and Nvidia's statement",
+        url: "https://kfgo.com/2026/09/09/doj-probes-nvidias-licensing-deal-with-ai-startup-groq-nyt-reports/",
+      },
+      {
+        name: "CNBC",
+        desc: "Original December 2025 reporting on the deal's roughly $20 billion price",
+        url: "https://www.cnbc.com/2025/12/24/nvidia-buying-ai-chip-startup-groq-for-about-20-billion-biggest-deal.html",
+      },
+    ],
+  },
+  {
+    id: 492,
+    slug: "apple-iphone-duo-foldable-1999-touch-id-no-telephoto-september-2026",
+    title: "The $1,999 iPhone Duo Drops Face ID and the Telephoto Lens",
+    summary: "Apple's first foldable pairs a 7.6-inch inner screen with a 5.4-inch cover display and an A20 Pro, but it trades Face ID and a dedicated telephoto camera for thinness, and ships October 23.",
+    body: [
+      "Apple's first foldable is real, it's called iPhone Duo, and the 2TB model costs $3,199. The base 256GB version starts at $1,999, with 512GB at $2,199 and 1TB at $2,599.",
+      "The hardware is what the leaks promised. Closed, it's a 5.4-inch phone that Apple says gives you 90 percent of the screen area of an iPhone 18 Pro. Open, it's a 7.6-inch Super Retina XDR panel with a nano-texture finish, and at 5.2mm unfolded it's the thinnest iPhone Apple has made. Folded it's 11.3mm and weighs 254 grams. The A20 Pro sits against a custom vapor chamber, and a dual-battery layout claims up to 24 hours of mixed use. Pre-orders open October 16, and it ships October 23 in more than 70 countries, with 28 more following on October 30.",
+      "Now for what's missing, because that's where the story is.",
+      "There's no Face ID. Unlocking moves to Touch ID in the side button, which Apple last shipped on a flagship iPhone years ago. The camera system is a 48MP main with a 2x crop and a 48MP ultra wide, so no dedicated telephoto, no ProRes or Apple Log recording and no Action button, per Macworld's spec comparison. It's eSIM-only worldwide, which Apple frames as space for battery. That means a phone costing roughly $700 more than the iPhone 18 Pro Max is a step down from it on camera and security hardware.",
+      "None of this is surprising once you look at the thickness numbers. Every millimeter went to the fold, the hinge (more than 100 components, Apple says) and the batteries, and something had to give. Apple chose the parts power users will notice least in a store demo and most after a month.",
+      "The real test is whether iOS 27 makes the big screen worth it. Apple is shipping foldable-specific multitasking and Split View, but iPadOS spent a decade proving that a large iOS screen doesn't automatically become a productive one. If you're an IT team, the practical notes are simpler: plan for Touch ID enrollment in your MDM flows and confirm your carrier's eSIM provisioning before anyone expenses one.",
+    ],
+    category: "tech",
+    tags: ["Apple", "iPhone", "Foldables", "Smartphones", "Mobile"],
+    image: "https://images.unsplash.com/photo-1491933382434-500287f9b54b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-09-11T13:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Apple Newsroom",
+        desc: "Apple's official iPhone Duo announcement with specs, pricing and availability",
+        url: "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      },
+      {
+        name: "Macworld",
+        desc: "Full pricing tiers and a feature-by-feature comparison with the iPhone 18 Pro",
+        url: "https://www.macworld.com/article/2629813/iphone-ultra-folding-design-price-specs-release-date.html",
+      },
+      {
+        name: "Tech Startups",
+        desc: "Daily roundup covering the iPhone Duo launch alongside other September 10 news",
+        url: "https://techstartups.com/2026/09/10/top-tech-news-today-september-10-2026-apple-anthropic-ibm-meta-openai-spacex-more/",
+      },
+    ],
+  },
+  {
     id: 481,
     slug: "microsoft-september-2026-patch-tuesday-966-cves-wormable-dns",
     title: "Microsoft Ships 966 Fixes and 20 Wormable DNS Bugs in One Day",
@@ -44,9 +323,9 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-09-09T08:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Microsoft Security Update Guide",
@@ -91,7 +370,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Chrome Releases",
@@ -464,7 +743,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "BleepingComputer",
@@ -1408,7 +1687,7 @@ export const articles = [
     publishedAt: "2026-09-04T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1459,7 +1738,7 @@ export const articles = [
     publishedAt: "2026-09-04T11:45:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1505,7 +1784,7 @@ export const articles = [
     publishedAt: "2026-09-04T10:15:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1550,7 +1829,7 @@ export const articles = [
     publishedAt: "2026-09-04T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1694,7 +1973,7 @@ export const articles = [
     publishedAt: "2026-09-03T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1740,7 +2019,7 @@ export const articles = [
     publishedAt: "2026-09-03T09:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1791,7 +2070,7 @@ export const articles = [
     publishedAt: "2026-09-03T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1843,7 +2122,7 @@ export const articles = [
     publishedAt: "2026-09-03T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
