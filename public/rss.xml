@@ -6,9 +6,131 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2026 16:21:46 GMT</lastBuildDate>
-    <pubDate>Mon, 14 Sep 2026 16:21:46 GMT</pubDate>
+    <lastBuildDate>Tue, 15 Sep 2026 13:16:30 GMT</lastBuildDate>
+    <pubDate>Tue, 15 Sep 2026 13:16:30 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CCNP Security&apos;s SCOR Exam Got Its First Rewrite Since 2020</title>
+      <link>https://sabr-labs.com/article/cisco-scor-v2-350-701-ccnp-security-blueprint-rewrite-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-scor-v2-350-701-ccnp-security-blueprint-rewrite-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>Cisco</category>
+      <category>CCNP Security</category>
+      <category>SCOR 350-701</category>
+      <category>Certification</category>
+      <category>SSE</category>
+      <description>SCOR v2.0 (350-701) went live on August 27 with a blueprint rebuilt around SSE and cloud-delivered security, and Cisco&apos;s own training for it is only arriving this month.</description>
+      <content:encoded><![CDATA[<p>If you have been grinding through SCOR v1.1 material, stop and check which exam you're actually booked for. Cisco replaced the CCNP Security core exam on August 27, and 350-701 v2.0 is the first real revision of that blueprint since February 2020.</p>
+<p>Six years is a long time in security. The v1.1 blueprint was written when the center of gravity was still the perimeter firewall and the on-prem VPN concentrator. The new one leans into cloud-delivered security, SSE, and the infrastructure patterns that came with AI workloads. Cisco's own guidance is to treat v2.0 as new content rather than a refresh, which is unusually blunt for a vendor that normally sells the upgrade as continuity.</p>
+<p>The other change is structural. SVPN (300-730) is gone, with August 26 as the last day to test. Its VPN content didn't disappear; it was split between the SCOR core and the SNCF firewall concentration. So VPN is no longer something you could route around by picking a different concentration. It's in the core now, and everyone sitting CCNP Security owns it.</p>
+<p>The concentration list also got tidied. SCAZT is now SSCA, exam number 300-740 unchanged, retitled to Designing and Implementing Secure Cloud Access for Users and Endpoints. Two separate firewall courses, SFWIPA and SFWIPF, collapse into one consolidated SNCF track.</p>
+<p>Here's the practical problem. The exam went live in late August, Cisco U. training for v2.0 is landing in September, and the official practice exam isn't expected until the end of the year. Anyone testing in that window is doing it without first-party prep, against a blueprint too new for the third-party study material and question banks to have caught up. That's a genuinely worse position than the usual version transition, where old material at least still mostly maps.</p>
+<p>So the advice is simple: if you were nearly ready on v1.1, you missed that window and the honest move is to re-scope rather than hope for overlap. If you're starting fresh, download the 350-701 v2.0 exam topics PDF from Cisco's learning content site and build your plan off the blueprint itself, not off a course outline written for the old one. And if you can wait until the official training and practice exam are both available, the study experience in December will be meaningfully better than it is today.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepSeek Retired Its Flagship, Then Un-Retired It Days Later</title>
+      <link>https://sabr-labs.com/article/deepseek-v4-1-flash-v4-pro-retirement-reversal-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-v4-1-flash-v4-pro-retirement-reversal-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>DeepSeek</category>
+      <category>Open Weights</category>
+      <category>LLM</category>
+      <category>API</category>
+      <category>Benchmarks</category>
+      <description>DeepSeek routed every V4-Pro API request to the cheaper V4.1-Flash on September 14, then reversed itself and kept V4-Pro running with unchanged billing.</description>
+      <content:encoded><![CDATA[<p>On September 14 at 04:00 UTC, every request to DeepSeek's flagship model started getting answered by a smaller, cheaper one. The company's reasoning was that V4.1-Flash had "comprehensively surpassed" V4-Pro on performance, cost, and speed, so keeping Pro around was a waste of everyone's money.</p>
+<p>Then it walked it back. DeepSeek's API changelog now states that V4 Pro service continues after September 14 with billing unchanged, a reversal the company attributes to user demand. Two announcements, four days, opposite conclusions.</p>
+<p>The model underneath the drama is genuinely interesting. V4.1-Flash landed on September 10 as a 552B-parameter mixture-of-experts model on a new causal encoder-decoder design, with a 1M-token context window, native multimodal vision, and open weights under MIT. DeepSeek's published numbers put it at 90.6 on Terminal-Bench 2.1 and 74.2% on DeepSWE v1.1, up from 82.7 and 54.4 for the previous Flash release in July. Off-peak API pricing runs $0.15 per million uncached input tokens and $0.60 per million output, with cache hits at a third of a cent.</p>
+<p>Those are DeepSeek's own evaluations on DeepSeek's own harness, which is the caveat that applies to every lab's launch post and applies here too. "Our small model beats our big model" is a claim about the benchmarks a company chose to run as much as it is a claim about the models. Coding and agent benchmarks in particular have been saturating fast, and a jump from 54% to 74% on an agentic SWE suite is the kind of result that usually needs third-party reproduction before anyone should rebuild a pipeline around it.</p>
+<p>Set the scores aside and the pricing story still holds up. A 1M-context open-weights model at these rates puts real pressure on the mid-tier of the closed-model market, which is where most production traffic actually lives. Cheap and good enough beats excellent and metered for an enormous share of real workloads.</p>
+<p>The part that should worry people building on this is not the model, it's the operational whiplash. Silently rerouting a named model endpoint to a different model, even a better one, breaks the contract developers thought they had. Anyone who had evaluated, tuned prompts against, and shipped on `deepseek-v4-pro` woke up on the 14th running something else. Pin your versions, log which model actually served each response, and treat any provider's model-name aliasing as a variable you have to monitor rather than a detail you can ignore.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A $159 Board Breaks Intel and AMD Confidential Computing</title>
+      <link>https://sabr-labs.com/article/ddrop-interposer-intel-tdx-amd-sev-snp-attestation-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ddrop-interposer-intel-tdx-amd-sev-snp-attestation-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Confidential Computing</category>
+      <category>Intel</category>
+      <category>AMD</category>
+      <category>Hardware Security</category>
+      <category>Cloud</category>
+      <description>DDRop silently drops memory writes with a cheap interposer, letting someone with physical access read confidential VM memory and forge attestation on Intel TDX and AMD SEV-SNP.</description>
+      <content:encoded><![CDATA[<p>Confidential computing is sold on a single promise: run your workload in someone else's data center without having to trust the person who owns the building. A new attack called DDRop takes a swing at exactly that promise, and it costs about $159 in hardware.</p>
+<p>Researchers from KU Leuven, ETH Zurich, Durham University, and Google built an interposer that sits between the processor and a memory module. It forces errors onto the command bus and cuts the wire the memory would normally use to report those errors back. The result is that write commands are silently discarded. The CPU believes the write landed. The memory never performed it, so the next read returns stale encrypted data that still passes integrity checks, because from the hardware's point of view nothing was ever corrupted.</p>
+<p>From there the researchers demonstrated the list you would least like to read: reading memory from a victim virtual machine, flipping a protected guest into debug mode, manipulating page tables, and forging attestation measurements. That last one matters most. Attestation is the mechanism a remote party uses to verify that a confidential VM is genuine and unmodified. If it can be forged, the cryptographic proof at the center of the model stops proving anything.</p>
+<p>Intel TDX, Intel Scalable SGX, and AMD SEV-SNP are all affected. The work is scheduled for presentation at ACM CCS in November.</p>
+<p>Both vendors responded by pointing at their threat models. AMD said the attack falls outside the scope of what it publishes protections against, because it requires physical access to the machine. Intel took the same line and does not plan to assign CVEs, while noting that an optional cryptographic-integrity mode on some processors blocks parts of the attack.</p>
+<p>That answer is technically consistent and commercially awkward. The physical-access scenario is not hypothetical here, because the party with physical access is the cloud operator, and the entire reason customers pay for TDX and SEV-SNP is to stop trusting the cloud operator. Saying the operator is out of scope is very close to saying the feature only works against the threats you weren't worried about.</p>
+<p>There is no patch. The suggested mitigations are all software-side and unsatisfying: restrict the memory-management features the attack depends on, verify that important writes actually completed, and check for interposers during boot. If you are running regulated workloads on confidential VMs specifically to satisfy an auditor, this research is worth reading before your next control review, because "the hardware guarantees it" now needs a footnote.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>One Hosting Account Can Take Root on LiteSpeed Shared Servers</title>
+      <link>https://sabr-labs.com/article/litespeed-enterprise-6-3-7-shared-hosting-root-escalation-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/litespeed-enterprise-6-3-7-shared-hosting-root-escalation-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>LiteSpeed</category>
+      <category>Shared Hosting</category>
+      <category>Privilege Escalation</category>
+      <category>cPanel</category>
+      <category>Patch</category>
+      <description>LiteSpeed Web Server Enterprise before 6.3.7 lets a single low-privilege site escape account isolation and reach root, and the fix shipped with no CVE and almost no detail.</description>
+      <content:encoded><![CDATA[<p>If you run shared hosting on LiteSpeed Enterprise, one customer on one plan can currently become root on the machine that serves everybody else.</p>
+<p>The flaw affects LiteSpeed Web Server Enterprise builds before 6.3.7, which shipped on September 11. It is a privilege escalation that lets a low-privilege website user break out of per-account isolation, including CageFS, and reach root on the host. In a shared hosting context, that is not a privilege escalation so much as a tenancy collapse: every site, every database credential, and every customer's files on that box sit inside the blast radius.</p>
+<p>There is no CVE. No CVSS score. cPanel and LiteSpeed have not said who found it or how it works, and the advisory offers no indicators of compromise. For a product whose entire job is keeping untrusted tenants apart, releasing a root-escape fix with no technical detail and no detection guidance is a choice worth pushing back on. Hosting operators cannot answer "were we hit" from what has been published.</p>
+<p>This is also the third root-access problem across LiteSpeed's server and its cPanel plugin since May. The previous two were in the cPanel plugin, and both were exploited in the wild before most operators patched. That history is the reason to treat the silence here as a reason to move faster, not slower.</p>
+<p>Update now with `/usr/local/lsws/admin/misc/lsup.sh -f -v 6.3.7`. Don't wait on the auto-updater, which has been running behind. There are no workarounds, so a server you cannot update today is a server you should be planning to migrate off.</p>
+<p>Then look at the accounts. A root-capable tenant escape means the interesting artifacts are new cron entries, unexpected setuid binaries, SSH keys added outside your provisioning flow, and fresh accounts in the panel. Those are boring places to look, which is exactly why they keep working.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Mass-Scanning for Exposed Vite Dev Servers</title>
+      <link>https://sabr-labs.com/article/vite-cve-2026-39364-dev-server-cloud-credential-scanning-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vite-cve-2026-39364-dev-server-cloud-credential-scanning-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Vite</category>
+      <category>Cloud Security</category>
+      <category>Credential Theft</category>
+      <category>DevOps</category>
+      <category>CVE</category>
+      <description>A campaign tracked by F5 Labs is abusing CVE-2026-39364 to pull .env files, cloud keys, and Terraform state out of Vite development servers that were never meant to face the internet.</description>
+      <content:encoded><![CDATA[<p>Your dev server was never supposed to be reachable from the internet. Somebody's scanner disagrees, and it is now walking the filesystem of every Vite instance it can find.</p>
+<p>The flaw is CVE-2026-39364, CVSS 8.2. Vite's dev server has a `server.fs.deny` list meant to block requests for sensitive files, but appending query parameters like `?raw`, `?import&raw`, or `?import&url&inline` to a request against the `/@fs/` endpoint slips past the check. The server then returns the file as plaintext. No authentication, no exploit chain, just a GET request with the right suffix.</p>
+<p>F5 Labs documented the scanning activity, which ran through August and targeted exactly what you would expect: `.env` files, AWS credential files, Azure profiles, `terraform.tfstate`, plus `/etc/passwd` and `/proc/self/environ` for good measure. Terraform state is the quiet disaster in that list. It frequently holds provider credentials and a complete map of the infrastructure an attacker just gained keys to.</p>
+<p>The operators put real effort into blending in. Requests carried forged User-Agent strings impersonating Googlebot, ClaudeBot, and GPTBot, spoofed X-Forwarded-For and X-Real-IP headers, and came from Google Cloud address space in the 34.x and 35.x ranges, with additional traffic out of the U.S., Belgium, the Netherlands, Singapore, and Taiwan. If your WAF allowlists crawler user-agents, you allowlisted this.</p>
+<p>Three conditions have to line up for a host to be exploitable: the dev server is exposed with `--host` or through a sloppy Docker port mapping, sensitive files sit inside a directory listed in `server.fs.allow`, and those files are covered by a `server.fs.deny` pattern. That sounds narrow. In practice it describes a huge number of containerized dev environments, preview deployments, and staging boxes that someone stood up for an afternoon and forgot.</p>
+<p>Update Vite, then go find out whether you were already read. Grep your access logs for `/@fs/` requests carrying `raw`, `import`, or `inline` parameters. If you find hits, rotate every credential that lived in the reachable tree rather than trying to reason about which specific file the scanner pulled.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Send an Email, Get Root: Cisco&apos;s Secure Email Gateway Zero-Day</title>
+      <link>https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76461-root-rce-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76461-root-rce-september-2026</guid>
+      <pubDate>Tue, 15 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>Email Security</category>
+      <category>RCE</category>
+      <description>CVE-2026-76461 lets an unauthenticated attacker run commands as root on a Cisco Secure Email Gateway by sending a crafted message, and CISA set a September 17 federal patch deadline.</description>
+      <content:encoded><![CDATA[<p>The attack requires no credentials, no user interaction, and no clicking. An attacker sends a message to an address that routes through an affected Cisco Secure Email Gateway, and the appliance that was supposed to be inspecting that message executes the attacker's commands as root.</p>
+<p>Cisco tracks it as CVE-2026-76461, CVSS 9.8. The bug lives in the email parsing logic of AsyncOS, where insufficient input validation lets SQL statements embedded in a crafted message reach the backend and, from there, the underlying operating system. Physical and virtual appliances are both affected, in any configuration. Secure Email and Web Manager and Secure Web Appliance are not.</p>
+<p>This was a zero-day. Cisco's PSIRT says it learned of the vulnerability from exploitation activity in September, not from a researcher report, which is the sequence nobody wants. CISA added the CVE to the Known Exploited Vulnerabilities catalog on September 14 and gave federal civilian agencies until September 17 to patch. A three-day clock on KEV is the agency's way of saying this is already bad.</p>
+<p>Fixes are out in the 15.5.5, 16.0.4, and 16.5.0-780 trains. There are no workarounds. You cannot configure your way out of this one, because the vulnerable code path runs before any policy you would normally use to filter a message.</p>
+<p>What Cisco has not published is nearly as interesting as what it has. No threat actor, no campaign name, no indicators of compromise, no detail on how many appliances were hit. For a flaw already in KEV, that is a thin advisory, and it leaves defenders doing forensics without a reference sample.</p>
+<p>Start with mail_logs and look for SQL fragments in message fields that should never contain them. Then accept the uncomfortable part: an attacker who reached root owns the logging on that box. Anything you find locally is a floor, not a ceiling. Firewall logs, netflow, and outbound DNS collected off the appliance are the only evidence a root-level intruder could not quietly revise.</p>
+<p>Email gateways sit at the edge by design, accept untrusted input by definition, and run as one of the most privileged services on the network. That combination has produced a string of critical bugs across every vendor in this category over the past two years. If yours is internet-facing and unpatched this morning, treat it as compromised until the logs say otherwise.</p>]]></content:encoded>
+    </item>
     <item>
       <title>SoftBank Borrowed $11.87 Billion for OpenAI as Its Stock Fell 11%</title>
       <link>https://sabr-labs.com/article/softbank-upsized-11-87-billion-loan-openai-funding-september-2026</link>
@@ -919,131 +1041,6 @@
 <p>US-side notifications come with 12 months of Experian IdentityWorks, with enrollment open through the end of the year; in Canada, Thomson Reuters Canada is offering TransUnion monitoring with a dedicated call center. Credit monitoring is the standard reflex after a breach, and it is close to useless here. A monitoring service tells you when someone opens a line of credit in your name. It does nothing at all about a sealed juvenile record or a redacted witness address sitting in an attacker's archive, because that harm doesn't show up on a credit file.</p>
 <p>There's a structural problem underneath this incident. Court systems across a dozen jurisdictions ran their case management through one vendor, so one compromise at that vendor reached all of them at once. Every state that bought C-Track made a reasonable individual procurement decision, and collectively they built a single point of failure across state lines and an international border.</p>
 <p>If you work in or around any of the affected court systems, the practical action is not enrolling in credit monitoring. It's asking your clerk of courts which record classes were in the exported set, and whether any sealed matters in your jurisdiction now need to be treated as compromised.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CISA Adds Seven Exploited Bugs, and Four Are Developer Plumbing</title>
-      <link>https://sabr-labs.com/article/cisa-kev-seven-flaws-litellm-kestra-starlette-jfrog-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisa-kev-seven-flaws-litellm-kestra-starlette-jfrog-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 10:15:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CISA KEV</category>
-      <category>LiteLLM</category>
-      <category>Starlette</category>
-      <category>JFrog Artifactory</category>
-      <category>Supply Chain</category>
-      <description>LiteLLM, Kestra, Starlette, and JFrog Artifactory all landed in the KEV catalog this week, which says attackers have moved from the edge to the build pipeline.</description>
-      <content:encoded><![CDATA[<p>CISA added seven vulnerabilities to the Known Exploited Vulnerabilities catalog on Wednesday. Two of them are the SonicWall SMA1000 pair everyone already spent the week patching. The other five are more interesting, because four of them are not appliances at all. They're the software your engineers install with a package manager and then forget about.</p>
-<p>The full list: CVE-2026-9586 in Sangoma Switchvox (SQL injection), CVE-2026-48710 in Starlette (HTTP request/response smuggling), CVE-2026-49869 in Kestra OSS (OS command injection), CVE-2026-59822 in BerriAI's LiteLLM (improper authentication), CVE-2026-82329 in JFrog Artifactory (improper authentication), plus SonicWall's CVE-2026-83548 and CVE-2026-83549.</p>
-<p>Look at what LiteLLM is for a second. It's the proxy a lot of teams stood up in the last two years to sit between their applications and every model provider they use, which means it holds the API keys for all of them in one place. An authentication bypass in that box isn't a bug in a side service. It's a key vault with a front door problem, and the keys inside bill by the token.</p>
-<p>Starlette is the one with the widest blast radius and the lowest name recognition. Most people running it don't know they are, because it's the ASGI layer underneath FastAPI. Request smuggling in that position means a front-end proxy and the application behind it disagree about where one HTTP request ends and the next begins, which is how attackers get requests past authentication checks that never saw them.</p>
-<p>Reporting on the exploitation activity describes attackers using the Switchvox and Artifactory flaws to drop reverse shells and mint admin tokens, then enumerating users, groups, credential sets, and federated access relationships. That last part matters more than the shell does. Artifactory sits in the middle of the build pipeline and typically federates out to cloud accounts and CI systems, so an admin token there is a map of everywhere else you can go.</p>
-<p>CISA's alert points federal agencies at Binding Operational Directive 26-04 for remediation timelines. The rest of us get the catalog as a prioritization signal, which is really what KEV is good for: proof that someone is already using the bug, not a theoretical CVSS argument about whether they might.</p>
-<p>The practical takeaway is a question about inventory. You almost certainly know whether you run SonicWall SMA1000 appliances. Do you know, this afternoon, which of your services pull in Starlette transitively, or which team stood up a LiteLLM proxy last quarter on a VM nobody put in the asset database? Those are the two answers this KEV batch is actually testing.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Broadcom&apos;s AI Silicon Now Outsells Everything Else It Makes</title>
-      <link>https://sabr-labs.com/article/broadcom-q3-fy2026-ai-revenue-16-7-billion-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/broadcom-q3-fy2026-ai-revenue-16-7-billion-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Broadcom</category>
-      <category>AI Chips</category>
-      <category>Semiconductors</category>
-      <category>Earnings</category>
-      <category>Data Center</category>
-      <description>AI semiconductor revenue hit $16.7 billion in Q3, 56% of company revenue, and management is guiding to roughly $230 billion in fiscal 2028.</description>
-      <content:encoded><![CDATA[<p>Broadcom is no longer a networking company that also does AI chips. As of this quarter it's an AI chip company that also does networking, and the crossover happened faster than almost anyone modeled.</p>
-<p>Q3 fiscal 2026 revenue came in at $29.6 billion, up 86% year over year. Net income more than tripled to $13.09 billion, or $2.68 per share, against $4.14 billion and 85 cents a year ago. The number driving all of it is AI semiconductor revenue: $16.7 billion for the quarter, up 221%, and now 56% of everything the company sells.</p>
-<p>The guidance is where it gets genuinely strange. Management is calling for $21.7 billion in AI semiconductor revenue in Q4 alone, roughly $58 billion for the full fiscal year, then approximately $115 billion in fiscal 2027 and around $230 billion in fiscal 2028. To put that last figure in context, it would make Broadcom's AI segment by itself larger than the entire annual revenue of nearly every other semiconductor company on earth.</p>
-<p>Broadcom's business here is custom accelerators and the networking silicon that stitches them together, sold to a short list of buyers building their own chips rather than renting Nvidia's. The company named Google, Anthropic, and OpenAI among the customers behind long-term agreements. That's the strength and the risk in one sentence. Custom silicon means multi-year design wins that competitors can't unseat mid-cycle, and it also means a handful of customers can move the entire segment by changing their minds about a roadmap.</p>
-<p>Treat the fiscal 2028 projection with the skepticism it deserves. Some portion of it reflects committed orders, and some portion reflects what management believes those customers will keep buying two years out, in a market where the buyers are themselves spending ahead of demand they haven't proven yet. Broadcom's numbers are only as good as the assumption that AI capital spending compounds through 2028 without a pause.</p>
-<p>For anyone working in a data center, the operational read is simpler than the financial one. Custom accelerators from a merchant vendor mean more heterogeneous fleets, more vendor-specific interconnect, and networking gear that is increasingly designed around one workload. The uniform x86-and-Ethernet rack is getting rarer every quarter.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepMind&apos;s WeatherNext 3 Skips the Analysis Step Entirely</title>
-      <link>https://sabr-labs.com/article/google-deepmind-weathernext-3-hourly-5km-forecasts-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-deepmind-weathernext-3-hourly-5km-forecasts-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 08:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google DeepMind</category>
-      <category>Weather Forecasting</category>
-      <category>Machine Learning</category>
-      <category>Earth Engine</category>
-      <category>Benchmarks</category>
-      <description>Google&apos;s new weather model ingests raw satellite and station observations rather than a processed analysis, producing hourly 15-day forecasts at 5-kilometer resolution.</description>
-      <content:encoded><![CDATA[<p>The interesting thing about WeatherNext 3 isn't the resolution. It's where the data comes from.</p>
-<p>Google DeepMind and Google Research released the model this week, and the headline specs are real: 15-day global probabilistic forecasts across 64 ensemble members, refreshed hourly, with key surface variables like temperature and moisture at 5-kilometer resolution. Other surface variables land at 10 kilometers and atmospheric variables such as wind speed at 25 kilometers. Google claims up to 50% better precipitation forecasting a day or more out.</p>
-<p>Previous AI weather models, DeepMind's included, mostly learned from reanalysis data. That's the cleaned, gridded, physics-assimilated product that national weather agencies generate after the fact, and training on it means an AI model inherits both the strengths and the built-in assumptions of the numerical system that produced it. WeatherNext 3 feeds real-time satellite observations directly into the model alongside that analysis data, and trains on sparse weather station readings as well.</p>
-<p>That's a meaningful architectural shift. Skipping straight from observation to forecast removes a processing stage that adds latency and smooths away local detail, which is exactly the detail that matters if you're trying to predict whether it rains on a specific city block in six hours.</p>
-<p>The accuracy claim has some independent support. WeatherNext 3 currently sits at the top of Operational WeatherBench, a live leaderboard run by the AI weather startup Brightband that scores both AI and conventional models against what actually happened. Live evaluation is a much harder test than a benchmark on a frozen historical set, and it's the right thing to be judged on.</p>
-<p>Google is wiring the model into Search, the Gemini app, Google Maps, and the Maps Platform Weather API, and the underlying data is queryable through BigQuery and Earth Engine or downloadable from Cloud Storage in Zarr format. That last part is the piece researchers will care about, because a forecast you can only see through a consumer app is not something anyone can verify.</p>
-<p>Worth keeping in view: national meteorological agencies still run the observation networks these models learn from. Satellites, radiosondes, buoys, and surface stations are public infrastructure, funded by governments, and a private model trained on that feed is a layer on top of it, not a replacement for it. If the observation budget shrinks, so does everything built above it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Moonshot AI Files Confidentially for a $3 Billion Hong Kong IPO</title>
-      <link>https://sabr-labs.com/article/moonshot-ai-hong-kong-ipo-filing-50-billion-valuation-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/moonshot-ai-hong-kong-ipo-filing-50-billion-valuation-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Moonshot AI</category>
-      <category>IPO</category>
-      <category>Hong Kong</category>
-      <category>China Tech</category>
-      <category>AI Funding</category>
-      <description>The Kimi model maker is reportedly seeking to raise $3 billion at a $50 billion valuation, after restructuring from an offshore holding company to an onshore China domicile.</description>
-      <content:encoded><![CDATA[<p>Moonshot AI reportedly filed confidentially for a Hong Kong listing on Wednesday, targeting a raise of about $3 billion against a valuation near $50 billion in its ongoing pre-IPO round. Goldman Sachs, CICC, and Deutsche Bank are said to be running the deal.</p>
-<p>Start with the arithmetic, because it's the whole story. Moonshot's Kimi K3 is reported to be driving roughly $300 million in annualized revenue. A $50 billion valuation against that run rate is somewhere north of 150 times revenue. Software companies have carried triple-digit multiples before, usually briefly and usually on the way to a correction, and this one is being asked of public market investors rather than late-stage private funds who can hold through a repricing.</p>
-<p>The structural detail that got less attention is more consequential than the number. Before filing, Moonshot unwound its offshore incorporation and moved to an onshore China domicile. Chinese tech companies spent two decades building variable interest entity structures in the Cayman Islands specifically so foreign capital could reach them and so a US listing stayed possible. Undoing that is a decision, not paperwork. It closes the door on a New York listing and signals that the company would rather be legible to Beijing regulators than accessible to American investors.</p>
-<p>Moonshot was founded in 2023 by the researcher Yang Zhilin, and the Kimi line has been one of the few Chinese model families to build a real consumer following at home rather than existing mainly as a benchmark entry.</p>
-<p>The comparison set is unflattering, though. DeepSeek has been valued around $74 billion and Z.AI around $66 billion, both above Moonshot. If the point of listing first is to claim the capital before your competitors do, the pricing suggests Moonshot is going public from third position in its own market.</p>
-<p>A confidential filing also means nobody outside the deal has seen the financials. The revenue figure, the valuation, and the raise target are all coming through people briefed on the process rather than a prospectus. Until the document goes public, treat every number here as an interested party's estimate.</p>
-<p>What to actually watch: whether the listing clears at the reported valuation or gets marked down before pricing. Hong Kong has been the venue of choice for Chinese AI companies this year, and a haircut on the first big model-lab IPO would set the anchor for everyone lining up behind it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco Retired SVPN 300-730 and Replaced SCOR With v2.0</title>
-      <link>https://sabr-labs.com/article/cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-svpn-300-730-retired-scor-v2-ccnp-security-changes-2026</guid>
-      <pubDate>Thu, 03 Sep 2026 15:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>CCNP Security</category>
-      <category>Certification</category>
-      <category>SCOR</category>
-      <category>Exam Updates</category>
-      <description>The VPN concentration exam is gone with no replacement, SCOR v1.1 stopped being testable on August 26, and the official v2.0 training only lands this month.</description>
-      <content:encoded><![CDATA[<p>Cisco retired SVPN. If you were studying for 300-730, the last day to sit it was August 26, and there is no replacement concentration exam.</p>
-<p>The same date closed out SCOR v1.1. Version 2.0 went live August 27, and per Cisco's learning blog the new blueprint is built around cloud-delivered security, secure service edge and AI-era infrastructure rather than the 2020-era product set the old version was organized around. That's a real rewrite, not a renumber.</p>
-<p>VPN content didn't disappear, it moved. Fundamentals stay in the core exam, while configuring VPNs on firewalls shifts into SNCF. So the skill still counts toward a CCNP Security; it just no longer has its own badge. Read that how you like, but the honest reading is that Cisco no longer thinks remote-access VPN is a specialty. SSE ate it.</p>
-<p>Two more changes worth knowing. SCAZT is now SSCA, with exam number 300-740 unchanged, and its scope narrowed to secure cloud access built on SSE and Cisco Secure Access, with the security operations and incident response material removed. SISE got a light refresh, and SDSI is unchanged.</p>
-<p>The timing problem is training. SCOR v2.0 training and new ICSA Secure Access training arrive in September, with the consolidated SNCF course (previously two separate five-day courses), updated SSCA training and a SCOR practice exam not landing until later in the year. Anyone with a September exam date is studying a blueprint whose official material is shipping the same month. That gap is where third-party study guides get sold, and where they get things wrong.</p>
-<p>Cisco's post also doesn't spell out what happens to candidates caught mid-path, the people who passed SVPN but haven't finished the core. Standard practice would credit a passed exam for its normal validity window, but standard practice is not a published policy. Check your certification tracker before you assume, and open a case with Cisco if the tracker disagrees with what you expected.</p>
-<p>If you're choosing a concentration right now, SNCF and SSCA are where Cisco is putting its content budget for the rest of 2026. That's usually a better signal about where a track is going than the blueprint itself.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Texas Froze Data Center Grid Hookups After Requests Hit 474 GW</title>
-      <link>https://sabr-labs.com/article/texas-ercot-data-center-interconnection-freeze-474-gw-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/texas-ercot-data-center-interconnection-freeze-474-gw-september-2026</guid>
-      <pubDate>Thu, 03 Sep 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Data Centers</category>
-      <category>ERCOT</category>
-      <category>Energy</category>
-      <category>Texas</category>
-      <category>AI Infrastructure</category>
-      <description>ERCOT&apos;s interconnection queue is more than five times the record peak demand Texas has ever served, and most of it may not be real.</description>
-      <content:encoded><![CDATA[<p>Four hundred seventy-four gigawatts. That's what sits in ERCOT's interconnection queue from data centers and other large loads, and it is more than five times the highest peak demand Texas has ever actually served.</p>
-<p>Governor Greg Abbott's August 3 directive froze new grid connections for those facilities pending a verification and audit process, with the Public Utility Commission of Texas and ERCOT running it. Roughly 90% of the queue is data centers. In 2023 the same queue held about 48 gigawatts. Texas is the first major hub to stop and count.</p>
-<p>The industry term for the gap is ghost demand. Filing an interconnection request costs very little, so developers file many of them, at multiple utilities, for sites they may never build, largely to hold queue position while they shop for customers and financing. The 474 number isn't demand. It's optionality, priced at roughly nothing.</p>
-<p>The audit asks the questions that separate the two. Does the project bring its own generation or lean on the grid? What does it do to water, and how does that square against community supply? Is it depending on tax abatements, grants or other public money? Abbott's language was blunt: projects that fail the verification and audit process must be denied.</p>
-<p>The freeze has already rippled into planning. ERCOT delayed its Batch Zero transmission planning review and went to its August 20 open meeting seeking a good-cause exemption, because you cannot plan transmission against a number you don't believe. Pennsylvania moved in the same direction on August 18, when Governor Josh Shapiro signed an order adding stricter permitting for projects at 25 megawatts and above along with disclosure of project plans and end users. Reuters read the two together on September 1 as the start of a national reckoning, which sounds about right.</p>
-<p>The industry pushback, fairly summarized by Data Center Coalition executive vice president Dan Diorio urging the PUCT and ERCOT to move swiftly given the investment and jobs at stake, is a real concern that dodges the actual problem. Nobody is arguing the queue should be slow. The argument is that a free queue fills with speculation, and then grid operators, transmission planners and ratepayers all commit capital against a fiction.</p>
-<p>The thing to watch is whether Texas attaches a financial commitment to queue position. Deposits that hurt, forfeited on withdrawal, would drain the ghost demand out of that 474 faster than any audit. Whether the PUCT is willing to do that to the state's fastest-growing industry is the actual question here.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
