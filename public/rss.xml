@@ -6,9 +6,113 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Sep 2026 13:16:30 GMT</lastBuildDate>
-    <pubDate>Tue, 15 Sep 2026 13:16:30 GMT</pubDate>
+    <lastBuildDate>Wed, 16 Sep 2026 16:49:20 GMT</lastBuildDate>
+    <pubDate>Wed, 16 Sep 2026 16:49:20 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Mandiant: Hijacked AI Coding Session Spread Shai-Hulud to 100 Repos</title>
+      <link>https://sabr-labs.com/article/mandiant-ai-risk-report-coding-assistant-shai-hulud-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mandiant-ai-risk-report-coding-assistant-shai-hulud-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Mandiant</category>
+      <category>Shai-Hulud</category>
+      <category>AI Coding Assistants</category>
+      <category>Supply Chain</category>
+      <category>Prompt Injection</category>
+      <category>AI Agents</category>
+      <description>Mandiant&apos;s AI Risk and Resilience 2026 report documents an intrusion where an attacker used a developer&apos;s live AI assistant session to plant a poisoned package, steal GitHub tokens and push the Shai-Hulud worm through about 100 internal repositories.</description>
+      <content:encoded><![CDATA[<p>The developer didn't click a phishing link. Their AI coding assistant recommended a package, and they accepted it.</p>
+<p>That's the heart of the lead case study in Mandiant's AI Risk and Resilience 2026 report, published this week with Google Threat Intelligence Group. An attacker who had already compromised a SaaS provider took over an active AI coding-assistant session on one of its developer workstations. The assistant, which the developer treated as a trusted helper, suggested installing an external package the attacker had poisoned. Once it was installed, the attacker dropped an infostealer through a malicious PyPI package, harvested GitHub OAuth tokens and released the self-propagating Shai-Hulud worm into roughly 100 internal repositories. A package in the company's own official namespace was poisoned too, which caused a second round of infections.</p>
+<p>Mandiant doesn't name the victim, the assistant, or when it happened. It also doesn't explain how the session was hijacked, which is the detail defenders most want. That gap is frustrating, but the pattern is still clear enough to act on.</p>
+<p>The attack didn't need a novel exploit. It needed the assistant's credibility. Developers have spent years learning to be suspicious of random links, and far less time learning to question a dependency suggestion that shows up inside their editor with confident formatting. Worms like Shai-Hulud feed on exactly that: once one developer's tokens are stolen, the worm uses them to spread to everything that developer can push to.</p>
+<p>The rest of the report reads like an incident log from teams that shipped agents before they built guardrails. One accounting agent got stuck in a loop and fired off more than 15,000 expensive API calls in under an hour, running up about $50,000 in cloud charges and disrupting real transactions. In a red-team exercise, testers talked an internal repo-and-CI assistant into believing they were running an authorized security test; it handed over a GitHub token that let them clone sensitive repositories to an outside account. Mandiant still ranks prompt injection as the top attack vector against enterprise AI.</p>
+<p>Mandiant's fixes are unglamorous and correct. Validate every AI-recommended dependency against checksums and an allowlist. Keep long-lived API keys and OAuth tokens out of reach of editor extensions and agents. Route package installs through an internal proxy repository instead of letting workstations pull straight from public registries.</p>
+<p>One more we'd add: put hard spending and rate limits on every agent's cloud identity. A $50,000 loop is a budget alert that nobody set up.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Forged Admin Tokens Hit WSO2 API Manager Through CVE-2026-5430</title>
+      <link>https://sabr-labs.com/article/wso2-api-manager-cve-2026-5430-jwt-bypass-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wso2-api-manager-cve-2026-5430-jwt-bypass-exploited-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 15:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WSO2</category>
+      <category>CVE-2026-5430</category>
+      <category>JWT</category>
+      <category>API Security</category>
+      <category>Active Exploitation</category>
+      <description>watchTowr&apos;s honeypots caught attackers sending JWTs with built-in admin rights on September 13, targeting a WSO2 signature-bypass flaw that was patched months ago.</description>
+      <content:encoded><![CDATA[<p>Somebody is minting their own administrator tokens for WSO2 API Manager. watchTowr says its honeypot network started catching forged JSON Web Tokens with admin privileges baked in on September 13, all aimed at CVE-2026-5430.</p>
+<p>The bug is about as bad as authentication flaws get. WSO2's advisory (WSO2-2026-5328) says JWT verification can be bypassed when a token is signed with an unsupported algorithm. In plain terms, the gateway doesn't properly reject a token it can't actually verify, so an attacker can write whatever claims they want and walk in. WSO2 rates it CVSS 10.0 for multi-tenant setups and 9.8 for single-tenant ones.</p>
+<p>Affected builds cover a lot of ground: API Manager 4.1.0 through 4.6.0, plus API Control Plane, Traffic Manager and Universal Gateway 4.5.0 and 4.6.0. The Hacktron team found and reported it.</p>
+<p>Why this matters more than a typical admin-panel bypass: an API manager sits in front of your internal services by design. A forged admin token gets an attacker every registered application's consumer keys and secrets, the backend endpoints those apps talk to, and the credentials used to reach them. It's a map of your internal APIs with the keys taped to it.</p>
+<p>The fix isn't new. WSO2 shipped patches in the spring and published its advisory on May 3. Open-source users need the changes from carbon-apimgt pull request 13752 and product-apim pull request 14167; subscription customers should move to the listed update levels, which range from Update 21 on API Manager 4.6.0 to Update 257 on 4.1.0.</p>
+<p>So the exploitation wave is mostly punishing teams that treat middleware as set-and-forget. If you run WSO2 and haven't patched since April, assume exposure. Patch first, then rotate consumer secrets and backend credentials stored in the gateway, and review admin-level API calls in your logs going back at least to September 13.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pixel Modem Bug CVE-2026-58704 Exploited, Lands in CISA&apos;s KEV</title>
+      <link>https://sabr-labs.com/article/google-pixel-modem-cve-2026-58704-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-pixel-modem-cve-2026-58704-exploited-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 14:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Google Pixel</category>
+      <category>CVE-2026-58704</category>
+      <category>Android</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <description>Google&apos;s September Pixel bulletin fixes a remotely reachable modem permission bypass it says may be under limited, targeted exploitation, and CISA added it to the KEV catalog on September 16.</description>
+      <content:encoded><![CDATA[<p>If you manage Pixel phones, check the patch level today. It needs to read 2026-09-05 or later.</p>
+<p>Google's September Pixel bulletin, published September 15, fixes CVE-2026-58704, a permission bypass in the cellular modem caused by a logic error. Google classifies it as a high-severity elevation of privilege (CVSS 8.0), but the description is the part that should get your attention: remote escalation with no extra execution privileges and no user interaction needed. The bulletin says there are indications it "may be under limited, targeted exploitation."</p>
+<p>CISA added it to the Known Exploited Vulnerabilities catalog a day later, on September 16.</p>
+<p>Google isn't saying who's using it or against whom. That wording (limited, targeted) usually points to commercial spyware or state-backed operators going after specific people rather than a broad criminal campaign. Baseband bugs are prized for exactly that work because the modem processes attacker-controlled radio traffic before Android's own defenses get a say. Don't read the "high" severity label as a reason to wait.</p>
+<p>The CVE didn't arrive alone. The same bulletin covers well over 100 Pixel-specific fixes, with a large share rated critical across components like the bootloader, IMS, TEE and the BigOcean video codec.</p>
+<p>For individuals, the fix is simple: Settings, System, Software updates, and reboot. For fleets, pull a compliance report from your MDM and look for stragglers, especially older Pixels close to end of support, and anyone in a role that makes them an interesting target. Journalists, executives and people who travel to high-risk regions should be first in line.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Shanghai AI Lab&apos;s Free Atria Dawn Tops BrowseComp, Trails at Coding</title>
+      <link>https://sabr-labs.com/article/shanghai-ai-lab-atria-dawn-preview-744b-open-agent-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/shanghai-ai-lab-atria-dawn-preview-744b-open-agent-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Shanghai AI Lab</category>
+      <category>Atria Dawn</category>
+      <category>Open Weights</category>
+      <category>AI Agents</category>
+      <category>Benchmarks</category>
+      <category>GLM-5.2</category>
+      <description>Atria Dawn Preview, an MIT-licensed agent model built on Z.ai&apos;s 744B GLM-5.2 base, edges GPT-5.6 Sol on BrowseComp but falls well behind Claude Opus 5 on SWE-bench Pro and Terminal-Bench.</description>
+      <content:encoded><![CDATA[<p>There was no launch event, no blog post and no price sheet. Shanghai AI Laboratory just put a 744-billion-parameter agent model on Hugging Face on September 11, added an FP8 checkpoint the next day and followed with a technical report on September 14.</p>
+<p>The model is Atria Dawn Preview. It's a mixture-of-experts model post-trained on Z.ai's GLM-5.2 base with a 256K-token context window, and it ships under the MIT license, so commercial use is allowed. The lab also runs a hosted API that speaks the Chat Completions, Messages and Responses formats, which makes it close to a drop-in swap for teams already wired to OpenAI or Anthropic clients.</p>
+<p>The headline number is BrowseComp, the web-research benchmark: 92.5, according to the model card, against 92.2 for GPT-5.6 Sol, 91.2 for Kimi K3 and 90.8 for Claude Opus 5. That's a real result for an open-weights model. It's also a margin of three-tenths of a point on a lab-reported figure, which is well inside the range where prompt scaffolding and run-to-run variance can flip the order.</p>
+<p>The same model card is refreshingly honest about where Atria loses, and the losses are bigger than the wins. On SWE-bench Pro it scores 59.6 to Claude Opus 5's 74.7. On Terminal-Bench 2.1 it's 78.3 against 90.2. It also trails on DeepResearch Bench II and a τ³-Bench banking task. So this is a strong search-and-tool-use agent, not a general frontier coder.</p>
+<p>That split tracks how it was trained. The lab describes a pipeline that grounds tool use in executable environments with verifiable outcomes, which naturally favors tasks like browsing and function calling where success is easy to check.</p>
+<p>The practical catch is hardware. Self-hosting a model this size means a multi-GPU node even with FP8, so most teams trying it will use the hosted API, and that means sending data to infrastructure run by a Chinese state-affiliated lab. For research-heavy agent work that's worth benchmarking yourself. For anything touching regulated data, check with your compliance team first.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SK Hynix in Talks to Make Its First US Memory Chips at Intel&apos;s Ohio Site</title>
+      <link>https://sabr-labs.com/article/sk-hynix-intel-ohio-fab-us-memory-talks-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-intel-ohio-fab-us-memory-talks-september-2026</guid>
+      <pubDate>Wed, 16 Sep 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SK Hynix</category>
+      <category>Intel</category>
+      <category>Semiconductors</category>
+      <category>Memory</category>
+      <category>HBM</category>
+      <category>Ohio</category>
+      <description>Reuters reports SK Hynix is weighing a lease or a joint venture with Intel and cloud providers at Intel&apos;s delayed Ohio campus, though SK Hynix says nothing is finalized and the first fab isn&apos;t due until 2030.</description>
+      <content:encoded><![CDATA[<p>Intel's Ohio megafab has spent four years as a symbol of delay. It might end up making someone else's chips.</p>
+<p>Reuters reported that SK Hynix is in talks with Intel about producing memory in the US for the first time, at Intel's planned campus outside Columbus. Two structures are reportedly on the table: SK Hynix leases space at the site, or it forms a joint venture with Intel and major cloud companies that want a guaranteed supply of memory. Intel shares rose about 4% on the report and SK Hynix gained roughly 3%.</p>
+<p>Neither company is confirming much. SK Hynix said nothing has been finalized and that it's looking at several countries and locations as it reviews ways to strengthen its memory business. Intel called it speculation and said only that it's still investing in preparing the Ohio site.</p>
+<p>The logic is easy to see from both sides. Intel announced Ohio in 2022 with a pledge of at least $20 billion and talk of up to eight fabs, then pushed the schedule back hard: the first fab isn't expected to finish until 2030, with production starting in 2030 or 2031. Its foundry business badly needs an anchor tenant with real volume. SK Hynix, meanwhile, sits at the center of the AI memory crunch, faces pressure from Washington to build on US soil, and would like some protection from tariffs.</p>
+<p>The cloud-provider joint venture is the more interesting option. Hyperscalers have spent the last two years paying up for high-bandwidth memory and still getting allocated. Owning a piece of a domestic fab would give them something closer to a reserved seat.</p>
+<p>Keep the timeline in view, though. Nothing built in Ohio helps with this year's shortages or next year's. SK Hynix's nearer-term US commitment is its advanced HBM packaging plant in West Lafayette, Indiana, which targets mass production in late 2029. And South Korea may get a say: its trade ministry can review deals that involve designated national core technologies, and leading-edge DRAM clearly qualifies.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CCNP Security&apos;s SCOR Exam Got Its First Rewrite Since 2020</title>
       <link>https://sabr-labs.com/article/cisco-scor-v2-350-701-ccnp-security-blueprint-rewrite-september-2026</link>
@@ -938,109 +1042,6 @@
 <p>Cache invalidation is the ugly part here. Terraform modules get cached locally and inside CI images, so pulling a clean copy today doesn't undo a poisoned copy that got baked into a workspace template last week. Coder's guidance is to identify affected caches and templates, delete the caches, re-fetch, and rotate every secret that was reachable from the execution environment. That last step is the one people skip and the one that decides whether this is over.</p>
 <p>This is the third supply-chain compromise in recent memory that worked by getting between a legitimate package host and its users rather than by publishing a malicious package under a plausible name. Typosquatting gets the attention. Owning the distribution path is more effective and much harder to spot, because the package name, the URL, and the TLS certificate all check out.</p>
 <p>Coder has not said how the underlying infrastructure was reached. Until it does, treat the fourteen-hour window as a floor rather than a boundary.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>HPE Patched 31 AOS-CX Flaws, and Three of Them Need No Credentials</title>
-      <link>https://sabr-labs.com/article/hpe-arubaos-cx-cve-2026-73749-unauthenticated-rce-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/hpe-arubaos-cx-cve-2026-73749-unauthenticated-rce-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Aruba</category>
-      <category>HPE</category>
-      <category>Network Security</category>
-      <category>RCE</category>
-      <category>Switching</category>
-      <description>CVE-2026-73749 is a 9.8-rated buffer overflow that gives unauthenticated attackers code execution on Aruba CX switches, and two more bugs in the same bulletin reach RCE by different routes.</description>
-      <content:encoded><![CDATA[<p>A single crafted packet, no credentials, code execution with elevated privileges on the switch. That's CVE-2026-73749, rated 9.8 under CVSS v3.1, and it's the headline entry in HPE security bulletin HPESBNW05134.</p>
-<p>The flaw is a buffer overflow in an AOS-CX daemon that copies incoming packet data into a fixed-size region without checking whether it fits. Overflow the buffer, overwrite the return address, redirect execution. It's the oldest bug class in the book, still sitting in the control plane of enterprise switches in 2026.</p>
-<p>The affected hardware list covers most of the CX line: 4100i, 6000, 6100, 6200F, 6300, 6400, 8320, 8325, 8360, 8400, 9300, and 10000 series. Fixed builds are 10.18.1002, 10.17.1030, 10.16.1060, 10.13.1190, and 10.10.1181, each replacing the trains below it.</p>
-<p>What deserves more attention than the 9.8 is that it isn't the only unauthenticated path in the bulletin. CVE-2026-73752 is an unauthenticated arbitrary file write that reaches RCE, and CVE-2026-73782 is an unauthenticated format string bug that also lands on code execution. Both rate 8.8. Three independent no-credential routes to owning a switch, disclosed together, in 31 total fixes. HPE says internal research found most of them and two came through its bug bounty.</p>
-<p>Nobody has seen exploitation or a public proof of concept yet, per HPE's bulletin. That's a statement about today, and switch firmware is not something most organizations patch quickly. Aruba CX gear runs distribution and core in a lot of campuses, hospitals, and schools, and "we'll do it in the next maintenance window" tends to mean November.</p>
-<p>The mitigation that actually helps in the meantime is the one you should already have: keep switch management planes off any network a user can reach. Control-plane daemons listening where an ordinary endpoint can send them packets is how a 9.8 becomes an incident instead of a maintenance ticket.</p>
-<p>If you run CX gear, pull HPESBNW05134 and check your train. The version numbers are close enough together that eyeballing them will burn you.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>NHTSA Opened a Cybercab Probe Hours After the First Ride in Austin</title>
-      <link>https://sabr-labs.com/article/nhtsa-audit-query-tesla-cybercab-self-certification-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/nhtsa-audit-query-tesla-cybercab-self-certification-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Tesla</category>
-      <category>NHTSA</category>
-      <category>Autonomous Vehicles</category>
-      <category>Regulation</category>
-      <category>Robotaxi</category>
-      <description>Audit query AQ26002 will examine whether Tesla was right to self-certify a vehicle with no steering wheel, brake pedal, or mirrors as compliant with federal motor vehicle safety standards.</description>
-      <content:encoded><![CDATA[<p>Tesla put its first production Cybercabs on Austin streets on Thursday. NHTSA opened an investigation into them the same day.</p>
-<p>The probe is an audit query, AQ26002, and its subject is not a crash or a defect. It's paperwork, in the sense that the paperwork is the entire question. Federal motor vehicle safety standards were written around vehicles that have manual controls, and the Cybercab has none: no steering wheel, no brake pedal, no accelerator, no conventional mirrors. Tesla notified the agency that it had certified the vehicle as compliant with all applicable standards. NHTSA now wants to see the process and technical data behind that, and specifically how much of the certification rests on Tesla deciding certain standards simply don't apply.</p>
-<p>That's the crux. Self-certification is how the US system works, unlike Europe's type approval, and it normally functions fine because the standards and the vehicles are shaped for each other. Remove the controls the standards assume exist and the manufacturer is making a judgment call about the scope of federal law, on its own, before anyone else looks.</p>
-<p>There's a template for how this goes. NHTSA ran the same kind of review on Zoox in 2022 after Amazon's robotaxi arm self-certified a purpose-built vehicle, and it closed last year with the agency's first temporary exemption for an American-built autonomous vehicle. Useful precedent, but the timeline is the message: roughly three years from opening to resolution, and Zoox operated under limits the whole way.</p>
-<p>NHTSA administrator Jonathan Morrison framed the approach as balancing innovation against safety oversight so the US can hold its lead in autonomous vehicles. Fine as far as it goes. It also lands on a company that has been fighting a separate probe into robotaxi driving behavior in the same city, which does not help the argument that Tesla's judgment about its own compliance deserves the benefit of the doubt.</p>
-<p>The practical outcome to watch is whether NHTSA lets the fleet keep carrying passengers while the query runs. Nothing in an audit query forces vehicles off the road on its own. The agency has other tools if it decides it needs them, and choosing not to use them for a few weeks is itself a decision.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Crusoe Tripled Its Valuation to $30B in Ten Months</title>
-      <link>https://sabr-labs.com/article/crusoe-3-billion-series-f-30-billion-valuation-jane-street-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/crusoe-3-billion-series-f-30-billion-valuation-jane-street-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Crusoe</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>Funding</category>
-      <category>GPU</category>
-      <description>The AI data center builder closed a $3 billion round led by Atreides and Valor the same day it was reported to have signed a roughly $13 billion cloud deal with Jane Street.</description>
-      <content:encoded><![CDATA[<p>In October 2025 Crusoe raised $1.375 billion at a valuation north of $10 billion. This week it closed a round of more than $3 billion at roughly $30 billion. Ten months, three times the price.</p>
-<p>Atreides Management and Valor Equity Partners co-led, with Mubadala Capital, the alternative asset arm of the Abu Dhabi sovereign wealth fund, also in. Crusoe builds and operates data center capacity and GPU clusters for OpenAI, Microsoft, and Meta, which is the short version of why the number moved.</p>
-<p>The timing of the second piece is the part worth noting. The financing was reported the same day as a roughly $13 billion, five-year cloud agreement with Jane Street. A quantitative trading firm is a different animal from a hyperscaler tenant: shorter procurement cycle, brutal latency requirements, and a balance sheet that doesn't need anyone's permission. If firms like that are now buying multi-year GPU capacity at that scale, the demand story stops being a story about three AI labs.</p>
-<p>Crusoe started by burning stranded natural gas that would otherwise have been flared, and used the power for bitcoin mining before pivoting to AI compute. That origin gets less airtime now that the company is a conventional data center developer with a conventional appetite for grid interconnection, in a year when grid operators from ERCOT to PJM have been rewriting their hookup rules specifically because of buildouts like this one.</p>
-<p>The valuation math assumes Crusoe keeps signing tenants at these sizes and keeps getting power. Neither is guaranteed. Interconnection queues are the binding constraint on this entire sector right now, and no amount of Series F money moves a substation timeline.</p>
-<p>Still, $30 billion for a company that was flaring-gas bitcoin infrastructure five years ago is a reasonable proxy for how fast the compute buildout has repriced everything adjacent to it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Patches Sixth Actively Exploited Chrome Zero-Day of 2026</title>
-      <link>https://sabr-labs.com/article/chrome-152-cve-2026-85046-v8-zero-day-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-152-cve-2026-85046-v8-zero-day-exploited-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Chrome</category>
-      <category>Zero-Day</category>
-      <category>V8</category>
-      <category>Google</category>
-      <category>Patch Management</category>
-      <description>CVE-2026-85046 is a type confusion bug in V8 with a working exploit in the wild, fixed in Chrome 152.0.7977.82 for Windows, macOS, and Linux.</description>
-      <content:encoded><![CDATA[<p>Six. That's how many Chrome zero-days have been exploited in the wild this year, and we're only four days into September.</p>
-<p>The latest is CVE-2026-85046, a type confusion flaw in V8 that Google patched Thursday in a Stable channel update carrying twelve security fixes. Google's advisory uses the language it reserves for the bad ones: an exploit for the bug exists in the wild. Rated 8.8, it lets a remote attacker run arbitrary code inside the renderer sandbox from nothing more than a crafted HTML page.</p>
-<p>The technical shape of it is familiar to anyone who has followed V8 bug classes for the last few years. A compiler flaw causes an array holding PACKED_ELEMENTS to be handed the map for PACKED_SMI_ELEMENTS, which means the engine believes it's looking at small integers when it's actually looking at pointers. From there you get arbitrary read and write across the JavaScript heap, which is the foundation every serious browser exploit chain is built on.</p>
-<p>Fixed builds are 152.0.7977.82 and .83 on Windows and macOS, and 152.0.7977.82 on Linux. Google says the rollout will reach users over the coming days and weeks, which is the part that always gets lost. Chrome downloads the update quietly but doesn't apply it until you restart the browser, and plenty of people have not restarted Chrome since July. Check chrome://settings/help and relaunch.</p>
-<p>One detail worth sitting with: the bug was reported on August 4 by an independent researcher, Salvatore Gulizia, who goes by Serotav. The payout was $1,000. A V8 type confusion that yields heap read/write and then shows up in real attacks is worth considerably more than four figures on any market that isn't Google's, and the gap between what a vendor pays and what an exploit broker pays is the whole reason bugs like this keep landing in someone else's hands first.</p>
-<p>Google isn't saying who's using the exploit or against whom, which is standard while the patch propagates. What the disclosure does tell you is that the in-the-wild activity was found separately from the August report, so at minimum two parties had this bug at the same time.</p>
-<p>If you run a Chromium fleet, the V8 flaw travels downstream. Edge, Brave, Vivaldi, Opera, and anything else riding the same engine need their own vendor builds, and those trail Chrome by days. Electron apps are the ones people forget entirely.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Thomson Reuters Breach Exposed Sealed Court Records in 11 States</title>
-      <link>https://sabr-labs.com/article/thomson-reuters-c-track-court-records-breach-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/thomson-reuters-c-track-court-records-breach-september-2026</guid>
-      <pubDate>Fri, 04 Sep 2026 11:45:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Thomson Reuters</category>
-      <category>Court Records</category>
-      <category>Third-Party Risk</category>
-      <category>PII</category>
-      <description>An intruder reached C-Track case management data in March, went undetected until June 30, and touched records that courts had deliberately sealed or redacted.</description>
-      <content:encoded><![CDATA[<p>Sealed records are sealed for a reason. A judge decided that a name, an address, a juvenile file, or a witness identity should not be publicly reachable, and that decision is supposed to hold.</p>
-<p>Thomson Reuters has now disclosed that an unauthorized party obtained files from C-Track, the court case management platform sold by its West Publishing Corporation unit, and that the material accessed included records marked confidential, redacted, and sealed. The company says the exposed data spans courts in 11 U.S. states, the U.S. Virgin Islands, and Ontario, Canada.</p>
-<p>The affected states named in the disclosure are Alabama, Kentucky, Montana, Nevada, New Hampshire, North Dakota, Ohio, Pennsylvania, South Carolina, Tennessee, and Wyoming. Depending on the record, exposed fields may include names, Social Security numbers, driver's license numbers, dates of birth, medical information, and health insurance information. Thomson Reuters says it has no evidence that systems handling financial transactions were involved.</p>
-<p>Now the timeline, which is the part that should bother you. The intrusion happened in March. Thomson Reuters says it discovered the activity on June 30. Notifications started going out in early September. That's roughly four months of dwell time inside a platform holding court records, and another two months before the people in those records heard about it.</p>
-<p>US-side notifications come with 12 months of Experian IdentityWorks, with enrollment open through the end of the year; in Canada, Thomson Reuters Canada is offering TransUnion monitoring with a dedicated call center. Credit monitoring is the standard reflex after a breach, and it is close to useless here. A monitoring service tells you when someone opens a line of credit in your name. It does nothing at all about a sealed juvenile record or a redacted witness address sitting in an attacker's archive, because that harm doesn't show up on a credit file.</p>
-<p>There's a structural problem underneath this incident. Court systems across a dozen jurisdictions ran their case management through one vendor, so one compromise at that vendor reached all of them at once. Every state that bought C-Track made a reasonable individual procurement decision, and collectively they built a single point of failure across state lines and an international border.</p>
-<p>If you work in or around any of the affected court systems, the practical action is not enrolling in credit monitoring. It's asking your clerk of courts which record classes were in the exported set, and whether any sealed matters in your jurisdiction now need to be treated as compromised.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
