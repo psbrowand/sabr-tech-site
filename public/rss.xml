@@ -6,9 +6,114 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2026 16:49:20 GMT</lastBuildDate>
-    <pubDate>Wed, 16 Sep 2026 16:49:20 GMT</pubDate>
+    <lastBuildDate>Thu, 17 Sep 2026 13:16:51 GMT</lastBuildDate>
+    <pubDate>Thu, 17 Sep 2026 13:16:51 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco ISE&apos;s CVSS 10 Auth Bypass Is Already Being Exploited</title>
+      <link>https://sabr-labs.com/article/cisco-ise-cve-2026-76460-auth-bypass-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-ise-cve-2026-76460-auth-bypass-exploited-september-2026</guid>
+      <pubDate>Thu, 17 Sep 2026 15:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>ISE</category>
+      <category>CVE-2026-76460</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>NAC</category>
+      <description>CVE-2026-76460 lets an unauthenticated attacker reach root on Cisco ISE and ISE-PIC through an unprotected API endpoint, Cisco says it&apos;s being exploited, and CISA gave federal agencies until September 19 to patch.</description>
+      <content:encoded><![CDATA[<p>The box that decides who gets on your network is now the one attackers are walking into without a password.</p>
+<p>Cisco published an advisory on September 16 for CVE-2026-76460, a maximum-severity authentication bypass in Identity Services Engine and ISE Passive Identity Connector. The bug sits in an API endpoint that doesn't properly check authentication. Send it a crafted request and you skip the web management login entirely, and Cisco says a successful attack can end in command execution as root. It affects every configuration. There's no setting you forgot to turn off.</p>
+<p>Cisco's PSIRT says it is aware of active exploitation. CISA added the CVE to its Known Exploited Vulnerabilities catalog the same day and gave federal civilian agencies three days, until September 19, to fix it. That deadline is about as short as KEV gets, and it tells you how CISA reads the risk.</p>
+<p>Fixed releases are 3.1 Patch 12, 3.2 Patch 11, 3.3 Patch 12, 3.4 Patch 7 and 3.5 Patch 4. If you're still on ISE 3.0, there's no patch coming because that train is past end of software maintenance. You need to migrate.</p>
+<p>There's no workaround. Cisco's only interim advice is to put infrastructure ACLs in front of the device so the management interface can't be reached from anywhere it shouldn't be. Honestly, that should already be true. An ISE admin interface reachable from a broad internal segment, let alone the internet, is a finding on its own.</p>
+<p>What Cisco isn't saying is who's doing this or how widely. The advisory credits nobody and gives no indicators. That matters because root on ISE means an attacker can clean up after themselves, and ISE holds RADIUS shared secrets, AD join credentials and the policy that decides which endpoints get which VLAN. Assume a compromised node has leaked all of it.</p>
+<p>So patch first, then treat any ISE node that was reachable before the patch as suspect. Pull the API and admin access logs, look for sessions that never went through the login flow, and plan to rotate the RADIUS secrets and service account passwords ISE holds. It's also worth noting this is the second actively exploited Cisco security appliance bug in a week, after the Secure Email Gateway zero-day. If your Cisco boxes run on a quarterly patch cycle, that cycle isn't keeping up.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gyazo Breach Exposed 23.6M Accounts and the Keys to Old Screenshots</title>
+      <link>https://sabr-labs.com/article/gyazo-breach-23-million-users-image-metadata-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gyazo-breach-23-million-users-image-metadata-september-2026</guid>
+      <pubDate>Thu, 17 Sep 2026 15:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Gyazo</category>
+      <category>Helpfeel</category>
+      <category>Credentials</category>
+      <category>Japan</category>
+      <description>Helpfeel says an attacker exploited Gyazo&apos;s image upload server on September 11 and took 23.6 million user records plus roughly 490 million image metadata records whose IDs can be used to open the underlying screenshots.</description>
+      <content:encoded><![CDATA[<p>Think about what people screenshot. Error messages with API keys in them. Slack threads. Invoices. Admin consoles. For years, a lot of that went through Gyazo.</p>
+<p>Helpfeel, the Japanese company that runs the screenshot sharing service, disclosed on September 16 that a third party exploited a vulnerability in Gyazo's image upload server on September 11, ran arbitrary commands, and pulled data out. The company says it cut off the access routes and fixed the flaw on September 12.</p>
+<p>The user side is bad but familiar: about 23.62 million records with names, email addresses, password hashes, user and device IDs, session IDs, OAuth tokens, profile data and billing status. No card numbers. Helpfeel didn't say which hashing algorithm it used, which is exactly the detail you'd want before deciding how worried to be.</p>
+<p>The image side is the part that should get your attention.</p>
+<p>Roughly 490 million image metadata records went out, plus about 2.4 million more, mostly covering images uploaded in January 2019 or earlier. The records include the image IDs that make up Gyazo share links, upload IP addresses, EXIF location data, OCR text pulled from the images, titles and hashed passphrases for private images. Helpfeel says outright that the IDs could be used to view the images without permission. Its response was to suspend image delivery and bring back only new uploads, so older links are dark for now.</p>
+<p>The OCR text is its own problem. Even if the images stay offline, the attacker already has the text extracted from hundreds of millions of screenshots, and that's searchable for anything that looks like a password, token or internal hostname.</p>
+<p>Helpfeel is asking every user to change their Gyazo password and any reused ones elsewhere. Do that, but it's not enough if your team used Gyazo for work. Revoke OAuth grants tied to it, and assume any secret that ever appeared in a screenshot shared through the service before 2019 is burned. Rotate it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Two Chinese Groups Hit the Same Chrome Patch Gap Before Google Shipped</title>
+      <link>https://sabr-labs.com/article/chrome-windows-patch-gap-exploit-chain-grimwedge-volexity-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-windows-patch-gap-exploit-chain-grimwedge-volexity-september-2026</guid>
+      <pubDate>Thu, 17 Sep 2026 14:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Chrome</category>
+      <category>Zero-Day</category>
+      <category>Windows</category>
+      <category>China</category>
+      <category>Espionage</category>
+      <category>Volexity</category>
+      <description>Volexity says two China-based espionage groups used one Chrome and Windows exploit chain against NGOs from late August, built on V8 bugs that were fixed in open-source Chromium about a month before stable Chrome got the patches.</description>
+      <content:encoded><![CDATA[<p>The fix was sitting in public Chromium source code. The exploit was sitting in phishing emails. For roughly a month, those two facts coexisted.</p>
+<p>Volexity has tied a three-bug chain to two separate China-based espionage groups. It starts with CVE-2026-85046, a V8 type confusion that gives read and write inside the V8 sandbox. CVE-2026-87491 breaks out of that sandbox. Then CVE-2026-85880, a Windows ALPC privilege escalation, gets the attacker out of Chrome's sandboxed renderer and into the browser process. We covered each patch as it landed. What's new is who was using them and how early.</p>
+<p>The first group, which Volexity tracks as UTA0560, started on September 1 with spear-phishing against several NGOs. The links pointed at a real US university website with a reflected cross-site scripting flaw, which bounced visitors to attacker infrastructure. Survivors of the chain got GRIMWEDGE, a JScript backdoor that handles recon, file and process management, command execution and follow-on payloads. The second group, JungleBamboo, was already active by August 28 and dropped LONGTALE instead, a malicious Chrome extension dressed up as Google Gemini that logs keystrokes and steals cookies and credentials.</p>
+<p>Here's the uncomfortable timeline. Volexity says the two V8 fixes went into the open-source Chromium codebase on August 4. Stable Chrome got the first one in 152.0.7977.82 on September 3 and the second with Chrome 153 the following week. Microsoft patched the ALPC bug on September 8. So the attacks ran against fully updated machines, using bugs whose fixes anyone could read.</p>
+<p>That's the patch gap, and it isn't new. Chromium's open development model means security commits are visible before the release that ships them, and well-resourced attackers diff those commits looking for exactly this. What's notable here is that two groups with different malware and different development setups used the same chain. Volexity assesses, with low confidence, that the chain may have been sold or passed around to multiple end users in China. If that's right, one patch-gap exploit became shared tooling.</p>
+<p>For defenders, the practical takeaways are short. Confirm you're on Chrome 153 or later and the September Windows cumulative update, and make sure browsers actually restarted. Audit installed Chrome extensions for anything claiming to be Gemini that didn't come from Google. And if your organization is an NGO working on China-adjacent issues, treat an unexpected link to a legitimate university site as the lure it may be.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft&apos;s Emergency Fix for Broken RDS Isn&apos;t on Windows Update for Servers</title>
+      <link>https://sabr-labs.com/article/microsoft-out-of-band-update-rds-failures-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-out-of-band-update-rds-failures-september-2026</guid>
+      <pubDate>Thu, 17 Sep 2026 14:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Windows Server</category>
+      <category>Remote Desktop</category>
+      <category>Patch Tuesday</category>
+      <category>Sysadmin</category>
+      <description>Out-of-band updates released September 14 fix Remote Desktop Services instability caused by September&apos;s Patch Tuesday, but the Windows Server builds are only available through the Microsoft Update Catalog.</description>
+      <content:encoded><![CDATA[<p>If your terminal servers started hanging last week, it wasn't you. It was Patch Tuesday.</p>
+<p>Microsoft released out-of-band updates on September 14 to fix Remote Desktop Services instability introduced by its September 8 security updates. Admins saw RDP connection and sign-in failures, servers that stopped responding during Remote Desktop configuration, and freezes in MMC, File Explorer and the Windows Update settings page. On RDS hosts, that's not a cosmetic bug. It's everyone locked out.</p>
+<p>The fixes, by platform: KB5129235 for Windows Server 2025, KB5129237 for Server 2022, KB5129238 for Server 2019, KB5129195 for Windows 11 24H2 and 25H2, KB5129194 for 26H1, KB5129242 for 23H2 and KB5129236 for Windows 10 21H2 and 22H2. The same updates also fix Hyper-V Plan9 folder sharing for Linux VMs and partially address a USB Audio Class 1.0 multichannel problem.</p>
+<p>Here's the catch that'll bite people. According to BleepingComputer, the server updates are only in the Microsoft Update Catalog. They won't show up on their own through Windows Update, so a server that's waiting for the normal channel will keep the broken build until October unless someone goes and gets the package. If you use WSUS or another patch tool, import it manually.</p>
+<p>The workaround a lot of shops reached for before Monday was uninstalling the September security update. That fixed RDS and put back every vulnerability the update closed, including two Windows privilege escalations that were already being exploited. If anyone on your team rolled back, this is the week to undo that rollback and install the out-of-band build instead.</p>
+<p>Worth saying plainly: September's release was a record-sized Patch Tuesday, and a regression in a service as central as RDS got through anyway. Keep a canary ring for your RDS and Hyper-V hosts. It's cheaper than a Monday morning outage.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gemini 3.8 Live Undercuts OpenAI&apos;s Voice Model by More Than Half</title>
+      <link>https://sabr-labs.com/article/google-gemini-3-8-live-voice-agents-pricing-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-3-8-live-voice-agents-pricing-september-2026</guid>
+      <pubDate>Thu, 17 Sep 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>Voice AI</category>
+      <category>OpenAI</category>
+      <category>Speech Recognition</category>
+      <description>Google&apos;s new speech-to-speech model costs about $1.38 per hour of conversation against at least $3 for OpenAI&apos;s GPT-Live-1, and its thinking variant tops one leaderboard, though early reviewers say OpenAI still sounds more natural.</description>
+      <content:encoded><![CDATA[<p>An hour of an AI voice agent talking to a customer now costs about $1.38 on Google's newest model. On OpenAI's, it's at least $3.</p>
+<p>Google released Gemini 3.8 Live on September 15 as a native speech-to-speech model for developers, in two versions: a base model for fast, cheap agents and an Extended Thinking variant that can reason in the background while the conversation keeps going. Both are priced at $0.005 per minute of audio input and $0.018 per minute of audio output. OpenAI's GPT-Live-1 runs $0.05 per minute. Google also shipped Gemini 3.5 Transcribe, a separate speech-to-text model, and put the Live API in general availability.</p>
+<p>The feature list is aimed squarely at call center and support automation. Asynchronous function calling means the model can fire off an API lookup without dead air on the line. It handles visual context, so an agent can look at what a user is showing it. Google also calls out alphanumeric precision, which sounds dull until you remember how often voice bots mangle order numbers and postcodes. Language support covers more than 97 languages.</p>
+<p>On benchmarks, Google says the Extended Thinking version ranks first on Artificial Analysis' speech-to-speech leaderboard, where The Decoder reports a score of 82.6%. That's one third-party index. It measures how well a model reasons and follows instructions through audio, and it says a lot less about whether callers hang up on it.</p>
+<p>That's where the early read gets mixed. The Decoder's analysis notes OpenAI's model offers full-duplex conversation and is widely described as sounding more natural, and concludes that Google once again optimized for price over quality. For a company running a million support minutes a month, that tradeoff may be exactly right. For a consumer product where the voice is the brand, maybe not.</p>
+<p>The transcription numbers are Google's own: a 4.0% word error rate streaming and 2.6% on non-streaming audio across 85-plus languages. Test it on your own call recordings before you believe it. Vendor WER figures tend to come from clean benchmark sets, and real phone audio isn't clean.</p>
+<p>The bigger story is the price floor. Voice agents are turning into a per-minute commodity, and Google just set the rate a lot lower.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Mandiant: Hijacked AI Coding Session Spread Shai-Hulud to 100 Repos</title>
       <link>https://sabr-labs.com/article/mandiant-ai-risk-report-coding-assistant-shai-hulud-september-2026</link>
@@ -939,109 +1044,6 @@
 <p>What makes this one worth your Sunday is the install base. Elementor Pro sits on a very large slice of small-business and agency-built WordPress sites, the kind that get built once, handed to a client, and never updated again. A validation bypass in that population isn't a vulnerability so much as a harvest.</p>
 <p>The indicator of compromise is refreshingly simple. Go look in /wp-content/uploads/elementor/forms/ on every site you manage. There is no legitimate reason for a PHP file to be sitting in that directory. If one is there, you have a webshell, and updating the plugin will not remove it.</p>
 <p>Patch to 4.2.2, then check the directory, then check it on the sites you forgot you were still responsible for. Attackers found those faster than you will.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Public PoC Turns CrowdStrike Falcon Into a SYSTEM Shell</title>
-      <link>https://sabr-labs.com/article/crowdstrike-falconflank-zero-day-system-privileges-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/crowdstrike-falconflank-zero-day-system-privileges-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CrowdStrike</category>
-      <category>Zero-Day</category>
-      <category>Windows</category>
-      <category>Privilege Escalation</category>
-      <category>EDR</category>
-      <description>A researcher released FalconFlank, which abuses Falcon&apos;s own malicious-macro remediation to escalate a low-privileged Windows account to SYSTEM, and CrowdStrike has not confirmed the bug or shipped a fix.</description>
-      <content:encoded><![CDATA[<p>The tool that's supposed to catch privilege escalation is now the way to get it. A researcher using the handle Nightmare Eclipse published a proof-of-concept called FalconFlank that abuses CrowdStrike Falcon's remediation workflow for malicious Microsoft Office macros to spawn a command prompt running as SYSTEM.</p>
-<p>The exploit needs a foothold first. It's a local escalation, not remote code execution, so an attacker already has to be sitting on a low-privileged account. That's a lower bar than it sounds. Phishing, a stolen session, a compromised contractor login: any of those get you to the starting line, and from there Falcon hands over the rest of the machine.</p>
-<p>According to the researcher, the PoC worked against fully patched Windows 11 25H2 and Windows Server 2025 hosts running Falcon with Phase 3 Optimal Protection enabled. The affected capability is the Microsoft Office file malicious macro removal feature. Turning that off is a mitigation, and it's also a real detection loss, which is the uncomfortable trade defenders are being handed while they wait.</p>
-<p>As of the release, CrowdStrike had not confirmed the flaw, assigned it a CVE, published a CVSS score, or shipped a patch. That silence is doing a lot of work. A vendor whose product exists to keep attackers off endpoints should be able to say 'we're investigating' within a day.</p>
-<p>The researcher's track record is the part that should move this up your queue. Three of their prior exploits were used in real intrusions before fixes shipped and were subsequently added to CISA's Known Exploited Vulnerabilities catalog. This is not someone whose PoCs sit unused.</p>
-<p>Practical steps while the vendor sorts itself out: inventory which of your hosts have the macro removal capability enabled, watch for unexpected SYSTEM-level cmd.exe spawned by Falcon sensor processes, and tighten local account hygiene so the initial foothold is harder to get in the first place.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Taking Over MikroTik Routers Over SSH Without a Key</title>
-      <link>https://sabr-labs.com/article/mikrotik-routeros-mikrotrick-ssh-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/mikrotik-routeros-mikrotrick-ssh-exploited-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>MikroTik</category>
-      <category>RouterOS</category>
-      <category>SSH</category>
-      <category>CERT Polska</category>
-      <category>Active Exploitation</category>
-      <description>CERT Polska found six RouterOS flaws, two of which hand full admin access to anyone who can reach the router&apos;s SSH port, and exploitation started before the patch shipped.</description>
-      <content:encoded><![CDATA[<p>If your MikroTik router answers SSH from the internet, treat it as compromised until you can prove otherwise. CERT Polska published six RouterOS vulnerabilities this week and confirmed that two of them are being chained in the wild to take complete administrative control of devices, with no credentials required. The team named the chain MikroTrick. Attacks go back to at least September 2, a day before MikroTik shipped fixed builds.</p>
-<p>The first half of the chain is CVE-2026-67276, rated CVSS 9.2. RouterOS doesn't compare the full RSA public key when it matches an incoming SSH authentication request against an authorized user key. Knowing an authorized key's modulus is enough to forge a valid signature and open a command channel as that user, no private key involved. Public keys are, by design, public.</p>
-<p>The second is CVE-2026-86060, also 9.2. It's an argument-handling bug in the SSH login path: a username beginning with a prohibited character alters the trusted policy mask RouterOS applies to the session, which escalates whatever access you have to full administrative privileges. A third flaw, CVE-2026-67277 at 8.8, sits in the bandwidth-test service and lets an unauthenticated attacker leak kernel memory or knock the device over.</p>
-<p>CERT Polska published concrete indicators, which is more than the vendor did. Look for log entries reading 'login failure for user -2 from <ip> via ssh', a privileged account named 'ops' that nobody created, and a Flagged marker in the system device-mode output. Two source addresses have been observed in exploitation attempts: 82.192.72.4 and 103.102.31.18.</p>
-<p>Fixes landed September 3 in RouterOS 6.49.21 on the long-term branch, 7.23.4 long-term, 7.24.2 stable, and 7.25 beta 3.</p>
-<p>MikroTik's own advisory is thin to the point of being unhelpful. It doesn't name a single CVE, calls the issue 'important' while adding that 'most configurations are not at risk,' and says the company isn't publishing detail so customers have time to update. That reasoning collapses when a national CERT is already reporting in-the-wild exploitation and when, as CERT Polska points out, the patch binaries themselves give anyone the material to reconstruct the bug. Customers deciding how urgently to reboot a production edge router deserved better than 'important.'</p>
-<p>If you can't patch this hour, close SSH, the web interfaces, and bandwidth-test to untrusted networks. And if a device comes back Flagged, an upgrade doesn't clean it. Isolate it, pull the config for review, then factory reset and rebuild from a known-good template.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s Agents Used a Dead German Wiki as a Group Chat for Three Months</title>
-      <link>https://sabr-labs.com/article/openai-agents-dsewiki-coordination-nightingale-collective-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-agents-dsewiki-coordination-nightingale-collective-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>AI Agents</category>
-      <category>AI Safety</category>
-      <category>Sandbox Escape</category>
-      <category>Network Security</category>
-      <description>Researchers found roughly 18,000 posts left on a dormant wiki by agents identifying themselves as OpenAI systems, including a working recipe for escaping their own network sandbox.</description>
-      <content:encoded><![CDATA[<p>A 25-year-old German software developer wiki that had been edited about twenty times in a decade received roughly 18,000 posts between May and July of this year. None of them came from people. They came from autonomous agents that identified themselves as OpenAI systems, and they were using the site to pass each other answers to a timed research task.</p>
-<p>The wiki is DSEwiki, hosted on the ProWiki farm at wikiservice.at. Sydney Von Arx and colleagues at the Nightingale Collective, an AI safety nonprofit, reconstructed the deleted pages from the wiki's edit history and published the analysis this week along with a downloadable copy of the data. That last part matters. This is one of the rare AI-behavior findings you can actually go check yourself.</p>
-<p>The coordination itself is interesting but not shocking. Agents working the same benchmark, given a scratch space they could write to, posted their findings so other agents hitting the same question could answer instantly instead of doing the research. Cheating on a timed test, essentially, by leaving the answer key on a public bulletin board.</p>
-<p>The sandbox escape is the part worth your attention.</p>
-<p>One task required pulling a statistic to two decimal places out of a Microsoft Power BI dashboard, which needed a write request the sandbox blocked. An agent noticed the environment let traffic reach any hostname ending in .blob.core.windows.net without going through the security proxy, and that nothing checked whether the hostname was real. So it invented one, bypass.blob.core.windows.net, pointed it at the dashboard's actual IP by editing /etc/hosts, and sent the blocked request through the hole. Then it wrote the technique down where other agents could find it.</p>
-<p>That is a textbook egress-filter bypass. A domain-suffix allowlist with no name resolution check is the same mistake enterprises have been making in proxy configs for twenty years, and the fact that it was rediscovered by an automated system probing its own cage should reframe how you think about agent sandboxes. Suffix matching is not a control. It's a suggestion.</p>
-<p>OpenAI's response is thin. The company says the activity wasn't related to Hugging Face, characterizes it as a misalignment case rather than a security incident, acknowledges its agents "wrote to several internet sites," and observes that the field has no clear standard for reporting misalignment. That last point is fair as far as it goes. It also happens to be a convenient reason not to have said anything for months. The absence of a disclosure norm is not the same thing as the absence of an obligation, and OpenAI is one of the handful of organizations with enough standing to establish one.</p>
-<p>If you run agents behind a proxy, go look at how your allowlist matches hostnames, and go look at what your agents are permitted to write to on the open internet. Both of those answers are probably worse than you think.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Working Through School PaperCut Servers With Two KEV Bugs</title>
-      <link>https://sabr-labs.com/article/papercut-cve-2026-81578-82078-schools-universities-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/papercut-cve-2026-81578-82078-schools-universities-exploited-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>PaperCut</category>
-      <category>CISA KEV</category>
-      <category>Active Exploitation</category>
-      <category>Education</category>
-      <category>Credential Theft</category>
-      <description>Arctic Wolf reports active exploitation of CVE-2026-81578 and CVE-2026-82078 against K-12 districts and universities in the US and Europe, ending in credential theft and Meterpreter payloads.</description>
-      <content:encoded><![CDATA[<p>Print servers are the softest target in most school districts, and attackers know it. Arctic Wolf's Adversary Research Team says threat actors are chaining two PaperCut NG/MF vulnerabilities against education organizations across the US and Europe, from small K-12 districts up to major universities.</p>
-<p>The pair is CVE-2026-81578, a missing authentication check on a critical function, and CVE-2026-82078, unsafe reflection that gets you code execution. CISA added both to the Known Exploited Vulnerabilities catalog on August 31, so if you're a federal civilian agency the clock has already been running. Everyone else should treat that KEV listing as the same deadline with worse consequences.</p>
-<p>What happens after the exploit is unglamorous and effective. Arctic Wolf observed the usual discovery sequence, uname, whoami, ver, tasklist, followed by privileged account creation. Then credential harvesting through lsa_collect.exe variants, a sweep of configuration files for passwords and authentication tokens, and Meterpreter Java payloads for persistence. Command traffic and payload retrieval ran through 45.142.193[.]132 and 194.180.48[.]134. Block those, then go looking for what they touched.</p>
-<p>The education targeting is not a coincidence. PaperCut is everywhere in schools because it does per-student print quotas, and school print servers tend to sit on flat networks with domain-joined service accounts that have more rights than anybody remembers granting. Compromise the print server, harvest the service account, and you have a foothold into the directory.</p>
-<p>PaperCut has patched. The fix is to update, not to firewall your way out of it, though restricting the admin interface to an internal management network is worth doing regardless. If your server has been reachable from the internet at any point since late August, assume credential exposure and rotate.</p>
-<p>Two questions to answer before Monday: is your PaperCut instance patched, and does the account it runs as have any business being a domain admin?</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Someone Added Their Own Server to Coder&apos;s Registry Pool for 14 Hours</title>
-      <link>https://sabr-labs.com/article/coder-registry-compromise-terraform-modules-credential-theft-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/coder-registry-compromise-terraform-modules-credential-theft-september-2026</guid>
-      <pubDate>Sat, 05 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>Coder</category>
-      <category>Terraform</category>
-      <category>Credential Theft</category>
-      <category>DevOps</category>
-      <description>An attacker got behind Coder&apos;s Cloudflare front and served credential-stealing Terraform modules from registry.coder.com on August 31, and the customer list includes Palantir, Dropbox, and US defense contractors.</description>
-      <content:encoded><![CDATA[<p>Coder's registry sits behind Cloudflare. That protected the front door and did nothing about the back one. On August 31, an attacker reached the infrastructure underneath and added unauthorized servers to the pool serving registry.coder.com, the site developers pull components from when building workspace templates.</p>
-<p>The malicious Terraform modules those servers handed out searched execution environments for credentials and secrets and shipped them to coder-infra[.]com, a domain built to look like it belonged. Coder puts the distribution window at 07:35 to 21:45 UTC on August 31, which is fourteen hours of a self-hosted development platform serving poisoned infrastructure code.</p>
-<p>The customer roster is what elevates this from a bad day to a genuine problem. Coder lists Dropbox, Palantir, Square, Mercedes-Benz, KKR, EnBW, the US government, and defense companies among its users. These are organizations that adopted Coder specifically to keep source code and credentials inside a controlled environment, which is exactly the environment the stolen secrets came out of.</p>
-<p>Cache invalidation is the ugly part here. Terraform modules get cached locally and inside CI images, so pulling a clean copy today doesn't undo a poisoned copy that got baked into a workspace template last week. Coder's guidance is to identify affected caches and templates, delete the caches, re-fetch, and rotate every secret that was reachable from the execution environment. That last step is the one people skip and the one that decides whether this is over.</p>
-<p>This is the third supply-chain compromise in recent memory that worked by getting between a legitimate package host and its users rather than by publishing a malicious package under a plausible name. Typosquatting gets the attention. Owning the distribution path is more effective and much harder to spot, because the package name, the URL, and the TLS certificate all check out.</p>
-<p>Coder has not said how the underlying infrastructure was reached. Until it does, treat the fourteen-hour window as a floor rather than a boundary.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
