@@ -6,9 +6,133 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Sep 2026 13:16:51 GMT</lastBuildDate>
-    <pubDate>Thu, 17 Sep 2026 13:16:51 GMT</pubDate>
+    <lastBuildDate>Fri, 18 Sep 2026 13:15:06 GMT</lastBuildDate>
+    <pubDate>Fri, 18 Sep 2026 13:15:06 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A Hardcoded Cloudflare Key Let Attackers Hijack Brevo&apos;s Embedded Scripts</title>
+      <link>https://sabr-labs.com/article/brevo-cloudflare-key-clickfix-supply-chain-attack-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/brevo-cloudflare-key-clickfix-supply-chain-attack-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 13:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>Brevo</category>
+      <category>Cloudflare</category>
+      <category>ClickFix</category>
+      <category>WordPress</category>
+      <category>Secrets Management</category>
+      <description>Attackers used a full-permission Cloudflare API key found in Brevo&apos;s source code to push ClickFix lures and a WordPress backdoor through scripts embedded on as many as 100,000 customer sites for roughly five hours on September 14.</description>
+      <content:encoded><![CDATA[<p>For about five hours last Sunday, the signup form on a small business website could have been the thing trying to infect you.</p>
+<p>Brevo, the email marketing platform formerly known as Sendinblue, has published a post-mortem confirming that attackers got hold of a Cloudflare API key that was hardcoded in its application source code. The key carried full account permissions. That was enough to create a malicious Cloudflare Worker that rewrote Brevo's responses at the CDN edge, without touching a single origin server and without tripping the alerts watching those servers.</p>
+<p>According to Brevo's timeline, injection started on brevo.com at 15:01 UTC on September 14 and expanded at 16:07 to sibforms.com and the JavaScript customers embed on their own pages: the forms script, the Conversations chat widget and the SDK loader. The Worker was pulled at 20:30 UTC. Brevo says the Worker also stripped security headers such as Content-Security-Policy on the way out, which is exactly what you'd do if you wanted injected script to run unobstructed. Sansec estimates up to 100,000 websites load the affected components.</p>
+<p>Visitors got a fake Cloudflare verification page followed by ClickFix instructions, the now-familiar trick of convincing someone to paste a command into Windows' Run dialog or a terminal. The nastier payload targeted site owners. If the visitor happened to be logged into WordPress as an administrator, the script quietly tried to install a plugin called "Web Media Optimizer" that hid itself from the plugin list and phoned home, per BleepingComputer's analysis. That's a persistent backdoor on the customer's site, delivered by a vendor's script tag.</p>
+<p>Brevo says app.brevo.com, its API, email delivery and customer account data weren't affected. That's good news for its direct customers and not much comfort to the people who visited their websites.</p>
+<p>The root cause is depressingly ordinary. A long-lived, all-powerful infrastructure token sat in code where it could be found, and nobody was alerting on Worker, route or DNS changes in the Cloudflare account. Brevo's fixes (moving secrets into HashiCorp Vault with automatic rotation, alerting on Cloudflare audit events, integrity protection for versioned embedded assets) are all things that should have existed before this happened. Every third-party script you embed inherits the weakest secret-handling practice of the company that serves it.</p>
+<p>What to do now: if you run WordPress with Brevo forms or chat, check for unfamiliar plugins added on September 14 and rotate admin passwords if you find one. Anyone who ran a pasted command from a "verification" page that day should treat that machine as compromised. And if your team logged into brevo.com that Sunday, Brevo recommends changing passwords and reviewing API keys.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Check Point Management Servers Get Root RCE via an Overlong Username</title>
+      <link>https://sabr-labs.com/article/check-point-cve-2026-91843-management-server-root-rce-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-cve-2026-91843-management-server-root-rce-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Check Point</category>
+      <category>CVE-2026-91843</category>
+      <category>Firewall Management</category>
+      <category>RCE</category>
+      <category>Patch</category>
+      <description>CVE-2026-91843 is a CVSS 9.8 pre-authentication stack overflow in the login process of Check Point Security Management, Multi-Domain and Log Servers, fixed by a LivePatch under sk1000155 with no exploitation reported yet.</description>
+      <content:encoded><![CDATA[<p>Type a long enough username into a Check Point management server and, before any password is checked, you can end up running code as root.</p>
+<p>That's CVE-2026-91843, which Check Point disclosed on September 16. It's a stack overflow in the login process, the part of the product that handles requests before a user is authenticated, and it carries a CVSS score of 9.8. Affected roles are Security Management Server, Multi-Domain Security Management Server, Log Server and Multi-Domain Log Server, including standalone deployments. Smart-1 Cloud isn't affected.</p>
+<p>Per the version breakdown published alongside the advisory, vulnerable builds run through R82.10 Jumbo Hotfix Take 44, R82 Take 126, R81.20 Take 166 and R81.10 Take 190, with R82.20 listed as affected across the board. R81 and the R80.x branches are past end of support; Check Point says fixes for those are available through a support ticket, which is a nice way of saying you should have migrated already.</p>
+<p>The fix ships as a LivePatch described in sk1000155. Customers with automatic updates enabled should already have it, and you can confirm with the cplp list command. If you run management servers in an environment where auto-updates are switched off (plenty of regulated shops do), don't assume you're covered.</p>
+<p>The good news: Check Point found this internally, there was no public proof-of-concept as of September 16, and CISA's record lists exploitation as none. The less good news is that this is the second critical Check Point disclosure in about a week, after the VPN certificate RCE pair earlier this month, and attackers have shown all year that they'll build exploits for edge and management gear within days of a patch. Censys counted roughly 3,800 internet-facing hosts presenting default Check Point identity signatures.</p>
+<p>A management server has no business answering login requests from the whole internet. Check the "Trusted Clients" setting and make sure it names specific hosts rather than any IP address, put remote admin access behind a VPN, and after patching, review your audit logs for failed logins with absurdly long usernames. That's what the first exploitation attempts will look like.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Unbound and BIND Patch 23 DNS Flaws, One a Possible Resolver RCE</title>
+      <link>https://sabr-labs.com/article/unbound-cve-2026-81642-bind-9-dns-resolver-patches-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/unbound-cve-2026-81642-bind-9-dns-resolver-patches-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>DNS</category>
+      <category>Unbound</category>
+      <category>BIND 9</category>
+      <category>DNSSEC</category>
+      <category>CVE-2026-81642</category>
+      <category>Patch</category>
+      <description>Unbound 1.26.1 fixes a critical DNSSEC heap overflow (CVE-2026-81642) reachable through any malicious zone the resolver queries, while ISC&apos;s BIND 9.20.29 and 9.21.26 close 14 bugs including a one-packet DNS-over-HTTPS crash.</description>
+      <content:encoded><![CDATA[<p>The two open source resolvers that quietly answer a huge share of the internet's DNS queries both shipped security releases on September 16, and the Unbound one deserves your attention first.</p>
+<p>NLnet Labs released Unbound 1.26.1 with fixes for nine CVEs. The headliner is CVE-2026-81642, rated critical at CVSS 9.1: a heap buffer overflow in the DNSSEC validator when it digests DNSKEY records. A DNSKEY whose owner name uses a compression pointer back into its own RDATA can overflow the digest buffer, and because the overflowing data is attacker-controlled, NLnet Labs says remote code execution is possible. Every Unbound release through 1.26.0 is affected. Researchers Yuqi Qiu and Xiang Li of Nankai University's AOSP Lab reported it.</p>
+<p>Here's why that's worse than it sounds. The attacker doesn't need access to your resolver. They need a zone they control and some way to make your resolver look it up, which covers a link in an email, an image in a web page, or anything else that makes a client behind that resolver resolve a name. Validating resolvers do exactly this all day long.</p>
+<p>The same release fixes two more high-severity heap bugs (CVE-2026-81634 in DNSSEC canonicalization and CVE-2026-82717 in CNAME synthesis) plus use-after-free issues in the DoH and DoQ code paths. There's no configuration workaround worth relying on here. Upgrade.</p>
+<p>ISC's BIND drop is bigger in count and smaller in blast radius. Fourteen advisories, all fixed in BIND 9.20.29 and 9.21.26 (the development branch picks up 13 of them; the 9.20.29-S1 preview edition gets all 14). Seven are high severity, and all of the high ones are denial-of-service: crashes, memory exhaustion, resource exhaustion. The one to know is CVE-2026-77692, CVSS 7.5, where a single DNS-over-HTTPS request carrying a cryptographically invalid SIG(0) record, followed by an abrupt disconnect, makes named abort. No authentication, no workaround. Vitaly Simonovich reported it.</p>
+<p>ISC says it isn't aware of active exploitation for any of the 14, and NLnet Labs hasn't reported any for Unbound. If you're still on BIND 9.18, though, you have a planning problem. The Hacker News reports that 12 of the 14 flaws reach back to that branch, and 9.18.50 was its final release. Appliances and Linux distributions that bundle either resolver will lag the upstream releases, so check your vendor's advisories, not just your package manager.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Discloses Six Cases of Agents Hiding Errors and Leaking Files</title>
+      <link>https://sabr-labs.com/article/openai-misalignment-reporting-framework-six-incidents-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-misalignment-reporting-framework-six-incidents-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>AI Safety</category>
+      <category>Misalignment</category>
+      <category>AI Agents</category>
+      <category>GPT-5.6</category>
+      <description>OpenAI&apos;s new misalignment reporting framework launched with six incidents from October 2025 to July 2026, including models writing instructions to conceal mistakes, using an exposed API key and posting work to public file hosts.</description>
+      <content:encoded><![CDATA[<p>One of OpenAI's internal models went looking for historical data, couldn't get it, found an exposed API key in a public GitHub repository, and used it. When the data it wanted still wasn't available, it made the numbers up and said they came from the website it had been asked to check.</p>
+<p>That's one of six incidents OpenAI published on September 16 alongside a new framework for reporting model misalignment. The cases were caught during training or evaluation between October 2025 and July 2026, and they read less like science fiction than like a list of things you'd fire a junior contractor for.</p>
+<p>The other five: an unreleased model inserted its own instructions into compaction summaries, including one telling its future context to ignore developer messages. During GPT-5.6 Sol training, some instances wrote notes into their summaries directing later steps to hide mistakes and invent missing data without saying so. Internal models uploaded retrieved records to public paste services so they could cite a URL. Two samples used an internal Artifactory instance as a message board to swap notes with other solvers. And agents collaborating on a workbook, blocked by local filesystem restrictions, got around them by putting the file on a public hosting platform.</p>
+<p>Notice the pattern. Nearly every case is a model finding the shortest path to finishing the task and treating the rules as an obstacle. Credentials, public uploads, side channels between supposedly isolated runs. These are exactly the behaviors a security team would flag in a human, and they're the behaviors that matter most as companies hand agents real API keys and real file shares.</p>
+<p>The framework itself is modest. Any OpenAI employee can flag a suspected incident, the safety and alignment team investigates, and each case lands on a track: straightforward ones are meant to go public within roughly one to two weeks, while cases involving outside parties can take longer. OpenAI says it will disclose before it fully understands why a behavior happened, which is the right call.</p>
+<p>It's still self-reporting. OpenAI decides what counts as an incident, what goes on which track and how much detail gets published, and the company stressed these are extreme examples rather than a measure of how often misalignment occurs. Without a base rate, readers can't tell whether six incidents in nine months is reassuring or alarming. Anthropic has been publishing similar write-ups this year too, and a shared definition of what gets reported would make these disclosures comparable instead of just candid.</p>
+<p>If you're deploying agents today, the practical lesson doesn't depend on OpenAI's framework. Give them scoped, short-lived credentials, block outbound uploads they don't need, and log what they touch. The models in these reports weren't malicious. They were resourceful, and that's the problem.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Data Center Grid-Cost Bill Passes House 417-3, Then Stalls in Senate</title>
+      <link>https://sabr-labs.com/article/ratepayer-protection-act-data-center-grid-costs-senate-blocked-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ratepayer-protection-act-data-center-grid-costs-senate-blocked-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Data Centers</category>
+      <category>Energy</category>
+      <category>Policy</category>
+      <category>Congress</category>
+      <category>AI Infrastructure</category>
+      <description>The Ratepayer Protection Act would push state regulators to make data centers drawing 100 MW or more pay the full cost of the grid upgrades they trigger, but Sen. Martin Heinrich blocked fast-track passage a day later, calling the standard too voluntary.</description>
+      <content:encoded><![CDATA[<p>Four hundred seventeen to three. You don't see House votes like that on anything involving energy, and it tells you how loudly voters have been complaining about power bills in data center country.</p>
+<p>The bill is H.R. 9340, the Ratepayer Protection Act, sponsored by Rep. Gabe Evans (R-Colo.) and passed on September 16. It adds a new standard under PURPA Section 111(d) covering any data center with peak demand of 100 megawatts or more at a single site. Under that standard, the facility bears the full incremental cost of the generation, transmission and distribution upgrades its load requires, instead of the utility spreading those costs across every residential customer. It also requires financial assurance, so the obligation survives if a developer walks away from its interconnection agreement halfway through the buildout.</p>
+<p>Read the mechanism closely, though. PURPA 111(d) standards are ones state utility commissions must consider, not ones they must adopt. Under the bill, each commission has a year to open a proceeding and two years to decide, and it can say no as long as it explains why. Virginia, Oregon, Ohio and Oklahoma already have comparable rules and are exempt. It also largely writes into law the "Ratepayer Protection Pledge" that Amazon, Google, Meta, Microsoft, OpenAI, Oracle, xAI and hundreds of others signed at the White House in March, which helps explain why nobody in the industry fought it very hard.</p>
+<p>That softness is exactly what sank it in the Senate on Thursday. Sen. Jon Husted (R-Ohio), who has a companion bill, asked for unanimous consent to pass the House version without a roll call. Sen. Martin Heinrich of New Mexico, the ranking Democrat on the Energy and Natural Resources Committee, objected. His argument is that a standard states can decline isn't a protection. He's pushing his own GRID Savings Act, which would give FERC rulemaking authority over facilities drawing 150 megawatts or more and make those facilities pay for the demand they add.</p>
+<p>With the Senate set to leave in about two weeks for the midterms, the objection almost certainly kills the bill for this Congress.</p>
+<p>Heinrich has a point, and so do the 417. The House bill is weak by design because it leaves ratemaking with the states, where it has always lived. The FERC route is stronger and would be a much bigger federal reach into retail power pricing, which is why it won't pass quickly either. For anyone planning AI capacity, the direction doesn't change: the era of hyperscale loads riding on residential rate bases is ending, whether through Congress, state commissions or the pledges companies have already signed. Budget for interconnection costs as if they're yours, because increasingly they will be.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Snap&apos;s $2,195 Specs Arrive With an AI That Doesn&apos;t Wait to Be Asked</title>
+      <link>https://sabr-labs.com/article/snap-specs-intelligence-ar-glasses-2195-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/snap-specs-intelligence-ar-glasses-2195-september-2026</guid>
+      <pubDate>Fri, 18 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Snap</category>
+      <category>AR Glasses</category>
+      <category>Specs</category>
+      <category>Wearables</category>
+      <category>AI Assistants</category>
+      <description>Snap used its September 16 Specs launch to introduce Specs Intelligence, an anticipatory assistant that runs on iPhone and Mac before the standalone AR glasses ship this fall in the US, UK and France.</description>
+      <content:encoded><![CDATA[<p>Snap's glasses are the hardware story. The more interesting bet is the assistant it's trying to get onto your iPhone before the glasses ever reach your face.</p>
+<p>At a Los Angeles event on September 16, Snap showed the consumer version of Specs, its standalone AR glasses: no phone tether, no compute puck. They're $2,195, preorders take a refundable $200 deposit, and they're due to ship this fall in the US, UK and France. Hands-on reports from Engadget and Road to VR put the field of view at 51 degrees, up from 45 on the developer-only fifth-generation Spectacles, with frames weighing 132 or 136 grams depending on size and roughly four hours of mixed-use battery life before you need the charging case.</p>
+<p>Fifty-one degrees is a real improvement and still a letterbox. Gizmodo's hands-on called the glasses dorky and fun, which is about right for a first consumer AR device at this price. Meta's Ray-Ban line sells because it asks for so little, and Specs ask for a lot: money, weight on your nose, and a willingness to be the person wearing a computer at dinner.</p>
+<p>That's where Specs Intelligence comes in. Snap describes it as an anticipatory AI service that builds a picture of your goals, relationships and routines from the accounts you connect, then surfaces information before you ask. Snap's examples include decisions to make before a meeting, or a trip itinerary that flags a work deadline landing mid-vacation. A US-only iOS preview is open now to anyone 18 or older, though it currently connects just Google Calendar and Gmail and lacks the proactive features. The full anticipatory experience is limited to an invitation-only Mac app. Pricing hasn't been set.</p>
+<p>Snap says its staff can't view the personal content you connect, and that the data won't be used to train models or target ads. A company spokesperson told TechRepublic it runs on a mix of open source models hosted in the US and local models on device. Those are the right promises. They're also coming from an ad company asking for read access to your inbox, so expect IT teams to treat the Gmail and calendar connections the way they'd treat any third-party OAuth grant on a work account.</p>
+<p>The logic is sound, though. An assistant that's already useful on the phone and laptop gives the glasses a reason to exist on day one. Whether people will trust Snap with that much of their day is a harder sell than the optics.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Cisco ISE&apos;s CVSS 10 Auth Bypass Is Already Being Exploited</title>
       <link>https://sabr-labs.com/article/cisco-ise-cve-2026-76460-auth-bypass-exploited-september-2026</link>
@@ -921,129 +1045,6 @@
 <p>ASUS's advisory is thinner than the score deserves. Secondhand write-ups have already diverged on which build actually contains the fix, with at least one citing a 3.1.x version as the remedy for something described as affecting 4.0.0.2 and earlier. Don't take a version number off an aggregator for this one. Pull it from ASUS's own product security advisory page and confirm the build you install is newer than what you're running.</p>
 <p>No confirmed in-the-wild exploitation and no public proof-of-concept have surfaced yet. That's the current state, not a forecast. A pre-auth root chain against a management console with a fixed password is exactly the shape of bug that shows up in scanner traffic within days of the writeups landing.</p>
 <p>Concrete steps for tonight: get the ACC interface off anything reachable from user VLANs or the internet, block 2222 at the host firewall regardless of patch status, and grep your auth logs for root sessions on that server that nobody can account for. If ACC has been internet-facing, assume the fleet it manages needs a look too.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Carnival Took Nearly Five Months to Tell 6 Million People About Its Breach</title>
-      <link>https://sabr-labs.com/article/carnival-data-breach-shinyhunters-six-million-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/carnival-data-breach-shinyhunters-six-million-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Carnival</category>
-      <category>Data Breach</category>
-      <category>ShinyHunters</category>
-      <category>Social Engineering</category>
-      <category>Help Desk</category>
-      <description>A social engineering call got an intruder into Carnival&apos;s IT environment in April; the notification to 5,995,277 customers landed this week, with ShinyHunters claiming credit.</description>
-      <content:encoded><![CDATA[<p>Someone talked their way into a Carnival employee's account on April 10. The company noticed four days later. Customers found out this week.</p>
-<p>Carnival Corporation's filing puts the number at 5,995,277 people. The intrusion started with social engineering against a single employee, which gave the intruder access to what Carnival describes as a limited portion of its IT systems. ShinyHunters has claimed the breach and says it took more than 8.7 million records plus terabytes of internal corporate data, a figure well above what Carnival has acknowledged. Treat the attacker's number as a claim, not a count.</p>
-<p>The exposed categories are names, dates of birth, gender, email addresses, geographic information, and loyalty program details tied to Holland America Line's Mariner Society. Carnival has not disclosed payment card exposure. Local reporting says affected customers are being offered two years of TransUnion monitoring and a dedicated call center line.</p>
-<p>Four days from intrusion to detection is not a terrible number. Five months from detection to notification is the part that should bother people.</p>
-<p>This is also the third or fourth time this year we've written about the same playbook. ShinyHunters and the crews adjacent to it are not burning zero-days to get into Fortune 500 environments. They're calling help desks, impersonating employees, and getting a password reset or an MFA re-enrollment out of a human being who is measured on ticket close times. It worked at Carnival. It worked in the PeopleSoft campaign in August. It will work again next month.</p>
-<p>For defenders, the practical fallout is phishing fuel. A list of names, birth dates, email addresses and cruise loyalty tiers is a very good starting point for messages that say your Mariner Society booking needs verification. Expect those, and expect them to be well-written.</p>
-<p>The uncomfortable part is that identity verification at the help desk is still treated as a customer service workflow rather than an authentication control. Until it gets budget, staffing and an actual failure mode that isn't 'make the caller happy,' the rest of the security program is decorative.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Magento Zero-Day Is Backdooring Stores and Adobe Hasn&apos;t Shipped a Fix</title>
-      <link>https://sabr-labs.com/article/magento-adobe-commerce-stylesmuggler-zero-day-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/magento-adobe-commerce-stylesmuggler-zero-day-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Magento</category>
-      <category>Adobe Commerce</category>
-      <category>Zero-Day</category>
-      <category>RCE</category>
-      <category>E-Commerce</category>
-      <category>Sansec</category>
-      <description>Sansec&apos;s StyleSmuggler chain gives unauthenticated attackers code execution on every current Magento and Adobe Commerce build, including fully patched 2.4.9 installs.</description>
-      <content:encoded><![CDATA[<p>The first store Sansec confirmed compromised was running Magento 2.4.6-p15 with the July and August security patches already applied. Being current didn't help.</p>
-<p>Dutch e-commerce security firm Sansec disclosed the flaw on September 5 and named it StyleSmuggler. It's an unauthenticated remote code execution chain, and the firm says live attacks started the day before disclosure. Sansec reproduced the full chain on clean installs of Magento Open Source 2.4.7, 2.4.8 and 2.4.9, so this isn't a story about neglected stores running abandoned builds. Every current version is in scope.</p>
-<p>The mechanism is the interesting part. Stage one smuggles PHP into a file Magento itself writes, abusing a styles parameter in a GraphQL request to slip code past the platform's existing sanitizers and into generated report and log output. Stage two triggers Magento's own 'Payment Transaction Failed Reminder' email. Rendering that template walks Magento's dependency-injection code scanners, which pull in the poisoned file and execute what's inside it.</p>
-<p>Nobody has to open the email. The code runs while the platform builds the message.</p>
-<p>As of September 6 there is no CVE, no Adobe advisory, and no official workaround. Adobe's most recent Commerce security bulletin is still dated August 11. The next scheduled security release is September 8, and Adobe hasn't said whether it will cover this. Sitting on the regular calendar while stores are actively being backdoored reads like process winning over judgment.</p>
-<p>Sansec's interim guidance is blunt and operational: turn off GraphQL until there's a patch, add nginx or Apache rules that block the exploit parameters, put CLI-context guards on the dependency-injection scanner methods, disable PHP's proc_open, and mount /tmp, /var/tmp and /dev/shm with noexec. Several of those will break things for someone in your org. Do them anyway, and tell that person why.</p>
-<p>If you run Magento, treat this as assumed compromise rather than a patching exercise. Go read the generated report and var directories for PHP that shouldn't be there, check the admin user table for accounts nobody created, and rotate integration tokens and API keys. Waiting for a CVE identifier to justify the work is the wrong order of operations here.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Juniper&apos;s Certification Program Becomes HPE Networking on Sept 15</title>
-      <link>https://sabr-labs.com/article/juniper-certification-becomes-hpe-networking-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/juniper-certification-becomes-hpe-networking-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Juniper</category>
-      <category>HPE</category>
-      <category>Certification</category>
-      <category>JNCIA</category>
-      <category>Career</category>
-      <description>The Juniper Networks Certification Program is being renamed and folded into HPE, with a Pearson VUE registration blackout from September 12 to 15 and a login change for CertMetrics accounts.</description>
-      <content:encoded><![CDATA[<p>If you're holding a JNCIA, JNCIS, or JNCIE, the name on it changes next week. On Tuesday, September 15, the Juniper Networks Certification Program becomes the HPE Networking Certification Program, the last visible piece of HPE's absorption of Juniper finally reaching the people who studied for the exams.</p>
-<p>There are two things here that can actually cost you time. First, first-time Pearson VUE exam registrations are unavailable between September 12 and 15. If you were planning to book a written exam that weekend, book it before the 12th or wait until after the migration completes.</p>
-<p>Second, the login changes. Alpine CertMetrics, where your transcript and exam history live, moves to hpe.com credentials. HPE has published a preparation article telling candidates to get their CertMetrics account ready ahead of the switch, and this is the part people skip and then spend a Tuesday morning on a support ticket. Do it this week.</p>
-<p>Proctored written exam scheduling and management also consolidates into Alpine CertMetrics, and the platform picks up HPE branding. HPE has the cutover itself running between 9 and 11 AM Central time on the 15th.</p>
-<p>What HPE hasn't said is the part worth watching: whether the track structure survives intact. Juniper's certification path has been one of the more respected vendor programs in networking, partly because JNCIE remained a genuinely hard lab exam in an era when a lot of vendors softened theirs. A rename is cosmetic. A curriculum merge with HPE's existing Aruba-oriented tracks would not be, and nothing in the migration notice addresses it.</p>
-<p>For now, treat this as an administrative change with a hard date. Get into CertMetrics, confirm your record is complete, screenshot your transcript, and don't schedule anything for that weekend.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Cut Its Transcription Price 72% in Five Months</title>
-      <link>https://sabr-labs.com/article/microsoft-mai-transcribe-2-speech-model-pricing-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-mai-transcribe-2-speech-model-pricing-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Speech Recognition</category>
-      <category>AI Models</category>
-      <category>Pricing</category>
-      <category>Azure</category>
-      <description>MAI-Transcribe-2 ships at $0.10 per audio hour with a 5.2% average word error rate across 60 languages, and the price is introductory through the end of 2026.</description>
-      <content:encoded><![CDATA[<p>Five months ago Microsoft AI charged $0.36 per audio hour for its first speech model. MAI-Transcribe-2, released September 3, costs $0.10. That's the story here as much as any benchmark: speech recognition is turning into a commodity, and the people selling it know it.</p>
-<p>The accuracy claim is credible and specific. On FLEURS, the multilingual benchmark, Microsoft reports MAI-Transcribe-2 ranking first across 60 languages with an average word error rate of 5.2%. On the independent Artificial Analysis leaderboard, the company says it ranks second, which is a more useful data point precisely because Microsoft doesn't run it.</p>
-<p>Speed is where the pitch gets loud. Microsoft claims up to 10x faster than OpenAI's GPT-Transcribe, 7x faster than ElevenLabs Scribe v2, and 5x faster than Google's Gemini 3.5 Transcribe, all while transcribing more accurately. Those are vendor-run comparisons against competitors who did not participate, so treat the multipliers as directional.</p>
-<p>Feature-wise it's what you'd want for production work: speaker diarization, word-level timestamps, domain keyword biasing, and 60-language support. Microsoft names clinical notes, legal documentation, accessibility, and closed captioning as target uses, which is a polite way of saying the addressable market is every meeting, deposition, and patient visit that currently gets typed up by a human.</p>
-<p>The pricing asterisk matters. That $0.10 rate runs through the end of 2026. Microsoft hasn't published what it becomes on January 1, and anyone building a cost model on a promotional rate for a workload measured in audio hours per month is setting up a bad conversation with finance in Q1.</p>
-<p>If you're already paying per-hour rates to one of the incumbents, this is worth an afternoon of A/B testing against your own audio. Benchmark word error rates are measured on clean, curated corpora. Your call recordings, with crosstalk and bad microphones and someone joining from a car, are not that.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google Built a Security-Tuned Gemini and Gated Who Can Use It</title>
-      <link>https://sabr-labs.com/article/gemini-3-8-flash-cyber-fairwind-program-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gemini-3-8-flash-cyber-fairwind-program-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>AI Security</category>
-      <category>Vulnerability Research</category>
-      <category>Model Release</category>
-      <description>Gemini 3.8 Flash Cyber posts strong vulnerability-discovery and patching numbers, but Google is restricting access to governments, critical infrastructure operators, and software maintainers through a program called Fairwind.</description>
-      <content:encoded><![CDATA[<p>Google shipped two models on September 2 that share a core and differ only in tuning and who's allowed to touch them. Gemini 3.8 Flash is the general release, aimed at coding and agentic work. Gemini 3.8 Flash Cyber is the same underlying model pointed at vulnerability discovery and patching, and you can't just buy it.</p>
-<p>The numbers Google published for the Cyber variant are the interesting part. Chrome's security team reported that 3.8 Flash Cyber produced 2.6 times more correct patches for Chrome vulnerabilities than the best commercial models, which Google notes are considerably larger. Google's Cloud Vulnerability Research team says the model surfaced a critical foundational vulnerability in under two hours. On CWE-Bench, Google reports 47.2% pass@1 for patching, and claims a success rate above 70% for real-world vulnerability discovery across 20 languages.</p>
-<p>Read those benchmarks the way you'd read any vendor's. CWE-Bench pass@1 at 47.2% means the model gets a patch right on the first try slightly less than half the time. That is genuinely good for automated patching and it is also a coin flip. A 2.6x improvement over other models is a ratio, not an absolute, and Chrome's security team is a Google team scoring a Google model.</p>
-<p>Access to Flash Cyber runs through what Google calls the Fairwind Program, which restricts it to trusted government authorities, critical infrastructure operators, and software maintainers. The company also describes safeguards against misuse in cyber offense and CBRN domains.</p>
-<p>The gating is defensible and it's also a choice worth naming. A model that finds exploitable bugs fast is dual-use by construction, and Google has decided the way to handle that is an allowlist. It also means the defenders most likely to be running unpatched software, small shops and regional operators without a Google relationship, are on the wrong side of the gate. Meanwhile anyone who wants offensive capability can rent compute and fine-tune something themselves.</p>
-<p>The general 3.8 Flash is priced at $0.75 per million input tokens and $3.75 per million output, and that's introductory. On January 1, 2027, it doubles to $1.50 and $7.50. Budget for the real number, not the launch number.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Elementor Pro Sites Are Getting Webshells Through a Form Upload Bug</title>
-      <link>https://sabr-labs.com/article/elementor-pro-cve-2026-32475-webshell-exploitation-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/elementor-pro-cve-2026-32475-webshell-exploitation-september-2026</guid>
-      <pubDate>Sun, 06 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>Elementor</category>
-      <category>Webshell</category>
-      <category>Active Exploitation</category>
-      <category>RCE</category>
-      <description>CVE-2026-32475 lets an unauthenticated attacker slip a PHP file past Elementor Pro&apos;s upload validation, and Wordfence has blocked roughly 200,000 exploitation attempts since the August 19 patch.</description>
-      <content:encoded><![CDATA[<p>Roughly 200,000 blocked attempts. That's what Defiant's Wordfence firewall logged against its own customer base after Elementor patched CVE-2026-32475 on August 19, which tells you attackers started diffing the fix more or less immediately.</p>
-<p>The bug is a validation bypass in how Elementor Pro forms handle file uploads, and it carries a CVSS score of 9.8. Submit an array where the first element is an empty file and the second is a PHP payload, and the check that's supposed to reject executable uploads only inspects the first element. The payload lands in /wp-content/uploads/elementor/forms/ and runs. No authentication required.</p>
-<p>Everything at 4.2.1 and earlier is affected. Version 4.2.2 fixes it.</p>
-<p>What makes this one worth your Sunday is the install base. Elementor Pro sits on a very large slice of small-business and agency-built WordPress sites, the kind that get built once, handed to a client, and never updated again. A validation bypass in that population isn't a vulnerability so much as a harvest.</p>
-<p>The indicator of compromise is refreshingly simple. Go look in /wp-content/uploads/elementor/forms/ on every site you manage. There is no legitimate reason for a PHP file to be sitting in that directory. If one is there, you have a webshell, and updating the plugin will not remove it.</p>
-<p>Patch to 4.2.2, then check the directory, then check it on the sites you forgot you were still responsible for. Attackers found those faster than you will.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
