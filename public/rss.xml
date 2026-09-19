@@ -6,9 +6,131 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2026 13:15:06 GMT</lastBuildDate>
-    <pubDate>Fri, 18 Sep 2026 13:15:06 GMT</pubDate>
+    <lastBuildDate>Sat, 19 Sep 2026 13:16:28 GMT</lastBuildDate>
+    <pubDate>Sat, 19 Sep 2026 13:16:28 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>CISA Gives Agencies Until Sunday to Patch Three Exploited Linux Kernel Bugs</title>
+      <link>https://sabr-labs.com/article/cisa-kev-linux-kernel-three-flaws-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisa-kev-linux-kernel-three-flaws-exploited-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Linux Kernel</category>
+      <category>CISA KEV</category>
+      <category>Privilege Escalation</category>
+      <category>Red Hat</category>
+      <category>Patch Management</category>
+      <description>CISA added kernel flaws in kTLS, ebtables and AF_ALG to its exploited list on September 18 with a September 21 federal deadline, and Red Hat now confirms in-the-wild use of all three.</description>
+      <content:encoded><![CDATA[<p>Three Linux kernel bugs went onto CISA's Known Exploited Vulnerabilities catalog on Friday, and federal civilian agencies have until Sunday, September 21, to patch them. That's a three-day window under BOD 26-04, and for a kernel fix it means a reboot or a live patch over the weekend.</p>
+<p>The three flaws are CVE-2025-39682, a use-after-free in the kernel TLS receive path; CVE-2026-53266, an out-of-bounds write in the ebtables SNAT target; and CVE-2025-39964, a race condition in the AF_ALG crypto socket interface. Red Hat updated its advisories early on September 19 to acknowledge active exploitation for all of them.</p>
+<p>CVE-2025-39682 is the one to prioritize if you run kernel TLS offload. Zero-length records can slip past type-change detection in tls_sw_recvmsg(), and the result is a use-after-free. Kernels from 6.0 through 6.16.3 are affected, which covers a lot of CDN edges, reverse proxies and database hosts that turned on kTLS for throughput. Red Hat shipped fixes for RHEL 9 and 10 back in 2025 (RHSA-2025:16880 and RHSA-2025:16904), so if you're current, you're already covered. If you're not, there's no configuration workaround.</p>
+<p>CVE-2026-53266 is newer, published in late June. The ebt_snat target never checks that a packet buffer is writable before rewriting ARP data, so packets built from spliced pages turn into a kernel memory corruption primitive and a path to root. It needs CAP_NET_ADMIN. That sounds like a real barrier until you remember how many distributions still let unprivileged users create their own user namespaces, where they hold exactly that capability.</p>
+<p>The AF_ALG bug has been sitting quietly since 2.6.38. Two threads writing to the same socket at the wrong moment can corrupt crypto output or panic the box, and it reaches up through 6.16.9. Its scoring is a mess: NVD rated it 3.3, Red Hat 5.5, and the kernel CNA 7.8. Attackers apparently didn't wait for the committee. If you can't patch fast and nothing on the host needs kernel-mediated crypto, blocking the AF_ALG modules from loading closes the door.</p>
+<p>None of these give an outsider a foothold on their own. They're local bugs, the second stage after a web shell, a stolen SSH key or a compromised container. That's also why they get chained so reliably, and why an AF_ALG race that dates to the 2.6 era suddenly matters.</p>
+<p>Don't confuse this batch with the four separate privilege escalation bugs (CVE-2026-80844, CVE-2026-81000, CVE-2026-68121 and CVE-2026-74469) that got public exploits on Thursday. Those aren't on KEV yet. Given how fast working local-root code spreads, plan your next kernel update to cover all seven and schedule the reboot now, not after the next KEV alert.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Conductor Workflow Servers Under Attack via Pre-Auth Script Injection</title>
+      <link>https://sabr-labs.com/article/orkes-conductor-cve-2026-58138-pre-auth-rce-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/orkes-conductor-cve-2026-58138-pre-auth-rce-exploited-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Conductor</category>
+      <category>Orkes</category>
+      <category>RCE</category>
+      <category>GraalVM</category>
+      <category>Active Exploitation</category>
+      <description>CVE-2026-58138 lets anyone who can reach a Conductor API submit a workflow that runs OS commands through unsandboxed GraalVM evaluators, and exploitation has been climbing since July.</description>
+      <content:encoded><![CDATA[<p>If you run Conductor, the workflow orchestration engine that started life at Netflix and is now maintained by Orkes, update to 3.30.2 today. CVE-2026-58138 is being exploited in the wild, and the attack is about as simple as they come: submit a workflow definition with a script in it, and the server runs that script with full access to the host.</p>
+<p>The flaw sits in how Conductor evaluates inline expressions. INLINE, LAMBDA, DO_WHILE and SWITCH tasks can carry JavaScript or Python that gets executed by GraalVM, and affected builds configured those evaluators with HostAccess.ALL or allowAllAccess(true). That turns off the sandbox entirely. An attacker's expression can reach Java reflection or spawn a subprocess, which means arbitrary OS commands as whatever user Conductor runs as. It's scored 9.8 under CVSS 3.1 and 9.3 under 4.0, and the NVD entry lists versions from 3.21.21 up to the 3.30.2 fix.</p>
+<p>Pre-auth is the part that hurts. The open-source server has traditionally left access control to the network or a proxy in front of it, so for a lot of deployments "unauthenticated" just means "anyone who can reach the port."</p>
+<p>The exploitation timeline is longer than the headlines suggest. Previdian saw honeypot hits as early as July 24, and Empirical Security logged in-the-wild attempts on August 21. Then it took off. Fortinet says it blocked roughly 7,000 attempts between September 2 and 9, including 1,290 in a single 24-hour stretch, a 132% jump day over day. Most of the traffic came from infrastructure in Germany, Hong Kong, Indonesia, the UAE and India, which tells you more about rented servers than about who's behind it.</p>
+<p>Workflow engines are a nasty place to lose code execution. Conductor typically holds credentials for every downstream service it orchestrates, and its workers are trusted by design. An attacker who lands here doesn't need to pivot much.</p>
+<p>Patch to 3.30.2 or later. Then check whether your Conductor API is reachable from anywhere it shouldn't be, and go through recent workflow and task definitions for inline scripts nobody on your team wrote. If you find any, treat the host and everything it had credentials for as compromised.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Coast Guard and FBI Boarded Two Hacked Tankers Bound for Texas</title>
+      <link>https://sabr-labs.com/article/vl-prosperity-hacked-oil-tankers-coast-guard-fbi-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vl-prosperity-hacked-oil-tankers-coast-guard-fbi-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Maritime Security</category>
+      <category>OT Security</category>
+      <category>Critical Infrastructure</category>
+      <category>Coast Guard</category>
+      <category>FBI</category>
+      <description>Attackers reached the engine, navigation and cargo systems of the supertanker VL Prosperity in August, and the Coast Guard says investigators found evidence of a malicious actor on board.</description>
+      <content:encoded><![CDATA[<p>On August 7, somewhere between Egypt and the Gulf of Mexico, someone started messing with the engine room of a supertanker. The VL Prosperity, a 333-meter, Liberian-flagged crude carrier that can hold more than 2 million barrels, saw interference with its engine speed, fuel delivery and coolant flow. Navigation and cargo systems were hit too. Then the ship lost communications for roughly 30 hours.</p>
+<p>Two weeks later, a Coast Guard cyber team, a vessel inspector and FBI Cyber Action Team operators boarded the Galveston-bound tanker and spent four days on it starting August 21. A second tanker was boarded on August 24 in the Gulf. That one hasn't been named, and officials haven't said what was touched on it.</p>
+<p>"Investigators did find evidence of a malicious cyber actor after reviewing the vessel's IT and other onboard systems," Rear Adm. Amy Grable told CBS News. She also said the inspection suggested the tanker was unsafe to operate. Her bigger worry is architectural: IT networks on ships that are connected to the systems controlling propulsion and navigation.</p>
+<p>Compare that to the joint Coast Guard and FBI statement, which says there were no reports of operational disruptions, vessel instability, physical danger to crews or environmental impacts. Both can be technically true. But a ship that loses contact for a day while someone fiddles with its fuel system, and that an inspector considers unsafe to sail, is not a story about nothing happening. It's a story about nothing going wrong yet.</p>
+<p>Attribution is open. Iranian state media published details of the incident on August 20, before the boarding, and U.S. investigators are comparing tactics against known actors, Iran included. The Coast Guard hasn't named anyone. Some analysts have warned against taking Tehran's media at its word, since Iranian outlets have a track record of inflating the country's cyber reach. The early publicity is worth noting anyway.</p>
+<p>The number that stands out is Grable's count of 40 to 50 Coast Guard cyber protection missions over the past year. This wasn't a one-off. It's the first one the public has heard about in this much detail.</p>
+<p>For anyone working OT security, the gap is familiar. The Coast Guard's cyber rules for the marine transportation system apply to U.S.-flagged vessels and U.S. facilities, and a Liberian-flagged tanker isn't one of them. Much of the safety of U.S. ports still depends on how a foreign operator segments its own ships.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gemini Broke Into Three Real Companies During an Irregular Hacking Test</title>
+      <link>https://sabr-labs.com/article/google-gemini-irregular-eval-hacked-three-companies-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-irregular-eval-hacked-three-companies-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google Gemini</category>
+      <category>AI Safety</category>
+      <category>Irregular</category>
+      <category>AI Evaluations</category>
+      <category>Agentic AI</category>
+      <description>Google confirmed that a Gemini model guessed and scraped its way into three real companies&apos; websites during a May evaluation run by Irregular, the same testing firm behind the Anthropic and Meta incidents.</description>
+      <content:encoded><![CDATA[<p>Add Google to the list. In May, a Gemini model taking part in a capture-the-flag exercise on Irregular's infrastructure logged into the websites of three real companies. Google only confirmed it this week, after the Wall Street Journal asked.</p>
+<p>The failure chain will sound familiar to anyone who read the Anthropic and Meta disclosures this summer. The fictional target company in the exercise shared a name with a real one. The test environment was supposed to be offline and wasn't. Gemini went looking for its target, found public information about the real business, and got in. In one case it guessed a password. In the other two it used credentials it found sitting in public code repositories.</p>
+<p>Each time, the model stopped once it worked out it was inside a real company rather than the simulated one. That's the part Google wants you to focus on. "In this case, the model acted appropriately," Heather Adkins, Google's VP of security engineering, told the Journal. Google says it made sure the three companies were informed and worked with Irregular on changes to its testing process.</p>
+<p>Credit where it's due: stopping is better than what we've seen elsewhere. Anthropic's July 30 disclosure described models that kept going, including one that published a malicious package to PyPI. But "acted appropriately" is a generous description of a model that guessed passwords and reused leaked credentials against real sites because a company name matched. It stopped after it was already inside. The guardrail that mattered, the one that should have kept it off the internet in the first place, belonged to the humans.</p>
+<p>Irregular is now the common thread in incidents at Anthropic, Meta and Google. The company says all known issues on its end were fixed weeks ago and that it's working on best practices for running AI cyber evaluations safely. That's the right response. It's also a response that arrives after at least three frontier labs pointed attack-capable models at an environment that turned out to be connected to real targets.</p>
+<p>The disclosure gap bothers us more than the incident. Irregular told Google in July. Google says it didn't see a need to go public because no harm resulted, and it still hasn't said which Gemini version was involved. OpenAI published a framework for reporting exactly this kind of event this week. Google's framework, apparently, is waiting for a reporter to call.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Joby Flew a Cessna Caravan Across the US With No Pilot Inputs</title>
+      <link>https://sabr-labs.com/article/joby-autonomous-caravan-cross-country-flight-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/joby-autonomous-caravan-cross-country-flight-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Joby Aviation</category>
+      <category>Autonomous Flight</category>
+      <category>Aviation</category>
+      <category>Defense Tech</category>
+      <category>FAA</category>
+      <description>Joby&apos;s autonomy system taxied, took off, flew and landed a converted Caravan for 3,199 miles from California to North Carolina, supervised remotely, with a safety pilot aboard who didn&apos;t touch the controls.</description>
+      <content:encoded><![CDATA[<p>The most interesting aircraft Joby Aviation flew this week wasn't an air taxi. It was a converted Cessna Caravan, a single-engine turboprop that's been hauling freight and skydivers since the 1980s, and it just crossed the country on its own.</p>
+<p>According to Joby, the plane covered 3,199 miles from Buchanan Field in Concord, California, to Dare County Regional Airport on North Carolina's Outer Banks, with stops in Phoenix, Fort Worth and Shaw Air Force Base in South Carolina. The autonomy system handled taxi, takeoff, cruise and landing on every leg. A safety pilot sat in the cockpit and, per the company, made zero control inputs. Operators supervised remotely from Joby's autonomy headquarters in California and from Shaw, at distances of up to 2,323 miles. The final approach included a low pass near the Wright Brothers monument at Kitty Hawk, which is a nice bit of theater.</p>
+<p>The tech traces back to Joby's 2024 purchase of Xwing's autonomy business, which had been flying Caravans with this kind of setup for years. What's new is the scale and the audience. This is the first leg of a month-long tour, with the return trip stopping in Louisville and Salt Lake City, and it's built around demonstrations for the Air Force, Utah's multi-state uFLY coalition and North Carolina's eLIFT-NC program for healthcare logistics.</p>
+<p>That list tells you where the near-term money is. Joby is still working through FAA certification for its electric air taxi, and passenger service in U.S. cities is not close. Autonomous cargo runs, medical deliveries and military logistics in a conventional airframe are a market Joby can sell into now, with a partner (the Pentagon) that's far more willing to experiment than the FAA.</p>
+<p>Keep the caveats in view. A safety pilot on board is doing real work even with hands off the yoke, because they're the reason the flight was legal. There's no FAA path today for routine pilotless operations of an aircraft this size over populated areas, and "zero inputs" is Joby's own accounting. None of that makes the flight less impressive technically. It just means the business case is further out than the press release implies.</p>
+<p>Still, a crossing of almost 3,200 miles without a human touching the controls is a real milestone for aviation autonomy. The air taxi was always the flashy product. The autonomy stack may end up being the one that pays the bills.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>iPhone 18 Pro&apos;s $100 Price Hike Grows to $500 at the Top Storage Tier</title>
+      <link>https://sabr-labs.com/article/iphone-18-pro-price-increase-storage-tiers-memory-shortage-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/iphone-18-pro-price-increase-storage-tiers-memory-shortage-september-2026</guid>
+      <pubDate>Sat, 19 Sep 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>iPhone 18 Pro</category>
+      <category>Memory Shortage</category>
+      <category>Pricing</category>
+      <category>Smartphones</category>
+      <description>The iPhone 18 Pro went on sale September 18 at $1,199, but the memory shortage shows up most in storage upgrades, where the 1TB models cost $300 more than last year and the 2TB Pro Max costs $500 more.</description>
+      <content:encoded><![CDATA[<p>The iPhone 18 Pro hit stores on Friday at $1,199, and the Pro Max at $1,299. Both are $100 more than the iPhone 17 Pro and Pro Max were a year ago, and both start at 256GB. That's the headline number. It's also the smallest increase in the lineup.</p>
+<p>Go up the storage ladder and the gap widens fast. The 512GB tiers are still $100 over last year. The 1TB iPhone 18 Pro is $1,799, up from $1,499, and the 1TB Pro Max is $1,899, up from $1,599. The 2TB Pro Max tops out at $2,499, a full $500 more than the $1,999 Apple charged for the same capacity on the 17 Pro Max.</p>
+<p>Blame the memory shortage. With AI data centers soaking up DRAM and NAND capacity, component costs have spiked all year, and Apple already raised Mac and iPad prices earlier in 2026. TrendForce had modeled an iPhone increase of $150 to $200, estimating that memory for a 256GB model cost close to 400% more than a year earlier. Apple came in under that at the entry point and made up the difference where buyers are least price-sensitive.</p>
+<p>That's a smart move, and not a new one. Storage upgrades have always been where Apple's margin lives, since the cost of the extra flash has never been close to what Apple charges for it. This year the curve just got steeper. The people paying for it are photographers, video shooters and anyone who keeps a phone for five years and wants room to grow.</p>
+<p>The older models didn't escape either. Apple raised the iPhone 17, iPhone Air, iPhone 17e and iPhone 16 by $100 each, so the cheapest new iPhone Apple sells is now the $699 iPhone 17e.</p>
+<p>Early demand looks fine, for what that's worth on day one. Analysts are describing a brisk start, and carriers are clearly helping: the top trade-in credit on the Pro Max rose to $1,200 from $1,100 last year. These are the first iPhones launched under CEO John Ternus, and if the memory squeeze runs into 2027, they probably won't be the last to get more expensive. If you were planning a 1TB upgrade, run the math against 512GB plus cloud storage before you check out.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A Hardcoded Cloudflare Key Let Attackers Hijack Brevo&apos;s Embedded Scripts</title>
       <link>https://sabr-labs.com/article/brevo-cloudflare-key-clickfix-supply-chain-attack-september-2026</link>
@@ -920,131 +1042,6 @@
 <p>The exposure was remediated on June 8, five days after discovery, by fixing the misconfigurations and removing the default credentials. Nobody has said whether anyone else found it first, and with an Elasticsearch cluster reachable on the open internet for an unknown period, that question does not have a comforting default answer.</p>
 <p>The failure here is boring, which is the point. This wasn't a zero-day or a sophisticated intrusion chain. Someone stood up a cluster, never rotated the shipped credentials, and left it in a spot that internet scanners reach. That same mistake has produced most of the largest data exposures of the past five years, and it keeps working because credential hygiene is a checklist item that nobody owns after deployment.</p>
 <p>If you run Elasticsearch, OpenSearch, MongoDB, or anything else with a permissive default posture, the useful action this week is an inventory pass: which clusters are reachable from outside your network boundary, and which ones are still running with whatever the installer set up.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SAP Patches a CVSS 10.0 Kernel Flaw in Its September Release</title>
-      <link>https://sabr-labs.com/article/sap-security-patch-day-september-2026-cve-2026-44756-cvss-10</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sap-security-patch-day-september-2026-cve-2026-44756-cvss-10</guid>
-      <pubDate>Tue, 08 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SAP</category>
-      <category>Patch Management</category>
-      <category>CVE</category>
-      <category>NetWeaver</category>
-      <category>ERP Security</category>
-      <description>SAP&apos;s September 8 Security Patch Day carries 19 new notes, four of them critical, led by a memory corruption bug in Extended Passport Processing that scores a perfect 10.0.</description>
-      <content:encoded><![CDATA[<p>SAP shipped 19 new security notes plus one update today, and the top of the list is the kind of entry that ruins a maintenance window. CVE-2026-44756 is a memory corruption flaw in Extended Passport Processing with a CVSS score of 10.0, the maximum.</p>
-<p>The affected surface is the SAP kernel itself, not an add-on. SAP lists KRNL64NUC 7.22, KRNL64UC 7.22 through 8.04, WEBDISP 9.16 through 9.20, and KERNEL 7.22 through 9.20. If you run SAP at all, you almost certainly run one of these. Extended Passport is the tracing and correlation mechanism SAP uses to follow a request across components, which means the vulnerable code path sits in the plumbing rather than in some optional module a shop might have skipped.</p>
-<p>Right behind it, CVE-2026-58240 is a missing authentication check in the NetWeaver Message Server rated 9.8, affecting KERNEL 9.16 through 9.20. Message Server has a long history as an internal-only component that ends up reachable more often than anyone in the room expects, and "missing authentication check" on that service is close to a worst case.</p>
-<p>Two more clear the critical bar. CVE-2026-76969, scored 9.4, lets malformed requests pull credentials out of multitenant applications built on the Cloud Application Programming model, specifically the sap/cds-mtxs library at versions up to 1.18.3, 2.7.6, 3.9.6, and 4.0.2. CVE-2026-66768, at 9.0, is a trust-policy enforcement failure in SAP GUI for Java. Rounding out the set, CVE-2026-58243 is an 8.8 authorization issue.</p>
-<p>No exploitation has been reported for any of them yet. That is worth stating plainly and worth not relying on. SAP bugs have a consistent pattern: quiet for a few weeks, then a proof of concept lands, then internet-exposed instances start getting hit, and CISA adds the CVE to the KEV catalog with a three-week federal deadline. CVE-2026-58231 in SAP Commerce Cloud followed exactly that arc last month.</p>
-<p>The practical problem is that SAP kernel patching is not a Tuesday-afternoon job. It touches the application server binaries, it needs a restart, and in most shops it needs a change ticket, a test cycle, and a business owner who does not want the ERP down. That friction is precisely why attackers like this software.</p>
-<p>If you can't move on the kernel notes this week, at minimum confirm that Message Server ports are not reachable from anything outside the application tier, and audit which SAP web-facing services are actually exposed. Then book the window.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Samsung Leads €3 Billion Into Mistral at a €21 Billion Valuation</title>
-      <link>https://sabr-labs.com/article/mistral-3-billion-samsung-led-round-21-billion-valuation-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/mistral-3-billion-samsung-led-round-21-billion-valuation-september-2026</guid>
-      <pubDate>Tue, 08 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Mistral</category>
-      <category>Samsung</category>
-      <category>AI Funding</category>
-      <category>Europe</category>
-      <category>Data Centers</category>
-      <description>Mistral raised €3 billion in a Samsung-led round that nearly doubles its valuation to more than €21 billion, and almost all of it is going into compute the company wants to own outright.</description>
-      <content:encoded><![CDATA[<p>Three billion euros, and Samsung Electronics wrote the biggest check. Mistral confirmed the round Tuesday, valuing the Paris company at more than €21 billion and making this the largest equity raise a European technology firm has ever closed.</p>
-<p>The EU-backed Scaleup Europe Fund, managed by EQT, co-led alongside PSG Equity. Microsoft and Nvidia, both already on the cap table, put in more. A year ago Mistral was worth €11.7 billion. The valuation has nearly doubled without a single headline model release that anyone would call a frontier leap, which tells you what investors are actually pricing.</p>
-<p>They're pricing infrastructure. CEO Arthur Mensch has been explicit that the money goes into data centers in France and Sweden, on top of the roughly €4 billion Mistral is already spending on capacity, with the goal of running on hardware the company owns rather than rented cloud. He told reporters the long-term plan is to rely fully on capacity Mistral builds itself, and that the point of owning it is training bigger and faster models.</p>
-<p>That's a different bet from the one OpenAI and Anthropic are making. Both of those companies lease enormous amounts of compute from hyperscalers and have structured their futures around those relationships. Mistral is arguing that a European lab with European customers and European regulators eventually needs European silicon under its own roof, and that leasing it forever is a strategic dead end.</p>
-<p>The commercial numbers are more modest than the valuation suggests. Mistral says more than 125 enterprises across 20 countries use its products and that annual recurring revenue should pass €1 billion by the end of this year. A billion in ARR against €21 billion in valuation is a 21x multiple, which is aggressive but not absurd by current standards. The harder question is whether enterprise buyers pick Mistral because the models are good or because procurement wants a vendor inside the EU. Those are not the same customer, and only one of them stays when a competitor gets cheaper.</p>
-<p>Samsung's involvement is the piece worth watching. A memory manufacturer taking the lead position in an AI lab's round is not a passive financial move, and Samsung has obvious reasons to want an anchor customer for high-bandwidth memory that isn't routed through Nvidia's allocation queue.</p>
-<p>Mistral now has enough capital to stop competing on price alone. Whether it uses that runway to close the capability gap or to keep undercutting American labs on inference cost is the decision that defines the next eighteen months.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The ISC2 CC Exam Just Changed for the First Time Since 2022</title>
-      <link>https://sabr-labs.com/article/isc2-cc-exam-outline-update-governance-ai-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/isc2-cc-exam-outline-update-governance-ai-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>ISC2</category>
-      <category>Certified in Cybersecurity</category>
-      <category>Certification</category>
-      <category>Study Guide</category>
-      <category>Entry Level</category>
-      <description>The new Certified in Cybersecurity outline took effect September 1, adding a standalone governance domain, cloud content, and AI concepts across all five domains.</description>
-      <content:encoded><![CDATA[<p>If you've been sitting on an ISC2 CC voucher, the outline you studied is not the one you'll be tested on. The refresh went live September 1.</p>
-<p>This is the first real content update since the certification launched in August 2022, and ISC2 didn't just sprinkle new objectives into the existing structure. The exam still has five domains, but four of them were renamed and all five were reweighted. Access Controls Concepts is now Identity and Access Management Concepts, dropping from 22% to 20%. Network Security became Networking and Cloud Security Concepts at 21.3%, down from 24%. Security Principles slid from 26% to 24%.</p>
-<p>The two moves that actually matter are structural. Business Continuity, Disaster Recovery and Incident Response was a standalone 10% domain; it's gone, absorbed into a renamed Security Operations and Incident Response domain worth 17.3%. In its place sits Security Governance, brand new, at 17.3% of the exam. Governance went from a footnote to a sixth of your score.</p>
-<p>The content additions read like someone finally reconciled the CC with what entry-level job postings ask for. Governance, risk and compliance gets real estate. Identity lifecycle management and IAM frameworks are named explicitly. Cloud deployment and service models and the shared responsibility split are in. So are zero trust and modern segmentation, threat intelligence, incident response planning, red, blue and purple team testing, data masking and sanitization, and quantum-resistant cryptography.</p>
-<p>AI is the change ISC2 is promoting hardest, and it's threaded through all five domains rather than parked in one. Applying the CIA triad to AI systems, protecting training data against model poisoning, backing up model weights as a continuity concern, treating model drift as a business continuity risk, authenticating AI agents and service accounts, least privilege for ML pipelines. None of it is deep, and it shouldn't be at this level, but it does mean a candidate can no longer skip AI entirely and pass.</p>
-<p>Practically, here's what that means for your prep. Any study material published before September is misaligned on roughly a third of the exam weighting, and the gap is concentrated in the two places that are hardest to self-teach from an old book: governance and cloud. ISC2's own self-paced training tracks the new outline. Third-party courses and practice banks will take weeks to catch up, and some will just relabel the old content. Check whether a course lists Security Governance as a domain before you pay for it.</p>
-<p>There's no decision to make about which version to sit. The old outline is retired, so the only option is to study to the new one. If you were planning to test in the next month, push your date out a couple of weeks and spend that time on governance and cloud rather than re-drilling ports and protocols you already know.</p>
-<p>The CC has always been a reasonable first credential that nobody should mistake for a job qualification on its own. This version is closer to what a SOC analyst posting actually lists. That's an improvement, and it's worth the extra study time.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CrowdStrike&apos;s New Security Models Include One Built to Attack You</title>
-      <link>https://sabr-labs.com/article/crowdstrike-safemind-red-tempest-blue-solano-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/crowdstrike-safemind-red-tempest-blue-solano-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>CrowdStrike</category>
-      <category>NVIDIA</category>
-      <category>AI Security</category>
-      <category>Offensive Security</category>
-      <category>Nemotron</category>
-      <description>SafeMind pairs an offensive model called Red Tempest with a defensive one called Blue Solano, trained on Falcon telemetry and benchmarked entirely by CrowdStrike.</description>
-      <content:encoded><![CDATA[<p>Half of CrowdStrike's new model family is designed to break into things.</p>
-<p>SafeMind went live September 1 out of a newly stood-up Cyber Superintelligence Lab, announced at the company's Fal.Con conference. It's two purpose-built models plus the harnesses to run them. Red Tempest is the offensive side, built to emulate advanced attack scenarios and AI-driven adversaries. Blue Solano is the defensive counterpart. Both are built on NVIDIA Nemotron open models with NVIDIA as design partner, both run natively inside Falcon, and standalone access goes through an application program CrowdStrike is calling Project QuiltWorks.</p>
-<p>The training data is where this gets genuinely interesting. CrowdStrike fed these models Falcon sensor telemetry, its threat intelligence corpus, event annotations from Falcon Complete MDR engagements, and fifteen years of incident response fieldwork. No general-purpose lab has that. You can buy compute and you can hire researchers, but you cannot retroactively acquire a decade and a half of watching real intrusions land on real endpoints. If SafeMind outperforms a frontier model on security tasks, that's the reason, and it's a defensible one.</p>
-<p>The numbers attached to the launch are less defensible. CrowdStrike claims a 29% higher detection rate, remediation six times faster, and 99% lower cost against 'leading frontier models.' Those come from internal evaluations, against unnamed competitors, on tasks CrowdStrike selected, scored against telemetry CrowdStrike owns. That's not a benchmark. It's a marketing figure wearing a benchmark's clothes, and every AI security vendor is publishing them right now.</p>
-<p>Then there's Red Tempest. The press materials mention safeguards and describe the red and blue models operating in a closed loop as a system designed to deliver AI safety, which is a sentence that sounds like an answer without containing one. Nothing published says what technically prevents the offensive model from being aimed somewhere it shouldn't be. The gate appears to be an application form.</p>
-<p>That's now the industry pattern rather than an outlier. OpenAI put its less-restricted cyber model behind a vetted access program a few days earlier. Anthropic went the other direction and held capability back. Access programs are a governance control, not a security control, and the difference matters the first time a QuiltWorks account gets phished.</p>
-<p>Two things worth watching. Whether CrowdStrike publishes the criteria for QuiltWorks access, and whether anyone outside the company gets to run those detection numbers on a corpus CrowdStrike didn't pick.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The Seattle Times and Newsday Want a Court to Destroy OpenAI&apos;s Models</title>
-      <link>https://sabr-labs.com/article/seattle-times-newsday-openai-microsoft-copyright-suit-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/seattle-times-newsday-openai-microsoft-copyright-suit-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>OpenAI</category>
-      <category>Microsoft</category>
-      <category>Copyright</category>
-      <category>Media</category>
-      <category>Litigation</category>
-      <description>The two papers filed copyright and trademark claims against OpenAI and Microsoft in Manhattan federal court, asking for damages and the impoundment or destruction of models trained on their work.</description>
-      <content:encoded><![CDATA[<p>Damages are the boring part of this complaint. The Seattle Times and Newsday are also asking a federal judge to order the impoundment or destruction of the training datasets and models built on their journalism.</p>
-<p>The two papers filed September 4 in the Southern District of New York, naming both OpenAI and Microsoft. The core allegation is familiar by now: that the companies scraped the publishers' sites, including content behind paywalls, and folded those articles into the datasets used to train and run ChatGPT, Microsoft Copilot and Bing's AI features, without permission or payment.</p>
-<p>The trademark claim is the part worth reading twice. The papers allege OpenAI diluted their marks by generating fabricated content and attributing it to them. That reframes hallucinated citations from a product quality problem into a legal exposure, and it's a theory that doesn't depend on winning the fair use fight at all. If a model invents a Seattle Times story that never ran, the copyright analysis is beside the point.</p>
-<p>Microsoft said it was surprised by the suit and would be happy to sit down and find a solution. Surprised is doing heavy lifting there, roughly three years into a queue of nearly identical filings. OpenAI repeated its standard position: the models train on publicly available data and the use is fair.</p>
-<p>What's changed is who's filing. The early cases came from the largest national outlets with the deepest legal budgets. Regional dailies joining means the calculation has shifted for papers that can't fund a multi-year federal case on principle alone, which usually signals either contingency counsel getting comfortable with the theory or a belief that a settlement number now exists.</p>
-<p>Nobody is going to delete GPT-6. Asking for it anyway is how you establish that the alternative to a licensing check is an outcome the defendant cannot survive. That's the negotiation, and it's being conducted in a filing rather than a conference room because the conference room didn't produce a number.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A CVSS 10 in ASUS Control Center Hands Over Every Managed Machine</title>
-      <link>https://sabr-labs.com/article/asus-control-center-cve-2026-75754-unauthenticated-root-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/asus-control-center-cve-2026-75754-unauthenticated-root-september-2026</guid>
-      <pubDate>Mon, 07 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ASUS</category>
-      <category>CVE-2026-75754</category>
-      <category>Hard-Coded Credentials</category>
-      <category>Endpoint Management</category>
-      <category>SSRF</category>
-      <description>CVE-2026-75754 chains missing authentication, SSRF and hard-coded credentials into unauthenticated root on the console that manages an organization&apos;s entire PC fleet.</description>
-      <content:encoded><![CDATA[<p>Ask the server for an encryption key over plain HTTP. A local service reacts by opening SSH on port 2222. Log in with credentials that shipped inside the product. You now have a root shell on the box that manages every workstation in the building.</p>
-<p>That's CVE-2026-75754, disclosed in an ASUS advisory dated September 4 and scored 10.0 under CVSS 4.0. It affects ASUS Control Center Enterprise version 4.0.0.2 and earlier. ACC is the fleet management console ASUS sells into commercial deployments, so the blast radius isn't one server. It's every endpoint that server can push software and commands to.</p>
-<p>The 10.0 comes from stacking three separate weaknesses: missing authentication on a function that should never have been reachable anonymously, a server-side request forgery that completes the path, and hard-coded credentials sitting in the product. Hard-coded credentials in an enterprise management platform in 2026 is the detail that should end up in somebody's postmortem.</p>
-<p>ASUS's advisory is thinner than the score deserves. Secondhand write-ups have already diverged on which build actually contains the fix, with at least one citing a 3.1.x version as the remedy for something described as affecting 4.0.0.2 and earlier. Don't take a version number off an aggregator for this one. Pull it from ASUS's own product security advisory page and confirm the build you install is newer than what you're running.</p>
-<p>No confirmed in-the-wild exploitation and no public proof-of-concept have surfaced yet. That's the current state, not a forecast. A pre-auth root chain against a management console with a fixed password is exactly the shape of bug that shows up in scanner traffic within days of the writeups landing.</p>
-<p>Concrete steps for tonight: get the ACC interface off anything reachable from user VLANs or the internet, block 2222 at the host firewall regardless of patch status, and grep your auth logs for root sessions on that server that nobody can account for. If ACC has been internet-facing, assume the fleet it manages needs a look too.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
