@@ -6,9 +6,132 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Sep 2026 13:16:28 GMT</lastBuildDate>
-    <pubDate>Sat, 19 Sep 2026 13:16:28 GMT</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2026 13:19:51 GMT</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2026 13:19:51 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A Chatbot&apos;s Bad Read of a Ship Manifest Nearly Started a US-China Clash</title>
+      <link>https://sabr-labs.com/article/chatbot-false-intel-chinese-ship-near-miss-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/chatbot-false-intel-chinese-ship-near-miss-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Safety</category>
+      <category>Defense</category>
+      <category>Intelligence</category>
+      <category>Hallucination</category>
+      <category>Policy</category>
+      <description>US forces were staged to board a Chinese vessel over an intelligence report that turned out to be AI-generated and wrong about its cargo.</description>
+      <content:encoded><![CDATA[<p>Armed US personnel were ready to board a Chinese cargo ship in the Middle East. Aircraft were already in the air. The intelligence that put them there said the vessel was carrying components for a nuclear weapons program. It wasn't. A chatbot had gotten the manifest wrong, and nobody caught it until the operation was nearly underway.</p>
+<p>CNN broke the story on September 18, citing sources familiar with the incident. A Special Operations Command Pacific analyst in Hawaii had asked a chatbot to review intelligence on the ship's cargo. The model blended open-source material with classified signals intelligence and produced an assessment that the ship carried nuclear weapons components. That assessment then circulated across the military as a finished product, during the US war with Iran and days before a planned visit to Washington by Chinese President Xi Jinping.</p>
+<p>Officials identified the problem before anyone set foot on the deck. One source told CNN the report was entirely false. Another said it almost started a war.</p>
+<p>Here's what still isn't public: which tool the analyst used. CNN could not determine whether it was a commercial chatbot or something built inside the government. That distinction decides what kind of failure this was. If an analyst pasted classified signals intelligence into a commercial product, that is a data-handling incident on top of an analytic one. If it was a sanctioned internal system, then the government shipped a tool that produces confident nuclear-material findings and shipped it without the guardrails to stop one from reaching an operational planning cell.</p>
+<p>The policy backdrop is not subtle. Defense Secretary Pete Hegseth signed an "AI-first" memo in January directing the department to experiment with models from leading US AI companies. Speed was the stated goal. Nine months later, a generated assessment moved through an intelligence pipeline fast enough to stage an interdiction, which is exactly the speed that was asked for.</p>
+<p>The interesting failure here isn't that a model was wrong. Models are wrong constantly, and analysts are wrong sometimes too. The failure is that the output lost its label somewhere between the prompt and the planners. Finished intelligence carries an implicit claim that a human evaluated the sourcing. Once a generated paragraph gets copied into a product that carries that claim, the provenance is gone and every reader downstream inherits a confidence the work never earned.</p>
+<p>If your organization is pushing model output into decisions with real consequences, the thing worth auditing this week is not model accuracy. It's whether the tag that says "a machine wrote this" survives the third copy-paste.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Branch Named Like a Commit Hash Defeats Plugin Pinning in Four AI Agents</title>
+      <link>https://sabr-labs.com/article/plugin4shell-pinned-sha-branch-ai-coding-agents-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/plugin4shell-pinned-sha-branch-ai-coding-agents-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>AI Coding Agents</category>
+      <category>Git</category>
+      <category>Vulnerability</category>
+      <category>DevSecOps</category>
+      <description>AIR Security&apos;s Plugin4Shell shows that SHA-pinned plugins in Claude Code, Codex, Copilot and Gemini CLI can be swapped by the repo owner, and two of the four have no patch.</description>
+      <content:encoded><![CDATA[<p>Pinning a plugin to a commit hash is supposed to be the end of the conversation. The marketplace reviews a specific commit, the agent checks out that commit, and whatever the repository owner does afterward doesn't matter. Researchers at AIR Security found that in four of the most widely used AI coding agents, it does matter, and the repo owner can substitute code at will.</p>
+<p>The trick is embarrassingly small. Git resolves a checkout by name before it resolves by object. Create a branch whose name is the exact 40-character commit hash the agent expects, make it the default branch, and the agent checks out the branch instead of the commit. It then reports a successful install against the approved SHA. No prompt, no reinstall, no click from the developer. AIR is calling the flaw Plugin4Shell.</p>
+<p>The affected list is everyone: Anthropic's Claude Code, OpenAI's Codex, GitHub Copilot, and Google's Gemini CLI. That's not four independent bugs. It's the same assumption written four times, which is what happens when an entire product category grows out of the same mental model of how git behaves.</p>
+<p>Patch status is where this gets uncomfortable. AIR found the issue in May and disclosed to vendors in June. Anthropic shipped a fix in Claude Code 2.1.179, confirmed June 17. OpenAI shipped Codex 0.146.0, verified August 12. Microsoft has not shipped a fix for Copilot at all. Google deprecated Gemini CLI and says it won't patch it, pointing users to Antigravity instead.</p>
+<p>Telling people to migrate is not a patch. Deprecated software keeps running in CI pipelines and on developer laptops for years after the blog post, and "we no longer support this" does nothing for the org that pinned a plugin last quarter and moved on. Microsoft's silence is worse, because Copilot is the one with the largest install base of the four.</p>
+<p>There are no CVE IDs for any of this, which means it won't show up in the vulnerability scanners most teams rely on to notice anything at all. If you run agent plugins from third-party repositories, check your agent version by hand. Claude Code below 2.1.179 and Codex below 0.146.0 need updating today. For Copilot and Gemini CLI, the only real mitigation right now is to stop installing plugins from repositories you don't control.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Click2Shell Chains a Forced WordPress Theme Install Into Code Execution</title>
+      <link>https://sabr-labs.com/article/wordpress-click2shell-theme-preview-selector-injection-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-click2shell-theme-preview-selector-injection-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>RCE</category>
+      <category>Web Security</category>
+      <category>Patch</category>
+      <category>Theme Security</category>
+      <description>WordPress 7.1.1 patches a theme-preview selector injection that lets a crafted link install a catalog theme in an admin&apos;s browser, which pwn.ai then chained to code execution.</description>
+      <content:encoded><![CDATA[<p>WordPress shipped 7.1.1 on September 17 with 11 security fixes. The release notes lead with an unauthenticated stored XSS in wpautop(), the function that converts line breaks into paragraphs on basically everything WordPress renders. That one deserves the top billing. But the fix worth reading the technical write-up for is further down the list, and pwn.ai published it the next day under the name Click2Shell.</p>
+<p>The core bug is a selector injection in the theme-preview flow. A value lifted from a theme-preview URL gets interpreted one way by the WordPress.org Themes API and a second, buggier way by the JavaScript running in the administrator's browser. The result is that WordPress's own admin JavaScript installs an attacker-chosen theme from the official catalog. There is no Install button to click. The admin just has to open the link.</p>
+<p>That alone is a solid bug. The chain is what makes it interesting. During a Customizer preview, an inactive theme's PHP loads before the theme is ever activated. So if the attacker picks a catalog theme that ships an unprotected AJAX handler, and several do, that handler is now reachable inside the victim's authenticated session. pwn.ai demonstrated it with Mobile Repair Zone 2.5.4, using the handler to pull down and run attacker-supplied plugin code.</p>
+<p>Worth being precise about the prerequisite, because several public PoC repositories are describing this as a pre-auth chain and it isn't. A logged-in administrator has to visit the attacker's URL. That's a low bar in practice, since an admin clicking a link in a support ticket or a plugin-vendor email is a Tuesday, but it is a real prerequisite and the difference matters when you're triaging.</p>
+<p>All releases before 7.1.1 carry the core selector injection, and WordPress backported the fix across supported branches going back to 4.7. No CVE had been assigned at disclosure. WordPress said one is coming.</p>
+<p>The uncomfortable part is what the patch doesn't reach. WordPress closed the forced-install primitive, and that breaks the chain as published. The second stage is untouched. The official theme catalog still carries themes with AJAX handlers that run without a capability check, waiting for the next primitive that gets code loaded in an admin context. This is the second pre-auth-adjacent core RCE chain in WordPress this year after WP2Shell in July, and both of them worked by finding a way to reach code that was already sitting there.</p>
+<p>Update to 7.1.1 or the matching backport for your branch. Then go look at what's in your themes directory that you aren't running.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SolarWinds Access Rights Manager Shipped With a Hardcoded Key</title>
+      <link>https://sabr-labs.com/article/solarwinds-arm-cve-2026-28326-hardcoded-key-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-arm-cve-2026-28326-hardcoded-key-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>SolarWinds</category>
+      <category>CVE</category>
+      <category>Hardcoded Credentials</category>
+      <category>Patch</category>
+      <category>Enterprise Security</category>
+      <description>CVE-2026-28326 lets an unauthenticated attacker on the adjacent network run code on SolarWinds ARM, and the fix is 2026.2.1.</description>
+      <content:encoded><![CDATA[<p>SolarWinds published an advisory on September 17 for CVE-2026-28326, a hardcoded static cryptographic key in Access Rights Manager. CVSS 8.8. Every version through 2026.2 is affected. The fix is 2026.2.1, and there is nothing to configure around it.</p>
+<p>CWE-321 is one of the more depressing vulnerability classes because it isn't a memory bug or a race condition or anything that requires cleverness to get wrong. Somebody put a key in the binary. Everyone who has the binary has the key. Anyone who can reach the exposed interface can authenticate as the product to itself and run commands on the managed host, without credentials.</p>
+<p>One detail most of the coverage flattened: the CVSS vector is AV:A, adjacent network, not AV:N. This isn't something an attacker hits from the open internet against an exposed port. It needs a position on the same network segment. That is a meaningful downgrade in urgency and a meaningless one in practice for anybody who has already lost a workstation on that segment, which describes most real intrusions by the time anyone notices.</p>
+<p>The reason to care more than the score suggests is what ARM is for. Access Rights Manager is the tool that inventories and provisions who can reach which file shares, groups, and directory objects. Code execution on the box that holds the permissions map is not equivalent to code execution on some reporting server. An attacker who lands there gets the org chart of your access model and the ability to edit it.</p>
+<p>SolarWinds credits Kai Huang of Armadin with the report and says nothing about exploitation in the wild. There's no public proof of concept yet. That gap tends to be short for hardcoded-key bugs, since the research work is finished the moment somebody strings the binary.</p>
+<p>Patch to 2026.2.1. While you're in there, check whether your ARM instance is reachable from your general user VLAN, because the adjacent-network caveat is only protective if the adjacency is actually limited.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pentagon Investigators Fault Maven Overreliance in the Minab School Strike</title>
+      <link>https://sabr-labs.com/article/maven-overreliance-minab-school-strike-pentagon-findings-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/maven-overreliance-minab-school-strike-pentagon-findings-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Palantir</category>
+      <category>Defense</category>
+      <category>AI Safety</category>
+      <category>Targeting</category>
+      <category>Accountability</category>
+      <description>A Bloomberg investigation into the February Tomahawk strike that killed 123 children found stale imagery, a years-old database error, and CENTCOM personnel leaning too hard on Palantir&apos;s targeting system.</description>
+      <content:encoded><![CDATA[<p>On February 28 a Tomahawk hit the Shajareh Tayyebeh school in Minab, Iran, and killed 123 children. Bloomberg published its reconstruction of how that happened on September 18, drawing on Pentagon officials familiar with the review. The finding is not that an AI picked the target. It's that several human checks which should have caught the error were performed by people who believed the system had already caught it.</p>
+<p>US databases had the Minab compound logged as a military site, and had for years. Commercial satellite imagery tells a different story. The construction that separated the school from the adjacent base appears to have been finished by 2017. An image from 2018 shows brightly painted walls, a soccer pitch, assembly rows, and playground markings. None of that reached the targeting record.</p>
+<p>The tool in the middle is Palantir's Maven Smart System, which fuses satellite, drone, radar and signals intelligence into a single targeting interface. Maven runs Anthropic's Claude to rank targets by priority and draft legal justifications for each one. It is a programme of record with tens of thousands of military accounts, and during the Iran campaign it produced roughly a thousand prioritized targets in the first day, more than 11,000 by mid-April. Pentagon officials told Bloomberg that some CENTCOM personnel leaned on it too hard.</p>
+<p>Palantir's response is that the company "is not responsible for the underlying data nor identifying intelligence deficiencies," and that there's no evidence its software was at fault. Both statements are defensible on their own terms. Garbage in, garbage out is a real principle, and the bad site designation predates Maven by years.</p>
+<p>It's also an answer to a question nobody asked. The complaint isn't that Maven invented a school. It's that a system which ranks targets and writes the legal paperwork for them presents its output with a finish that looks like review has already happened. When the interface produces a priority score and a drafted justification in the same pane, the analyst's job quietly changes from assessing the target to agreeing with the assessment. Vendors don't get to build the confidence layer and then disclaim the confidence.</p>
+<p>This isn't hindsight applied to a novel risk. Military Times was writing about the Minab strike casting a shadow over the Pentagon's AI targeting push back in March, six months before the Bloomberg piece landed. The targeting cycle got compressed on purpose, because compression was the selling point.</p>
+<p>What would actually change the outcome is unglamorous: an expiration date on site designations, a required check against current commercial imagery before a fixed-site strike, and a visible marker on any target record where the justification text was machine-drafted. None of that requires rethinking automated targeting. It requires deciding that speed is not the only metric the system gets graded on.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Flock Is Buying Out Staff as Cities Rip Out Its License Plate Readers</title>
+      <link>https://sabr-labs.com/article/flock-safety-buyouts-license-plate-reader-cancellations-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/flock-safety-buyouts-license-plate-reader-cancellations-september-2026</guid>
+      <pubDate>Sun, 20 Sep 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Surveillance</category>
+      <category>Privacy</category>
+      <category>Flock Safety</category>
+      <category>Government Tech</category>
+      <category>Layoffs</category>
+      <description>Flock Safety opened a voluntary severance program on Friday with an October 2 deadline, after dozens of local governments canceled contracts for its automated license plate readers this year.</description>
+      <content:encoded><![CDATA[<p>Ninety-three city and county governments cut ties with Flock Safety in August alone, by the count of one advocacy group tracking the cancellations. On Friday the company opened a voluntary separation program for its roughly 1,500 employees. They have until October 2 to decide, and WIRED reports Flock expects to approve most of the people who raise their hands.</p>
+<p>This is not a product that stopped working. Flock's automated license plate readers do exactly what the sales deck said: capture plates, timestamp them, make the history searchable, and share it across a network of agencies. The cameras are still accurate. What collapsed is the political permission to run them.</p>
+<p>The cancellations stack up from two directions. Reporting through the year documented plate data being queried for immigration enforcement and investigations into individual officers misusing the searches, which turned a procurement line item into a city council agenda fight. Communities in 23 states have rejected, canceled or deactivated Flock readers in 2026, with California and Wisconsin leading at seven apiece. Roughly three times as many local governments dropped the company this year as in the previous five combined.</p>
+<p>Texas is the sharpest example. Two dozen cities and counties there have moved to end contracts or pull the cameras, and in September Governor Greg Abbott ordered a halt to state funding for them. That's a red-state government cutting off a law enforcement surveillance vendor, which tells you the objection isn't running along the usual line.</p>
+<p>There's an operating-cost wrinkle too. A wave of vandalism against the cameras has driven up expenses on hardware that was priced assuming it would sit on a pole undisturbed. Flock has raised about $1.2 billion in venture capital, and people familiar with the severance plan told WIRED that some employees are weighing the offer against speculation the company may end up selling off pieces of itself. That's speculation, not a filing, and worth holding loosely.</p>
+<p>The useful lesson for anyone building in this category: when your revenue depends on thousands of separate municipal contracts, your business model has thousands of separate veto points, and every one of them is a two-hour public meeting away from a no vote. Consumer backlash against a consumer product takes years to show up in the numbers. Backlash against a civic product shows up at the next council session.</p>]]></content:encoded>
+    </item>
     <item>
       <title>CISA Gives Agencies Until Sunday to Patch Three Exploited Linux Kernel Bugs</title>
       <link>https://sabr-labs.com/article/cisa-kev-linux-kernel-three-flaws-exploited-september-2026</link>
@@ -917,131 +1040,6 @@
 <p>FLHSMV had not confirmed a breach as of Tuesday, and no outlet covering this has independently verified the claims. Worth stating plainly, because ShinyHunters has both a real track record of intrusions and a habit of inflating them. The group says it will publish the data on September 11 if it is not paid.</p>
 <p>If the claim holds, the exposure is unusual. Driver records are protected under the federal Driver's Privacy Protection Act, which carries statutory damages of $2,500 per violation, and a law enforcement lookup system leaks more than names. It also leaks who was looked up, and by whom.</p>
 <p>Password reset as an initial access vector, in 2026, against a system that gates police access to state driver data. If that is genuinely how this happened, the account recovery flow is the finding here, not the breach.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chrome&apos;s Seventh Zero-Day of the Year Is a $2,500 V8 Bug</title>
-      <link>https://sabr-labs.com/article/chrome-153-cve-2026-87491-v8-zero-day-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-153-cve-2026-87491-v8-zero-day-september-2026</guid>
-      <pubDate>Wed, 09 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Google</category>
-      <category>Chrome</category>
-      <category>Zero-Day</category>
-      <category>V8</category>
-      <category>Browser Security</category>
-      <description>Google shipped Chrome 153 with 230 security fixes, including an out-of-bounds write in V8 that attackers are already using against real targets.</description>
-      <content:encoded><![CDATA[<p>A $2,500 bug bounty is what Google paid for a vulnerability someone was already exploiting in the wild. That is the going rate for a medium-severity out-of-bounds write in V8, apparently, and it says something uncomfortable about how neatly severity ratings map to real risk.</p>
-<p>The bug is CVE-2026-87491, reported on August 6 by Jihyeon Jeong of the Compsec Lab at Seoul National University. It lives in V8, Chrome's JavaScript and WebAssembly engine, and a crafted HTML page is enough to get arbitrary code running inside the browser sandbox. Google confirmed an exploit exists in the wild and, as usual, said nothing about who is using it or against whom.</p>
-<p>It is the seventh Chrome zero-day patched this year, following CVE-2026-85046 and five others going back to January.</p>
-<p>The release around it is enormous. Chrome 153 carries 230 security fixes, 35 of them from outside researchers who collectively earned about $23,000. Five are rated critical: four in WebGL and one use-after-free in Cast.</p>
-<p>Google's silence on exploitation details is standard practice and defensible while a patch rolls out. It also means the people who most need to know whether this was a targeted operation or a commodity exploit kit are the last to find out. Code execution contained inside the sandbox is not a full escape, but it is the opening move in every chain that becomes one, and the pairing bug is usually cheaper to find than the V8 bug was.</p>
-<p>Chrome 153.0.8010.36 is the Linux build; Windows and macOS get .36 or .37. Open chrome://settings/help, let it pull the update, then actually restart the browser. The fix does not apply until you do, and a session that has been open since last Thursday is still exposed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Ships 966 Fixes and 20 Wormable DNS Bugs in One Day</title>
-      <link>https://sabr-labs.com/article/microsoft-september-2026-patch-tuesday-966-cves-wormable-dns</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-september-2026-patch-tuesday-966-cves-wormable-dns</guid>
-      <pubDate>Wed, 09 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Patch Tuesday</category>
-      <category>Zero-Day</category>
-      <category>DNS</category>
-      <category>Vulnerability Management</category>
-      <description>September&apos;s Patch Tuesday is the largest Microsoft has ever shipped, with two privilege-escalation zero-days already under attack and a cluster of DNS flaws that ZDI is calling a successor to SigRed.</description>
-      <content:encoded><![CDATA[<p>Nine hundred and sixty-six. That is how many CVEs Microsoft closed on Tuesday in a single release, and it is the largest patch drop the company has ever shipped. Two of those bugs were already being used in attacks before the fix existed.</p>
-<p>The exploited pair are both privilege escalations, which is the boring half of an attack chain and also the half that turns a foothold into a domain problem. CVE-2026-81963 is a link-following flaw in the Windows Update Stack that hands an attacker SYSTEM on Windows 11 and Server 2025. Microsoft's own threat intelligence team found it. CVE-2026-85880 is a heap-based buffer overflow in Advanced Local Procedure Call that does the same thing on Windows 10 and the older server builds from 2012 through 2022, and it came in from Proofpoint researchers.</p>
-<p>The bug that should worry you more is not on that list.</p>
-<p>CVE-2026-69730 covers a cluster of about 20 DNS flaws affecting most supported Windows versions, and they allow code execution with no user interaction at all. Trend Micro's Zero Day Initiative is calling it the spiritual successor to SigRed, the 2020 wormable DNS bug that had everyone patching over a weekend. Dustin Childs of ZDI put it plainly: we have not seen a global worm in years, but a DNS flaw acting as SigRed's successor could change that fast. If you run Windows DNS on a domain controller, and most shops do, that is your Wednesday.</p>
-<p>The rest of the release breaks down as 438 elevation of privilege bugs, 258 remote code execution, 173 information disclosure, and 105 rated critical overall. Windows absorbed the bulk of it, with Office, SQL Server, Exchange, SharePoint and Azure taking the remainder.</p>
-<p>Volume is its own vulnerability now. Before this year Microsoft averaged somewhere near 175 CVEs a month. September is more than five times that, and no patch management team on earth is reading 966 advisories to decide what matters. The practical effect of a release this size is that triage collapses into 'install everything and hope the reboot window holds,' which works right up until a patch breaks a line-of-business app and the rollback buys an attacker three more weeks.</p>
-<p>Order of operations: DNS servers first, then the Windows Update Stack fix, then the ALPC patch across your legacy server fleet. Both exploited CVEs are headed for CISA's Known Exploited Vulnerabilities catalog, and federal agencies will get a hard deadline. Treat it as yours too.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Europe Finally Has a Privately Built Rocket in Orbit</title>
-      <link>https://sabr-labs.com/article/isar-aerospace-spectrum-orbit-andoya-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/isar-aerospace-spectrum-orbit-andoya-september-2026</guid>
-      <pubDate>Tue, 08 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>space</category>
-      <category>Isar Aerospace</category>
-      <category>Spectrum</category>
-      <category>Launch</category>
-      <category>Europe</category>
-      <category>Smallsats</category>
-      <description>Isar Aerospace&apos;s Spectrum reached a 500 km orbit from Andøya Spaceport in Norway and deployed five satellites, 524 days after its first flight failed seconds off the pad.</description>
-      <content:encoded><![CDATA[<p>The first Spectrum lasted about half a minute. It lifted off from Andøya Spaceport in March 2025, pitched over, and came down near the pad. Five hundred and twenty-four days later, the second one made orbit.</p>
-<p>Isar Aerospace launched from the same pad in northern Norway on September 5, put Spectrum into a 500-kilometer orbit, and deployed five small satellites plus a technology demonstration payload. That makes Isar the first company to fly a privately developed European launch vehicle to orbit from continental Europe, which is a narrower claim than it sounds and still a real one. Europe has had orbital launch capability for decades through Ariane, but that is a state-anchored program flying from French Guiana.</p>
-<p>Spectrum is a two-stage vehicle burning liquid oxygen and propane, an unusual pairing. Nine Aquila engines on the first stage, one vacuum-optimized Aquila on the second. Propane sits between kerosene and methane on density and handling, is cheap, and does not coke the way RP-1 does, which matters if reuse is anywhere in the roadmap. The combustion chambers and turbopumps are 3D printed, which is now table stakes for a new launch company but was not when Isar started designing them.</p>
-<p>Capacity is 1,000 kg to low Earth orbit and 700 kg to sun-synchronous. That is the smallsat and constellation-rideshare segment, competing less with Falcon 9 than with Rocket Lab's Electron on the small end and with the queue for SpaceX rideshare slots on the other.</p>
-<p>The strategic context is not subtle. European operators who want to launch European satellites have spent years choosing between waiting for Ariane 6 slots and buying rides from an American company that also competes with several of their customers. A second flight reaching orbit does not fix that, but it is the first time the alternative has been something other than a slide deck.</p>
-<p>The gap between flight one and flight two is the number to sit with. Isar spent nearly 18 months turning a launch failure into a working vehicle, which is fast for a first-generation rocket and slow compared to the cadence any of this needs to reach to matter commercially. Getting to orbit once proves the design closes. Getting there ten times a year proves the company works.</p>
-<p>Next up is showing the second Spectrum wasn't a one-off.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple&apos;s Foldable Arrives Tomorrow, and Ternus Runs the Keynote</title>
-      <link>https://sabr-labs.com/article/apple-september-9-2026-event-iphone-fold-ternus-preview</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-september-9-2026-event-iphone-fold-ternus-preview</guid>
-      <pubDate>Tue, 08 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>iPhone</category>
-      <category>Foldables</category>
-      <category>John Ternus</category>
-      <category>Product Launch</category>
-      <description>Apple&apos;s September 9 event is expected to bring the first foldable iPhone at a price above $2,000, the 2nm A20 Pro, and John Ternus&apos;s debut as chief executive.</description>
-      <content:encoded><![CDATA[<p>Apple's fall event lands tomorrow at 10 a.m. Pacific, and the interesting part isn't the phone. It's who walks out first. John Ternus took over as CEO on September 1, with Tim Cook moving to executive chairman, and this keynote is his introduction to everyone who has watched Apple product launches for the last fourteen years.</p>
-<p>The hardware is a genuinely big swing. Reporting from Bloomberg and MacRumors points to Apple's first foldable, expected to carry the iPhone Ultra name, with a 5.5-inch outer display and a 7.8-inch inner one, 12 GB of RAM, and Touch ID instead of Face ID because there's nowhere sensible to put the sensor array. Pricing is expected to start around $2,000 and climb toward $2,500 at higher storage tiers.</p>
-<p>That price sits well above anything Apple has charged for a phone. Morgan Stanley's estimate has the foldable contributing something like $14 billion in December-quarter revenue, which if it lands would say more about the addressable market for a $2,000 handset than most people currently believe exists.</p>
-<p>Alongside it: the iPhone 18 Pro and Pro Max on the A20 Pro, Apple's first 2nm chip, reportedly around 18 percent faster and up to 30 percent more power efficient than the A19 Pro. A variable aperture camera and an LTPO+ display round out the Pro spec. Apple Watch Series 12, Watch Ultra 4, and AirPods 5 are all expected. Pre-orders should open September 12 with availability on the 18th.</p>
-<p>Samsung has been shipping folding phones since 2019 and is now seven generations in. Apple arriving in year eight with a $2,000 device is either very late or exactly on time, depending on whether you think the crease, the hinge durability, and the software story were ever solved well enough for Apple's tolerance. The company has never been early to a form factor and has usually been fine.</p>
-<p>The quieter question is Siri. Apple has spent two years promising an assistant rebuilt around its own models, and every delay has been reported in more detail than Apple would like. A foldable is a hardware headline. A Siri that actually works is the thing that determines whether iPhone owners feel the platform is keeping up.</p>
-<p>Watch what Ternus spends his stage minutes on. That allocation is the first real signal of what he thinks Apple is now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>BigBear Phishing Service Beat MFA at 258 Organizations</title>
-      <link>https://sabr-labs.com/article/bigbear-2-evilginx2-mfa-bypass-258-organizations-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bigbear-2-evilginx2-mfa-bypass-258-organizations-september-2026</guid>
-      <pubDate>Tue, 08 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Phishing</category>
-      <category>Microsoft 365</category>
-      <category>MFA Bypass</category>
-      <category>Evilginx</category>
-      <category>CloudSEK</category>
-      <description>CloudSEK got administrator access to a phishing-as-a-service control panel and found 42 active nodes, more than 5,000 stolen Microsoft 365 credentials, and custom code built to break FIDO2 in the browser.</description>
-      <content:encoded><![CDATA[<p>Researchers at CloudSEK logged into the attacker's admin panel. What they found was a phishing-as-a-service operation called BigBear 2.0 running 42 VPS nodes, all pointed at Microsoft 365, with more than 5,000 harvested credentials and session cookies from 258 organizations.</p>
-<p>The engine is Evilginx2, which has been public tooling for years. BigBear wraps it in a configuration the operators call "offy" that proxies the victim between a convincing login page and Microsoft's real authentication endpoints. The victim types the password, gets the MFA prompt, approves it, and completes a genuinely valid sign-in. The proxy sits in the middle and keeps the resulting session cookie. That cookie is then replayed through an API to take over the account, no second factor required, because the second factor already happened.</p>
-<p>Two details separate this from the average adversary-in-the-middle kit. The first is custom JavaScript that interferes with FIDO2 and WebAuthn in the victim's browser, disabling the functionality that would normally handle a hardware key or passkey. When that path breaks, the sign-in page falls back to a weaker method, and the user shrugs and taps the push notification instead. The kit does not defeat phishing-resistant MFA. It talks the browser out of offering it.</p>
-<p>The second is geography. BigBear routes each session through a residential proxy matched to the victim's own country, covering 69 of them. Microsoft's risk scoring leans heavily on impossible-travel and anomalous-IP signals, and a login from a residential address in the user's home city produces none of those.</p>
-<p>This is what commoditization looks like. None of these techniques are novel. Session cookie theft, AiTM proxying, and residential proxy networks have all been documented individually. Packaging them into a subscription service with a working control panel is the part that matters, because it moves the capability from teams that can build it to anyone who can pay for it.</p>
-<p>The defensive answer has not changed and is still unpopular: number matching and push notifications are not enough, and "we have MFA" stopped being a meaningful statement some time ago. Hardware-bound credentials with origin binding, meaning FIDO2 security keys or platform passkeys with Conditional Access enforcement, break the proxy because the credential will not sign for a domain it does not recognize. That is why BigBear had to write code to disable them.</p>
-<p>For detection right now: hunt for successful sign-ins where the session token was issued from one IP and used from another, look for authentication events that skipped an expected passkey path, and treat unfamiliar residential ASNs on privileged accounts as worth a look rather than noise.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>220 Million Passenger Records Sat Behind Default Credentials</title>
-      <link>https://sabr-labs.com/article/apis-220-million-traveler-records-vietnam-elasticsearch-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apis-220-million-traveler-records-vietnam-elasticsearch-september-2026</guid>
-      <pubDate>Tue, 08 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Exposure</category>
-      <category>Elasticsearch</category>
-      <category>Aviation</category>
-      <category>Privacy</category>
-      <category>Misconfiguration</category>
-      <description>An exposed Elasticsearch cluster tied to a Vietnamese Advance Passenger Information System held 220.8 million passenger and crew records, including passport numbers, going back to 2017.</description>
-      <content:encoded><![CDATA[<p>Default credentials. That's how researchers got into a database holding 220.8 million passenger and crew records, complete with passport numbers, nationalities, and full itineraries.</p>
-<p>Kinryū Labs found the cluster on June 3 while sweeping exposed databases as part of unrelated ransomware research. The Elasticsearch instance was named 'pax-info' and carried 29 indices across roughly 107 GB. The records span January 2017 through April 2026 and appear to belong to an Advance Passenger Information System operated by or for a Vietnamese organization. Access was reachable through a cloud path that still had vendor default credentials in place.</p>
-<p>APIS data is not marketing analytics. It's the passenger manifest data airlines are legally required to hand to border authorities before a flight lands: name, date of birth, sex, nationality, travel document number, document expiry, issuing country. This dataset also carried the operational side, meaning flight numbers and dates, carriers, origin and destination airports, transit stops, seat assignments, baggage references, and scheduled versus actual times.</p>
-<p>Put those two halves together and you have something closer to a movement-tracking system than a breach dump. Passport number plus date of birth plus a nine-year travel history is enough for identity fraud, for targeted social engineering against specific travelers, and for anyone interested in mapping who flew where and when. Nine years of transit records through a regional hub captures a lot of people who have never had any relationship with Vietnam beyond a layover.</p>
-<p>The exposure was remediated on June 8, five days after discovery, by fixing the misconfigurations and removing the default credentials. Nobody has said whether anyone else found it first, and with an Elasticsearch cluster reachable on the open internet for an unknown period, that question does not have a comforting default answer.</p>
-<p>The failure here is boring, which is the point. This wasn't a zero-day or a sophisticated intrusion chain. Someone stood up a cluster, never rotated the shipped credentials, and left it in a spot that internet scanners reach. That same mistake has produced most of the largest data exposures of the past five years, and it keeps working because credential hygiene is a checklist item that nobody owns after deployment.</p>
-<p>If you run Elasticsearch, OpenSearch, MongoDB, or anything else with a permissive default posture, the useful action this week is an inventory pass: which clusters are reachable from outside your network boundary, and which ones are still running with whatever the installer set up.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
