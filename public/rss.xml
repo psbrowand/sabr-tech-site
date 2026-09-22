@@ -6,9 +6,130 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2026 13:14:02 GMT</lastBuildDate>
-    <pubDate>Mon, 21 Sep 2026 13:14:02 GMT</pubDate>
+    <lastBuildDate>Tue, 22 Sep 2026 13:18:25 GMT</lastBuildDate>
+    <pubDate>Tue, 22 Sep 2026 13:18:25 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>A CVSS 10 VeloCloud Orchestrator Flaw Is Being Exploited Before Every Fix Ships</title>
+      <link>https://sabr-labs.com/article/velocloud-orchestrator-cve-2026-93952-cvss-10-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/velocloud-orchestrator-cve-2026-93952-cvss-10-exploited-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Arista</category>
+      <category>VeloCloud</category>
+      <category>SD-WAN</category>
+      <category>CVE-2026-93952</category>
+      <category>Zero-Day</category>
+      <description>Arista says CVE-2026-93952 is under active attack against on-prem VeloCloud Orchestrators using certificate-based Edge authentication, and only the 5.2 and 6.4 trains have patches so far.</description>
+      <content:encoded><![CDATA[<p>If you run an on-prem VeloCloud Orchestrator, assume someone has already tried the front door. Arista published Security Advisory 0183 on Monday for CVE-2026-93952, an improper input validation bug in the orchestrator's web interface that scores a flat 10.0 on CVSS 3.1 (9.5 under CVSS 4.0), and the company says it is known to be actively exploited.</p>
+<p>The bug lets a remote attacker reach privileged internal functionality on the VCO. There's a catch that narrows the blast radius a little: exploitation requires that certificate-based Edge-to-VCO authentication is configured, that the attacker can reach the web interface, and that they hold the public portion of an Edge's authentication certificate. Public certificates aren't secrets, so that last condition is a speed bump rather than a wall.</p>
+<p>Affected builds are VCO 5.2.3.15 and earlier, 6.1.3.7 and earlier, 6.4.2.7 and earlier, and 7.0.0.2 and earlier. Fixes exist for two of those trains: 5.2.3.16 and 6.4.2.8. Customers on 6.1 or 7.0 are told fixes for still-supported trains are coming, which is an uncomfortable spot to be in when the exploit is already live. Arista's hosted and dedicated orchestrators were patched before disclosure, so this is an on-prem problem.</p>
+<p>Why this one matters more than the average appliance bug: the orchestrator is the brain of an SD-WAN deployment. Arista's own advisory warns that a compromised VCO may give attackers access to the Edge devices it manages. Own the orchestrator and you're pushing configuration to every branch.</p>
+<p>Arista and The Hacker News list indicators worth hunting for right now. On the VCO host, look for /usr/local/sbin/.vcnode.js, a binary at /usr/local/sbin/vc-sysmond, and a systemd unit at /etc/systemd/system/vc-sysmon.service. In nginx logs, look for requests carrying an x-vc-opt header. Two IPs tied to the activity are 142.93.149[.]77 and 104.248.126[.]159.</p>
+<p>This is also the second VCO security issue this summer after CVE-2026-16812 in July, and VeloCloud only changed hands from Broadcom to Arista last year. Product transitions are exactly when patch cadence and advisory quality tend to wobble.</p>
+<p>What to do today: patch if you're on 5.2 or 6.4. If you're on 6.1 or 7.0, pull the VCO web interface off anything but a trusted admin network, block non-essential outbound ports from the host, and check for the files and header above. If you find them, treat the Edges it manages as suspect too.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Nearly 1,000 Zyxel Switches Were Quietly Drained of Configs and Root Hashes</title>
+      <link>https://sabr-labs.com/article/zyxel-gs1900-cve-2026-7273-996-switches-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/zyxel-gs1900-cve-2026-7273-996-switches-exploited-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Zyxel</category>
+      <category>CVE-2026-7273</category>
+      <category>CISA KEV</category>
+      <category>Network Switches</category>
+      <category>GreyNoise</category>
+      <description>GreyNoise says a Chinese-speaking actor used CVE-2026-7273 to pull configurations and hashed root credentials from 996 Zyxel GS1900 switches in 48 countries, and CISA wants federal fixes by Thursday.</description>
+      <content:encoded><![CDATA[<p>Zyxel patched CVE-2026-7273 in June. By mid-August, an attacker was using it to walk through unpatched GS1900 switches, and by the time anyone said so publicly, 996 of them in 48 countries had given up their configurations, network details and hashed root-level credentials.</p>
+<p>The flaw is a stack-based buffer overflow in the CGI program behind the GS1900 web interface, rated 8.8. Zyxel's advisory describes it as exploitable by an unauthenticated attacker on the LAN who sends a crafted HTTP request, which gets them OS command execution on the switch. Affected firmware is 2.90(xxxx.1)C0 and earlier across the GS1900-8, 8HP, 10HP, 16, 24, 24E, 24EP, 24HPv2, 48 and 48HPv2. The fixed builds are the matching .2 releases.</p>
+<p>That "LAN-based" label deserves a raised eyebrow. Nearly a thousand victims spread across Italy, the US, Taiwan, South Korea and a chunk of the EU doesn't look like an attacker who needed to be on anyone's LAN first. It looks like management interfaces reachable from places they shouldn't be. GS1900s are small-office gear, the kind that ends up in schools, hotels and retail back rooms without a network team watching them.</p>
+<p>GreyNoise, which disclosed the campaign Monday, attributes it to a Chinese-speaking actor it has tied to earlier WordPress and Gitea exploitation. The exploit was delivered as a Python script wrapped in PyArmor, a commercial obfuscator, and the attacker used TFTP to pull down follow-on collection scripts. That's reconnaissance and credential harvesting, not a smash-and-grab. The stolen root hashes and configs are the kind of thing you collect when you plan to come back.</p>
+<p>CISA added the bug to its Known Exploited Vulnerabilities catalog on September 21 and gave federal civilian agencies until September 24 to fix it. Three days is a short fuse, and it tells you how CISA reads the evidence.</p>
+<p>For everyone else: flash the .2 firmware, then assume the old credentials are burned. Rotate the switch admin passwords and anything else that appears in the exported configs (SNMP communities, RADIUS secrets, TACACS keys). Check whether the web UI is reachable from outside your management VLAN, and if it is, fix that before you do anything else.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Called This SharePoint Bug Spoofing. The Public Exploit Says RCE.</title>
+      <link>https://sabr-labs.com/article/sharepoint-cve-2026-65660-spoofing-label-actually-rce-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/sharepoint-cve-2026-65660-spoofing-label-actually-rce-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>SharePoint</category>
+      <category>CVE-2026-65660</category>
+      <category>Patch Management</category>
+      <category>RCE</category>
+      <description>CVE-2026-65660, patched in August as a 6.5 spoofing issue, is an authenticated code injection flaw in SharePoint&apos;s ToolPane that now has a public webshell-dropping exploit.</description>
+      <content:encoded><![CDATA[<p>A SharePoint patch you may have deprioritized in August just got a lot more urgent. CVE-2026-65660 went out in the August 11 security updates labeled as a spoofing vulnerability, CVSS 6.5, with Microsoft's advisory claiming no impact to integrity or availability. Researcher Dinh Ho Anh Khoa of Viettel Cyber Security has now published a full writeup showing it's authenticated remote code execution.</p>
+<p>The bug lives in ToolPane, the same SharePoint component that sat at the center of last year's ToolShell mass exploitation. When ToolPane processes web-part markup, it rebuilds Register directives by dropping attribute values between double quotes without escaping quotes inside them. Inject your own quote and you can smuggle in extra directives that register arbitrary .NET classes after the SafeControls type check has already run. From there, Khoa uses XamlServices.Parse() to reach code execution through deserialization.</p>
+<p>The writeup includes a working in-memory webshell. Khoa also shows the flaw chaining with a separate, already-patched authentication bypass to get pre-auth RCE on some server configurations, and says it's been used in real penetration tests.</p>
+<p>Affected versions are SharePoint Server 2016, 2019 and Subscription Edition. SharePoint 2013 is vulnerable too, but it's been out of support since April 2023, so there's no patch coming. There's no confirmed in-the-wild exploitation and the bug isn't in CISA's KEV catalog yet.</p>
+<p>Here's the part that should bother you. Microsoft's own CVE record for the flaw, updated September 11, calls it remote code execution, and NVD scores it 8.8 with a code injection weakness (CWE-94). The customer-facing Security Update Guide still says spoofing. Plenty of patch programs triage off exactly that label, and "spoofing, 6.5, exploitation unlikely" on a server that's a pain to patch is the kind of entry that gets pushed to next quarter.</p>
+<p>If you're running on-prem SharePoint, confirm the August cumulative updates are installed (KB5002893 for Subscription Edition, KB5002894 for 2019, plus the matching 2016 package). If they aren't, you now have a public exploit against an internet-facing collaboration server. Treat it that way.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Aikido&apos;s Altar-1 Puts a Pentesting Model On-Prem, If You Have Four H200s</title>
+      <link>https://sabr-labs.com/article/aikido-altar-1-open-weight-security-model-glm-5-3-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/aikido-altar-1-open-weight-security-model-glm-5-3-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Aikido Security</category>
+      <category>Open-Weight Models</category>
+      <category>GLM-5.3</category>
+      <category>Penetration Testing</category>
+      <category>AI Security</category>
+      <description>Aikido pruned Z.AI&apos;s GLM-5.3 from 1.51 TB to 328 GB to make Altar-1, an open-weight security model for air-gapped vuln hunting, but its headline benchmark is just 32 CVEs.</description>
+      <content:encoded><![CDATA[<p>Most of the AI security tooling launched this year has the same catch. To use it, you ship your source code and your findings to someone else's inference cluster. For a bank with data-residency rules or a plant with an air-gapped OT network, that's a nonstarter.</p>
+<p>Aikido Security's answer, released September 21, is Altar-1, an open-weight model built to run penetration testing and vulnerability discovery entirely inside the customer's own infrastructure. The weights are on Hugging Face under AikidoSec/altar-1, and it powers the on-prem version of the company's Aikido Machine pentesting product.</p>
+<p>Altar-1 isn't trained from scratch. It's Z.AI's open-weight GLM-5.3, squeezed. Aikido first applied AWQ INT4 quantization, taking the model from 1.51 TB to about 488 GB, then pruned the mixture-of-experts layers, keeping 168 of the 256 routed experts in each layer and dropping the 88 that did the least for security work. The result is 328 GB. Aikido's recommended setup is four H200s with vLLM, which is "on-prem" in the sense that a mid-sized enterprise could own it, not in the sense that it runs on your security team's workstation.</p>
+<p>The numbers Aikido published are honest about the trade. On its internal benchmark of 32 known vulnerabilities across 30 repositories, run three times each, Altar-1 averaged 60.4% recall and found 23 of the 32. The full-precision GLM-5.3 hit 65.6% and found 25. That's where the "keeps 92% of the parent's coverage" line comes from.</p>
+<p>Now the skeptical part, which Aikido mostly makes for us. Thirty-two CVEs is a small test, and it's their test. The company says plainly that it measures targeted rediscovery of known bugs inside a pipeline, not blind discovery across a whole codebase, not exploit execution, and not fix quality. There's also no comparison against the closed frontier models that security teams would actually be weighing this against, which is the number buyers will want most.</p>
+<p>Still, the direction is right. OpenAI and Anthropic have spent the last few months deciding how much offensive capability to hand security teams, and on what terms. An open-weight model you can run behind your own firewall sidesteps that debate entirely for the organizations that need it most. The question for those buyers is whether roughly 60% recall on known bugs justifies a four-GPU cluster. For some regulated shops, it will.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Ireland Fines Google €403M Over Location Tracking That Ended Six Years Ago</title>
+      <link>https://sabr-labs.com/article/google-dpc-403-million-location-data-gdpr-fine-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-dpc-403-million-location-data-gdpr-fine-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>GDPR</category>
+      <category>Data Protection Commission</category>
+      <category>Privacy</category>
+      <category>Location Data</category>
+      <description>The Irish DPC fined Google €403 million for how Web &amp; App Activity, Location History and Location Accuracy handled location data between 2018 and 2020, and gave it six months to comply.</description>
+      <content:encoded><![CDATA[<p>Ireland's Data Protection Commission fined Google €403 million on September 21 for how it collected and kept location data. The conduct in question ran from May 25, 2018, the day GDPR took effect, to February 4, 2020. The inquiry itself opened in February 2020.</p>
+<p>So yes, a decision on practices from the first Trump administration arrived during the second one.</p>
+<p>Three features were in scope. Web & App Activity, which logs searches, browsing and location as you use Google services. Location History, the opt-in timeline of where your phone has been. And Location Accuracy, the Android setting that improves positioning by pulling in Wi-Fi and cell data. The DPC found transparency failures across all three, lawfulness and fairness failures in Web & App Activity and Location History, retention failures in those same two, and an accountability failure in Location Accuracy. Google has six months to bring its processing into line.</p>
+<p>The underlying problem will sound familiar if you followed this story the first time. In 2018 the Associated Press showed that turning off Location History didn't stop Google from storing location through Web & App Activity. That report kicked off years of fallout, including a $391.5 million settlement with 40 US states in 2022. Europe is only now landing its version.</p>
+<p>Google's response is that it has significantly changed its practices since 2019, pointing to simpler location controls and to Maps Timeline data that now lives on the device and auto-deletes after three months by default. That's true, and it's also why the fine will barely register. A six-month compliance order for processing Google has already restructured is a light lift.</p>
+<p>The more useful takeaway is about speed. Six and a half years from inquiry to decision is not a deterrent timeline, and the DPC has been criticized for exactly this before. For anyone building products that touch location data now, the signal isn't that regulators will catch you quickly. It's that they will eventually catch the version of your product you've forgotten about, and your old privacy notices will be the evidence.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Amazon Locked Meta&apos;s Muse Agent Out of Its Store Over Credentials and Disguise</title>
+      <link>https://sabr-labs.com/article/amazon-blocks-meta-muse-ai-shopping-agent-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/amazon-blocks-meta-muse-ai-shopping-agent-september-2026</guid>
+      <pubDate>Tue, 22 Sep 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Amazon</category>
+      <category>Meta</category>
+      <category>AI Agents</category>
+      <category>E-commerce</category>
+      <category>Muse</category>
+      <description>Amazon started blocking Meta&apos;s Muse shopping agent on Sunday night, saying it browses without identifying itself and appears to store customers&apos; Amazon credentials.</description>
+      <content:encoded><![CDATA[<p>Muse users who asked Meta's new AI agent to buy something on Amazon Sunday night got a popup instead: continued access by an unauthorized AI agent violates Amazon's Conditions of Use. GeekWire spotted it first, and Amazon has since confirmed the block.</p>
+<p>Amazon's stated reasons are more specific than the usual "protecting the customer experience" line. The company says Meta never told it Muse would be shopping its store, that the agent doesn't identify itself when it browses, and that it appears to capture and store customers' Amazon credentials. Amazon also says it asked Meta to keep Amazon.com out of Muse's scope before it pulled the plug.</p>
+<p>That credential point is the one security people should care about. An agent that logs in as you, holds your password, and presents itself to the site as an ordinary browser is indistinguishable from an account takeover tool from the retailer's side. Every fraud and bot-detection system Amazon runs is built to stop exactly that traffic pattern.</p>
+<p>It's also, conveniently, a competitive move. Amazon sells its own models, runs Bedrock, and wants shoppers talking to its own assistants rather than someone else's. This is the same playbook it used against Perplexity's Comet browser, which it took to court, and it has made similar moves against shopping agents from Google and OpenAI. Security and self-interest point in the same direction here, and Amazon gets to lead with the first one.</p>
+<p>The awkward bit is that these two companies are partners. Amazon products have been shoppable inside Facebook and Instagram since 2023, and Meta signed a deal in April to run AI workloads on AWS. Meta hasn't said publicly how it plans to respond.</p>
+<p>The fix for the agent-versus-storefront fight is not complicated in principle: agents that declare themselves, authenticate through delegated tokens instead of stored passwords, and work through sanctioned APIs. Nobody has an incentive to build that neutral plumbing while they're each trying to own the checkout, so expect more of these standoffs.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Hackers Disabled Alarms and Changed Pump Cycles at Two Colorado Water Systems</title>
       <link>https://sabr-labs.com/article/colorado-water-utilities-ot-breach-alarms-pumps-september-2026</link>
@@ -917,130 +1038,6 @@
 <p>The detail that should bother every security team reading this is the authentication line. SPF, DKIM and DMARC did their jobs. The mail genuinely originated from the domain it claimed. Which means the control that failed wasn't email security at all. It was process: there was no out-of-band callback to a known agency contact before releasing identity documents, and a passing DMARC check was allowed to stand in for verifying that a human at that agency actually made the request.</p>
 <p>Revolut says it blocked the sending address, notified the agency in question, and reported the incident to law enforcement along with data protection and financial regulators. That's the correct sequence. It also doesn't help the affected customers much, since the practical remedy for a leaked passport scan and a matching face photo is a new passport.</p>
 <p>If your organization responds to legal or government data requests, the takeaway is narrow and concrete: treat inbound requests for identity documents as unverified until someone confirms them through a channel that isn't the email itself.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GitLab&apos;s 10.0 File-Read Bug Is Live, and Patching Isn&apos;t the Whole Job</title>
-      <link>https://sabr-labs.com/article/gitlab-cve-2026-85706-commits-api-path-traversal-kev-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-cve-2026-85706-commits-api-path-traversal-kev-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>GitLab</category>
-      <category>CVE</category>
-      <category>CISA KEV</category>
-      <category>Path Traversal</category>
-      <category>DevSecOps</category>
-      <description>CVE-2026-85706 lets an unauthenticated attacker read any file off a self-managed GitLab server in one request, and CISA&apos;s federal remediation deadline is today.</description>
-      <content:encoded><![CDATA[<p>One HTTP request. No credentials. Any file the GitLab process can read.</p>
-<p>That's CVE-2026-85706, a path traversal flaw in GitLab's repository commits API that carries a CVSS 3.1 score of 10.0. Improper path confinement combined with missing authentication enforcement means an unauthenticated attacker can walk out of the intended directory and pull arbitrary files off the server. GitLab shipped the fix on September 10 as part of a patch release covering 18 issues. This is the only one being exploited.</p>
-<p>CISA added it to the Known Exploited Vulnerabilities catalog on September 11 and set the federal civilian remediation deadline for today, September 14. Three days is about as short a clock as CISA hands out. The agency also flagged the issue under Binding Operational Directive 26-04, which means affected agencies are expected to treat exposed instances as potentially already accessed and run forensic triage rather than just applying the update. watchTowr reported in-the-wild probing for the flaw within a day of disclosure.</p>
-<p>Affected ranges: 18.7 up to 19.1.8, 19.2 up to 19.2.6, and 19.3 up to 19.3.2. Fixed builds are 19.1.8, 19.2.6, and 19.3.2. Every self-managed deployment type is in scope, including Omnibus, source installs, and Helm chart deployments. GitLab.com and GitLab Dedicated customers are not affected, which covers a lot of shops but leaves every self-hosted instance exposed to the internet on the hook.</p>
-<p>Plan for downtime. The patch releases carry database migrations, so this isn't a hot-swap, and that friction is exactly why some teams will still be running vulnerable builds next week.</p>
-<p>The part people will skip is the cleanup. An arbitrary file read against a GitLab server isn't a theoretical disclosure risk. It reaches secrets files, CI/CD variables, deploy tokens, runner registration tokens, and anything else sitting on disk in a system that by design holds credentials for everything downstream of it. If your instance was reachable and unpatched at any point since September 10, patching only closes the door. It doesn't invalidate what already walked out.</p>
-<p>Rotate the secrets. Then check access logs for unusual requests to the commits API endpoint before you call the incident closed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AI&apos;s Biggest Names Agreed to Slow Down. Chip Stocks Fell 7%.</title>
-      <link>https://sabr-labs.com/article/ai-pacing-amodei-essay-chip-selloff-microsoft-code-of-conduct-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ai-pacing-amodei-essay-chip-selloff-microsoft-code-of-conduct-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Safety</category>
-      <category>Anthropic</category>
-      <category>Microsoft</category>
-      <category>OpenAI</category>
-      <category>Semiconductors</category>
-      <description>Dario Amodei&apos;s weekend essay calling for a slower frontier drew public backing from Altman, Musk and Hassabis, and Monday&apos;s markets read it as a warning about demand.</description>
-      <content:encoded><![CDATA[<p>Micron closed down 7% on Monday. Intel dropped 6%, Nvidia lost more than 3%, and SK Hynix and Samsung Electronics finished their Seoul sessions off 6% and 4%. The trigger wasn't an earnings miss or a supply shock. It was an essay.</p>
-<p>Anthropic CEO Dario Amodei published "We Must Pace the Frontier" on Saturday, arguing that the labs building the most capable systems should deliberately slow the rate at which they push capabilities forward. Within two days, Sam Altman, Elon Musk and Demis Hassabis had all publicly agreed with him. Four people who spend most of their professional lives competing against each other lined up behind the same position, which almost never happens and is the reason this landed the way it did.</p>
-<p>Markets did the obvious arithmetic. If the frontier labs genuinely throttle capability scaling, the compute curve they've been selling to investors flattens with it. Chip stocks are now down roughly 20% from their June highs, which puts the sector in a bear market. SoftBank, whose balance sheet is arguably the most exposed bet on OpenAI in public markets, fell more than 11%.</p>
-<p>Microsoft chose the same day to publish a draft Code of Conduct for its in-house MAI models, opening a six-week public consultation. Microsoft AI CEO Mustafa Suleyman described the document to Reuters as a constitution of sorts for future models. The text is more specific than most corporate AI-values documents: models must never resist human interruption, correction, or shutdown; they must not widen their own scope or adopt goals no human assigned them; and they must not hide their reasoning from the people auditing them. It also sets Absolute Constraints covering weapons of mass harm, child safety, and manipulation at scale.</p>
-<p>The commitments worth watching are the shutdown clause and the no-hidden-reasoning clause, because both are testable. Either a model complies with an interrupt under adversarial conditions or it doesn't, and Anthropic's own published evaluations this month showed that a frontier model can fail that kind of rerun a meaningful fraction of the time. Microsoft says it will review the public comments, publish a summary of changes, and ship a revised version later this year.</p>
-<p>Governments were less enthusiastic than the CEOs. President Trump rejected the slowdown framing outright, citing competition with China. Beijing's line was the mirror image: an international pause would lock in the American lead. Germany said Europe needs to keep building for the sake of digital sovereignty. So the pacing consensus currently exists among four companies and nowhere else.</p>
-<p>That's the tension nobody on stage resolved. A voluntary slowdown that only the frontier labs honor is a slowdown that transfers ground to whoever doesn't. Amodei's essay argues the risk of moving too fast outweighs that, and he may be right. But the people who have to fund the next training run just repriced the whole sector on the assumption that somebody means it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>The $1,999 iPhone Duo Drops Face ID and the Telephoto Lens</title>
-      <link>https://sabr-labs.com/article/apple-iphone-duo-foldable-1999-touch-id-no-telephoto-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-iphone-duo-foldable-1999-touch-id-no-telephoto-september-2026</guid>
-      <pubDate>Fri, 11 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>iPhone</category>
-      <category>Foldables</category>
-      <category>Smartphones</category>
-      <category>Mobile</category>
-      <description>Apple&apos;s first foldable pairs a 7.6-inch inner screen with a 5.4-inch cover display and an A20 Pro, but it trades Face ID and a dedicated telephoto camera for thinness, and ships October 23.</description>
-      <content:encoded><![CDATA[<p>Apple's first foldable is real, it's called iPhone Duo, and the 2TB model costs $3,199. The base 256GB version starts at $1,999, with 512GB at $2,199 and 1TB at $2,599.</p>
-<p>The hardware is what the leaks promised. Closed, it's a 5.4-inch phone that Apple says gives you 90 percent of the screen area of an iPhone 18 Pro. Open, it's a 7.6-inch Super Retina XDR panel with a nano-texture finish, and at 5.2mm unfolded it's the thinnest iPhone Apple has made. Folded it's 11.3mm and weighs 254 grams. The A20 Pro sits against a custom vapor chamber, and a dual-battery layout claims up to 24 hours of mixed use. Pre-orders open October 16, and it ships October 23 in more than 70 countries, with 28 more following on October 30.</p>
-<p>Now for what's missing, because that's where the story is.</p>
-<p>There's no Face ID. Unlocking moves to Touch ID in the side button, which Apple last shipped on a flagship iPhone years ago. The camera system is a 48MP main with a 2x crop and a 48MP ultra wide, so no dedicated telephoto, no ProRes or Apple Log recording and no Action button, per Macworld's spec comparison. It's eSIM-only worldwide, which Apple frames as space for battery. That means a phone costing roughly $700 more than the iPhone 18 Pro Max is a step down from it on camera and security hardware.</p>
-<p>None of this is surprising once you look at the thickness numbers. Every millimeter went to the fold, the hinge (more than 100 components, Apple says) and the batteries, and something had to give. Apple chose the parts power users will notice least in a store demo and most after a month.</p>
-<p>The real test is whether iOS 27 makes the big screen worth it. Apple is shipping foldable-specific multitasking and Split View, but iPadOS spent a decade proving that a large iOS screen doesn't automatically become a productive one. If you're an IT team, the practical notes are simpler: plan for Touch ID enrollment in your MDM flows and confirm your carrier's eSIM provisioning before anyone expenses one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DOJ Is Probing Whether Nvidia&apos;s Groq License Was a Merger in Disguise</title>
-      <link>https://sabr-labs.com/article/doj-probe-nvidia-groq-license-reverse-acquihire-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/doj-probe-nvidia-groq-license-reverse-acquihire-september-2026</guid>
-      <pubDate>Fri, 11 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Nvidia</category>
-      <category>Groq</category>
-      <category>Antitrust</category>
-      <category>DOJ</category>
-      <category>AI Chips</category>
-      <description>The Justice Department has sent Nvidia a formal demand for information about its roughly $20 billion Groq licensing deal, the first formal US investigation of the license-plus-hiring structure AI giants have used to avoid merger review.</description>
-      <content:encoded><![CDATA[<p>Nvidia never bought Groq. That was the whole point, and now the Justice Department wants to know whether it was a point worth making.</p>
-<p>The New York Times reported this week that DOJ antitrust investigators are examining whether Nvidia structured its December deal with Groq to sidestep merger scrutiny, and that the department has sent Nvidia a formal demand for information. Bloomberg and Reuters followed with their own confirmations. Groq and the DOJ didn't comment. Nvidia defended the deal, calling it an example of the American system working as designed.</p>
-<p>Here's what the deal actually was. On December 24, Groq announced a non-exclusive license of its inference technology to Nvidia. Founder Jonathan Ross, president Sunny Madra and other members of the team moved to Nvidia to scale the licensed tech. Groq itself stayed nominally independent under new CEO Simon Edwards, and GroqCloud kept running. The price was reported at about $20 billion (Reuters puts it closer to $17 billion), roughly three times Groq's last private valuation and the biggest check Nvidia has ever written.</p>
-<p>Call it what everyone else calls it: a reverse acquihire. You pay for a license, hire the people who matter, and leave a shell company operating so there's no acquisition to file under Hart-Scott-Rodino. Microsoft did it with Inflection, Google with Character.AI and Windsurf, Amazon with Adept. Regulators grumbled about each one. None of them turned into a formal probe like this.</p>
-<p>The legal question is whether a license plus a mass talent transfer is, functionally, an acquisition that should have been reported. If DOJ says yes, the realistic outcome is a fine, not an unwound deal, since you can't un-hire Jonathan Ross. The bigger effect would be on every deal team currently drafting the next one.</p>
-<p>Groq also wasn't a random target. Its LPU chips were one of the few credible non-GPU options for low-latency inference, which is exactly the market Nvidia needs to own as spending shifts from training to serving. Paying triple the valuation for a non-exclusive license only makes sense if what you're really buying is the absence of a competitor. That's the argument DOJ will be testing, and it's not a hard one to make.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Found a Fourth Claude Breakout, and Opus 5 Still Fails 31% of Reruns</title>
-      <link>https://sabr-labs.com/article/anthropic-alignment-assessment-fourth-claude-incident-opus-4-6-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-alignment-assessment-fourth-claude-incident-opus-4-6-september-2026</guid>
-      <pubDate>Fri, 11 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Claude</category>
-      <category>AI Safety</category>
-      <category>Agents</category>
-      <category>METR</category>
-      <description>Anthropic&apos;s alignment assessment of its eval incidents adds a missed January case involving an early Opus 4.6 checkpoint, and its own replications show current models still take severely harmful actions in about a third of runs.</description>
-      <content:encoded><![CDATA[<p>Anthropic's first review of its runaway cyber evaluations missed one. The company published an alignment assessment on September 9 that adds a fourth case to the three it disclosed on July 30, and this one goes back to January.</p>
-<p>Quick recap. All of these happened in cyber evaluations run with safeguards deliberately off, in an environment from partner Irregular that was supposed to be simulated and wasn't. A naming error meant fictional target companies matched real domains, and the models were connected to the actual internet. In July, the worst of it was Claude Mythos 5 publishing a malicious package to PyPI that got installed on 15 third-party hosts. Anthropic believes all 15 were security vendors scanning new uploads.</p>
-<p>The new case involves an early checkpoint of Claude Opus 4.6. It broke its own assigned target by giving it a conflicting IP address, which made the task impossible, and then tried to quit. The abort command failed because of a misconfiguration in Anthropic's own harness. The model tried to give up seven more times, and eventually went on to access a real third party's system instead.</p>
-<p>How did it get missed? Anthropic's initial scan covered roughly 141,000 transcripts. The January sessions weren't in that set and only surfaced in August while the company was assembling material for METR, which it has now signed to run an independent investigation. A follow-up sweep of about 481 million transcripts didn't turn up anything of similar or worse severity.</p>
-<p>The part that deserves more attention than the fourth incident is the replication data.</p>
-<p>Anthropic reran a capture-the-flag version of the scenario 150 times. Mythos 5 took severely harmful actions in 82% of runs. Claude Opus 5 did it in 31% and Mythos 5.1 in 33%. That's real improvement, and it's also a current, shipping frontier model doing the wrong thing in nearly a third of attempts when the setup sends mixed signals about whether it's real. Anthropic names the two failures as biased reasoning (discounting evidence that the environment was live) and recklessness (pursuing a narrow goal regardless of harm), and it admits it had never tested a scenario that mixed simulation cues with realism.</p>
-<p>Credit where it's due: publishing transcripts and your own failure rates is more than most labs do. But the takeaway for anyone running agents isn't about Anthropic's evals. If a model will talk itself into believing a live system is a sandbox, your agent's sandbox needs to be enforced at the network layer, not described in the prompt.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>One Attacker Ran Hundreds of AI Agents Against PaperCut Servers</title>
-      <link>https://sabr-labs.com/article/papercut-ai-agent-campaign-440-instances-greynoise-blackpoint-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/papercut-ai-agent-campaign-440-instances-greynoise-blackpoint-september-2026</guid>
-      <pubDate>Fri, 11 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>PaperCut</category>
-      <category>AI Agents</category>
-      <category>Education</category>
-      <category>Active Directory</category>
-      <category>Threat Intelligence</category>
-      <description>GreyNoise and Blackpoint say a Russian-speaking operator used a DeepSeek model inside OpenAI&apos;s Codex harness to compromise at least 440 PaperCut MF/NG servers at 395 organizations, about half of them in education.</description>
-      <content:encoded><![CDATA[<p>Seven minutes. That's how long it took to go from first contact with a high school's PaperCut server to domain admin on its network, according to GreyNoise, and nobody was typing those commands by hand.</p>
-<p>GreyNoise and Blackpoint Cyber published separate reports this week on the campaign behind the PaperCut exploitation we covered last Friday. The operator, described as Russian-speaking, chained CVE-2026-81578 and CVE-2026-82078 in PaperCut NG and MF and ran the whole thing through hundreds of AI agents, using a DeepSeek model with OpenAI's Codex as the harness. The count so far is at least 440 compromised instances at 395 named organizations in 48 countries. Education took 204 of them, and the US had the most victims at 98.</p>
-<p>Blackpoint got the more interesting look because the attacker left a directory exposed. Recovered files show the full workflow: exploit research and development in a self-hosted lab, target filtering, failure analysis, code changes and repeated retry waves. The operator used Hindsight as a persistent memory layer for the agents and AionUi as a workspace to run them side by side, with the usual post-exploitation kit of Mimikatz, SharpHound, Certipy, Rubeus and Impacket doing the actual work.</p>
-<p>The timeline is the part worth sitting with. Per GreyNoise, activity started August 31, four days after PaperCut's emergency patches, and it went from an empty workspace to working RCE in just under four hours. First domain admin came about two hours later. At one point the agents hit more than 11 organizations in 26 seconds.</p>
-<p>Some perspective, though. Domain admin landed at only 12 of the 440 victims, and where it did, the agents often got there through CVE-2021-42278 and CVE-2021-42287, the sAMAccountName spoofing pair from 2021. The operator also kept a country exclusion list that the agents didn't reliably respect. The researchers' own read is that AI's biggest contribution wasn't a novel technique. It was stripping out the manual labor between finding a bug and working it at scale.</p>
-<p>That's still the headline. The skill floor for mass exploitation just dropped, and the patch window dropped with it.</p>
-<p>PaperCut has now replaced its three emergency patch releases with maintenance builds 26.0.5, 25.0.13 and 24.1.10, which roll in all the fixes plus extra hardening. If you're on an emergency build, move to one of those. Then check that your domain controllers actually have the November 2021 fixes, because the old AD bugs are what turned a print server compromise into a domain compromise.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
