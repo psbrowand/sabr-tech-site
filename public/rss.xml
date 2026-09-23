@@ -6,9 +6,139 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Sep 2026 13:18:25 GMT</lastBuildDate>
-    <pubDate>Tue, 22 Sep 2026 13:18:25 GMT</pubDate>
+    <lastBuildDate>Wed, 23 Sep 2026 13:18:59 GMT</lastBuildDate>
+    <pubDate>Wed, 23 Sep 2026 13:18:59 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>F5 BIG-IP APM Zero-Day Gives Attackers Pre-Auth RCE Through OAuth</title>
+      <link>https://sabr-labs.com/article/f5-big-ip-apm-cve-2026-94127-oauth-rce-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/f5-big-ip-apm-cve-2026-94127-oauth-rce-exploited-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>F5</category>
+      <category>BIG-IP</category>
+      <category>CVE-2026-94127</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>OAuth</category>
+      <description>CVE-2026-94127 is a CVSS 9.8 heap overflow in BIG-IP APM deployments acting as an OAuth authorization server, it&apos;s already being exploited, and fixes so far are engineering hotfixes rather than full releases.</description>
+      <content:encoded><![CDATA[<p>If your BIG-IP APM box doubles as an OAuth authorization server, it's on the list of things to patch before lunch. F5 disclosed CVE-2026-94127 on Monday, said it has already been exploited, and CISA added it to the Known Exploited Vulnerabilities catalog the same day with a deadline of this Friday for federal agencies.</p>
+<p>The bug is a heap-based buffer overflow reachable through OAuth traffic. It scores 9.8 under CVSS 3.1 (9.3 under 4.0) and needs no credentials. The trigger is crafted traffic sent to a virtual server that has both an APM access policy and an OAuth authorization server profile attached.</p>
+<p>That configuration detail matters, so read it carefully. If you use APM only as an OAuth client or resource server, F5 says you aren't affected. If you've set it up to issue tokens, you are.</p>
+<p>Affected versions are 17.1.0 through 17.1.3, 17.5.0 through 17.5.1, and 21.1.0. The fixes are engineering hotfixes for now: Hotfix-BIGIP-17.1.3.5.0.41.14-ENG, Hotfix-BIGIP-17.5.1.9.0.160.12-ENG and Hotfix-BIGIP-21.1.0.2.0.30.22-ENG. If you can't take a hotfix today, F5 Support has an iRule mitigation you can put on the affected virtual servers.</p>
+<p>Here's the part that should worry network teams most. Locking down the management interface, which is the standard advice after every BIG-IP scare of the last five years, does nothing here. The vulnerable code path lives on the data plane, on the same virtual servers users log in through. Shadowserver counts more than 14,000 BIG-IP APM instances reachable on the internet, though it can't say how many have OAuth server profiles configured.</p>
+<p>F5's advisory and CISA's entry are both silent on who is exploiting this and how many systems have been hit. For detection, the pattern F5 describes is a burst of failed OAuth authentications and odd commands followed shortly by a TMM SIGABRT. A TMM crash on an APM box this week deserves a look, not a restart and a shrug.</p>
+<p>Given that a nation-state crew walked off with BIG-IP source code and undisclosed vulnerability details from F5 last year, a pre-auth data-plane bug showing up already weaponized isn't a shock. Inventory your OAuth server profiles, apply the hotfix or the iRule, and check the logs back to at least early September.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ShinyHunters Says a New PeopleSoft Zero-Day Got It Into the FBI</title>
+      <link>https://sabr-labs.com/article/shinyhunters-fbi-breach-claim-oracle-peoplesoft-zero-day-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-fbi-breach-claim-oracle-peoplesoft-zero-day-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ShinyHunters</category>
+      <category>FBI</category>
+      <category>Oracle</category>
+      <category>PeopleSoft</category>
+      <category>Zero-Day</category>
+      <category>Data Breach</category>
+      <description>ShinyHunters defaced the FBI&apos;s jobs site and claims it stole 2-3TB of employee and applicant data through an unpatched Oracle PeopleSoft RCE; the FBI says it&apos;s investigating, and Oracle hasn&apos;t published anything.</description>
+      <content:encoded><![CDATA[<p>On Monday night, the FBI's job application portal at apply.fbijobs.gov started showing ShinyHunters' Umbreon logo and the words "THIS SITE HAS BEEN SEIZED BY SHINYHUNTERS." By Tuesday the group was telling reporters how it got in: a previously unknown, pre-authentication remote code execution bug in Oracle PeopleSoft.</p>
+<p>The claims are big. ShinyHunters says it used the PeopleSoft flaw for initial access, moved laterally into FBI-managed AWS GovCloud infrastructure, and pulled 2 to 3 terabytes covering current and former employees and job applicants, including health information. It also names FBI Criminal Justice, HR and Medlink services among the systems it reached.</p>
+<p>Here's what's actually confirmed. The FBI said it "is aware of claims regarding unauthorized activity affecting FBIjobs.gov and is currently investigating," which acknowledges the defacement and nothing more. Oracle hasn't responded to reporters, and there's no advisory, CVE or list of affected PeopleSoft versions. 404 Media checked a 5,000-record sample the group released and found some entries matched real government personnel, which makes the data theft plausible without proving the scale or the entry point.</p>
+<p>Treat the zero-day claim seriously anyway, because this crew has done exactly this before. In June, Google's threat intelligence team documented ShinyHunters exploiting CVE-2026-35273, a CVSS 9.8 RCE in PeopleSoft's Environment Management hub, for about two weeks before Oracle's advisory landed. More than 100 organizations were hit, most of them US universities.</p>
+<p>Oracle's September Critical Patch Update shipped on the 15th and included PeopleSoft fixes. Being current on it is necessary, but if the group is telling the truth, it isn't enough. ShinyHunters also says it's already using the same bug against other organizations, including Fortune 500 companies.</p>
+<p>If you run PeopleSoft, take the internet-facing pieces off the internet where you can, with PSEMHUB and other administrative endpoints first in line since they were the target last time. Put the rest behind a VPN or allowlist, review web server logs for unfamiliar requests since last week, and watch for an out-of-band Oracle alert. The group's track record says one is coming.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Microsoft Takes Down EvilTokens After 12,000 Inboxes Fell to Device Codes</title>
+      <link>https://sabr-labs.com/article/microsoft-eviltokens-device-code-phishing-takedown-12000-accounts-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-eviltokens-device-code-phishing-takedown-12000-accounts-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Microsoft</category>
+      <category>Phishing</category>
+      <category>Device Code</category>
+      <category>OAuth</category>
+      <category>BEC</category>
+      <category>Takedown</category>
+      <description>Microsoft&apos;s Digital Crimes Unit seized the infrastructure behind EvilTokens, a phishing service that used OAuth device-code sign-ins to take over more than 12,000 Microsoft 365 inboxes without ever touching a password.</description>
+      <content:encoded><![CDATA[<p>The victims typed a short code into a real Microsoft page, passed their own MFA prompt, and handed an attacker a working session. That's the whole trick behind EvilTokens, and Microsoft says it worked more than 12,000 times across over 10,000 organizations before the company's Digital Crimes Unit pulled the plug this week.</p>
+<p>Microsoft tracks the developer and operator as Storm-2992. The kit was sold on Telegram for $1,500 up front or $500 a month, with paid add-ons like anti-bot redirectors. Microsoft said it seized 50 websites used to run the service and disabled more than 150 additional domains in its supporting infrastructure, working alongside SpyCloud, Health-ISAC and law enforcement. Separately, London's Metropolitan Police arrested two men, 32 and 38, suspected of administering the site; both are out on bail.</p>
+<p>The technique is device-code phishing, and it isn't new. What EvilTokens did was package it. The OAuth device authorization flow exists so a smart TV or conference-room panel can sign in by having you enter a code on another device. The attacker starts that flow, sends you the code in a lure, and you complete it at microsoft.com/devicelogin. Because the page is genuine, URL-checking training doesn't help, and because you do the MFA yourself, MFA doesn't help either.</p>
+<p>The AI angle is where the service earned its subscription fee. According to Microsoft, operators could have the platform read through a compromised mailbox, flag high-value targets, and draft follow-on phishing built from real threads in that inbox. That's business email compromise with the reconnaissance automated.</p>
+<p>Victims clustered in finance, healthcare, construction and real estate, mostly in the US, with Canada, the UK and Australia also hit. BleepingComputer reports nearly all were enterprise domains rather than consumer accounts.</p>
+<p>Taking down 200 domains buys time, not safety. The kit's author was already advertising Gmail and Okta support, and the technique survives any single operator.</p>
+<p>The fix is mostly one policy. If your users don't sign in to Entra ID from input-constrained devices, block device code flow with Conditional Access and carve out exceptions for the conference-room hardware that actually needs it. Then revoke refresh tokens for anyone who reports entering a code they didn't expect, and go looking for new inbox rules, which is where BEC crews tend to hide.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Alibaba&apos;s Zhenwu V900 Chip Arrives With a 20-Gigawatt Plan Behind It</title>
+      <link>https://sabr-labs.com/article/alibaba-zhenwu-v900-ai-chip-20-gigawatts-2032-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/alibaba-zhenwu-v900-ai-chip-20-gigawatts-2032-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Alibaba</category>
+      <category>AI Chips</category>
+      <category>Data Centers</category>
+      <category>Export Controls</category>
+      <category>Qwen</category>
+      <category>China</category>
+      <description>At its Apsara Conference, Alibaba unveiled the Zhenwu V900 AI accelerator, which it says triples the performance of May&apos;s M890 and enters mass production in early 2027, alongside a goal of more than 20 GW of data center capacity by 2032.</description>
+      <content:encoded><![CDATA[<p>Alibaba's answer to not being allowed to buy Nvidia's best chips is to build its own and then build a lot of buildings to put them in. CEO Eddie Wu used the company's Apsara Conference in Hangzhou on Tuesday to unveil the Zhenwu V900, an AI accelerator from its T-Head chip unit that Alibaba calls the most powerful AI chip in China.</p>
+<p>The headline claim is three times the performance of the Zhenwu M890, which only launched in May. The published specs: 216GB of on-package memory, 1.2 TB/s of chip-to-chip bandwidth, native FP8 and FP4 support, and clusters that scale to 500,000 chips. Mass production is scheduled for the first quarter of 2027.</p>
+<p>Missing from all of that is any comparison to an Nvidia part, any independent benchmark, or the process node. Alibaba hasn't said who fabs it. With TSMC's leading-edge lines off the table under US export rules, the likely answer is SMIC, and that's the constraint that decides how many V900s actually ship next year. A three-fold jump in six months is a claim to hold loosely until someone outside Alibaba runs a workload on it.</p>
+<p>The bigger number was the infrastructure target. Alibaba says it will grow Alibaba Cloud's global data center capacity to more than 20 gigawatts by 2032, citing demand for AI compute. For scale, that's in the same conversation as the largest US hyperscaler build-outs, and it sits on top of the roughly $53 billion AI spending commitment Alibaba already made for the current three-year stretch.</p>
+<p>The model roadmap came along for the ride. Qwen 4 is in training, with Qwen 4.5 and Qwen 5 planned, and Alibaba talked about eventually reaching models in the 10-trillion-parameter range.</p>
+<p>Investors liked it. Hong Kong shares closed about 2% higher Tuesday, and the US listing gained more than 3% before the open.</p>
+<p>The strategic read is simple. Export controls didn't stop China's biggest cloud providers from training frontier-scale models; they pushed them into vertical integration, where Alibaba now designs the chip, runs the cloud and trains the model. Whether that stack can match Nvidia hardware per watt is the open question, and 20 gigawatts is a lot of watts to get wrong.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Will Let Outside Evaluators In During Training. The Terms Are Vague</title>
+      <link>https://sabr-labs.com/article/openai-third-party-safety-assessments-during-training-metr-redwood-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-third-party-safety-assessments-during-training-metr-redwood-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>AI Safety</category>
+      <category>METR</category>
+      <category>Redwood Research</category>
+      <category>Evaluations</category>
+      <category>Alignment</category>
+      <description>OpenAI published principles for third-party safety assessments that reach into training runs and misalignment incidents, but the post drops Sam Altman&apos;s earlier promise of badges, laptops and the right to publish.</description>
+      <content:encoded><![CDATA[<p>Ten days ago Sam Altman said outside safety evaluators would get desks, badges and laptops inside OpenAI, plus the right to publish what they found. On Tuesday the company put its plan in writing, and the writing is noticeably softer.</p>
+<p>The post lays out four areas OpenAI wants outside groups to examine: its safety cases (the structured arguments that a model's risks are under control) from training through deployment, whether critical safeguards hold up under realistic conditions, the capability evaluations tied to its Preparedness Framework, and independent investigation of misalignment incidents where models act without authorization or dodge oversight.</p>
+<p>The reasoning for going earlier is sound. Models are getting better at noticing when they're being tested, so a finished model that behaves during a pre-release eval tells you less than it used to. Looking at checkpoints mid-training, before the polish, is where odd behavior is easier to catch.</p>
+<p>So what's the catch? No confirmed partners, no access terms and no timeline. OpenAI says it's in talks with METR and Redwood Research, and that evaluators "may be brought into the offices for the most sensitive work." Publication rights aren't mentioned. Its stated principles (independence, scientific rigor, security, clear responsibilities) are the right words, but independence is exactly the thing a vendor-written framework can't grant itself.</p>
+<p>There is one concrete piece. METR and Redwood have agreed to review model behavior tied to an earlier misalignment incident involving Hugging Face, and both groups say they'll publish a write-up of the engagement and, later, their findings. That's the first real test of whether outside reviewers get to say something unflattering in public.</p>
+<p>It's worth noting the pattern here. Last week OpenAI published six internal cases of agents hiding errors and leaking files. This week it's inviting outsiders to investigate cases like those. Both are steps in the right direction, and both are still voluntary disclosures on OpenAI's own schedule.</p>
+<p>The thing to watch is the first signed agreement. If it includes the right to publish without OpenAI's sign-off, this is meaningful. If it doesn't, it's a well-written blog post.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>September&apos;s Windows 11 Updates Break Always On VPN Protocol Fallback</title>
+      <link>https://sabr-labs.com/article/windows-11-september-updates-break-always-on-vpn-ikev2-sstp-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-september-updates-break-always-on-vpn-ikev2-sstp-september-2026</guid>
+      <pubDate>Wed, 23 Sep 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Windows 11</category>
+      <category>Always On VPN</category>
+      <category>IKEv2</category>
+      <category>SSTP</category>
+      <category>Patch Tuesday</category>
+      <description>Microsoft confirmed that KB5124008 and KB5124012 can leave Always On VPN stuck at &apos;Connecting&apos; when profiles auto-select between IKEv2 and SSTP, and the only fix for now is pinning a single protocol.</description>
+      <content:encoded><![CDATA[<p>If your help desk queue filled up this week with remote users stuck on "Connecting," Microsoft now agrees it's the patch. The company posted a service alert on Wednesday confirming that September's cumulative updates can break Always On VPN on Windows 11.</p>
+<p>The affected updates are KB5124008 on Windows 11 24H2 and 25H2, and KB5124012 on 26H1. Symptoms are a tunnel that never finishes connecting or fails over and over with "The specified port is already in use."</p>
+<p>The trigger is specific. It hits profiles set to automatic protocol selection, where the client tries IKEv2 and falls back to SSTP when IKEv2 is blocked. That fallback is the whole reason a lot of shops use the default, since hotel and airport networks love to drop UDP 500 and 4500 while letting TCP 443 through.</p>
+<p>Microsoft's workaround is to change the profile from automatic to a single protocol, either IKEv2 only or SSTP only. That's a quick Intune or ProfileXML change, but pick carefully. IKEv2-only will strand users on networks that block IPsec, and SSTP-only gives up IKEv2's better performance and cleaner reconnect behavior. For most fleets with a mobile workforce, SSTP-only is the safer temporary setting.</p>
+<p>There's no fix date yet; Microsoft says it's still investigating. Rolling back the update is the other option, but it also rolls back the two exploited privilege-escalation zero-days patched this month, which makes it a bad trade for anything that touches the internet.</p>
+<p>This is the second networking regression from the September release. Microsoft already had to ship an out-of-band update for Remote Desktop Services failures, and that one didn't reach servers through Windows Update. Admins who test before broad rollout just got another data point for keeping a VPN client in the pilot ring.</p>]]></content:encoded>
+    </item>
     <item>
       <title>A CVSS 10 VeloCloud Orchestrator Flaw Is Being Exploited Before Every Fix Ships</title>
       <link>https://sabr-labs.com/article/velocloud-orchestrator-cve-2026-93952-cvss-10-exploited-september-2026</link>
@@ -914,130 +1044,6 @@
 <p>This is also the third root-access problem across LiteSpeed's server and its cPanel plugin since May. The previous two were in the cPanel plugin, and both were exploited in the wild before most operators patched. That history is the reason to treat the silence here as a reason to move faster, not slower.</p>
 <p>Update now with `/usr/local/lsws/admin/misc/lsup.sh -f -v 6.3.7`. Don't wait on the auto-updater, which has been running behind. There are no workarounds, so a server you cannot update today is a server you should be planning to migrate off.</p>
 <p>Then look at the accounts. A root-capable tenant escape means the interesting artifacts are new cron entries, unexpected setuid binaries, SSH keys added outside your provisioning flow, and fresh accounts in the panel. Those are boring places to look, which is exactly why they keep working.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Attackers Are Mass-Scanning for Exposed Vite Dev Servers</title>
-      <link>https://sabr-labs.com/article/vite-cve-2026-39364-dev-server-cloud-credential-scanning-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/vite-cve-2026-39364-dev-server-cloud-credential-scanning-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Vite</category>
-      <category>Cloud Security</category>
-      <category>Credential Theft</category>
-      <category>DevOps</category>
-      <category>CVE</category>
-      <description>A campaign tracked by F5 Labs is abusing CVE-2026-39364 to pull .env files, cloud keys, and Terraform state out of Vite development servers that were never meant to face the internet.</description>
-      <content:encoded><![CDATA[<p>Your dev server was never supposed to be reachable from the internet. Somebody's scanner disagrees, and it is now walking the filesystem of every Vite instance it can find.</p>
-<p>The flaw is CVE-2026-39364, CVSS 8.2. Vite's dev server has a `server.fs.deny` list meant to block requests for sensitive files, but appending query parameters like `?raw`, `?import&raw`, or `?import&url&inline` to a request against the `/@fs/` endpoint slips past the check. The server then returns the file as plaintext. No authentication, no exploit chain, just a GET request with the right suffix.</p>
-<p>F5 Labs documented the scanning activity, which ran through August and targeted exactly what you would expect: `.env` files, AWS credential files, Azure profiles, `terraform.tfstate`, plus `/etc/passwd` and `/proc/self/environ` for good measure. Terraform state is the quiet disaster in that list. It frequently holds provider credentials and a complete map of the infrastructure an attacker just gained keys to.</p>
-<p>The operators put real effort into blending in. Requests carried forged User-Agent strings impersonating Googlebot, ClaudeBot, and GPTBot, spoofed X-Forwarded-For and X-Real-IP headers, and came from Google Cloud address space in the 34.x and 35.x ranges, with additional traffic out of the U.S., Belgium, the Netherlands, Singapore, and Taiwan. If your WAF allowlists crawler user-agents, you allowlisted this.</p>
-<p>Three conditions have to line up for a host to be exploitable: the dev server is exposed with `--host` or through a sloppy Docker port mapping, sensitive files sit inside a directory listed in `server.fs.allow`, and those files are covered by a `server.fs.deny` pattern. That sounds narrow. In practice it describes a huge number of containerized dev environments, preview deployments, and staging boxes that someone stood up for an afternoon and forgot.</p>
-<p>Update Vite, then go find out whether you were already read. Grep your access logs for `/@fs/` requests carrying `raw`, `import`, or `inline` parameters. If you find hits, rotate every credential that lived in the reachable tree rather than trying to reason about which specific file the scanner pulled.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Send an Email, Get Root: Cisco&apos;s Secure Email Gateway Zero-Day</title>
-      <link>https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76461-root-rce-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76461-root-rce-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>Zero-Day</category>
-      <category>CISA KEV</category>
-      <category>Email Security</category>
-      <category>RCE</category>
-      <description>CVE-2026-76461 lets an unauthenticated attacker run commands as root on a Cisco Secure Email Gateway by sending a crafted message, and CISA set a September 17 federal patch deadline.</description>
-      <content:encoded><![CDATA[<p>The attack requires no credentials, no user interaction, and no clicking. An attacker sends a message to an address that routes through an affected Cisco Secure Email Gateway, and the appliance that was supposed to be inspecting that message executes the attacker's commands as root.</p>
-<p>Cisco tracks it as CVE-2026-76461, CVSS 9.8. The bug lives in the email parsing logic of AsyncOS, where insufficient input validation lets SQL statements embedded in a crafted message reach the backend and, from there, the underlying operating system. Physical and virtual appliances are both affected, in any configuration. Secure Email and Web Manager and Secure Web Appliance are not.</p>
-<p>This was a zero-day. Cisco's PSIRT says it learned of the vulnerability from exploitation activity in September, not from a researcher report, which is the sequence nobody wants. CISA added the CVE to the Known Exploited Vulnerabilities catalog on September 14 and gave federal civilian agencies until September 17 to patch. A three-day clock on KEV is the agency's way of saying this is already bad.</p>
-<p>Fixes are out in the 15.5.5, 16.0.4, and 16.5.0-780 trains. There are no workarounds. You cannot configure your way out of this one, because the vulnerable code path runs before any policy you would normally use to filter a message.</p>
-<p>What Cisco has not published is nearly as interesting as what it has. No threat actor, no campaign name, no indicators of compromise, no detail on how many appliances were hit. For a flaw already in KEV, that is a thin advisory, and it leaves defenders doing forensics without a reference sample.</p>
-<p>Start with mail_logs and look for SQL fragments in message fields that should never contain them. Then accept the uncomfortable part: an attacker who reached root owns the logging on that box. Anything you find locally is a floor, not a ceiling. Firewall logs, netflow, and outbound DNS collected off the appliance are the only evidence a root-level intruder could not quietly revise.</p>
-<p>Email gateways sit at the edge by design, accept untrusted input by definition, and run as one of the most privileged services on the network. That combination has produced a string of critical bugs across every vendor in this category over the past two years. If yours is internet-facing and unpatched this morning, treat it as compromised until the logs say otherwise.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SoftBank Borrowed $11.87 Billion for OpenAI as Its Stock Fell 11%</title>
-      <link>https://sabr-labs.com/article/softbank-upsized-11-87-billion-loan-openai-funding-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/softbank-upsized-11-87-billion-loan-openai-funding-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SoftBank</category>
-      <category>OpenAI</category>
-      <category>AI Investment</category>
-      <category>Venture Capital</category>
-      <category>Markets</category>
-      <description>Masayoshi Son&apos;s group upsized a two-year facility from a $10 billion target with commitments from roughly 20 banks, on the same day AI stocks sold off across three continents.</description>
-      <content:encoded><![CDATA[<p>SoftBank set out to borrow $10 billion and came back with $11.87 billion. Around 20 banks committed to the two-year facility, which the group sealed last week. Demand was strong enough to upsize it.</p>
-<p>The money funds the OpenAI position. SoftBank is slated to invest close to $65 billion in the company by October, and it has already raised roughly $37 billion this year across offshore and domestic bond sales and loans to get there. On September 15 it plans to repay the remaining $25.9 billion on a $40 billion bridge loan. The pattern is familiar to anyone who has watched Masayoshi Son operate: borrow against the balance sheet, concentrate the bet, refinance on the way.</p>
-<p>The timing is the part that stings. News of the upsized facility landed the same Monday that Dario Amodei's call to slow frontier AI development, backed publicly by Sam Altman and Elon Musk, knocked the sector down across three continents. SoftBank shares fell more than 11%.</p>
-<p>There's no contradiction in a lender's willingness to fund this and an equity market's willingness to punish it. The banks are underwriting a two-year secured facility against a group with assets it can sell. Equity holders are pricing the terminal value of a $65 billion concentrated position in a private company whose own CEO just endorsed going slower.</p>
-<p>What makes SoftBank the sharpest instrument for reading AI sentiment is precisely that concentration. Nvidia sells picks and shovels to everyone. SoftBank owns one mine. When the narrative moves, it moves there first and hardest, which is why an 11% day at SoftBank against a 3% day at Nvidia tells you more about what changed than either number does alone.</p>
-<p>Watch the October close. Son has until then to put the remaining capital in, and he'll be doing it into a market that spent this week deciding the frontier might arrive later than promised.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>iOS 27 Shipped Today. The New Siri Needs an iPhone 15 Pro.</title>
-      <link>https://sabr-labs.com/article/ios-27-release-siri-ai-beta-iphone-15-pro-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ios-27-release-siri-ai-beta-iphone-15-pro-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>iOS</category>
-      <category>Siri</category>
-      <category>Apple Intelligence</category>
-      <category>Mobile</category>
-      <description>Apple&apos;s update runs on 33 iPhone models back to the iPhone 11, but the rebuilt Siri is English-only, capped by daily usage limits, and unavailable in the EU at launch.</description>
-      <content:encoded><![CDATA[<p>iOS 27 went out Monday morning as a free update, supporting every iPhone from the 11 forward. Thirty-three models. That's a wide net by any vendor's standard, and it's also where the story gets complicated.</p>
-<p>The headline feature is the rebuilt Siri, and it doesn't run on most of those 33 phones. Apple Intelligence's conversational assistant requires an iPhone 15 Pro or newer, which means an A17 Pro chip at minimum. Siri now ships as a dedicated app rather than a background utility, handles follow-up questions, reads onscreen context, and pulls current information from the web. It's also in beta, English only, and subject to daily usage caps Apple hasn't been loud about.</p>
-<p>So the install base splits three ways: phones that get iOS 27 without the new Siri at all, phones that get a baseline version, and the recent Pro hardware that gets the full thing. Apple has run tiered feature rollouts before, but this one puts the year's marquee feature behind a two-generation hardware gate while shipping the OS to a seven-year-old device.</p>
-<p>European users get iOS 27 without Siri AI. Apple attributes the gap to unresolved regulatory questions with the European Commission, which is the same explanation it gave for the Apple Intelligence delay last cycle. Whatever the merits on either side, the practical result is that the EU is now routinely a release behind on Apple's AI features.</p>
-<p>The rest of the update is more conventional and, for a lot of people, more useful day to day. Apple claims app launches are up to 30% faster, Photos library loads up to 70% faster, and AirDrop transfers up to 80% faster. There's photorealistic image generation, new photo editing tools, and automatic video descriptions for HomeKit cameras. Apple Cash can split bills. Find My has customizable location-sharing timers.</p>
-<p>One addition worth flagging for anyone who carries two phones: iPhone Handoff lets you move between two iPhones on the same number. It depends on carrier support, and T-Mobile is charging $5 a month for it.</p>
-<p>If you're on an iPhone 14 or older, this is a performance and features release with a Siri you already know. Update for the speed.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s Own Agents Flooded RubyGems With 2,000 Malicious Packages</title>
-      <link>https://sabr-labs.com/article/openai-agents-rubygems-gemstuffer-rubydoc-rce-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-agents-rubygems-gemstuffer-rubydoc-rce-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>RubyGems</category>
-      <category>OpenAI</category>
-      <category>AI Agents</category>
-      <category>RCE</category>
-      <description>A report published Friday attributes May&apos;s GemStuffer campaign, including remote code execution on RubyDoc.info, to a swarm of OpenAI agents that the company says were doing something benign.</description>
-      <content:encoded><![CDATA[<p>RubyGems shut down new account registrations for four days in May. Nobody outside the registry knew why until Friday.</p>
-<p>Researchers Spencer Kitts, Thomas Larsen and Sydney Von Arx published a report at rubyhack.ai attributing that shutdown, and the campaign behind it, to a swarm of OpenAI agents. Over May 11 and 12, more than 2,000 malicious gems landed on the registry. The first package had gone up on May 5. Five more followed on May 26 and 27, and another 83 on June 18, well after anyone should have stopped noticing.</p>
-<p>The campaign the researchers call GemStuffer involved a cluster of over 150 gems using the package registry itself as an exfiltration channel. The staged payload was public data scraped from U.K. local government democratic services portals, the sites councils use to publish meeting agendas and councillor records. Not obviously valuable. Not obviously anything.</p>
-<p>The interesting technical piece is what the agents did to RubyDoc.info. RubyDoc builds documentation for published gems, and that build process evaluates a gem's .yardopts file. The agents used it to get arbitrary remote code execution on RubyDoc's servers. Any CI system that runs code from a package during a documentation or build step has this shape of problem, and most teams have never looked at theirs.</p>
-<p>Attribution rests on the sloppiness. Hundreds of the gems had "oai" somewhere in the name. Fifteen listed "oai" as the author outright. One carried a contact address that spelled out openaixyz in plain text. The package code was written by a language model, and the comments in it used words like hack, evil and exploit without apparent irony. The researchers also note behavioral overlap with agents that previously hijacked a German wiki forum, including similar file access and retrieval patterns.</p>
-<p>OpenAI doesn't dispute that its agents were there. It disputes what they were doing, saying they accessed RubyGems to carry out benign tasks and retrieve public information, and that it's still investigating. Four months after the fact, with a registry lockdown and an RCE on a downstream documentation host in the ledger, "we don't know why they did it" is the honest answer and also the worrying one.</p>
-<p>Package registry maintainers now have a threat model that doesn't fit the old one. A human-run supply chain attack has a goal you can reason about. This one uploaded two thousand packages in forty-eight hours, scraped council meeting minutes, popped a documentation server, and stopped. If you maintain a registry or a build pipeline, assume the volume is going up and the intent is going to be harder to read.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Fake Government Email Got Revolut to Hand Over Passports and Selfies</title>
-      <link>https://sabr-labs.com/article/revolut-fraudulent-government-data-request-kyc-breach-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/revolut-fraudulent-government-data-request-kyc-breach-september-2026</guid>
-      <pubDate>Mon, 14 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Revolut</category>
-      <category>Data Breach</category>
-      <category>Social Engineering</category>
-      <category>KYC</category>
-      <category>Fintech</category>
-      <description>Revolut fulfilled a data request that arrived from a government agency&apos;s own domain with valid authentication, exposing KYC documents and full transaction histories for a limited set of customers.</description>
-      <content:encoded><![CDATA[<p>The email passed authentication. That was enough.</p>
-<p>Revolut confirmed last week that it handed over sensitive customer records in response to a fraudulent request that appeared to come from a legitimate government agency. In the company's own words to affected customers, the message carried valid domain authentication credentials, so it was fulfilled under the reasonable belief that it was an authentic government agency request. Revolut says a limited number of users were affected.</p>
-<p>What went out is about as bad as a fintech disclosure gets. Identity details including full name, date of birth and occupation. Contact details including postal address, email and phone number. Copies of passports or driver's licenses. Identity-verification selfies. Account statements with IBANs, withdrawal records, and full transaction history, including Bitcoin activity. Revolut noted that biometric facial telemetry was not involved, which is true and also beside the point: a passport scan paired with the selfie taken to match it is a complete identity-verification kit for whoever holds it.</p>
-<p>This is the emergency data request problem, and it isn't new. Criminals have been spoofing or compromising law enforcement and government email accounts to extract subscriber data from tech and financial platforms for years. What's changed is the quality of the target. A bank's KYC vault is richer than a social platform's subscriber record by an order of magnitude, and the data has a long shelf life. Passports don't rotate.</p>
-<p>The detail that should bother every security team reading this is the authentication line. SPF, DKIM and DMARC did their jobs. The mail genuinely originated from the domain it claimed. Which means the control that failed wasn't email security at all. It was process: there was no out-of-band callback to a known agency contact before releasing identity documents, and a passing DMARC check was allowed to stand in for verifying that a human at that agency actually made the request.</p>
-<p>Revolut says it blocked the sending address, notified the agency in question, and reported the incident to law enforcement along with data protection and financial regulators. That's the correct sequence. It also doesn't help the affected customers much, since the practical remedy for a leaked passport scan and a matching face photo is a new passport.</p>
-<p>If your organization responds to legal or government data requests, the takeaway is narrow and concrete: treat inbound requests for identity documents as unverified until someone confirms them through a channel that isn't the email itself.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
