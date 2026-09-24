@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Sep 2026 13:18:59 GMT</lastBuildDate>
-    <pubDate>Wed, 23 Sep 2026 13:18:59 GMT</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2026 13:18:05 GMT</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2026 13:18:05 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>WordPress Core Flaw CVE-2026-87902 Under Attack Hours After Patch</title>
+      <link>https://sabr-labs.com/article/wordpress-cve-2026-87902-page-template-rce-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-cve-2026-87902-page-template-rce-exploited-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>CVE-2026-87902</category>
+      <category>RCE</category>
+      <category>Path Traversal</category>
+      <category>PHP</category>
+      <category>Patch Now</category>
+      <description>A path traversal bug in WordPress&apos;s get_page_template() affects every release from 4.7.0 through 7.1.1, can reach unauthenticated code execution on some setups, and attackers started probing for it the same morning 7.1.2 shipped.</description>
+      <content:encoded><![CDATA[<p>It took attackers less than a day. WordPress pushed 7.1.2 on Tuesday to fix CVE-2026-87902, and by 11:49 UTC the same day Previdian's sensors had logged the first exploitation attempt against it.</p>
+<p>The bug lives in get_page_template(), the core function that decides which theme file renders a page. An unauthenticated request can steer that lookup out of the theme folders and into any readable PHP file on the server. It's scored 9.2 under CVSS 4.0, and the project lists every release from 4.7.0 through 7.1.1 as affected. Fixed builds are 7.1.2, 7.0.6, 6.9.9 and 6.8.10.</p>
+<p>Now the caveat, because it's a real one. Turning this into code execution isn't automatic. The WordPress advisory says RCE depends on preconditions in both the server environment and the active theme: the parent or child theme needs a top-level directory whose name starts with "page-", and there has to be a useful PHP file sitting somewhere the web server can read.</p>
+<p>Attackers already know which file they want. The traffic Patchstack and Previdian are seeing goes straight for pearcmd.php, the PEAR command-line script that ships with a lot of PHP installs (often at /usr/local/lib/php/pearcmd.php). Including it lets an attacker write a new PHP file to /tmp or /var/tmp and then load that. Dropped filenames seen so far include wp-pear-rce-flag.php, poc87902.php and randomized luci_ and zeta_ prefixes. Public scanning tooling is already circulating.</p>
+<p>The volume is still small, a few dozen attempts by Wednesday. That won't last. It's the pattern with every WordPress core bug that has a working chain: the first day is researchers and hobbyists, the second week is botnets.</p>
+<p>Most sites will be fine because core auto-updates for security releases are on by default. The ones that won't be are the sites where someone turned that off years ago, or pinned an old branch for a plugin that never got fixed. Check the version on every install you're responsible for, look for unexpected .php files in /tmp and /var/tmp, and if your PHP image doesn't need PEAR, remove pearcmd.php. That one file is doing a lot of the work in these attacks.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Talos Finds Malware That Lets Four AI Models Vote on Its Next Move</title>
+      <link>https://sabr-labs.com/article/talos-closedquorum-llm-voting-malware-cairn-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/talos-closedquorum-llm-voting-malware-cairn-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco Talos</category>
+      <category>Malware</category>
+      <category>AI Security</category>
+      <category>LLM</category>
+      <category>Threat Hunting</category>
+      <category>CAIRN</category>
+      <description>Cisco Talos documented CLOSEDQUORUM, a Go-based Windows implant that asks DeepSeek, Qwen, Mistral and Gemini to vote on each post-compromise action, and open-sourced CAIRN, a toolkit for hunting AI-integrated malware.</description>
+      <content:encoded><![CDATA[<p>Most malware waits for an operator to tell it what to do. CLOSEDQUORUM asks a committee.</p>
+<p>Cisco Talos published its analysis of the Windows implant on Wednesday, calling it the first publicly documented sample that hands tactical command-and-control decisions to a panel of commercial large language models. It's written in Go, weighs in around 16 MB, and polls up to four providers (DeepSeek, Qwen, Mistral and Google Gemini) about what to do next. The plurality answer wins. On a tie, DeepSeek's vote breaks it, then Qwen, Mistral and Gemini in that order.</p>
+<p>The menu the models choose from is short. "Steal" dumps LSASS credentials, browser passwords and crypto wallets. "Inject" does process hollowing or APC injection depending on what the panel says. "Persist" sets up persistence. There's also a "move" option for lateral movement, but the build Talos examined has no handler for it, so the models can vote for it and nothing happens. Loot goes out through a Discord webhook, and the implant runs on randomized 5 to 15 minute intervals.</p>
+<p>Here's the necessary cold water. Talos says it has no confirmation this has been deployed in the wild, and the binary it analyzed shipped with placeholder API keys and dummy webhooks. As found, it doesn't work. Talos did tie artifacts in the build to a developer posting on carding forums since 2025, so this is someone's real project, but it's a prototype.</p>
+<p>It's also a fragile one. Commercial APIs rate-limit, time out and refuse. A guardrail tripping on one provider shifts the vote, and when every provider fails the implant just retries. Talos lists malformed model output and the predictable tie-break order as weaknesses too. Handing your decision loop to four vendors who all log API traffic and can revoke keys is not a great operational security plan.</p>
+<p>Where this does get useful is detection. Talos suggests alerting on AI-provider API traffic from Windows executables that have no business making it, especially bursts of requests to several model providers within seconds of each other. Pair that with LSASS access or new persistence and you have a clean signal. Few SOCs are baselining which endpoints talk to api.deepseek.com today. They should start.</p>
+<p>Alongside the report, Talos open-sourced CAIRN, a research toolkit that hunts for AI-integrated malware by scanning file metadata for prompt templates, model API endpoints and jailbreak strings without executing anything. It's on GitHub now, and it's probably the more lasting contribution of the two.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Placeholder Domain third-party.com Is Serving ClickFix Malware</title>
+      <link>https://sabr-labs.com/article/third-party-com-placeholder-domain-clickfix-dev-docs-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/third-party-com-placeholder-domain-clickfix-dev-docs-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ClickFix</category>
+      <category>Phishing</category>
+      <category>PowerShell</category>
+      <category>Supply Chain</category>
+      <category>MCP</category>
+      <category>Developer Security</category>
+      <description>A registered domain that shows up as a stand-in URL in W3C specs, Chromium docs and more than 1,700 repositories now shows Windows visitors a fake Cloudflare check that pastes a PowerShell downloader into the Run box.</description>
+      <content:encoded><![CDATA[<p>Developers have been writing third-party.com into docs and sample code for years as shorthand for "some other site." The problem is that someone owns it, and right now that someone is running a ClickFix lure on it.</p>
+<p>Manifold Security spotted the domain while auditing public AI agent skills and MCP server documentation that referenced it, and BleepingComputer confirmed the page was live on Wednesday. Windows visitors get a fake Cloudflare "Performing security verification" screen. Clicking the checkbox silently copies a PowerShell command to the clipboard, and the page then tells you to press Win+R, paste and hit Enter. The command rebuilds a URL at elxxvvx[.]xyz, pulls down a second PowerShell script and runs it. Mac and Linux visitors just get an error saying their OS isn't supported.</p>
+<p>This isn't new. A Hybrid Analysis report shows the campaign active by early May, when it was pushing a 134 MB update2.zip containing a file named draw.io.exe. Nobody has been able to say what that final payload did, because the archive is gone. Google Safe Browsing now flags the domain.</p>
+<p>The reach is what makes this worth your time. BleepingComputer's code search found third-party.com in more than 1,500 files across over 1,700 repositories, including projects from Chromium, Sanity and Vercel, plus W3C spec text for the Geolocation and Compute Pressure APIs. Most of those references are harmless strings in prose. Some aren't, because people copy example URLs into config and tests and never take them back out.</p>
+<p>There's a newer wrinkle too. The skills and MCP docs where Manifold found it are read by coding agents, not just people. An agent that follows a link in documentation to "check" an endpoint isn't going to press Win+R, but a human reviewing what the agent found might click through to see what's there.</p>
+<p>The fix is boring and has existed since 1999. RFC 2606 reserves example.com, example.net and example.org for exactly this job, and IANA keeps them pointing at a harmless page. Grep your repos and internal docs for third-party.com (and while you're at it, any other made-up-looking domain that someone could register), swap them for the reserved names, and block the domain at the proxy.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Opus 5.5 and GPT-6 Sol Ship an Hour Apart, Both Cheaper Than Before</title>
+      <link>https://sabr-labs.com/article/claude-opus-5-5-gpt-6-sol-luna-price-cuts-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/claude-opus-5-5-gpt-6-sol-luna-price-cuts-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>OpenAI</category>
+      <category>Claude Opus 5.5</category>
+      <category>GPT-6</category>
+      <category>LLM Pricing</category>
+      <category>AI Models</category>
+      <description>Anthropic cut Opus pricing to $4/$20 per million tokens with 60% cheaper cache reads, OpenAI answered with GPT-6 Sol at $2/$10 and Luna at $0.10/$0.50, and Opus 5.5 hands most cybersecurity work to an older model.</description>
+      <content:encoded><![CDATA[<p>Anthropic released Claude Opus 5.5 on Tuesday. About an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. Whether or not that timing was coordinated, the headline for anyone paying the bills is the same: frontier model prices dropped again.</p>
+<p>Opus 5.5 costs $4 per million input tokens and $20 per million output, down from $5 and $25 for Opus 5. The bigger change is cache reads, now $0.20 per million, a 60% cut. That matters more than the sticker price for agent and coding workloads, where cached context can make up nine-tenths of the input. Anthropic says the model performs at roughly the level of Claude Fable 5.1 on most work at about 40% lower running cost than Opus 5.</p>
+<p>OpenAI halved its numbers. GPT-6 Sol lists at $2 and $10 against $4 and $20 for GPT-5.6 Sol. GPT-6 Luna comes in at $0.10 input and $0.50 output, which Simon Willison called one of the cheapest models OpenAI has ever put out. Both vendors advertise context windows just over a million tokens.</p>
+<p>Treat the benchmark tables with the usual care. Anthropic leads with Terminal-Bench 4.0 and FrontierCode; OpenAI leads with DeepSWE and its own Automation Bench. Each company picked tests where its model looks best, and none of them tell you how either model behaves on your codebase with your prompts. Willison also found that Opus 5.5's "max" reasoning setting blew through its 128K output-token limit on a simple drawing task, at about $2.56 per failed attempt. Cheaper per token isn't the same as cheaper per job if the model thinks for twice as long.</p>
+<p>The detail security teams should notice: Anthropic says Opus 5.5 routes most cybersecurity tasks to Opus 4.8 and plans to widen its Cyber Verification Program in the coming weeks. If you run vulnerability research or red-team tooling through the API, expect the new model to decline or downshift on some of that work unless you're enrolled.</p>
+<p>For everyone else, rerun your cost projections. Anything you ruled out as too expensive on last quarter's pricing deserves another look, and a model like Luna makes high-volume classification and triage jobs almost free by comparison.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>iOS 27.2 Beta Hides an iPhone AutoLock Built for Snatch Thefts</title>
+      <link>https://sabr-labs.com/article/ios-27-2-autolock-anti-snatching-iphone-theft-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ios-27-2-autolock-anti-snatching-iphone-theft-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>iPhone</category>
+      <category>iOS 27</category>
+      <category>Theft Protection</category>
+      <category>Mobile Security</category>
+      <description>Code in iOS 27.2 beta 2 shows Apple testing AutoLock, which would lock an iPhone after a sudden grab using motion, Apple Watch reachability and unlock-time signals, with biometrics and familiar places able to veto it.</description>
+      <content:encoded><![CDATA[<p>The worst phone theft isn't the one where your iPhone disappears from a table. It's the one where someone rips it out of your hand while it's unlocked, and every account on it is open for the taking.</p>
+<p>Apple is working on that case. Code in iOS 27.2 beta 2, first reported by 9to5Mac on Monday, describes a service Apple calls AutoLock that tries to recognize a snatch and lock the phone before the thief gets anywhere. It first surfaced in May; the new beta fills in how it's supposed to decide.</p>
+<p>Three signals can argue for a lock: a sharp spike in acceleration that looks like the phone being yanked away, a paired Apple Watch dropping out of reach for a while, and the phone staying unlocked longer than expected. The code describes a voting setup where any of those can request a lock and safeguards can veto it. The vetoes include a successful Face ID or Touch ID match, being somewhere familiar, and certain foreground app activity that might otherwise look like theft. There's also a backoff so a phone that keeps locking itself during, say, a run doesn't turn into a brick.</p>
+<p>Don't go looking for the toggle. Apple has the AutoLock service running in the background in this beta, but the part that actually locks the device is switched off. That reads like Apple collecting data on how often the detector would fire before it lets it fire.</p>
+<p>Google shipped something similar for Android two years ago with Theft Detection Lock, so Apple isn't first here. The Watch signal is a genuinely useful twist, though. A thief can run fast, but they can't take your wrist with them, and a Watch that suddenly can't see its phone is a strong hint that something's wrong.</p>
+<p>Until this ships, the best defense is the one Apple already has: turn on Stolen Device Protection, which forces biometrics and a delay before anyone can change your Apple Account password or passcode away from familiar locations.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Meta&apos;s $1,299 VR Glasses Headline Connect, but the $349 Ones Matter More</title>
+      <link>https://sabr-labs.com/article/meta-connect-2026-vr-glasses-muse-charm-camera-free-ray-ban-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/meta-connect-2026-vr-glasses-muse-charm-camera-free-ray-ban-september-2026</guid>
+      <pubDate>Thu, 24 Sep 2026 09:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Meta</category>
+      <category>Meta Connect</category>
+      <category>Smart Glasses</category>
+      <category>VR</category>
+      <category>AI Agents</category>
+      <category>Privacy</category>
+      <description>At Connect 2026 Meta showed $1,299 VR Glasses shipping spring 2027, a 5G Muse Charm keychain for its AI agent, and camera-free Ray-Ban Meta Audio glasses at $349 that quietly concede the privacy fight.</description>
+      <content:encoded><![CDATA[<p>Mark Zuckerberg's big reveal at Connect on Wednesday was a pair of VR glasses. The more telling product was a pair of smart glasses with the camera taken out.</p>
+<p>Start with the headliner. Meta VR Glasses cost $1,299, weigh about 100 grams, and get there by cabling the frames to a compute puck you clip to a pocket or bag. Zuckerberg pitched it as Meta's first attempt at VR in something you'd call glasses rather than a headset. Meta says it's the first IMAX Enhanced-certified VR device and is lining up 3D movies and live sports for it. It doesn't ship until spring 2027, which leaves a lot of room for the spec sheet to change and the price to move.</p>
+<p>The Muse Charm is the odder bet. It's a keychain about the size of an AirPods case with a roughly 2-inch touchscreen, its own 5G connection, microphones and a fingerprint sensor, built to be a pocket shortcut to Muse, the task-running AI agent Meta launched on September 8. It ships in December. Meta won't say what it costs yet. Dedicated AI gadgets haven't had a good run so far, and a device whose job depends on retailers cooperating with an agent gets harder to sell when Amazon is already blocking that agent from its store.</p>
+<p>Then there's Ray-Ban Meta Audio: $349, 43 grams, 12 hours of battery, shipping October 13, and no camera. Meta's pitch leans on how much people use its glasses for music, calls and voice AI. The subtext is two years of complaints about people quietly filming strangers with camera glasses. Selling a version without the lens is the closest Meta has come to admitting the critics had a point.</p>
+<p>The camera isn't going away, to be clear. Ray-Ban Meta Gen 3 starts at $449 with a 12 MP camera, 3K video, a six-mic array and nine hours of battery.</p>
+<p>Zuckerberg also claimed that nobody, including Meta, can access your data on the glasses or in Muse. That's a strong statement from a company whose agent reads your email and fills in forms for you, and it'll need a technical explanation before security teams take it at face value. Anyone thinking about allowing these into an office should wait for that write-up, not the keynote line.</p>]]></content:encoded>
+    </item>
     <item>
       <title>F5 BIG-IP APM Zero-Day Gives Attackers Pre-Auth RCE Through OAuth</title>
       <link>https://sabr-labs.com/article/f5-big-ip-apm-cve-2026-94127-oauth-rce-exploited-september-2026</link>
@@ -921,129 +1047,6 @@
 <p>Google isn't saying who's using it or against whom. That wording (limited, targeted) usually points to commercial spyware or state-backed operators going after specific people rather than a broad criminal campaign. Baseband bugs are prized for exactly that work because the modem processes attacker-controlled radio traffic before Android's own defenses get a say. Don't read the "high" severity label as a reason to wait.</p>
 <p>The CVE didn't arrive alone. The same bulletin covers well over 100 Pixel-specific fixes, with a large share rated critical across components like the bootloader, IMS, TEE and the BigOcean video codec.</p>
 <p>For individuals, the fix is simple: Settings, System, Software updates, and reboot. For fleets, pull a compliance report from your MDM and look for stragglers, especially older Pixels close to end of support, and anyone in a role that makes them an interesting target. Journalists, executives and people who travel to high-risk regions should be first in line.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Shanghai AI Lab&apos;s Free Atria Dawn Tops BrowseComp, Trails at Coding</title>
-      <link>https://sabr-labs.com/article/shanghai-ai-lab-atria-dawn-preview-744b-open-agent-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/shanghai-ai-lab-atria-dawn-preview-744b-open-agent-september-2026</guid>
-      <pubDate>Wed, 16 Sep 2026 14:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Shanghai AI Lab</category>
-      <category>Atria Dawn</category>
-      <category>Open Weights</category>
-      <category>AI Agents</category>
-      <category>Benchmarks</category>
-      <category>GLM-5.2</category>
-      <description>Atria Dawn Preview, an MIT-licensed agent model built on Z.ai&apos;s 744B GLM-5.2 base, edges GPT-5.6 Sol on BrowseComp but falls well behind Claude Opus 5 on SWE-bench Pro and Terminal-Bench.</description>
-      <content:encoded><![CDATA[<p>There was no launch event, no blog post and no price sheet. Shanghai AI Laboratory just put a 744-billion-parameter agent model on Hugging Face on September 11, added an FP8 checkpoint the next day and followed with a technical report on September 14.</p>
-<p>The model is Atria Dawn Preview. It's a mixture-of-experts model post-trained on Z.ai's GLM-5.2 base with a 256K-token context window, and it ships under the MIT license, so commercial use is allowed. The lab also runs a hosted API that speaks the Chat Completions, Messages and Responses formats, which makes it close to a drop-in swap for teams already wired to OpenAI or Anthropic clients.</p>
-<p>The headline number is BrowseComp, the web-research benchmark: 92.5, according to the model card, against 92.2 for GPT-5.6 Sol, 91.2 for Kimi K3 and 90.8 for Claude Opus 5. That's a real result for an open-weights model. It's also a margin of three-tenths of a point on a lab-reported figure, which is well inside the range where prompt scaffolding and run-to-run variance can flip the order.</p>
-<p>The same model card is refreshingly honest about where Atria loses, and the losses are bigger than the wins. On SWE-bench Pro it scores 59.6 to Claude Opus 5's 74.7. On Terminal-Bench 2.1 it's 78.3 against 90.2. It also trails on DeepResearch Bench II and a τ³-Bench banking task. So this is a strong search-and-tool-use agent, not a general frontier coder.</p>
-<p>That split tracks how it was trained. The lab describes a pipeline that grounds tool use in executable environments with verifiable outcomes, which naturally favors tasks like browsing and function calling where success is easy to check.</p>
-<p>The practical catch is hardware. Self-hosting a model this size means a multi-GPU node even with FP8, so most teams trying it will use the hosted API, and that means sending data to infrastructure run by a Chinese state-affiliated lab. For research-heavy agent work that's worth benchmarking yourself. For anything touching regulated data, check with your compliance team first.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SK Hynix in Talks to Make Its First US Memory Chips at Intel&apos;s Ohio Site</title>
-      <link>https://sabr-labs.com/article/sk-hynix-intel-ohio-fab-us-memory-talks-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/sk-hynix-intel-ohio-fab-us-memory-talks-september-2026</guid>
-      <pubDate>Wed, 16 Sep 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SK Hynix</category>
-      <category>Intel</category>
-      <category>Semiconductors</category>
-      <category>Memory</category>
-      <category>HBM</category>
-      <category>Ohio</category>
-      <description>Reuters reports SK Hynix is weighing a lease or a joint venture with Intel and cloud providers at Intel&apos;s delayed Ohio campus, though SK Hynix says nothing is finalized and the first fab isn&apos;t due until 2030.</description>
-      <content:encoded><![CDATA[<p>Intel's Ohio megafab has spent four years as a symbol of delay. It might end up making someone else's chips.</p>
-<p>Reuters reported that SK Hynix is in talks with Intel about producing memory in the US for the first time, at Intel's planned campus outside Columbus. Two structures are reportedly on the table: SK Hynix leases space at the site, or it forms a joint venture with Intel and major cloud companies that want a guaranteed supply of memory. Intel shares rose about 4% on the report and SK Hynix gained roughly 3%.</p>
-<p>Neither company is confirming much. SK Hynix said nothing has been finalized and that it's looking at several countries and locations as it reviews ways to strengthen its memory business. Intel called it speculation and said only that it's still investing in preparing the Ohio site.</p>
-<p>The logic is easy to see from both sides. Intel announced Ohio in 2022 with a pledge of at least $20 billion and talk of up to eight fabs, then pushed the schedule back hard: the first fab isn't expected to finish until 2030, with production starting in 2030 or 2031. Its foundry business badly needs an anchor tenant with real volume. SK Hynix, meanwhile, sits at the center of the AI memory crunch, faces pressure from Washington to build on US soil, and would like some protection from tariffs.</p>
-<p>The cloud-provider joint venture is the more interesting option. Hyperscalers have spent the last two years paying up for high-bandwidth memory and still getting allocated. Owning a piece of a domestic fab would give them something closer to a reserved seat.</p>
-<p>Keep the timeline in view, though. Nothing built in Ohio helps with this year's shortages or next year's. SK Hynix's nearer-term US commitment is its advanced HBM packaging plant in West Lafayette, Indiana, which targets mass production in late 2029. And South Korea may get a say: its trade ministry can review deals that involve designated national core technologies, and leading-edge DRAM clearly qualifies.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CCNP Security&apos;s SCOR Exam Got Its First Rewrite Since 2020</title>
-      <link>https://sabr-labs.com/article/cisco-scor-v2-350-701-ccnp-security-blueprint-rewrite-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-scor-v2-350-701-ccnp-security-blueprint-rewrite-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>learning</category>
-      <category>Cisco</category>
-      <category>CCNP Security</category>
-      <category>SCOR 350-701</category>
-      <category>Certification</category>
-      <category>SSE</category>
-      <description>SCOR v2.0 (350-701) went live on August 27 with a blueprint rebuilt around SSE and cloud-delivered security, and Cisco&apos;s own training for it is only arriving this month.</description>
-      <content:encoded><![CDATA[<p>If you have been grinding through SCOR v1.1 material, stop and check which exam you're actually booked for. Cisco replaced the CCNP Security core exam on August 27, and 350-701 v2.0 is the first real revision of that blueprint since February 2020.</p>
-<p>Six years is a long time in security. The v1.1 blueprint was written when the center of gravity was still the perimeter firewall and the on-prem VPN concentrator. The new one leans into cloud-delivered security, SSE, and the infrastructure patterns that came with AI workloads. Cisco's own guidance is to treat v2.0 as new content rather than a refresh, which is unusually blunt for a vendor that normally sells the upgrade as continuity.</p>
-<p>The other change is structural. SVPN (300-730) is gone, with August 26 as the last day to test. Its VPN content didn't disappear; it was split between the SCOR core and the SNCF firewall concentration. So VPN is no longer something you could route around by picking a different concentration. It's in the core now, and everyone sitting CCNP Security owns it.</p>
-<p>The concentration list also got tidied. SCAZT is now SSCA, exam number 300-740 unchanged, retitled to Designing and Implementing Secure Cloud Access for Users and Endpoints. Two separate firewall courses, SFWIPA and SFWIPF, collapse into one consolidated SNCF track.</p>
-<p>Here's the practical problem. The exam went live in late August, Cisco U. training for v2.0 is landing in September, and the official practice exam isn't expected until the end of the year. Anyone testing in that window is doing it without first-party prep, against a blueprint too new for the third-party study material and question banks to have caught up. That's a genuinely worse position than the usual version transition, where old material at least still mostly maps.</p>
-<p>So the advice is simple: if you were nearly ready on v1.1, you missed that window and the honest move is to re-scope rather than hope for overlap. If you're starting fresh, download the 350-701 v2.0 exam topics PDF from Cisco's learning content site and build your plan off the blueprint itself, not off a course outline written for the old one. And if you can wait until the official training and practice exam are both available, the study experience in December will be meaningfully better than it is today.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DeepSeek Retired Its Flagship, Then Un-Retired It Days Later</title>
-      <link>https://sabr-labs.com/article/deepseek-v4-1-flash-v4-pro-retirement-reversal-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-v4-1-flash-v4-pro-retirement-reversal-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>DeepSeek</category>
-      <category>Open Weights</category>
-      <category>LLM</category>
-      <category>API</category>
-      <category>Benchmarks</category>
-      <description>DeepSeek routed every V4-Pro API request to the cheaper V4.1-Flash on September 14, then reversed itself and kept V4-Pro running with unchanged billing.</description>
-      <content:encoded><![CDATA[<p>On September 14 at 04:00 UTC, every request to DeepSeek's flagship model started getting answered by a smaller, cheaper one. The company's reasoning was that V4.1-Flash had "comprehensively surpassed" V4-Pro on performance, cost, and speed, so keeping Pro around was a waste of everyone's money.</p>
-<p>Then it walked it back. DeepSeek's API changelog now states that V4 Pro service continues after September 14 with billing unchanged, a reversal the company attributes to user demand. Two announcements, four days, opposite conclusions.</p>
-<p>The model underneath the drama is genuinely interesting. V4.1-Flash landed on September 10 as a 552B-parameter mixture-of-experts model on a new causal encoder-decoder design, with a 1M-token context window, native multimodal vision, and open weights under MIT. DeepSeek's published numbers put it at 90.6 on Terminal-Bench 2.1 and 74.2% on DeepSWE v1.1, up from 82.7 and 54.4 for the previous Flash release in July. Off-peak API pricing runs $0.15 per million uncached input tokens and $0.60 per million output, with cache hits at a third of a cent.</p>
-<p>Those are DeepSeek's own evaluations on DeepSeek's own harness, which is the caveat that applies to every lab's launch post and applies here too. "Our small model beats our big model" is a claim about the benchmarks a company chose to run as much as it is a claim about the models. Coding and agent benchmarks in particular have been saturating fast, and a jump from 54% to 74% on an agentic SWE suite is the kind of result that usually needs third-party reproduction before anyone should rebuild a pipeline around it.</p>
-<p>Set the scores aside and the pricing story still holds up. A 1M-context open-weights model at these rates puts real pressure on the mid-tier of the closed-model market, which is where most production traffic actually lives. Cheap and good enough beats excellent and metered for an enormous share of real workloads.</p>
-<p>The part that should worry people building on this is not the model, it's the operational whiplash. Silently rerouting a named model endpoint to a different model, even a better one, breaks the contract developers thought they had. Anyone who had evaluated, tuned prompts against, and shipped on `deepseek-v4-pro` woke up on the 14th running something else. Pin your versions, log which model actually served each response, and treat any provider's model-name aliasing as a variable you have to monitor rather than a detail you can ignore.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A $159 Board Breaks Intel and AMD Confidential Computing</title>
-      <link>https://sabr-labs.com/article/ddrop-interposer-intel-tdx-amd-sev-snp-attestation-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ddrop-interposer-intel-tdx-amd-sev-snp-attestation-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Confidential Computing</category>
-      <category>Intel</category>
-      <category>AMD</category>
-      <category>Hardware Security</category>
-      <category>Cloud</category>
-      <description>DDRop silently drops memory writes with a cheap interposer, letting someone with physical access read confidential VM memory and forge attestation on Intel TDX and AMD SEV-SNP.</description>
-      <content:encoded><![CDATA[<p>Confidential computing is sold on a single promise: run your workload in someone else's data center without having to trust the person who owns the building. A new attack called DDRop takes a swing at exactly that promise, and it costs about $159 in hardware.</p>
-<p>Researchers from KU Leuven, ETH Zurich, Durham University, and Google built an interposer that sits between the processor and a memory module. It forces errors onto the command bus and cuts the wire the memory would normally use to report those errors back. The result is that write commands are silently discarded. The CPU believes the write landed. The memory never performed it, so the next read returns stale encrypted data that still passes integrity checks, because from the hardware's point of view nothing was ever corrupted.</p>
-<p>From there the researchers demonstrated the list you would least like to read: reading memory from a victim virtual machine, flipping a protected guest into debug mode, manipulating page tables, and forging attestation measurements. That last one matters most. Attestation is the mechanism a remote party uses to verify that a confidential VM is genuine and unmodified. If it can be forged, the cryptographic proof at the center of the model stops proving anything.</p>
-<p>Intel TDX, Intel Scalable SGX, and AMD SEV-SNP are all affected. The work is scheduled for presentation at ACM CCS in November.</p>
-<p>Both vendors responded by pointing at their threat models. AMD said the attack falls outside the scope of what it publishes protections against, because it requires physical access to the machine. Intel took the same line and does not plan to assign CVEs, while noting that an optional cryptographic-integrity mode on some processors blocks parts of the attack.</p>
-<p>That answer is technically consistent and commercially awkward. The physical-access scenario is not hypothetical here, because the party with physical access is the cloud operator, and the entire reason customers pay for TDX and SEV-SNP is to stop trusting the cloud operator. Saying the operator is out of scope is very close to saying the feature only works against the threats you weren't worried about.</p>
-<p>There is no patch. The suggested mitigations are all software-side and unsatisfying: restrict the memory-management features the attack depends on, verify that important writes actually completed, and check for interposers during boot. If you are running regulated workloads on confidential VMs specifically to satisfy an auditor, this research is worth reading before your next control review, because "the hardware guarantees it" now needs a footnote.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>One Hosting Account Can Take Root on LiteSpeed Shared Servers</title>
-      <link>https://sabr-labs.com/article/litespeed-enterprise-6-3-7-shared-hosting-root-escalation-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/litespeed-enterprise-6-3-7-shared-hosting-root-escalation-september-2026</guid>
-      <pubDate>Tue, 15 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>LiteSpeed</category>
-      <category>Shared Hosting</category>
-      <category>Privilege Escalation</category>
-      <category>cPanel</category>
-      <category>Patch</category>
-      <description>LiteSpeed Web Server Enterprise before 6.3.7 lets a single low-privilege site escape account isolation and reach root, and the fix shipped with no CVE and almost no detail.</description>
-      <content:encoded><![CDATA[<p>If you run shared hosting on LiteSpeed Enterprise, one customer on one plan can currently become root on the machine that serves everybody else.</p>
-<p>The flaw affects LiteSpeed Web Server Enterprise builds before 6.3.7, which shipped on September 11. It is a privilege escalation that lets a low-privilege website user break out of per-account isolation, including CageFS, and reach root on the host. In a shared hosting context, that is not a privilege escalation so much as a tenancy collapse: every site, every database credential, and every customer's files on that box sit inside the blast radius.</p>
-<p>There is no CVE. No CVSS score. cPanel and LiteSpeed have not said who found it or how it works, and the advisory offers no indicators of compromise. For a product whose entire job is keeping untrusted tenants apart, releasing a root-escape fix with no technical detail and no detection guidance is a choice worth pushing back on. Hosting operators cannot answer "were we hit" from what has been published.</p>
-<p>This is also the third root-access problem across LiteSpeed's server and its cPanel plugin since May. The previous two were in the cPanel plugin, and both were exploited in the wild before most operators patched. That history is the reason to treat the silence here as a reason to move faster, not slower.</p>
-<p>Update now with `/usr/local/lsws/admin/misc/lsup.sh -f -v 6.3.7`. Don't wait on the auto-updater, which has been running behind. There are no workarounds, so a server you cannot update today is a server you should be planning to migrate off.</p>
-<p>Then look at the accounts. A root-capable tenant escape means the interesting artifacts are new cron entries, unexpected setuid binaries, SSH keys added outside your provisioning flow, and fresh accounts in the panel. Those are boring places to look, which is exactly why they keep working.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
