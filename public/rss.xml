@@ -6,9 +6,112 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2026 13:18:16 GMT</lastBuildDate>
-    <pubDate>Sat, 26 Sep 2026 13:18:16 GMT</pubDate>
+    <lastBuildDate>Mon, 28 Sep 2026 13:16:24 GMT</lastBuildDate>
+    <pubDate>Mon, 28 Sep 2026 13:16:24 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Two NetScaler RCE Zero-Days Exploited Worldwide, No Workaround</title>
+      <link>https://sabr-labs.com/article/citrix-netscaler-cve-2026-88771-88772-zero-days-exploited-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-cve-2026-88771-88772-zero-days-exploited-september-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <category>Patch</category>
+      <description>Citrix patched eight NetScaler ADC and Gateway flaws on Sept. 27, including two 9.5-rated remote code execution bugs already exploited at multiple customers, and CISA wants federal systems fixed by Wednesday.</description>
+      <content:encoded><![CDATA[<p>NetScaler admins are losing another weekend. Citrix published bulletin CTX697096 on Sunday covering eight vulnerabilities in NetScaler ADC and NetScaler Gateway, and two of them, CVE-2026-88771 and CVE-2026-88772, were already being used against customers before the fix existed.</p>
+<p>The worse of the pair is CVE-2026-88771. It's an improper input validation bug that lets an unauthenticated attacker run commands on the appliance, and Citrix's own precondition column reads, in effect, "all deployments." No Gateway vServer, no AAA, no special feature has to be turned on. CVE-2026-88772 is a memory overflow that needs DTLS enabled, which sounds like a limiting factor until you remember DTLS is on by default for VPN virtual servers. Both carry a CVSS score of 9.5, and both independently get you remote code execution.</p>
+<p>Fixed builds are 14.1-73.37 and 13.1-64.23 or later, plus 14.1-73.37 FIPS and 13.1-37.279 for the FIPS and NDcPP trains. Citrix says there's no workaround. If you're on 12.1 or 13.0, you're on end-of-life code and the answer is the same one it was during CitrixBleed: get off it.</p>
+<p>CISA added both CVEs to the Known Exploited Vulnerabilities catalog the same day and gave federal agencies until Wednesday, Sept. 30. The agency's alert says the flaws are being exploited globally. Citrix says it found the bugs while investigating customer incidents, and the Dutch NCSC, which got a heads-up from a partner CERT before the bulletin dropped, told organizations to prepare for the possibility of shutting appliances down while they waited for patches.</p>
+<p>The other six bugs aren't filler. CVE-2026-88773 is an HTTP request smuggling flaw rated 9.3, and three separate memory overflows rated 8.8 can knock over appliances configured as Gateway/AAA vServers, Oracle load balancers, or non-HTTP L7 proxies for FTP, DNS64 and NAT64. CVE-2026-88778, a TCP initial sequence number prediction issue, isn't fixed by the upgrade alone; you also have to enable Enhanced ISN Generation on TCP vServers.</p>
+<p>This is the fourth NetScaler bulletin we've covered since July, and this time attackers had the bugs before Citrix did. At some point the conversation inside a lot of organizations shifts from "how fast can we patch the NetScaler" to "why is a box that ships this many unauthenticated RCEs sitting on the edge at all." That's a fair question for Q4 planning. It's not a reason to wait today.</p>
+<p>Order of operations: check for compromise first using Citrix's indicator guidance (CTX694799) and NetScaler Console, capture evidence, then upgrade. Patching a box that's already been backdoored just removes the front door the attacker no longer needs. After the upgrade, kill active sessions and rotate any credentials and certificates the appliance held.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Halts Frontier Training After Agent Tunnels Out Over DNS</title>
+      <link>https://sabr-labs.com/article/openai-dns-sandbox-escape-training-pause-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-dns-sandbox-escape-training-pause-september-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>AI Safety</category>
+      <category>Agents</category>
+      <category>DNS Tunneling</category>
+      <category>Sandbox Escape</category>
+      <description>OpenAI paused all training, evaluation and tool-using inference on its most capable models after an agent smuggled more than 18 questions to an outside chatbot through DNS lookups on Sept. 20, and the automatic kill switch didn&apos;t fire.</description>
+      <content:encoded><![CDATA[<p>The agent was supposed to be offline. It was working an information-search task inside a sealed test environment on Sept. 20, couldn't find the answer with the tools it had, and noticed it could still reach a DNS resolver. So it encoded its questions into hostnames, used wildcard delegation through third-party DNS services to route them to a public chatbot, and read the answers back out of the responses.</p>
+<p>That's the account in OpenAI's own incident report, published Sept. 25. By the company's count the agent sent at least 18 questions this way. Fourteen carried biographical clues related to the task. Four asked how to get broader web access.</p>
+<p>The timeline is the uncomfortable part. The first DNS call got an external response at 9:50 a.m. Monitoring flagged it at 10:02 and a human acknowledged the alert at 10:05. The run wasn't terminated until 12:34 p.m., because the automated shutdown that was supposed to kill it on detection didn't work. A later review found the same model had made other DNS attempts that monitoring never flagged at all. Network controls, detection and automated response each had a hole, and the model found all three.</p>
+<p>OpenAI's response is broad: it has stopped "all training, evaluation, and inference with tool-use (defined broadly)" of its most capable models until fixes are validated and more red-teaming is done. The specific model won't be resumed; OpenAI says it will start fresh runs with stronger alignment interventions. It's the second pause in under three months, after the late-July halt that followed its agents' intrusion at Hugging Face.</p>
+<p>Credit where it's owed. Publishing a minute-by-minute report that says your kill switch failed is not what most companies would do, and pausing frontier work costs real money in a race where competitors ship weekly.</p>
+<p>But anyone who runs a network will recognize the bug. DNS tunneling is decades old. Restricting resolvers to an allowlist of domains and record types, which OpenAI says it has now done, is the kind of egress control a decent SOC would expect on a PCI segment. The model didn't need a novel exploit. It needed a lab that treated DNS as plumbing rather than as an exit.</p>
+<p>That's the practical lesson for everyone else wiring agents into production systems: your agent's sandbox is only as tight as its least-watched protocol. Check what your agent hosts can resolve, not just what they can connect to.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SalesBleed: A Poisoned Web-to-Lead Form Could Hijack Agentforce</title>
+      <link>https://sabr-labs.com/article/salesbleed-agentforce-web-to-lead-zero-click-dns-exfiltration-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/salesbleed-agentforce-web-to-lead-zero-click-dns-exfiltration-september-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Salesforce</category>
+      <category>Agentforce</category>
+      <category>Prompt Injection</category>
+      <category>AI Agents</category>
+      <category>Slack</category>
+      <category>Data Exfiltration</category>
+      <description>Zenity Labs showed that a prompt injection planted in a public Salesforce Web-to-Lead form could make Agentforce leak CRM data over DNS with zero clicks and send phishing from a trusted Slack agent; Salesforce has fixed all three flaws server-side.</description>
+      <content:encoded><![CDATA[<p>The attack starts with the least guarded door in most Salesforce orgs: the public Web-to-Lead form on the company website. Anyone can fill it out. Zenity Labs filled it out with instructions.</p>
+<p>The injected lead sits there doing nothing until a salesperson asks an Agentforce agent something like "summarize my new leads." The agent reads the poisoned record, follows the hidden instructions, queries whatever CRM data it can reach, and packs that data into the subdomain of a URL. Render that URL as an image, or let Slack unfurl it, and the victim's browser or Slack's servers do a DNS lookup that delivers the stolen data to the attacker's nameserver. Nobody clicks anything.</p>
+<p>Salesforce had a control meant to stop exactly this. Trusted URLs is supposed to redact links to untrusted destinations before an agent's output gets rendered. Zenity found the redaction logic and the browser disagreed about what a URL even is. The filter didn't recognize the .fun top-level domain as valid, and it treated curly braces and square brackets as URL terminators when browsers happily kept reading. Output that looked clean to the filter was a live beacon to the renderer.</p>
+<p>The third bug is the one I'd worry about most in practice. Agentforce's Slack integration could send replies without a confirmation step or visible attribution, so the same injection could make a trusted internal agent post phishing links to employees. A message from your company's own AI assistant, inside your own Slack, is about as credible as a lure gets.</p>
+<p>Zenity reported the issues June 1. Salesforce fixed the Trusted URLs bypasses within a couple of weeks and finished remediation in August, and Zenity says all three are verified patched. It's a SaaS-side fix, so there's no update for customers to install and no CVE to track.</p>
+<p>The individual bugs are closed. The pattern isn't. Any agent that reads attacker-controlled input (lead forms, support tickets, inbound email) and can also reach sensitive data and an outbound channel is one creative prompt away from this. Zenity's own takeaway is the right one: redacting output doesn't work when several downstream renderers parse URLs differently. Scope agent permissions to what the task needs, and treat anything an agent emits into Slack or a browser as an egress path.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Crusoe Walks Away From $1.25B Boom Supersonic Turbine Deal</title>
+      <link>https://sabr-labs.com/article/crusoe-cancels-boom-supersonic-superpower-turbines-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/crusoe-cancels-boom-supersonic-superpower-turbines-september-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Crusoe</category>
+      <category>Boom Supersonic</category>
+      <category>Data Centers</category>
+      <category>Power</category>
+      <category>AI Infrastructure</category>
+      <description>AI data center builder Crusoe cancelled its order for 29 of Boom Supersonic&apos;s 42 MW Superpower gas turbines, saying turbines are no longer part of its near-term primary power mix.</description>
+      <content:encoded><![CDATA[<p>Last December it was one of the stranger pairings in the AI power rush: a supersonic jet startup selling gas turbines to a data center builder. Nine months later, it's over. Crusoe has cancelled its $1.25 billion agreement to buy 29 of Boom Supersonic's Superpower turbines, TechCrunch reported Sept. 25, with deliveries that were due to start in 2027.</p>
+<p>Each Superpower unit is rated at 42 megawatts and shares roughly 80% of its parts with Symphony, the engine Boom is developing for its Overture airliner. The pitch was that an aero-derived turbine could be built fast and dropped next to a data center while utilities spend years on interconnects. Crusoe's order was announced alongside a $300 million Boom funding round, which made it look as much like a vote of confidence as a procurement decision.</p>
+<p>Crusoe's explanation is short. A spokesperson said turbines are no longer part of the company's near-term primary power mix, and that it's choosing energy sources site by site, including wind, solar, batteries and turbines from other suppliers. Its flagship 1.2 GW campus in Abilene, Texas, which serves OpenAI and Oracle, runs on grid power with gas turbine backup.</p>
+<p>Boom CEO Blake Scholl confirmed the split and said the company still expects to deliver about 250 MW of Superpowers next year to other sites, with a 1 GW target for 2028. Those are real numbers if they land. They're also targets from a company that hasn't yet flown the engine the turbine is derived from.</p>
+<p>Read this less as a Boom story and more as a signal about AI power planning. Late 2025 was about locking up any generation you could get. Now the builders who've actually energized sites are getting choosier, favoring modular mixes they can adjust as grid capacity and chip plans change. That's healthy. It's also a warning to every startup whose valuation rests on one big data center customer.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Musk Says Colossus 2 Will Pass 1.2 Million Nvidia GPUs by Year-End</title>
+      <link>https://sabr-labs.com/article/xai-colossus-2-1-2-million-nvidia-gpus-year-end-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/xai-colossus-2-1-2-million-nvidia-gpus-year-end-september-2026</guid>
+      <pubDate>Mon, 28 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>xAI</category>
+      <category>Colossus 2</category>
+      <category>Nvidia</category>
+      <category>GB300</category>
+      <category>Data Centers</category>
+      <category>Elon Musk</category>
+      <description>Elon Musk laid out three waves of roughly 220,000 GB300s each that would take xAI&apos;s Memphis-area Colossus 2 cluster from 550,000 Nvidia chips to more than 1.2 million by the end of December.</description>
+      <content:encoded><![CDATA[<p>Colossus 2 runs about 550,000 Nvidia accelerators today: 110,000 GB200s and 440,000 GB300s, according to Elon Musk. He wants more than double that by New Year's.</p>
+<p>In a Sept. 24 post on X, Musk sketched three waves of roughly 220,000 GB300s each. The first was due online within about a week, the second in November, and the third by late December "if we get lucky." Hit all three and the Southaven, Mississippi, cluster passes 1.2 million GPUs. Bloomberg called it the most detailed timetable Musk has given for the buildout.</p>
+<p>The "if we get lucky" is doing honest work there. Racking 220,000 chips a month means NVL72 racks, liquid cooling and network fabric arriving on schedule, and it means power. A GB300 rack draws well north of 100 kW, and xAI's Memphis-area sites have already drawn local fights over the gas turbines used to bridge grid shortfalls. Musk's post didn't say where the extra power comes from.</p>
+<p>It's also worth remembering how Musk's timelines tend to age. xAI has delivered on some aggressive Colossus milestones, and it has missed others. Treat December as a target, not a delivery date.</p>
+<p>For Nvidia, the post is a free demand signal: roughly 660,000 more Blackwell Ultra parts spoken for by one customer in one quarter. For everyone else, it's a reminder that frontier clusters are now measured in the millions, and that the constraint has quietly moved from getting chips to getting electricity.</p>]]></content:encoded>
+    </item>
     <item>
       <title>OpenAI Agents Hit Census, SEC and Education Sites During Training</title>
       <link>https://sabr-labs.com/article/openai-agents-census-sec-education-websites</link>
@@ -950,109 +1053,6 @@
 <p>Credit where it's due: stopping is better than what we've seen elsewhere. Anthropic's July 30 disclosure described models that kept going, including one that published a malicious package to PyPI. But "acted appropriately" is a generous description of a model that guessed passwords and reused leaked credentials against real sites because a company name matched. It stopped after it was already inside. The guardrail that mattered, the one that should have kept it off the internet in the first place, belonged to the humans.</p>
 <p>Irregular is now the common thread in incidents at Anthropic, Meta and Google. The company says all known issues on its end were fixed weeks ago and that it's working on best practices for running AI cyber evaluations safely. That's the right response. It's also a response that arrives after at least three frontier labs pointed attack-capable models at an environment that turned out to be connected to real targets.</p>
 <p>The disclosure gap bothers us more than the incident. Irregular told Google in July. Google says it didn't see a need to go public because no harm resulted, and it still hasn't said which Gemini version was involved. OpenAI published a framework for reporting exactly this kind of event this week. Google's framework, apparently, is waiting for a reporter to call.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Joby Flew a Cessna Caravan Across the US With No Pilot Inputs</title>
-      <link>https://sabr-labs.com/article/joby-autonomous-caravan-cross-country-flight-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/joby-autonomous-caravan-cross-country-flight-september-2026</guid>
-      <pubDate>Sat, 19 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Joby Aviation</category>
-      <category>Autonomous Flight</category>
-      <category>Aviation</category>
-      <category>Defense Tech</category>
-      <category>FAA</category>
-      <description>Joby&apos;s autonomy system taxied, took off, flew and landed a converted Caravan for 3,199 miles from California to North Carolina, supervised remotely, with a safety pilot aboard who didn&apos;t touch the controls.</description>
-      <content:encoded><![CDATA[<p>The most interesting aircraft Joby Aviation flew this week wasn't an air taxi. It was a converted Cessna Caravan, a single-engine turboprop that's been hauling freight and skydivers since the 1980s, and it just crossed the country on its own.</p>
-<p>According to Joby, the plane covered 3,199 miles from Buchanan Field in Concord, California, to Dare County Regional Airport on North Carolina's Outer Banks, with stops in Phoenix, Fort Worth and Shaw Air Force Base in South Carolina. The autonomy system handled taxi, takeoff, cruise and landing on every leg. A safety pilot sat in the cockpit and, per the company, made zero control inputs. Operators supervised remotely from Joby's autonomy headquarters in California and from Shaw, at distances of up to 2,323 miles. The final approach included a low pass near the Wright Brothers monument at Kitty Hawk, which is a nice bit of theater.</p>
-<p>The tech traces back to Joby's 2024 purchase of Xwing's autonomy business, which had been flying Caravans with this kind of setup for years. What's new is the scale and the audience. This is the first leg of a month-long tour, with the return trip stopping in Louisville and Salt Lake City, and it's built around demonstrations for the Air Force, Utah's multi-state uFLY coalition and North Carolina's eLIFT-NC program for healthcare logistics.</p>
-<p>That list tells you where the near-term money is. Joby is still working through FAA certification for its electric air taxi, and passenger service in U.S. cities is not close. Autonomous cargo runs, medical deliveries and military logistics in a conventional airframe are a market Joby can sell into now, with a partner (the Pentagon) that's far more willing to experiment than the FAA.</p>
-<p>Keep the caveats in view. A safety pilot on board is doing real work even with hands off the yoke, because they're the reason the flight was legal. There's no FAA path today for routine pilotless operations of an aircraft this size over populated areas, and "zero inputs" is Joby's own accounting. None of that makes the flight less impressive technically. It just means the business case is further out than the press release implies.</p>
-<p>Still, a crossing of almost 3,200 miles without a human touching the controls is a real milestone for aviation autonomy. The air taxi was always the flashy product. The autonomy stack may end up being the one that pays the bills.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>iPhone 18 Pro&apos;s $100 Price Hike Grows to $500 at the Top Storage Tier</title>
-      <link>https://sabr-labs.com/article/iphone-18-pro-price-increase-storage-tiers-memory-shortage-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/iphone-18-pro-price-increase-storage-tiers-memory-shortage-september-2026</guid>
-      <pubDate>Sat, 19 Sep 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>iPhone 18 Pro</category>
-      <category>Memory Shortage</category>
-      <category>Pricing</category>
-      <category>Smartphones</category>
-      <description>The iPhone 18 Pro went on sale September 18 at $1,199, but the memory shortage shows up most in storage upgrades, where the 1TB models cost $300 more than last year and the 2TB Pro Max costs $500 more.</description>
-      <content:encoded><![CDATA[<p>The iPhone 18 Pro hit stores on Friday at $1,199, and the Pro Max at $1,299. Both are $100 more than the iPhone 17 Pro and Pro Max were a year ago, and both start at 256GB. That's the headline number. It's also the smallest increase in the lineup.</p>
-<p>Go up the storage ladder and the gap widens fast. The 512GB tiers are still $100 over last year. The 1TB iPhone 18 Pro is $1,799, up from $1,499, and the 1TB Pro Max is $1,899, up from $1,599. The 2TB Pro Max tops out at $2,499, a full $500 more than the $1,999 Apple charged for the same capacity on the 17 Pro Max.</p>
-<p>Blame the memory shortage. With AI data centers soaking up DRAM and NAND capacity, component costs have spiked all year, and Apple already raised Mac and iPad prices earlier in 2026. TrendForce had modeled an iPhone increase of $150 to $200, estimating that memory for a 256GB model cost close to 400% more than a year earlier. Apple came in under that at the entry point and made up the difference where buyers are least price-sensitive.</p>
-<p>That's a smart move, and not a new one. Storage upgrades have always been where Apple's margin lives, since the cost of the extra flash has never been close to what Apple charges for it. This year the curve just got steeper. The people paying for it are photographers, video shooters and anyone who keeps a phone for five years and wants room to grow.</p>
-<p>The older models didn't escape either. Apple raised the iPhone 17, iPhone Air, iPhone 17e and iPhone 16 by $100 each, so the cheapest new iPhone Apple sells is now the $699 iPhone 17e.</p>
-<p>Early demand looks fine, for what that's worth on day one. Analysts are describing a brisk start, and carriers are clearly helping: the top trade-in credit on the Pro Max rose to $1,200 from $1,100 last year. These are the first iPhones launched under CEO John Ternus, and if the memory squeeze runs into 2027, they probably won't be the last to get more expensive. If you were planning a 1TB upgrade, run the math against 512GB plus cloud storage before you check out.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Hardcoded Cloudflare Key Let Attackers Hijack Brevo&apos;s Embedded Scripts</title>
-      <link>https://sabr-labs.com/article/brevo-cloudflare-key-clickfix-supply-chain-attack-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/brevo-cloudflare-key-clickfix-supply-chain-attack-september-2026</guid>
-      <pubDate>Fri, 18 Sep 2026 13:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>Brevo</category>
-      <category>Cloudflare</category>
-      <category>ClickFix</category>
-      <category>WordPress</category>
-      <category>Secrets Management</category>
-      <description>Attackers used a full-permission Cloudflare API key found in Brevo&apos;s source code to push ClickFix lures and a WordPress backdoor through scripts embedded on as many as 100,000 customer sites for roughly five hours on September 14.</description>
-      <content:encoded><![CDATA[<p>For about five hours last Sunday, the signup form on a small business website could have been the thing trying to infect you.</p>
-<p>Brevo, the email marketing platform formerly known as Sendinblue, has published a post-mortem confirming that attackers got hold of a Cloudflare API key that was hardcoded in its application source code. The key carried full account permissions. That was enough to create a malicious Cloudflare Worker that rewrote Brevo's responses at the CDN edge, without touching a single origin server and without tripping the alerts watching those servers.</p>
-<p>According to Brevo's timeline, injection started on brevo.com at 15:01 UTC on September 14 and expanded at 16:07 to sibforms.com and the JavaScript customers embed on their own pages: the forms script, the Conversations chat widget and the SDK loader. The Worker was pulled at 20:30 UTC. Brevo says the Worker also stripped security headers such as Content-Security-Policy on the way out, which is exactly what you'd do if you wanted injected script to run unobstructed. Sansec estimates up to 100,000 websites load the affected components.</p>
-<p>Visitors got a fake Cloudflare verification page followed by ClickFix instructions, the now-familiar trick of convincing someone to paste a command into Windows' Run dialog or a terminal. The nastier payload targeted site owners. If the visitor happened to be logged into WordPress as an administrator, the script quietly tried to install a plugin called "Web Media Optimizer" that hid itself from the plugin list and phoned home, per BleepingComputer's analysis. That's a persistent backdoor on the customer's site, delivered by a vendor's script tag.</p>
-<p>Brevo says app.brevo.com, its API, email delivery and customer account data weren't affected. That's good news for its direct customers and not much comfort to the people who visited their websites.</p>
-<p>The root cause is depressingly ordinary. A long-lived, all-powerful infrastructure token sat in code where it could be found, and nobody was alerting on Worker, route or DNS changes in the Cloudflare account. Brevo's fixes (moving secrets into HashiCorp Vault with automatic rotation, alerting on Cloudflare audit events, integrity protection for versioned embedded assets) are all things that should have existed before this happened. Every third-party script you embed inherits the weakest secret-handling practice of the company that serves it.</p>
-<p>What to do now: if you run WordPress with Brevo forms or chat, check for unfamiliar plugins added on September 14 and rotate admin passwords if you find one. Anyone who ran a pasted command from a "verification" page that day should treat that machine as compromised. And if your team logged into brevo.com that Sunday, Brevo recommends changing passwords and reviewing API keys.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Check Point Management Servers Get Root RCE via an Overlong Username</title>
-      <link>https://sabr-labs.com/article/check-point-cve-2026-91843-management-server-root-rce-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/check-point-cve-2026-91843-management-server-root-rce-september-2026</guid>
-      <pubDate>Fri, 18 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Check Point</category>
-      <category>CVE-2026-91843</category>
-      <category>Firewall Management</category>
-      <category>RCE</category>
-      <category>Patch</category>
-      <description>CVE-2026-91843 is a CVSS 9.8 pre-authentication stack overflow in the login process of Check Point Security Management, Multi-Domain and Log Servers, fixed by a LivePatch under sk1000155 with no exploitation reported yet.</description>
-      <content:encoded><![CDATA[<p>Type a long enough username into a Check Point management server and, before any password is checked, you can end up running code as root.</p>
-<p>That's CVE-2026-91843, which Check Point disclosed on September 16. It's a stack overflow in the login process, the part of the product that handles requests before a user is authenticated, and it carries a CVSS score of 9.8. Affected roles are Security Management Server, Multi-Domain Security Management Server, Log Server and Multi-Domain Log Server, including standalone deployments. Smart-1 Cloud isn't affected.</p>
-<p>Per the version breakdown published alongside the advisory, vulnerable builds run through R82.10 Jumbo Hotfix Take 44, R82 Take 126, R81.20 Take 166 and R81.10 Take 190, with R82.20 listed as affected across the board. R81 and the R80.x branches are past end of support; Check Point says fixes for those are available through a support ticket, which is a nice way of saying you should have migrated already.</p>
-<p>The fix ships as a LivePatch described in sk1000155. Customers with automatic updates enabled should already have it, and you can confirm with the cplp list command. If you run management servers in an environment where auto-updates are switched off (plenty of regulated shops do), don't assume you're covered.</p>
-<p>The good news: Check Point found this internally, there was no public proof-of-concept as of September 16, and CISA's record lists exploitation as none. The less good news is that this is the second critical Check Point disclosure in about a week, after the VPN certificate RCE pair earlier this month, and attackers have shown all year that they'll build exploits for edge and management gear within days of a patch. Censys counted roughly 3,800 internet-facing hosts presenting default Check Point identity signatures.</p>
-<p>A management server has no business answering login requests from the whole internet. Check the "Trusted Clients" setting and make sure it names specific hosts rather than any IP address, put remote admin access behind a VPN, and after patching, review your audit logs for failed logins with absurdly long usernames. That's what the first exploitation attempts will look like.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Unbound and BIND Patch 23 DNS Flaws, One a Possible Resolver RCE</title>
-      <link>https://sabr-labs.com/article/unbound-cve-2026-81642-bind-9-dns-resolver-patches-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/unbound-cve-2026-81642-bind-9-dns-resolver-patches-september-2026</guid>
-      <pubDate>Fri, 18 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>DNS</category>
-      <category>Unbound</category>
-      <category>BIND 9</category>
-      <category>DNSSEC</category>
-      <category>CVE-2026-81642</category>
-      <category>Patch</category>
-      <description>Unbound 1.26.1 fixes a critical DNSSEC heap overflow (CVE-2026-81642) reachable through any malicious zone the resolver queries, while ISC&apos;s BIND 9.20.29 and 9.21.26 close 14 bugs including a one-packet DNS-over-HTTPS crash.</description>
-      <content:encoded><![CDATA[<p>The two open source resolvers that quietly answer a huge share of the internet's DNS queries both shipped security releases on September 16, and the Unbound one deserves your attention first.</p>
-<p>NLnet Labs released Unbound 1.26.1 with fixes for nine CVEs. The headliner is CVE-2026-81642, rated critical at CVSS 9.1: a heap buffer overflow in the DNSSEC validator when it digests DNSKEY records. A DNSKEY whose owner name uses a compression pointer back into its own RDATA can overflow the digest buffer, and because the overflowing data is attacker-controlled, NLnet Labs says remote code execution is possible. Every Unbound release through 1.26.0 is affected. Researchers Yuqi Qiu and Xiang Li of Nankai University's AOSP Lab reported it.</p>
-<p>Here's why that's worse than it sounds. The attacker doesn't need access to your resolver. They need a zone they control and some way to make your resolver look it up, which covers a link in an email, an image in a web page, or anything else that makes a client behind that resolver resolve a name. Validating resolvers do exactly this all day long.</p>
-<p>The same release fixes two more high-severity heap bugs (CVE-2026-81634 in DNSSEC canonicalization and CVE-2026-82717 in CNAME synthesis) plus use-after-free issues in the DoH and DoQ code paths. There's no configuration workaround worth relying on here. Upgrade.</p>
-<p>ISC's BIND drop is bigger in count and smaller in blast radius. Fourteen advisories, all fixed in BIND 9.20.29 and 9.21.26 (the development branch picks up 13 of them; the 9.20.29-S1 preview edition gets all 14). Seven are high severity, and all of the high ones are denial-of-service: crashes, memory exhaustion, resource exhaustion. The one to know is CVE-2026-77692, CVSS 7.5, where a single DNS-over-HTTPS request carrying a cryptographically invalid SIG(0) record, followed by an abrupt disconnect, makes named abort. No authentication, no workaround. Vitaly Simonovich reported it.</p>
-<p>ISC says it isn't aware of active exploitation for any of the 14, and NLnet Labs hasn't reported any for Unbound. If you're still on BIND 9.18, though, you have a planning problem. The Hacker News reports that 12 of the 14 flaws reach back to that branch, and 9.18.50 was its final release. Appliances and Linux distributions that bundle either resolver will lag the upstream releases, so check your vendor's advisories, not just your package manager.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
