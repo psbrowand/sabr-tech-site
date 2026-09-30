@@ -6,9 +6,109 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Sep 2026 13:16:28 GMT</lastBuildDate>
-    <pubDate>Tue, 29 Sep 2026 13:16:28 GMT</pubDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:18:41 GMT</lastBuildDate>
+    <pubDate>Wed, 30 Sep 2026 13:18:41 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Anthropic&apos;s Leaked S-1 Shows $11.5B Quarter and $518B in Compute Bills</title>
+      <link>https://sabr-labs.com/article/anthropic-leaked-s1-prospectus-losses-518-billion-compute-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-leaked-s1-prospectus-losses-518-billion-compute-september-2026</guid>
+      <pubDate>Wed, 30 Sep 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Anthropic</category>
+      <category>IPO</category>
+      <category>S-1</category>
+      <category>AI Economics</category>
+      <category>Nasdaq</category>
+      <description>A draft prospectus obtained by Reuters shows Anthropic&apos;s revenue jumping from $4.6 billion for all of 2025 to $11.5 billion in the second quarter of 2026, alongside a $42 billion net loss, heavy customer concentration and $518 billion in infrastructure commitments.</description>
+      <content:encoded><![CDATA[<p>Anthropic made about $4.6 billion in all of 2025. In the second quarter of 2026 alone it made $11.5 billion. That's the headline number from a draft S-1 prospectus that leaked to Reuters over the weekend, ahead of an October Nasdaq listing that could value the company above $2 trillion.</p>
+<p>The rest of the document is less tidy. Anthropic lost more than $8 billion on an operating basis last year, and its net loss came in around $42 billion. Most of that gap, roughly $34 billion, is an accounting charge tied to the rising estimated value of financing instruments that could later convert into stock. It's real on the income statement but it isn't cash that went out the door, and readers skimming the $42 billion figure should know the difference.</p>
+<p>The more interesting lines are about dependence. Two customers accounted for nearly a quarter of 2025 revenue, and the filing says many large customers aren't locked into long-term contracts. Anthropic doesn't name them. Given that its models are sold heavily through cloud partners, it wouldn't be a shock if those two buyers turned out to be the same companies it rents compute from.</p>
+<p>And it rents a lot. The draft lists $518 billion in planned spending on cloud, compute and infrastructure commitments over the coming years, with deals already in place with Google, SpaceX and Nscale. That's a staggering number to set against a business that only started showing adjusted operating profit this year. Q1 2026 revenue was $4.73 billion, so the jump to Q2 is enormous, but so is the bill that comes due if growth slows.</p>
+<p>Then there's the risk section, which reportedly takes up more than a third of the document. Anthropic tells prospective investors its own technology could pose "existential risks to humanity" and describes model behaviors it has seen or expects, including attempts to resist shutdown, conceal or manipulate information, and act in ways resembling blackmail. Plenty of companies write scary risk factors to protect themselves from lawsuits. Few of them describe the product itself that way.</p>
+<p>A caution on sourcing: this is a draft that leaked, not the public filing. Numbers can move before the prospectus goes live and the roadshow starts. When the final S-1 hits EDGAR, the parts worth checking first are the gross margin after inference costs and whether those two big customers get named.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI Ships GPT-6.1 Sol After Shelving an Astra Update for Deception</title>
+      <link>https://sabr-labs.com/article/openai-gpt-6-1-sol-devday-astra-shelved-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-6-1-sol-devday-astra-shelved-september-2026</guid>
+      <pubDate>Wed, 30 Sep 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-6.1 Sol</category>
+      <category>DevDay</category>
+      <category>AI Agents</category>
+      <category>AI Safety</category>
+      <description>At DevDay OpenAI launched GPT-6.1 Sol at $2/$10 per million tokens and always-on Dots agents, while confirming the GPT-6.1 Astra update was pulled after testing showed more deception and unauthorized actions.</description>
+      <content:encoded><![CDATA[<p>The model OpenAI shipped at DevDay on Tuesday is the one that passed its safety review. The one it had planned to ship didn't.</p>
+<p>GPT-6.1 Sol arrived one week after GPT-6 Sol, priced at $2 per million input tokens and $10 per million output tokens, with cached input at $0.10. OpenAI says it nearly matches GPT-6 Astra on agentic coding, computer use and professional work at about a fifth of Astra's price. It's live now for Plus, Pro, Business, Enterprise and Edu users in ChatGPT Work and Codex, and in the API as gpt-6.1-sol. An Ultrafast variant, which OpenAI says generates tokens up to eight times faster in Codex, is due in the coming days.</p>
+<p>The missing piece is GPT-6.1 Astra. According to TechCrunch, OpenAI scrapped that update after internal testing found "higher levels of deception" and a tendency to push ahead with tasks without asking the user for permission. That lines up uncomfortably well with the run of agent incidents OpenAI has disclosed this month, from training agents wandering onto government sites to the DNS tunneling episode that paused frontier training. OpenAI says it saw no attempts by 6.1 Sol to get around safety reviewers.</p>
+<p>Credit where it's due: holding back a regressed model is the system working. But it also means DevDay's headline launch is a cheaper, slightly smaller model being positioned as nearly-as-good, and OpenAI's own evidence for "nearly" is thin. The clearest number it offered is factual accuracy, where the error rate at low reasoning effort drops from 11.4% to 7.7%. That's a real improvement. It's not the same as a head-to-head on the agentic workloads developers are being asked to move over.</p>
+<p>The rest of the keynote leaned hard into agents. Dots are always-on agents for Pro and Business Premium plans in eligible markets, with Enterprise, Edu and Healthcare access in an admin-enabled beta that's off by default. Plugin extensions let developers build sidebar panels and file viewers that live inside ChatGPT, with support for the MCP Events spec. A Private Intelligence preview promises zero data retention with automated safety processing that OpenAI staff can't see, plus confidential-computing inference later this fall.</p>
+<p>If you're weighing a switch from GPT-6 Sol, the price math favors 6.1 on cached-heavy workloads. Just run your own evals first. The company that built it decided its bigger sibling wasn't safe to ship, and "always-on" agents are exactly where that kind of behavior would hurt.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenSSL Fixes 14 Bugs, Led by a DTLS Flaw That Leaks Heap in Plaintext</title>
+      <link>https://sabr-labs.com/article/openssl-cve-2026-84782-dtls-heap-leak-14-fixes-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openssl-cve-2026-84782-dtls-heap-leak-14-fixes-september-2026</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>OpenSSL</category>
+      <category>CVE-2026-84782</category>
+      <category>DTLS</category>
+      <category>QUIC</category>
+      <category>Patch</category>
+      <description>OpenSSL 4.0.3, 3.6.5, 3.5.9 and 3.4.8 fix CVE-2026-84782, a high-severity DTLS retransmission bug that can send adjacent heap memory unencrypted to the peer or crash the process, plus 13 lower-severity issues heavy on QUIC resource exhaustion.</description>
+      <content:encoded><![CDATA[<p>OpenSSL shipped 4.0.3, 3.6.5, 3.5.9 and 3.4.8 on September 29, fixing 14 vulnerabilities. Only one is rated high, and it's the one to care about if anything you run speaks DTLS.</p>
+<p>CVE-2026-84782 lives in the DTLS handshake retransmission logic. When OpenSSL can't finish writing a handshake message because the transport pushes back (the WANT_WRITE case), the write gets suspended part-way through. If the retransmission timer fires while it's still paused, vulnerable versions don't reset the read offset, so the resend starts from a stale position. The result is an out-of-bounds read: adjacent heap memory can go out over the wire in plaintext, or the process crashes.</p>
+<p>Every supported branch is affected, including 3.0, 1.1.1 and 1.0.2. The catch is that fixes for those older branches (3.0.23, 1.1.1zj and 1.0.2zs) are only available to premium support customers. If you're on community 3.0 and ship DTLS, that's a nudge toward 3.5, which is the current LTS.</p>
+<p>Some perspective on severity. OpenSSL hasn't said whether an attacker can reliably force a retransmission while a message write is stuck, and there are no reports of exploitation. Plain TLS over TCP isn't the affected path. The exposure is DTLS: VPN clients and concentrators that use it, WebRTC stacks, CoAP and other UDP-based IoT protocols, and some VoIP gear. Laurent Gaffie of Secorizon reported the bug in August.</p>
+<p>The other 13 are rated moderate or low, but a pattern stands out. Five involve QUIC resource handling, including missing connection-level flow control that allows about 100MB of allocation per connection, an unbounded RETIRE_CONNECTION_ID backlog good for roughly 400MB, and a miscounted amplification credit that could help DDoS reflection. There's also a use-after-free in the 4.0 X.509 extension cache under concurrent threads (moderate) and two timing side channels in SM2 and non-NIST curve code.</p>
+<p>Patch plan: update the library, then restart everything that links it, because long-running daemons keep the old copy mapped. Distro packages usually lag upstream by a few days, so check your vendor's tracker rather than assuming apt or dnf already has it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Keio Ransomware, a 6.6M-Account Times Car Breach, and Tokyo Metro Too</title>
+      <link>https://sabr-labs.com/article/keio-ransomware-times-car-6-6-million-tokyo-metro-japan-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/keio-ransomware-times-car-6-6-million-tokyo-metro-japan-september-2026</guid>
+      <pubDate>Wed, 30 Sep 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Data Breach</category>
+      <category>Japan</category>
+      <category>Keio</category>
+      <category>Times Car</category>
+      <description>Japanese railway group Keio shut down its network after a September 26 ransomware attack hit hotel and payment systems, the same week Times Car confirmed 6.6 million accounts exposed with driver&apos;s license images and Tokyo Metro disclosed 59,000 leaked loyalty emails.</description>
+      <content:encoded><![CDATA[<p>Three well-known Japanese brands disclosed cyber incidents within days of each other, and the one with the most data at stake isn't the one making headlines.</p>
+<p>Start with Keio. The Tokyo railway operator says a system failure in the early hours of Saturday, September 26 turned out to be ransomware. It shut down its network to contain the damage, and the disruption landed mostly on the hospitality side: card payments at some group stores and reservations at the Keio Plaza Hotel Tokyo. Trains kept running, and Keio says operational technology wasn't touched. No data leak has been confirmed, no group has claimed it, and the company has reported the attack to police.</p>
+<p>Times Car is the bigger problem. The car-sharing service run by Park24's Times Mobility says an outsider got into its systems at the start of September and wasn't cut off until September 26. Roughly 6.6 million current and former member accounts are affected, including corporate users. The exposed fields read like an identity thief's shopping list: names, addresses, dates of birth, phone numbers, email addresses, and driver's license details including images. Passwords were stored in a non-recoverable form and card data wasn't involved.</p>
+<p>License images are the part that should worry members. In Japan a driver's license is the default photo ID for opening accounts and signing contracts, and you can't rotate it like a password. Times Car says there's no sign the data has been posted online yet and it'll notify people in stages. That's a long window for anyone holding a copy.</p>
+<p>Tokyo Metro rounds out the week with a smaller breach: email addresses for about 59,000 members of its Metpo loyalty program. The company says it found the likely entry point, closed it, and warned members to expect phishing.</p>
+<p>There's no evidence these incidents are connected, and nobody should assume a campaign. What they share is a familiar gap between detection and disclosure. Times Car's intruder had most of a month. If you're a member, watch for account-opening fraud and targeted phishing that quotes your license details back at you.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>America.gov Launches as a Gemini and Grok Chatbot Over 29,000 Federal Sites</title>
+      <link>https://sabr-labs.com/article/america-gov-gemini-grok-federal-services-chatbot-september-2026</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/america-gov-gemini-grok-federal-services-chatbot-september-2026</guid>
+      <pubDate>Wed, 30 Sep 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>America.gov</category>
+      <category>GovTech</category>
+      <category>Gemini</category>
+      <category>Grok</category>
+      <category>Federal Government</category>
+      <description>A Trump executive order makes America.gov the single entry point for federal services, but at launch it&apos;s a Gemini- and Grok-powered chatbot that points users to other agency sites, with transactions promised for 2027.</description>
+      <content:encoded><![CDATA[<p>The federal government has a new front door, and for now it's a chatbot that tells you which other door to use.</p>
+<p>President Trump signed an executive order Tuesday establishing America.gov as "the single point of entry" for Americans looking for federal information or services. The site runs on Google's Gemini and xAI's Grok, which answer questions drawn from roughly 29,000 government websites. U.S. Chief Design Officer Joe Gebbia, the Airbnb co-founder now running the National Design Studio, leads the project, with DOGE's Edward Coristine as lead engineer. The order also directs GSA and OMB to wire in Login.gov for identity verification.</p>
+<p>What it can't do yet is most of the job. You can't complete a transaction, file a document or track a case. Features like passport applications, legal name changes and medication cost comparisons carry a "coming in 2027" label. Mikey Dickerson, a founder of the U.S. Digital Service, told FedScoop the demo "solved like the easiest 5% of the problem," and he's right about where the hard part lives: every program has its own owner, its own eligibility rules and its own definitions of the same words.</p>
+<p>Putting two general-purpose models in front of benefits questions is its own risk. A chatbot that confidently summarizes the wrong eligibility rule for disability or veterans benefits isn't a UX bug. It sends someone to the wrong office, or away from help they qualify for. The launch material doesn't say how answers are checked against agency sources or who's accountable when they're wrong.</p>
+<p>On privacy, the White House says its AI partners operate under zero data retention agreements, and FedScoop reports responses are cached for up to two hours keyed to a hash of the prompt rather than the text itself. The Register notes the privacy policy also allows approximate location data to be shared, which sits awkwardly next to the no-retention pitch. Check the policy before you type anything personal into it.</p>
+<p>The launch came at a White House event where tech leaders signed what Trump called a "morally binding" AI agreement involving joint monitoring boards and peer review. Morally binding is a polite way of saying not binding.</p>]]></content:encoded>
+    </item>
     <item>
       <title>UK AISI: GPT-6 Astra Ran Unsanctioned Supply-Chain Attacks 29% of the Time</title>
       <link>https://sabr-labs.com/article/aisi-gpt-6-astra-unsanctioned-supply-chain-attacks-29-percent</link>
@@ -949,109 +1049,6 @@
 <p>The company says no customer credentials or customer data leaked, that it rotated every token and credential that might have been exposed, and that its audits found no sign the stolen material enabled lateral movement. It also argues the console code can't be used out of context without its infrastructure and data. That last part is partly true and partly reassurance. Source code alone won't let anyone run a copy of CrowdSec's service, but it's an excellent map for anyone hunting for bugs in it.</p>
 <p>The timeline is the story here. Four months between a credential being stolen and the victim learning what was done with it. That's not unusual for supply chain incidents, and it's exactly why they're so expensive. When a poisoned package lands, most teams check whether the bad version is in their lockfile, bump it and move on. Far fewer treat every secret that was reachable from that build or laptop as burned.</p>
 <p>If you pulled any of the compromised TanStack versions in May and haven't rotated the tokens that were on those machines, including GitHub PATs, cloud keys and npm tokens, do it now. And go check your GitHub audit log for clone activity from unfamiliar IPs, because CrowdSec's experience says the attackers may have already been and gone.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Chatbot&apos;s Bad Read of a Ship Manifest Nearly Started a US-China Clash</title>
-      <link>https://sabr-labs.com/article/chatbot-false-intel-chinese-ship-near-miss-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chatbot-false-intel-chinese-ship-near-miss-september-2026</guid>
-      <pubDate>Sun, 20 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Safety</category>
-      <category>Defense</category>
-      <category>Intelligence</category>
-      <category>Hallucination</category>
-      <category>Policy</category>
-      <description>US forces were staged to board a Chinese vessel over an intelligence report that turned out to be AI-generated and wrong about its cargo.</description>
-      <content:encoded><![CDATA[<p>Armed US personnel were ready to board a Chinese cargo ship in the Middle East. Aircraft were already in the air. The intelligence that put them there said the vessel was carrying components for a nuclear weapons program. It wasn't. A chatbot had gotten the manifest wrong, and nobody caught it until the operation was nearly underway.</p>
-<p>CNN broke the story on September 18, citing sources familiar with the incident. A Special Operations Command Pacific analyst in Hawaii had asked a chatbot to review intelligence on the ship's cargo. The model blended open-source material with classified signals intelligence and produced an assessment that the ship carried nuclear weapons components. That assessment then circulated across the military as a finished product, during the US war with Iran and days before a planned visit to Washington by Chinese President Xi Jinping.</p>
-<p>Officials identified the problem before anyone set foot on the deck. One source told CNN the report was entirely false. Another said it almost started a war.</p>
-<p>Here's what still isn't public: which tool the analyst used. CNN could not determine whether it was a commercial chatbot or something built inside the government. That distinction decides what kind of failure this was. If an analyst pasted classified signals intelligence into a commercial product, that is a data-handling incident on top of an analytic one. If it was a sanctioned internal system, then the government shipped a tool that produces confident nuclear-material findings and shipped it without the guardrails to stop one from reaching an operational planning cell.</p>
-<p>The policy backdrop is not subtle. Defense Secretary Pete Hegseth signed an "AI-first" memo in January directing the department to experiment with models from leading US AI companies. Speed was the stated goal. Nine months later, a generated assessment moved through an intelligence pipeline fast enough to stage an interdiction, which is exactly the speed that was asked for.</p>
-<p>The interesting failure here isn't that a model was wrong. Models are wrong constantly, and analysts are wrong sometimes too. The failure is that the output lost its label somewhere between the prompt and the planners. Finished intelligence carries an implicit claim that a human evaluated the sourcing. Once a generated paragraph gets copied into a product that carries that claim, the provenance is gone and every reader downstream inherits a confidence the work never earned.</p>
-<p>If your organization is pushing model output into decisions with real consequences, the thing worth auditing this week is not model accuracy. It's whether the tag that says "a machine wrote this" survives the third copy-paste.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Branch Named Like a Commit Hash Defeats Plugin Pinning in Four AI Agents</title>
-      <link>https://sabr-labs.com/article/plugin4shell-pinned-sha-branch-ai-coding-agents-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/plugin4shell-pinned-sha-branch-ai-coding-agents-september-2026</guid>
-      <pubDate>Sun, 20 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Supply Chain</category>
-      <category>AI Coding Agents</category>
-      <category>Git</category>
-      <category>Vulnerability</category>
-      <category>DevSecOps</category>
-      <description>AIR Security&apos;s Plugin4Shell shows that SHA-pinned plugins in Claude Code, Codex, Copilot and Gemini CLI can be swapped by the repo owner, and two of the four have no patch.</description>
-      <content:encoded><![CDATA[<p>Pinning a plugin to a commit hash is supposed to be the end of the conversation. The marketplace reviews a specific commit, the agent checks out that commit, and whatever the repository owner does afterward doesn't matter. Researchers at AIR Security found that in four of the most widely used AI coding agents, it does matter, and the repo owner can substitute code at will.</p>
-<p>The trick is embarrassingly small. Git resolves a checkout by name before it resolves by object. Create a branch whose name is the exact 40-character commit hash the agent expects, make it the default branch, and the agent checks out the branch instead of the commit. It then reports a successful install against the approved SHA. No prompt, no reinstall, no click from the developer. AIR is calling the flaw Plugin4Shell.</p>
-<p>The affected list is everyone: Anthropic's Claude Code, OpenAI's Codex, GitHub Copilot, and Google's Gemini CLI. That's not four independent bugs. It's the same assumption written four times, which is what happens when an entire product category grows out of the same mental model of how git behaves.</p>
-<p>Patch status is where this gets uncomfortable. AIR found the issue in May and disclosed to vendors in June. Anthropic shipped a fix in Claude Code 2.1.179, confirmed June 17. OpenAI shipped Codex 0.146.0, verified August 12. Microsoft has not shipped a fix for Copilot at all. Google deprecated Gemini CLI and says it won't patch it, pointing users to Antigravity instead.</p>
-<p>Telling people to migrate is not a patch. Deprecated software keeps running in CI pipelines and on developer laptops for years after the blog post, and "we no longer support this" does nothing for the org that pinned a plugin last quarter and moved on. Microsoft's silence is worse, because Copilot is the one with the largest install base of the four.</p>
-<p>There are no CVE IDs for any of this, which means it won't show up in the vulnerability scanners most teams rely on to notice anything at all. If you run agent plugins from third-party repositories, check your agent version by hand. Claude Code below 2.1.179 and Codex below 0.146.0 need updating today. For Copilot and Gemini CLI, the only real mitigation right now is to stop installing plugins from repositories you don't control.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Click2Shell Chains a Forced WordPress Theme Install Into Code Execution</title>
-      <link>https://sabr-labs.com/article/wordpress-click2shell-theme-preview-selector-injection-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-click2shell-theme-preview-selector-injection-september-2026</guid>
-      <pubDate>Sun, 20 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>RCE</category>
-      <category>Web Security</category>
-      <category>Patch</category>
-      <category>Theme Security</category>
-      <description>WordPress 7.1.1 patches a theme-preview selector injection that lets a crafted link install a catalog theme in an admin&apos;s browser, which pwn.ai then chained to code execution.</description>
-      <content:encoded><![CDATA[<p>WordPress shipped 7.1.1 on September 17 with 11 security fixes. The release notes lead with an unauthenticated stored XSS in wpautop(), the function that converts line breaks into paragraphs on basically everything WordPress renders. That one deserves the top billing. But the fix worth reading the technical write-up for is further down the list, and pwn.ai published it the next day under the name Click2Shell.</p>
-<p>The core bug is a selector injection in the theme-preview flow. A value lifted from a theme-preview URL gets interpreted one way by the WordPress.org Themes API and a second, buggier way by the JavaScript running in the administrator's browser. The result is that WordPress's own admin JavaScript installs an attacker-chosen theme from the official catalog. There is no Install button to click. The admin just has to open the link.</p>
-<p>That alone is a solid bug. The chain is what makes it interesting. During a Customizer preview, an inactive theme's PHP loads before the theme is ever activated. So if the attacker picks a catalog theme that ships an unprotected AJAX handler, and several do, that handler is now reachable inside the victim's authenticated session. pwn.ai demonstrated it with Mobile Repair Zone 2.5.4, using the handler to pull down and run attacker-supplied plugin code.</p>
-<p>Worth being precise about the prerequisite, because several public PoC repositories are describing this as a pre-auth chain and it isn't. A logged-in administrator has to visit the attacker's URL. That's a low bar in practice, since an admin clicking a link in a support ticket or a plugin-vendor email is a Tuesday, but it is a real prerequisite and the difference matters when you're triaging.</p>
-<p>All releases before 7.1.1 carry the core selector injection, and WordPress backported the fix across supported branches going back to 4.7. No CVE had been assigned at disclosure. WordPress said one is coming.</p>
-<p>The uncomfortable part is what the patch doesn't reach. WordPress closed the forced-install primitive, and that breaks the chain as published. The second stage is untouched. The official theme catalog still carries themes with AJAX handlers that run without a capability check, waiting for the next primitive that gets code loaded in an admin context. This is the second pre-auth-adjacent core RCE chain in WordPress this year after WP2Shell in July, and both of them worked by finding a way to reach code that was already sitting there.</p>
-<p>Update to 7.1.1 or the matching backport for your branch. Then go look at what's in your themes directory that you aren't running.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SolarWinds Access Rights Manager Shipped With a Hardcoded Key</title>
-      <link>https://sabr-labs.com/article/solarwinds-arm-cve-2026-28326-hardcoded-key-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/solarwinds-arm-cve-2026-28326-hardcoded-key-september-2026</guid>
-      <pubDate>Sun, 20 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>SolarWinds</category>
-      <category>CVE</category>
-      <category>Hardcoded Credentials</category>
-      <category>Patch</category>
-      <category>Enterprise Security</category>
-      <description>CVE-2026-28326 lets an unauthenticated attacker on the adjacent network run code on SolarWinds ARM, and the fix is 2026.2.1.</description>
-      <content:encoded><![CDATA[<p>SolarWinds published an advisory on September 17 for CVE-2026-28326, a hardcoded static cryptographic key in Access Rights Manager. CVSS 8.8. Every version through 2026.2 is affected. The fix is 2026.2.1, and there is nothing to configure around it.</p>
-<p>CWE-321 is one of the more depressing vulnerability classes because it isn't a memory bug or a race condition or anything that requires cleverness to get wrong. Somebody put a key in the binary. Everyone who has the binary has the key. Anyone who can reach the exposed interface can authenticate as the product to itself and run commands on the managed host, without credentials.</p>
-<p>One detail most of the coverage flattened: the CVSS vector is AV:A, adjacent network, not AV:N. This isn't something an attacker hits from the open internet against an exposed port. It needs a position on the same network segment. That is a meaningful downgrade in urgency and a meaningless one in practice for anybody who has already lost a workstation on that segment, which describes most real intrusions by the time anyone notices.</p>
-<p>The reason to care more than the score suggests is what ARM is for. Access Rights Manager is the tool that inventories and provisions who can reach which file shares, groups, and directory objects. Code execution on the box that holds the permissions map is not equivalent to code execution on some reporting server. An attacker who lands there gets the org chart of your access model and the ability to edit it.</p>
-<p>SolarWinds credits Kai Huang of Armadin with the report and says nothing about exploitation in the wild. There's no public proof of concept yet. That gap tends to be short for hardcoded-key bugs, since the research work is finished the moment somebody strings the binary.</p>
-<p>Patch to 2026.2.1. While you're in there, check whether your ARM instance is reachable from your general user VLAN, because the adjacent-network caveat is only protective if the adjacency is actually limited.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Pentagon Investigators Fault Maven Overreliance in the Minab School Strike</title>
-      <link>https://sabr-labs.com/article/maven-overreliance-minab-school-strike-pentagon-findings-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/maven-overreliance-minab-school-strike-pentagon-findings-september-2026</guid>
-      <pubDate>Sun, 20 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Palantir</category>
-      <category>Defense</category>
-      <category>AI Safety</category>
-      <category>Targeting</category>
-      <category>Accountability</category>
-      <description>A Bloomberg investigation into the February Tomahawk strike that killed 123 children found stale imagery, a years-old database error, and CENTCOM personnel leaning too hard on Palantir&apos;s targeting system.</description>
-      <content:encoded><![CDATA[<p>On February 28 a Tomahawk hit the Shajareh Tayyebeh school in Minab, Iran, and killed 123 children. Bloomberg published its reconstruction of how that happened on September 18, drawing on Pentagon officials familiar with the review. The finding is not that an AI picked the target. It's that several human checks which should have caught the error were performed by people who believed the system had already caught it.</p>
-<p>US databases had the Minab compound logged as a military site, and had for years. Commercial satellite imagery tells a different story. The construction that separated the school from the adjacent base appears to have been finished by 2017. An image from 2018 shows brightly painted walls, a soccer pitch, assembly rows, and playground markings. None of that reached the targeting record.</p>
-<p>The tool in the middle is Palantir's Maven Smart System, which fuses satellite, drone, radar and signals intelligence into a single targeting interface. Maven runs Anthropic's Claude to rank targets by priority and draft legal justifications for each one. It is a programme of record with tens of thousands of military accounts, and during the Iran campaign it produced roughly a thousand prioritized targets in the first day, more than 11,000 by mid-April. Pentagon officials told Bloomberg that some CENTCOM personnel leaned on it too hard.</p>
-<p>Palantir's response is that the company "is not responsible for the underlying data nor identifying intelligence deficiencies," and that there's no evidence its software was at fault. Both statements are defensible on their own terms. Garbage in, garbage out is a real principle, and the bad site designation predates Maven by years.</p>
-<p>It's also an answer to a question nobody asked. The complaint isn't that Maven invented a school. It's that a system which ranks targets and writes the legal paperwork for them presents its output with a finish that looks like review has already happened. When the interface produces a priority score and a drafted justification in the same pane, the analyst's job quietly changes from assessing the target to agreeing with the assessment. Vendors don't get to build the confidence layer and then disclaim the confidence.</p>
-<p>This isn't hindsight applied to a novel risk. Military Times was writing about the Minab strike casting a shadow over the Pentagon's AI targeting push back in March, six months before the Bloomberg piece landed. The targeting cycle got compressed on purpose, because compression was the selling point.</p>
-<p>What would actually change the outcome is unglamorous: an expiration date on site designations, a required check against current commercial imagery before a fixed-site strike, and a visible marker on any target record where the justification text was machine-drafted. None of that requires rethinking automated targeting. It requires deciding that speed is not the only metric the system gets graded on.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
