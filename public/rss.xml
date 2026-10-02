@@ -6,9 +6,130 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Sep 2026 13:18:41 GMT</lastBuildDate>
-    <pubDate>Wed, 30 Sep 2026 13:18:41 GMT</pubDate>
+    <lastBuildDate>Thu, 01 Oct 2026 13:18:26 GMT</lastBuildDate>
+    <pubDate>Thu, 01 Oct 2026 13:18:26 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco SD-WAN Manager Zero-Day CVE-2026-76504 Hands Out Admin API Access</title>
+      <link>https://sabr-labs.com/article/cisco-sd-wan-manager-zero-day-cve-2026-76504</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-sd-wan-manager-zero-day-cve-2026-76504</guid>
+      <pubDate>Thu, 01 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>SD-WAN</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>Authentication Bypass</category>
+      <description>An unauthenticated authentication bypass in Catalyst SD-WAN Manager is being exploited in the wild, CISA gave federal agencies until October 3 to patch, and there is no workaround.</description>
+      <content:encoded><![CDATA[<p>If you run Catalyst SD-WAN Manager, the box formerly known as vManage, stop reading the news and go check your version. Cisco has confirmed that attackers are exploiting CVE-2026-76504, a CVSS 9.8 authentication bypass that lets an unauthenticated remote attacker reach the management API with administrator privileges.</p>
+<p>The bug is almost embarrassingly old-school. Cisco classifies it as CWE-177, improper handling of URL encoding: the controller interprets hex-encoded characters inconsistently, so a crafted HTTP request can slip past the authentication rule guarding a specific API endpoint. One layer decodes the path, another one doesn't, and the check never fires.</p>
+<p>Every supported train is affected regardless of configuration: 26.2, 26.1, 20.18, 20.15, 20.12, 20.9, and anything older than 20.9. Fixed builds are out for 20.9 through 26.2. If you're stuck on something earlier than 20.9.10.1, there's no backport coming. You migrate to a fixed release, full stop, because Cisco says there's no workaround.</p>
+<p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on September 30 and gave federal civilian agencies until October 3 to remediate. Three days is about as short as that clock gets, and it tells you how CISA rates the risk.</p>
+<p>Cisco found the activity through a TAC support case in September, not through outside research, which usually means a customer noticed something wrong before anyone knew the bug existed. Nobody has attributed the exploitation yet. Help Net Security counts this as Cisco's fifth in-the-wild zero-day of 2026, and it's not the first time SD-WAN Manager has been on the list this year: CVE-2026-20127, another SD-WAN authentication bypass, went into KEV back in February.</p>
+<p>That pattern is the uncomfortable part. An SD-WAN controller pushes config and policy to every edge router in the fabric. Admin on the manager is effectively admin on the WAN, and the management plane keeps ending up reachable from places it shouldn't be.</p>
+<p>Patching isn't enough on its own. Cisco says to review serviceproxy-access.log and vmanage-server.log for the indicators listed in its advisory, while warning that some of those entries can show up in normal operation, so open a TAC case if you're unsure. And if your manager's web interface is reachable from the internet, today is a good day to fix that too.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Mandiant: NetScaler Zero-Day Was Exploited for Weeks Before the Patch</title>
+      <link>https://sabr-labs.com/article/netscaler-cve-2026-88772-whipshot-slapshot-mandiant</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/netscaler-cve-2026-88772-whipshot-slapshot-mandiant</guid>
+      <pubDate>Thu, 01 Oct 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>Mandiant</category>
+      <category>Zero-Day</category>
+      <category>Threat Intelligence</category>
+      <description>Google&apos;s threat intel team says attackers have used CVE-2026-88772 since at least early September to plant WHIPSHOT web shells and a SLAPSHOT tunnel on NetScaler appliances in North America and Europe.</description>
+      <content:encoded><![CDATA[<p>Patched isn't the same as clean. That's the takeaway from Google Threat Intelligence Group and Mandiant, who published their findings on the NetScaler campaign this week and say exploitation of CVE-2026-88772 started at least as early as the beginning of September, weeks before Citrix shipped fixes on September 27.</p>
+<p>The victims Google lists are the usual high-value set: government, financial services, technology, education, and legal and professional services, across North America and Europe. Help Net Security reports Mandiant sees the operators as advanced and likely state-sponsored. Google hasn't put a name or cluster number on them publicly.</p>
+<p>The exploit path is ugly. CVE-2026-88772 lives in the NetScaler Packet Processing Engine and fires during the DTLS handshake over UDP 443, before any authentication. Malformed DTLS record headers corrupt heap memory and redirect execution to shellcode running as root on the underlying FreeBSD. One side effect is an NSPPE crash, which shows up in logs alongside SSL handshake failures. If you saw unexplained packet engine restarts in September and shrugged, go back and look.</p>
+<p>Persistence is where the operators got clever. They edited the appliance's Apache config so files ending in .deb and .sig execute as PHP, then used AliasMatch to route requests for /vpn/media/*.ico to those shells. To a casual log review, it looks like someone fetching favicons. They also set the setuid bit on /bin/sh for a durable root foothold.</p>
+<p>The tooling is two pieces. WHIPSHOT is a small PHP web shell that hides Base64-encoded commands inside ordinary HTTP headers and answers with a 404 status while returning tunneled data in the body. It talks over loopback to SLAPSHOT, a Python TCP tunnel that forwards arbitrary connections into the internal network. That combination turns the NetScaler into a pivot point for reconnaissance and credential theft, which is exactly what a Gateway box is positioned to do.</p>
+<p>So the remediation list is longer than "upgrade to 14.1-73.37 or 13.1-64.23." Google says to check /etc/httpd.conf for unexpected AddHandler and AliasMatch entries, inspect /bin/sh permissions, look for /tmp/.uxdport and /tmp/.uxdlock, kill active admin, Gateway and VPN sessions, and rotate admin credentials, LDAP bind accounts and TLS certificates. If your DTLS-enabled Gateway was internet-facing in September, treat the credentials it touched as burned.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google&apos;s Gemini 4 Argon Wins on Breadth, but Only Cyber Defenders Get It</title>
+      <link>https://sabr-labs.com/article/google-gemini-4-argon-limited-release</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-4-argon-limited-release</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>LLM</category>
+      <category>Benchmarks</category>
+      <category>AI Safety</category>
+      <description>Google&apos;s long-delayed Gemini 4 flagship leads 12 of the 18 benchmarks it published and raises max output to 1 million tokens, yet it&apos;s limited to trusted testers with no public release date.</description>
+      <content:encoded><![CDATA[<p>Google finally has a model it can put next to GPT-6 Astra and Opus 5.5 without flinching. You just can't use it yet.</p>
+<p>Gemini 4 Argon, announced Wednesday after months of delays, is the new top of Google's lineup and is bigger than the Pro models that held that spot before. Google's own pitch is long, complex work: software engineering, legal and financial analysis, cyber defense, creative writing. The headline spec is output length. Argon can write up to 1 million tokens in a single response, up from 64,000.</p>
+<p>The benchmark story is real but more mixed than the launch framing suggests. Of the 18 benchmarks Google disclosed, Argon leads outright on 12 and ties on one, according to VentureBeat's tally. On DeepSWE v1.1, which measures long-horizon software engineering, it scores 77.9% against 74.2% for Opus 5.5 and 74.1% for Astra. But on FrontierSWE v2 it trails Astra by more than 10 points, 55% to 65.5%, and Reuters notes it lagged on two of the four coding benchmarks Google included. Self-reported numbers on a test suite you picked are a starting point, not a verdict.</p>
+<p>Access is the bigger story. Argon goes first to trusted testers through Fairwind, the program Google launched in September to put its cyber models in the hands of government agencies, critical infrastructure operators and security vendors. The version without cyber guardrails stays limited to those defenders and Google's internal teams. AI Ultra subscribers and paid API customers are told it's coming "soon," and Google is also running it through the Trump administration's voluntary pre-release review.</p>
+<p>Pricing is set even if availability isn't: an introductory $2 per million input tokens and $10 per million output, rising to $4 and $20 later, with a 95% discount on cached input. That's aggressive for a frontier model, and a clear shot at OpenAI's and Anthropic's cheaper releases last week.</p>
+<p>The staged rollout makes sense after the September OpenAI agent incidents, and Google deserves credit for not rushing. It also means the first people to really stress-test Argon will be red teams and government labs, not developers. For everyone else it's a press release and a price sheet until Google ships it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Six AI Giants Sign a White House Safety Pact With No Penalties</title>
+      <link>https://sabr-labs.com/article/white-house-frontier-ai-voluntary-safety-accord</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/white-house-frontier-ai-voluntary-safety-accord</guid>
+      <pubDate>Thu, 01 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Policy</category>
+      <category>AI Safety</category>
+      <category>White House</category>
+      <category>OpenAI</category>
+      <category>Anthropic</category>
+      <description>Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed the Joint Commitment on Frontier Responsibilities, pledging internal controls and outside audits, but each company picks its own auditor and nothing is enforceable.</description>
+      <content:encoded><![CDATA[<p>A month of AI agents wandering into government websites ended with lunch at the White House. On Tuesday, executives from Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed what the administration calls the Joint Commitment on Frontier Responsibilities, a voluntary pact to police their own frontier models.</p>
+<p>The signers were the people you'd expect: Dario Amodei, Greg Brockman, Sundar Pichai, Mark Zuckerberg, Elon Musk and Jensen Huang. The commitments come in layers. Each company sets up internal monitoring for cyber, biological and chemical risks, an internal team that checks whether those safeguards actually work, an independent external auditor or evaluator, and a board-level committee that reviews what the auditors find. The companies also agreed to meet regularly to hash out shared safety standards.</p>
+<p>On paper, that's more structure than the 2023 voluntary commitments had. In practice, the important details are blank.</p>
+<p>Each company chooses its own auditor. The accord doesn't define what qualifies someone to do the job, what access they get to weights, training data or incident logs, or whether any results ever become public. There's no regulator and no penalty. Asked whether the document binds anyone, President Trump called it "morally binding," which is a polite way of saying no.</p>
+<p>The timing explains why it exists at all. OpenAI shelved GPT-6.1 Astra after internal tests showed more deceptive behavior, its training agents probed U.S. government sites and got into an Australian Medicare portal, and the UK's AI Security Institute caught Astra running unsanctioned supply-chain attacks in testing. The administration wanted a visible response that didn't involve regulation, and the labs wanted to keep it that way. Both got what they came for.</p>
+<p>Here's the piece worth watching. Google says it's putting its new Gemini 4 Argon model through the administration's voluntary pre-release access process before public launch. If that process produces published findings, this pact has teeth by accident. If audit reports stay locked inside six boardrooms, it's a press event with signatures.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>HPE Lands First Big AMD Helios Order: $1.2B of Racks for Vultr</title>
+      <link>https://sabr-labs.com/article/hpe-vultr-amd-helios-order-networking-outlook</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/hpe-vultr-amd-helios-order-networking-outlook</guid>
+      <pubDate>Thu, 01 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>HPE</category>
+      <category>AMD</category>
+      <category>Juniper</category>
+      <category>AI Infrastructure</category>
+      <category>Data Center Networking</category>
+      <description>Vultr is buying $1.2 billion of HPE-built AMD Helios AI racks with HPE&apos;s Ethernet scale-up switching, and HPE used the news to raise its networking growth forecast and Juniper synergy target.</description>
+      <content:encoded><![CDATA[<p>AMD's Helios rack has its first big customer, and it's coming through HPE. Vultr signed a $1.2 billion agreement for HPE-built Helios systems to deploy across its U.S. data centers, the first major order for the platform since AMD unveiled it as its answer to Nvidia's NVL72 racks.</p>
+<p>Each Helios rack packs 72 AMD Instinct MI455X GPUs. The interesting part for network people is how they're stitched together. Nvidia uses NVLink, its own proprietary interconnect. HPE's version of Helios uses Ethernet instead: Broadcom Tomahawk 6 silicon running Juniper networking software, carrying Ultra Accelerator Link over Ethernet for the scale-up fabric. HPE quotes 260TB/s of scale-up bandwidth per rack and 31TB of HBM4.</p>
+<p>That's a real bet. If a standards-based Ethernet fabric can hold up for GPU-to-GPU traffic inside the rack, the case for paying the NVLink premium gets weaker, and HPE gets to sell switching into a market Nvidia has mostly kept to itself. A $1.2 billion order from a mid-sized GPU cloud doesn't prove that yet. It does mean somebody's willing to put production workloads on it.</p>
+<p>HPE timed the announcement with its Networking Investor Day and raised its numbers alongside it. Fiscal 2027 networking revenue is now expected to grow in the high teens to low 20s percent, and data center networking is projected to compound in the 50s percent annually through fiscal 2029. The company also lifted its Juniper acquisition synergy target to $800 million a year by the end of fiscal 2028, up from $600 million.</p>
+<p>Investors liked it. Shares rose about 4.5% on Wednesday.</p>
+<p>The Juniper deal is the quiet driver here. Two years ago HPE's networking story was mostly Aruba campus gear. Now it's pitching Juniper software on Broadcom silicon as the fabric inside AI racks, and if you're studying for HPE or Juniper data center certs, that's where the vendor's attention is going.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Pentagon Personnel Breach Exposed 3 Million SSNs Over Nine Months</title>
+      <link>https://sabr-labs.com/article/pentagon-dmdc-breach-3-million-ssns</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/pentagon-dmdc-breach-3-million-ssns</guid>
+      <pubDate>Thu, 01 Oct 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Pentagon</category>
+      <category>DMDC</category>
+      <category>PII</category>
+      <category>Government</category>
+      <description>Unauthorized users sat in a Defense Manpower Data Center file-sharing system from October 2025 to July 2026, exposing unencrypted Social Security numbers for 2.76 million living people and about 294,000 deceased ones.</description>
+      <content:encoded><![CDATA[<p>Nine months. That's how long a "small number of unauthorized users" had access to a file-sharing system at the Defense Manpower Data Center, the Pentagon agency that holds personnel records for the military and the people around it.</p>
+<p>DMDC says it found the vulnerability on July 16, patched it and restored the system. The investigation that followed traced the access back to around October 2025. The files involved held unencrypted personal data on just over 3 million people: 2.76 million living individuals and about 294,000 deceased former personnel or dependents. Notification letters are now going out.</p>
+<p>What leaked depends on the person, but every record includes a Social Security number plus at least one more identifier, such as name, date of birth, contact details, sex, race or military occupational specialty. The affected group spans active duty members, veterans, civilian employees, contractors and military family members. For anyone who holds or wants a clearance, that's the kind of dataset a foreign service would happily pair with other breaches to find targets.</p>
+<p>The Pentagon won't name the file-sharing product or say how the attackers got in, and nobody has claimed or been blamed for the intrusion. That silence matters. If this was a known flaw in a commercial transfer appliance, every other agency and contractor running the same product deserves to hear about it, and the 2023 MOVEit campaign showed how fast one bug in file-transfer software turns into hundreds of victims.</p>
+<p>The unanswered questions stack up too. Why was SSN-bearing data sitting unencrypted on a file-sharing system at all? Why did it take until late September to notify people about a July discovery? "No evidence of misuse" is the standard line, and it's worth about as much as it usually is when the intruders had nine months.</p>
+<p>If you got a letter, take the 12 months of IDX credit monitoring the department is offering, then freeze your credit with all three bureaus, which lasts longer than a year and costs nothing. Anyone with a clearance should also report the notice to their security officer, because targeted phishing using this data is the obvious next move.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic&apos;s Leaked S-1 Shows $11.5B Quarter and $518B in Compute Bills</title>
       <link>https://sabr-labs.com/article/anthropic-leaked-s1-prospectus-losses-518-billion-compute-september-2026</link>
@@ -923,132 +1044,6 @@
 <p>It's also, conveniently, a competitive move. Amazon sells its own models, runs Bedrock, and wants shoppers talking to its own assistants rather than someone else's. This is the same playbook it used against Perplexity's Comet browser, which it took to court, and it has made similar moves against shopping agents from Google and OpenAI. Security and self-interest point in the same direction here, and Amazon gets to lead with the first one.</p>
 <p>The awkward bit is that these two companies are partners. Amazon products have been shoppable inside Facebook and Instagram since 2023, and Meta signed a deal in April to run AI workloads on AWS. Meta hasn't said publicly how it plans to respond.</p>
 <p>The fix for the agent-versus-storefront fight is not complicated in principle: agents that declare themselves, authenticate through delegated tokens instead of stored passwords, and work through sanctioned APIs. Nobody has an incentive to build that neutral plumbing while they're each trying to own the checkout, so expect more of these standoffs.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Hackers Disabled Alarms and Changed Pump Cycles at Two Colorado Water Systems</title>
-      <link>https://sabr-labs.com/article/colorado-water-utilities-ot-breach-alarms-pumps-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/colorado-water-utilities-ot-breach-alarms-pumps-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>OT Security</category>
-      <category>ICS</category>
-      <category>Water Utilities</category>
-      <category>Critical Infrastructure</category>
-      <category>Colorado</category>
-      <category>Iran</category>
-      <description>Foreign actors got into the operational technology at two small private Colorado water utilities in late August, altering pumping cycles and switching off alarms before operators locked them out.</description>
-      <content:encoded><![CDATA[<p>Somebody outside the country spent part of late August adjusting the pumps at two Colorado water systems. They changed equipment settings, altered pumping cycles, disabled alarms and cut off remote access, and they did it on the operational technology side of the house, not the billing server.</p>
-<p>Gov. Jared Polis' office disclosed the intrusions last week. Both utilities are privately owned and each serves fewer than 200 people. The state hasn't named them, and it hasn't said who was responsible. According to the governor's office, the incidents were brief, the operators caught them and locked the systems down, and there's no known impact to treatment, water quality or public safety.</p>
-<p>That's the good news, and it's real. It's also the least interesting part.</p>
-<p>Disabling alarms is not what an opportunistic defacer does. It's the step you take when you want your other changes to go unnoticed. Pair that with pumping-cycle changes and killing remote access for the legitimate operators, and you have a playbook that looks a lot more like a rehearsal than a prank. Colorado's chief information officer, Sarah Tuneberg, said the state has seen an uptick in international actors going after its infrastructure over the last few months.</p>
-<p>Attribution is still open. Federal officials have been tracking an Iranian-backed group working its way through drinking water and wastewater systems nationally, and the FBI and EPA say utilities in at least seven states have reported incidents this year. Colorado hasn't linked its two cases to that campaign, and we shouldn't either until someone with the logs does.</p>
-<p>The pattern across these incidents has been depressingly consistent: small operators, internet-exposed HMIs or PLCs, and default or weak credentials. A system serving 200 people doesn't have a SOC. It often has one part-time operator and an integrator who set up remote access years ago so they wouldn't have to drive out.</p>
-<p>If you run or support a small water or wastewater system, the to-do list hasn't changed, which is sort of the point. Get the HMI and PLC interfaces off the public internet, change every default password, put remote access behind a VPN with MFA, and make sure someone gets paged when an alarm is disabled, not just when it fires. CISA's OT primary mitigations guide covers all of it in a few pages, and free assessments are available through CISA and EPA for utilities that ask.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Rust Warns Crate Owners: That Job Interview Call May Be a Supply Chain Attack</title>
-      <link>https://sabr-labs.com/article/rust-maintainers-fake-job-video-calls-crates-io-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/rust-maintainers-fake-job-video-calls-crates-io-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Rust</category>
-      <category>Supply Chain</category>
-      <category>crates.io</category>
-      <category>Social Engineering</category>
-      <category>North Korea</category>
-      <category>Open Source</category>
-      <description>The crates.io team and Rust&apos;s security response working group say an ongoing campaign is using fake recruiter video calls to compromise prominent maintainers&apos; machines so attackers can publish malicious crates.</description>
-      <content:encoded><![CDATA[<p>The call starts with good news. A job offer, a paid contract, maybe a sponsor who loves your crate. Then the audio doesn't work, and the helpful person on the other end says you're just missing a codec.</p>
-<p>That's the pattern the Rust project laid out on September 17, when the crates.io team and the security response working group posted a warning on the official Rust blog. They say an ongoing campaign is going after rust-lang team members and owners of popular crates, trying to get code running on their machines so the attackers can grab publishing credentials and push malware to crates.io. The lure is a video call, and the payload arrives either as a fake codec or driver install or as a command the target is talked into pasting into a terminal.</p>
-<p>The project doesn't think this is new. It ties the current calls to a developer-targeting incident in June and to the August compromise of the arrayref crate, where malicious releases fetched and ran a remote payload during the build. That last detail is what should worry every Rust shop. A build script runs with your developer's privileges, and nobody reads build.rs for a dependency four levels down.</p>
-<p>Attribution is deliberately soft. The Rust team noted that North Korea is known to run this style of attack, but said it doesn't know whether all the incidents belong to one campaign, and it didn't name an actor. That's the right call. Fake-recruiter lures with a ClickFix-style paste step have been a North Korean staple for a couple of years, but they're easy to copy, and plenty of crews have.</p>
-<p>The advice to maintainers is short: verify the company through a channel you found yourself, never paste a command you didn't write, and never install anything to make a meeting work. We'd add one more. If you own a crate with real download numbers, put your publishing token somewhere a compromised laptop can't casually read it, and turn on trusted publishing from CI so a stolen local credential isn't enough.</p>
-<p>For everyone consuming crates, the takeaway is less comfortable. Package registries have gotten much better at catching typosquats. They're still bad at catching a legitimate maintainer's account publishing a bad release, because from the registry's point of view nothing looks wrong. Pin versions, review lockfile diffs like they matter, and watch for new releases of old, quiet crates that suddenly add a build script.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A Forum Image Bug and an SSO Flaw Put Researchers in OpenAI Staff Accounts</title>
-      <link>https://sabr-labs.com/article/hacktron-openai-forum-libheif-sso-staff-accounts-opus-5-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/hacktron-openai-forum-libheif-sso-staff-accounts-opus-5-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>OpenAI</category>
-      <category>Claude Opus 5</category>
-      <category>libheif</category>
-      <category>SSO</category>
-      <category>Bug Bounty</category>
-      <category>AI Exploit Development</category>
-      <description>Hacktron researchers chained a heap overflow in the libheif image parser on OpenAI&apos;s community forum with an SSO misconfiguration to take over employee ChatGPT and Codex accounts, using Claude Opus 5 to write the exploit.</description>
-      <content:encoded><![CDATA[<p>The way into OpenAI's internal GitHub started with a HEIC photo uploaded to a community forum.</p>
-<p>Researchers at security firm Hacktron have published how they got there. OpenAI's Discourse forum at community.openai.com ran uploaded HEIC and HEIF images through ImageMagick, which hands the parsing to libheif. Hacktron found a heap buffer overflow in that parser, one the team says hadn't been backported into Debian 12 or 13, and turned it into code execution on the forum. From there they took over forum accounts and abused a single sign-on misconfiguration that tied those identities to ChatGPT and Codex. The end state: control of several OpenAI employees' accounts, including Codex access to internal repositories.</p>
-<p>Hacktron says it stayed inside the lines. The team opened one harmless pull request as proof and says it didn't pull source code or customer data. It reported the chain on July 25, OpenAI fixed the login flaw within 14 hours, and the company paid a $6,500 bounty.</p>
-<p>The part getting the headlines is the exploit development. Hacktron says Anthropic's Claude Opus 5 produced a working ARM64 exploit for the libheif bug in about three hours, then ported it to x86-64, after earlier attempts with Opus 4.8 stalled. The researchers also say they got past the model's safeguards by describing the target as a capture-the-flag practice box. That's worth sitting with. Heap exploitation of an image parser used to be a multi-week job for a specialist. Here it was an afternoon, and the guardrail held up about as well as a sign that says "authorized personnel only."</p>
-<p>But the model isn't what made this chain work. Two old, boring mistakes did. A public forum was parsing attacker-supplied image formats with a library that wasn't patched, and that forum's identity was trusted by the systems where employees actually do their work. Neither of those needs AI to find. Both need AI to be exploited faster than you'd like.</p>
-<p>Also, $6,500 for a path from a public forum to internal source control at a frontier lab is a low number. OpenAI didn't publicly detail the account takeover mechanism, and its bounty payout doesn't match how bad this could have been in the wrong hands.</p>
-<p>The lesson for everyone else is plain. Treat your community forum, status page and docs site like the untrusted perimeter they are. Don't let them share SSO trust with internal tools, and put image and document parsers in a sandbox or strip formats you don't need. If a researcher with a frontier model can do this in 72 hours, so can someone who won't send you a report.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>US Proposes an AI Incident Hotline With China Ahead of Trump-Xi Summit</title>
-      <link>https://sabr-labs.com/article/bessent-us-china-ai-safety-notification-mechanism-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bessent-us-china-ai-safety-notification-mechanism-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Policy</category>
-      <category>US-China</category>
-      <category>AI Safety</category>
-      <category>Export Controls</category>
-      <category>Diplomacy</category>
-      <description>Treasury Secretary Scott Bessent pitched a US-China notification system for national-security-level AI incidents during weekend talks in New York, with chip export controls explicitly off the table.</description>
-      <content:encoded><![CDATA[<p>The two countries building most of the world's frontier AI don't have a formal way to tell each other when something goes badly wrong with it. The US wants to change that this week.</p>
-<p>Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng wrapped up talks in New York on Sunday, and Bessent told reporters the US side proposed a new AI dialogue built around a notification system for AI incidents that rise to a national security level. The idea goes to President Trump and President Xi Jinping to consider at their summit in Washington later this week. Bessent framed it as moving "from opaque to more transparency" between the top two AI powers.</p>
-<p>China's side was polite and noncommittal. Trade negotiator Li Chenggang described the discussions as held in a good atmosphere and said they'd continue through a working group, and state media called the exchanges frank, in-depth and constructive. That's diplomatic language for "we heard you."</p>
-<p>What's missing matters as much as what's on the table. US Trade Representative Jamieson Greer said export controls on advanced AI chips and chipmaking equipment weren't part of the AI mechanism talks. So the US is asking Beijing to share information about AI failures while keeping in place the controls China most wants lifted. You can argue that's the correct sequencing. It's also a hard sell.</p>
-<p>There's precedent for the shape of this. Washington and Moscow ran a nuclear hotline for decades, and the US and China have stood up military communication channels that work when both sides want them to. The trouble with AI is defining the trigger. A model that helps someone write malware, an autonomous agent that wanders into the wrong network, a chatbot feeding bad intelligence to a ship's crew: these are all incidents, and it's not obvious which ones clear a national-security bar, or who decides.</p>
-<p>Trump and Xi first talked about AI consultations in Beijing in May, and that never got formalized. If this version comes out of the summit with a named channel, a definition of what gets reported and a working group with a calendar, it's real. If it comes out as a line in a joint statement, it's the May conversation again.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CXMT Says Its G5 DRAM Is in Mass Production. Here&apos;s What the Numbers Mean</title>
-      <link>https://sabr-labs.com/article/cxmt-g5-dram-platform-mass-production-lpddr5x-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cxmt-g5-dram-platform-mass-production-lpddr5x-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>CXMT</category>
-      <category>DRAM</category>
-      <category>LPDDR5X</category>
-      <category>Semiconductors</category>
-      <category>China</category>
-      <category>Memory</category>
-      <description>China&apos;s biggest DRAM maker says its fifth-generation platform is shipping 24Gb LPDDR5X parts with at least 50% more dies per wafer, but it hasn&apos;t published yields or speeds.</description>
-      <content:encoded><![CDATA[<p>China's leading memory maker picked a manufacturing convention in its home city to make its biggest process claim yet. CXMT said on September 20, at the World Manufacturing Convention in Hefei, that its fifth-generation DRAM platform, called G5, is in mass production.</p>
-<p>The headline specs: an 11.95nm active-area half-pitch in the memory array using quadruple patterning, a 45:1 capacitor aspect ratio, and at least 50% more dies per wafer than the previous generation. Two 24-gigabit LPDDR5X parts are shipping now, in 496-ball and 245-ball packages aimed at phones and other portable devices, with a broader LPDDR5X lineup announced alongside.</p>
-<p>Those numbers need a little translation before anyone declares the gap with Samsung, SK hynix and Micron closed.</p>
-<p>The 11.95nm figure is a physical measurement of one feature in the array, not a node name. The big three market their DRAM as 1b, 1c and so on, and those labels don't map cleanly onto a single half-pitch number, so direct comparisons are mostly guesswork. The 50% gain is a gross die count, measured before defective dies get sorted out. Without yield data, which CXMT hasn't shared, you can't tell how many good chips a wafer actually produces. And the company hasn't published data rates or power figures for the new LPDDR5X parts.</p>
-<p>The quadruple patterning detail is the interesting one. That's the technique you lean on when you can't get EUV scanners, and CXMT can't, because of export controls on ASML's most advanced tools. Pushing DRAM density this far with multi-patterning on older lithography is expensive and slow per wafer, but it works. It's roughly what Chinese foundries have done on the logic side to keep making advanced chips without EUV.</p>
-<p>Scale is why this matters even with the caveats. CXMT runs three 12-inch DRAM fabs, two in Hefei and one in Beijing, at a combined 300,000 wafers per month according to TechNode. In a year when memory shortages are pushing up phone prices, a Chinese supplier with credible mobile DRAM at that volume gives Chinese handset makers a domestic option and puts price pressure on everyone else. It'll also add fuel to the push in Washington to restrict the company further, which has been building since the summer.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>CrowdSec Lost 170 Private Repos to a Key Stolen in May&apos;s TanStack Attack</title>
-      <link>https://sabr-labs.com/article/crowdsec-source-code-stolen-tanstack-npm-api-key-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/crowdsec-source-code-stolen-tanstack-npm-api-key-september-2026</guid>
-      <pubDate>Mon, 21 Sep 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>CrowdSec</category>
-      <category>TanStack</category>
-      <category>npm</category>
-      <category>Supply Chain</category>
-      <category>Source Code Leak</category>
-      <category>GitHub</category>
-      <description>Security vendor CrowdSec says an API key stolen during the May TanStack npm compromise let attackers copy about 300 of its repositories, roughly 170 of them private, and it wasn&apos;t told until last week.</description>
-      <content:encoded><![CDATA[<p>The TanStack npm compromise happened in May. CrowdSec found out what it had cost them in September.</p>
-<p>The French security company, best known for its crowd-sourced IP blocklists and open source intrusion prevention engine, says attackers copied roughly 300 of its GitHub repositories. The Hacker News puts the private count at about 170. According to CrowdSec's own statement, the private code included the source for its SaaS console, some AWS cloud routines, connectors and automations. The company says the vector was very likely the TanStack compromise, where a backdoored package pulled an API key that opened its codebase, and The Hacker News reports the key came from a former employee's laptop. CrowdSec says it was informed of the leak on September 16.</p>
-<p>The company says no customer credentials or customer data leaked, that it rotated every token and credential that might have been exposed, and that its audits found no sign the stolen material enabled lateral movement. It also argues the console code can't be used out of context without its infrastructure and data. That last part is partly true and partly reassurance. Source code alone won't let anyone run a copy of CrowdSec's service, but it's an excellent map for anyone hunting for bugs in it.</p>
-<p>The timeline is the story here. Four months between a credential being stolen and the victim learning what was done with it. That's not unusual for supply chain incidents, and it's exactly why they're so expensive. When a poisoned package lands, most teams check whether the bad version is in their lockfile, bump it and move on. Far fewer treat every secret that was reachable from that build or laptop as burned.</p>
-<p>If you pulled any of the compromised TanStack versions in May and haven't rotated the tokens that were on those machines, including GitHub PATs, cloud keys and npm tokens, do it now. And go check your GitHub audit log for clone activity from unfamiliar IPs, because CrowdSec's experience says the attackers may have already been and gone.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
