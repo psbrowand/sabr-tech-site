@@ -25,6 +25,285 @@
 
 export const articles = [
   {
+    id: 589,
+    slug: "fortimail-zero-day-cve-2026-104286",
+    title: "FortiMail Zero-Day CVE-2026-104286 Is Exploited and Still Unpatched",
+    summary: "Fortinet confirms in-the-wild exploitation of a CVSS 9.8 unauthenticated file-write flaw in FortiMail's web GUI, and the fixed builds haven't shipped yet, so disabling IBE is the only defense right now.",
+    body: [
+      "Fortinet has a FortiMail bug under active attack and no patch to hand you. CVE-2026-104286, published October 1 in advisory FG-IR-26-175, is a path traversal paired with sloppy null-byte handling in the web GUI. An unauthenticated attacker can send crafted HTTP or HTTPS requests and write arbitrary files to the appliance, which in practice means code execution. The CVSS score is 9.8, and Fortinet marks it exploited in the wild.",
+      "Affected builds cover every supported train: 7.2.0 through 7.2.9, 7.4.0 through 7.4.8, 7.6.0 through 7.6.6, and 8.0.0 through 8.0.1. The fixes are listed as upcoming releases 7.4.9, 7.6.7 and 8.0.2. There's nothing coming for 7.2. Fortinet's answer for that branch is to move to 7.4 or later.",
+      "CISA added the bug to its Known Exploited Vulnerabilities catalog on October 1 and gave federal agencies a deadline of October 4. That's a mitigation deadline, not a patch deadline, because there's nothing to install.",
+      "So the workarounds are the whole game this weekend. The vulnerable path sits behind Identity-Based Encryption, so turning IBE off (GUI or CLI) shuts the door. If you can't live without IBE, restrict webmail and admin access to trusted networks, or put a WAF rule in front that drops POST requests to /ibe containing ../ sequences. Fortinet found the flaw internally, which is the one small comfort here.",
+      "Assume you may already be compromised if the appliance was reachable. Fortinet has published IoCs, including traffic from 79.141.169.187 and 45.129.0.192, unexpected archive account creation in the event logs, and Base64 decoding errors in the encryption logs. Third-party write-ups of the advisory also list dropped or modified files such as /data/etc/ld.so.preload, /data/lib/liblog.so and /data/bin/webconsole. An ld.so.preload entry on a mail gateway is a persistence play, and it'll survive an upgrade if you don't go looking for it.",
+      "This is the second edge appliance this week to land in KEV with no fix on day one, after Cisco's SD-WAN Manager. Email gateways are a particularly ugly place to lose, since the attacker gets a front-row seat to every message the organization sends and receives. Disable IBE today, hunt for the IoCs, and treat the eventual 7.4.9 or 7.6.7 upgrade as cleanup rather than the fix.",
+    ],
+    category: "cyber",
+    tags: [
+      "Fortinet",
+      "FortiMail",
+      "Zero-Day",
+      "CVE-2026-104286",
+      "CISA KEV",
+      "Email Security",
+    ],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T13:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Fortinet PSIRT FG-IR-26-175",
+        desc: "Vendor advisory with affected versions, workarounds and IoCs",
+        url: "https://fortiguard.fortinet.com/psirt/FG-IR-26-175",
+      },
+      {
+        name: "CISA KEV Catalog",
+        desc: "Known Exploited Vulnerabilities listing and federal deadlines",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Coverage of the exploited FortiMail zero-day and mitigations",
+        url: "https://www.securityweek.com/exploited-fortinet-fortimail-zero-day-calls-for-urgent-action/",
+      },
+      {
+        name: "CyberInsider",
+        desc: "Breakdown of IoCs and file-system artifacts",
+        url: "https://cyberinsider.com/fortimail-zero-day-exploited-in-attacks-as-cisa-urges-immediate-patching/",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Report on CVE-2026-104286 exploitation",
+        url: "https://www.helpnetsecurity.com/2026/10/02/fortinet-fortimail-vulnerability-cve-2026-104286/",
+      },
+    ],
+  },
+  {
+    id: 590,
+    slug: "divd-zammad-zero-days-ai-agent-breach",
+    title: "An AI Agent Breached DIVD With Two Zammad Zero-Days, One Still Unfixed",
+    summary: "The Dutch disclosure nonprofit DIVD says an agentic attacker chained a Zammad session-hijack RCE with a root escalation that has no patch in any version, and the Dutch NCSC now warns of active exploitation.",
+    body: [
+      "The people whose job is warning everyone else about vulnerabilities got hit by two nobody knew about. The Dutch Institute for Vulnerability Disclosure (DIVD) says attackers broke into its Zammad helpdesk on September 21 and that the way they moved points to an agentic AI doing the work.",
+      "The chain uses two bugs. CVE-2026-102489 is a session hijack that turns into remote code execution as the zammad user, exploitable on Zammad 6.3.0 through 6.5.4. CVE-2026-102490 takes that foothold to root, and per the Dutch NCSC it affects all common versions with no patch yet. The code for the first bug is also present in 7.0.0 through 7.1.3, but DIVD says it isn't exploitable there.",
+      "DIVD reproduced the chain by September 23, reported it to Zammad the next day, and started scanning for exposed instances and notifying victims on the 26th. The NCSC followed on September 30 with an active-exploitation alert telling operators to update now.",
+      "The AI angle is the part everyone will quote, so it's worth being precise. DIVD's own statement says the modus operandi indicates an agentic attack, without much detail behind it. The color came in follow-up reporting: the agent moved very fast, left verbose comments in its tooling that helped responders reconstruct what it did, and made dumb choices, including a password spray that broke its own man-in-the-middle setup. That reads less like a superhuman hacker and more like an intern with no fear and infinite stamina. Still dangerous. Network segmentation is what kept the damage limited.",
+      "If you run Zammad on 6.x, get to version 7 or pull the box offline. Before you upgrade, preserve application and network logs and run DIVD's IoC check script, since patching wipes the evidence you'd need to know whether you were hit. The root escalation still has no fix, so keep the helpdesk off the open internet until there is one.",
+      "DIVD deserves credit for disclosing its own breach in public within days. Most victims take months and a lawyer's draft to say half as much.",
+    ],
+    category: "cyber",
+    tags: [
+      "Zammad",
+      "DIVD",
+      "Zero-Day",
+      "Agentic AI",
+      "CVE-2026-102489",
+      "Incident Response",
+    ],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "DIVD CSIRT case DIVD-2026-00015",
+        desc: "Case page with CVEs, affected versions, timeline and IoC script",
+        url: "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+      },
+      {
+        name: "DIVD newsroom",
+        desc: "DIVD's public disclosure of its own breach",
+        url: "https://www.divd.nl/newsroom/articles/when-no-if/",
+      },
+      {
+        name: "NCSC Netherlands",
+        desc: "Active-exploitation alert for the Zammad zero-days",
+        url: "https://www.ncsc.nl/alerts/actief-misbruik-van-zeroday-kwetsbaarheden-in-zammad-update-nu",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Reporting on the agent's behavior during the intrusion",
+        url: "https://www.helpnetsecurity.com/2026/10/01/divd-agentic-ai-attack-breach/",
+      },
+    ],
+  },
+  {
+    id: 591,
+    slug: "ta419-phishing-ai-policy-experts-anthropic-white-house",
+    title: "TA419 Posed as Ex-White House and Anthropic Staff to Phish AI Experts",
+    summary: "Proofpoint says the espionage group used rapport-building emails and session-stealing Microsoft login pages to target US think tanks, universities and law firms working on AI policy.",
+    body: [
+      "The email looked like a favor being asked. Would you join an AI Policy Advisory Committee? Could you give feedback on a Senate report about AI export controls? Proofpoint says those invitations came from TA419, a China-aligned espionage group, wearing the names of people the recipients would recognize.",
+      "The impersonated names include Lynne Parker, a former principal deputy director at the White House Office of Science and Technology Policy, economist Heidi Crebo-Rediker, and a senior Anthropic employee. The Anthropic lure ran in February 2026 under the subject line \"Request for Feedback on Military Integration of Claude.\" The White House and economist personas started on July 8. Targets were AI policy experts at US think tanks, universities and law firms.",
+      "The first message carried no link and no attachment. It just asked for a reply. Only after someone answered did TA419 send a shortened link to a fake OneDrive page, which used a browser-in-the-browser kit and a Cloudflare Turnstile check to look legitimate and keep scanners out. The login then relayed to real Microsoft infrastructure, so the password, the MFA prompt and the conditional access checks all passed normally. The attacker kept the session it produced.",
+      "That last detail is why push MFA doesn't help here. A proxied login is a real login, and the stolen session token is as good as being the user. Phishing-resistant authentication (FIDO2 keys or passkeys bound to the origin) is the control that actually breaks this, along with short token lifetimes and alerts on sessions that suddenly show up from new infrastructure.",
+      "Proofpoint says TA419 has gone after think tanks, defense-linked organizations, universities and law firms in the US and Japan since at least April 2025. The interest is obvious. Export controls on chips and models are some of the most consequential trade policy Washington writes right now, and the people drafting the recommendations are mostly outside government with personal inboxes and fewer defenses.",
+      "If you work anywhere near this topic, treat an unsolicited invitation from a name you admire as a reason to verify by another channel, not a reason to reply.",
+    ],
+    category: "cyber",
+    tags: ["TA419", "Proofpoint", "Phishing", "China", "AI Policy", "AiTM"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Help Net Security",
+        desc: "Report on Proofpoint's TA419 findings, lures and techniques",
+        url: "https://www.helpnetsecurity.com/2026/10/02/china-aligned-ta419-phishing-ai-policy-experts/",
+      },
+      {
+        name: "Security Boulevard",
+        desc: "Coverage of the impersonation campaign against AI experts",
+        url: "https://securityboulevard.com/2026/10/china-linked-hackers-impersonate-ex-u-s-officials-to-target-ai-experts/",
+      },
+      {
+        name: "BetaNews",
+        desc: "Summary of the TA419 campaign and targeting",
+        url: "https://betanews.com/article/ta419-phishing-campaign-ai-policy/",
+      },
+    ],
+  },
+  {
+    id: 592,
+    slug: "microsoft-digital-defense-report-2026-ai-attackers",
+    title: "Microsoft's 2026 Defense Report Says AI Has Handed Attackers the Lead",
+    summary: "Microsoft's annual threat report finds the median time from vulnerability discovery to weaponization has fallen under 24 hours, with phishing and app exploits both surging as initial access vectors.",
+    body: [
+      "Under 24 hours. That's the median time Microsoft now sees between a vulnerability becoming known and someone weaponizing it, according to its 2026 Digital Defense Report. The report covers July 2025 through June 2026, and its central claim is blunt: AI has shifted the near-term advantage to attackers.",
+      "The initial-access numbers tell the same story. Phishing went from 7% of intrusions Microsoft investigated to 23% year over year, and exploitation of public-facing apps rose from 15% to 24%, per Help Net Security's read of the report. Microsoft also expects a record of roughly 72,000 CVEs this year. More bugs, found faster, exploited sooner.",
+      "The phishing jump is the one I'd sit with. The classic tells (bad grammar, wrong context, odd timing, generic greetings) were a large part of how users caught phish, and models fix all of them at once and at scale. Today's TA419 story is a case in point. Those emails didn't need a single typo to fail.",
+      "Microsoft says Chinese, Russian, North Korean and Iranian groups are now using AI across the whole attack lifecycle, and it documents what it calls the first AI-orchestrated ransomware extortion, a July 2026 case tracked as JADEPUFFER. Some of this is exactly what you'd expect a security vendor to say while selling AI-powered defense.",
+      "The weaponization figure is harder to wave off, because it lines up with what responders have been reporting all year, with KEV entries landing days or hours after disclosure.",
+      "The recommendations aren't new, and that's the uncomfortable part. Patch faster, treat identity as the control plane, enforce phishing-resistant MFA, and measure patch latency like it's a business metric. If the window is under a day, a monthly patch cycle for internet-facing systems isn't a process anymore. It's a gap.",
+    ],
+    category: "ai",
+    tags: [
+      "Microsoft",
+      "Digital Defense Report",
+      "AI Security",
+      "Threat Intelligence",
+      "Phishing",
+    ],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Microsoft Digital Defense Report 2026",
+        desc: "Microsoft's annual threat report, July 2025 to June 2026",
+        url: "https://www.microsoft.com/mddr",
+      },
+      {
+        name: "Help Net Security",
+        desc: "Breakdown of the report's intrusion-vector and weaponization figures",
+        url: "https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/",
+      },
+      {
+        name: "Microsoft Security Blog",
+        desc: "Microsoft's hub for Digital Defense Report coverage",
+        url: "https://www.microsoft.com/security/blog/microsoft-digital-defense-report/",
+      },
+    ],
+  },
+  {
+    id: 593,
+    slug: "apple-macos-full-disk-access-controls-ai-agents",
+    title: "Apple Will Lock Down Full Disk Access on macOS After the Muse Mess",
+    summary: "Apple told developers it will add controls requiring explicit user action to grant Full Disk Access, citing apps that expose mail, messages and browsing history and the growing risk from AI agents.",
+    body: [
+      "Apple is about to make Full Disk Access a lot harder to get. In a developer news post on October 2, the company said it will add controls so users can only grant the permission through very explicit action, and it didn't mince words about why: some developers are using it in ways that expose files, mail, messages and browsing history without users really understanding what they agreed to.",
+      "Apple named nobody. It didn't have to. Three weeks ago Inc. columnist Jason Aten reported that Meta's Muse agent had surfaced the contents of his iMessages after he declined to give it Messages access. He found the paired Mac app had synced more than 187,000 rows from the Messages database, the kind of read Full Disk Access makes possible. Meta's David Singleton said on Threads that the sync was an opt-in feature. Aten says he never turned it on.",
+      "Full Disk Access was built for backup tools and disk utilities, apps that need to touch everything for one narrow job. An agent is a different animal. It reads, interprets, decides and acts, and it can carry what it learned into other tools and other servers. Apple's own post makes that point, saying the risk grows as agents get more capable and autonomous.",
+      "What's missing is a date. Apple didn't say when the controls arrive or what they look like, and it didn't spell out what developers who genuinely need the permission should do differently. That probably means a macOS point release, and probably some friction for legitimate backup and security vendors who'll get caught in the same net.",
+      "If you manage Macs, don't wait for Apple. Open Privacy and Security settings, look at the Full Disk Access list, and pull anything that isn't backup, EDR or something you can justify out loud. MDM can lock this down with PPPC profiles today.",
+    ],
+    category: "tech",
+    tags: ["Apple", "macOS", "Privacy", "AI Agents", "Meta Muse"],
+    image: "https://images.unsplash.com/photo-1516849677043-ef67c9557e16?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Apple Developer News",
+        desc: "Apple's announcement of upcoming Full Disk Access controls",
+        url: "https://developer.apple.com/news/?id=p6zjojqw",
+      },
+      {
+        name: "MacRumors",
+        desc: "Coverage of the Full Disk Access changes and AI agent context",
+        url: "https://www.macrumors.com/2026/10/02/apple-announces-macos-full-disk-access-changes/",
+      },
+      {
+        name: "MacStories",
+        desc: "Analysis of the new controls for Mac developers",
+        url: "https://www.macstories.net/linked/apple-announces-plan-to-impose-new-full-disk-access-controls-on-mac-developers/",
+      },
+      {
+        name: "Decrypt",
+        desc: "Report on Meta Muse reading a user's iMessages",
+        url: "https://decrypt.co/379122/metas-muse-ai-agent-user-private-imessages-lied-how",
+      },
+    ],
+  },
+  {
+    id: 594,
+    slug: "broadcom-60b-financing-anthropic-ai-chips",
+    title: "Broadcom Is Raising $60B in Debt So Anthropic Can Afford Its Chips",
+    summary: "Bloomberg reports Broadcom's banks are syndicating a $42B senior tranche and an $18B junior tranche led by Blackstone to fund TPU compute for Anthropic and other AI customers.",
+    body: [
+      "Broadcom wants to sell Anthropic a lot of chips. Anthropic needs someone to lend it the money to buy them. So Broadcom is arranging the loan.",
+      "According to Bloomberg, Broadcom's bank syndicate has started raising a $60 billion financing package for AI chip capacity. It's split into a $42 billion senior secured tranche and an $18 billion junior tranche. Blackstone leads the junior piece, committing $9 billion from its own funds and syndicating the rest.",
+      "The money is meant to cover TPU-based compute for Anthropic and other customers. Anthropic's IPO filing already disclosed that Broadcom agreed to lend it up to $42 billion, covering roughly a third of a $125.2 billion five-year TPU lease commitment, with 3.5 gigawatts expected to come online starting in 2027. Anthropic is on track to be Broadcom's biggest compute customer that year.",
+      "Vendor financing isn't new, and it isn't automatically a red flag. But it changes who carries the risk. When the supplier lends the customer the money to buy the supplier's product, Broadcom's revenue looks great right up until the customer can't pay, and then a lot of it turns into a loan problem. Anthropic's own S-1 flagged potential conflicts of interest from Broadcom being both supplier and lender, including exposure to pricing and equipment availability.",
+      "That's the kind of risk factor lawyers write when they've thought hard about it, and it's the one investors should read twice.",
+      "The $60 billion figure also says something about where AI money is coming from now. Equity rounds can't keep up with gigawatt-scale bills, so the build-out is moving onto credit markets, with private credit firms like Blackstone taking the junior risk. Watch how the junior tranche prices. It's the cleanest market read you'll get on how lenders rate AI compute demand three years out.",
+    ],
+    category: "tech",
+    tags: ["Broadcom", "Anthropic", "Blackstone", "AI Infrastructure", "TPU"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-03T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "Yahoo Finance (Bloomberg)",
+        desc: "Report on the $60B financing structure and tranches",
+        url: "https://finance.yahoo.com/technology/ai/articles/broadcom-raises-60-billion-debt-113047288.html",
+      },
+      {
+        name: "Investing.com",
+        desc: "Summary of Bloomberg's reporting on the Broadcom package",
+        url: "https://www.investing.com/news/stock-market-news/broadcom-starts-amassing-60-bln-to-fund-chips-for-anthropic-bloomberg-4928882",
+      },
+      {
+        name: "Seeking Alpha",
+        desc: "Coverage of the financing package for Anthropic chips",
+        url: "https://seekingalpha.com/news/4649721-broadcom-gathers-60b-financing-package-to-fund-ai-chips-for-anthropic-report",
+      },
+    ],
+  },
+  {
     id: 583,
     slug: "cisco-sd-wan-manager-zero-day-cve-2026-76504",
     title: "Cisco SD-WAN Manager Zero-Day CVE-2026-76504 Hands Out Admin API Access",
@@ -44,9 +323,9 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-10-01T13:00:00Z",
     readingTime: 3,
-    featured: true,
+    featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "Cisco Security Advisory",
@@ -451,7 +730,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "BleepingComputer: Keio",
@@ -984,7 +1263,7 @@ export const articles = [
     publishedAt: "2026-09-26T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1037,7 +1316,7 @@ export const articles = [
     publishedAt: "2026-09-26T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1082,7 +1361,7 @@ export const articles = [
     publishedAt: "2026-09-26T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1226,7 +1505,7 @@ export const articles = [
     publishedAt: "2026-09-25T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1284,7 +1563,7 @@ export const articles = [
     publishedAt: "2026-09-25T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1330,7 +1609,7 @@ export const articles = [
     publishedAt: "2026-09-25T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1429,7 +1708,7 @@ export const articles = [
     publishedAt: "2026-09-25T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
