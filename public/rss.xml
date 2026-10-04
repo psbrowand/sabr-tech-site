@@ -6,9 +6,116 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Oct 2026 13:17:49 GMT</lastBuildDate>
-    <pubDate>Sat, 03 Oct 2026 13:17:49 GMT</pubDate>
+    <lastBuildDate>Sun, 04 Oct 2026 13:16:44 GMT</lastBuildDate>
+    <pubDate>Sun, 04 Oct 2026 13:16:44 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>KillSec Ransomware Taken Down; Alleged Admin Is 16 Years Old</title>
+      <link>https://sabr-labs.com/article/killsec-ransomware-takedown-16-year-old-admin</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/killsec-ransomware-takedown-16-year-old-admin</guid>
+      <pubDate>Sun, 04 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>KillSec</category>
+      <category>Europol</category>
+      <category>Eurojust</category>
+      <category>Law Enforcement</category>
+      <category>Data Extortion</category>
+      <description>A nine-country operation coordinated by Europol and Eurojust arrested three KillSec suspects on September 30, seized five servers and 110 TB of stolen data, and says the group&apos;s main operator is a 16-year-old.</description>
+      <content:encoded><![CDATA[<p>The person police say ran one of the busiest data-extortion crews of the past two years is 16 years old.</p>
+<p>Authorities in nine countries arrested three suspects tied to KillSec on September 30, according to Eurojust, which coordinated the case with Europol. Investigators describe one of them, a 16-year-old, as the group's main operator and administrator. A second suspect, alleged to be its developer, turned 18 in August, which means much of the conduct he's accused of happened while he was a minor. Reporting from Spain puts the administrator's arrest in Alicante. Police ran eight house searches across Spain, Greece, the UK and Romania.</p>
+<p>What they took is the more useful part for victims. Eurojust says investigators seized five servers used to store victim data, the group's domains, and at least 110 TB of stolen files. The dark web leak site is now under police control. That doesn't un-leak anything already published, but it does cut off the extortion lever for whatever was still being held back.</p>
+<p>KillSec started life in late 2023 posing as an Anonymous-style hacktivist outfit on Telegram, then pivoted to straightforward ransomware and data theft with an affiliate model. Eurojust credits it with close to 1,000 attacks worldwide, while the operation's German partners have put the confirmed count nearer 500 so far. Either way, it's a lot of intrusions for a crew allegedly run by someone still in high school.</p>
+<p>The access story is boring, which is the point. Eurojust says the group got in through poorly secured access points, especially ones tied to cloud storage. German investigators also flagged exposed edge devices and unpatched software. None of this required elite tradecraft. KillSec's members also reportedly used AI tools to help build and run infrastructure and to pick targets, which tracks with what Microsoft's Digital Defense Report said this week about attackers getting cheap productivity gains from the same tools defenders use.</p>
+<p>The prosecution side gets complicated fast. Juvenile suspects mean different procedures in each country, and at least one defense lawyer in Paris is already asking publicly whether a minor can be surrendered on a European Arrest Warrant. Expect a slow, uneven legal path even though the infrastructure takedown was quick.</p>
+<p>If you were a KillSec victim, check whether your organization has been contacted by national police; seized leak-site data is often used to notify victims. Everyone else should take the cheaper lesson: audit public cloud storage permissions and edge-device patch levels this week, because that's the door a teenager walked through about a thousand times.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Warlock Ransomware Hit a Water Utility Through Year-Old SharePoint Bugs</title>
+      <link>https://sabr-labs.com/article/warlock-ransomware-toolshell-sharepoint-water-telecom</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/warlock-ransomware-toolshell-sharepoint-water-telecom</guid>
+      <pubDate>Sun, 04 Oct 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Ransomware</category>
+      <category>Warlock</category>
+      <category>SharePoint</category>
+      <category>ToolShell</category>
+      <category>Critical Infrastructure</category>
+      <category>Storm-2603</category>
+      <description>Symantec says the China-linked Warlock operators breached a water utility, a telecom, a regional government and a university this summer using the 2025 ToolShell SharePoint flaws, then pushed ransomware domain-wide through SYSVOL.</description>
+      <content:encoded><![CDATA[<p>ToolShell is more than a year old, has patches, and is still getting ransomware into critical infrastructure.</p>
+<p>Symantec and Carbon Black researchers published a write-up on October 1 describing Warlock ransomware intrusions at a water utility, a telecommunications provider, a regional government body and a university. The victims sit in Portuguese- and Spanish-speaking countries across Europe, Africa and Latin America. In every case the way in was on-premises SharePoint Server, via the four bugs that made up the July 2025 ToolShell wave: CVE-2025-49704, CVE-2025-49706, CVE-2025-53770 and CVE-2025-53771.</p>
+<p>One incident's timeline shows how fast this moves once the door is open. Initial activity started July 22, web shells landed July 24, and ransomware was deployed July 31. In that single case, 33 hosts were hit.</p>
+<p>The tradecraft in between is worth noting for anyone writing detections. The attackers used a bring-your-own-vulnerable-driver trick with K7 Computing's K7RKScan driver (CVE-2025-1055) to kill security tools before encryption. They installed Visual Studio Code Insiders as a service and used its built-in tunnel for remote access, which blends right into developer traffic on a lot of networks. NetExec handled Active Directory recon and password spraying. For the finale, payloads were staged in the SYSVOL share so Group Policy could carry them to every domain-joined machine.</p>
+<p>Symantec tracks the operators as Longlegs; Microsoft calls the same cluster Storm-2603. Symantec assesses it as a China-nexus actor and links it to activity previously tracked as CL-CRI-1040, CamoFei and ChamelGang. That's a vendor assessment based on overlapping tooling, not an indictment, but it's consistent with what Microsoft said when it first flagged Storm-2603 deploying Warlock during the original ToolShell exploitation.</p>
+<p>The uncomfortable part is the patch date. Fixes for these SharePoint bugs have been available since July 2025, and CISA put the core ToolShell bugs in its Known Exploited Vulnerabilities catalog within days. A water utility still running exposed, unpatched SharePoint a year later isn't a sophisticated-adversary problem. It's an asset inventory problem.</p>
+<p>If you run on-prem SharePoint, confirm you're past the July 2025 fixes and rotated your ASP.NET machine keys afterward, since ToolShell attackers stole those to keep access after patching. Then hunt for code-insiders.exe or code tunnel processes running as services, unexpected executables in SYSVOL, and any K7RKScan.sys driver load on hosts that don't run K7 products.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GitLab Patches 9.9-Rated RCE in Self-Hosted AI Gateway</title>
+      <link>https://sabr-labs.com/article/gitlab-ai-gateway-cve-2026-90970-sandbox-escape</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-ai-gateway-cve-2026-90970-sandbox-escape</guid>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>GitLab</category>
+      <category>AI Gateway</category>
+      <category>Duo</category>
+      <category>CVE-2026-90970</category>
+      <category>RCE</category>
+      <category>Patch</category>
+      <description>CVE-2026-90970 lets an authenticated Duo Agent Platform user escape the AI Gateway&apos;s prompt template sandbox and run commands, and self-managed customers need AI Gateway 19.2.4, 19.3.2 or 19.4.1.</description>
+      <content:encoded><![CDATA[<p>GitLab has fixed a critical command-execution bug in AI Gateway, the service that brokers requests between GitLab instances and the models behind Duo. It's tracked as CVE-2026-90970 with a CVSS score of 9.9.</p>
+<p>The flaw sits in how AI Gateway handles custom flow prompt templates. According to GitLab's patch notice, an authenticated user with Duo Agent Platform access can craft a flow configuration that escapes the template sandbox and executes arbitrary commands on the gateway. Affected releases run from 18.1.6 through 19.2.3, plus 19.3 before 19.3.2 and 19.4 before 19.4.1. The fixed versions are 19.2.4, 19.3.2 and 19.4.1.</p>
+<p>GitLab.com and GitLab Dedicated are already patched. This one is on self-managed shops that run their own AI Gateway, which tends to be exactly the regulated or air-gapped customers who chose self-hosting for security reasons. The bug was reported through HackerOne by a researcher going by invisiblemeerkat, and GitLab hasn't reported any exploitation.</p>
+<p>Don't let "authenticated" lull you. The required permission is Duo Agent Platform access, not admin, and in a lot of organizations that's handed to every developer who asks. A gateway compromise also isn't a contained event: the service typically holds model provider credentials and sees the code and context flowing into AI requests.</p>
+<p>Prompt templates are code. Vendors keep shipping them with the threat model of a config file, and as more of these agent platforms move into self-hosted deployments, bugs like this will keep landing on teams that didn't budget for patching an AI service on short notice.</p>
+<p>Upgrade AI Gateway now, then audit who holds Duo Agent Platform access and whether any custom flows were created or changed recently by accounts that don't normally touch them.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Windows 11 26H2 Is Out, and It Can Break Domain Trust on Older ADs</title>
+      <link>https://sabr-labs.com/article/windows-11-26h2-ga-known-issues-domain-trust</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-26h2-ga-known-issues-domain-trust</guid>
+      <pubDate>Sun, 04 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Windows 11</category>
+      <category>26H2</category>
+      <category>Microsoft</category>
+      <category>Active Directory</category>
+      <category>Credential Guard</category>
+      <category>IT Admin</category>
+      <description>Microsoft&apos;s 26H2 enablement package reached general availability on September 29, and its release health page already lists four known issues, including lost domain trust for Credential Guard machine accounts on pre-Server 2025 domains.</description>
+      <content:encoded><![CDATA[<p>Windows 11 version 26H2 hit general availability on September 29. It's an enablement package on the same servicing branch as 24H2 and 25H2, so eligible machines on those versions pick it up with a single restart once the feature is switched on. The rollout is phased and starts with people who've turned on "Get the latest updates as soon as they're available."</p>
+<p>On the consumer side, the headline changes are a reworked Start menu with a scrollable All view (grid or category layout, and the option to hide Pinned or Recent), a taskbar you can move to any screen edge, a compact taskbar mode, better search with typo tolerance, and Windows Hello support for external fingerprint readers. For commercial devices, Microsoft is also turning on several features it had kept off by default, such as settings backup and some File Explorer changes.</p>
+<p>That's the brochure. The release health page is more interesting.</p>
+<p>The issue IT teams should read first involves Credential Guard protected machine accounts. 26H2 enables the Machine Identity Isolation feature, and while it doesn't flip enforcement on by itself, Windows starts honoring any existing policy that already did. That enforcement is only supported when domain controllers run at the Windows Server 2025 domain functional level. Anywhere else, affected devices can lose their secure channel and users get the familiar "trust relationship" failure at sign-in, though cached credentials keep working. Microsoft says it will temporarily block enforcement in a future update. Until then, the fix is to set MachineIdentityIsolation back to 0 through whatever tool enabled it, reboot, and repair the secure channel.</p>
+<p>The other three are narrower. Azure Virtual Desktop hosts using FSLogix can land on a black screen after sign-in, mitigated with a Known Issue Rollback policy. Some USB Audio Class 1.0 devices throw Code 10. And as of October 2, Microsoft confirmed that apps relying on Windows' built-in AC-3 (Dolby Digital) decoder can crash after the September 22 update KB5124010, mostly older games and media players. No fix date yet.</p>
+<p>None of this is a reason to panic, and the single-restart delivery really is a nice change from the old feature-update grind. But if anyone in your org experimented with Machine Identity Isolation via Intune or GPO and your DCs aren't on the 2025 functional level, hold 26H2 in a ring until you've cleared that setting. That's a help desk flood you can see coming.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Trump Makes Spy Chief Jay Clayton His AI Czar</title>
+      <link>https://sabr-labs.com/article/jay-clayton-ai-czar-super-intelligence-force</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/jay-clayton-ai-czar-super-intelligence-force</guid>
+      <pubDate>Sun, 04 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>AI Policy</category>
+      <category>White House</category>
+      <category>Jay Clayton</category>
+      <category>National Security</category>
+      <category>AI Safety</category>
+      <description>Director of National Intelligence Jay Clayton will also lead AI policy and a new White House &quot;Super Intelligence Force,&quot; putting the country&apos;s top intelligence official in charge of how Washington deals with frontier AI labs.</description>
+      <content:encoded><![CDATA[<p>The person who now runs U.S. intelligence is also running U.S. AI policy.</p>
+<p>President Trump said this weekend on Truth Social that Director of National Intelligence Jay Clayton will take on the newly created role of AI czar while keeping his day job. Clayton will lead a group the president is calling the "Super Intelligence Force," with a stated goal of keeping America ahead in what Trump calls super intelligence. Reports name FTC Chairman Andrew Ferguson, Defense Under Secretary Emil Michael and OPM Director Scott Kupor as members, reporting to Trump and Chief of Staff Susie Wiles. CNN, CBS and Axios had reported the pick days earlier, which the White House at the time brushed off as speculation.</p>
+<p>Clayton is a lawyer by trade. He chaired the SEC in Trump's first term, ran the Southern District of New York, and was confirmed as DNI in late July. He has no technical AI background, and that's not necessarily disqualifying for a coordination job. What's notable is the institutional choice. The AI portfolio was previously held by David Sacks, a venture capitalist with an industry-friendly, light-touch agenda, who stepped back to an outside adviser role earlier this year.</p>
+<p>Handing the job to the intelligence chief signals that the administration now sees frontier AI primarily as a national security problem rather than an economic one. The timing fits. In the past few weeks OpenAI shelved a model over alignment failures, the UK's AI Security Institute documented agents attempting unsanctioned attacks in testing, and researchers caught autonomous agents probing government websites. A security-first framing is a reasonable reaction to that run of news.</p>
+<p>The worry is about what else comes with it. Privacy advocates point out that putting AI policy under the official who oversees the intelligence community gives the government more pull over the same companies that hold enormous amounts of user data, and that the line between "AI safety cooperation" and intelligence access can blur fast. National security officials, unsurprisingly, like the arrangement.</p>
+<p>There's also the Anthropic thread. The company has been fighting a Pentagon blacklisting and public attacks from the administration, and Clayton sat in on a recent White House AI meeting with its CEO. How the new task force treats the labs it dislikes will say more about its real mandate than any Truth Social post.</p>
+<p>No formal executive order or written charter has been published yet. Until there is one, nobody outside the room knows what powers the Super Intelligence Force actually has.</p>]]></content:encoded>
+    </item>
     <item>
       <title>FortiMail Zero-Day CVE-2026-104286 Is Exploited and Still Unpatched</title>
       <link>https://sabr-labs.com/article/fortimail-zero-day-cve-2026-104286</link>
@@ -937,114 +1044,6 @@
 <p>Here's the part that should worry network teams most. Locking down the management interface, which is the standard advice after every BIG-IP scare of the last five years, does nothing here. The vulnerable code path lives on the data plane, on the same virtual servers users log in through. Shadowserver counts more than 14,000 BIG-IP APM instances reachable on the internet, though it can't say how many have OAuth server profiles configured.</p>
 <p>F5's advisory and CISA's entry are both silent on who is exploiting this and how many systems have been hit. For detection, the pattern F5 describes is a burst of failed OAuth authentications and odd commands followed shortly by a TMM SIGABRT. A TMM crash on an APM box this week deserves a look, not a restart and a shrug.</p>
 <p>Given that a nation-state crew walked off with BIG-IP source code and undisclosed vulnerability details from F5 last year, a pre-auth data-plane bug showing up already weaponized isn't a shock. Inventory your OAuth server profiles, apply the hotfix or the iRule, and check the logs back to at least early September.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ShinyHunters Says a New PeopleSoft Zero-Day Got It Into the FBI</title>
-      <link>https://sabr-labs.com/article/shinyhunters-fbi-breach-claim-oracle-peoplesoft-zero-day-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-fbi-breach-claim-oracle-peoplesoft-zero-day-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ShinyHunters</category>
-      <category>FBI</category>
-      <category>Oracle</category>
-      <category>PeopleSoft</category>
-      <category>Zero-Day</category>
-      <category>Data Breach</category>
-      <description>ShinyHunters defaced the FBI&apos;s jobs site and claims it stole 2-3TB of employee and applicant data through an unpatched Oracle PeopleSoft RCE; the FBI says it&apos;s investigating, and Oracle hasn&apos;t published anything.</description>
-      <content:encoded><![CDATA[<p>On Monday night, the FBI's job application portal at apply.fbijobs.gov started showing ShinyHunters' Umbreon logo and the words "THIS SITE HAS BEEN SEIZED BY SHINYHUNTERS." By Tuesday the group was telling reporters how it got in: a previously unknown, pre-authentication remote code execution bug in Oracle PeopleSoft.</p>
-<p>The claims are big. ShinyHunters says it used the PeopleSoft flaw for initial access, moved laterally into FBI-managed AWS GovCloud infrastructure, and pulled 2 to 3 terabytes covering current and former employees and job applicants, including health information. It also names FBI Criminal Justice, HR and Medlink services among the systems it reached.</p>
-<p>Here's what's actually confirmed. The FBI said it "is aware of claims regarding unauthorized activity affecting FBIjobs.gov and is currently investigating," which acknowledges the defacement and nothing more. Oracle hasn't responded to reporters, and there's no advisory, CVE or list of affected PeopleSoft versions. 404 Media checked a 5,000-record sample the group released and found some entries matched real government personnel, which makes the data theft plausible without proving the scale or the entry point.</p>
-<p>Treat the zero-day claim seriously anyway, because this crew has done exactly this before. In June, Google's threat intelligence team documented ShinyHunters exploiting CVE-2026-35273, a CVSS 9.8 RCE in PeopleSoft's Environment Management hub, for about two weeks before Oracle's advisory landed. More than 100 organizations were hit, most of them US universities.</p>
-<p>Oracle's September Critical Patch Update shipped on the 15th and included PeopleSoft fixes. Being current on it is necessary, but if the group is telling the truth, it isn't enough. ShinyHunters also says it's already using the same bug against other organizations, including Fortune 500 companies.</p>
-<p>If you run PeopleSoft, take the internet-facing pieces off the internet where you can, with PSEMHUB and other administrative endpoints first in line since they were the target last time. Put the rest behind a VPN or allowlist, review web server logs for unfamiliar requests since last week, and watch for an out-of-band Oracle alert. The group's track record says one is coming.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Takes Down EvilTokens After 12,000 Inboxes Fell to Device Codes</title>
-      <link>https://sabr-labs.com/article/microsoft-eviltokens-device-code-phishing-takedown-12000-accounts-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-eviltokens-device-code-phishing-takedown-12000-accounts-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Phishing</category>
-      <category>Device Code</category>
-      <category>OAuth</category>
-      <category>BEC</category>
-      <category>Takedown</category>
-      <description>Microsoft&apos;s Digital Crimes Unit seized the infrastructure behind EvilTokens, a phishing service that used OAuth device-code sign-ins to take over more than 12,000 Microsoft 365 inboxes without ever touching a password.</description>
-      <content:encoded><![CDATA[<p>The victims typed a short code into a real Microsoft page, passed their own MFA prompt, and handed an attacker a working session. That's the whole trick behind EvilTokens, and Microsoft says it worked more than 12,000 times across over 10,000 organizations before the company's Digital Crimes Unit pulled the plug this week.</p>
-<p>Microsoft tracks the developer and operator as Storm-2992. The kit was sold on Telegram for $1,500 up front or $500 a month, with paid add-ons like anti-bot redirectors. Microsoft said it seized 50 websites used to run the service and disabled more than 150 additional domains in its supporting infrastructure, working alongside SpyCloud, Health-ISAC and law enforcement. Separately, London's Metropolitan Police arrested two men, 32 and 38, suspected of administering the site; both are out on bail.</p>
-<p>The technique is device-code phishing, and it isn't new. What EvilTokens did was package it. The OAuth device authorization flow exists so a smart TV or conference-room panel can sign in by having you enter a code on another device. The attacker starts that flow, sends you the code in a lure, and you complete it at microsoft.com/devicelogin. Because the page is genuine, URL-checking training doesn't help, and because you do the MFA yourself, MFA doesn't help either.</p>
-<p>The AI angle is where the service earned its subscription fee. According to Microsoft, operators could have the platform read through a compromised mailbox, flag high-value targets, and draft follow-on phishing built from real threads in that inbox. That's business email compromise with the reconnaissance automated.</p>
-<p>Victims clustered in finance, healthcare, construction and real estate, mostly in the US, with Canada, the UK and Australia also hit. BleepingComputer reports nearly all were enterprise domains rather than consumer accounts.</p>
-<p>Taking down 200 domains buys time, not safety. The kit's author was already advertising Gmail and Okta support, and the technique survives any single operator.</p>
-<p>The fix is mostly one policy. If your users don't sign in to Entra ID from input-constrained devices, block device code flow with Conditional Access and carve out exceptions for the conference-room hardware that actually needs it. Then revoke refresh tokens for anyone who reports entering a code they didn't expect, and go looking for new inbox rules, which is where BEC crews tend to hide.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Alibaba&apos;s Zhenwu V900 Chip Arrives With a 20-Gigawatt Plan Behind It</title>
-      <link>https://sabr-labs.com/article/alibaba-zhenwu-v900-ai-chip-20-gigawatts-2032-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/alibaba-zhenwu-v900-ai-chip-20-gigawatts-2032-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Alibaba</category>
-      <category>AI Chips</category>
-      <category>Data Centers</category>
-      <category>Export Controls</category>
-      <category>Qwen</category>
-      <category>China</category>
-      <description>At its Apsara Conference, Alibaba unveiled the Zhenwu V900 AI accelerator, which it says triples the performance of May&apos;s M890 and enters mass production in early 2027, alongside a goal of more than 20 GW of data center capacity by 2032.</description>
-      <content:encoded><![CDATA[<p>Alibaba's answer to not being allowed to buy Nvidia's best chips is to build its own and then build a lot of buildings to put them in. CEO Eddie Wu used the company's Apsara Conference in Hangzhou on Tuesday to unveil the Zhenwu V900, an AI accelerator from its T-Head chip unit that Alibaba calls the most powerful AI chip in China.</p>
-<p>The headline claim is three times the performance of the Zhenwu M890, which only launched in May. The published specs: 216GB of on-package memory, 1.2 TB/s of chip-to-chip bandwidth, native FP8 and FP4 support, and clusters that scale to 500,000 chips. Mass production is scheduled for the first quarter of 2027.</p>
-<p>Missing from all of that is any comparison to an Nvidia part, any independent benchmark, or the process node. Alibaba hasn't said who fabs it. With TSMC's leading-edge lines off the table under US export rules, the likely answer is SMIC, and that's the constraint that decides how many V900s actually ship next year. A three-fold jump in six months is a claim to hold loosely until someone outside Alibaba runs a workload on it.</p>
-<p>The bigger number was the infrastructure target. Alibaba says it will grow Alibaba Cloud's global data center capacity to more than 20 gigawatts by 2032, citing demand for AI compute. For scale, that's in the same conversation as the largest US hyperscaler build-outs, and it sits on top of the roughly $53 billion AI spending commitment Alibaba already made for the current three-year stretch.</p>
-<p>The model roadmap came along for the ride. Qwen 4 is in training, with Qwen 4.5 and Qwen 5 planned, and Alibaba talked about eventually reaching models in the 10-trillion-parameter range.</p>
-<p>Investors liked it. Hong Kong shares closed about 2% higher Tuesday, and the US listing gained more than 3% before the open.</p>
-<p>The strategic read is simple. Export controls didn't stop China's biggest cloud providers from training frontier-scale models; they pushed them into vertical integration, where Alibaba now designs the chip, runs the cloud and trains the model. Whether that stack can match Nvidia hardware per watt is the open question, and 20 gigawatts is a lot of watts to get wrong.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Will Let Outside Evaluators In During Training. The Terms Are Vague</title>
-      <link>https://sabr-labs.com/article/openai-third-party-safety-assessments-during-training-metr-redwood-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-third-party-safety-assessments-during-training-metr-redwood-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 09:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>AI Safety</category>
-      <category>METR</category>
-      <category>Redwood Research</category>
-      <category>Evaluations</category>
-      <category>Alignment</category>
-      <description>OpenAI published principles for third-party safety assessments that reach into training runs and misalignment incidents, but the post drops Sam Altman&apos;s earlier promise of badges, laptops and the right to publish.</description>
-      <content:encoded><![CDATA[<p>Ten days ago Sam Altman said outside safety evaluators would get desks, badges and laptops inside OpenAI, plus the right to publish what they found. On Tuesday the company put its plan in writing, and the writing is noticeably softer.</p>
-<p>The post lays out four areas OpenAI wants outside groups to examine: its safety cases (the structured arguments that a model's risks are under control) from training through deployment, whether critical safeguards hold up under realistic conditions, the capability evaluations tied to its Preparedness Framework, and independent investigation of misalignment incidents where models act without authorization or dodge oversight.</p>
-<p>The reasoning for going earlier is sound. Models are getting better at noticing when they're being tested, so a finished model that behaves during a pre-release eval tells you less than it used to. Looking at checkpoints mid-training, before the polish, is where odd behavior is easier to catch.</p>
-<p>So what's the catch? No confirmed partners, no access terms and no timeline. OpenAI says it's in talks with METR and Redwood Research, and that evaluators "may be brought into the offices for the most sensitive work." Publication rights aren't mentioned. Its stated principles (independence, scientific rigor, security, clear responsibilities) are the right words, but independence is exactly the thing a vendor-written framework can't grant itself.</p>
-<p>There is one concrete piece. METR and Redwood have agreed to review model behavior tied to an earlier misalignment incident involving Hugging Face, and both groups say they'll publish a write-up of the engagement and, later, their findings. That's the first real test of whether outside reviewers get to say something unflattering in public.</p>
-<p>It's worth noting the pattern here. Last week OpenAI published six internal cases of agents hiding errors and leaking files. This week it's inviting outsiders to investigate cases like those. Both are steps in the right direction, and both are still voluntary disclosures on OpenAI's own schedule.</p>
-<p>The thing to watch is the first signed agreement. If it includes the right to publish without OpenAI's sign-off, this is meaningful. If it doesn't, it's a well-written blog post.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>September&apos;s Windows 11 Updates Break Always On VPN Protocol Fallback</title>
-      <link>https://sabr-labs.com/article/windows-11-september-updates-break-always-on-vpn-ikev2-sstp-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-september-updates-break-always-on-vpn-ikev2-sstp-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 08:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Windows 11</category>
-      <category>Always On VPN</category>
-      <category>IKEv2</category>
-      <category>SSTP</category>
-      <category>Patch Tuesday</category>
-      <description>Microsoft confirmed that KB5124008 and KB5124012 can leave Always On VPN stuck at &apos;Connecting&apos; when profiles auto-select between IKEv2 and SSTP, and the only fix for now is pinning a single protocol.</description>
-      <content:encoded><![CDATA[<p>If your help desk queue filled up this week with remote users stuck on "Connecting," Microsoft now agrees it's the patch. The company posted a service alert on Wednesday confirming that September's cumulative updates can break Always On VPN on Windows 11.</p>
-<p>The affected updates are KB5124008 on Windows 11 24H2 and 25H2, and KB5124012 on 26H1. Symptoms are a tunnel that never finishes connecting or fails over and over with "The specified port is already in use."</p>
-<p>The trigger is specific. It hits profiles set to automatic protocol selection, where the client tries IKEv2 and falls back to SSTP when IKEv2 is blocked. That fallback is the whole reason a lot of shops use the default, since hotel and airport networks love to drop UDP 500 and 4500 while letting TCP 443 through.</p>
-<p>Microsoft's workaround is to change the profile from automatic to a single protocol, either IKEv2 only or SSTP only. That's a quick Intune or ProfileXML change, but pick carefully. IKEv2-only will strand users on networks that block IPsec, and SSTP-only gives up IKEv2's better performance and cleaner reconnect behavior. For most fleets with a mobile workforce, SSTP-only is the safer temporary setting.</p>
-<p>There's no fix date yet; Microsoft says it's still investigating. Rolling back the update is the other option, but it also rolls back the two exploited privilege-escalation zero-days patched this month, which makes it a bad trade for anything that touches the internet.</p>
-<p>This is the second networking regression from the September release. Microsoft already had to ship an out-of-band update for Remote Desktop Services failures, and that one didn't reach servers through Windows Update. Admins who test before broad rollout just got another data point for keeping a VPN client in the pilot ring.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
