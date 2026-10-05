@@ -6,9 +6,109 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Oct 2026 13:16:44 GMT</lastBuildDate>
-    <pubDate>Sun, 04 Oct 2026 13:16:44 GMT</pubDate>
+    <lastBuildDate>Mon, 05 Oct 2026 13:15:57 GMT</lastBuildDate>
+    <pubDate>Mon, 05 Oct 2026 13:15:57 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Third NetScaler Zero-Day in a Week: CVE-2026-88779 Hits SAML Setups</title>
+      <link>https://sabr-labs.com/article/netscaler-saml-zero-day-cve-2026-88779-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/netscaler-saml-zero-day-cve-2026-88779-exploited</guid>
+      <pubDate>Mon, 05 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Citrix</category>
+      <category>NetScaler</category>
+      <category>Zero-Day</category>
+      <category>SAML</category>
+      <category>CISA KEV</category>
+      <category>CVE-2026-88779</category>
+      <description>Citrix patched an exploited SAML memory overflow in NetScaler ADC and Gateway that it calls a denial-of-service bug, but researchers are watching attackers use it to drop web shells.</description>
+      <content:encoded><![CDATA[<p>If you patched NetScaler for PitScaler last week and thought you were done, you weren't. Citrix disclosed CVE-2026-88779 on October 3, a memory overflow in the SAML authentication path of NetScaler ADC and NetScaler Gateway, and it was already being exploited when the advisory went up.</p>
+<p>The bug carries a CVSS score of 8.7 and only affects appliances configured as a SAML service provider or SAML identity provider. That's a narrower slice than the PitScaler pair (CVE-2026-88771 and CVE-2026-88772), but SAML-fronted Gateways are exactly the boxes sitting in front of corporate SSO, so the overlap with high-value targets is large. Fixed builds are 14.1-73.41 and 13.1-64.28, with 14.1-73.41 FIPS and 13.1-37.282 FIPS/NDcPP for the regulated crowd.</p>
+<p>Citrix's own wording is careful. The company says it has seen targeted attacks on unmitigated deployments "which can lead to Denial of Service," and stops there.</p>
+<p>The people running honeypots aren't stopping there. Kevin Beaumont reported exploitation attempts against instances that had just been patched for PitScaler, with authentication requests carrying shell commands stuffed into the username field. On some systems, recovered scripts tried to plant web shells, survive reboots, and pull appliance configs and backups off the box. BleepingComputer reported payloads being fetched from 213.209.159[.]55 and repeated crashes of the nsaaad process forcing reboots. That's not a DoS story. That's a code execution story Citrix hasn't put its name to yet.</p>
+<p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on October 4 and gave federal civilian agencies until October 7 to fix it, a three-day window that tells you how CISA rates the risk. SecurityWeek counts it as the sixth exploited NetScaler bug in the KEV catalog this year.</p>
+<p>What to do today: check whether you're exposed with a quick search of the running config for "add authentication samlAction" or "add authentication samlIdPProfile". If either shows up, patch now, apply Citrix's global deny list, and then go looking for unexpected nsaaad crashes, new files in web-accessible directories, and outbound connections you can't explain. If your appliance rebooted on its own this weekend, treat it as a lead, not a glitch.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ShinyHunters&apos; &apos;Rey&apos; Detained in Jordan and Reportedly Helping the FBI</title>
+      <link>https://sabr-labs.com/article/shinyhunters-rey-saif-al-din-khader-detained-jordan-fbi</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/shinyhunters-rey-saif-al-din-khader-detained-jordan-fbi</guid>
+      <pubDate>Mon, 05 Oct 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ShinyHunters</category>
+      <category>Scattered LAPSUS$ Hunters</category>
+      <category>FBI</category>
+      <category>Arrest</category>
+      <category>Data Extortion</category>
+      <description>Jordan has confirmed the arrest of Saif al-Din Khader, the teenager known as Rey, days after ShinyHunters claimed it stole data on FBI employees through the bureau&apos;s jobs portal.</description>
+      <content:encoded><![CDATA[<p>The person behind one of the loudest handles in English-speaking cybercrime is in custody. Jordanian authorities detained Saif al-Din Khader, known online as "Rey" and "ReyXBF," on September 29, and Jordan confirmed the arrest over the weekend.</p>
+<p>Reuters reported that Khader, a teenager from Amman, is helping the FBI go through his own devices and correspondence to identify other members of ShinyHunters and the wider Scattered LAPSUS$ Hunters crew. One source told the agency his cooperation is "critical to ongoing efforts to arrest these hackers." FBI Director Kash Patel posted that agents are working new leads from the arrest, and followed up with a blunter line: more arrests are on the table.</p>
+<p>The timing isn't subtle. The group recently claimed it had breached the FBI's apply.fbijobs.gov hiring portal, walked off with roughly three terabytes of data, and sent reporters a sample of about 5,000 employee records. ShinyHunters said it didn't want a ransom. It wanted the FBI to retract what it called false allegations. That's the kind of stunt that moves a target to the top of a very short list.</p>
+<p>Rey's résumé, as reconstructed by researchers, reads like a tour of the last two years of data extortion. He's tied to administering the Hellcat ransomware leak site in late 2024, a stint running BreachForums, and an admin role in Scattered LAPSUS$ Hunters. The broader group is blamed for breaching more than 140 organizations since last year and extorting at least $70 million.</p>
+<p>One detail deserves more attention than it's getting. The Hacker News reports Rey may have been cooperating with authorities since at least mid-2025. If that's accurate, the last year of ShinyHunters chatter and leaks happened with an informant near the top, and every member still loose has reason to wonder what's already in an FBI case file.</p>
+<p>This is the second arrest tied to the group in about a week, after Dutch police picked up a 24-year-old in Amsterdam whom ShinyHunters publicly disowned. Arrests haven't killed this crew before. Members rotate and rebrand. But an admin who's talking is a different kind of problem than a foot soldier who isn't.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Are Exploiting the Rejetto HFS Bug That Anthropic&apos;s Mythos Found</title>
+      <link>https://sabr-labs.com/article/rejetto-hfs-cve-2026-61500-mythos-found-bug-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/rejetto-hfs-cve-2026-61500-mythos-found-bug-exploited</guid>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Rejetto HFS</category>
+      <category>CVE-2026-61500</category>
+      <category>Mythos</category>
+      <category>AI Vulnerability Research</category>
+      <category>Exploitation</category>
+      <description>CVE-2026-61500 lets attackers rebuild HFS&apos;s session-signing key from leaked Math.random() output and forge admin cookies, and VulnCheck has seen exploitation since October 2 against servers still below 3.2.1.</description>
+      <content:encoded><![CDATA[<p>An AI model found the bug in July. Humans started exploiting it in October. That's the short version of CVE-2026-61500 in Rejetto HTTP File Server, and it's a preview of how the AI vulnerability-hunting story is going to play out.</p>
+<p>The flaw scores 9.3 on CVSS and affects HFS 3.x before 3.2.1, which shipped July 13. HFS generated its session-cookie signing key with V8's Math.random(), which uses xorshift128+. That generator is fast and fine for shuffling a playlist. It's also mathematically reversible. A separate code path in the login flow handed raw Math.random() outputs to unauthenticated clients, so an attacker could collect a few values, feed them to an SMT solver like Z3, recover the generator's internal state, step it backwards, and reconstruct the key.</p>
+<p>With the key, you forge an admin session cookie. With admin, you use HFS's server_code feature to run your own JavaScript on the box. Unauthenticated to remote code execution, no memory corruption required.</p>
+<p>Horizon3.ai credits Anthropic's Mythos model with spotting the chain. Neither half is novel on its own (weak PRNGs and info leaks are old news), but connecting a leak in one endpoint to key material in another, then recognizing the state recovery is practical, is the kind of cross-file reasoning that usually takes a patient human auditor. Credit where it's due.</p>
+<p>Now the less flattering part. VulnCheck reported exploitation starting October 2, nearly three months after the fix. So far it looks like small-scale reconnaissance from China Telecom address space hitting canaries in Japan and the US. HFS has been on CISA's KEV list before for a different bug, and it's popular precisely with the folks least likely to patch: hobbyists, small shops, and attackers who use it to host their own payloads.</p>
+<p>The lesson isn't that AI-found bugs are scarier. It's that the gap between disclosure and exploitation didn't shrink just because a model did the finding. If you run HFS anywhere, upgrade to 3.2.1 or later and rotate any sessions, and if you find an HFS instance on your network that nobody admits to owning, that's worth a conversation.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Some iPhone 18 Pro Max Units on AT&amp;T Lose Service, and Only a New Phone Fixes It</title>
+      <link>https://sabr-labs.com/article/iphone-18-pro-max-att-lost-service-replacement-ios-27-0-1</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/iphone-18-pro-max-att-lost-service-replacement-ios-27-0-1</guid>
+      <pubDate>Mon, 05 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Apple</category>
+      <category>iPhone 18 Pro Max</category>
+      <category>AT&amp;T</category>
+      <category>iOS 27</category>
+      <category>Cellular</category>
+      <description>Apple says iOS 27.0.1 and an AT&amp;T carrier update prevent the cellular failure, but iPhone 18 Pro Max units that have already dropped off the network have to be swapped out.</description>
+      <content:encoded><![CDATA[<p>A software bug that requires a hardware swap is a rare thing for Apple to admit. That's where it landed last week with the iPhone 18 Pro Max on AT&T.</p>
+<p>Apple said it found "an issue affecting a small number of iPhone 18 Pro Max users on the AT&T network that may cause a device to lose service and be unable to make calls." Affected phones lose calls, texts, and cellular data entirely. Apple says the problem hasn't shown up on other models or other carriers.</p>
+<p>The fix comes in two parts, and neither one helps if you're already hit. iOS 27.0.1 and a new AT&T carrier settings update are meant to stop healthy phones from falling into the same state. The carrier update will push automatically over the next two weeks, but you can force the check under Settings > General > About. If your phone has already lost service, Apple says updates can't bring it back, and the answer is a free replacement through Apple Support, an Apple Store, or AT&T.</p>
+<p>Apple hasn't said what's actually broken, or how many phones are affected. The "replace the device" part is the interesting tell. It suggests something persistent got written to the phone (modem firmware state, provisioning data, something in that neighborhood) that Apple can't or won't repair remotely. MacRumors points out that US models use Qualcomm's Snapdragon X80 modem while international units run Apple's own C2, though nobody has tied the fault to the modem choice.</p>
+<p>If you're on AT&T with an 18 Pro Max, install 27.0.1 today and trigger the carrier update by hand instead of waiting. If you manage a fleet of them, push both now. A phone that silently goes dark is a bad way to find out a user missed an MFA call.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Arizona Court Tosses a Manslaughter Sentence Over an AI Video of the Victim</title>
+      <link>https://sabr-labs.com/article/arizona-appeals-court-vacates-sentence-ai-victim-impact-video</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/arizona-appeals-court-vacates-sentence-ai-victim-impact-video</guid>
+      <pubDate>Mon, 05 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Deepfakes</category>
+      <category>Courts</category>
+      <category>AI Evidence</category>
+      <category>Arizona</category>
+      <category>Generative Video</category>
+      <description>An Arizona appeals panel ruled that an AI-generated video of road-rage victim Chris Pelkey lacked the reliability required at sentencing and ordered Gabriel Horcasitas resentenced.</description>
+      <content:encoded><![CDATA[<p>In spring 2025, a dead man appeared to forgive his killer in a Maricopa County courtroom. On September 30, the Arizona Court of Appeals said that should never have been allowed.</p>
+<p>The video showed an AI-animated likeness of Chris Pelkey, killed in a 2021 road-rage shooting in Chandler. His sister wrote the script and used AI to bring a photo of him to life. Judge Todd Lang said from the bench that he "loved that AI," then sentenced Gabriel Horcasitas to 10.5 years for manslaughter, more than the roughly nine years prosecutors had asked for.</p>
+<p>A three-judge panel from Division One vacated the sentence. The conviction stands. The panel's core point is simple and hard to argue with: the synthetic parts of the video didn't document anything Pelkey actually said or did. Sentencing evidence needs a minimal level of reliability, and a script written by a family member, delivered in the victim's face and voice, erases the line between what the family believes and what the victim thought. Disclosing that it was AI didn't cure that, the panel said.</p>
+<p>What makes the ruling sharper is that the defense never objected. The court reviewed it under the fundamental-error standard, which is a high bar, and still found the sentencing unfair. The panel distinguished earlier Arizona precedent allowing photos that document a family's real grief. A photo is a record. This was a performance.</p>
+<p>Expect this opinion to get cited well outside Arizona. Courts have spent two years fumbling deepfake evidence questions at trial, and this is one of the first appellate rulings to draw a line on AI recreations at sentencing. Nobody doubts the family's sincerity. The problem is that sincerity isn't evidence.</p>
+<p>Horcasitas goes back for a new sentencing hearing. The family can still speak, in their own voices.</p>]]></content:encoded>
+    </item>
     <item>
       <title>KillSec Ransomware Taken Down; Alleged Admin Is 16 Years Old</title>
       <link>https://sabr-labs.com/article/killsec-ransomware-takedown-16-year-old-admin</link>
@@ -939,111 +1039,6 @@
 <p>It's also a fragile one. Commercial APIs rate-limit, time out and refuse. A guardrail tripping on one provider shifts the vote, and when every provider fails the implant just retries. Talos lists malformed model output and the predictable tie-break order as weaknesses too. Handing your decision loop to four vendors who all log API traffic and can revoke keys is not a great operational security plan.</p>
 <p>Where this does get useful is detection. Talos suggests alerting on AI-provider API traffic from Windows executables that have no business making it, especially bursts of requests to several model providers within seconds of each other. Pair that with LSASS access or new persistence and you have a clean signal. Few SOCs are baselining which endpoints talk to api.deepseek.com today. They should start.</p>
 <p>Alongside the report, Talos open-sourced CAIRN, a research toolkit that hunts for AI-integrated malware by scanning file metadata for prompt templates, model API endpoints and jailbreak strings without executing anything. It's on GitHub now, and it's probably the more lasting contribution of the two.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Placeholder Domain third-party.com Is Serving ClickFix Malware</title>
-      <link>https://sabr-labs.com/article/third-party-com-placeholder-domain-clickfix-dev-docs-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/third-party-com-placeholder-domain-clickfix-dev-docs-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ClickFix</category>
-      <category>Phishing</category>
-      <category>PowerShell</category>
-      <category>Supply Chain</category>
-      <category>MCP</category>
-      <category>Developer Security</category>
-      <description>A registered domain that shows up as a stand-in URL in W3C specs, Chromium docs and more than 1,700 repositories now shows Windows visitors a fake Cloudflare check that pastes a PowerShell downloader into the Run box.</description>
-      <content:encoded><![CDATA[<p>Developers have been writing third-party.com into docs and sample code for years as shorthand for "some other site." The problem is that someone owns it, and right now that someone is running a ClickFix lure on it.</p>
-<p>Manifold Security spotted the domain while auditing public AI agent skills and MCP server documentation that referenced it, and BleepingComputer confirmed the page was live on Wednesday. Windows visitors get a fake Cloudflare "Performing security verification" screen. Clicking the checkbox silently copies a PowerShell command to the clipboard, and the page then tells you to press Win+R, paste and hit Enter. The command rebuilds a URL at elxxvvx[.]xyz, pulls down a second PowerShell script and runs it. Mac and Linux visitors just get an error saying their OS isn't supported.</p>
-<p>This isn't new. A Hybrid Analysis report shows the campaign active by early May, when it was pushing a 134 MB update2.zip containing a file named draw.io.exe. Nobody has been able to say what that final payload did, because the archive is gone. Google Safe Browsing now flags the domain.</p>
-<p>The reach is what makes this worth your time. BleepingComputer's code search found third-party.com in more than 1,500 files across over 1,700 repositories, including projects from Chromium, Sanity and Vercel, plus W3C spec text for the Geolocation and Compute Pressure APIs. Most of those references are harmless strings in prose. Some aren't, because people copy example URLs into config and tests and never take them back out.</p>
-<p>There's a newer wrinkle too. The skills and MCP docs where Manifold found it are read by coding agents, not just people. An agent that follows a link in documentation to "check" an endpoint isn't going to press Win+R, but a human reviewing what the agent found might click through to see what's there.</p>
-<p>The fix is boring and has existed since 1999. RFC 2606 reserves example.com, example.net and example.org for exactly this job, and IANA keeps them pointing at a harmless page. Grep your repos and internal docs for third-party.com (and while you're at it, any other made-up-looking domain that someone could register), swap them for the reserved names, and block the domain at the proxy.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Opus 5.5 and GPT-6 Sol Ship an Hour Apart, Both Cheaper Than Before</title>
-      <link>https://sabr-labs.com/article/claude-opus-5-5-gpt-6-sol-luna-price-cuts-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/claude-opus-5-5-gpt-6-sol-luna-price-cuts-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
-      <category>Claude Opus 5.5</category>
-      <category>GPT-6</category>
-      <category>LLM Pricing</category>
-      <category>AI Models</category>
-      <description>Anthropic cut Opus pricing to $4/$20 per million tokens with 60% cheaper cache reads, OpenAI answered with GPT-6 Sol at $2/$10 and Luna at $0.10/$0.50, and Opus 5.5 hands most cybersecurity work to an older model.</description>
-      <content:encoded><![CDATA[<p>Anthropic released Claude Opus 5.5 on Tuesday. About an hour later OpenAI released GPT-6 Sol and GPT-6 Luna. Whether or not that timing was coordinated, the headline for anyone paying the bills is the same: frontier model prices dropped again.</p>
-<p>Opus 5.5 costs $4 per million input tokens and $20 per million output, down from $5 and $25 for Opus 5. The bigger change is cache reads, now $0.20 per million, a 60% cut. That matters more than the sticker price for agent and coding workloads, where cached context can make up nine-tenths of the input. Anthropic says the model performs at roughly the level of Claude Fable 5.1 on most work at about 40% lower running cost than Opus 5.</p>
-<p>OpenAI halved its numbers. GPT-6 Sol lists at $2 and $10 against $4 and $20 for GPT-5.6 Sol. GPT-6 Luna comes in at $0.10 input and $0.50 output, which Simon Willison called one of the cheapest models OpenAI has ever put out. Both vendors advertise context windows just over a million tokens.</p>
-<p>Treat the benchmark tables with the usual care. Anthropic leads with Terminal-Bench 4.0 and FrontierCode; OpenAI leads with DeepSWE and its own Automation Bench. Each company picked tests where its model looks best, and none of them tell you how either model behaves on your codebase with your prompts. Willison also found that Opus 5.5's "max" reasoning setting blew through its 128K output-token limit on a simple drawing task, at about $2.56 per failed attempt. Cheaper per token isn't the same as cheaper per job if the model thinks for twice as long.</p>
-<p>The detail security teams should notice: Anthropic says Opus 5.5 routes most cybersecurity tasks to Opus 4.8 and plans to widen its Cyber Verification Program in the coming weeks. If you run vulnerability research or red-team tooling through the API, expect the new model to decline or downshift on some of that work unless you're enrolled.</p>
-<p>For everyone else, rerun your cost projections. Anything you ruled out as too expensive on last quarter's pricing deserves another look, and a model like Luna makes high-volume classification and triage jobs almost free by comparison.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>iOS 27.2 Beta Hides an iPhone AutoLock Built for Snatch Thefts</title>
-      <link>https://sabr-labs.com/article/ios-27-2-autolock-anti-snatching-iphone-theft-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ios-27-2-autolock-anti-snatching-iphone-theft-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>iPhone</category>
-      <category>iOS 27</category>
-      <category>Theft Protection</category>
-      <category>Mobile Security</category>
-      <description>Code in iOS 27.2 beta 2 shows Apple testing AutoLock, which would lock an iPhone after a sudden grab using motion, Apple Watch reachability and unlock-time signals, with biometrics and familiar places able to veto it.</description>
-      <content:encoded><![CDATA[<p>The worst phone theft isn't the one where your iPhone disappears from a table. It's the one where someone rips it out of your hand while it's unlocked, and every account on it is open for the taking.</p>
-<p>Apple is working on that case. Code in iOS 27.2 beta 2, first reported by 9to5Mac on Monday, describes a service Apple calls AutoLock that tries to recognize a snatch and lock the phone before the thief gets anywhere. It first surfaced in May; the new beta fills in how it's supposed to decide.</p>
-<p>Three signals can argue for a lock: a sharp spike in acceleration that looks like the phone being yanked away, a paired Apple Watch dropping out of reach for a while, and the phone staying unlocked longer than expected. The code describes a voting setup where any of those can request a lock and safeguards can veto it. The vetoes include a successful Face ID or Touch ID match, being somewhere familiar, and certain foreground app activity that might otherwise look like theft. There's also a backoff so a phone that keeps locking itself during, say, a run doesn't turn into a brick.</p>
-<p>Don't go looking for the toggle. Apple has the AutoLock service running in the background in this beta, but the part that actually locks the device is switched off. That reads like Apple collecting data on how often the detector would fire before it lets it fire.</p>
-<p>Google shipped something similar for Android two years ago with Theft Detection Lock, so Apple isn't first here. The Watch signal is a genuinely useful twist, though. A thief can run fast, but they can't take your wrist with them, and a Watch that suddenly can't see its phone is a strong hint that something's wrong.</p>
-<p>Until this ships, the best defense is the one Apple already has: turn on Stolen Device Protection, which forces biometrics and a delay before anyone can change your Apple Account password or passcode away from familiar locations.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s $1,299 VR Glasses Headline Connect, but the $349 Ones Matter More</title>
-      <link>https://sabr-labs.com/article/meta-connect-2026-vr-glasses-muse-charm-camera-free-ray-ban-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-connect-2026-vr-glasses-muse-charm-camera-free-ray-ban-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 09:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Meta</category>
-      <category>Meta Connect</category>
-      <category>Smart Glasses</category>
-      <category>VR</category>
-      <category>AI Agents</category>
-      <category>Privacy</category>
-      <description>At Connect 2026 Meta showed $1,299 VR Glasses shipping spring 2027, a 5G Muse Charm keychain for its AI agent, and camera-free Ray-Ban Meta Audio glasses at $349 that quietly concede the privacy fight.</description>
-      <content:encoded><![CDATA[<p>Mark Zuckerberg's big reveal at Connect on Wednesday was a pair of VR glasses. The more telling product was a pair of smart glasses with the camera taken out.</p>
-<p>Start with the headliner. Meta VR Glasses cost $1,299, weigh about 100 grams, and get there by cabling the frames to a compute puck you clip to a pocket or bag. Zuckerberg pitched it as Meta's first attempt at VR in something you'd call glasses rather than a headset. Meta says it's the first IMAX Enhanced-certified VR device and is lining up 3D movies and live sports for it. It doesn't ship until spring 2027, which leaves a lot of room for the spec sheet to change and the price to move.</p>
-<p>The Muse Charm is the odder bet. It's a keychain about the size of an AirPods case with a roughly 2-inch touchscreen, its own 5G connection, microphones and a fingerprint sensor, built to be a pocket shortcut to Muse, the task-running AI agent Meta launched on September 8. It ships in December. Meta won't say what it costs yet. Dedicated AI gadgets haven't had a good run so far, and a device whose job depends on retailers cooperating with an agent gets harder to sell when Amazon is already blocking that agent from its store.</p>
-<p>Then there's Ray-Ban Meta Audio: $349, 43 grams, 12 hours of battery, shipping October 13, and no camera. Meta's pitch leans on how much people use its glasses for music, calls and voice AI. The subtext is two years of complaints about people quietly filming strangers with camera glasses. Selling a version without the lens is the closest Meta has come to admitting the critics had a point.</p>
-<p>The camera isn't going away, to be clear. Ray-Ban Meta Gen 3 starts at $449 with a 12 MP camera, 3K video, a six-mic array and nine hours of battery.</p>
-<p>Zuckerberg also claimed that nobody, including Meta, can access your data on the glasses or in Muse. That's a strong statement from a company whose agent reads your email and fills in forms for you, and it'll need a technical explanation before security teams take it at face value. Anyone thinking about allowing these into an office should wait for that write-up, not the keynote line.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>F5 BIG-IP APM Zero-Day Gives Attackers Pre-Auth RCE Through OAuth</title>
-      <link>https://sabr-labs.com/article/f5-big-ip-apm-cve-2026-94127-oauth-rce-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/f5-big-ip-apm-cve-2026-94127-oauth-rce-exploited-september-2026</guid>
-      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>F5</category>
-      <category>BIG-IP</category>
-      <category>CVE-2026-94127</category>
-      <category>Zero-Day</category>
-      <category>CISA KEV</category>
-      <category>OAuth</category>
-      <description>CVE-2026-94127 is a CVSS 9.8 heap overflow in BIG-IP APM deployments acting as an OAuth authorization server, it&apos;s already being exploited, and fixes so far are engineering hotfixes rather than full releases.</description>
-      <content:encoded><![CDATA[<p>If your BIG-IP APM box doubles as an OAuth authorization server, it's on the list of things to patch before lunch. F5 disclosed CVE-2026-94127 on Monday, said it has already been exploited, and CISA added it to the Known Exploited Vulnerabilities catalog the same day with a deadline of this Friday for federal agencies.</p>
-<p>The bug is a heap-based buffer overflow reachable through OAuth traffic. It scores 9.8 under CVSS 3.1 (9.3 under 4.0) and needs no credentials. The trigger is crafted traffic sent to a virtual server that has both an APM access policy and an OAuth authorization server profile attached.</p>
-<p>That configuration detail matters, so read it carefully. If you use APM only as an OAuth client or resource server, F5 says you aren't affected. If you've set it up to issue tokens, you are.</p>
-<p>Affected versions are 17.1.0 through 17.1.3, 17.5.0 through 17.5.1, and 21.1.0. The fixes are engineering hotfixes for now: Hotfix-BIGIP-17.1.3.5.0.41.14-ENG, Hotfix-BIGIP-17.5.1.9.0.160.12-ENG and Hotfix-BIGIP-21.1.0.2.0.30.22-ENG. If you can't take a hotfix today, F5 Support has an iRule mitigation you can put on the affected virtual servers.</p>
-<p>Here's the part that should worry network teams most. Locking down the management interface, which is the standard advice after every BIG-IP scare of the last five years, does nothing here. The vulnerable code path lives on the data plane, on the same virtual servers users log in through. Shadowserver counts more than 14,000 BIG-IP APM instances reachable on the internet, though it can't say how many have OAuth server profiles configured.</p>
-<p>F5's advisory and CISA's entry are both silent on who is exploiting this and how many systems have been hit. For detection, the pattern F5 describes is a burst of failed OAuth authentications and odd commands followed shortly by a TMM SIGABRT. A TMM crash on an APM box this week deserves a look, not a restart and a shrug.</p>
-<p>Given that a nation-state crew walked off with BIG-IP source code and undisclosed vulnerability details from F5 last year, a pre-auth data-plane bug showing up already weaponized isn't a shock. Inventory your OAuth server profiles, apply the hotfix or the iRule, and check the logs back to at least early September.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
