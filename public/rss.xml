@@ -6,9 +6,111 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2026 13:15:57 GMT</lastBuildDate>
-    <pubDate>Mon, 05 Oct 2026 13:15:57 GMT</pubDate>
+    <lastBuildDate>Tue, 06 Oct 2026 13:17:32 GMT</lastBuildDate>
+    <pubDate>Tue, 06 Oct 2026 13:17:32 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Denmark&apos;s CPR Register Breached: 8.8 Million ID Numbers Exposed</title>
+      <link>https://sabr-labs.com/article/denmark-cpr-register-breach-8-8-million</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/denmark-cpr-register-breach-8-8-million</guid>
+      <pubDate>Tue, 06 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Denmark</category>
+      <category>CPR</category>
+      <category>Third-Party Risk</category>
+      <category>Identity Theft</category>
+      <category>Government</category>
+      <description>Attackers abused a private company&apos;s legitimate access to Denmark&apos;s Central Person Register for about ten days in September, pulling names, addresses and CPR numbers for roughly 8.8 million people.</description>
+      <content:encoded><![CDATA[<p>Almost every Dane who has ever been registered in the country just had their national ID number exposed. Denmark's Ministry of Research, Education and Digitalisation said on October 5 that unauthorized users pulled names, addresses and CPR numbers for about 8.8 million people out of the Central Person Register, the database behind taxes, healthcare, banking and pretty much every interaction with the Danish state.</p>
+<p>That figure covers the living, the dead and people who've moved abroad. For context, Denmark's population is about six million. Danish media are already calling it the largest breach of the register ever, and it's hard to argue.</p>
+<p>The method is the part security teams should study. Nobody broke in through a vulnerability. According to the ministry, the attackers misused a Danish private company's legitimate access to the CPR system, and the lookups apparently stayed inside the limits that access allowed. The activity ran for roughly ten days in September. CPR administrators only noticed irregular activity on the evening of Friday, October 2, confirmed the scope over the weekend and notified authorities on October 4.</p>
+<p>So the controls worked as designed, and the design let a third party walk out with most of a national identity database. Rate limits and permission scopes don't help much when the permitted volume is big enough to drain the register over a week and a half. The ministry hasn't named the company or said how its access was hijacked.</p>
+<p>One piece of good news: people registered with name and address protection weren't included. Everyone else should assume their CPR number is in criminal hands. Minister Christina Egelund called it a deeply serious incident and promised a security review. The Danish Data Protection Agency has opened an investigation, and police are involved, though no suspect has been identified.</p>
+<p>The practical risk is fraud and highly convincing phishing. A CPR number plus a home address is exactly what a scammer needs to sound like your bank, your municipality or Skat. Authorities are already warning about fraud and pointing people to sikkerdigital.dk. Danish organizations should expect a wave of CPR-referencing pretexting calls and emails, and should stop treating knowledge of a CPR number as any kind of identity proof. Honestly, they should have stopped years ago.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Atlassian CVE-2026-21589 Exposes Files on Eight Data Center Products</title>
+      <link>https://sabr-labs.com/article/atlassian-data-center-cve-2026-21589-file-access</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/atlassian-data-center-cve-2026-21589-file-access</guid>
+      <pubDate>Tue, 06 Oct 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Atlassian</category>
+      <category>CVE-2026-21589</category>
+      <category>Confluence</category>
+      <category>Jira</category>
+      <category>Bitbucket</category>
+      <category>Patch</category>
+      <description>A 9.3-rated unauthenticated file access bug hits Jira, Confluence, Bitbucket, Bamboo, Crowd, Crucible and Fisheye Data Center, and Atlassian wants on-prem customers to patch now.</description>
+      <content:encoded><![CDATA[<p>If you run Jira, Confluence or Bitbucket on your own hardware, you've got patching to do today. Atlassian published an advisory on October 5 for CVE-2026-21589, a critical arbitrary file access flaw rated 9.3 that an unauthenticated attacker can hit over the network.</p>
+<p>The list of affected products is long: Bitbucket, Confluence, Jira Software, Jira Service Management, Bamboo and Crowd Data Center, plus Crucible and Fisheye. Atlassian's own cloud versions were already patched, and the company says it found no evidence of exploitation there.</p>
+<p>The bug lets an attacker read specific files in the application's web root. There's a real limitation: they need to know the exact file name and path, and the flaw can't be used to list directories or discover files. That takes some of the sting out, but not much. Atlassian installs are extremely well documented, and anyone who has deployed Confluence knows roughly where the interesting configuration lives. "Must know the path" is a speed bump for a scanner, not a wall.</p>
+<p>Fixed versions:</p>
+<p>Bitbucket 9.4.26, 10.2.8 and 10.5.1. Confluence 9.2.26 and 10.2.19. Jira Software 9.12.40, 10.3.26 and 11.3.12 (Jira Service Management 5.12.40, 10.3.26 and 11.3.12). Bamboo 10.2.24 and 12.1.12. Crowd 6.3.7, 7.0.3, 7.1.7 and 7.2.4. Crucible and Fisheye 4.9.15.</p>
+<p>There's no confirmed in-the-wild exploitation yet. History says that window is short. On-prem Confluence in particular has been a favorite target for years, and a public advisory listing exact fixed builds gives anyone with a diffing tool a head start. Atlassian's own guidance is to upgrade immediately, and if you can't, pull the instance off the public internet until you can. Crowd deserves extra attention since it often sits in front of the rest of your Atlassian stack handling SSO.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google, JPMorgan and Two Governments All Fixed the Same MCP Server Bug</title>
+      <link>https://sabr-labs.com/article/mcp-ssrf-google-jpmorgan-governments-same-flaw</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/mcp-ssrf-google-jpmorgan-governments-same-flaw</guid>
+      <pubDate>Tue, 06 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>MCP</category>
+      <category>SSRF</category>
+      <category>AI Agents</category>
+      <category>Google</category>
+      <category>JPMorgan</category>
+      <category>CVE-2026-14540</category>
+      <description>Researcher Syed Anas Mohiuddin found the same server-side request forgery flaw in MCP servers built by Google, JPMorgan Chase, Weaviate, France&apos;s DINUM and an Indonesian city, and five US federal servers are still unfixed.</description>
+      <content:encoded><![CDATA[<p>A hyperscaler, a megabank, a vector database company, a national government and a city government walk into a bar. They all shipped the same bug.</p>
+<p>That's the finding in independent researcher Syed Anas Mohiuddin's follow-up to his May research on what he calls protocol pivoting. Back then he predicted that server-side request forgery in Model Context Protocol servers wasn't a one-off mistake but a structural one, and that it would keep showing up in code written by teams sharing nothing in common. Four months later he has the receipts.</p>
+<p>The pattern is simple. An MCP server accepts a URL, path or endpoint from an agent, builds an outbound request from it and never checks where that address actually resolves. Whoever can steer the agent (through prompt injection in a document, a web page, a ticket) gets to decide what the server talks to, including internal services the agent was never supposed to reach.</p>
+<p>Google's case got a CVE. CVE-2026-14540, rated 8.0, affected MCP Toolbox for Databases versions 0.3.0 through 1.4.0: its HTTP client followed redirects freely and didn't validate target IPs, so a crafted path parameter could aim requests anywhere. The fix adds DNS rebinding protection and allow and block lists for IP ranges. JPMorgan Chase fixed a documentation-search MCP server where one tool checked a domain allowlist and its sibling tool checked nothing. Weaviate locked its Google module to verified Google API hosts. France's DINUM hardened an open-data MCP server that fetched unvalidated URLs, and the city of Tangerang in Indonesia patched a Wazuh MCP server that blocked literal IP addresses but never resolved hostnames.</p>
+<p>Not everyone has moved. Mohiuddin says five federal MCP servers under the GSA's Technology Transformation Services remain unfixed, including one tied to Veterans Affairs claims processing that touches names, Social Security numbers and dates of birth.</p>
+<p>The lesson isn't that these teams were careless. It's that MCP makes "fetch whatever the model asks for" the default shape of a tool, and SSRF is what you get when the caller is untrusted and nobody remembers that. We learned this with web apps fifteen years ago. If you run MCP servers, resolve every hostname, block private and metadata ranges after resolution, and refuse redirects you didn't expect. Mohiuddin's open-source mcp-safeguard tool and his IETF draft on MCP security considerations are reasonable places to start.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Google Freezes Its Open-Source Bug Bounty Over a Flood of AI Junk</title>
+      <link>https://sabr-labs.com/article/google-pauses-oss-vrp-ai-generated-reports</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-pauses-oss-vrp-ai-generated-reports</guid>
+      <pubDate>Tue, 06 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Google</category>
+      <category>Bug Bounty</category>
+      <category>Open Source</category>
+      <category>AI Slop</category>
+      <category>Vulnerability Disclosure</category>
+      <description>Google stopped accepting new product vulnerability reports to its Open Source Software VRP on October 1, citing a surge of mostly invalid automated submissions, and won&apos;t say more until Q1 2027.</description>
+      <content:encoded><![CDATA[<p>Google's open-source bug bounty just became the biggest casualty yet of AI-generated vulnerability reports. The company stopped taking new product vulnerability submissions to its Open Source Software Vulnerability Reward Program as of October 1, and disclosed the pause publicly on October 5.</p>
+<p>Its explanation was blunt: the pause is "due to a significant rise in automated submissions, the vast majority of which are not valid." Google described reports with wrong triggering conditions and hallucinated exploitation paths. They look technical. They read convincingly. They fall apart the moment an engineer tries to reproduce them.</p>
+<p>It isn't a full shutdown. Supply chain reports for Google's open-source projects are still in scope, reports filed before October 1 will still be handled, and the Patch Rewards Program and Cloud VRP keep running. Google says it'll give an update in the first quarter of 2027, which is a long time to leave one of the more generous open-source bounties dark.</p>
+<p>The OSS VRP launched in 2022 covering projects like Bazel, Angular, Go, Protocol Buffers and Fuchsia, with payouts topping out at $31,337. That money is exactly why the slop showed up. When generating a plausible report costs a few cents of inference and the payout is four or five figures, someone will run the numbers and spray.</p>
+<p>Google isn't first. curl ended its bounty in January after a similar flood, and Intel pulled financial rewards from its program in September. What's different here is scale. If a company with Google's triage budget can't keep up, smaller projects with one or two volunteer maintainers have no chance.</p>
+<p>There's an uncomfortable irony too. The same AI tools generating garbage are also finding real bugs; we've covered model-discovered CVEs that turned into active exploitation. The bounty model was built for a world where filing a report took effort, and that filter is gone. Expect more programs to require reproducible proof-of-concept code, reputation gates or a deposit before anyone looks at a submission. That'll cut the noise, and it'll also make life harder for new researchers trying to break in.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ChatGPT Will Start Showing Picture Ads While Your Images Generate</title>
+      <link>https://sabr-labs.com/article/openai-chatgpt-visual-ads-image-generation</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-chatgpt-visual-ads-image-generation</guid>
+      <pubDate>Tue, 06 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>OpenAI</category>
+      <category>ChatGPT</category>
+      <category>Advertising</category>
+      <category>Image Generation</category>
+      <description>OpenAI will test labeled visual ads inside ChatGPT&apos;s image generator for free US users later this month, as ChatGPT ads pass a reported $1 billion annual run rate.</description>
+      <content:encoded><![CDATA[<p>That few seconds you spend watching ChatGPT draw your image is about to become ad inventory. OpenAI said on October 5 that it'll start testing a visual ad format inside ChatGPT's image generation flow later this month, with a first group of US advertisers.</p>
+<p>The unit is a product image with a headline and a "Learn more" button. OpenAI says the ads will be clearly labeled and kept separate from the image being created, and pitches them as a way to show product inspiration or how something gets used. According to Engadget, they'll show up for free-tier users in the US; Plus, Pro and Enterprise customers won't see them.</p>
+<p>This is a logical next step and nobody should be surprised. OpenAI started testing text ads under chatbot answers at the start of the year, and the business is already real: ChatGPT ads hit a reported $1 billion annualized run rate by the end of August, and the company had more than 600 advertisers as of March. With 1.2 billion weekly users, the free tier is a media property, and image generation is the most visual, most commercially loaded thing people do in it. Ask for a living room mockup and a furniture ad practically writes itself.</p>
+<p>OpenAI also widened its measurement roster to 18 attribution and verification vendors and added a "Negative Phrases" control so advertisers can keep their brands away from topics they don't want to sit next to. That's the plumbing of a real ad network, not an experiment.</p>
+<p>The company keeps repeating that ads don't influence ChatGPT's answers. Fine. But image generation is where that line gets blurry fast. When you prompt for "a cozy reading nook" and a sponsored armchair appears beside the result, the ad and the output are answering the same request. The more relevant the targeting gets, the harder it'll be for a casual user to tell inspiration from placement.</p>
+<p>If you're on the free tier and don't want this, the answer is the same one every ad-supported product eventually gives you: pay.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Third NetScaler Zero-Day in a Week: CVE-2026-88779 Hits SAML Setups</title>
       <link>https://sabr-labs.com/article/netscaler-saml-zero-day-cve-2026-88779-exploited</link>
@@ -933,112 +1035,6 @@
 <p>There's a real limiting factor here. virtuser_query is an optional plugin used to map virtual users through a database lookup, so only installs that enable it are exposed. That's probably why the count of flagged hosts looks small compared with the more than 500,000 Roundcube servers Shadowserver sees on the internet. Small isn't the same as safe, though. Hosting providers and ISPs are the ones most likely to run virtual-user setups, and a single one of those can front thousands of mailboxes.</p>
 <p>Roundcube also has a track record that should push this up your list. Attackers, state-backed groups among them, have gone after Roundcube servers repeatedly over the past few years (CVE-2024-37383 and CVE-2025-49113 were both exploited in the wild), because webmail at government agencies and universities is a direct line into sensitive correspondence.</p>
 <p>What to do: check your version, and check whether virtuser_query is listed in your enabled plugins. If you're below 1.6.16 or 1.7.1, upgrade. If you can't upgrade today and you do use the plugin, disabling it closes this specific hole.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>A 5,700-Account Password Spray Only Landed on Forgotten Service Accounts</title>
-      <link>https://sabr-labs.com/article/teamfiltration-condorfiltration-m365-service-accounts</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/teamfiltration-condorfiltration-m365-service-accounts</guid>
-      <pubDate>Fri, 25 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft 365</category>
-      <category>Password Spraying</category>
-      <category>TeamFiltration</category>
-      <category>Proofpoint</category>
-      <category>Identity Security</category>
-      <category>Entra ID</category>
-      <description>Proofpoint says a TeamFiltration campaign against Chilean retail and finance tenants compromised seven Microsoft 365 accounts, and every one was a service account with a default password and no MFA.</description>
-      <content:encoded><![CDATA[<p>Seven for 5,714. That's the scorecard Proofpoint published this week for a password-spraying campaign it calls UNK_CondorFiltration, and the seven are more interesting than the thousands.</p>
-<p>Between July 21 and August 16, the operators ran three waves against 28 Microsoft 365 tenants, mostly Chilean banks and one large retailer that absorbed the majority of the traffic. Proofpoint logged nearly 33,000 authentication attempts from 1,487 AWS EC2 addresses. The tool gave itself away: TeamFiltration, the open-source red-team framework, sends a hardcoded user agent for a 2020 Microsoft Teams desktop client, and that string lit up across every wave.</p>
-<p>None of the regular employee accounts fell. All seven compromises were functional or service accounts with no normal login history, default passwords that had never been rotated, and no MFA enforced. They're the mailboxes and utility identities someone set up for a scanner, a shared inbox or an integration years ago, then stopped thinking about.</p>
-<p>What happened next shows why that matters. In one case Proofpoint walked through, the attacker signed in from a German VPN node, tried the corporate VPN, opened the Azure Portal and triggered Microsoft Graph token requests, all within about 90 seconds of getting in. A forgotten service account isn't a dead end. It's a tenant identity with whatever access it was granted back when someone needed it to work.</p>
-<p>TeamFiltration showing up in real intrusions isn't new; Proofpoint flagged a much larger campaign using it last year. The lesson this time is narrower and more useful. Your MFA rollout probably covered people. It may not have covered the accounts nobody logs into.</p>
-<p>Worth doing this week: pull a list of every enabled account in Entra ID with no interactive sign-ins in the last 90 days, check which ones are excluded from Conditional Access, and either kill them, move them to managed identities, or put them behind policies that block legacy and interactive sign-in from outside expected locations. And alert on that Teams 1.3.00.30866 user agent. Legitimate clients stopped sending it years ago.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Oracle Sends a Force Majeure Notice on Its New Mexico Stargate Campus</title>
-      <link>https://sabr-labs.com/article/oracle-force-majeure-project-jupiter-stargate</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/oracle-force-majeure-project-jupiter-stargate</guid>
-      <pubDate>Fri, 25 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Oracle</category>
-      <category>Stargate</category>
-      <category>Data Centers</category>
-      <category>Project Jupiter</category>
-      <category>Energy</category>
-      <category>AI Infrastructure</category>
-      <description>Oracle has given Project Jupiter&apos;s Blue Owl-backed developer a force majeure notice that would let it delay payments if the 2.45-gigawatt campus misses its 2028 date, while insisting the build is on schedule.</description>
-      <content:encoded><![CDATA[<p>Oracle says Project Jupiter is on schedule. It also just sent the paperwork you send when you think it might not be.</p>
-<p>Bloomberg reported Thursday that Oracle issued a force majeure notice to the developer of the New Mexico data center campus, a Stack Infrastructure unit owned by Blue Owl Capital. The clause would let Oracle delay lease payments if the facility misses its 2028 target to come online. Oracle isn't trying to walk away as anchor tenant, and a spokesperson called these notices "commonplace," adding that the project "remains on our planned schedule." The developer's side said the notice doesn't change the financial commitments.</p>
-<p>Investors weren't soothed. Oracle shares fell more than 3% on Thursday.</p>
-<p>The reason for the caution is power. Jupiter is designed for 2.45 gigawatts and is meant to run on gas-fired fuel cells from Bloom Energy rather than the grid. The Energy Transfer pipeline that's supposed to deliver that gas has slipped almost six months, to February 1, 2027, after regulators repeatedly denied permits. A separate state air-quality permit for the fuel cells is still pending, with a decision due by November 23. Either one going sideways would push the whole timeline.</p>
-<p>There's a political layer too. Jupiter is one of the flagship sites for Stargate, the OpenAI, Oracle and SoftBank buildout announced at the White House early in Trump's second term, and it's drawn steady opposition from residents and environmental groups over water and energy. New Mexico Rep. Teresa Leger Fernández has called for a pause on data center development. Construction hasn't stopped, though; Oracle says more than 3,600 workers are on site.</p>
-<p>Read the notice for what it is: a hedge, not a retreat. But it's a useful signal about where AI capacity actually gets bottlenecked. The chips are the easy part to buy. The gas lines, permits and local consent are where these projects now slip, and even the biggest tenants are writing that risk into their contracts.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft&apos;s Cheapest Surfaces Get Snapdragon X2 Plus, 5G, and Higher Prices</title>
-      <link>https://sabr-labs.com/article/surface-pro-12-laptop-13-snapdragon-x2-plus</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/surface-pro-12-laptop-13-snapdragon-x2-plus</guid>
-      <pubDate>Fri, 25 Sep 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Microsoft</category>
-      <category>Surface</category>
-      <category>Qualcomm</category>
-      <category>Snapdragon X2</category>
-      <category>Windows on Arm</category>
-      <category>Laptops</category>
-      <description>The 12-inch Surface Pro and 13-inch Surface Laptop move to Snapdragon X2 Plus with 16GB minimum and an optional 5G Pro, starting at $1,149.99 and $1,199.99 when they ship October 13.</description>
-      <content:encoded><![CDATA[<p>Microsoft's small Surfaces used to be the ones you bought to save money. After this refresh, that pitch is harder to make.</p>
-<p>The 12-inch Surface Pro and 13-inch Surface Laptop both move to Qualcomm's Snapdragon X2 Plus. The Pro now starts at $1,149.99 and the Laptop at $1,199.99, up from the $1,049.99 and $1,149 that the current 16GB configurations sell for, according to Thurrott's comparison. Preorders are open and both ship October 13 in select markets.</p>
-<p>Some of the price increase buys real things. The 8GB tier is gone, so 16GB is the floor with 24GB as an option. Microsoft says the displays are 25% brighter, and the Pro's screen hits 500 nits. And the Pro can now be ordered with 5G, which Microsoft calls one of its most requested additions. For people who actually use a Pro as a travel tablet, that's the headline feature.</p>
-<p>Then there's the chip. The entry configurations use a six-core X2 Plus, two cores fewer than the eight-core Snapdragon X Plus they replace. Microsoft's own claims are up to 17% faster in Office workloads, 60% faster graphics, and 95% faster local AI inference on the NPU. Those are plausible given the newer architecture, but they're vendor numbers on vendor-chosen tests, and anyone who leans on multi-threaded work should wait for independent benchmarks before assuming this is a straight upgrade.</p>
-<p>Microsoft also bundled in its Ink Canvas pen app and announced a $79.99 Surface Mouse with haptics and a Copilot button, which tells you where it thinks the differentiation lives.</p>
-<p>Microsoft deserves some credit for making 16GB the floor instead of keeping an 8GB model around to hit a price. But a $1,150 "small" Surface Pro, before you buy the keyboard, is no longer the budget option. It's just the smaller one.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>WordPress Core Flaw CVE-2026-87902 Under Attack Hours After Patch</title>
-      <link>https://sabr-labs.com/article/wordpress-cve-2026-87902-page-template-rce-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-cve-2026-87902-page-template-rce-exploited-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>WordPress</category>
-      <category>CVE-2026-87902</category>
-      <category>RCE</category>
-      <category>Path Traversal</category>
-      <category>PHP</category>
-      <category>Patch Now</category>
-      <description>A path traversal bug in WordPress&apos;s get_page_template() affects every release from 4.7.0 through 7.1.1, can reach unauthenticated code execution on some setups, and attackers started probing for it the same morning 7.1.2 shipped.</description>
-      <content:encoded><![CDATA[<p>It took attackers less than a day. WordPress pushed 7.1.2 on Tuesday to fix CVE-2026-87902, and by 11:49 UTC the same day Previdian's sensors had logged the first exploitation attempt against it.</p>
-<p>The bug lives in get_page_template(), the core function that decides which theme file renders a page. An unauthenticated request can steer that lookup out of the theme folders and into any readable PHP file on the server. It's scored 9.2 under CVSS 4.0, and the project lists every release from 4.7.0 through 7.1.1 as affected. Fixed builds are 7.1.2, 7.0.6, 6.9.9 and 6.8.10.</p>
-<p>Now the caveat, because it's a real one. Turning this into code execution isn't automatic. The WordPress advisory says RCE depends on preconditions in both the server environment and the active theme: the parent or child theme needs a top-level directory whose name starts with "page-", and there has to be a useful PHP file sitting somewhere the web server can read.</p>
-<p>Attackers already know which file they want. The traffic Patchstack and Previdian are seeing goes straight for pearcmd.php, the PEAR command-line script that ships with a lot of PHP installs (often at /usr/local/lib/php/pearcmd.php). Including it lets an attacker write a new PHP file to /tmp or /var/tmp and then load that. Dropped filenames seen so far include wp-pear-rce-flag.php, poc87902.php and randomized luci_ and zeta_ prefixes. Public scanning tooling is already circulating.</p>
-<p>The volume is still small, a few dozen attempts by Wednesday. That won't last. It's the pattern with every WordPress core bug that has a working chain: the first day is researchers and hobbyists, the second week is botnets.</p>
-<p>Most sites will be fine because core auto-updates for security releases are on by default. The ones that won't be are the sites where someone turned that off years ago, or pinned an old branch for a plugin that never got fixed. Check the version on every install you're responsible for, look for unexpected .php files in /tmp and /var/tmp, and if your PHP image doesn't need PEAR, remove pearcmd.php. That one file is doing a lot of the work in these attacks.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Talos Finds Malware That Lets Four AI Models Vote on Its Next Move</title>
-      <link>https://sabr-labs.com/article/talos-closedquorum-llm-voting-malware-cairn-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/talos-closedquorum-llm-voting-malware-cairn-september-2026</guid>
-      <pubDate>Thu, 24 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco Talos</category>
-      <category>Malware</category>
-      <category>AI Security</category>
-      <category>LLM</category>
-      <category>Threat Hunting</category>
-      <category>CAIRN</category>
-      <description>Cisco Talos documented CLOSEDQUORUM, a Go-based Windows implant that asks DeepSeek, Qwen, Mistral and Gemini to vote on each post-compromise action, and open-sourced CAIRN, a toolkit for hunting AI-integrated malware.</description>
-      <content:encoded><![CDATA[<p>Most malware waits for an operator to tell it what to do. CLOSEDQUORUM asks a committee.</p>
-<p>Cisco Talos published its analysis of the Windows implant on Wednesday, calling it the first publicly documented sample that hands tactical command-and-control decisions to a panel of commercial large language models. It's written in Go, weighs in around 16 MB, and polls up to four providers (DeepSeek, Qwen, Mistral and Google Gemini) about what to do next. The plurality answer wins. On a tie, DeepSeek's vote breaks it, then Qwen, Mistral and Gemini in that order.</p>
-<p>The menu the models choose from is short. "Steal" dumps LSASS credentials, browser passwords and crypto wallets. "Inject" does process hollowing or APC injection depending on what the panel says. "Persist" sets up persistence. There's also a "move" option for lateral movement, but the build Talos examined has no handler for it, so the models can vote for it and nothing happens. Loot goes out through a Discord webhook, and the implant runs on randomized 5 to 15 minute intervals.</p>
-<p>Here's the necessary cold water. Talos says it has no confirmation this has been deployed in the wild, and the binary it analyzed shipped with placeholder API keys and dummy webhooks. As found, it doesn't work. Talos did tie artifacts in the build to a developer posting on carding forums since 2025, so this is someone's real project, but it's a prototype.</p>
-<p>It's also a fragile one. Commercial APIs rate-limit, time out and refuse. A guardrail tripping on one provider shifts the vote, and when every provider fails the implant just retries. Talos lists malformed model output and the predictable tie-break order as weaknesses too. Handing your decision loop to four vendors who all log API traffic and can revoke keys is not a great operational security plan.</p>
-<p>Where this does get useful is detection. Talos suggests alerting on AI-provider API traffic from Windows executables that have no business making it, especially bursts of requests to several model providers within seconds of each other. Pair that with LSASS access or new persistence and you have a clean signal. Few SOCs are baselining which endpoints talk to api.deepseek.com today. They should start.</p>
-<p>Alongside the report, Talos open-sourced CAIRN, a research toolkit that hunts for AI-integrated malware by scanning file metadata for prompt templates, model API endpoints and jailbreak strings without executing anything. It's on GitHub now, and it's probably the more lasting contribution of the two.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
