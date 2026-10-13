@@ -25,6 +25,287 @@
 
 export const articles = [
   {
+    id: 610,
+    slug: "french-supermarket-fridges-hacked-danfoss",
+    title: "Hackers Turned Hundreds of French Supermarket Freezers Into Ovens",
+    summary: "Attackers remotely changed Danfoss-managed refrigeration settings at Intermarché, Système U, Leclerc and other French stores overnight on October 11-12, pushing some cabinets toward 50°C and forcing stores to dump stock.",
+    body: [
+      "Sometime overnight between October 11 and 12, someone logged into the refrigeration controllers at a few hundred French supermarkets and told the cold cases to get hot.",
+      "By Monday afternoon the scale was clear enough. Intermarché's parent, Les Mousquetaires, put its own count at roughly 150 affected stores, while France Inter reported 200 to 300. Coopérative U's CEO Dominique Schelcher confirmed the attack on X and called it extremely serious and unprecedented; fewer than 100 of the group's Système U stores were hit. Leclerc, Carrefour Market and Monoprix locations were also reported affected. Stores threw out meat, frozen goods and produce, and Mousquetaires has warned the bill could run to several million euros.",
+      "The mechanics, as reported by French outlets including BFMTV and IT-Connect, were crude and effective. The attackers reportedly triggered defrost cycles continuously with a setpoint around 50°C, which is how a freezer ends up warmer than a summer afternoon. Some sites reported fires. Mousquetaires said the systems were under Danfoss's management, and early reporting says older Danfoss control software, versions before 4.x, was the target. Danfoss has confirmed incidents in France affecting a limited number of refrigeration management systems. It told franceinfo that most of the affected units are end-of-life AK-SM800 and AK-SC355 controllers that no longer get security updates, and that it has been telling customers to upgrade for years. That's true, and it's also a convenient place to stand when your product is the one that got popped.",
+      "None of this should surprise anyone who was paying attention in August. Claroty's Team82 presented research on the Danfoss AK-SM 800A system manager at DEF CON, including CVE-2025-41450, a hidden code-of-the-day authentication mechanism that can be abused to bypass login and reach remote code execution. The fix is firmware R4.3.1 or later. The researchers also flagged thousands of these management interfaces sitting on the public internet. Nobody has publicly tied this weekend's attack to that specific bug, and it could just as easily be default or reused credentials. But the profile matches: old firmware, web-facing, managed by a third party.",
+      "There's no attribution yet. Prime Minister Sébastien Lecornu handed the case to ANSSI, France's national cybersecurity agency, which says it has already identified a vulnerability in the Danish vendor's software, contacted the publisher, and is hunting for other exposed French companies. It's also unclear whether a separate disruption at Ahold Delhaize's Dutch and Belgian chains the same night has anything to do with it.",
+      "Retail OT has always been treated as facilities plumbing rather than IT, which is exactly why it's a soft target. If you run stores, warehouses or cold-chain logistics, find out today who manages your refrigeration controllers, what firmware they run, and whether their web interfaces answer from the internet. If the answer to the last question is yes, pull them behind a VPN before you do anything else.",
+    ],
+    category: "cyber",
+    tags: [
+      "OT Security",
+      "ICS",
+      "Danfoss",
+      "Retail",
+      "France",
+      "Critical Infrastructure",
+    ],
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T13:00:00Z",
+    readingTime: 3,
+    featured: true,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "franceinfo",
+        desc: "French public broadcaster's report naming Système U, Intermarché, Leclerc and Monoprix stores hit",
+        url: "https://franceinfo.fr/internet/securite-sur-internet/cyberattaques/des-magasins-systeme-u-et-intermarche-touches-par-une-cyberattaque-contre-leurs-installations-frigorifiques_8233720.html",
+      },
+      {
+        name: "IT-Connect",
+        desc: "Technical breakdown of the defrost-cycle manipulation and Danfoss controller exposure",
+        url: "https://www.it-connect.tech/super-u-and-intermarche-hit-by-cyberattack-that-turned-freezers-into-ovens/",
+      },
+      {
+        name: "Yahoo News / AFP",
+        desc: "Store counts from Les Mousquetaires and Coopérative U, early loss estimates",
+        url: "https://www.yahoo.com/news/world/articles/cyberattack-disables-refrigeration-french-supermarkets-135722860.html",
+      },
+      {
+        name: "iTWire / Claroty Team82",
+        desc: "August 2026 research on Danfoss AK-SM 800A flaws including CVE-2025-41450",
+        url: "https://itwire.com/guest-articles/guest-research/chilling-discoveries-claroty-finds-multiple-security-vulnerabilities-in-danfoss-and-copeland-refrigeration-controllers",
+      },
+      {
+        name: "CNBC",
+        desc: "Coverage of the temperature spikes and fires at affected stores",
+        url: "https://cnbc.com/2026/10/13/france-supermarket-hack-cyberattack-fridges-fires.html",
+      },
+    ],
+  },
+  {
+    id: 611,
+    slug: "ahold-delhaize-takes-systems-offline-cyber-incident",
+    title: "Ahold Delhaize Pulls Systems Offline; Albert Heijn Cancels Online Orders",
+    summary: "The grocery group behind Albert Heijn, Food Lion and Stop & Shop disclosed a network security issue on October 12 and says it has no evidence yet that customer or employee data was taken.",
+    body: [
+      "Albert Heijn customers in the Netherlands woke up Monday to cancelled grocery deliveries. By that afternoon, parent company Ahold Delhaize confirmed it was dealing with a \"security issue within its network\" and had taken some systems offline to protect them.",
+      "The disruption reportedly started on the evening of Sunday, October 11. In Europe, Albert Heijn and Delhaize saw online ordering and deliveries knocked out, with Albert Heijn cancelling all placed online orders until further notice. In the US, outlets reported websites for Food Lion, Giant Food, The Giant Company, Hannaford and Stop & Shop going down, though the company itself only says the impact varies by brand. Physical stores on both sides of the Atlantic stayed open.",
+      "Tuesday's update was short. Ahold Delhaize said it has started a controlled relaunch of some systems, is working with outside incident responders and relevant authorities, and has \"no evidence at this moment\" that customer or associate data was taken. It isn't naming an attacker, isn't saying whether this is ransomware, and isn't giving a timeline. Read that last part carefully. \"Taking systems offline as a precaution\" plus \"no evidence of data theft at this moment\" is the standard opening language for an incident that's still being scoped. It isn't a conclusion.",
+      "The company has been here before. In November 2024, an attack on its US operations disrupted pharmacy and e-commerce at the same five brands. INC Ransom claimed that one in April 2025, Ahold Delhaize later confirmed data had been stolen, and its filing with US regulators put the number of affected people at more than 2.2 million. That's useful context for how much weight to put on early reassurances.",
+      "The timing is awkward too. The same night, attackers tampered with refrigeration controllers at hundreds of French supermarkets. Nobody has linked the two incidents, and the symptoms look different: one hit store equipment, the other hit corporate and e-commerce systems. Grocery is having a bad week either way.",
+    ],
+    category: "cyber",
+    tags: [
+      "Ahold Delhaize",
+      "Retail",
+      "Incident Response",
+      "Albert Heijn",
+      "Data Breach",
+    ],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T12:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Ahold Delhaize",
+        desc: "Company's October 12 disclosure of the security issue",
+        url: "https://newsroom.aholddelhaize.com/ahold-delhaize-takes-precautionary-measures-following-cybersecurity-incident/",
+      },
+      {
+        name: "Ahold Delhaize",
+        desc: "October 13 update on system relaunch and data-theft status",
+        url: "https://newsroom.aholddelhaize.com/update-on-ahold-delhaizes-cybersecurity-incident/",
+      },
+      {
+        name: "SecurityWeek",
+        desc: "Coverage of affected brands and the company's 2024 incident history",
+        url: "https://www.securityweek.com/cyberattack-prompts-ahold-delhaize-to-disconnect-systems/",
+      },
+      {
+        name: "Cybersecurity Dive",
+        desc: "Reporting on the disruption to US brand websites",
+        url: "https://www.cybersecuritydive.com/news/ahold-delhaize-adusa-cybersecurity/832750/",
+      },
+    ],
+  },
+  {
+    id: 612,
+    slug: "fbi-seizes-flax-typhoon-microscan-fishhub-domains",
+    title: "FBI Seizes Flax Typhoon's Scanner and Phishing Kit, and Old CVEs Hit KEV",
+    summary: "The Justice Department took down seven domains behind Integrity Technology Group's MicroScan and FishHub tools, and the joint advisory that followed sent decade-old ProFTPD, BIND and Struts bugs into CISA's exploited catalog.",
+    body: [
+      "The FBI now controls seven domains that a Chinese government contractor used to scan the internet for vulnerable systems and phish its way into the ones it liked.",
+      "The Justice Department announced the seizures on October 8 after court documents were unsealed in the Western District of Pennsylvania. The targets were two tools run by Integrity Technology Group, the Beijing company already tied to the Flax Typhoon activity behind the Raptor Train botnet that the FBI dismantled in September 2024. MicroScan is a Python-based scanner packing more than 1,300 penetration-testing scripts, reached through c0cc[.]cc. FishHub handled spear-phishing and data theft. Five of the seized domains delivered malware, and a seventh supported SoftEther VPN connections back into compromised networks.",
+      "The scan targets named in the filings include a South Carolina power company, airports in Japan and Poland, and Taiwanese gas and electricity providers. The FBI hasn't said whether any of those were actually breached. What it has confirmed is FishHub data from more than 20 organizations, including six Taiwanese universities.",
+      "The part defenders should care about is the joint advisory from the FBI, CISA, NSA and international partners that landed alongside the seizure. It lists eight CVEs the tooling went after, and most of them are old enough to drive: CVE-2015-3306 in ProFTPD, CVE-2015-5477 in ISC BIND, CVE-2016-3081 in Apache Struts, CVE-2014-6278 (one of the Shellshock follow-ons), CVE-2019-11510 in Pulse Connect Secure, CVE-2021-22205 in GitLab, CVE-2021-3199 in ONLYOFFICE Docs and CVE-2023-22894 in Strapi. CISA added five of them to its Known Exploited Vulnerabilities catalog the same day.",
+      "That's the uncomfortable lesson. A state-backed contractor with a government client list didn't need zero-days. It needed a big list of old bugs and an internet full of boxes nobody patched.",
+      "Seizing domains interrupts the operation. It doesn't clean anything up. If you have ProFTPD, an old BIND, Struts 2 or an on-prem GitLab anywhere in your estate, check the advisory's indicators against your logs, and check whether you're still running versions from the Obama administration.",
+    ],
+    category: "cyber",
+    tags: ["Flax Typhoon", "China", "FBI", "CISA KEV", "Threat Intelligence", "Takedown"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T12:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "U.S. Department of Justice",
+        desc: "Press release on the MicroScan and FishHub seizures",
+        url: "https://www.justice.gov/opa/pr/justice-department-and-fbi-seize-vulnerability-scanning-and-spear-phishing-tools-operated",
+      },
+      {
+        name: "FBI seizure affidavit (W.D. Pa.)",
+        desc: "Unsealed affidavit describing the domains and targets",
+        url: "https://www.justice.gov/usao-wdpa/media/1464921/dl?inline=",
+      },
+      {
+        name: "CISA KEV Catalog",
+        desc: "Known Exploited Vulnerabilities catalog with the October 8 additions",
+        url: "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Breakdown of seized domains, tooling and the eight CVEs in the joint advisory",
+        url: "https://www.bleepingcomputer.com/news/security/fbi-disrupts-chinese-hacking-tools-used-to-breach-critical-infrastructure/",
+      },
+    ],
+  },
+  {
+    id: 613,
+    slug: "fbi-arrests-ransomware-negotiator-dubrovsky-shinyhunters",
+    title: "FBI Arrests a Canadian Ransomware Negotiator in the ShinyHunters Probe",
+    summary: "Edward Dubrovsky, a 54-year-old incident-response executive, was arrested in Pennsylvania on October 8 on extortion conspiracy charges, and his case has been moved to the Texas district running the ShinyHunters investigation.",
+    body: [
+      "The FBI's ShinyHunters investigation has picked up a defendant nobody expected: a man whose job was negotiating with extortion crews on behalf of their victims.",
+      "Edward Dubrovsky, 54, a Canadian cybersecurity executive, was arrested in Pennsylvania on October 8. Sources told KrebsOnSecurity he was in the state for a cyber insurance conference; the Cyber Risk Summit ran in Philadelphia October 5 through 7. Court records from the Eastern District of Pennsylvania list two counts: conspiracy to threaten to impair the confidentiality of information with intent to extort money, and interference with commerce by threats. An order filed October 9 sent the case to the Eastern District of Texas, which is where the broader ShinyHunters investigation is being run. Much of the file is sealed.",
+      "The docket spells his name Dobrovsky. His LinkedIn lists ties to Canadian firm CyberSteward and describes him as a Cypfer co-founder, which Cypfer disputes. A Cypfer spokesperson said he was a managing director, not a founder, and that he resigned in November 2025. CyberSteward hadn't commented at the time of Krebs' report.",
+      "FBI Director Kash Patel publicly called the arrest part of the response to ShinyHunters' breach of an FBI recruitment portal, describing Dubrovsky as a suspected co-conspirator. The Bureau itself declined to comment to reporters, and the public charging documents don't spell out what he allegedly did. Those are two different levels of confidence, and right now only the first one is on the record.",
+      "Still, the allegation lands hard in the incident-response business. Negotiators sit in the middle of the most sensitive conversations a breached company ever has. They know what was stolen, what the insurer will pay, and how desperate the client is. A negotiator working both sides used to be something the industry only whispered about. Then federal prosecutors charged DigitalMint negotiators Kevin Tyler Martin and Angelo Martino, plus former Sygnia IR manager Ryan Goldberg, over BlackCat ransomware attacks on US companies. Martin and Goldberg pleaded guilty, and prosecutors said Martino passed his own clients' insurance limits and negotiating positions to the attackers.",
+      "Nothing here is proven. But if you're a CISO with an IR retainer, this is a reasonable week to ask your provider how negotiator access is logged, who on their side can see your ransom figures, and whether your insurer gets a say in who they assign.",
+    ],
+    category: "cyber",
+    tags: ["ShinyHunters", "FBI", "Ransomware", "Extortion", "Incident Response"],
+    image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T11:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "KrebsOnSecurity",
+        desc: "First detailed report on the arrest, charges and company affiliations",
+        url: "https://krebsonsecurity.com/2026/10/fbi-arrests-founder-of-ransomware-negotiation-firm/",
+      },
+      {
+        name: "CBC News",
+        desc: "Canadian coverage of the arrest and industry reaction",
+        url: "https://www.cbc.ca/news/canada/canadian-cybersecurity-expert-arrested-fbi-shinyhunters-9.7378256",
+      },
+      {
+        name: "Cybersecurity News",
+        desc: "Reporting on Director Patel's public comments linking the arrest to ShinyHunters",
+        url: "https://cybersecuritynews.com/fbi-arrests-cybersecurity-executive-in-shinyhunters/",
+      },
+      {
+        name: "BleepingComputer",
+        desc: "Background on the DigitalMint and Sygnia negotiators charged over BlackCat attacks",
+        url: "https://bleepingcomputer.com/news/security/us-charges-another-ransomware-negotiator-linked-to-blackcat-attacks/",
+      },
+    ],
+  },
+  {
+    id: 614,
+    slug: "meta-muse-wonder-frontier-model-closed-weights",
+    title: "Meta's Muse Wonder Is Frontier-Class, Closed, and Priced Like Claude",
+    summary: "Meta Superintelligence Labs released Muse Wonder at $4/$20 per million tokens with no open weights, while the stronger Wonder Full is locked inside $50 and $200 Muse Code subscriptions.",
+    body: [
+      "The company that spent three years telling everyone open weights were the future just shipped its best model with the weights locked up.",
+      "Meta Superintelligence Labs released Muse Wonder and Muse Wonder Full on October 12. Both take text, images, audio and video, and Meta says they support a context window of roughly a million tokens. Mark Zuckerberg pitched them as a much larger class of model than the Muse Spark family. Neither version has downloadable weights. The only Apache-licensed model in the current lineup is the small Muse Glimmer.",
+      "The pricing tells you who Meta is chasing. Muse Wonder costs $4 per million input tokens and $20 per million output through the API (model ID muse-wonder-1.0), with cached input at 20 cents and web search billed at $2.50 per thousand queries. That's Claude-tier pricing, not the race-to-the-bottom number people expected from Meta. And the stronger Wonder Full isn't on the API at all. You get it through Muse Code's Power and Maximum plans, reported at $50 and $200 a month, with usage caps.",
+      "On independent numbers, it's competitive but not the leader. Artificial Analysis puts Wonder Full at 56 on its Intelligence Index, tied with Claude Sonnet 5.5 and a few points ahead of GPT-6 Astra and Gemini 4 Argon, with Claude Opus 5.5 on top at 58. The API version, plain Wonder, scores 52. Meta's own model card is less tidy: it mixes third-party results, vendor-reported scores and in-house runs, and some coding comparisons used different agent harnesses, which makes the head-to-heads hard to trust. Per-task cost is worth watching too. Artificial Analysis spent about $4.52 running its index on Wonder, roughly three times what the older Muse Spark 1.3 cost. Token prices are only half of a bill.",
+      "One detail buried in the docs: Muse Code subscriptions default to a Contributor mode that lets Meta train on what you submit, while the API runs in Standard mode. Zero data retention exists, but only for approved API organizations. If your developers are signing up for the $200 plan on a company card, someone should check that setting before they paste in your codebase.",
+    ],
+    category: "ai",
+    tags: ["Meta", "Muse Wonder", "LLM", "AI Models", "Pricing", "Open Weights"],
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T11:00:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: false,
+    sources: [
+      {
+        name: "Meta AI Research",
+        desc: "Muse Wonder announcement post",
+        url: "https://research.meta.ai/blog/muse-wonder",
+      },
+      {
+        name: "Meta Muse Wonder model card",
+        desc: "Meta's evaluation details and capabilities",
+        url: "https://research.meta.ai/static/muse-wonder-model-card",
+      },
+      {
+        name: "Meta developer docs",
+        desc: "API overview, data modes and pricing",
+        url: "https://dev.meta.ai/docs/overview",
+      },
+      {
+        name: "VentureBeat",
+        desc: "Wonder vs. Wonder Full, Artificial Analysis scores and subscription details",
+        url: "https://venturebeat.com/technology/metas-new-muse-wonder-and-muse-wonder-full-models-achieve-frontier-performance-but-only-the-weaker-one-is-available-via-api",
+      },
+    ],
+  },
+  {
+    id: 615,
+    slug: "microsoft-maia-300-inference-chip-multi-gigawatt",
+    title: "Microsoft's Maia 300 Is Built to Run Copilot So Nvidia Doesn't Have To",
+    summary: "Microsoft's third-generation AI accelerator pairs TSMC N2P compute with eight HBM4 stacks, goes into production deployments in 2027, and is pitched as the default inference chip for Microsoft's own products, with no word on Azure customer access.",
+    body: [
+      "Microsoft wants most of its own AI traffic running on its own silicon by 2027, and Maia 300 is the chip it's betting on to get there.",
+      "Scott Guthrie, who runs Cloud + AI, laid it out in a blog post on October 12. Maia 300's compute chiplets are built on TSMC's N2P node, with eight HBM4 stacks delivering 18 TB/s of peak memory bandwidth inside a 950-watt power envelope. A full rack holds 96 accelerators, draws 167 kilowatts, and carries 27.6 TB of HBM. Production deployments start in 2027, and that's also when Microsoft says it'll start scaling the Maia family to multi-gigawatt deployments.",
+      "The design is unapologetically about inference. Microsoft describes it as optimized for long-context, memory-heavy, decode-bound work, which is what agentic coding sessions and long chats actually look like. The memory numbers make sense in that light. Decode is mostly a memory bandwidth problem, not a FLOPS problem.",
+      "The performance claims are Microsoft's own projections: 40% more tokens per megawatt than leading GPU systems, and up to seven times the rack-level throughput of Maia 200. There are no independent benchmarks, the comparison GPU isn't named, and \"tokens per megawatt\" depends heavily on which model you run and at what batch size. Treat it as a target.",
+      "What's more concrete is the deployment plan. Maia 200 is already in production in the US, Europe and Australia, serving Microsoft Copilot and running OpenAI, MAI and open-weight models. GitHub Copilot and Microsoft Foundry are supposed to move onto it by year-end. Maia 300 is slated for GitHub, Foundry, MAI and Dragon Copilot. Guthrie calls the family the primary inference system for Microsoft products and services.",
+      "Notice who's missing from that sentence. The post doesn't say Azure customers can rent Maia 300 directly. That's the difference between Microsoft and Google's TPU strategy, and it means this is mostly about Microsoft's margins on Copilot rather than a new option for anyone building on Azure. Microsoft will keep buying Nvidia GPUs for training and for customers, but the highest-volume inference work, the stuff Microsoft serves itself, is the part it's quietly taking back.",
+    ],
+    category: "tech",
+    tags: ["Microsoft", "Maia", "AI Chips", "Azure", "Inference", "TSMC"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80",
+    author: "Sam Browand",
+    publishedAt: "2026-10-13T10:30:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: false,
+    breaking: false,
+    sources: [
+      {
+        name: "The Official Microsoft Blog",
+        desc: "Scott Guthrie's Maia 300 announcement with specs and deployment plans",
+        url: "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/",
+      },
+      {
+        name: "DCD",
+        desc: "Coverage of Maia 300 as Microsoft's primary inference system",
+        url: "https://www.datacenterdynamics.com/en/news/microsoft-unveils-azure-maia-300-says-chip-will-be-its-primary-inference-system/",
+      },
+      {
+        name: "HPCwire",
+        desc: "Announcement summary and technical details",
+        url: "https://www.hpcwire.com/off-the-wire/microsoft-announces-maia-300-its-next-gen-custom-ai-chip/",
+      },
+    ],
+  },
+  {
     id: 605,
     slug: "denmark-cpr-register-breach-8-8-million",
     title: "Denmark's CPR Register Breached: 8.8 Million ID Numbers Exposed",
@@ -50,9 +331,9 @@ export const articles = [
     author: "Sam Browand",
     publishedAt: "2026-10-06T13:00:00Z",
     readingTime: 3,
-    featured: true,
-    trending: true,
-    breaking: true,
+    featured: false,
+    trending: false,
+    breaking: false,
     sources: [
       {
         name: "Danish Ministry of Research, Education and Digitalisation",
@@ -96,7 +377,7 @@ export const articles = [
     publishedAt: "2026-10-06T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -136,7 +417,7 @@ export const articles = [
     publishedAt: "2026-10-06T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -176,7 +457,7 @@ export const articles = [
     publishedAt: "2026-10-06T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -261,8 +542,8 @@ export const articles = [
     publishedAt: "2026-10-05T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
-    breaking: true,
+    trending: false,
+    breaking: false,
     sources: [
       {
         name: "Citrix Security Bulletin CTX697174",
@@ -317,7 +598,7 @@ export const articles = [
     publishedAt: "2026-10-05T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -368,7 +649,7 @@ export const articles = [
     publishedAt: "2026-10-05T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -447,7 +728,7 @@ export const articles = [
     publishedAt: "2026-10-05T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -500,7 +781,7 @@ export const articles = [
     publishedAt: "2026-10-04T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -553,7 +834,7 @@ export const articles = [
     publishedAt: "2026-10-04T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -645,7 +926,7 @@ export const articles = [
     publishedAt: "2026-10-04T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -691,7 +972,7 @@ export const articles = [
     publishedAt: "2026-10-04T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -743,7 +1024,7 @@ export const articles = [
     publishedAt: "2026-10-03T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -800,7 +1081,7 @@ export const articles = [
     publishedAt: "2026-10-03T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -845,7 +1126,7 @@ export const articles = [
     publishedAt: "2026-10-03T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -891,7 +1172,7 @@ export const articles = [
     publishedAt: "2026-10-03T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1016,7 +1297,7 @@ export const articles = [
     publishedAt: "2026-10-01T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1061,7 +1342,7 @@ export const articles = [
     publishedAt: "2026-10-01T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1106,7 +1387,7 @@ export const articles = [
     publishedAt: "2026-10-01T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1151,7 +1432,7 @@ export const articles = [
     publishedAt: "2026-10-01T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1286,7 +1567,7 @@ export const articles = [
     publishedAt: "2026-09-30T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1331,7 +1612,7 @@ export const articles = [
     publishedAt: "2026-09-30T12:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1376,7 +1657,7 @@ export const articles = [
     publishedAt: "2026-09-30T12:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1421,7 +1702,7 @@ export const articles = [
     publishedAt: "2026-09-30T11:30:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
