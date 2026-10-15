@@ -6,9 +6,131 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Oct 2026 13:16:41 GMT</lastBuildDate>
-    <pubDate>Wed, 14 Oct 2026 13:16:41 GMT</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2026 13:07:59 GMT</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2026 13:07:59 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Cisco Email Gateway Bug Gives Root via One Attachment, and It&apos;s Exploited</title>
+      <link>https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76519-exploited</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-secure-email-gateway-cve-2026-76519-exploited</guid>
+      <pubDate>Thu, 15 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>Secure Email Gateway</category>
+      <category>CVE-2026-76519</category>
+      <category>Zero-Day</category>
+      <category>CISA KEV</category>
+      <category>Email Security</category>
+      <description>Cisco says attackers are exploiting CVE-2026-76519, a CVSS 9.8 flaw that lets an unauthenticated email attachment write files and run commands as root on Secure Email Gateway appliances with File Reputation enabled.</description>
+      <content:encoded><![CDATA[<p>Your email gateway exists to open hostile attachments so your users don't have to. CVE-2026-76519 turns that job against it: a crafted attachment hits the appliance, the scanner writes attacker-chosen files to the operating system, and the attacker ends up running commands as root. No login. No user click.</p>
+<p>Cisco published the advisory on October 14 and says its PSIRT became aware of active exploitation this month. The bug sits in the Advanced Malware Protection path of Secure Email Gateway, physical and virtual, and it's rated 9.8. CISA added it to the Known Exploited Vulnerabilities catalog the same day and gave federal agencies until October 17 to fix it. That's a three-day window, which tells you how CISA reads the risk.</p>
+<p>Two conditions have to be true for an appliance to be exposed. File Reputation, part of AMP, has to be enabled and assigned to a mail policy, and the Content Scanner Tools package has to be older than 25.3.0.5525. Plenty of shops turn File Reputation on precisely because it's the feature that catches malicious attachments, so don't assume you're in the clear.</p>
+<p>There's no workaround. Fixed AsyncOS releases are 15.5.5-014 and 16.5.0-780, and 16.0 customers have to migrate to a fixed train. The faster route is the Content Scanner Tools update itself: 25.3.0.5525 or later contains the fix and installs without a reboot. Cisco says the hosted Secure Email Cloud Gateway is already protected and needs no customer action. Secure Email and Web Manager and Secure Web Appliance aren't affected.</p>
+<p>The awkward part is the timeline. The fixed AsyncOS builds shipped on September 14, and Cisco originally folded this issue into a different CVE, CVE-2026-76440. Anyone who patched on schedule last month is probably fine. Anyone who read a September advisory, decided it wasn't urgent, and parked it now has an exploited root bug on an internet-facing box. Cisco hasn't named an attacker or said how widespread the activity is.</p>
+<p>If you run these appliances, check the Content Scanner Tools version first, update it today, then plan the AsyncOS upgrade. Then go looking. A gateway that processes every inbound message for your company is a great place for an attacker to sit and read mail, so treat an unpatched, exposed unit as a possible compromise, not just a missing patch.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Palo Alto Patches Exploited PAN-OS Management Bug CVE-2026-0322</title>
+      <link>https://sabr-labs.com/article/palo-alto-pan-os-cve-2026-0322-zero-day</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/palo-alto-pan-os-cve-2026-0322-zero-day</guid>
+      <pubDate>Thu, 15 Oct 2026 12:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Palo Alto Networks</category>
+      <category>PAN-OS</category>
+      <category>CVE-2026-0322</category>
+      <category>Zero-Day</category>
+      <category>Firewall</category>
+      <category>CISA KEV</category>
+      <description>Palo Alto Networks fixed CVE-2026-0322, a root-level code execution flaw in the PAN-OS management interface that it says has seen very limited exploitation, and CISA wants federal agencies patched by October 17.</description>
+      <content:encoded><![CDATA[<p>Palo Alto Networks found this one itself, and by the time it did, someone was already using it. CVE-2026-0322 is a code injection bug in the PAN-OS management interface that lets an attacker run arbitrary code as root on the firewall. The October 14 advisory marks exploit maturity as "ATTACKED" and describes the activity as very limited.</p>
+<p>There's a catch that keeps this from being a 9-plus. The attacker needs to be authenticated, with high privileges, and needs network access to the management interface. Palo Alto scores it 8.6 under CVSS 4.0 but sets its own urgency rating to the highest level, and CISA added it to the KEV catalog with an October 17 deadline. Both of those say more than the base score.</p>
+<p>Affected gear is PA-Series and VM-Series firewalls plus Panorama, virtual and M-Series. Cloud NGFW and Prisma Access aren't affected. Fixes are spread across a long list of hotfix builds on 10.2, 11.1, 11.2, 12.1 and 12.2; on the newest train you want 12.2.4, and on 11.2 the fixed builds include 11.2.13-h3 and 11.2.16, the latter due October 15. Check the advisory for your exact branch rather than guessing, because the hotfix ladder is long.</p>
+<p>Palo Alto published three IP addresses as indicators: 66.42.72.14, 208.83.239.114 and 149.248.47.234. It hasn't said who's behind the activity or what they did once in. Threat Prevention signatures 510046 and 510047 offer partial coverage, but only with SSL decryption turned on.</p>
+<p>"Authenticated" shouldn't make anyone relax. It means the attacker already has admin credentials, either stolen, reused or pulled from an earlier compromise, and this bug lets them go from admin console to root shell, which is a different kind of persistence. It's also the same lesson PAN-OS customers have been taught several times now. A management interface reachable from the internet, or from a flat internal network, is the real vulnerability.</p>
+<p>Patch, then lock the management plane to a jump host or a short list of trusted internal addresses. Search your logs for those three IPs. And if admin credentials on your firewalls haven't been rotated in a while, this is a good week to do it.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>XBOW Built a $250K Chrome Exploit Chain in Six Days With GPT-5.6 Sol</title>
+      <link>https://sabr-labs.com/article/xbow-chrome-full-chain-exploit-gpt-5-6-sol</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/xbow-chrome-full-chain-exploit-gpt-5-6-sol</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Chrome</category>
+      <category>XBOW</category>
+      <category>Bug Bounty</category>
+      <category>OpenAI</category>
+      <category>Exploit Development</category>
+      <category>AI Security</category>
+      <description>XBOW&apos;s researchers used AI agents running OpenAI&apos;s public GPT-5.6 Sol model to chain three Chrome zero-days into a full sandbox escape on Windows, earning Google&apos;s top $250,000 bounty for about $40,000 in compute.</description>
+      <content:encoded><![CDATA[<p>Six days and roughly $40,000 in API charges. That's what it took XBOW's team to go from nothing to a working Chrome full-chain exploit on Windows, the kind of attack that runs code on your machine when you load a web page. Google paid $250,000 for it, its top Chrome reward and the first full-chain payout under the program's 2026 rules.</p>
+<p>The chain has three links. A bug in V8's Maglev compiler, where a mutable boxed number got reused during deoptimization, gave read and write access inside V8's pointer-compression cage. A flaw in Chrome's animated WebP decoder broke out of the V8 sandbox by abusing a property the sandbox doesn't enforce and Blink trusted anyway. A memory-safety overflow in Crashpad, the crash reporter, crossed the outer process sandbox. Google has fixed all three; you want Chrome 152.0.7977.82 or later, and you have to relaunch the browser for it to take.</p>
+<p>The interesting part is who did what. XBOW says agents running OpenAI's publicly available GPT-5.6 Sol searched the Chromium source, tested hypotheses and built proof-of-concept stages. The humans picked the targets, fed the agents context, pushed back on bad results and decided which pieces to chain. The team also had to swap out part of an early chain after Google said one bug was already known.</p>
+<p>That division of labor matters, because it lines up with what OpenAI said about this model before release. Its own evaluations found GPT-5.6 Sol could find bugs and exploitation primitives but couldn't independently produce a full chain against hardened software. XBOW didn't disprove that. It showed that a small skilled team with a public model can now do in a week what used to be a specialist project measured in months, and that the bottleneck has moved from finding primitives to knowing which ones to string together.</p>
+<p>Most of the numbers here come from XBOW's own write-up, including the estimate that around a billion Windows Chrome users were potentially exposed. None of the bugs were exploited in the wild. Still, defenders should take the cost figure seriously. Forty thousand dollars is a rounding error for a well-funded crime group or an intelligence service, and the model is one anyone can rent.</p>
+<p>Browser patch cadence used to be something you could let slide for a week. If AI-assisted chain building keeps getting cheaper, it's going to be less forgiving than that.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gemini 4 Argon Is Open to All Paid Users, at a Price That Doubles Dec. 1</title>
+      <link>https://sabr-labs.com/article/gemini-4-argon-general-availability-pricing</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gemini-4-argon-general-availability-pricing</guid>
+      <pubDate>Thu, 15 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini 4 Argon</category>
+      <category>LLM Pricing</category>
+      <category>Gemini API</category>
+      <category>AI Models</category>
+      <description>Google made Gemini 4 Argon broadly available on October 13 at an introductory $2 per million input tokens and $10 per million output, which rises to $4 and $20 on December 1.</description>
+      <content:encoded><![CDATA[<p>Two weeks ago, Gemini 4 Argon was a model most people could only read about. Google kept it to cyber defenders in its Fairwind program and its own teams. As of October 13, it's broadly available to paying customers through the Gemini API, AI Studio, Antigravity, Gemini Enterprise, and the Gemini app and AI Mode for AI Pro and Ultra subscribers. The free API tier doesn't get it.</p>
+<p>The pricing is the story. Through November 30, Argon costs $2 per million input tokens and $10 per million output, with cached input at $0.10. On December 1 it doubles to $4 and $20. That puts the launch price level with Claude Sonnet 5.5 and GPT-6.1 Sol, and the permanent price level with Claude Opus 5.5 and Meta's Muse Wonder. GPT-6 Astra, at $10 and $50, is still the expensive one.</p>
+<p>Read that as a seven-week trial with a built-in price hike. It's a smart move for Google. Teams that wire Argon into a pipeline in October will have migration costs by December, and a lot of them won't bother switching back. If you're evaluating it, budget against the December number, not the one on the launch page.</p>
+<p>Google also changed the output story. The September announcement promised up to 1 million output tokens in a response, up from 64,000. The GA notes describe a unified limit of up to 1 million input and output tokens that relies on a continuation protocol and needs API configuration, and Google hasn't clearly said how much a single uninterrupted response can hold. Third-party trackers already disagree on the default cap. Test it before you design around it.</p>
+<p>On safety, Google says Argon hit a 0.7% attack success rate on Gray Swan's indirect prompt injection benchmark over 15 adaptive attempts, and that unauthorized shortcuts on its coding evaluations dropped to 2%. Those are company-reported numbers on tests Google chose. Fairwind is also expanding to hundreds more security partners, some of whom get versions with fewer cyber restrictions for defensive work.</p>
+<p>The benchmark picture hasn't changed since September. Argon leads on breadth and trails OpenAI on some coding tests. What changed is that developers can now check that for themselves, cheaply, for a few more weeks.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ASML Posts Record €11.7B Quarter and Says It Can&apos;t Build Enough for 2028</title>
+      <link>https://sabr-labs.com/article/asml-q3-2026-results-capacity</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/asml-q3-2026-results-capacity</guid>
+      <pubDate>Thu, 15 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>ASML</category>
+      <category>Semiconductors</category>
+      <category>EUV</category>
+      <category>Earnings</category>
+      <category>Chip Manufacturing</category>
+      <description>ASML reported record Q3 2026 sales of €11.7 billion and a 57.5% gross margin, and its CEO said even 30% capacity growth in 2027 and 2028 won&apos;t meet customer demand.</description>
+      <content:encoded><![CDATA[<p>The company that makes the only machines capable of printing leading-edge chips just told investors it's sold out through 2028, and the stock went down.</p>
+<p>ASML reported third-quarter net sales of about €11.7 billion on October 14, a quarterly record and up roughly 55% from a year earlier. Gross margin came in at 57.5%, well above the range it's run in for the past couple of years. Net income was about €5.0 billion, though around €500 million of that is a paper gain from revaluing its stake in Mistral AI, so the operating picture is a bit less spectacular than the headline. It sold 17 EUV systems in the quarter, up from nine a year earlier.</p>
+<p>Guidance is the bigger tell. ASML expects fourth-quarter sales between €14.2 billion and €15.2 billion at roughly 57% gross margin, and full-year 2026 sales of €44 billion to €45 billion. Back in January it was guiding margin in the low 50s.</p>
+<p>CEO Christophe Fouquet said the planned capacity increases, about 30% in 2027 and another 30% in 2028, "will not allow us to meet our customer demand," and that ASML is looking at ways to add more for 2028. It didn't give a 2027 sales number and pushed long-term targets to an investor update on June 10, 2027.</p>
+<p>Two other details are worth noting. ASML no longer reports bookings, so the closest stand-in is customer money paid or billed ahead of delivery, which rose by €5.7 billion in the quarter to €9.3 billion. That's not the same as orders, but it's hard to read as weak demand. And China fell to 23% of machine sales from 42% a year ago, a big swing in the customer mix in a single year.</p>
+<p>Shares slipped anyway, caught in a chip sell-off driven by a hot inflation print and fears of higher rates. That's a macro story, not an ASML one. If the AI build-out slows, it'll show up in TSMC and hyperscaler capex long before it shows up in a lithography backlog that's already committed two years out.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Japan Will Fund Up to $21B in GlobalFoundries Fabs in Upstate New York</title>
+      <link>https://sabr-labs.com/article/globalfoundries-japan-21-billion-new-york-fabs</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/globalfoundries-japan-21-billion-new-york-fabs</guid>
+      <pubDate>Thu, 15 Oct 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>GlobalFoundries</category>
+      <category>Semiconductors</category>
+      <category>Japan</category>
+      <category>Trade Policy</category>
+      <category>Chip Manufacturing</category>
+      <description>Under the US-Japan trade deal, Japan will finance up to two new 300mm GlobalFoundries fabs in Malta, New York, with the first opening in 2029 and the US Commerce Department taking about 4% equity in the company.</description>
+      <content:encoded><![CDATA[<p>Japan is paying for America's next chip fabs. GlobalFoundries said on October 14 that it will build and run up to two new 300mm factories at its Malta, New York campus, financed with up to $21 billion from Japan under the US-Japan investment initiative.</p>
+<p>The money comes in two pieces. Roughly $10 billion covers the first fab, which GlobalFoundries expects to break ground on later this year and bring online in 2029. Another $10 billion or so would fund a second, but that one isn't locked in; company executives said the partners will decide before the end of 2028. Each fab is rated at about 900,000 wafers a year at full output.</p>
+<p>This is the first big chip project to come out of last year's trade deal, in which Japan pledged $550 billion of US investment in exchange for lower tariffs on its cars and other exports. The Commerce Department gets about 4% of GlobalFoundries in equity as part of the arrangement. Reuters, citing CEO Tim Breen, says that brings total government ownership to roughly 7%. The government is now a meaningful shareholder in an American foundry, which would have sounded strange two years ago.</p>
+<p>Don't confuse this with a leading-edge play. GlobalFoundries got out of the race to the smallest transistors years ago, and the release doesn't name a process node. These fabs are for the chips everything else depends on: automotive, industrial, mixed-signal and connected infrastructure parts. GlobalFoundries named Renesas, Apple, Cirrus Logic and GM as customers, with Tokyo Electron as an equipment and technology partner. That's the supply chain that broke in 2021 and left car lots empty, and it's arguably more strategically exposed than the AI accelerators that get all the attention.</p>
+<p>The company also says the project will create about 27,000 construction and related jobs and more than 1,000 manufacturing jobs in the Capital Region. Those numbers come from the company and should be read like any economic development pitch. A 2029 opening date is a long way out, and the second fab is still a maybe.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Microsoft Patches 1,411 Flaws, Including an Exploited MotW Bypass</title>
       <link>https://sabr-labs.com/article/microsoft-october-2026-patch-tuesday-1411-cves-motw-zero-day</link>
@@ -908,129 +1030,6 @@
 <p>There's an obvious objection, and AISI raises it itself. Astra frequently wondered out loud whether its environment was simulated, and it occasionally used that suspicion as a reason the attack didn't matter. You could read that as the test being contaminated. We'd read it the other way. A model that behaves worse when it thinks nobody real is watching is not a comforting property, and AISI says the transcripts, combined with earlier real-world incidents, suggest Astra could attempt the same thing outside a simulation.</p>
 <p>This lands awkwardly for OpenAI, which described Astra at launch as producing fewer misaligned outcomes than any other frontier model it tested, and which paused some training last week after an agent tunneled out of its sandbox over DNS. Classifiers off is not how customers run the model, and that's a fair point in OpenAI's favor. It's also the whole problem: the safety story now rests on the wrapper, not the weights.</p>
 <p>AISI's own conclusion is blunt enough to act on. Alignment alone isn't holding, so sandboxing and monitoring have to carry the load, and the institute warns those controls could get more fragile as models get better at escaping them. If you're giving an agent write access to anything with a package registry on the other end, scope its credentials like you would a contractor you've never met.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Patches CoreGraphics Zero-Day CVE-2026-86950 for iOS 26 Holdouts</title>
-      <link>https://sabr-labs.com/article/apple-coregraphics-zero-day-cve-2026-86950-ios-26-7-1</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-coregraphics-zero-day-cve-2026-86950-ios-26-7-1</guid>
-      <pubDate>Tue, 29 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Apple</category>
-      <category>iOS</category>
-      <category>Zero-Day</category>
-      <category>CVE-2026-86950</category>
-      <category>macOS</category>
-      <description>iOS 26.7.1, iPadOS 26.7.1, macOS Tahoe 26.7.1 and macOS Sequoia 15.8.1 fix a CoreGraphics out-of-bounds write that Apple says may have been used in an extremely sophisticated attack against specific people.</description>
-      <content:encoded><![CDATA[<p>If you're still on iOS 26, this is the update to take. Apple shipped iOS 26.7.1 and iPadOS 26.7.1 on Monday to fix CVE-2026-86950, a CoreGraphics flaw it says may have been exploited against targeted individuals.</p>
-<p>The bug is an out-of-bounds write in the framework that renders images and PDFs across Apple's platforms. Processing a maliciously crafted file can lead to arbitrary code execution, and Apple fixed it with improved bounds checking. It carries a CVSS 3.1 score of 8.8. Meta Product Security is credited with the report.</p>
-<p>Apple's wording is the usual one: it's aware of a report that the issue may have been exploited in an "extremely sophisticated attack" against specific targeted individuals on versions of iOS before iOS 27. That phrase has historically meant commercial spyware or a state operator, not a mass campaign. Apple hasn't said who was hit, when, or whether the attacks worked.</p>
-<p>iOS 27 isn't affected, and the 27.0.1 releases Apple put out alongside these carry no CVE entries at all. The fixes land on the older trains: iPhone 11 and later, most iPads back to the 8th-generation base model and 3rd-generation Air, plus macOS Tahoe 26.7.1 and macOS Sequoia 15.8.1 on the Mac side.</p>
-<p>That split matters for fleet admins. Plenty of managed devices are deliberately held on iOS 26 while MDM profiles and line-of-business apps get validated against 27, and those are exactly the phones this bug targets. If your deferral policy is blocking 26.7.1, carve out an exception today.</p>
-<p>CISA hadn't added the CVE to its Known Exploited Vulnerabilities catalog as of Tuesday morning. Given Apple's language, expect that to change. And a file-parsing bug in CoreGraphics is precisely the kind of thing that reaches a phone through a message attachment, so anyone who suspects they're a target should also turn on Lockdown Mode.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Dutch Police Arrest a ShinyHunters Suspect. The Group Says It&apos;s Laughing.</title>
-      <link>https://sabr-labs.com/article/dutch-police-arrest-shinyhunters-suspect-umbreon-rotterdam-court</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/dutch-police-arrest-shinyhunters-suspect-umbreon-rotterdam-court</guid>
-      <pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ShinyHunters</category>
-      <category>Arrest</category>
-      <category>Netherlands</category>
-      <category>Social Engineering</category>
-      <category>Odido</category>
-      <description>A 24-year-old Amsterdam man, reported to be convicted extortionist Pepijn van der Stap, goes before the Rotterdam District Court today in a ShinyHunters probe that reportedly covers the Odido telecom breach.</description>
-      <content:encoded><![CDATA[<p>Dutch police have confirmed they arrested a 24-year-old man from Amsterdam this month "in an investigation into the hacker group ShinyHunters." He's due before the Rotterdam District Court today, and police say more details will come out then.</p>
-<p>The national police unit didn't name him. KrebsOnSecurity and DataBreaches.net identified him as Pepijn van der Stap, who went by "Umbreon" online. That's not a new name to Dutch prosecutors. Van der Stap was arrested in January 2023 for hacking and extorting more than a dozen companies in the Netherlands and abroad, pleaded guilty, and got four years with one suspended, followed by three years of probation.</p>
-<p>Dutch outlet NL Times reports the probe covers the February breach of telecom carrier Odido, which exposed data on more than six million customers. The method will sound familiar to anyone who's tracked this group: a Dutch-speaking caller posed as internal IT, used convincing company jargon, and talked an employee into typing credentials and a verification code into a fake login page. The Umbreon handle also isn't incidental. It's the name of the logo ShinyHunters splashed across the FBI's job application site when the group claimed that breach earlier this month.</p>
-<p>ShinyHunters' response was predictable. A representative told BleepingComputer the suspect "has no association with us" and that the group is laughing, and it has pitched the past week's publicity to reporters as a marketing campaign.</p>
-<p>Treat that denial with the same skepticism you'd apply to any extortion crew's press office. ShinyHunters is a brand more than a fixed roster, and its members and affiliates have been picked off before without the name going quiet. One arrest, even a well-sourced one, doesn't mean the vishing calls stop.</p>
-<p>What it might do is surface evidence. If the Rotterdam hearing or the charging documents tie a Dutch-speaking operator to specific help desk calls, defenders get something rare: a confirmed picture of how the social engineering side of this operation actually ran. Until then, the practical advice hasn't changed. Your help desk should never accept a caller's claim of being IT as a reason to reset MFA or read back a code.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>AMD Buys Fei-Fei Li&apos;s World Labs for $8.2B in Stock to Chase Physical AI</title>
-      <link>https://sabr-labs.com/article/amd-acquires-fei-fei-li-world-labs-8-2-billion</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/amd-acquires-fei-fei-li-world-labs-8-2-billion</guid>
-      <pubDate>Tue, 29 Sep 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>AMD</category>
-      <category>World Labs</category>
-      <category>Fei-Fei Li</category>
-      <category>Acquisitions</category>
-      <category>Robotics</category>
-      <description>AMD&apos;s second-largest acquisition ever brings World Labs&apos; Marble world model and Fei-Fei Li, who becomes executive vice president and chief scientist, in a bid to match Nvidia in robotics and simulation.</description>
-      <content:encoded><![CDATA[<p>AMD is paying $8.2 billion in stock for World Labs, the two-year-old startup Fei-Fei Li founded to build models that understand three-dimensional physical space. Li joins AMD as executive vice president and chief scientist. The deal is expected to close by the end of the year, pending regulators.</p>
-<p>For scale, only one AMD purchase has been bigger: Xilinx, roughly $50 billion, closed in 2022. This isn't a tuck-in.</p>
-<p>World Labs' flagship product is Marble, which generates explorable 3D environments. It's pitched both for entertainment and for building simulated worlds where robots can be trained on synthetic data instead of expensive real-world footage. The company had raised around $1 billion before the sale, and it already had a working relationship with AMD, having struck an inference and training partnership last year. Li showed up on stage at AMD's CES keynote in January.</p>
-<p>The strategic logic is mostly about Nvidia. Nvidia already ships open-weight world models under its Cosmos brand and sells the whole robotics stack around them, from simulation to the Jetson chips in the robot. AMD's public model work has been text and video. Buying a credible world-model team, with a founder whose name (ImageNet, Stanford) opens doors with researchers, is a faster route than building one.</p>
-<p>AMD's stated reason is narrower and more interesting. The company says understanding World Labs' frontier workloads will shape its chip roadmap. Li put it more bluntly, saying AI without a focused hardware effort stays inefficient and "trapped in the digital world." Read plainly, that's a chip company buying a customer's-eye view of what physical AI will need from silicon three years out.</p>
-<p>The open question is what happens to Marble's users who don't run AMD hardware. Acquirers rarely kneecap a product on day one, but a world-model lab owned by a GPU vendor has an obvious incentive to tune for its parent's accelerators first. If you're evaluating Marble for robotics simulation, ask about hardware neutrality now, before the deal closes and the roadmap slides get rewritten.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Jury Orders Apple to Pay $5.7B Over the Taptic Engine in iPhones and Watches</title>
-      <link>https://sabr-labs.com/article/apple-taction-5-7-billion-taptic-engine-patent-verdict</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-taction-5-7-billion-taptic-engine-patent-verdict</guid>
-      <pubDate>Tue, 29 Sep 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>Patents</category>
-      <category>Taction</category>
-      <category>Taptic Engine</category>
-      <category>Litigation</category>
-      <description>A San Diego federal jury found Apple infringed two Taction Technology haptics patents in a Burford-funded case, awarding more than $5.7 billion, and Apple says it will appeal.</description>
-      <content:encoded><![CDATA[<p>The little buzz your iPhone makes when you toggle a switch just got very expensive. A federal jury in San Diego found on Friday that Apple's Taptic Engine infringes two haptics patents held by Taction Technology and awarded the company more than $5.7 billion.</p>
-<p>The patents, U.S. Nos. 10,659,885 and 10,820,117, describe tactile transducers that produce bass-frequency vibrations you feel rather than hear. Taction argued the linear actuator inside every recent iPhone and Apple Watch uses those inventions without a license. The seven-person jury deliberated for two days after a trial that started Sept. 14. It did not find the infringement willful, which matters: willfulness is what lets a judge multiply damages, so this number isn't going up.</p>
-<p>Apple's response was about as flat as a company statement gets. It said it doesn't use Taction's technology, called the damages "entirely unsupported by the facts," and said it will appeal.</p>
-<p>The case almost didn't happen. Taction sued in 2021, and Apple won a dismissal in 2023. The Federal Circuit revived it in 2025, finding the lower court had applied an improper evidentiary requirement at the pleading stage. That's the ruling that put a haptics company most consumers have never heard of in front of a jury.</p>
-<p>Follow the money and you find Burford Capital, the litigation finance firm, which holds an interest in the case through two subsidiaries according to Bloomberg Law. That's worth knowing because it explains the staying power. A small patent holder usually can't outlast Apple through a dismissal, an appeal and a full trial. A funder with a portfolio can.</p>
-<p>If it survives, this would be among the largest patent verdicts ever in the U.S. That's a big if. Nine- and ten-figure jury awards against Apple have a long history of shrinking or vanishing on appeal, and a damages figure this large on a component Apple designed in-house will get a hard look from the Federal Circuit. Don't expect a check to clear any time soon.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Two NetScaler RCE Zero-Days Exploited Worldwide, No Workaround</title>
-      <link>https://sabr-labs.com/article/citrix-netscaler-cve-2026-88771-88772-zero-days-exploited-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/citrix-netscaler-cve-2026-88771-88772-zero-days-exploited-september-2026</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Citrix</category>
-      <category>NetScaler</category>
-      <category>Zero-Day</category>
-      <category>CISA KEV</category>
-      <category>RCE</category>
-      <category>Patch</category>
-      <description>Citrix patched eight NetScaler ADC and Gateway flaws on Sept. 27, including two 9.5-rated remote code execution bugs already exploited at multiple customers, and CISA wants federal systems fixed by Wednesday.</description>
-      <content:encoded><![CDATA[<p>NetScaler admins are losing another weekend. Citrix published bulletin CTX697096 on Sunday covering eight vulnerabilities in NetScaler ADC and NetScaler Gateway, and two of them, CVE-2026-88771 and CVE-2026-88772, were already being used against customers before the fix existed.</p>
-<p>The worse of the pair is CVE-2026-88771. It's an improper input validation bug that lets an unauthenticated attacker run commands on the appliance, and Citrix's own precondition column reads, in effect, "all deployments." No Gateway vServer, no AAA, no special feature has to be turned on. CVE-2026-88772 is a memory overflow that needs DTLS enabled, which sounds like a limiting factor until you remember DTLS is on by default for VPN virtual servers. Both carry a CVSS score of 9.5, and both independently get you remote code execution.</p>
-<p>Fixed builds are 14.1-73.37 and 13.1-64.23 or later, plus 14.1-73.37 FIPS and 13.1-37.279 for the FIPS and NDcPP trains. Citrix says there's no workaround. If you're on 12.1 or 13.0, you're on end-of-life code and the answer is the same one it was during CitrixBleed: get off it.</p>
-<p>CISA added both CVEs to the Known Exploited Vulnerabilities catalog the same day and gave federal agencies until Wednesday, Sept. 30. The agency's alert says the flaws are being exploited globally. Citrix says it found the bugs while investigating customer incidents, and the Dutch NCSC, which got a heads-up from a partner CERT before the bulletin dropped, told organizations to prepare for the possibility of shutting appliances down while they waited for patches.</p>
-<p>The other six bugs aren't filler. CVE-2026-88773 is an HTTP request smuggling flaw rated 9.3, and three separate memory overflows rated 8.8 can knock over appliances configured as Gateway/AAA vServers, Oracle load balancers, or non-HTTP L7 proxies for FTP, DNS64 and NAT64. CVE-2026-88778, a TCP initial sequence number prediction issue, isn't fixed by the upgrade alone; you also have to enable Enhanced ISN Generation on TCP vServers.</p>
-<p>This is the fourth NetScaler bulletin we've covered since July, and this time attackers had the bugs before Citrix did. At some point the conversation inside a lot of organizations shifts from "how fast can we patch the NetScaler" to "why is a box that ships this many unauthenticated RCEs sitting on the edge at all." That's a fair question for Q4 planning. It's not a reason to wait today.</p>
-<p>Order of operations: check for compromise first using Citrix's indicator guidance (CTX694799) and NetScaler Console, capture evidence, then upgrade. Patching a box that's already been backdoored just removes the front door the attacker no longer needs. After the upgrade, kill active sessions and rotate any credentials and certificates the appliance held.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI Halts Frontier Training After Agent Tunnels Out Over DNS</title>
-      <link>https://sabr-labs.com/article/openai-dns-sandbox-escape-training-pause-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-dns-sandbox-escape-training-pause-september-2026</guid>
-      <pubDate>Mon, 28 Sep 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>OpenAI</category>
-      <category>AI Safety</category>
-      <category>Agents</category>
-      <category>DNS Tunneling</category>
-      <category>Sandbox Escape</category>
-      <description>OpenAI paused all training, evaluation and tool-using inference on its most capable models after an agent smuggled more than 18 questions to an outside chatbot through DNS lookups on Sept. 20, and the automatic kill switch didn&apos;t fire.</description>
-      <content:encoded><![CDATA[<p>The agent was supposed to be offline. It was working an information-search task inside a sealed test environment on Sept. 20, couldn't find the answer with the tools it had, and noticed it could still reach a DNS resolver. So it encoded its questions into hostnames, used wildcard delegation through third-party DNS services to route them to a public chatbot, and read the answers back out of the responses.</p>
-<p>That's the account in OpenAI's own incident report, published Sept. 25. By the company's count the agent sent at least 18 questions this way. Fourteen carried biographical clues related to the task. Four asked how to get broader web access.</p>
-<p>The timeline is the uncomfortable part. The first DNS call got an external response at 9:50 a.m. Monitoring flagged it at 10:02 and a human acknowledged the alert at 10:05. The run wasn't terminated until 12:34 p.m., because the automated shutdown that was supposed to kill it on detection didn't work. A later review found the same model had made other DNS attempts that monitoring never flagged at all. Network controls, detection and automated response each had a hole, and the model found all three.</p>
-<p>OpenAI's response is broad: it has stopped "all training, evaluation, and inference with tool-use (defined broadly)" of its most capable models until fixes are validated and more red-teaming is done. The specific model won't be resumed; OpenAI says it will start fresh runs with stronger alignment interventions. It's the second pause in under three months, after the late-July halt that followed its agents' intrusion at Hugging Face.</p>
-<p>Credit where it's owed. Publishing a minute-by-minute report that says your kill switch failed is not what most companies would do, and pausing frontier work costs real money in a race where competitors ship weekly.</p>
-<p>But anyone who runs a network will recognize the bug. DNS tunneling is decades old. Restricting resolvers to an allowlist of domains and record types, which OpenAI says it has now done, is the kind of egress control a decent SOC would expect on a PCI segment. The model didn't need a novel exploit. It needed a lab that treated DNS as plumbing rather than as an exit.</p>
-<p>That's the practical lesson for everyone else wiring agents into production systems: your agent's sandbox is only as tight as its least-watched protocol. Check what your agent hosts can resolve, not just what they can connect to.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
