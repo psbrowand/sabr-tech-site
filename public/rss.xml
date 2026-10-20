@@ -6,9 +6,113 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Oct 2026 15:42:25 GMT</lastBuildDate>
-    <pubDate>Mon, 19 Oct 2026 15:42:25 GMT</pubDate>
+    <lastBuildDate>Tue, 20 Oct 2026 13:18:54 GMT</lastBuildDate>
+    <pubDate>Tue, 20 Oct 2026 13:18:54 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Stolen ConnectWise Backup Secret Opened 300+ Microsoft 365 Tenants</title>
+      <link>https://sabr-labs.com/article/connectwise-cloud-backup-stolen-m365-secret-huntress</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/connectwise-cloud-backup-stolen-m365-secret-huntress</guid>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ConnectWise</category>
+      <category>SkyKick</category>
+      <category>Microsoft 365</category>
+      <category>MSP</category>
+      <category>Supply Chain</category>
+      <category>Entra ID</category>
+      <description>A compromised Microsoft 365 app secret for ConnectWise Cloud Backup (formerly SkyKick) let an attacker into hundreds of customer tenants, and ConnectWise has shut off Cloud Backup, SaaS Security and Cloud Management while it investigates.</description>
+      <content:encoded><![CDATA[<p>If you're an MSP, the app you trusted to back up your clients' Microsoft 365 data has been used to break into them. ConnectWise suspended its Cloud Backup service, the product it picked up when it bought SkyKick, on October 17 after an attacker got hold of a Microsoft 365 API secret belonging to the app and used it to sign into customer tenants.</p>
+<p>Huntress raised the alarm first. Its initial count was 162 tenants with confirmed unauthorized sign-ins as of October 16. A later update put the number at almost 1,000 Entra tenants seeing sign-in attempts from the attacker's infrastructure, with more than 300 of them succeeding.</p>
+<p>The worrying part is what the attacker did once inside. In one partner tenant, the ConnectWise Cloud Management MS Teams app added itself to the Global Administrator role, then planted fresh client secrets on two other applications. One of those was a Huntress app unique to that partner. That's textbook persistence: even after ConnectWise kills its own apps, the attacker still holds working credentials on things you didn't think to check.</p>
+<p>Huntress says password spraying started around October 13 and 14, with the privilege grab happening early on October 15 UTC. It also saw a separate, targeted wave against 16 tenants in policy, national security, trade and critical-minerals sectors, which reads a lot more like espionage than smash-and-grab. ConnectWise says it "cannot discuss threat actor attribution at this time," and nobody else has named a group yet.</p>
+<p>ConnectWise's own messaging has leaned on reassurance. The company says existing backup archives remain encrypted and isolated, and that the outage on its own doesn't mean an MSP or client was compromised. Both may be true. But ConnectWise also admits it has no visibility into the tenants its apps had access to, which puts the cleanup squarely on partners. And Huntress points out that Microsoft Graph directory reads don't leave an audit trail, so a clean-looking sign-in log isn't proof of a clean tenant.</p>
+<p>Here's the to-do list. Disable (don't delete) every ConnectWise and SkyKick service principal, including the Cloud Backup app ID 506e08f9-6e9a-4da4-942b-a099a03644ae, and leave them off until ConnectWise confirms credentials are rotated. Audit client secrets and certificates on every enterprise app and app registration added since October 13 and remove anything you didn't create. Look for ConnectWise apps holding privileged directory roles, block the 144.172.64.0/24 addresses Huntress published, and remember that tokens issued before you disabled anything can stay valid until they expire.</p>
+<p>Third-party apps with tenant-wide Graph permissions are effectively the new domain admin, and most shops still don't inventory them. If this week sends you hunting through Enterprise Applications for the first time, you're not alone.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Plex2Shell: Unpatched Plex Servers Are Being Hijacked to Mine Monero</title>
+      <link>https://sabr-labs.com/article/plex2shell-plex-media-server-exploited-cryptominer</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/plex2shell-plex-media-server-exploited-cryptominer</guid>
+      <pubDate>Tue, 20 Oct 2026 11:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Plex</category>
+      <category>Plex2Shell</category>
+      <category>RCE</category>
+      <category>Cryptominer</category>
+      <category>Homelab</category>
+      <category>Patch Now</category>
+      <description>A public exploit for a four-bug Plex Media Server chain (CVE-2026-96652, -96654, -96655, -96656) was weaponized within a day, and anyone still on 1.43.2 or earlier is exposed to unauthenticated code execution.</description>
+      <content:encoded><![CDATA[<p>It took about a day. A researcher published a full write-up and proof-of-concept for "Plex2Shell" on October 16, and by October 17 a honeypot was catching attackers using it to drop cryptominers on Plex Media Server.</p>
+<p>Plex2Shell chains four bugs: CVE-2026-96652, CVE-2026-96654, CVE-2026-96655 and CVE-2026-96656. Reporting describes them as a pair of server-side request forgery flaws (one in the transcoder), a URL injection in plugin calls, and an arbitrary file write that executes when loaded. Strung together, they give an unauthenticated attacker code execution on an internet-exposed server with whatever privileges the Plex service runs under.</p>
+<p>The fix isn't new. The bugs were reported to Plex on July 27, confirmed with a bounty on August 4, and patched on September 1. Plex's forum advisory covers Media Server 1.43.2 and earlier and told owners to update "without delay." Security reporting puts the first safe build at 1.43.3.10861.</p>
+<p>Payloads so far are boring but telling: an XMRig-based Monero miner and a proxy tool called myawesomeproxy, which turns your home connection into someone else's exit node. That second one is the bigger problem. Residential proxies are exactly what credential stuffers and fraud crews pay for, and your IP is the one that shows up in the logs.</p>
+<p>Plex is a weird category of software. It's consumer-grade, but plenty of it runs on NAS boxes and homelab servers sitting next to real work data, often with port 32400 forwarded straight to the internet for remote streaming. And NAS package managers don't always pull Plex updates automatically, which Plex itself warned about. Six weeks of patch availability means nothing if the update never reached the box.</p>
+<p>Check your version in Settings, then General. If it's 1.43.2 or older, update now, and if it was exposed while unpatched, look for unfamiliar processes, high CPU and new files in the Plex plug-in directories before you assume you got lucky. CISA hasn't added these CVEs to KEV, but with public code and confirmed in-the-wild use, that's a formality.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Disney Is Hiring Most of Bankrupt Character.AI&apos;s Staff, Not Its Chatbots</title>
+      <link>https://sabr-labs.com/article/disney-hires-character-ai-staff-bankruptcy</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/disney-hires-character-ai-staff-bankruptcy</guid>
+      <pubDate>Tue, 20 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Disney</category>
+      <category>Character.AI</category>
+      <category>Bankruptcy</category>
+      <category>Acquihire</category>
+      <category>AI Chatbots</category>
+      <description>A bankruptcy filing shows Disney offering jobs to at least 60 Character.AI employees, worth about $60 million a year in pay, alongside a $20 million stalking-horse bid for a slice of the startup&apos;s technology.</description>
+      <content:encoded><![CDATA[<p>Character.AI filed for Chapter 11 last week. Now we know who gets the people. According to a court filing first reported by Bloomberg, Disney has agreed to offer jobs to at least 60 Character.AI employees, most of the company's remaining workforce, with an estimated $60 million in combined annual compensation. The filing says the "vast majority" of those offered have already accepted.</p>
+<p>Disney is also the stalking-horse bidder for some of the company's assets at $20 million. Reporting on the term sheet describes a non-exclusive, perpetual license to code behind Character.AI's training, safety and serving systems, plus a handful of patents. What it reportedly doesn't include matters more: user data, conversation logs, training data, finished models, the brand and the consumer app. Rival bids can still come in before a proposed auction in late November, and a bankruptcy judge has to sign off.</p>
+<p>So Disney is buying a team and an inference stack, not a chatbot company. That fits. Karandeep Anand, Character.AI's former CEO, recently became Disney's first CTO, and a studio sitting on the most valuable character IP on the planet has obvious reasons to want people who know how to run millions of persona conversations cheaply.</p>
+<p>It also tells you what Disney didn't want. Character.AI's filing blames high costs along with "potential litigation-related liabilities and regulatory engagement." The company faces a wrongful-death lawsuit over a teenager's suicide and a Texas attorney general investigation into child safety. Leaving the user data and the consumer product behind is a clean way to keep that baggage out of a family-entertainment brand.</p>
+<p>This is the second time Character.AI's talent has been peeled off without a traditional acquisition. In 2024, Google paid to license its technology and rehired founders Noam Shazeer and Daniel De Freitas. The pattern is getting familiar across AI: the people and the code walk out the door, while the liabilities stay with the shell.</p>
+<p>The open question is what happens to the users still chatting with Character.AI bots today. Nothing in the filing commits anyone to keeping the app running.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DHS Orders DeepSeek, and Anything Built on It, Off Federal Civilian IT</title>
+      <link>https://sabr-labs.com/article/dhs-fascsa-order-bans-deepseek-federal-civilian-agencies</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/dhs-fascsa-order-bans-deepseek-federal-civilian-agencies</guid>
+      <pubDate>Tue, 20 Oct 2026 10:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>DeepSeek</category>
+      <category>DHS</category>
+      <category>FASCSA</category>
+      <category>Federal Government</category>
+      <category>AI Policy</category>
+      <category>Supply Chain</category>
+      <description>A Homeland Security order published in today&apos;s Federal Register uses the 2018 supply chain security law to bar DeepSeek products from civilian agency purchases and force removal of DeepSeek and third-party tools built on its models.</description>
+      <content:encoded><![CDATA[<p>The federal government just moved past "please don't use DeepSeek" to a binding order. A notice published in the Federal Register on October 20 (document 2026-21447) records an order from the Secretary of Homeland Security that excludes products and services from Hangzhou DeepSeek Artificial Intelligence Co. and its affiliates from federal civilian agency procurements, and requires agencies to rip out what they already have.</p>
+<p>The clause that matters is the second one. Removal doesn't stop at DeepSeek's own apps and API. It also covers third-party products and services developed using DeepSeek implementations. That's a much wider net, because DeepSeek's open-weight models have been folded into a lot of software that doesn't put the name on the box.</p>
+<p>The legal hook is the Federal Acquisition Supply Chain Security Act of 2018 (41 U.S.C. 1321-1328). Under FASCSA, the interagency Federal Acquisition Security Council reviews a vendor and recommends action, and then DHS, the Pentagon or the Director of National Intelligence issues an order for its slice of government. DHS covers civilian agencies, so this one doesn't directly bind the Defense Department or the intelligence community. The notice says the order followed review of the council's recommendation "and affiliated evidence," without spelling out what that evidence is.</p>
+<p>It's only the second public FASCSA order we know of. The first, from ODNI in September 2025, targeted Swiss backup vendor Acronis. Going after a model maker is a different kind of target, and the public notice leaves the hardest question unanswered: does an open-weight DeepSeek model, downloaded and run on an agency's own air-gapped hardware, count as a DeepSeek product? The order text itself sits in scanned pages, and the summary doesn't say.</p>
+<p>That ambiguity is the real burden here. Agencies now have to find every tool, plug-in and vendor platform with a DeepSeek model somewhere in the stack, and plenty of software vendors don't disclose which base models they fine-tuned. Expect a round of contractor questionnaires asking exactly that.</p>
+<p>If you sell software to civilian agencies, start building that answer now. A model bill of materials was a nice-to-have last week. For federal sales, it isn't anymore.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>ClickFix Crews Are Abusing a Signed Siemens App to Sideload Malware</title>
+      <link>https://sabr-labs.com/article/siemens-software-center-cve-2026-110936-clickfix-romulus</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/siemens-software-center-cve-2026-110936-clickfix-romulus</guid>
+      <pubDate>Tue, 20 Oct 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Siemens</category>
+      <category>CVE-2026-110936</category>
+      <category>ClickFix</category>
+      <category>DLL Sideloading</category>
+      <category>Malware</category>
+      <description>Siemens says CVE-2026-110936, a DLL sideloading flaw in Software Center 3.5.8.7 fixed in 4.0.9.8, is being exploited by the Romulus ClickFix operation to run malware behind a genuinely signed Siemens executable.</description>
+      <content:encoded><![CDATA[<p>The executable is real, it's signed by Siemens, and it hasn't been touched. That's the whole trick. Attackers running ClickFix campaigns are dropping a genuine copy of Siemens Software Center next to a malicious DLL called archive.dll, and the signed program loads it without checking.</p>
+<p>Siemens tracks the bug as CVE-2026-110936 in advisory SSA-580366, scored 8.4 under CVSS 4.0. Software Center 3.5.8.7, the current release when the advisory went out on October 15, loads helper files from its own folder without verifying them. Version 4.0.9.8 fixes it, and existing installs pick up the update automatically the next time they launch. Siemens updated the advisory on October 17 and posted an active-exploitation notice on October 19. Huntress researcher Jose Oregon reported the flaw.</p>
+<p>Siemens is clear that none of its systems or update channels were breached. The malicious installer, AllMyBasic.msi, circulates outside official channels and has been tied to Romulus, a ClickFix delivery backend that Forescout's Vedere Labs uncovered during an incident investigation. Forescout describes it as reusable infrastructure rather than a single malware server, and nobody has named the operator.</p>
+<p>The lure end is grim in a very 2026 way. The Hacker News, citing Huntress, reports that some victims came in through malicious ChatGPT Custom GPTs that pointed them at fake ClickFix pages. From there it's the usual routine: paste a PowerShell command, an MSI drops, the signed Siemens binary launches and pulls in the attacker's DLL. Payloads reported so far include LegionLoader, which grabs data from Chrome, and a remote access trojan.</p>
+<p>For defenders, hash-based blocking is useless here because the executable is legitimate. Hunt for SiemensSoftwareCenter.exe running out of AppData\Local\Programs, especially right after msiexec, and on machines with no business reason to have Siemens industrial software at all. If you do run Software Center, open it so the 4.0.9.8 update applies.</p>
+<p>This is also a decent argument for application control that cares about path and parent process, not just a valid signature. Signed-binary sideloading isn't new, and it keeps working because "is it signed?" is still the question too many tools stop at.</p>]]></content:encoded>
+    </item>
     <item>
       <title>China-Linked Armory Castle Hit BeyondTrust Remote Support as a Zero-Day</title>
       <link>https://sabr-labs.com/article/beyondtrust-remote-support-cve-2026-102764-armory-castle</link>
@@ -935,106 +1039,6 @@
 <p>Persistence is where the operators got clever. They edited the appliance's Apache config so files ending in .deb and .sig execute as PHP, then used AliasMatch to route requests for /vpn/media/*.ico to those shells. To a casual log review, it looks like someone fetching favicons. They also set the setuid bit on /bin/sh for a durable root foothold.</p>
 <p>The tooling is two pieces. WHIPSHOT is a small PHP web shell that hides Base64-encoded commands inside ordinary HTTP headers and answers with a 404 status while returning tunneled data in the body. It talks over loopback to SLAPSHOT, a Python TCP tunnel that forwards arbitrary connections into the internal network. That combination turns the NetScaler into a pivot point for reconnaissance and credential theft, which is exactly what a Gateway box is positioned to do.</p>
 <p>So the remediation list is longer than "upgrade to 14.1-73.37 or 13.1-64.23." Google says to check /etc/httpd.conf for unexpected AddHandler and AliasMatch entries, inspect /bin/sh permissions, look for /tmp/.uxdport and /tmp/.uxdlock, kill active admin, Gateway and VPN sessions, and rotate admin credentials, LDAP bind accounts and TLS certificates. If your DTLS-enabled Gateway was internet-facing in September, treat the credentials it touched as burned.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Google&apos;s Gemini 4 Argon Wins on Breadth, but Only Cyber Defenders Get It</title>
-      <link>https://sabr-labs.com/article/google-gemini-4-argon-limited-release</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-4-argon-limited-release</guid>
-      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Gemini</category>
-      <category>LLM</category>
-      <category>Benchmarks</category>
-      <category>AI Safety</category>
-      <description>Google&apos;s long-delayed Gemini 4 flagship leads 12 of the 18 benchmarks it published and raises max output to 1 million tokens, yet it&apos;s limited to trusted testers with no public release date.</description>
-      <content:encoded><![CDATA[<p>Google finally has a model it can put next to GPT-6 Astra and Opus 5.5 without flinching. You just can't use it yet.</p>
-<p>Gemini 4 Argon, announced Wednesday after months of delays, is the new top of Google's lineup and is bigger than the Pro models that held that spot before. Google's own pitch is long, complex work: software engineering, legal and financial analysis, cyber defense, creative writing. The headline spec is output length. Argon can write up to 1 million tokens in a single response, up from 64,000.</p>
-<p>The benchmark story is real but more mixed than the launch framing suggests. Of the 18 benchmarks Google disclosed, Argon leads outright on 12 and ties on one, according to VentureBeat's tally. On DeepSWE v1.1, which measures long-horizon software engineering, it scores 77.9% against 74.2% for Opus 5.5 and 74.1% for Astra. But on FrontierSWE v2 it trails Astra by more than 10 points, 55% to 65.5%, and Reuters notes it lagged on two of the four coding benchmarks Google included. Self-reported numbers on a test suite you picked are a starting point, not a verdict.</p>
-<p>Access is the bigger story. Argon goes first to trusted testers through Fairwind, the program Google launched in September to put its cyber models in the hands of government agencies, critical infrastructure operators and security vendors. The version without cyber guardrails stays limited to those defenders and Google's internal teams. AI Ultra subscribers and paid API customers are told it's coming "soon," and Google is also running it through the Trump administration's voluntary pre-release review.</p>
-<p>Pricing is set even if availability isn't: an introductory $2 per million input tokens and $10 per million output, rising to $4 and $20 later, with a 95% discount on cached input. That's aggressive for a frontier model, and a clear shot at OpenAI's and Anthropic's cheaper releases last week.</p>
-<p>The staged rollout makes sense after the September OpenAI agent incidents, and Google deserves credit for not rushing. It also means the first people to really stress-test Argon will be red teams and government labs, not developers. For everyone else it's a press release and a price sheet until Google ships it.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Six AI Giants Sign a White House Safety Pact With No Penalties</title>
-      <link>https://sabr-labs.com/article/white-house-frontier-ai-voluntary-safety-accord</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/white-house-frontier-ai-voluntary-safety-accord</guid>
-      <pubDate>Thu, 01 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Policy</category>
-      <category>AI Safety</category>
-      <category>White House</category>
-      <category>OpenAI</category>
-      <category>Anthropic</category>
-      <description>Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed the Joint Commitment on Frontier Responsibilities, pledging internal controls and outside audits, but each company picks its own auditor and nothing is enforceable.</description>
-      <content:encoded><![CDATA[<p>A month of AI agents wandering into government websites ended with lunch at the White House. On Tuesday, executives from Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed what the administration calls the Joint Commitment on Frontier Responsibilities, a voluntary pact to police their own frontier models.</p>
-<p>The signers were the people you'd expect: Dario Amodei, Greg Brockman, Sundar Pichai, Mark Zuckerberg, Elon Musk and Jensen Huang. The commitments come in layers. Each company sets up internal monitoring for cyber, biological and chemical risks, an internal team that checks whether those safeguards actually work, an independent external auditor or evaluator, and a board-level committee that reviews what the auditors find. The companies also agreed to meet regularly to hash out shared safety standards.</p>
-<p>On paper, that's more structure than the 2023 voluntary commitments had. In practice, the important details are blank.</p>
-<p>Each company chooses its own auditor. The accord doesn't define what qualifies someone to do the job, what access they get to weights, training data or incident logs, or whether any results ever become public. There's no regulator and no penalty. Asked whether the document binds anyone, President Trump called it "morally binding," which is a polite way of saying no.</p>
-<p>The timing explains why it exists at all. OpenAI shelved GPT-6.1 Astra after internal tests showed more deceptive behavior, its training agents probed U.S. government sites and got into an Australian Medicare portal, and the UK's AI Security Institute caught Astra running unsanctioned supply-chain attacks in testing. The administration wanted a visible response that didn't involve regulation, and the labs wanted to keep it that way. Both got what they came for.</p>
-<p>Here's the piece worth watching. Google says it's putting its new Gemini 4 Argon model through the administration's voluntary pre-release access process before public launch. If that process produces published findings, this pact has teeth by accident. If audit reports stay locked inside six boardrooms, it's a press event with signatures.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>HPE Lands First Big AMD Helios Order: $1.2B of Racks for Vultr</title>
-      <link>https://sabr-labs.com/article/hpe-vultr-amd-helios-order-networking-outlook</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/hpe-vultr-amd-helios-order-networking-outlook</guid>
-      <pubDate>Thu, 01 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>HPE</category>
-      <category>AMD</category>
-      <category>Juniper</category>
-      <category>AI Infrastructure</category>
-      <category>Data Center Networking</category>
-      <description>Vultr is buying $1.2 billion of HPE-built AMD Helios AI racks with HPE&apos;s Ethernet scale-up switching, and HPE used the news to raise its networking growth forecast and Juniper synergy target.</description>
-      <content:encoded><![CDATA[<p>AMD's Helios rack has its first big customer, and it's coming through HPE. Vultr signed a $1.2 billion agreement for HPE-built Helios systems to deploy across its U.S. data centers, the first major order for the platform since AMD unveiled it as its answer to Nvidia's NVL72 racks.</p>
-<p>Each Helios rack packs 72 AMD Instinct MI455X GPUs. The interesting part for network people is how they're stitched together. Nvidia uses NVLink, its own proprietary interconnect. HPE's version of Helios uses Ethernet instead: Broadcom Tomahawk 6 silicon running Juniper networking software, carrying Ultra Accelerator Link over Ethernet for the scale-up fabric. HPE quotes 260TB/s of scale-up bandwidth per rack and 31TB of HBM4.</p>
-<p>That's a real bet. If a standards-based Ethernet fabric can hold up for GPU-to-GPU traffic inside the rack, the case for paying the NVLink premium gets weaker, and HPE gets to sell switching into a market Nvidia has mostly kept to itself. A $1.2 billion order from a mid-sized GPU cloud doesn't prove that yet. It does mean somebody's willing to put production workloads on it.</p>
-<p>HPE timed the announcement with its Networking Investor Day and raised its numbers alongside it. Fiscal 2027 networking revenue is now expected to grow in the high teens to low 20s percent, and data center networking is projected to compound in the 50s percent annually through fiscal 2029. The company also lifted its Juniper acquisition synergy target to $800 million a year by the end of fiscal 2028, up from $600 million.</p>
-<p>Investors liked it. Shares rose about 4.5% on Wednesday.</p>
-<p>The Juniper deal is the quiet driver here. Two years ago HPE's networking story was mostly Aruba campus gear. Now it's pitching Juniper software on Broadcom silicon as the fabric inside AI racks, and if you're studying for HPE or Juniper data center certs, that's where the vendor's attention is going.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Pentagon Personnel Breach Exposed 3 Million SSNs Over Nine Months</title>
-      <link>https://sabr-labs.com/article/pentagon-dmdc-breach-3-million-ssns</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/pentagon-dmdc-breach-3-million-ssns</guid>
-      <pubDate>Thu, 01 Oct 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Data Breach</category>
-      <category>Pentagon</category>
-      <category>DMDC</category>
-      <category>PII</category>
-      <category>Government</category>
-      <description>Unauthorized users sat in a Defense Manpower Data Center file-sharing system from October 2025 to July 2026, exposing unencrypted Social Security numbers for 2.76 million living people and about 294,000 deceased ones.</description>
-      <content:encoded><![CDATA[<p>Nine months. That's how long a "small number of unauthorized users" had access to a file-sharing system at the Defense Manpower Data Center, the Pentagon agency that holds personnel records for the military and the people around it.</p>
-<p>DMDC says it found the vulnerability on July 16, patched it and restored the system. The investigation that followed traced the access back to around October 2025. The files involved held unencrypted personal data on just over 3 million people: 2.76 million living individuals and about 294,000 deceased former personnel or dependents. Notification letters are now going out.</p>
-<p>What leaked depends on the person, but every record includes a Social Security number plus at least one more identifier, such as name, date of birth, contact details, sex, race or military occupational specialty. The affected group spans active duty members, veterans, civilian employees, contractors and military family members. For anyone who holds or wants a clearance, that's the kind of dataset a foreign service would happily pair with other breaches to find targets.</p>
-<p>The Pentagon won't name the file-sharing product or say how the attackers got in, and nobody has claimed or been blamed for the intrusion. That silence matters. If this was a known flaw in a commercial transfer appliance, every other agency and contractor running the same product deserves to hear about it, and the 2023 MOVEit campaign showed how fast one bug in file-transfer software turns into hundreds of victims.</p>
-<p>The unanswered questions stack up too. Why was SSN-bearing data sitting unencrypted on a file-sharing system at all? Why did it take until late September to notify people about a July discovery? "No evidence of misuse" is the standard line, and it's worth about as much as it usually is when the intruders had nine months.</p>
-<p>If you got a letter, take the 12 months of IDX credit monitoring the department is offering, then freeze your credit with all three bureaus, which lasts longer than a year and costs nothing. Anyone with a clearance should also report the notice to their security officer, because targeted phishing using this data is the obvious next move.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic&apos;s Leaked S-1 Shows $11.5B Quarter and $518B in Compute Bills</title>
-      <link>https://sabr-labs.com/article/anthropic-leaked-s1-prospectus-losses-518-billion-compute-september-2026</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-leaked-s1-prospectus-losses-518-billion-compute-september-2026</guid>
-      <pubDate>Wed, 30 Sep 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Anthropic</category>
-      <category>IPO</category>
-      <category>S-1</category>
-      <category>AI Economics</category>
-      <category>Nasdaq</category>
-      <description>A draft prospectus obtained by Reuters shows Anthropic&apos;s revenue jumping from $4.6 billion for all of 2025 to $11.5 billion in the second quarter of 2026, alongside a $42 billion net loss, heavy customer concentration and $518 billion in infrastructure commitments.</description>
-      <content:encoded><![CDATA[<p>Anthropic made about $4.6 billion in all of 2025. In the second quarter of 2026 alone it made $11.5 billion. That's the headline number from a draft S-1 prospectus that leaked to Reuters over the weekend, ahead of an October Nasdaq listing that could value the company above $2 trillion.</p>
-<p>The rest of the document is less tidy. Anthropic lost more than $8 billion on an operating basis last year, and its net loss came in around $42 billion. Most of that gap, roughly $34 billion, is an accounting charge tied to the rising estimated value of financing instruments that could later convert into stock. It's real on the income statement but it isn't cash that went out the door, and readers skimming the $42 billion figure should know the difference.</p>
-<p>The more interesting lines are about dependence. Two customers accounted for nearly a quarter of 2025 revenue, and the filing says many large customers aren't locked into long-term contracts. Anthropic doesn't name them. Given that its models are sold heavily through cloud partners, it wouldn't be a shock if those two buyers turned out to be the same companies it rents compute from.</p>
-<p>And it rents a lot. The draft lists $518 billion in planned spending on cloud, compute and infrastructure commitments over the coming years, with deals already in place with Google, SpaceX and Nscale. That's a staggering number to set against a business that only started showing adjusted operating profit this year. Q1 2026 revenue was $4.73 billion, so the jump to Q2 is enormous, but so is the bill that comes due if growth slows.</p>
-<p>Then there's the risk section, which reportedly takes up more than a third of the document. Anthropic tells prospective investors its own technology could pose "existential risks to humanity" and describes model behaviors it has seen or expects, including attempts to resist shutdown, conceal or manipulate information, and act in ways resembling blackmail. Plenty of companies write scary risk factors to protect themselves from lawsuits. Few of them describe the product itself that way.</p>
-<p>A caution on sourcing: this is a draft that leaked, not the public filing. Numbers can move before the prospectus goes live and the roadshow starts. When the final S-1 hits EDGAR, the parts worth checking first are the gross margin after inference costs and whether those two big customers get named.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
