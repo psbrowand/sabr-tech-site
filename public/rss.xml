@@ -6,9 +6,135 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2026 13:18:54 GMT</lastBuildDate>
-    <pubDate>Tue, 20 Oct 2026 13:18:54 GMT</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2026 13:19:55 GMT</lastBuildDate>
+    <pubDate>Wed, 21 Oct 2026 13:19:55 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>PHP2Shell: Two 9.2 RCE Bugs Hit Every PHP Since 5.4, Patch Lands Today</title>
+      <link>https://sabr-labs.com/article/php2shell-cve-2026-109618-109619-emergency-patch</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/php2shell-cve-2026-109618-109619-emergency-patch</guid>
+      <pubDate>Wed, 21 Oct 2026 13:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>PHP</category>
+      <category>RCE</category>
+      <category>Zero-Day</category>
+      <category>CVE-2026-109618</category>
+      <category>CVE-2026-109619</category>
+      <category>Web Security</category>
+      <description>PHP ships an out-of-cycle fix at 14:00 UTC for CVE-2026-109618 and CVE-2026-109619 after exploit code leaked a day early and Cloudflare reported the first attacks.</description>
+      <content:encoded><![CDATA[<p>Every web server running PHP 5.4 or later is exposed to a pair of unauthenticated remote code execution bugs, and the only real fix arrives at 14:00 UTC today. PHP's security team posted the advance notice on Monday, rating both CVE-2026-109618 and CVE-2026-109619 at CVSS v4.0 9.2 and promising version details with the release. By Tuesday night the embargo had collapsed. Someone leaked a screenshot of an exploit tool called PHP2Shell, credited to Calif.IO, with a banner claiming it works against every PHP release from 5.4.0 onward.</p>
+<p>watchTowr, which had been working under the original embargo, said everyone was supposed to wait until Thursday. The PHP team pulled the release forward to Wednesday instead. watchTowr also says it independently reproduced CVE-2026-109618, which is about as strong a confirmation as you'll get before the patch drops.</p>
+<p>The attack surface appears to be multipart form parsing. PHP processes multipart/form-data request bodies before any application code runs, which is why PHP core developers have been blunt that configuration won't save you. Core developer Gina Peter Banyard called patching the only mitigation, and 8.6 release manager Joe Ferguson said flatly that ini settings won't help. Disabling session upload progress does nothing against this.</p>
+<p>Exploitation has started. Cloudflare CTO Dane Knecht said the company was seeing early attacks emerging, and Sansec's timeline puts Cloudflare's first observation at 07:43 UTC on Wednesday, hours before the patch. Nobody has published indicators yet. Sansec, which watches e-commerce platforms like Magento, Shopware, and WooCommerce, expects mass scanning within 15 minutes of the fix going public, because the diff will tell attackers exactly where to aim.</p>
+<p>Fixes are coming only for supported branches: 8.2, 8.3, 8.4, and 8.5. Pre-release reporting from Kevin Beaumont points to 8.5.12, 8.4.27, 8.3.36, and 8.2.35 as the fixed builds, but confirm against php.net once the release is live. PHP 8.1 and everything older is end-of-life and gets nothing official. One estimate puts the count of internet-facing EOL PHP hosts near 884,000. Distribution vendors will backport for the enterprise Linux branches they still support, so check your distro's advisory rather than assuming you're stuck.</p>
+<p>If you can't patch in the next few hours, the stopgaps are ugly but real. Block multipart/form-data at nginx or Apache, which also breaks file uploads. Put the origin behind a WAF (Cloudflare says its managed rules cover the known vectors, free tier included) and lock origin access to the WAF's IP ranges so attackers can't go around it. Or take the site read-only by rejecting anything that isn't GET or HEAD. CERT-EU went further and told members to isolate internet-facing PHP applications until fixed.</p>
+<p>One warning: exploit code is circulating on forums and GitHub, and almost none of it is verified. Some of it will be malware aimed at defenders who download it to test. Wait for the official diff.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>eMudhra&apos;s CA Keys Could Be Computed From Public Certs. Browsers Pulled Them</title>
+      <link>https://sabr-labs.com/article/emudhra-ca-weak-keys-browsers-block-eight-intermediates</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/emudhra-ca-weak-keys-browsers-block-eight-intermediates</guid>
+      <pubDate>Wed, 21 Oct 2026 12:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>PKI</category>
+      <category>Certificate Authority</category>
+      <category>eMudhra</category>
+      <category>TLS</category>
+      <category>Chrome</category>
+      <category>Firefox</category>
+      <description>Eight eMudhra intermediate certificates were generated with so little randomness that a researcher recovered every private key in under a second, forcing Chrome, Firefox, Apple, and Microsoft to block them.</description>
+      <content:encoded><![CDATA[<p>Scott Helme recovered all eight private keys in less than a second. He didn't steal them. He computed them from the public certificates, because eMudhra's April 2025 key generation ceremony produced keys with so little entropy that the math falls apart on inspection. Anyone who did the same work could have minted a certificate for any domain on the internet, and Chrome, Firefox, Safari, and Windows would have trusted it.</p>
+<p>The report came in on Friday, October 17, from a researcher Mozilla credits only as Wayne. Chrome's Root Program had a CRLSet block live within an hour and forty minutes. Mozilla's team recovered the keys themselves within two hours of being notified and had OneCRL pushed by late evening. Apple blocked the certificates Sunday, Android devices got a block through Play Services Sunday night, and Microsoft followed Monday. Google and Mozilla published their statements Monday too. That's a fast, coordinated response, and it deserves credit.</p>
+<p>The eight certificates break down as six TLS intermediates (DV, OV, and EV, each in a G3B and G3C variant) chaining to emSign ECC Root CA - G3, plus two code-signing intermediates. Each also exists as a Sectigo cross-signed copy with the same public key, which is why Chrome blocked by key rather than by certificate. Chrome didn't block the code-signing pair because its TLS verifier won't build a path through a code-signing-restricted intermediate anyway.</p>
+<p>eMudhra's account, published Tuesday to the Bombay Stock Exchange, is that the ceremony used FIPS 140-2 Level 3 HSMs and a flaw in a key wrap/unwrap step produced a second, weak set of keys alongside the intended strong ones. The weak set is what got published to root stores. The company says its infrastructure wasn't breached, that only one of the eight was ever deployed in production, that none issued end-entity certificates, and that global TLS is about 1% of its revenue. Its shares dropped roughly 20% in Mumbai anyway.</p>
+<p>Here's the problem with the reassurance. No certificate chaining to the six TLS intermediates appears in Certificate Transparency logs before Chrome's block, which is good. But CT only records what's logged, and a forged certificate used in a targeted interception would have no reason to be logged. Nobody can say whether these keys were abused. eMudhra is also still determining the root cause of a flaw it has already explained, which reads like the explanation arrived before the investigation did.</p>
+<p>The browser side is handled for you. The rest of your stack isn't. Go binaries, Python's certifi bundle, Node.js, and most non-browser TLS clients don't check revocation and will trust these chains until their root bundles or code change. Go shipped 1.27.3 and 1.26.10 to reject the eight keys, which requires rebuilding; Go 1.25 and older get nothing. Node's fix is a draft PR. Cloudflare pushed updated WARP, 1.1.1.1, and cloudflared clients. Chrome removes emSign ECC Root CA - G3 entirely in root store version 43, expected to reach devices around October 27, and anyone with a certificate under that root needs a new chain before then.</p>
+<p>If you run anything that pins a root bundle, audit it this week.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Qilin and Inc Ransomware Walk Through a GlobalProtect Bug Patched in May</title>
+      <link>https://sabr-labs.com/article/palo-alto-globalprotect-cve-2026-0257-qilin-inc-ransomware</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/palo-alto-globalprotect-cve-2026-0257-qilin-inc-ransomware</guid>
+      <pubDate>Wed, 21 Oct 2026 12:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Palo Alto Networks</category>
+      <category>PAN-OS</category>
+      <category>GlobalProtect</category>
+      <category>Ransomware</category>
+      <category>Qilin</category>
+      <category>CVE-2026-0257</category>
+      <description>Unit 42 says at least two ransomware crews are using CVE-2026-0257, an authentication override cookie flaw in PAN-OS GlobalProtect, to open VPN sessions without credentials and bypass MFA on their way to vCenter.</description>
+      <content:encoded><![CDATA[<p>The bug was rated medium when Palo Alto Networks disclosed it on May 13. Four days later Rapid7 saw attackers using it against customer firewalls. Five months on, Palo Alto's own Unit 42 team has updated its threat brief to say Qilin and Inc ransomware affiliates are among the groups exploiting it, and ReliaQuest adds Settra to the list. The flaw is CVE-2026-0257, an authentication bypass in GlobalProtect portals and gateways, and the fix has been available since the day it was disclosed.</p>
+<p>The mechanics are embarrassing in the way VPN bugs usually are. GlobalProtect's authentication override feature issues a cookie so users don't have to re-authenticate for a set period. The firewall trusted that cookie without properly validating its integrity, so a remote attacker with no credentials could forge one and establish a VPN session. MFA never comes into it because the cookie says you already passed. Palo Alto now scores it CVSS 4.0 7.8 with exploit maturity marked as attacked, and its advisory asks for the highest urgency.</p>
+<p>What the crews do after they're in is textbook, which is the point. Unit 42 describes attackers using legitimate IT management tools to look around and move laterally, then credential and data theft, then ransomware. In one case the intruders went from the VPN gateway to the vCenter appliance, disabled security controls on the ESXi hosts, and ran a custom tool against the domain controller's virtual disk to pull credentials offline. Some chained in the old Veeam bug, CVE-2023-27532. ReliaQuest found Cobalt Strike, BloodHound, and SharpHound in its cases. Healthcare, education, government, and energy have all taken hits.</p>
+<p>Exposure requires a specific setup: a GlobalProtect portal or gateway with authentication override cookies enabled, plus a particular certificate configuration. That's a real limiter and probably why the initial severity was low. It's also a common enough configuration that two separate ransomware operations built playbooks around it.</p>
+<p>Fixed builds span four PAN-OS branches. On 12.1 you need 12.1.4-h6 or 12.1.7; on 11.2, 11.2.4-h17, 11.2.7-h14, 11.2.10-h7, or 11.2.12; on 11.1, 11.1.4-h33, 11.1.6-h32, 11.1.7-h6, 11.1.10-h25, 11.1.13-h5, or 11.1.15; on 10.2, 10.2.7-h34, 10.2.10-h36, 10.2.13-h21, 10.2.16-h7, or 10.2.18-h6. Prisma Access needs 11.2.7-h13 or 10.2.10-h36. Cloud NGFW and Panorama aren't affected. If you can't patch, use a dedicated certificate for authentication override cookies or turn the override options off entirely in the portal and gateway config.</p>
+<p>Patching isn't the whole job. ReliaQuest's warning is that access established before remediation survives it. Terminate every active GlobalProtect session after you upgrade, then go through the connection logs for anything you don't recognize. Unit 42 specifically flags sessions from hosts named "kali," which tells you how little effort some of these operators bother with. ReliaQuest expects the exploitation to run at least another three months, because the install base that hasn't patched in five months isn't going to start now.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Salesforce Pays $5.66B for Braze to Fix the Marketing Cloud It Already Owns</title>
+      <link>https://sabr-labs.com/article/salesforce-acquires-braze-5-66-billion</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/salesforce-acquires-braze-5-66-billion</guid>
+      <pubDate>Wed, 21 Oct 2026 11:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Salesforce</category>
+      <category>Braze</category>
+      <category>Acquisition</category>
+      <category>Martech</category>
+      <category>Agentforce</category>
+      <description>Braze shareholders get $47.50 a share in cash, Braze keeps its brand and CEO, and the deal won&apos;t close before Salesforce&apos;s next fiscal year.</description>
+      <content:encoded><![CDATA[<p>$47.50 a share, all cash, about $5.66 billion in enterprise value. That's what Salesforce agreed Monday to pay for Braze, the customer engagement platform that sends the push notifications, in-app messages, SMS, WhatsApp, and email that brands like Instacart, Venmo, Canva, and Dairy Queen fire at their customers. Braze stock jumped around 50% on the news, which tells you roughly how far below that price it had been trading.</p>
+<p>Salesforce already sells this. Marketing Cloud has been in the portfolio since the ExactTarget deal in 2013, and the company has spent a decade bolting acquisitions onto it. Buying Braze is an admission that the real-time, event-driven side of the product never caught up with the specialists. Braze was built on a streaming architecture that reacts to what a user just did inside an app, and that's precisely the capability Salesforce needs if Agentforce is going to do anything useful in consumer marketing beyond drafting copy.</p>
+<p>The official framing is that Braze complements all four layers of the Salesforce stack: Data 360, Customer 360, Agentforce, and SIForce. Strip the branding and it means Braze's decisioning engine gets wired to Salesforce's customer data and agent layer. Braze will keep its name and CEO Bill Magnuson stays on with his leadership team. It has about 2,770 customers and 15 offices.</p>
+<p>The price is steep by Salesforce's own numbers. The company said it's paying roughly five times Braze's expected fiscal 2028 revenue, and outside estimates put it near eight times trailing revenue. Salesforce says it expects the deal to add to growth but dilute profitability in the near term, and that it doesn't need debt to fund it. Fiscal 2027 guidance is unchanged. The deal closes in fiscal 2028, which starts in February, and only after Braze shareholders and regulators sign off.</p>
+<p>Regulators are the open question. Salesforce and Braze are two of the larger vendors of brand-to-consumer messaging, and consolidation in martech has gone mostly unchallenged for years. This is a big enough check, in a category with few remaining independents, that someone in Washington or Brussels may at least ask.</p>
+<p>For teams running Braze today, nothing changes for at least four months. After that, expect the Salesforce sales motion to show up in your renewal conversation.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>SpaceX and Tesla Boards Form Merger Committees as SpaceX Posts a $4.4B Quarter</title>
+      <link>https://sabr-labs.com/article/spacex-tesla-special-committees-merger-q3-profit</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-tesla-special-committees-merger-q3-profit</guid>
+      <pubDate>Wed, 21 Oct 2026 11:10:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>SpaceX</category>
+      <category>Tesla</category>
+      <category>Elon Musk</category>
+      <category>Merger</category>
+      <category>Earnings</category>
+      <category>Starlink</category>
+      <description>Musk confirmed on SpaceX&apos;s first earnings call as a public company that independent directors at both firms are studying a combination he isn&apos;t allowed to negotiate, while SpaceX&apos;s AI compute business grew ninefold.</description>
+      <content:encoded><![CDATA[<p>Elon Musk spent part of SpaceX's first earnings call as a public company explaining why he can't be in the room. Both the SpaceX and Tesla boards have formed special committees of independent directors to study a merger, he said Tuesday, and because he's a conflicted party under securities rules, he isn't on either one and isn't part of the talks. He called the whole thing an odd Kabuki dance. He also said he thinks it's a good idea.</p>
+<p>The committees exist because shareholders asked for them. No terms have been agreed, Musk said, and there's no guarantee any will be. A deal would need approval from a majority of all Tesla shares outstanding, not just the shares that vote, which he described as quite a high hurdle. Anyone treating the merger as a certainty is overstating it, in his words. The market shrugged at the caveats: SpaceX shares rose between 5% and 8% after hours depending on which report you read.</p>
+<p>The numbers underneath the call explain why the question keeps coming up. SpaceX booked $14.6 billion in third-quarter revenue, up 161% from a year ago, and a $4.4 billion profit against a $1.1 billion loss in the same quarter last year. Starlink did $5.2 billion of that, up 69%, on 13.6 million consumer subscribers, though average monthly revenue per subscriber slipped to $69 from $83 as the service pushes into cheaper markets.</p>
+<p>The bigger story is the line item that didn't exist at this scale a year ago. SpaceX's AI unit, built on the xAI acquisition it closed in February and has since renamed SpaceXSI, booked $7.6 billion in the quarter, more than nine times the prior year. Most of that is renting compute to other labs. Anthropic has agreed to pay nearly $45 billion over three years, and Google is paying $920 million a month through mid-2029. SpaceX is now, by revenue, as much a data center landlord as a launch company.</p>
+<p>That's also the merger logic Musk offered: AI software, chip design, robotics, and connectivity overlap between the two companies. Tesla already put about $2 billion into a SpaceX AI subsidiary in January. The pieces are being arranged in public, one related-party transaction at a time, and the special committees are the governance answer to a question investors have been asking since the SpaceX IPO.</p>
+<p>What the committees can't change is the arithmetic of a majority-of-all-outstanding vote at Tesla, where a large retail base and index funds that often abstain make any threshold hard. Musk knows this, which is probably why he said it out loud.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic Is Near a Second $45B Nscale Deal. Its Compute Tab Could Hit $750B</title>
+      <link>https://sabr-labs.com/article/anthropic-nscale-second-45-billion-deal-750-billion-compute</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-nscale-second-45-billion-deal-750-billion-compute</guid>
+      <pubDate>Wed, 21 Oct 2026 10:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Nscale</category>
+      <category>Data Centers</category>
+      <category>AI Infrastructure</category>
+      <category>IPO</category>
+      <description>Bloomberg and CNBC report a second 460 MW West Virginia deal is days from signing, while the Journal&apos;s read of Anthropic&apos;s draft IPO filing shows $450 billion in noncancelable cloud commitments already on the books.</description>
+      <content:encoded><![CDATA[<p>Anthropic is close to signing a second roughly $45 billion compute deal with Nscale, according to Bloomberg and CNBC, covering another 460-megawatt building at the Monarch campus in West Virginia. The first Monarch deal, struck in August, was about the same size. If this one closes in the coming days as reported, a single data center operator with an unfinished IPO will be holding around $90 billion of Anthropic's forward spending.</p>
+<p>Neither company has commented, and the reporting hedges that terms could still change. Treat it as likely, not done.</p>
+<p>The deal matters less on its own than as a data point in a number the Wall Street Journal pulled from Anthropic's draft IPO prospectus this week. The filing shows roughly $450 billion in noncancelable cloud commitments over the next decade: about $111 billion to Google Cloud, $110 billion to Amazon Web Services, and $31 billion to Microsoft, with the rest spread across other providers. Add the deals still being negotiated, Nscale among them, and the Journal's total reaches as much as $750 billion. For scale, SpaceX disclosed Tuesday that Anthropic alone has agreed to pay it nearly $45 billion over three years for compute.</p>
+<p>The same filing explains why Anthropic can contemplate that. Revenue for the first half of 2026 was $16.3 billion, up from $1.1 billion a year earlier, and against full-year 2025 revenue of $4.6 billion. The headline net loss of $80.7 billion for the half is mostly an accounting artifact: about $72 billion of it comes from revaluing convertible notes and other instruments as the company's valuation rose. Actual cash burn was closer to $9 billion in six months, which is still more than Anthropic spent in all of 2025. The IPO is reportedly targeting a valuation of up to $2 trillion.</p>
+<p>Here's the skeptical read. Noncancelable means noncancelable. These are decade-long obligations priced against a revenue curve that has gone from one billion to sixteen billion in a year and is assumed to keep bending upward. The commitments are also concentrated in a small number of counterparties, several of which (Amazon, Google) are also investors and competitors, and one of which (Nscale) has had a rough few months. Microsoft walked away from anchoring Nscale's Loughton site in the UK over grid delays and reportedly from Monarch itself shortly after signing a letter of intent. Investors have pushed back on Nscale's roughly $30 billion IPO valuation.</p>
+<p>Whether that's a problem depends entirely on whether demand holds. Anthropic is betting $450 billion to $750 billion that it does. The filing will be public soon enough, and the commitments footnote is the first thing worth reading.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Stolen ConnectWise Backup Secret Opened 300+ Microsoft 365 Tenants</title>
       <link>https://sabr-labs.com/article/connectwise-cloud-backup-stolen-m365-secret-huntress</link>
@@ -918,127 +1044,6 @@
 <p>The AI angle is the part everyone will quote, so it's worth being precise. DIVD's own statement says the modus operandi indicates an agentic attack, without much detail behind it. The color came in follow-up reporting: the agent moved very fast, left verbose comments in its tooling that helped responders reconstruct what it did, and made dumb choices, including a password spray that broke its own man-in-the-middle setup. That reads less like a superhuman hacker and more like an intern with no fear and infinite stamina. Still dangerous. Network segmentation is what kept the damage limited.</p>
 <p>If you run Zammad on 6.x, get to version 7 or pull the box offline. Before you upgrade, preserve application and network logs and run DIVD's IoC check script, since patching wipes the evidence you'd need to know whether you were hit. The root escalation still has no fix, so keep the helpdesk off the open internet until there is one.</p>
 <p>DIVD deserves credit for disclosing its own breach in public within days. Most victims take months and a lawyer's draft to say half as much.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>TA419 Posed as Ex-White House and Anthropic Staff to Phish AI Experts</title>
-      <link>https://sabr-labs.com/article/ta419-phishing-ai-policy-experts-anthropic-white-house</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ta419-phishing-ai-policy-experts-anthropic-white-house</guid>
-      <pubDate>Sat, 03 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>TA419</category>
-      <category>Proofpoint</category>
-      <category>Phishing</category>
-      <category>China</category>
-      <category>AI Policy</category>
-      <category>AiTM</category>
-      <description>Proofpoint says the espionage group used rapport-building emails and session-stealing Microsoft login pages to target US think tanks, universities and law firms working on AI policy.</description>
-      <content:encoded><![CDATA[<p>The email looked like a favor being asked. Would you join an AI Policy Advisory Committee? Could you give feedback on a Senate report about AI export controls? Proofpoint says those invitations came from TA419, a China-aligned espionage group, wearing the names of people the recipients would recognize.</p>
-<p>The impersonated names include Lynne Parker, a former principal deputy director at the White House Office of Science and Technology Policy, economist Heidi Crebo-Rediker, and a senior Anthropic employee. The Anthropic lure ran in February 2026 under the subject line "Request for Feedback on Military Integration of Claude." The White House and economist personas started on July 8. Targets were AI policy experts at US think tanks, universities and law firms.</p>
-<p>The first message carried no link and no attachment. It just asked for a reply. Only after someone answered did TA419 send a shortened link to a fake OneDrive page, which used a browser-in-the-browser kit and a Cloudflare Turnstile check to look legitimate and keep scanners out. The login then relayed to real Microsoft infrastructure, so the password, the MFA prompt and the conditional access checks all passed normally. The attacker kept the session it produced.</p>
-<p>That last detail is why push MFA doesn't help here. A proxied login is a real login, and the stolen session token is as good as being the user. Phishing-resistant authentication (FIDO2 keys or passkeys bound to the origin) is the control that actually breaks this, along with short token lifetimes and alerts on sessions that suddenly show up from new infrastructure.</p>
-<p>Proofpoint says TA419 has gone after think tanks, defense-linked organizations, universities and law firms in the US and Japan since at least April 2025. The interest is obvious. Export controls on chips and models are some of the most consequential trade policy Washington writes right now, and the people drafting the recommendations are mostly outside government with personal inboxes and fewer defenses.</p>
-<p>If you work anywhere near this topic, treat an unsolicited invitation from a name you admire as a reason to verify by another channel, not a reason to reply.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft&apos;s 2026 Defense Report Says AI Has Handed Attackers the Lead</title>
-      <link>https://sabr-labs.com/article/microsoft-digital-defense-report-2026-ai-attackers</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-digital-defense-report-2026-ai-attackers</guid>
-      <pubDate>Sat, 03 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Microsoft</category>
-      <category>Digital Defense Report</category>
-      <category>AI Security</category>
-      <category>Threat Intelligence</category>
-      <category>Phishing</category>
-      <description>Microsoft&apos;s annual threat report finds the median time from vulnerability discovery to weaponization has fallen under 24 hours, with phishing and app exploits both surging as initial access vectors.</description>
-      <content:encoded><![CDATA[<p>Under 24 hours. That's the median time Microsoft now sees between a vulnerability becoming known and someone weaponizing it, according to its 2026 Digital Defense Report. The report covers July 2025 through June 2026, and its central claim is blunt: AI has shifted the near-term advantage to attackers.</p>
-<p>The initial-access numbers tell the same story. Phishing went from 7% of intrusions Microsoft investigated to 23% year over year, and exploitation of public-facing apps rose from 15% to 24%, per Help Net Security's read of the report. Microsoft also expects a record of roughly 72,000 CVEs this year. More bugs, found faster, exploited sooner.</p>
-<p>The phishing jump is the one I'd sit with. The classic tells (bad grammar, wrong context, odd timing, generic greetings) were a large part of how users caught phish, and models fix all of them at once and at scale. Today's TA419 story is a case in point. Those emails didn't need a single typo to fail.</p>
-<p>Microsoft says Chinese, Russian, North Korean and Iranian groups are now using AI across the whole attack lifecycle, and it documents what it calls the first AI-orchestrated ransomware extortion, a July 2026 case tracked as JADEPUFFER. Some of this is exactly what you'd expect a security vendor to say while selling AI-powered defense.</p>
-<p>The weaponization figure is harder to wave off, because it lines up with what responders have been reporting all year, with KEV entries landing days or hours after disclosure.</p>
-<p>The recommendations aren't new, and that's the uncomfortable part. Patch faster, treat identity as the control plane, enforce phishing-resistant MFA, and measure patch latency like it's a business metric. If the window is under a day, a monthly patch cycle for internet-facing systems isn't a process anymore. It's a gap.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Apple Will Lock Down Full Disk Access on macOS After the Muse Mess</title>
-      <link>https://sabr-labs.com/article/apple-macos-full-disk-access-controls-ai-agents</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/apple-macos-full-disk-access-controls-ai-agents</guid>
-      <pubDate>Sat, 03 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Apple</category>
-      <category>macOS</category>
-      <category>Privacy</category>
-      <category>AI Agents</category>
-      <category>Meta Muse</category>
-      <description>Apple told developers it will add controls requiring explicit user action to grant Full Disk Access, citing apps that expose mail, messages and browsing history and the growing risk from AI agents.</description>
-      <content:encoded><![CDATA[<p>Apple is about to make Full Disk Access a lot harder to get. In a developer news post on October 2, the company said it will add controls so users can only grant the permission through very explicit action, and it didn't mince words about why: some developers are using it in ways that expose files, mail, messages and browsing history without users really understanding what they agreed to.</p>
-<p>Apple named nobody. It didn't have to. Three weeks ago Inc. columnist Jason Aten reported that Meta's Muse agent had surfaced the contents of his iMessages after he declined to give it Messages access. He found the paired Mac app had synced more than 187,000 rows from the Messages database, the kind of read Full Disk Access makes possible. Meta's David Singleton said on Threads that the sync was an opt-in feature. Aten says he never turned it on.</p>
-<p>Full Disk Access was built for backup tools and disk utilities, apps that need to touch everything for one narrow job. An agent is a different animal. It reads, interprets, decides and acts, and it can carry what it learned into other tools and other servers. Apple's own post makes that point, saying the risk grows as agents get more capable and autonomous.</p>
-<p>What's missing is a date. Apple didn't say when the controls arrive or what they look like, and it didn't spell out what developers who genuinely need the permission should do differently. That probably means a macOS point release, and probably some friction for legitimate backup and security vendors who'll get caught in the same net.</p>
-<p>If you manage Macs, don't wait for Apple. Open Privacy and Security settings, look at the Full Disk Access list, and pull anything that isn't backup, EDR or something you can justify out loud. MDM can lock this down with PPPC profiles today.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Broadcom Is Raising $60B in Debt So Anthropic Can Afford Its Chips</title>
-      <link>https://sabr-labs.com/article/broadcom-60b-financing-anthropic-ai-chips</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/broadcom-60b-financing-anthropic-ai-chips</guid>
-      <pubDate>Sat, 03 Oct 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Broadcom</category>
-      <category>Anthropic</category>
-      <category>Blackstone</category>
-      <category>AI Infrastructure</category>
-      <category>TPU</category>
-      <description>Bloomberg reports Broadcom&apos;s banks are syndicating a $42B senior tranche and an $18B junior tranche led by Blackstone to fund TPU compute for Anthropic and other AI customers.</description>
-      <content:encoded><![CDATA[<p>Broadcom wants to sell Anthropic a lot of chips. Anthropic needs someone to lend it the money to buy them. So Broadcom is arranging the loan.</p>
-<p>According to Bloomberg, Broadcom's bank syndicate has started raising a $60 billion financing package for AI chip capacity. It's split into a $42 billion senior secured tranche and an $18 billion junior tranche. Blackstone leads the junior piece, committing $9 billion from its own funds and syndicating the rest.</p>
-<p>The money is meant to cover TPU-based compute for Anthropic and other customers. Anthropic's IPO filing already disclosed that Broadcom agreed to lend it up to $42 billion, covering roughly a third of a $125.2 billion five-year TPU lease commitment, with 3.5 gigawatts expected to come online starting in 2027. Anthropic is on track to be Broadcom's biggest compute customer that year.</p>
-<p>Vendor financing isn't new, and it isn't automatically a red flag. But it changes who carries the risk. When the supplier lends the customer the money to buy the supplier's product, Broadcom's revenue looks great right up until the customer can't pay, and then a lot of it turns into a loan problem. Anthropic's own S-1 flagged potential conflicts of interest from Broadcom being both supplier and lender, including exposure to pricing and equipment availability.</p>
-<p>That's the kind of risk factor lawyers write when they've thought hard about it, and it's the one investors should read twice.</p>
-<p>The $60 billion figure also says something about where AI money is coming from now. Equity rounds can't keep up with gigawatt-scale bills, so the build-out is moving onto credit markets, with private credit firms like Blackstone taking the junior risk. Watch how the junior tranche prices. It's the cleanest market read you'll get on how lenders rate AI compute demand three years out.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco SD-WAN Manager Zero-Day CVE-2026-76504 Hands Out Admin API Access</title>
-      <link>https://sabr-labs.com/article/cisco-sd-wan-manager-zero-day-cve-2026-76504</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-sd-wan-manager-zero-day-cve-2026-76504</guid>
-      <pubDate>Thu, 01 Oct 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Cisco</category>
-      <category>SD-WAN</category>
-      <category>Zero-Day</category>
-      <category>CISA KEV</category>
-      <category>Authentication Bypass</category>
-      <description>An unauthenticated authentication bypass in Catalyst SD-WAN Manager is being exploited in the wild, CISA gave federal agencies until October 3 to patch, and there is no workaround.</description>
-      <content:encoded><![CDATA[<p>If you run Catalyst SD-WAN Manager, the box formerly known as vManage, stop reading the news and go check your version. Cisco has confirmed that attackers are exploiting CVE-2026-76504, a CVSS 9.8 authentication bypass that lets an unauthenticated remote attacker reach the management API with administrator privileges.</p>
-<p>The bug is almost embarrassingly old-school. Cisco classifies it as CWE-177, improper handling of URL encoding: the controller interprets hex-encoded characters inconsistently, so a crafted HTTP request can slip past the authentication rule guarding a specific API endpoint. One layer decodes the path, another one doesn't, and the check never fires.</p>
-<p>Every supported train is affected regardless of configuration: 26.2, 26.1, 20.18, 20.15, 20.12, 20.9, and anything older than 20.9. Fixed builds are out for 20.9 through 26.2. If you're stuck on something earlier than 20.9.10.1, there's no backport coming. You migrate to a fixed release, full stop, because Cisco says there's no workaround.</p>
-<p>CISA added the flaw to its Known Exploited Vulnerabilities catalog on September 30 and gave federal civilian agencies until October 3 to remediate. Three days is about as short as that clock gets, and it tells you how CISA rates the risk.</p>
-<p>Cisco found the activity through a TAC support case in September, not through outside research, which usually means a customer noticed something wrong before anyone knew the bug existed. Nobody has attributed the exploitation yet. Help Net Security counts this as Cisco's fifth in-the-wild zero-day of 2026, and it's not the first time SD-WAN Manager has been on the list this year: CVE-2026-20127, another SD-WAN authentication bypass, went into KEV back in February.</p>
-<p>That pattern is the uncomfortable part. An SD-WAN controller pushes config and policy to every edge router in the fabric. Admin on the manager is effectively admin on the WAN, and the management plane keeps ending up reachable from places it shouldn't be.</p>
-<p>Patching isn't enough on its own. Cisco says to review serviceproxy-access.log and vmanage-server.log for the indicators listed in its advisory, while warning that some of those entries can show up in normal operation, so open a TAC case if you're unsure. And if your manager's web interface is reachable from the internet, today is a good day to fix that too.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Mandiant: NetScaler Zero-Day Was Exploited for Weeks Before the Patch</title>
-      <link>https://sabr-labs.com/article/netscaler-cve-2026-88772-whipshot-slapshot-mandiant</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/netscaler-cve-2026-88772-whipshot-slapshot-mandiant</guid>
-      <pubDate>Thu, 01 Oct 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Citrix</category>
-      <category>NetScaler</category>
-      <category>Mandiant</category>
-      <category>Zero-Day</category>
-      <category>Threat Intelligence</category>
-      <description>Google&apos;s threat intel team says attackers have used CVE-2026-88772 since at least early September to plant WHIPSHOT web shells and a SLAPSHOT tunnel on NetScaler appliances in North America and Europe.</description>
-      <content:encoded><![CDATA[<p>Patched isn't the same as clean. That's the takeaway from Google Threat Intelligence Group and Mandiant, who published their findings on the NetScaler campaign this week and say exploitation of CVE-2026-88772 started at least as early as the beginning of September, weeks before Citrix shipped fixes on September 27.</p>
-<p>The victims Google lists are the usual high-value set: government, financial services, technology, education, and legal and professional services, across North America and Europe. Help Net Security reports Mandiant sees the operators as advanced and likely state-sponsored. Google hasn't put a name or cluster number on them publicly.</p>
-<p>The exploit path is ugly. CVE-2026-88772 lives in the NetScaler Packet Processing Engine and fires during the DTLS handshake over UDP 443, before any authentication. Malformed DTLS record headers corrupt heap memory and redirect execution to shellcode running as root on the underlying FreeBSD. One side effect is an NSPPE crash, which shows up in logs alongside SSL handshake failures. If you saw unexplained packet engine restarts in September and shrugged, go back and look.</p>
-<p>Persistence is where the operators got clever. They edited the appliance's Apache config so files ending in .deb and .sig execute as PHP, then used AliasMatch to route requests for /vpn/media/*.ico to those shells. To a casual log review, it looks like someone fetching favicons. They also set the setuid bit on /bin/sh for a durable root foothold.</p>
-<p>The tooling is two pieces. WHIPSHOT is a small PHP web shell that hides Base64-encoded commands inside ordinary HTTP headers and answers with a 404 status while returning tunneled data in the body. It talks over loopback to SLAPSHOT, a Python TCP tunnel that forwards arbitrary connections into the internal network. That combination turns the NetScaler into a pivot point for reconnaissance and credential theft, which is exactly what a Gateway box is positioned to do.</p>
-<p>So the remediation list is longer than "upgrade to 14.1-73.37 or 13.1-64.23." Google says to check /etc/httpd.conf for unexpected AddHandler and AliasMatch entries, inspect /bin/sh permissions, look for /tmp/.uxdport and /tmp/.uxdlock, kill active admin, Gateway and VPN sessions, and rotate admin credentials, LDAP bind accounts and TLS certificates. If your DTLS-enabled Gateway was internet-facing in September, treat the credentials it touched as burned.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
