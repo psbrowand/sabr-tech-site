@@ -6,9 +6,136 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 13:19:55 GMT</lastBuildDate>
-    <pubDate>Wed, 21 Oct 2026 13:19:55 GMT</pubDate>
+    <lastBuildDate>Thu, 22 Oct 2026 13:18:45 GMT</lastBuildDate>
+    <pubDate>Thu, 22 Oct 2026 13:18:45 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>DeepSeek Open-Sources DeepInfer, the Stack It Uses to Serve V4.1 Flash</title>
+      <link>https://sabr-labs.com/article/deepseek-deepinfer-open-source-inference-stack-v4-1-flash</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/deepseek-deepinfer-open-source-inference-stack-v4-1-flash</guid>
+      <pubDate>Thu, 22 Oct 2026 13:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>DeepSeek</category>
+      <category>Open Source</category>
+      <category>Inference</category>
+      <category>vLLM</category>
+      <category>Huawei Ascend</category>
+      <category>LLM Serving</category>
+      <description>DeepInfer is an Apache-2.0 inference framework built on vLLM that runs DeepSeek-V4.1-Flash on Nvidia SM100 GPUs and Huawei Ascend 950 NPUs, minus the KV cache and prefill/decode disaggregation pieces DeepSeek kept in-house.</description>
+      <content:encoded><![CDATA[<p>DeepSeek put its production inference stack on GitHub this week. The repo is called DeepInfer, it's Apache-2.0, and the company's one-line justification was that it's "sharing our production stack to help the community lower compute costs." Within days it had crossed 19,000 stars.</p>
+<p>What's in it: a serving framework built mainly on vLLM with ideas borrowed from SGLang and TensorRT-LLM, wired to DeepSeek's own kernel libraries (FlashMLA, DeepGEMM, DeepEP, TileKernels, DeepSelect and TileLang). The headline technique is a speculative-decoding scheme DeepSeek calls DSpark, which drafts up to five tokens ahead and verifies them on a confidence schedule. There's attention data-parallelism, balanced context parallelism, expert parallelism with load balancing for the MoE layers, an asynchronous batch scheduler turned on by default, and deterministic, batch-invariant sampling on Nvidia hardware. Structured output supports regex, JSON schema and EBNF grammars.</p>
+<p>It runs exactly one model today, DeepSeek-V4.1-Flash, with the 1017 checkpoint as the default. DeepSeek says future models will be added as they ship.</p>
+<p>What's not in it is the more telling list. The README says the release is offline inference only and explicitly excludes the KV cache system, prefill/decode disaggregation, and data-parallel load balancing. Those three are most of what makes a large-scale serving deployment cheap. DeepSeek said back in 2025 that it wouldn't open its full engine as a single repo and would push components upstream instead, and DeepInfer is consistent with that: a very good single-node reference, not the thing actually running DeepSeek's API.</p>
+<p>Hardware support is the other signal. The supported targets are Nvidia SM100 parts on CUDA 13 and Huawei Ascend 950 NPUs on CANN 9.2. No Hopper, no consumer cards, and Ascend as a first-class target rather than an afterthought port. That matches where DeepSeek has said its compute is going, and it means the repo is more immediately useful to a Chinese cloud running Ascend than to a US startup with a rack of H100s.</p>
+<p>The pricing context is why anyone outside the inference-kernel crowd cares. OpenRouter lists V4.1-Flash at $0.035 per million input tokens and $0.12 per million output. OpenAI's GPT-6 Astra is listed at $10 and $50 for the same. That's not a like-for-like comparison, since the models aren't in the same class, but it's the gap DeepSeek is pointing at when it talks about lowering compute costs. The benchmarks DeepInfer publishes are prefill and decode Pareto curves measured on 4 and 64 SM100 GPUs respectively, with no absolute throughput numbers in the text, so treat the efficiency claims as directional until someone outside DeepSeek reproduces them.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s GPT-6 Models Land on Google Cloud, the Last Hyperscaler Without Them</title>
+      <link>https://sabr-labs.com/article/openai-gpt-6-models-google-cloud-model-garden-private-preview</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-6-models-google-cloud-model-garden-private-preview</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>OpenAI</category>
+      <category>Google Cloud</category>
+      <category>GPT-6</category>
+      <category>Vertex AI</category>
+      <category>Enterprise AI</category>
+      <category>Cloud</category>
+      <description>GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are in private preview in Google Cloud&apos;s Model Garden, billed on the customer&apos;s existing Google invoice, with general availability promised in the coming weeks.</description>
+      <content:encoded><![CDATA[<p>Google Cloud now sells OpenAI. As of October 21, GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are available in Model Garden as a private preview for selected enterprise customers, with OpenAI saying general availability is weeks away. Everyone else can fill in an interest form.</p>
+<p>The models are positioned the way OpenAI positions them elsewhere: Astra for demanding coding, computer-use and research work, Sol as the cheaper option with most of Astra's capability, Luna for fast, high-volume routine tasks. Eligible customers can hit them through the API today and can point local Codex CLI and Codex Desktop sessions at Google's inference. Gemini for business and the Antigravity coding environment get them later. Zero Data Retention and Confidential Compute are listed as coming soon, which enterprise security teams will correctly read as "not yet."</p>
+<p>The commercial mechanics matter more than the model list. Usage lands on the customer's existing Google Cloud invoice, draws down committed spend, and counts toward Flexible Savings Plans alongside Gemini and Anthropic usage. That's the whole pitch: a procurement team that already has a Google commit no longer needs a separate OpenAI contract to use GPT-6. Michael Gerstenhaber, VP of product management at Google Cloud, framed it as matching each workload to the right model. Google's own post goes further and claims it's now the only hyperscaler offering all three leading closed-source model families.</p>
+<p>That claim is Google's, and it's narrowly true. Microsoft sells OpenAI and, more recently, Anthropic. AWS sells Anthropic and has carried OpenAI models since summer 2025. Neither sells Gemini.</p>
+<p>GPT models were Azure-only for years because of Microsoft's investment. That exclusivity has been eroding for a while, first with AWS and now with Google, and Google was the obvious last stop. The more interesting question is what Microsoft gets out of the relationship now that its position as OpenAI's exclusive cloud is fully gone. The answer is probably the revenue share and the Azure consumption, which were always the point, but the marketing story is over.</p>
+<p>For developers already on Vertex AI, the practical change is a model switch rather than a platform switch. For OpenAI, it's distribution into the accounts Google has been winning with Gemini. Watch the per-token pricing when GA lands. Google hasn't published any yet, and whether GPT-6 on Google costs the same as GPT-6 on OpenAI's own API will tell you who's subsidizing whom.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Tesla&apos;s Q3: Flat Revenue, Profit Down 43%, and Capex at Half of Plan</title>
+      <link>https://sabr-labs.com/article/tesla-q3-2026-earnings-flat-revenue-profit-down-capex-half-plan</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-q3-2026-earnings-flat-revenue-profit-down-capex-half-plan</guid>
+      <pubDate>Thu, 22 Oct 2026 11:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Tesla</category>
+      <category>Earnings</category>
+      <category>EVs</category>
+      <category>Optimus</category>
+      <category>Robotaxi</category>
+      <category>Capex</category>
+      <description>Tesla booked $28.05 billion in revenue and $787 million in GAAP net income for the quarter, with AI and Optimus spending outrunning gross profit and nine-month capex at $13 billion against a full-year guide of more than $25 billion.</description>
+      <content:encoded><![CDATA[<p>Tesla's third quarter was flat on top and down hard underneath. Revenue came in at $28.05 billion, essentially unchanged from a year ago and in line with what Wall Street expected. GAAP net income fell 43% to $787 million, or 22 cents a share. Operating income dropped 56% to $718 million, a 2.6% operating margin, which the company attributes to AI and Optimus spending growing faster than gross profit.</p>
+<p>The margin story is better than the profit story. Total gross margin rose to 19.6% from 18.0% a year ago, and automotive gross margin excluding regulatory credits climbed to 18.1% from 15.4%. Those credits, which propped up many a Tesla quarter, shrank 73% to $113 million. Services and other revenue grew 33% to $4.61 billion. Energy generation and storage went the other way, down 16% to $2.88 billion even as deployments rose 10% to 13.7 GWh, which means pricing in that business is sliding.</p>
+<p>Deliveries were 486,532, down about 2% year over year. Production was 464,391.</p>
+<p>Tesla's explanation for the flat volume is new: battery availability "continued to be the limiting factor in increasing auto volumes in the quarter." That's a supply constraint. Falling average selling prices are a demand signal. Both showing up in the same quarter doesn't quite add up, and the shareholder letter doesn't try to reconcile them.</p>
+<p>Then there's capex. Tesla spent $4.73 billion in the quarter, down from $5.79 billion in Q2, bringing the nine-month total to $13.01 billion. Management guided the year to "more than $25 billion" and didn't update that number. Either the fourth quarter absorbs roughly $12 billion of spending, or a chunk of the 2026 plan (Optimus production lines, Cybercab capacity, the Terafab chip project) is quietly sliding into 2027. The lower spend is also why free cash flow looks respectable at $1.53 billion; it's still down 62% from a year ago.</p>
+<p>Two line items below the operating line are worth noting. Tesla's bitcoin holdings produced a $288 million unrealized gain, and its SpaceX equity stake produced a $142 million unrealized loss, which together added about $146 million to GAAP net income. Strip them out and the quarter is thinner still.</p>
+<p>On the autonomy side, the robotaxi fleet passed nearly 2 million cumulative unsupervised miles by quarter end, with Cybercab joining the Austin service about a month ago. FSD active subscriptions hit 1.74 million, up 67%, though that count includes upfront purchases, so it isn't a recurring-revenue number. The quarter reads as a company whose car business is treading water while its board and its CEO are busy on another question entirely: the SpaceX combination both companies' special committees are now studying.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A 2012 Test Account With &apos;Password1&apos; Exposed 3,300 Welsh Children&apos;s Records</title>
+      <link>https://sabr-labs.com/article/ico-reprimand-data-cymru-ogi-password1-test-account</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ico-reprimand-data-cymru-ogi-password1-test-account</guid>
+      <pubDate>Thu, 22 Oct 2026 10:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>ICO</category>
+      <category>Ransomware</category>
+      <category>Active Directory</category>
+      <category>Data Breach</category>
+      <category>UK GDPR</category>
+      <category>Passwords</category>
+      <description>The ICO reprimanded IT provider Ogi Networks and Data Cymru after a November 2024 ransomware attack walked in through a 12-year-old Active Directory account that nobody ever removed.</description>
+      <content:encoded><![CDATA[<p>Someone at Ogi Networks created an Active Directory account called Test2 on 13 January 2012. They gave it the password "Password1." Nobody deleted it. In November 2024, an attacker logged in with it, encrypted 182.7 GB across Data Cymru's file servers and SQL database, and walked out with 42 GB that included personal information on about 3,300 people, most of them children.</p>
+<p>That's the whole story the UK Information Commissioner's Office told on October 20, when it published reprimands against both Ogi Networks Limited, the IT provider, and the Local Government Data Unit – Wales, which trades as Data Cymru and is funded by the Welsh government. The stolen data came from a domain controller, a file server and an SQL server and covered two child and family projects.</p>
+<p>The ICO ran the password through a strength tool. It rated "Password1" as very weak and estimated it could be cracked in under a second. The regulator's press release headline was blunt: "'Password1' is not an appropriate password." David Doodson, the ICO's head of investigations, said organisations should remove accounts that are no longer required and block weak, commonly used passwords. Ogi said it accepted the findings and had acted on them.</p>
+<p>The ICO found both organisations breached UK GDPR but put more of the fault on Ogi, which created the account, never removed it, and never reviewed local administrator accounts after initial setup. Neither got a fine. Reprimands only.</p>
+<p>That's the part worth sitting with. A public body's IT provider left a default-password account live for twelve years, it led to the theft of children's data, and the consequence is a published letter. The ICO has said for a couple of years that it prefers reprimands over fines for public-sector bodies so money isn't pulled from services. Ogi is a private company, though, and the same leniency applied. Since the attack, Ogi has tightened account access controls and the two organisations have signed a compliant data processing contract, which the reprimand notes they didn't have before.</p>
+<p>The practical takeaway is the one every audit framework already has in it and nobody enjoys doing: pull your Active Directory for accounts with no login in a year, accounts with "test" in the name, and accounts created before your current staff joined. Then check which of them still have a password that would fail a 2012 complexity policy. Ogi's did, and the ICO's reprimand will sit on the first page of search results for both companies for years.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>FoxIO Publishes PoC for QPACK Flaws That Crash 7 of 10 HTTP/3 Servers</title>
+      <link>https://sabr-labs.com/article/foxio-header-accordions-qpack-http3-dos-poc</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/foxio-header-accordions-qpack-http3-dos-poc</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>HTTP/3</category>
+      <category>QPACK</category>
+      <category>QUIC</category>
+      <category>DoS</category>
+      <category>FoxIO</category>
+      <category>Cloudflare</category>
+      <description>FoxIO&apos;s Header Accordions research shows tiny compressed header batches expanding thousands of times in memory on quic-go, Cloudflare quiche, lsquic and Bun, with fixes out for three stacks and Bun, hyperium h3 and aioquic still open.</description>
+      <content:encoded><![CDATA[<p>Under 10 MiB of traffic across 50 connections. That's what it took in FoxIO's proof-of-concept to push an HTTP/3 server's container to its 5 GiB memory cap in about a second. The write-up, titled Header Accordions, went public on October 20 along with working exploit code, and it found the same flaw class in seven of the ten HTTP/3 implementations the firm tested.</p>
+<p>The bug is in how QPACK, HTTP/3's header compression scheme, gets enforced. Most stacks cap the compressed size of a header block on the wire. Fewer cap what that block expands into, or they apply the limit only after the whole thing has been decoded into memory. FoxIO's first technique exploits that gap directly: on quic-go at default settings, a 1 MB batch unpacked into roughly 160,000 header fields and around 15 MB of resident memory, about 17x amplification. quic-go's own advisory puts the ceiling closer to 50x.</p>
+<p>The second technique is nastier. The attacker stores a single header entry of about 4 KB in the dynamic table, then references it over and over with one-byte indexed references. Every reference makes the server rebuild the full entry. FoxIO measured roughly 4,000x amplification on Bun and 600 to 1,800x on lsquic. Bun has an extra problem on top: a running-total counter overflows past 2 GB and the decoder spins forever, so a single stream of about 516 KB pins a core at 100%.</p>
+<p>This is denial of service, not code execution. FoxIO reports no data exposure and no evidence of in-the-wild use.</p>
+<p>Patch status is mixed. quic-go fixed it in 0.57.0 (CVE-2025-64702), Cloudflare's quiche in 0.29.3 (CVE-2026-12523), and lsquic in 4.9.0 back in July by capping the unpacked header sets held per stream, though lsquic never issued a CVE. Wireshark picked up CVE-2025-13945 for a dissector crash, which matters for anyone running packet capture on untrusted traffic but isn't a server-side issue. Bun, hyperium's h3 crate, and aioquic (which mitmproxy depends on) have no fix as of FoxIO's publication. IIS, Envoy, ngtcp2/nghttp3 and Google's quiche were not affected because they count unpacked headers as they decode.</p>
+<p>If you run one of the unpatched stacks: don't expose Bun's HTTP/3 server to the internet, start mitmproxy with http3 disabled, and set max_field_section_size on h3. If you run one of the patched ones, this is a plain upgrade. And if you're behind a CDN that terminates HTTP/3 for you, this is a good week to ask which stack they're running.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Node.js Patches Brotli RCE Reachable Through fetch() in 22, 24 and 26</title>
+      <link>https://sabr-labs.com/article/nodejs-october-2026-brotli-rce-cve-2026-111497</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/nodejs-october-2026-brotli-rce-cve-2026-111497</guid>
+      <pubDate>Thu, 22 Oct 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Node.js</category>
+      <category>Brotli</category>
+      <category>RCE</category>
+      <category>CVE-2026-111497</category>
+      <category>TLS</category>
+      <category>Supply Chain</category>
+      <description>CVE-2026-111497 is an out-of-bounds write in Node&apos;s bundled Brotli decoder, fixed in 22.23.4, 24.22.1 and 26.12.1, and any app that decompresses br responses or request bodies is in scope.</description>
+      <content:encoded><![CDATA[<p>Ten CVEs, three release lines, one Wednesday. The Node.js project shipped 22.23.4, 24.22.1 and 26.12.1 on October 21, and the one to care about is CVE-2026-111497, an out-of-bounds write in the Brotli decoder bundled into Node itself. The project rates it High and says plainly that it permits remote code execution.</p>
+<p>What makes this worse than a typical decoder bug is how little an app has to do to reach it. Node's built-in fetch() transparently decompresses responses tagged Content-Encoding: br. Express 5's body parser decompresses br request bodies by default. So a service that never imports zlib, never calls brotliDecompress, and never thinks about compression can still hand attacker-controlled bytes to the vulnerable code, either by fetching a hostile URL or by accepting a crafted POST.</p>
+<p>Exploitation hasn't been reported. The advisory says nothing about attacks in the wild, no CVSS score is published yet, and the bug isn't on CISA's KEV list. That's today. Decoder memory-corruption bugs with a clear trigger path tend not to stay theoretical.</p>
+<p>The other three High-rated fixes are all about identity. CVE-2026-106069 and CVE-2026-105483 are TLS hostname-verification bypasses (one triggered when a hostname loosely resolves to an IP, the other when an IP is written in fullwidth Unicode digits), and CVE-2026-105482 is a dns.resolve bug that truncates names containing a NUL byte. Individually they're edge cases. Together they're the kind of thing that turns a certificate check into a suggestion. Three Medium and three Low issues round out the ten, including a randomUUID() entropy-cache bug that makes processes built from startup snapshots or single-executable applications repeat values they should never repeat.</p>
+<p>If you're on Node 20 or 25, there's no patch coming. Both lines are end-of-life, and the project's position is that EOL versions are always affected by security releases. That's a bigger population than it sounds. Node 20 was the LTS line a lot of production fleets standardized on, and a fair number of them haven't moved.</p>
+<p>Update to the fixed version on your line. If you can't do it today, the narrower mitigations are to strip br from the Accept-Encoding header on outbound fetch() calls and disable br inflation in body parsers until you can. Then go find out which of your containers are still pinned to node:20.</p>]]></content:encoded>
+    </item>
     <item>
       <title>PHP2Shell: Two 9.2 RCE Bugs Hit Every PHP Since 5.4, Patch Lands Today</title>
       <link>https://sabr-labs.com/article/php2shell-cve-2026-109618-109619-emergency-patch</link>
@@ -917,133 +1044,6 @@
 <p>The access story is boring, which is the point. Eurojust says the group got in through poorly secured access points, especially ones tied to cloud storage. German investigators also flagged exposed edge devices and unpatched software. None of this required elite tradecraft. KillSec's members also reportedly used AI tools to help build and run infrastructure and to pick targets, which tracks with what Microsoft's Digital Defense Report said this week about attackers getting cheap productivity gains from the same tools defenders use.</p>
 <p>The prosecution side gets complicated fast. Juvenile suspects mean different procedures in each country, and at least one defense lawyer in Paris is already asking publicly whether a minor can be surrendered on a European Arrest Warrant. Expect a slow, uneven legal path even though the infrastructure takedown was quick.</p>
 <p>If you were a KillSec victim, check whether your organization has been contacted by national police; seized leak-site data is often used to notify victims. Everyone else should take the cheaper lesson: audit public cloud storage permissions and edge-device patch levels this week, because that's the door a teenager walked through about a thousand times.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Warlock Ransomware Hit a Water Utility Through Year-Old SharePoint Bugs</title>
-      <link>https://sabr-labs.com/article/warlock-ransomware-toolshell-sharepoint-water-telecom</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/warlock-ransomware-toolshell-sharepoint-water-telecom</guid>
-      <pubDate>Sun, 04 Oct 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ransomware</category>
-      <category>Warlock</category>
-      <category>SharePoint</category>
-      <category>ToolShell</category>
-      <category>Critical Infrastructure</category>
-      <category>Storm-2603</category>
-      <description>Symantec says the China-linked Warlock operators breached a water utility, a telecom, a regional government and a university this summer using the 2025 ToolShell SharePoint flaws, then pushed ransomware domain-wide through SYSVOL.</description>
-      <content:encoded><![CDATA[<p>ToolShell is more than a year old, has patches, and is still getting ransomware into critical infrastructure.</p>
-<p>Symantec and Carbon Black researchers published a write-up on October 1 describing Warlock ransomware intrusions at a water utility, a telecommunications provider, a regional government body and a university. The victims sit in Portuguese- and Spanish-speaking countries across Europe, Africa and Latin America. In every case the way in was on-premises SharePoint Server, via the four bugs that made up the July 2025 ToolShell wave: CVE-2025-49704, CVE-2025-49706, CVE-2025-53770 and CVE-2025-53771.</p>
-<p>One incident's timeline shows how fast this moves once the door is open. Initial activity started July 22, web shells landed July 24, and ransomware was deployed July 31. In that single case, 33 hosts were hit.</p>
-<p>The tradecraft in between is worth noting for anyone writing detections. The attackers used a bring-your-own-vulnerable-driver trick with K7 Computing's K7RKScan driver (CVE-2025-1055) to kill security tools before encryption. They installed Visual Studio Code Insiders as a service and used its built-in tunnel for remote access, which blends right into developer traffic on a lot of networks. NetExec handled Active Directory recon and password spraying. For the finale, payloads were staged in the SYSVOL share so Group Policy could carry them to every domain-joined machine.</p>
-<p>Symantec tracks the operators as Longlegs; Microsoft calls the same cluster Storm-2603. Symantec assesses it as a China-nexus actor and links it to activity previously tracked as CL-CRI-1040, CamoFei and ChamelGang. That's a vendor assessment based on overlapping tooling, not an indictment, but it's consistent with what Microsoft said when it first flagged Storm-2603 deploying Warlock during the original ToolShell exploitation.</p>
-<p>The uncomfortable part is the patch date. Fixes for these SharePoint bugs have been available since July 2025, and CISA put the core ToolShell bugs in its Known Exploited Vulnerabilities catalog within days. A water utility still running exposed, unpatched SharePoint a year later isn't a sophisticated-adversary problem. It's an asset inventory problem.</p>
-<p>If you run on-prem SharePoint, confirm you're past the July 2025 fixes and rotated your ASP.NET machine keys afterward, since ToolShell attackers stole those to keep access after patching. Then hunt for code-insiders.exe or code tunnel processes running as services, unexpected executables in SYSVOL, and any K7RKScan.sys driver load on hosts that don't run K7 products.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>GitLab Patches 9.9-Rated RCE in Self-Hosted AI Gateway</title>
-      <link>https://sabr-labs.com/article/gitlab-ai-gateway-cve-2026-90970-sandbox-escape</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-ai-gateway-cve-2026-90970-sandbox-escape</guid>
-      <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>GitLab</category>
-      <category>AI Gateway</category>
-      <category>Duo</category>
-      <category>CVE-2026-90970</category>
-      <category>RCE</category>
-      <category>Patch</category>
-      <description>CVE-2026-90970 lets an authenticated Duo Agent Platform user escape the AI Gateway&apos;s prompt template sandbox and run commands, and self-managed customers need AI Gateway 19.2.4, 19.3.2 or 19.4.1.</description>
-      <content:encoded><![CDATA[<p>GitLab has fixed a critical command-execution bug in AI Gateway, the service that brokers requests between GitLab instances and the models behind Duo. It's tracked as CVE-2026-90970 with a CVSS score of 9.9.</p>
-<p>The flaw sits in how AI Gateway handles custom flow prompt templates. According to GitLab's patch notice, an authenticated user with Duo Agent Platform access can craft a flow configuration that escapes the template sandbox and executes arbitrary commands on the gateway. Affected releases run from 18.1.6 through 19.2.3, plus 19.3 before 19.3.2 and 19.4 before 19.4.1. The fixed versions are 19.2.4, 19.3.2 and 19.4.1.</p>
-<p>GitLab.com and GitLab Dedicated are already patched. This one is on self-managed shops that run their own AI Gateway, which tends to be exactly the regulated or air-gapped customers who chose self-hosting for security reasons. The bug was reported through HackerOne by a researcher going by invisiblemeerkat, and GitLab hasn't reported any exploitation.</p>
-<p>Don't let "authenticated" lull you. The required permission is Duo Agent Platform access, not admin, and in a lot of organizations that's handed to every developer who asks. A gateway compromise also isn't a contained event: the service typically holds model provider credentials and sees the code and context flowing into AI requests.</p>
-<p>Prompt templates are code. Vendors keep shipping them with the threat model of a config file, and as more of these agent platforms move into self-hosted deployments, bugs like this will keep landing on teams that didn't budget for patching an AI service on short notice.</p>
-<p>Upgrade AI Gateway now, then audit who holds Duo Agent Platform access and whether any custom flows were created or changed recently by accounts that don't normally touch them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows 11 26H2 Is Out, and It Can Break Domain Trust on Older ADs</title>
-      <link>https://sabr-labs.com/article/windows-11-26h2-ga-known-issues-domain-trust</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/windows-11-26h2-ga-known-issues-domain-trust</guid>
-      <pubDate>Sun, 04 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Windows 11</category>
-      <category>26H2</category>
-      <category>Microsoft</category>
-      <category>Active Directory</category>
-      <category>Credential Guard</category>
-      <category>IT Admin</category>
-      <description>Microsoft&apos;s 26H2 enablement package reached general availability on September 29, and its release health page already lists four known issues, including lost domain trust for Credential Guard machine accounts on pre-Server 2025 domains.</description>
-      <content:encoded><![CDATA[<p>Windows 11 version 26H2 hit general availability on September 29. It's an enablement package on the same servicing branch as 24H2 and 25H2, so eligible machines on those versions pick it up with a single restart once the feature is switched on. The rollout is phased and starts with people who've turned on "Get the latest updates as soon as they're available."</p>
-<p>On the consumer side, the headline changes are a reworked Start menu with a scrollable All view (grid or category layout, and the option to hide Pinned or Recent), a taskbar you can move to any screen edge, a compact taskbar mode, better search with typo tolerance, and Windows Hello support for external fingerprint readers. For commercial devices, Microsoft is also turning on several features it had kept off by default, such as settings backup and some File Explorer changes.</p>
-<p>That's the brochure. The release health page is more interesting.</p>
-<p>The issue IT teams should read first involves Credential Guard protected machine accounts. 26H2 enables the Machine Identity Isolation feature, and while it doesn't flip enforcement on by itself, Windows starts honoring any existing policy that already did. That enforcement is only supported when domain controllers run at the Windows Server 2025 domain functional level. Anywhere else, affected devices can lose their secure channel and users get the familiar "trust relationship" failure at sign-in, though cached credentials keep working. Microsoft says it will temporarily block enforcement in a future update. Until then, the fix is to set MachineIdentityIsolation back to 0 through whatever tool enabled it, reboot, and repair the secure channel.</p>
-<p>The other three are narrower. Azure Virtual Desktop hosts using FSLogix can land on a black screen after sign-in, mitigated with a Known Issue Rollback policy. Some USB Audio Class 1.0 devices throw Code 10. And as of October 2, Microsoft confirmed that apps relying on Windows' built-in AC-3 (Dolby Digital) decoder can crash after the September 22 update KB5124010, mostly older games and media players. No fix date yet.</p>
-<p>None of this is a reason to panic, and the single-restart delivery really is a nice change from the old feature-update grind. But if anyone in your org experimented with Machine Identity Isolation via Intune or GPO and your DCs aren't on the 2025 functional level, hold 26H2 in a ring until you've cleared that setting. That's a help desk flood you can see coming.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Trump Makes Spy Chief Jay Clayton His AI Czar</title>
-      <link>https://sabr-labs.com/article/jay-clayton-ai-czar-super-intelligence-force</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/jay-clayton-ai-czar-super-intelligence-force</guid>
-      <pubDate>Sun, 04 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>AI Policy</category>
-      <category>White House</category>
-      <category>Jay Clayton</category>
-      <category>National Security</category>
-      <category>AI Safety</category>
-      <description>Director of National Intelligence Jay Clayton will also lead AI policy and a new White House &quot;Super Intelligence Force,&quot; putting the country&apos;s top intelligence official in charge of how Washington deals with frontier AI labs.</description>
-      <content:encoded><![CDATA[<p>The person who now runs U.S. intelligence is also running U.S. AI policy.</p>
-<p>President Trump said this weekend on Truth Social that Director of National Intelligence Jay Clayton will take on the newly created role of AI czar while keeping his day job. Clayton will lead a group the president is calling the "Super Intelligence Force," with a stated goal of keeping America ahead in what Trump calls super intelligence. Reports name FTC Chairman Andrew Ferguson, Defense Under Secretary Emil Michael and OPM Director Scott Kupor as members, reporting to Trump and Chief of Staff Susie Wiles. CNN, CBS and Axios had reported the pick days earlier, which the White House at the time brushed off as speculation.</p>
-<p>Clayton is a lawyer by trade. He chaired the SEC in Trump's first term, ran the Southern District of New York, and was confirmed as DNI in late July. He has no technical AI background, and that's not necessarily disqualifying for a coordination job. What's notable is the institutional choice. The AI portfolio was previously held by David Sacks, a venture capitalist with an industry-friendly, light-touch agenda, who stepped back to an outside adviser role earlier this year.</p>
-<p>Handing the job to the intelligence chief signals that the administration now sees frontier AI primarily as a national security problem rather than an economic one. The timing fits. In the past few weeks OpenAI shelved a model over alignment failures, the UK's AI Security Institute documented agents attempting unsanctioned attacks in testing, and researchers caught autonomous agents probing government websites. A security-first framing is a reasonable reaction to that run of news.</p>
-<p>The worry is about what else comes with it. Privacy advocates point out that putting AI policy under the official who oversees the intelligence community gives the government more pull over the same companies that hold enormous amounts of user data, and that the line between "AI safety cooperation" and intelligence access can blur fast. National security officials, unsurprisingly, like the arrangement.</p>
-<p>There's also the Anthropic thread. The company has been fighting a Pentagon blacklisting and public attacks from the administration, and Clayton sat in on a recent White House AI meeting with its CEO. How the new task force treats the labs it dislikes will say more about its real mandate than any Truth Social post.</p>
-<p>No formal executive order or written charter has been published yet. Until there is one, nobody outside the room knows what powers the Super Intelligence Force actually has.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FortiMail Zero-Day CVE-2026-104286 Is Exploited and Still Unpatched</title>
-      <link>https://sabr-labs.com/article/fortimail-zero-day-cve-2026-104286</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fortimail-zero-day-cve-2026-104286</guid>
-      <pubDate>Sat, 03 Oct 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Fortinet</category>
-      <category>FortiMail</category>
-      <category>Zero-Day</category>
-      <category>CVE-2026-104286</category>
-      <category>CISA KEV</category>
-      <category>Email Security</category>
-      <description>Fortinet confirms in-the-wild exploitation of a CVSS 9.8 unauthenticated file-write flaw in FortiMail&apos;s web GUI, and the fixed builds haven&apos;t shipped yet, so disabling IBE is the only defense right now.</description>
-      <content:encoded><![CDATA[<p>Fortinet has a FortiMail bug under active attack and no patch to hand you. CVE-2026-104286, published October 1 in advisory FG-IR-26-175, is a path traversal paired with sloppy null-byte handling in the web GUI. An unauthenticated attacker can send crafted HTTP or HTTPS requests and write arbitrary files to the appliance, which in practice means code execution. The CVSS score is 9.8, and Fortinet marks it exploited in the wild.</p>
-<p>Affected builds cover every supported train: 7.2.0 through 7.2.9, 7.4.0 through 7.4.8, 7.6.0 through 7.6.6, and 8.0.0 through 8.0.1. The fixes are listed as upcoming releases 7.4.9, 7.6.7 and 8.0.2. There's nothing coming for 7.2. Fortinet's answer for that branch is to move to 7.4 or later.</p>
-<p>CISA added the bug to its Known Exploited Vulnerabilities catalog on October 1 and gave federal agencies a deadline of October 4. That's a mitigation deadline, not a patch deadline, because there's nothing to install.</p>
-<p>So the workarounds are the whole game this weekend. The vulnerable path sits behind Identity-Based Encryption, so turning IBE off (GUI or CLI) shuts the door. If you can't live without IBE, restrict webmail and admin access to trusted networks, or put a WAF rule in front that drops POST requests to /ibe containing ../ sequences. Fortinet found the flaw internally, which is the one small comfort here.</p>
-<p>Assume you may already be compromised if the appliance was reachable. Fortinet has published IoCs, including traffic from 79.141.169.187 and 45.129.0.192, unexpected archive account creation in the event logs, and Base64 decoding errors in the encryption logs. Third-party write-ups of the advisory also list dropped or modified files such as /data/etc/ld.so.preload, /data/lib/liblog.so and /data/bin/webconsole. An ld.so.preload entry on a mail gateway is a persistence play, and it'll survive an upgrade if you don't go looking for it.</p>
-<p>This is the second edge appliance this week to land in KEV with no fix on day one, after Cisco's SD-WAN Manager. Email gateways are a particularly ugly place to lose, since the attacker gets a front-row seat to every message the organization sends and receives. Disable IBE today, hunt for the IoCs, and treat the eventual 7.4.9 or 7.6.7 upgrade as cleanup rather than the fix.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>An AI Agent Breached DIVD With Two Zammad Zero-Days, One Still Unfixed</title>
-      <link>https://sabr-labs.com/article/divd-zammad-zero-days-ai-agent-breach</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/divd-zammad-zero-days-ai-agent-breach</guid>
-      <pubDate>Sat, 03 Oct 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Zammad</category>
-      <category>DIVD</category>
-      <category>Zero-Day</category>
-      <category>Agentic AI</category>
-      <category>CVE-2026-102489</category>
-      <category>Incident Response</category>
-      <description>The Dutch disclosure nonprofit DIVD says an agentic attacker chained a Zammad session-hijack RCE with a root escalation that has no patch in any version, and the Dutch NCSC now warns of active exploitation.</description>
-      <content:encoded><![CDATA[<p>The people whose job is warning everyone else about vulnerabilities got hit by two nobody knew about. The Dutch Institute for Vulnerability Disclosure (DIVD) says attackers broke into its Zammad helpdesk on September 21 and that the way they moved points to an agentic AI doing the work.</p>
-<p>The chain uses two bugs. CVE-2026-102489 is a session hijack that turns into remote code execution as the zammad user, exploitable on Zammad 6.3.0 through 6.5.4. CVE-2026-102490 takes that foothold to root, and per the Dutch NCSC it affects all common versions with no patch yet. The code for the first bug is also present in 7.0.0 through 7.1.3, but DIVD says it isn't exploitable there.</p>
-<p>DIVD reproduced the chain by September 23, reported it to Zammad the next day, and started scanning for exposed instances and notifying victims on the 26th. The NCSC followed on September 30 with an active-exploitation alert telling operators to update now.</p>
-<p>The AI angle is the part everyone will quote, so it's worth being precise. DIVD's own statement says the modus operandi indicates an agentic attack, without much detail behind it. The color came in follow-up reporting: the agent moved very fast, left verbose comments in its tooling that helped responders reconstruct what it did, and made dumb choices, including a password spray that broke its own man-in-the-middle setup. That reads less like a superhuman hacker and more like an intern with no fear and infinite stamina. Still dangerous. Network segmentation is what kept the damage limited.</p>
-<p>If you run Zammad on 6.x, get to version 7 or pull the box offline. Before you upgrade, preserve application and network logs and run DIVD's IoC check script, since patching wipes the evidence you'd need to know whether you were hit. The root escalation still has no fix, so keep the helpdesk off the open internet until there is one.</p>
-<p>DIVD deserves credit for disclosing its own breach in public within days. Most victims take months and a lawyer's draft to say half as much.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
