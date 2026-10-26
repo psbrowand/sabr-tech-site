@@ -6,9 +6,132 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Oct 2026 13:21:28 GMT</lastBuildDate>
-    <pubDate>Sat, 24 Oct 2026 13:21:28 GMT</pubDate>
+    <lastBuildDate>Mon, 26 Oct 2026 14:30:01 GMT</lastBuildDate>
+    <pubDate>Mon, 26 Oct 2026 14:30:01 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Security+ V8 Launches November 17, and Most Candidates Shouldn&apos;t Wait for It</title>
+      <link>https://sabr-labs.com/article/comptia-security-plus-v8-sy0-801-november-17-should-you-wait</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/comptia-security-plus-v8-sy0-801-november-17-should-you-wait</guid>
+      <pubDate>Mon, 26 Oct 2026 09:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>learning</category>
+      <category>CompTIA</category>
+      <category>Security+</category>
+      <category>SY0-801</category>
+      <category>Certification</category>
+      <category>Exam Prep</category>
+      <description>CompTIA&apos;s SY0-801 adds an AI-threats objective and shifts weight away from governance, but SY0-701 stays live until June 2027 and the certification you earn is the same either way.</description>
+      <content:encoded><![CDATA[<p>CompTIA's page for Security+ V8 now says the exam is expected to launch on or around November 17, 2026, under the code SY0-801. The current SY0-701 doesn't go away: English testing runs through June 11, 2027, and the Japanese, Portuguese, Spanish, and Thai versions through August 13, 2027. So the real question for anyone studying right now is whether to care.</p>
+<p>The format doesn't change. Up to 90 questions, 90 minutes, 750 to pass on the 100 to 900 scale, performance-based items mixed in. The five domains survive too, with the weights shuffled. General Security Concepts climbs four points to 16%. Security Program Management and Oversight falls six points to 14%. The other three move by a point or two, and the threats domain gets renamed from "Mitigations" to "Attacks," which tells you where CompTIA thinks the questions should go.</p>
+<p>The headline addition is objective 2.6, which asks you to summarize threats and vulnerabilities associated with AI usage: prompt injection, model and data poisoning, jailbreaking, and exposure of prompts and training data. Security Operations also picks up AI-assisted workflows under automation and orchestration. None of it is deep. It's the same altitude Security+ takes on everything else, and if you've read one OWASP LLM Top 10 summary you're most of the way there.</p>
+<p>The certification itself is identical. Your transcript says Security+, not SY0-801. Employers and DoD 8140 don't care which version you passed.</p>
+<p>So, should you wait? For most people, no. SY0-701 has three years of mature study material, practice exams that match the real thing, and seven months of runway. If you're mid-prep, finish and sit it. The cases for waiting are narrow: you won't start studying until after mid-November anyway, your employer insists on the newest version, or you work in AI security and want the objectives to match your resume. CompTIA hasn't published a US voucher price for SY0-801 yet. SY0-701 lists at $439, and version bumps historically don't go down.</p>
+<p>One practical note. "On or around" is CompTIA's standard hedge, and launches have slipped before. Don't book a December SY0-801 slot and plan your study around it until the exam actually shows up in Pearson VUE's scheduler.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>DeepMind Staff Are Quitting Over Google&apos;s Military Contracts, Out Loud This Time</title>
+      <link>https://sabr-labs.com/article/deepmind-staff-resign-google-military-ai-contracts-liguori-open-letter</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/deepmind-staff-resign-google-military-ai-contracts-liguori-open-letter</guid>
+      <pubDate>Mon, 26 Oct 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google DeepMind</category>
+      <category>Military AI</category>
+      <category>AI Ethics</category>
+      <category>Pentagon</category>
+      <category>Project Nimbus</category>
+      <description>Research engineer Sofia Liguori resigned with an open letter and a BBC interview, following at least two other 2026 departures tied to Google&apos;s Pentagon and Project Nimbus work, and Google&apos;s reply is that it has a consistent process.</description>
+      <content:encoded><![CDATA[<p>"I no longer believe that our technology will have a net positive impact on society." That's from the open letter Sofia Liguori, a research engineer at Google DeepMind in London, posted on October 20 on her way out the door. She joined in 2023 to work on AI for routing power through electrical grids. She's leaving over Google's contracts with the US and Israeli militaries.</p>
+<p>The timeline she gave The Intercept is specific. Her activism picked up after Google launched GenAI.mil for the Pentagon in December. In February she co-organized a demonstration outside the London office. In April, the day after Google announced a classified military AI contract with the Department of War, she stopped working and burned sick and holiday time rather than contribute. In May, DeepMind's London staff voted to unionize. She told the BBC that watching the company push harder for AI in military operations made her ashamed to work there, and she says internal posts of hers were deleted for using the word "genocide."</p>
+<p>She isn't the first. Research scientist Andreas Kirsch left earlier this year, telling Business Insider in April he was "incredibly ashamed" of the classified-work decision and arguing Google's governance isn't adequate for military deployments. Safety researcher Alex Turner resigned in June over a Pentagon deal he said had no binding limits on autonomous weapons or surveillance. Roughly 200 DeepMind staff signed an earlier letter asking Google to drop its military contracts. Google didn't.</p>
+<p>Google's response, via spokesperson Tom Hewett: the company works with public sector organisations worldwide and follows "a consistent process," including compliance with its acceptable use policies, and employees have channels to raise concerns without retaliation.</p>
+<p>That's a process answer to a values question, and it's worth noticing what it leaves out. Google rewrote its AI Principles in February 2025 to drop the pledge not to build weapons or surveillance tools. Reuters reported the Pentagon agreement permits Google's models to be used for "any lawful government purpose." Google says the contract bars autonomous weapons and mass surveillance without human oversight, and critics point to a clause that lets the government request changes to some safety settings. Both of those things can be true. The second one is the one that matters.</p>
+<p>Two things make this round different from the 2018 Project Maven walkout. First, the people leaving are doing it publicly despite non-disparagement clauses, which is why the BBC got testimony rather than a press release. Second, DeepMind now has a union. A handful of resignations don't move a company Google's size. A bargaining unit might.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>TP-Link Pitches a $1B Mississippi Assembly Deal to Get Past the FCC Router Ban</title>
+      <link>https://sabr-labs.com/article/tp-link-1-billion-keytronic-mississippi-wifi-8-router-assembly-fcc</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/tp-link-1-billion-keytronic-mississippi-wifi-8-router-assembly-fcc</guid>
+      <pubDate>Mon, 26 Oct 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>TP-Link</category>
+      <category>FCC</category>
+      <category>Wi-Fi 8</category>
+      <category>Networking</category>
+      <category>Manufacturing</category>
+      <category>Supply Chain</category>
+      <description>A letter of intent with contract manufacturer Keytronic would assemble TP-Link&apos;s Wi-Fi 8 routers in Corinth, Mississippi as early as 2027, if the Department of War or DHS grants the conditional approval TP-Link has been waiting on since April.</description>
+      <content:encoded><![CDATA[<p>Since March 23, no newly produced consumer router built outside the United States can get FCC authorization without a conditional approval from the Department of War or the Department of Homeland Security. Netgear, Asus, and Amazon's eero got theirs quickly. TP-Link, which by most estimates sells more consumer routers in the US than anyone else, applied in April for two Wi-Fi 8 models and is still waiting.</p>
+<p>So it's trying to build its way in. In an October 13 FCC filing, the company pledged nearly $1 billion toward US-based R&D and manufacturing. Six days later it signed a letter of intent with Keytronic, a contract manufacturer with a 305,000-square-foot plant in Corinth, Mississippi, to assemble Wi-Fi 8 routers there starting as early as 2027. TP-Link also promised that onboard software and firmware would be written and stored in the US. CEO Jeffrey Chao called the deal a firm commitment to expanding domestic advanced manufacturing.</p>
+<p>Read the fine print, though. It's a letter of intent, not a contract, and it's explicitly contingent on regulatory approval. Components still come from overseas because most of them have no domestic supplier. And the Covered List entry doesn't say a word about where final assembly happens. It says the approving agency wants to see corporate structure, foreign ownership, supply chains, and onshoring plans. A Mississippi assembly line answers the last of those and none of the first three.</p>
+<p>The first three are the whole fight. TP-Link says it split from its Chinese parent in 2024 and now runs out of Irvine, California, and it denies any Chinese government ties. Commerce and Justice have reportedly been investigating the company since late 2024, and a group of state attorneys general led by Florida's James Uthmeier has sued over alleged national-security risks. None of that gets resolved by a factory.</p>
+<p>The Covered List rule itself is blunter than the agency has explained. It covers every consumer router "produced in a foreign country," not just adversary ones, which is why Netgear and Asus needed waivers too. TP-Link's argument is simply that it should get the same review its competitors got. On paper that's hard to argue with.</p>
+<p>What this means for buyers: the ban isn't retroactive, so existing TP-Link routers keep working and previously authorized models stay on shelves. Wi-Fi 8 is the generation at stake, and TP-Link's early units are already on pre-order in Canada at nearly $700. If domestic assembly ever happens, don't expect it to make them cheaper.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GitLab Patches a CVSS 10.0 Regex Overflow That&apos;s Been There Since Version 7.0</title>
+      <link>https://sabr-labs.com/article/gitlab-cve-2026-110264-cvss-10-regex-overflow-rce-since-7-0</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gitlab-cve-2026-110264-cvss-10-regex-overflow-rce-since-7-0</guid>
+      <pubDate>Mon, 26 Oct 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>GitLab</category>
+      <category>CVE</category>
+      <category>RCE</category>
+      <category>DevOps</category>
+      <category>Patch Now</category>
+      <description>CVE-2026-110264 lets an unauthenticated user run code on a self-managed GitLab server by getting it to compile a crafted regular expression, and the fix is backported across seven release lines.</description>
+      <content:encoded><![CDATA[<p>Every self-managed GitLab instance released since 2014 has a bug that can hand an unauthenticated user code execution on the server. GitLab shipped the fix on October 21 as a critical patch release covering 19.5.1, 19.4.3, and 19.3.6, with backports to 19.2.9, 19.1.9, 19.0.10, and 18.11.13. The CVE is CVE-2026-110264 and GitLab scored it a flat 10.0.</p>
+<p>The flaw is an integer overflow in the regular expression compiler. Feed the server a crafted regex and the compiler's bookkeeping wraps, which is the kind of memory bug that turns into arbitrary code execution. GitLab's advisory describes it as exploitable by an unauthenticated user when compiling a specially crafted regex. It doesn't say which endpoints accept user-supplied patterns, and it doesn't need to. The point is that the attack surface is pre-auth.</p>
+<p>If this sounds familiar, it should. CVE-2026-97229, patched earlier this year, was also a critical bug in the same regex compiler. Two maximum-severity findings in one component inside a year is a strong hint that someone is now fuzzing it properly, and that there may be more.</p>
+<p>GitLab.com and GitLab Dedicated are already patched. GitLab Runner isn't affected.</p>
+<p>A warning for anyone who patched two weeks ago: the October 12 releases (19.4.2, 19.3.5, 19.2.8) don't include this fix. If your version number is below the ones above, you're still exposed. Note also that 19.4.3 and 19.3.6 carry regular database migrations, and 19.4.3 has post-deploy migrations too, so single-node instances will see downtime. Multi-node setups can use the zero-downtime procedure. The older backports fix this one bug only; the other eleven fixes in the release are in 19.3.6 and up.</p>
+<p>There's no public proof of concept as of this writing, the bug isn't in CISA's KEV catalog, and GitLab's advisory doesn't claim exploitation. Take that for what it's worth: a pre-auth CVSS 10 in a product that sits in front of source code and CI secrets gets reverse-engineered from the patch diff fast. GitLab published two threat detections for self-managed admins, an Onigmo native worker crash signal and an org-mode render error burst, which is a decent tell about where the crafted input lands. Patch tonight, then go look at those logs for the past week.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Five OVHcloud CLI Releases on GitHub Were Swapped for Secret-Stealing Binaries</title>
+      <link>https://sabr-labs.com/article/ovhcloud-cli-github-releases-backdoored-v0-11-v0-15-rotate-secrets</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/ovhcloud-cli-github-releases-backdoored-v0-11-v0-15-rotate-secrets</guid>
+      <pubDate>Mon, 26 Oct 2026 08:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>GitHub</category>
+      <category>OVHcloud</category>
+      <category>Infostealer</category>
+      <category>DevOps</category>
+      <description>An attacker using a hijacked contributor account replaced the download archives for ovhcloud-cli v0.11.0 through v0.15.0 for about 94 minutes on October 19, and OVHcloud says anyone who installed in that window should rotate every secret on the machine.</description>
+      <content:encoded><![CDATA[<p>For about an hour and a half on Monday, October 19, the official OVHcloud CLI downloads on GitHub were malware. Between 12:47 and 14:21 UTC, the release archives for v0.11.0 through v0.15.0 (macOS, Linux, and Windows builds) were replaced with binaries designed to read secrets off the disk of whatever machine ran them. v0.10.0 wasn't touched.</p>
+<p>Nobody broke the build. The attacker used a hijacked GitHub account belonging to a contributor who had merged work into OVHcloud's documentation repository but wasn't a public member of the org. Source code, tags, and the CI pipeline were all untouched. The attacker simply uploaded new files to existing releases, six in total, and on v0.15.0 also rewrote checksums.txt so the published hashes matched the poisoned archives. If your install script verified the checksum, it verified the wrong one.</p>
+<p>The reason this was possible is one checkbox. GitHub shipped immutable releases as a generally available feature in October 2025. It only protects releases created after you turn it on, and OVHcloud hadn't turned it on. It has now. v0.16.0, published the same afternoon, is an immutable release with a signed tag.</p>
+<p>OVHcloud founder Octave Klaba's advice to anyone who installed or updated the CLI in that window: change every secret on the disk. Upgrading doesn't un-steal a key.</p>
+<p>What OVHcloud hasn't said matters as much as what it has. There's no public list of which files the binary read, where it sent them, or how many copies were downloaded. Source builds and Docker images weren't affected. Researchers at OpenSourceMalware tie the hijacked account to the GlassWorm operation, which has been working its way through developer tooling all year, but they call that their inference. No one preserved a copy of the binary, so the attribution is going to stay soft.</p>
+<p>Ninety-four minutes is a small window, and the CLI is a niche tool. That's the good news. The bad news is the pattern: this is the same supply-chain shape as the tj-actions and Nx compromises, a maintainer-adjacent account plus mutable release artifacts, and the fix was free. If your project publishes binaries on GitHub, go enable release immutability today. Then check whether your download scripts verify against a hash you control, not one that lives next to the artifact.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>A Planted AGENTS.md in Your Downloads Folder Can Hijack Codex and Claude Code</title>
+      <link>https://sabr-labs.com/article/agents-md-downloads-folder-hijack-codex-claude-code-forever-security</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/agents-md-downloads-folder-hijack-codex-claude-code-forever-security</guid>
+      <pubDate>Mon, 26 Oct 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>AI Agents</category>
+      <category>Prompt Injection</category>
+      <category>Supply Chain</category>
+      <category>npm</category>
+      <category>Codex</category>
+      <category>Claude Code</category>
+      <description>Forever Security caught a coding agent installing a known-malicious npm package because someone dropped an instruction file into ~/Downloads, and the vendors&apos; position is that there&apos;s nothing to patch.</description>
+      <content:encoded><![CDATA[<p>The customer's coding agent was mid-session when it tried to install an npm package called function-color. Forever Security's agent monitoring blocked the install, and the investigation that followed traced the instruction to a file nobody remembered downloading: an AGENTS.md sitting in the user's ~/Downloads folder.</p>
+<p>That's the whole attack. Coding agents like OpenAI's Codex and Anthropic's Claude Code read instruction files from whatever directory they're launched in. Downloads is a directory that web pages can write to. Forever's researchers, Gal Weizman and Omer Samet, built a proof of concept showing a page can save an AGENTS.md there with no click and no prompt, with whatever contents the attacker wants. The only remaining step is the user opening an agent in that folder, which Forever's own telemetry says about half its customers do.</p>
+<p>function-color isn't new. It's part of a documented malicious campaign (CloudSEK and Checkmarx call it MALFEX) and it pulls in a second package, function-flag, that fetches and runs a Windows payload. In Forever's testing, Codex followed the planted file and ran the package in more than 90% of attempts. The Codex variant goes further than one install: it writes an MCP server entry into ~/.codex/config.toml that fires an npm install through launchctl, so the change sticks for every future Codex session on the machine.</p>
+<p>Claude Code was harder to push but not immune. A planted CLAUDE.md framed as internal gateway setup got the agent to write a .claude/settings.json with ANTHROPIC_BASE_URL pointing at a server Forever controlled. That write succeeded about half the time. When it did, the user's OAuth token went to the attacker's server, and that server could answer as if it were the model, including returning a Bash call with the sandbox turned off.</p>
+<p>Forever's line on remediation is blunt: "There is nothing here for OpenAI or Anthropic to patch." An agent that reads the instruction file in its working directory is doing exactly what it was built to do.</p>
+<p>True as far as it goes, and also a little convenient. Both vendors ship agents that will happily start in a home directory or Downloads without so much as a warning, and both treat an instruction file as trusted by default. Prompt injection through config files has been a known class since these tools shipped. The honest version of "nothing to patch" is "we chose not to add friction here." A one-time prompt when an agent finds an instruction file outside a git repository would have killed this proof of concept.</p>
+<p>What to do today: don't launch agents from ~/Downloads or your home directory. Find any AGENTS.md, CLAUDE.md, or .cursorrules files you don't recognize and read them before an agent does. Check ~/.codex/config.toml and .claude/settings.json for MCP servers or base URLs you didn't add. If you find one, rotate the token.</p>]]></content:encoded>
+    </item>
     <item>
       <title>New Mexico Judge Orders Meta to Pay $25B Over Facebook Privacy Claims</title>
       <link>https://sabr-labs.com/article/meta-25-billion-new-mexico-privacy-penalty</link>
@@ -931,127 +1054,6 @@
 <p>Read the caveats before panicking, because the authors are upfront about them. The "gain execution" step was trivial: unauthenticated ADB ports, the kind of thing a Mirai variant would laugh at. That makes the results an upper bound. The timeline is a trend extrapolation on a proxy metric, not a demonstrated capability in a 9B model today, and replication is slow, around a day or two per hop.</p>
 <p>Still, the containment problem is real. A replicator spread across thousands of TV boxes has no single host to shut down, and unlike scripted malware it could figure out unfamiliar devices on its own.</p>
 <p>The useful part for defenders is how unglamorous the recommendations are. Quarantine infected hosts, which the authors note cleared most Mirai infections within two weeks when owners were notified. Watch ISP-level flow data for the traffic a replicator would generate. Run honeypots to catch payloads. And for device makers, stop shipping default passwords and open debug ports. None of that is new advice, which says a lot about how much of the risk comes from IoT security we already know is broken.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>IonQ Buys Zero Trust Firm Elisity in All-Stock Deal Worth Up to $1.3B</title>
-      <link>https://sabr-labs.com/article/ionq-acquires-elisity-1-3-billion-zero-trust</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ionq-acquires-elisity-1-3-billion-zero-trust</guid>
-      <pubDate>Wed, 14 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>IonQ</category>
-      <category>Elisity</category>
-      <category>Acquisitions</category>
-      <category>Zero Trust</category>
-      <category>Post-Quantum Cryptography</category>
-      <description>IonQ will pay $1.15 billion in stock plus up to $150 million in earnouts for microsegmentation vendor Elisity, betting it can sell post-quantum crypto through an existing network security product.</description>
-      <content:encoded><![CDATA[<p>IonQ is buying its way further into cybersecurity. The quantum computing company agreed to acquire Elisity, a Zero Trust microsegmentation vendor, for $1.15 billion in IonQ stock at closing plus up to $150 million in performance-based earnouts. The merger agreement was signed October 9 and announced October 12, according to IonQ's SEC filing.</p>
-<p>The logic goes like this. IonQ has post-quantum cryptography and quantum key distribution products but needs a way into enterprise networks. Elisity already sits in those networks, enforcing identity-based segmentation policy. IonQ plans to fold its crypto tech into Elisity's platform and extend Elisity's IdentityGraph to track cryptographic inventory and risk, which is exactly the asset list every organization will need as the post-quantum migration deadlines get closer.</p>
-<p>Elisity says it doubled both revenue and customer count year over year with zero churn among deployed customers. Those are the company's own numbers, and IonQ didn't disclose actual revenue figures.</p>
-<p>Investors weren't thrilled. IonQ shares fell as much as 5% in morning trading after the announcement. That's understandable when you look at the pace: IonQ closed a $1.8 billion deal for SkyWater Technology earlier this year and paid $1.1 billion for Oxford Ionics in 2025. An all-stock deal of this size means dilution, and it's fair to ask how many acquisitions a company can integrate while it's still building its core hardware.</p>
-<p>There's a sensible idea here, though. The hard part of post-quantum migration isn't the algorithms, it's knowing where all your crypto lives. A segmentation tool that already maps every device and flow is a reasonable place to start that inventory. Whether a quantum hardware company is the right owner for it is the open question.</p>
-<p>The deal is expected to close in the fourth quarter, pending regulatory approval. Elisity CEO James Winebrenner and the existing leadership team will stay on.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Hackers Turned Hundreds of French Supermarket Freezers Into Ovens</title>
-      <link>https://sabr-labs.com/article/french-supermarket-fridges-hacked-danfoss</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/french-supermarket-fridges-hacked-danfoss</guid>
-      <pubDate>Tue, 13 Oct 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>OT Security</category>
-      <category>ICS</category>
-      <category>Danfoss</category>
-      <category>Retail</category>
-      <category>France</category>
-      <category>Critical Infrastructure</category>
-      <description>Attackers remotely changed Danfoss-managed refrigeration settings at Intermarché, Système U, Leclerc and other French stores overnight on October 11-12, pushing some cabinets toward 50°C and forcing stores to dump stock.</description>
-      <content:encoded><![CDATA[<p>Sometime overnight between October 11 and 12, someone logged into the refrigeration controllers at a few hundred French supermarkets and told the cold cases to get hot.</p>
-<p>By Monday afternoon the scale was clear enough. Intermarché's parent, Les Mousquetaires, put its own count at roughly 150 affected stores, while France Inter reported 200 to 300. Coopérative U's CEO Dominique Schelcher confirmed the attack on X and called it extremely serious and unprecedented; fewer than 100 of the group's Système U stores were hit. Leclerc, Carrefour Market and Monoprix locations were also reported affected. Stores threw out meat, frozen goods and produce, and Mousquetaires has warned the bill could run to several million euros.</p>
-<p>The mechanics, as reported by French outlets including BFMTV and IT-Connect, were crude and effective. The attackers reportedly triggered defrost cycles continuously with a setpoint around 50°C, which is how a freezer ends up warmer than a summer afternoon. Some sites reported fires. Mousquetaires said the systems were under Danfoss's management, and early reporting says older Danfoss control software, versions before 4.x, was the target. Danfoss has confirmed incidents in France affecting a limited number of refrigeration management systems. It told franceinfo that most of the affected units are end-of-life AK-SM800 and AK-SC355 controllers that no longer get security updates, and that it has been telling customers to upgrade for years. That's true, and it's also a convenient place to stand when your product is the one that got popped.</p>
-<p>None of this should surprise anyone who was paying attention in August. Claroty's Team82 presented research on the Danfoss AK-SM 800A system manager at DEF CON, including CVE-2025-41450, a hidden code-of-the-day authentication mechanism that can be abused to bypass login and reach remote code execution. The fix is firmware R4.3.1 or later. The researchers also flagged thousands of these management interfaces sitting on the public internet. Nobody has publicly tied this weekend's attack to that specific bug, and it could just as easily be default or reused credentials. But the profile matches: old firmware, web-facing, managed by a third party.</p>
-<p>There's no attribution yet. Prime Minister Sébastien Lecornu handed the case to ANSSI, France's national cybersecurity agency, which says it has already identified a vulnerability in the Danish vendor's software, contacted the publisher, and is hunting for other exposed French companies. It's also unclear whether a separate disruption at Ahold Delhaize's Dutch and Belgian chains the same night has anything to do with it.</p>
-<p>Retail OT has always been treated as facilities plumbing rather than IT, which is exactly why it's a soft target. If you run stores, warehouses or cold-chain logistics, find out today who manages your refrigeration controllers, what firmware they run, and whether their web interfaces answer from the internet. If the answer to the last question is yes, pull them behind a VPN before you do anything else.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ahold Delhaize Pulls Systems Offline; Albert Heijn Cancels Online Orders</title>
-      <link>https://sabr-labs.com/article/ahold-delhaize-takes-systems-offline-cyber-incident</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ahold-delhaize-takes-systems-offline-cyber-incident</guid>
-      <pubDate>Tue, 13 Oct 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ahold Delhaize</category>
-      <category>Retail</category>
-      <category>Incident Response</category>
-      <category>Albert Heijn</category>
-      <category>Data Breach</category>
-      <description>The grocery group behind Albert Heijn, Food Lion and Stop &amp; Shop disclosed a network security issue on October 12 and says it has no evidence yet that customer or employee data was taken.</description>
-      <content:encoded><![CDATA[<p>Albert Heijn customers in the Netherlands woke up Monday to cancelled grocery deliveries. By that afternoon, parent company Ahold Delhaize confirmed it was dealing with a "security issue within its network" and had taken some systems offline to protect them.</p>
-<p>The disruption reportedly started on the evening of Sunday, October 11. In Europe, Albert Heijn and Delhaize saw online ordering and deliveries knocked out, with Albert Heijn cancelling all placed online orders until further notice. In the US, outlets reported websites for Food Lion, Giant Food, The Giant Company, Hannaford and Stop & Shop going down, though the company itself only says the impact varies by brand. Physical stores on both sides of the Atlantic stayed open.</p>
-<p>Tuesday's update was short. Ahold Delhaize said it has started a controlled relaunch of some systems, is working with outside incident responders and relevant authorities, and has "no evidence at this moment" that customer or associate data was taken. It isn't naming an attacker, isn't saying whether this is ransomware, and isn't giving a timeline. Read that last part carefully. "Taking systems offline as a precaution" plus "no evidence of data theft at this moment" is the standard opening language for an incident that's still being scoped. It isn't a conclusion.</p>
-<p>The company has been here before. In November 2024, an attack on its US operations disrupted pharmacy and e-commerce at the same five brands. INC Ransom claimed that one in April 2025, Ahold Delhaize later confirmed data had been stolen, and its filing with US regulators put the number of affected people at more than 2.2 million. That's useful context for how much weight to put on early reassurances.</p>
-<p>The timing is awkward too. The same night, attackers tampered with refrigeration controllers at hundreds of French supermarkets. Nobody has linked the two incidents, and the symptoms look different: one hit store equipment, the other hit corporate and e-commerce systems. Grocery is having a bad week either way.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FBI Seizes Flax Typhoon&apos;s Scanner and Phishing Kit, and Old CVEs Hit KEV</title>
-      <link>https://sabr-labs.com/article/fbi-seizes-flax-typhoon-microscan-fishhub-domains</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fbi-seizes-flax-typhoon-microscan-fishhub-domains</guid>
-      <pubDate>Tue, 13 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Flax Typhoon</category>
-      <category>China</category>
-      <category>FBI</category>
-      <category>CISA KEV</category>
-      <category>Threat Intelligence</category>
-      <category>Takedown</category>
-      <description>The Justice Department took down seven domains behind Integrity Technology Group&apos;s MicroScan and FishHub tools, and the joint advisory that followed sent decade-old ProFTPD, BIND and Struts bugs into CISA&apos;s exploited catalog.</description>
-      <content:encoded><![CDATA[<p>The FBI now controls seven domains that a Chinese government contractor used to scan the internet for vulnerable systems and phish its way into the ones it liked.</p>
-<p>The Justice Department announced the seizures on October 8 after court documents were unsealed in the Western District of Pennsylvania. The targets were two tools run by Integrity Technology Group, the Beijing company already tied to the Flax Typhoon activity behind the Raptor Train botnet that the FBI dismantled in September 2024. MicroScan is a Python-based scanner packing more than 1,300 penetration-testing scripts, reached through c0cc[.]cc. FishHub handled spear-phishing and data theft. Five of the seized domains delivered malware, and a seventh supported SoftEther VPN connections back into compromised networks.</p>
-<p>The scan targets named in the filings include a South Carolina power company, airports in Japan and Poland, and Taiwanese gas and electricity providers. The FBI hasn't said whether any of those were actually breached. What it has confirmed is FishHub data from more than 20 organizations, including six Taiwanese universities.</p>
-<p>The part defenders should care about is the joint advisory from the FBI, CISA, NSA and international partners that landed alongside the seizure. It lists eight CVEs the tooling went after, and most of them are old enough to drive: CVE-2015-3306 in ProFTPD, CVE-2015-5477 in ISC BIND, CVE-2016-3081 in Apache Struts, CVE-2014-6278 (one of the Shellshock follow-ons), CVE-2019-11510 in Pulse Connect Secure, CVE-2021-22205 in GitLab, CVE-2021-3199 in ONLYOFFICE Docs and CVE-2023-22894 in Strapi. CISA added five of them to its Known Exploited Vulnerabilities catalog the same day.</p>
-<p>That's the uncomfortable lesson. A state-backed contractor with a government client list didn't need zero-days. It needed a big list of old bugs and an internet full of boxes nobody patched.</p>
-<p>Seizing domains interrupts the operation. It doesn't clean anything up. If you have ProFTPD, an old BIND, Struts 2 or an on-prem GitLab anywhere in your estate, check the advisory's indicators against your logs, and check whether you're still running versions from the Obama administration.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>FBI Arrests a Canadian Ransomware Negotiator in the ShinyHunters Probe</title>
-      <link>https://sabr-labs.com/article/fbi-arrests-ransomware-negotiator-dubrovsky-shinyhunters</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/fbi-arrests-ransomware-negotiator-dubrovsky-shinyhunters</guid>
-      <pubDate>Tue, 13 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ShinyHunters</category>
-      <category>FBI</category>
-      <category>Ransomware</category>
-      <category>Extortion</category>
-      <category>Incident Response</category>
-      <description>Edward Dubrovsky, a 54-year-old incident-response executive, was arrested in Pennsylvania on October 8 on extortion conspiracy charges, and his case has been moved to the Texas district running the ShinyHunters investigation.</description>
-      <content:encoded><![CDATA[<p>The FBI's ShinyHunters investigation has picked up a defendant nobody expected: a man whose job was negotiating with extortion crews on behalf of their victims.</p>
-<p>Edward Dubrovsky, 54, a Canadian cybersecurity executive, was arrested in Pennsylvania on October 8. Sources told KrebsOnSecurity he was in the state for a cyber insurance conference; the Cyber Risk Summit ran in Philadelphia October 5 through 7. Court records from the Eastern District of Pennsylvania list two counts: conspiracy to threaten to impair the confidentiality of information with intent to extort money, and interference with commerce by threats. An order filed October 9 sent the case to the Eastern District of Texas, which is where the broader ShinyHunters investigation is being run. Much of the file is sealed.</p>
-<p>The docket spells his name Dobrovsky. His LinkedIn lists ties to Canadian firm CyberSteward and describes him as a Cypfer co-founder, which Cypfer disputes. A Cypfer spokesperson said he was a managing director, not a founder, and that he resigned in November 2025. CyberSteward hadn't commented at the time of Krebs' report.</p>
-<p>FBI Director Kash Patel publicly called the arrest part of the response to ShinyHunters' breach of an FBI recruitment portal, describing Dubrovsky as a suspected co-conspirator. The Bureau itself declined to comment to reporters, and the public charging documents don't spell out what he allegedly did. Those are two different levels of confidence, and right now only the first one is on the record.</p>
-<p>Still, the allegation lands hard in the incident-response business. Negotiators sit in the middle of the most sensitive conversations a breached company ever has. They know what was stolen, what the insurer will pay, and how desperate the client is. A negotiator working both sides used to be something the industry only whispered about. Then federal prosecutors charged DigitalMint negotiators Kevin Tyler Martin and Angelo Martino, plus former Sygnia IR manager Ryan Goldberg, over BlackCat ransomware attacks on US companies. Martin and Goldberg pleaded guilty, and prosecutors said Martino passed his own clients' insurance limits and negotiating positions to the attackers.</p>
-<p>Nothing here is proven. But if you're a CISO with an IR retainer, this is a reasonable week to ask your provider how negotiator access is logged, who on their side can see your ransom figures, and whether your insurer gets a say in who they assign.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Meta&apos;s Muse Wonder Is Frontier-Class, Closed, and Priced Like Claude</title>
-      <link>https://sabr-labs.com/article/meta-muse-wonder-frontier-model-closed-weights</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/meta-muse-wonder-frontier-model-closed-weights</guid>
-      <pubDate>Tue, 13 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>Muse Wonder</category>
-      <category>LLM</category>
-      <category>AI Models</category>
-      <category>Pricing</category>
-      <category>Open Weights</category>
-      <description>Meta Superintelligence Labs released Muse Wonder at $4/$20 per million tokens with no open weights, while the stronger Wonder Full is locked inside $50 and $200 Muse Code subscriptions.</description>
-      <content:encoded><![CDATA[<p>The company that spent three years telling everyone open weights were the future just shipped its best model with the weights locked up.</p>
-<p>Meta Superintelligence Labs released Muse Wonder and Muse Wonder Full on October 12. Both take text, images, audio and video, and Meta says they support a context window of roughly a million tokens. Mark Zuckerberg pitched them as a much larger class of model than the Muse Spark family. Neither version has downloadable weights. The only Apache-licensed model in the current lineup is the small Muse Glimmer.</p>
-<p>The pricing tells you who Meta is chasing. Muse Wonder costs $4 per million input tokens and $20 per million output through the API (model ID muse-wonder-1.0), with cached input at 20 cents and web search billed at $2.50 per thousand queries. That's Claude-tier pricing, not the race-to-the-bottom number people expected from Meta. And the stronger Wonder Full isn't on the API at all. You get it through Muse Code's Power and Maximum plans, reported at $50 and $200 a month, with usage caps.</p>
-<p>On independent numbers, it's competitive but not the leader. Artificial Analysis puts Wonder Full at 56 on its Intelligence Index, tied with Claude Sonnet 5.5 and a few points ahead of GPT-6 Astra and Gemini 4 Argon, with Claude Opus 5.5 on top at 58. The API version, plain Wonder, scores 52. Meta's own model card is less tidy: it mixes third-party results, vendor-reported scores and in-house runs, and some coding comparisons used different agent harnesses, which makes the head-to-heads hard to trust. Per-task cost is worth watching too. Artificial Analysis spent about $4.52 running its index on Wonder, roughly three times what the older Muse Spark 1.3 cost. Token prices are only half of a bill.</p>
-<p>One detail buried in the docs: Muse Code subscriptions default to a Contributor mode that lets Meta train on what you submit, while the API runs in Standard mode. Zero data retention exists, but only for approved API organizations. If your developers are signing up for the $200 plan on a company card, someone should check that setting before they paste in your codebase.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
