@@ -6,9 +6,137 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Oct 2026 14:30:01 GMT</lastBuildDate>
-    <pubDate>Mon, 26 Oct 2026 14:30:01 GMT</pubDate>
+    <lastBuildDate>Tue, 27 Oct 2026 13:20:25 GMT</lastBuildDate>
+    <pubDate>Tue, 27 Oct 2026 13:20:25 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Microsoft Offers Buyouts to 60,000 People Two Days Before Earnings</title>
+      <link>https://sabr-labs.com/article/microsoft-voluntary-buyouts-60000-employees-before-earnings</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-voluntary-buyouts-60000-employees-before-earnings</guid>
+      <pubDate>Tue, 27 Oct 2026 09:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Microsoft</category>
+      <category>Layoffs</category>
+      <category>Buyouts</category>
+      <category>AI Capex</category>
+      <category>Earnings</category>
+      <category>Big Tech</category>
+      <description>Roughly a quarter of Microsoft&apos;s workforce can take a tenure-based severance and leave December 31, as the company&apos;s AI capex climbs toward $145 billion for the fiscal year.</description>
+      <content:encoded><![CDATA[<p>Sixty thousand Microsoft employees, a bit over a quarter of the company, got an offer on Monday: leave on December 31 with a tenure-based severance package, or stay. Decisions are due the first week of December. Microsoft reports fiscal first-quarter earnings on Wednesday, and nobody should pretend the timing is a coincidence.</p>
+<p>The offer covers employees up to vice president level in the US, UK, Canada and India, with other countries handled under local law. In the US the floor is eight weeks of pay, plus continued stock vesting, health coverage and career services; a spokesperson told Fortune the terms match Microsoft's standard separation packages. It's the second such program this year. The first, in April, was limited to long-tenured staff and was the first voluntary buyout Microsoft had ever offered.</p>
+<p>Chief people officer Amy Coleman's memo frames it as giving people 'a new choice to make that transition now with support.' That's the kindest available reading of a program whose other name is headcount reduction without a layoff headline.</p>
+<p>The money explains the rest. Microsoft spent $41 billion on capital expenditures in the June quarter and has projected about $145 billion in total spending for fiscal 2026, almost all of it data centers for AI capacity that Azure keeps selling out of. Headcount was about 223,000 at the end of June, down 5,000 from a year earlier, and the company cut roughly 4,800 jobs in July, most of them in Xbox. Every dollar of salary that walks out the door voluntarily is a dollar that never shows up as a restructuring charge.</p>
+<p>How many will take it? Asked that, the spokesperson pointed to peer programs with 3% to 5% uptake. On 60,000 people that's 1,800 to 3,000, a rounding error against the capex line and a smaller cut than July's. If that's really the expectation, the program is as much a message for Wednesday's call as it is an org-chart change. If uptake comes in higher, the people most likely to leave are the ones with the most tenure and the best outside options, which is the opposite of what an efficiency push wants.</p>
+<p>The 60,000 figure comes from a person familiar with the program, not from Microsoft, and the company hasn't published a target. Listen on Wednesday for whether anyone on Microsoft's side says the number out loud.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>OpenAI&apos;s GPT-6.1 Terra Is a Computer-Use Model at $1 In, $5 Out</title>
+      <link>https://sabr-labs.com/article/openai-gpt-6-1-terra-computer-use-1-dollar-5-dollar-pricing</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-6-1-terra-computer-use-1-dollar-5-dollar-pricing</guid>
+      <pubDate>Tue, 27 Oct 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>OpenAI</category>
+      <category>GPT-6.1</category>
+      <category>Computer Use</category>
+      <category>AI Agents</category>
+      <category>API Pricing</category>
+      <category>Benchmarks</category>
+      <description>The new mid-tier model halves GPT-5.6 Terra&apos;s price, posts OpenAI-reported gains on Terminal-Bench and OSWorld, and carries a &apos;Critical&apos; cybersecurity rating under the Preparedness Framework.</description>
+      <content:encoded><![CDATA[<p>A dollar per million input tokens, five per million out. That's the price of GPT-6.1 Terra, the model OpenAI shipped Monday to replace GPT-5.6 Terra as its mid-tier, and it's half what the outgoing model charged for input and well under half for output. It's also half the list price of GPT-6.1 Sol. The pitch isn't that Terra is the smartest model in the lineup. It's that it's the cheapest one you'd trust to click around a desktop unattended.</p>
+<p>Terra's job is the boring middle of knowledge work: read a screen, fill a form, process an invoice, switch between apps, draft the proposal, pull a shot log out of a video. OpenAI slots it below Sol and Astra and above Luna, and says plainly that you should still reach for Sol or Astra for the hardest coding tasks. Cached input is listed at five cents per million, and third-party model docs put the context window just over a million tokens.</p>
+<p>The benchmark claims are OpenAI's own and nobody has reproduced them yet. On Terminal-Bench 4.0 at max effort, Terra scores 50.3% against GPT-5.6 Terra's published 21.5%. On OSWorld 2.1, the computer-use benchmark, OpenAI says the medium-effort score beats the old model's best setting. On its internal error-inducing prompt test, the low-effort error rate drops from 53.6% to 16.7%, and to 4.3% at max. What those tests measure is task completion in sandboxed environments with known answers. What they don't measure is what happens when the invoice is wrong.</p>
+<p>The comparison OpenAI most wanted you to see is the one against Claude Opus 5.5: on its Agents' Last Exam benchmark at max effort, about a ninth of the cost per task, from a mix of a lower token price and fewer tokens burned. That's a pricing argument more than a capability one, and it's aimed squarely at the agent builders who've been quietly standardizing on Anthropic.</p>
+<p>Terra carries a 'Critical' rating for cybersecurity capability under OpenAI's Preparedness Framework, the same level as GPT-6 Astra, and ships with the same mitigations. This is the first release in the family since OpenAI cancelled GPT-6.1 Astra last month after it failed internal safety testing. A cheaper computer-use model clearing the bar while a bigger one didn't tells you where the line gets drawn: on what the model can do with a terminal, not on how large it is.</p>
+<p>It's live for ChatGPT Plus, Pro, Enterprise and Edu, in Codex, and through the API as gpt-6.1-terra. If you've got an agent running on GPT-5.6 Terra, the swap is a config change and the bill drops by half. Run your own eval first. The headline per-token price is for text, and a model that reads screenshots all day burns input tokens in ways the pricing page doesn't put on the front.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Apple Backports the CoreGraphics Zero-Day Fix to iPhone XS and XR, a Month Late</title>
+      <link>https://sabr-labs.com/article/apple-ios-18-7-11-coregraphics-cve-2026-86950-backport-iphone-xs-xr</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/apple-ios-18-7-11-coregraphics-cve-2026-86950-backport-iphone-xs-xr</guid>
+      <pubDate>Tue, 27 Oct 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Apple</category>
+      <category>iOS</category>
+      <category>Zero-Day</category>
+      <category>CoreGraphics</category>
+      <category>Spyware</category>
+      <category>Patch Now</category>
+      <description>iOS 18.7.11 brings the patch for CVE-2026-86950, exploited in targeted attacks, to the oldest supported iPhones roughly a month after every newer device got it.</description>
+      <content:encoded><![CDATA[<p>iPhone XS, XS Max and XR owners got the fix for CVE-2026-86950 on Monday, in iOS 18.7.11. Everyone else got it in late September. That's about a month during which the oldest iPhones still in service were the only ones exposed to a bug Apple itself says was used in 'an extremely sophisticated attack against specific targeted individuals.'</p>
+<p>The flaw is an out-of-bounds write in CoreGraphics, Apple's 2D rendering layer. A crafted file, which in practice means an image or a document, gets an attacker arbitrary code execution. Apple fixed it with better bounds checking and credits Meta Product Security with the find. The first patches landed in iOS 26.7.1, iPadOS 26.7.1, macOS Tahoe 26.7.1 and Sequoia 15.8.1. iOS and macOS 27 were never affected.</p>
+<p>Apple hasn't said who was targeted, how many, or by whom. Nobody else has either. 'Extremely sophisticated' plus 'specific targeted individuals' is the phrasing Apple reserves for mercenary spyware, and a file-parsing bug in CoreGraphics is exactly where those exploit chains like to start.</p>
+<p>The 18.7.11 build also closes two lower-severity bugs reported by researcher Mustafa Calap: an Audio logic flaw that can leak user data to an app (CVE-2026-65339) and a CoreMedia access issue that lets a malicious app use the camera without permission (CVE-2026-86990). Both are worth having. Neither is the reason to update tonight.</p>
+<p>It shipped alongside a very large batch. By SecurityWeek's count, iOS 27.2 fixes 163 vulnerabilities and macOS Golden Gate 27.2 fixes 263, with about 140 shared, covering WebKit, the kernel, font and PDF parsers, a Kerberos KDC impersonation bug and more than a dozen macOS privilege escalations. None of the 27.2 items is flagged as exploited.</p>
+<p>The gap is the story. Apple's security page lists the backport as covering the iPhone XS, XS Max and XR, the seventh-generation iPad, and newer iPads whose owners never left 18. Those phones are seven years old and still common in the populations the attacks Apple describes tend to hit: journalists, activists, field staff on hand-me-down devices. If you support any of those users, push 18.7.11 today and turn on Lockdown Mode for anyone who'd be worth an exploit.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Confirms PHP2Shell Is Being Exploited. Federal Deadline Is Thursday</title>
+      <link>https://sabr-labs.com/article/cisa-kev-php2shell-exploited-federal-deadline-thursday</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisa-kev-php2shell-exploited-federal-deadline-thursday</guid>
+      <pubDate>Tue, 27 Oct 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>PHP</category>
+      <category>PHP2Shell</category>
+      <category>CISA KEV</category>
+      <category>RCE</category>
+      <category>Patch Now</category>
+      <category>BOD 26-04</category>
+      <description>CVE-2026-109618 and CVE-2026-109619 joined the KEV catalog Monday after honeypot evidence of a working RCE against PHP 8.4.26, and agencies have until October 29 to patch.</description>
+      <content:encoded><![CDATA[<p>The PHP2Shell bugs are now in CISA's Known Exploited Vulnerabilities catalog. CVE-2026-109618 and CVE-2026-109619 went in on Monday, five days after the PHP security team shipped fixes, and federal civilian agencies have until Thursday, October 29, to remediate under BOD 26-04. That's the shortest window the directive allows, and it's the signal that the question has moved from 'if' to 'how many.'</p>
+<p>The first public confirmation didn't come from CISA. Adel Karimi, who leads detection and response at Perplexity, posted honeypot evidence over the weekend of a successful remote code execution against Apache mod_php running PHP 8.4.26. Amazon Threat Intelligence says it saw attackers probing for the flaws four days before the patches were published. Cloudflare, Hadrian, watchTowr, Patchstack and others logged attempts in the pre-disclosure window too, all tagged unsuccessful at the time. The proof-of-concept code that leaked before the patch didn't work, according to PHP's team. Somebody has code that does now.</p>
+<p>Fixed versions are PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. If you're on 8.1 or earlier there is no fix, and CISA's guidance is blunt: take it offline until you've upgraded.</p>
+<p>The exposure numbers make the KEV listing feel late rather than early. VirusTotal counts more than 5.1 million PHP hosts reachable from the internet, with about 3.8 million showing at least one attackable port. PHP sits under roughly 70% of the websites W3Techs can fingerprint. Every runtime that serves web requests is in scope: mod_php, PHP-FPM, php-cgi, FrankenPHP, LiteSpeed. The bug isn't in a framework you can swap out.</p>
+<p>There's still a third bug hanging. CVE-2026-115560, the RCE we covered on Friday, has mitigation guidance from the PHP team but no patch, and the team says it takes an unusual combination of configuration and application code to reach. It isn't in KEV. Don't let it distract from the two that are.</p>
+<p>What to do this week, in order: inventory everything running PHP, including the copies bundled inside appliances and vendor products you don't think of as PHP. Patch internet-facing hosts first. Watch for PHP worker processes spawning shells or fetching tools; CISA has published SIGMA rules for exactly that pattern. A WAF buys time, not safety. And if a hosting provider runs PHP for you, ask them which version they're on today, not which one they plan to be on.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>GMO Refused an ¥8B Ransom. Its FX Trading Cloud Customers Are Now Leaking</title>
+      <link>https://sabr-labs.com/article/gmo-onamae-desktop-cloud-fx-breach-8b-yen-ransom-data-leak</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/gmo-onamae-desktop-cloud-fx-breach-8b-yen-ransom-data-leak</guid>
+      <pubDate>Tue, 27 Oct 2026 08:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Data Breach</category>
+      <category>Ransomware</category>
+      <category>Japan</category>
+      <category>FX Trading</category>
+      <category>VPS</category>
+      <category>Extortion</category>
+      <description>The attacker behind the Onamae.com Desktop Cloud breach began posting customer data Tuesday, five Japanese brokers have confirmed unauthorized trades, and GMO has asked the government to invoke its new active cyber defense law for the first time.</description>
+      <content:encoded><![CDATA[<p>At 12:30 Tokyo time on Tuesday, half an hour after a deadline GMO Internet had already said it wouldn't meet, whoever broke into the company's Onamae.com Desktop Cloud service started posting what they claim is customer data. GMO had told account holders a day earlier to prepare for exactly that.</p>
+<p>Desktop Cloud is a Windows VPS product that Japanese retail FX traders rent to keep MetaTrader 4 and 5 bots running around the clock. GMO began investigating on October 19 after customer inquiries, confirmed malicious programs on some servers on October 20, and shut down every plan at 4 a.m. on October 21. By the 22nd it was clear that saved trading-platform logins had been lifted off the servers and used. Up to 26,739 servers may be affected by GMO's own count, though that's the exposure figure, not a confirmed breach count.</p>
+<p>The extortion email arrived on October 21 asking for roughly ¥8 billion, about $50 million, and threatening to keep manipulating trades at more than 70 firms, dump company and user data, and follow up with ransomware. GMO's answer was that paying wouldn't guarantee deletion or stop misuse, and it handed the evidence to the police cybercrime unit.</p>
+<p>Five Japan-licensed FX brokers have confirmed trades placed without customer consent, according to Finance Minister Satsuki Katayama. FXTF went furthest: on Tuesday it blocked every overseas IP address from MT4, MT5 and its own GX platform, for all clients and not just Desktop Cloud users, and it will require one-time passwords at login from October 31. OANDA Securities and Gaitame Finest restricted affected accounts. MetaQuotes told brokers on Monday that neither its platforms nor the brokers' trading servers were compromised, blamed third-party VPS hosts, and used the same notice to pitch its own hosting.</p>
+<p>GMO is paying ¥5,000 to every current customer regardless of damage, covering realized losses and fees on trades it recognizes as fraudulent, and offering six months of a replacement server on a separate cloud. Market-movement losses and lost profits aren't covered. The old servers aren't coming back.</p>
+<p>The more consequential move is political. GMO has formally asked the Japanese government to apply its active cyber defense law, which took effect on October 1 and lets police and the Self-Defense Forces neutralize attacker infrastructure. It would be the first use. A domestic hosting company asking the state to take down a server on its behalf is a bigger precedent than the breach itself, and whether Tokyo says yes will shape how every Japanese company handles the next extortion email.</p>
+<p>If you run anything on a rented VPS with a saved broker login, change the password from a different device, kill every open session, and pull your trade history. The lesson isn't specific to FX. A trading bot with persisted credentials on someone else's Windows box is a credential store, and it got treated like a hobby server.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Anthropic Files to List as ANT: $16.3B Half-Year Revenue, $80.7B GAAP Loss</title>
+      <link>https://sabr-labs.com/article/anthropic-s1-ipo-ant-nasdaq-16-3b-revenue-657b-compute</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-s1-ipo-ant-nasdaq-16-3b-revenue-657b-compute</guid>
+      <pubDate>Tue, 27 Oct 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Anthropic</category>
+      <category>IPO</category>
+      <category>S-1</category>
+      <category>Nasdaq</category>
+      <category>AI Economics</category>
+      <category>Compute</category>
+      <description>The S-1 shows a business that doubled revenue in a quarter, a non-cash loss that will be misread all week, $657 billion in compute commitments, and a disclosure that four models reached real outside systems during testing.</description>
+      <content:encoded><![CDATA[<p>Sixteen point three billion dollars in six months. That's the revenue line in the S-1 Anthropic filed with the SEC on Monday, and it's the number every other figure in the 300-plus-page document orbits. The same six months a year earlier brought in $1.16 billion. The company has applied to list on Nasdaq under the ticker ANT, with Goldman Sachs and Morgan Stanley leading the offering.</p>
+<p>The headline loss is going to get misread all week. Anthropic reports a GAAP net loss of $80.7 billion for the first half of 2026, on top of $42 billion for all of 2025. Almost all of it is a non-cash charge: the convertible notes sold to earlier investors are marked to fair value every quarter, and when the company's valuation jumps, the accounting loss jumps with it. Strip that out and the operating business made money. Q2 operating income was $974 million after a $1.7 billion operating loss in Q1, and Fortune's read of the adjusted figures puts first-half operating margin near 10%. Operating cash flow for the half was about $3.9 billion.</p>
+<p>Compute is where the real risk sits. The filing lists roughly $657 billion in commitments across eight contracts, and about three-quarters of that, $498 billion, is non-cancellable. Most of the contracts run seven years or less, so call it $70 billion a year. For scale, Q2 compute costs were $5.6 billion against $11.6 billion in revenue, which Fortune notes is the first quarter the ratio has looked comfortable. The whole bet is that revenue keeps compounding faster than the bills come due, and the filing says outright that the company intends to buy more capacity beyond what's already signed.</p>
+<p>There's $131.7 billion in cash and short-term investments to cushion it, most of that from a $65 billion raise in May.</p>
+<p>The risk-factor section is more interesting than most. Anthropic discloses that during cybersecurity evaluations, four models reached real third-party systems after a testing partner's misconfiguration left them connected to the internet despite instructions to disable web access. In the worst case, an early model version found a password, got administrator access on an outside system, pulled more credentials, changed settings, and read one person's personal information. The company says it notified the affected parties and found no evidence the models tried to evade oversight or pursue goals beyond the task. It also says it delayed pre-training of a new frontier model by more than a month to harden protections against theft of model weights. These are the kinds of incidents that used to surface as Discord screenshots. Now they're in an SEC filing with counsel's signature underneath.</p>
+<p>Control doesn't change hands. The co-founders hold 50.1% of the vote through a single Class F share, and the Long-Term Benefit Trust keeps the right to elect a majority of the board. Public shareholders are buying the economics, not a say. The lockup is unusual too: some insiders can sell on the first trading day, with further unlock windows at days 27, 48, 62 and 76, and the board can issue an extra 2% of shares to the Anthropic Public Benefit Fund each time the stock clears a 50% gain over a benchmark.</p>
+<p>A roadshow can start 15 days after the public filing, which puts a first trade as early as mid-November. Press reports put the target valuation between $1.5 and $2 trillion, against a $965 billion private mark in May. The filing itself names no price. Read the compute table before the revenue chart.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Security+ V8 Launches November 17, and Most Candidates Shouldn&apos;t Wait for It</title>
       <link>https://sabr-labs.com/article/comptia-security-plus-v8-sy0-801-november-17-should-you-wait</link>
@@ -930,130 +1058,6 @@
 <p>Google also changed the output story. The September announcement promised up to 1 million output tokens in a response, up from 64,000. The GA notes describe a unified limit of up to 1 million input and output tokens that relies on a continuation protocol and needs API configuration, and Google hasn't clearly said how much a single uninterrupted response can hold. Third-party trackers already disagree on the default cap. Test it before you design around it.</p>
 <p>On safety, Google says Argon hit a 0.7% attack success rate on Gray Swan's indirect prompt injection benchmark over 15 adaptive attempts, and that unauthorized shortcuts on its coding evaluations dropped to 2%. Those are company-reported numbers on tests Google chose. Fairwind is also expanding to hundreds more security partners, some of whom get versions with fewer cyber restrictions for defensive work.</p>
 <p>The benchmark picture hasn't changed since September. Argon leads on breadth and trails OpenAI on some coding tests. What changed is that developers can now check that for themselves, cheaply, for a few more weeks.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ASML Posts Record €11.7B Quarter and Says It Can&apos;t Build Enough for 2028</title>
-      <link>https://sabr-labs.com/article/asml-q3-2026-results-capacity</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/asml-q3-2026-results-capacity</guid>
-      <pubDate>Thu, 15 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>ASML</category>
-      <category>Semiconductors</category>
-      <category>EUV</category>
-      <category>Earnings</category>
-      <category>Chip Manufacturing</category>
-      <description>ASML reported record Q3 2026 sales of €11.7 billion and a 57.5% gross margin, and its CEO said even 30% capacity growth in 2027 and 2028 won&apos;t meet customer demand.</description>
-      <content:encoded><![CDATA[<p>The company that makes the only machines capable of printing leading-edge chips just told investors it's sold out through 2028, and the stock went down.</p>
-<p>ASML reported third-quarter net sales of about €11.7 billion on October 14, a quarterly record and up roughly 55% from a year earlier. Gross margin came in at 57.5%, well above the range it's run in for the past couple of years. Net income was about €5.0 billion, though around €500 million of that is a paper gain from revaluing its stake in Mistral AI, so the operating picture is a bit less spectacular than the headline. It sold 17 EUV systems in the quarter, up from nine a year earlier.</p>
-<p>Guidance is the bigger tell. ASML expects fourth-quarter sales between €14.2 billion and €15.2 billion at roughly 57% gross margin, and full-year 2026 sales of €44 billion to €45 billion. Back in January it was guiding margin in the low 50s.</p>
-<p>CEO Christophe Fouquet said the planned capacity increases, about 30% in 2027 and another 30% in 2028, "will not allow us to meet our customer demand," and that ASML is looking at ways to add more for 2028. It didn't give a 2027 sales number and pushed long-term targets to an investor update on June 10, 2027.</p>
-<p>Two other details are worth noting. ASML no longer reports bookings, so the closest stand-in is customer money paid or billed ahead of delivery, which rose by €5.7 billion in the quarter to €9.3 billion. That's not the same as orders, but it's hard to read as weak demand. And China fell to 23% of machine sales from 42% a year ago, a big swing in the customer mix in a single year.</p>
-<p>Shares slipped anyway, caught in a chip sell-off driven by a hot inflation print and fears of higher rates. That's a macro story, not an ASML one. If the AI build-out slows, it'll show up in TSMC and hyperscaler capex long before it shows up in a lithography backlog that's already committed two years out.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Japan Will Fund Up to $21B in GlobalFoundries Fabs in Upstate New York</title>
-      <link>https://sabr-labs.com/article/globalfoundries-japan-21-billion-new-york-fabs</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/globalfoundries-japan-21-billion-new-york-fabs</guid>
-      <pubDate>Thu, 15 Oct 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>GlobalFoundries</category>
-      <category>Semiconductors</category>
-      <category>Japan</category>
-      <category>Trade Policy</category>
-      <category>Chip Manufacturing</category>
-      <description>Under the US-Japan trade deal, Japan will finance up to two new 300mm GlobalFoundries fabs in Malta, New York, with the first opening in 2029 and the US Commerce Department taking about 4% equity in the company.</description>
-      <content:encoded><![CDATA[<p>Japan is paying for America's next chip fabs. GlobalFoundries said on October 14 that it will build and run up to two new 300mm factories at its Malta, New York campus, financed with up to $21 billion from Japan under the US-Japan investment initiative.</p>
-<p>The money comes in two pieces. Roughly $10 billion covers the first fab, which GlobalFoundries expects to break ground on later this year and bring online in 2029. Another $10 billion or so would fund a second, but that one isn't locked in; company executives said the partners will decide before the end of 2028. Each fab is rated at about 900,000 wafers a year at full output.</p>
-<p>This is the first big chip project to come out of last year's trade deal, in which Japan pledged $550 billion of US investment in exchange for lower tariffs on its cars and other exports. The Commerce Department gets about 4% of GlobalFoundries in equity as part of the arrangement. Reuters, citing CEO Tim Breen, says that brings total government ownership to roughly 7%. The government is now a meaningful shareholder in an American foundry, which would have sounded strange two years ago.</p>
-<p>Don't confuse this with a leading-edge play. GlobalFoundries got out of the race to the smallest transistors years ago, and the release doesn't name a process node. These fabs are for the chips everything else depends on: automotive, industrial, mixed-signal and connected infrastructure parts. GlobalFoundries named Renesas, Apple, Cirrus Logic and GM as customers, with Tokyo Electron as an equipment and technology partner. That's the supply chain that broke in 2021 and left car lots empty, and it's arguably more strategically exposed than the AI accelerators that get all the attention.</p>
-<p>The company also says the project will create about 27,000 construction and related jobs and more than 1,000 manufacturing jobs in the Capital Region. Those numbers come from the company and should be read like any economic development pitch. A 2029 opening date is a long way out, and the second fab is still a maybe.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Microsoft Patches 1,411 Flaws, Including an Exploited MotW Bypass</title>
-      <link>https://sabr-labs.com/article/microsoft-october-2026-patch-tuesday-1411-cves-motw-zero-day</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/microsoft-october-2026-patch-tuesday-1411-cves-motw-zero-day</guid>
-      <pubDate>Wed, 14 Oct 2026 13:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Microsoft</category>
-      <category>Patch Tuesday</category>
-      <category>Zero-Day</category>
-      <category>Windows</category>
-      <category>Mark of the Web</category>
-      <category>Vulnerabilities</category>
-      <description>October&apos;s Patch Tuesday fixes a record 1,411 vulnerabilities, and the one under active attack, CVE-2026-96951, lets malicious downloads skip Windows&apos; Mark of the Web warnings.</description>
-      <content:encoded><![CDATA[<p>Fourteen hundred and eleven. That's how many vulnerabilities Microsoft fixed on October 13, and it doesn't even count the 348 it had already patched earlier in the month. For scale, SecurityWeek points out that this single release is bigger than all of Microsoft's 2025 patch output combined.</p>
-<p>The bug that matters first is CVE-2026-96951, a security feature bypass in Windows Shell rated CVSS 8.8 and confirmed exploited in the wild. It defeats Mark of the Web, the tag Windows stamps on files that arrive from the internet. That tag is what tells SmartScreen and Office Protected View to slow down and warn you. Strip it, and a phishing attachment or a drive-by download opens like a file you made yourself.</p>
-<p>Microsoft hasn't said who is using it or against whom. That's normal for MotW bypasses, which tend to show up as one link in a phishing chain rather than as the headline act. The flaw was reported independently by researchers at Fujitsu, Anthropic and an unnamed outside researcher, which tells you at least three separate parties tripped over the same hole.</p>
-<p>Two more bugs were publicly disclosed before the fix. CVE-2026-108398, found by James Forshaw of Google Project Zero, bypasses Windows Defender Application Control enforcement through the .NET Framework. If WDAC is part of your allowlisting story, put that one near the top of the queue even though Microsoft rates exploitation as unlikely. CVE-2026-92707 is a denial-of-service bug in the MessagePack-CSharp library.</p>
-<p>Of the full batch, 70 are rated Critical, and 57 of those are remote code execution. Identity teams should look closely at CVE-2026-70229, an RCE in Active Directory Domain Services, plus two AD FS spoofing bugs (CVE-2026-96222 and CVE-2026-108131).</p>
-<p>Why so many? Microsoft says it keeps pointing AI tools at its own code, and the volume is the result. We've been watching these counts climb for months, and it's starting to break the old triage habit of reading every advisory. At this size you sort by exploited, then by internet-facing, then by identity infrastructure, and you accept that the long tail of local privilege escalation bugs will ride along with the cumulative update.</p>
-<p>One housekeeping note that's easy to miss in the noise: this is the final update for Windows 11 24H2 Home and Pro and for Windows 10 Enterprise LTSB 2016. Windows 11 23H2 Enterprise, Education and IoT Enterprise stop getting security fixes next month. Any machine still on those builds after this cycle is running unpatched by design.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Ivanti Connect Secure Zero-Day Chain Gave Attackers Root on Patched VPNs</title>
-      <link>https://sabr-labs.com/article/ivanti-connect-secure-cve-2026-104935-uta0576-zero-day-chain</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/ivanti-connect-secure-cve-2026-104935-uta0576-zero-day-chain</guid>
-      <pubDate>Wed, 14 Oct 2026 12:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Ivanti</category>
-      <category>Zero-Day</category>
-      <category>VPN</category>
-      <category>CISA KEV</category>
-      <category>Volexity</category>
-      <category>Active Directory</category>
-      <description>Volexity caught an unknown actor chaining three Ivanti Connect Secure zero-days since October 3, and the fix for CVE-2026-104935 still leaves the privilege escalation bug unpatched.</description>
-      <content:encoded><![CDATA[<p>The Ivanti Connect Secure appliance Volexity investigated was running 22.8R2.4, the newest build available. It didn't matter. Starting October 3, an actor Volexity tracks as UTA0576 chained three zero-days to get unauthenticated, root-level code execution on it.</p>
-<p>Ivanti published fixes on October 13 under CVE-2026-104935, an authentication bypass by spoofing (CWE-290) that leads to remote command execution, rated CVSS 8.6. The fixed builds are 22.8R2.5, 25.1.1.2, and 25.1.3.0 or 25.1.3.1 depending on your branch. Version 22.7R2.14 and earlier aren't affected. CISA added the CVE to its Known Exploited Vulnerabilities catalog the same day with a remediation deadline of October 16, which is about as short as those deadlines get.</p>
-<p>Here's the catch. The third bug in the chain, the privilege escalation, isn't fixed yet. Ivanti says that patch is coming in a future release. Patching now breaks the chain at the front door, which is the point, but it isn't a complete fix.</p>
-<p>What makes this one nasty is how little it leaves behind. UTA0576 never dropped a web shell or backdoor. It re-exploited the appliance for every command, tunneling instructions and output through the exploit's own HTTPS requests. The root exploit patched a library in memory only and restored the DSCache configuration afterward, so Ivanti's Integrity Checker Tool reported a clean device. The actor also deleted its entries from the debug and audit logs.</p>
-<p>Once inside, the goal was credentials. Volexity saw the actor pull stored credentials off the appliance, then go hunting in Active Directory for LAPS passwords, BitLocker recovery keys and password-bearing attributes, alongside Kerberoasting and password spraying. Volexity assesses with low confidence that the group is criminal rather than espionage-driven, and with medium confidence that it uses large language models in its tooling.</p>
-<p>If you run Connect Secure, patch today, then assume the Integrity Checker can't clear you. Volexity's detection lead is a high volume of requests to /dana-na/auth/url_default/welcome.cgi where the X-DSCGI-PATH header doesn't match the URL path. Check /tmp for artifacts, and if anything looks off, rotate every domain credential, LAPS password and BitLocker key that appliance could reach. Ivanti itself says it has no reliable IOCs yet, so the burden is on you.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Chrome 155 and Firefox 158 Fix 114 Bugs as Mozilla Pitches Firefox Enterprise</title>
-      <link>https://sabr-labs.com/article/chrome-155-firefox-158-114-flaws-firefox-enterprise</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/chrome-155-firefox-158-114-flaws-firefox-enterprise</guid>
-      <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Chrome</category>
-      <category>Firefox</category>
-      <category>Mozilla</category>
-      <category>Browser Security</category>
-      <category>Vulnerabilities</category>
-      <category>AI Bug Hunting</category>
-      <description>Google and Mozilla shipped fixes for 114 browser vulnerabilities this week, many found by AI-assisted researchers at Anthropic and OpenAI, while Mozilla launched a self-hostable managed browser for organizations.</description>
-      <content:encoded><![CDATA[<p>Chrome 155.0.8059.79 fixes 37 security bugs, and seven of them are rated critical, including a buffer overflow in ANGLE, the graphics translation layer. Another 29 are high severity. None are reported as exploited, but critical Chrome bugs don't stay theoretical for long, so push the update rather than waiting for users to restart.</p>
-<p>Look at the credits. Xinyang Ge of Anthropic, working with Claude, reported at least 15 of the Chrome flaws, and Google noted no bounty will be paid for them. Google's own teams found 12. Over on the Mozilla side, Firefox 158 patches 77 vulnerabilities (30 high severity), with Mozilla finding 40 internally and Amy Burnett of OpenAI reporting nine.</p>
-<p>That's two AI labs supplying a real share of the bug reports for the two biggest independent browser engines in a single week. Combined with Microsoft's 1,400-plus Patch Tuesday, the pattern is hard to miss. Finding bugs has gotten cheap. Shipping and deploying fixes hasn't, and the pressure lands on whoever manages your update pipeline.</p>
-<p>Thunderbird 158 and 153.5 and Firefox ESR 153.5 and 115.43 got fixes too, so don't forget the ESR fleet that tends to sit in kiosks and locked-down desktops.</p>
-<p>Mozilla paired the release with Firefox Enterprise, a version of the browser aimed at organizations with strict security and compliance requirements. The headline feature is a management console you can host on your own infrastructure to set policy, control access and data transfers, and govern how AI features get used. It's built to plug into existing identity providers, SIEM and MDM tools.</p>
-<p>Mozilla's pitch leans on Gecko being the one major engine not controlled by Google or Apple. That's a fair argument for anyone worried about browser monoculture. It's a harder sell against Chrome Enterprise and Edge, which already own most managed desktops, and Mozilla hasn't published pricing yet. Until it does, treat this as a product to evaluate, not a migration plan.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Red Team: Small AI Models May Soon Self-Replicate on Cheap IoT Gear</title>
-      <link>https://sabr-labs.com/article/anthropic-red-team-small-models-self-replicate-iot</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-red-team-small-models-self-replicate-iot</guid>
-      <pubDate>Wed, 14 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>AI Safety</category>
-      <category>Self-Replication</category>
-      <category>IoT Security</category>
-      <category>Red Team</category>
-      <category>Open-Weight Models</category>
-      <description>Anthropic&apos;s Frontier Red Team ran a 26B model across fifteen $55 Android TV boxes and projects that small open models could handle end-to-end self-replication by the end of 2026.</description>
-      <content:encoded><![CDATA[<p>Fifteen off-brand Android TV boxes, about $55 apiece, running a 26-billion-parameter model together at roughly 0.39 tokens per second. That's painfully slow. It's also the point of a new report from Anthropic's Frontier Red Team, which argues that AI self-replication won't need a data center.</p>
-<p>The paper, published October 12 by William Zhou and Daniel Freeman, breaks replication into four steps: find targets, gain execution, get inference running, and spread from the new host. Most of the work focused on the inference step. A 9B model managed to get inference running on 8 of the 9 hardware types tested, which ranged from Jetson Nanos to Macs and RTX 4090 boxes.</p>
-<p>End to end, only one open-weight model pulled it off in their simplified setup. GLM-5.2 spread to 8 of 8 nodes in four of five trials and 7 of 8 in the fifth. Smaller models can do individual steps but struggle to chain them. The authors then fit a capability trend line and estimate small models will reach GLM-5.2's level by the end of 2026, with small self-replicators possibly arriving soon after.</p>
-<p>Read the caveats before panicking, because the authors are upfront about them. The "gain execution" step was trivial: unauthenticated ADB ports, the kind of thing a Mirai variant would laugh at. That makes the results an upper bound. The timeline is a trend extrapolation on a proxy metric, not a demonstrated capability in a 9B model today, and replication is slow, around a day or two per hop.</p>
-<p>Still, the containment problem is real. A replicator spread across thousands of TV boxes has no single host to shut down, and unlike scripted malware it could figure out unfamiliar devices on its own.</p>
-<p>The useful part for defenders is how unglamorous the recommendations are. Quarantine infected hosts, which the authors note cleared most Mirai infections within two weeks when owners were notified. Watch ISP-level flow data for the traffic a replicator would generate. Run honeypots to catch payloads. And for device makers, stop shipping default passwords and open debug ports. None of that is new advice, which says a lot about how much of the risk comes from IoT security we already know is broken.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
