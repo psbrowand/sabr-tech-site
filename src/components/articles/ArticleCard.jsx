@@ -6,20 +6,19 @@ import { Link } from 'react-router-dom';
 import { Clock, User, TrendingUp, AlertTriangle, Flame } from 'lucide-react';
 import CategoryBadge from '../ui/CategoryBadge';
 import TimeAgo from '../ui/TimeAgo';
+import ArticleImage from './ArticleImage';
 
 export default function ArticleCard({ article, variant = 'default', className = '' }) {
-  const { slug, title, summary, image, author, publishedAt, readingTime, category, trending, breaking, featured } = article;
+  const { slug, title, summary, author, publishedAt, readingTime, category, trending, breaking, featured } = article;
   const href = `/article/${slug}`;
 
   if (variant === 'compact') {
     return (
       <Link to={href} className="flex items-start gap-3 group py-3 border-b border-white/[0.05] last:border-0">
         <div className="flex-shrink-0 w-16 h-14 rounded-lg overflow-hidden bg-slate-800">
-          <img
-            src={image}
-            alt={title}
+          <ArticleImage
+            article={article}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
           />
         </div>
         <div className="flex-1 min-w-0">
@@ -39,11 +38,9 @@ export default function ArticleCard({ article, variant = 'default', className = 
     return (
       <Link to={href} className="card hover-glow flex gap-4 p-4 group overflow-hidden">
         <div className="flex-shrink-0 w-32 sm:w-40 h-24 rounded-lg overflow-hidden bg-slate-800">
-          <img
-            src={image}
-            alt={title}
+          <ArticleImage
+            article={article}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            loading="lazy"
           />
         </div>
         <div className="flex-1 min-w-0 flex flex-col justify-center">
@@ -73,11 +70,9 @@ export default function ArticleCard({ article, variant = 'default', className = 
     <Link to={href} className={`card hover-glow overflow-hidden group flex flex-col ${className}`}>
       {/* Image */}
       <div className="relative aspect-video overflow-hidden bg-slate-800 flex-shrink-0">
-        <img
-          src={image}
-          alt={title}
+        <ArticleImage
+          article={article}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
         />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/80 via-transparent to-transparent" />

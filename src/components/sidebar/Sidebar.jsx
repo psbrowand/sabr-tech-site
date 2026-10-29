@@ -7,6 +7,7 @@ import { getMostRead, getBreaking, getLatest } from '../../data/articles';
 import CategoryBadge from '../ui/CategoryBadge';
 import TimeAgo from '../ui/TimeAgo';
 import NewsletterSignup from '../newsletter/NewsletterSignup';
+import ArticleImage from '../articles/ArticleImage';
 
 // ── Most Read ─────────────────────────────────────────────────────────────────
 function MostRead() {
@@ -82,11 +83,9 @@ function RecentPosts() {
             className="flex gap-3 py-3 group border-b border-white/[0.04] last:border-0"
           >
             <div className="flex-shrink-0 w-14 h-12 rounded-lg overflow-hidden bg-slate-800">
-              <img
-                src={a.image}
-                alt={a.title}
+              <ArticleImage
+                article={a}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                loading="lazy"
               />
             </div>
             <div className="min-w-0">

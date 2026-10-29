@@ -134,7 +134,8 @@ Every article is an object in `src/data/articles.js` with:
   ],
   category: "tech" | "cyber" | "ai" | "space" | "learning",
   tags: ["3–6 relevant tags"],
-  image: "https://images.unsplash.com/<id>?w=1200&q=80", // or CDN URL
+  // image: omit. A unique cover is generated per article (see AGENTS.md > Images).
+  // Only set one for a verified photo of this story that no other article uses.
   author: "Sam Browand", // unless a guest byline
   publishedAt: "2026-MM-DDTHH:MM:SSZ", // ISO UTC
   readingTime: <1–2 min per paragraph, rounded>,
@@ -178,6 +179,7 @@ When a Claude Code routine drafts a new article, run this checklist before addin
 8. **Uniqueness:** does this article say something other outlets didn't already say yesterday? If no, either find the angle or skip it.
 9. **Sources:** 3–5, all real URLs, primary sources first.
 10. **Schema fields:** id is the next integer, slug is unique, publishedAt is ISO UTC, category is one of the five valid values.
+11. **Images:** no `image` field (the cover is generated). Never reuse another article's image URL. Most specific tag first.
 
 ## 12. What to avoid, condensed
 

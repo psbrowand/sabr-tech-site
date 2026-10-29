@@ -15,6 +15,7 @@ import SectionHeader     from '../components/ui/SectionHeader';
 import CategoryBadge     from '../components/ui/CategoryBadge';
 import NewsletterSignup  from '../components/newsletter/NewsletterSignup';
 import { useSeo }        from '../lib/useSeo';
+import ArticleImage      from '../components/articles/ArticleImage';
 
 // ── Trending strip (horizontal scroll on mobile) ──────────────────────────────
 function TrendingStrip() {
@@ -90,11 +91,9 @@ function AISpotlight() {
           className="lg:col-span-2 card hover-glow overflow-hidden group flex flex-col"
         >
           <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden bg-slate-800">
-            <img
-              src={main.image}
-              alt={main.title}
+            <ArticleImage
+              article={main}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/90 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-5">

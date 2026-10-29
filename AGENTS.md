@@ -48,7 +48,7 @@ Then verify with `git diff src/data/articles.js` and `git status`, then commit w
   "tags": ["Tag1", "Tag2"],
   "author": "Sam Browand",
   "publishedAt": "2026-04-21T08:00:00Z",     // ISO 8601
-  "image": "https://images.unsplash.com/...?w=1200&q=80",   // optional — script supplies a default
+                                             // no "image": every article gets a unique generated cover (see Images below)
   "featured": false,                         // optional
   "trending": false,                         // optional
   "breaking": false,                         // optional
@@ -60,6 +60,14 @@ Then verify with `git diff src/data/articles.js` and `git status`, then commit w
 ```
 
 The script **auto-assigns `id`** (next integer after the current max). Do not include an `id` in drafts.
+
+### Images
+
+**Leave `image` out of drafts.** The site draws a unique cover for every article from its slug, category, tags and title (`src/lib/articleCover.js`): a category color, a background pattern and a topic icon (a bug for a CVE, a CPU for chips, a rocket for launches). Social previews get the same cover as a PNG from `/covers/<slug>.png` (`api/cover.mjs`). Nothing to pick, nothing to verify.
+
+- Do **not** copy an Unsplash URL from another article. Reused stock photos are why many articles once shared the same picture.
+- Good tags make good covers: put the most specific topic tag first (`Ransomware`, `Zero-Day`, `Semiconductors`, `SpaceX`, `CompTIA`), because the first tag also labels the cover on the article page.
+- Only add `image` for a real photo of this specific story that you can verify exists and that no other article uses. `add-articles.mjs` rejects an image already used by another article.
 
 ### If the script refuses
 

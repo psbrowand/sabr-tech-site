@@ -28,6 +28,10 @@ const DIST     = join(ROOT, 'dist');
 const SITE_URL = 'https://sabr-labs.com';
 const LOGO_URL = `${SITE_URL}/sabr-logo.png`;
 
+// An article's own image if it has one, else its generated cover PNG
+// (rendered on request by api/cover.mjs).
+const articleImageUrl = (a) => a.image || `${SITE_URL}/covers/${a.slug}.png`;
+
 const LANDING_ONLY_RE =
   /[ \t]*<!-- prerender:landing-only:start[\s\S]*?prerender:landing-only:end -->\n?/;
 
@@ -93,7 +97,7 @@ function articleJsonLd(a) {
     '@type': 'NewsArticle',
     headline: a.title,
     description: a.summary,
-    image: [a.image],
+    image: [articleImageUrl(a)],
     datePublished: a.publishedAt,
     dateModified: a.publishedAt,
     author: [{ '@type': 'Person', name: a.author }],
@@ -237,7 +241,7 @@ async function main() {
       url: `${SITE_URL}/article/${a.slug}`,
       title: `${a.title} | Sabr Cyber & Tech News`,
       description: a.summary,
-      image: a.image,
+      image: articleImageUrl(a),
       ogType: 'article',
       keywords: (a.tags || []).join(', '),
       jsonLd: articleJsonLd(a),

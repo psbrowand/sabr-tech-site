@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import { Clock, User, ArrowRight, TrendingUp } from 'lucide-react';
 import CategoryBadge from '../ui/CategoryBadge';
 import TimeAgo from '../ui/TimeAgo';
+import ArticleImage from './ArticleImage';
 
 export default function HeroCard({ article }) {
   if (!article) return null;
-  const { slug, title, summary, image, author, publishedAt, readingTime, category } = article;
+  const { slug, title, summary, author, publishedAt, readingTime, category } = article;
 
   return (
     <Link
@@ -16,9 +17,9 @@ export default function HeroCard({ article }) {
       className="relative block rounded-2xl overflow-hidden group aspect-[16/8] min-h-[360px] sm:min-h-[480px]"
     >
       {/* Background image */}
-      <img
-        src={image}
-        alt={title}
+      <ArticleImage
+        article={article}
+        loading="eager"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
 

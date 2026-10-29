@@ -16,6 +16,7 @@
     { "source": "/landing", "destination": "/", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/covers/([a-z0-9-]+)\\.png", "destination": "/api/cover?slug=$1" },
     {
       "source": "/((?!api/|rss\\.xml|robots\\.txt|sitemap\\.xml|assets/).*)",
       "destination": "/index.html"
