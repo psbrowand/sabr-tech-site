@@ -6,9 +6,134 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Oct 2026 13:20:21 GMT</lastBuildDate>
-    <pubDate>Wed, 28 Oct 2026 13:20:21 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Oct 2026 13:20:00 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Oct 2026 13:20:00 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Anthropic&apos;s Unreleased Claude Built Working Exploits for Five Major Platforms</title>
+      <link>https://sabr-labs.com/article/anthropic-frontier-red-team-unreleased-model-five-exploit-chains</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-frontier-red-team-unreleased-model-five-exploit-chains</guid>
+      <pubDate>Thu, 29 Oct 2026 09:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Anthropic</category>
+      <category>Claude</category>
+      <category>Exploit Development</category>
+      <category>Chrome</category>
+      <category>Linux Kernel</category>
+      <category>AI Security</category>
+      <description>Anthropic&apos;s Frontier Red Team reports five end-to-end exploit chains from an internal model with little human involvement, including 62 Chrome CVEs and a zero-click Linux root, but the public CVE records don&apos;t all line up with the write-up.</description>
+      <content:encoded><![CDATA[<p>Sixty-two Chrome CVEs, all rated high or critical, thirteen of them sandbox escapes. That's the count Anthropic's Frontier Red Team says one unreleased internal model turned in, and it's the least dramatic part of the October 27 write-up. The post describes five full exploit chains the model built across Chrome, Safari, Android, Windows and Linux, each after what Anthropic calls initial prompting and with little human involvement.</p>
+<p>The Chrome chain is a one-click remote code execution on macOS that strings together V8 heap corruption, a V8 sandbox escape with an ASLR defeat, a CacheStorage race and a FedCM use-after-free to run code outside the renderer sandbox. Google fixed the bugs in Chrome 156, released October 20, and credits Xinyang Ge of Anthropic, assisted by Claude, on specific entries. The Safari chain breaks same-origin policy through a JavaScriptCore use-after-free, a Gigacage bypass and an IPC flaw, enough to read another site's cookies and authenticated responses, and Apple shipped the fix in iOS 26.5.2 crediting Milad Nasr and Nicholas Carlini with Claude.</p>
+<p>The Linux one is the scary one. A race-condition use-after-free in the multipath TCP stack, chained with a KASLR leak, gives zero-click remote root on any box with an MPTCP listener. Anthropic tied it to CVE-2026-98432, a 9.8 fixed upstream October 15 and backported to stable. The Android chain extracts photos from a locked Pixel over USB by defeating three separate checks. The Windows chain is a kernel denial of service in QUIC handling.</p>
+<p>Here's where it gets less tidy. The Hacker News went and checked the public records. The CVE-2026-98432 entry describes an IPv4 TCP fix, not multipath TCP, and the only thing connecting it to Anthropic's chain is Anthropic's post. The Windows bug, CVE-2026-33096, was patched in April, is described by Microsoft as an HTTP.sys issue rated 7.5, and credits no finder at all. The Android fix has no public record anyone has found. None of that means the work didn't happen. It does mean the vendors' paper trail and Anthropic's narrative are not the same document, and the post doesn't say what a human did at each step.</p>
+<p>Anthropic isn't naming the model or releasing it, and it doesn't explain why beyond the obvious. It says the reports went through its standard disclosure policy, 90 days to patch and 45 more before details, and it's expanding its Cyber Verification Program for defenders. Google said something very similar a day later when it gated Gemini 4 Carbon behind a vetted-defender program. Two labs in two days telling you their best cyber models are too capable to ship broadly is either a coordinated marketing beat or a real inflection. It can be both.</p>
+<p>What should change on your end is simpler than the debate. If a model can produce a working MPTCP root chain from a prompt, then every piece of code you expose to the network is now cheaper to attack than it was a month ago, and the only lever you control is whether you scan it first. Anthropic's advice is to run your own code through these tools before someone else does. That's self-serving. It's also correct.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gemini 4 Carbon Goes to Vetted Cyber Defenders First, Everyone Else Waits</title>
+      <link>https://sabr-labs.com/article/google-gemini-4-carbon-cyber-defenders-first-fairwind-pricing</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/google-gemini-4-carbon-cyber-defenders-first-fairwind-pricing</guid>
+      <pubDate>Thu, 29 Oct 2026 09:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>ai</category>
+      <category>Google</category>
+      <category>Gemini</category>
+      <category>Gemini 4 Carbon</category>
+      <category>AI Security</category>
+      <category>Frontier Models</category>
+      <description>Google&apos;s new frontier model leads its own exploit-finding and patching benchmarks, ships two weeks after Argon at the same $2 and $10 per million tokens, and is gated behind the Fairwind program because Google says the offensive capability is real.</description>
+      <content:encoded><![CDATA[<p>Two weeks after Gemini 4 Argon went generally available, Google has a new top model, and you can't use it. Gemini 4 Carbon launched October 28 to a subset of cyber defenders, with access widening through what Google calls the Fairwind Program before developers, businesses and consumers get it at some unspecified later point. The stated reason is that the model is good enough at finding and exploiting vulnerabilities that Google wants guardrails and government pre-release testing done first.</p>
+<p>The benchmarks Google chose to lead with tell you what the model is for. SEC-bench Pro, which measures vulnerability discovery, at 88.2%. ExploitGym, which measures turning a bug into a working exploit, at 54.8%. CWE-bench, for patching, at 71%. Google says Carbon leads every competing model on all three. These are Google's own evaluations on Google's chosen benchmarks, so treat the ranking claim the way you'd treat any vendor leaderboard. But the shape of it is clear: this is a model built to do security work end to end, including the offensive half.</p>
+<p>The more interesting claims come from the people who've used it. Google says the Chrome team found Carbon generated high-quality patches more than ten times as often as another lab's large frontier model, and that Wiz has it leading on web penetration testing benchmarks. Neither quote is independently verifiable yet, and the Chrome comparison doesn't name the other model, but if you're the team that just took 62 CVE reports from Anthropic's unreleased research model, you'd want the patching side to be fast too.</p>
+<p>The rest of the release notes are about reliability rather than raw capability. Unsupported claims cut roughly in half versus Argon. Prompt injection attack success rate on Google's benchmark down from 0.7% to 0.0%. A measure Google calls cheating on Terminal-Bench 4.0 reduced to zero. That last one is worth noticing. The fact that it's a reported metric at all means models gaming the task harness was a real problem on the previous generation, and Google is now treating it as something to fix and publish.</p>
+<p>Pricing is unchanged from Argon's introductory rate: $2 per million input tokens and $10 per million output, rising to $4 and $20 after the intro period, with cached input at 95% off. So the gate on Carbon is access, not cost. For defenders inside the program, that's a cheap way to run a frontier exploit-finder across your own codebase. For everyone else, Argon is what you get.</p>
+<p>The staged rollout is the right call and also a convenient one. It lets Google say the model is too capable for general release while still shipping it to the customers who'll pay the most for exactly that capability. Anthropic made the same choice last week with a model it hasn't named at all. The pattern is now set: the best cyber models go to a short list first, and the short list is where the money is.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Alphabet Burns $9 Billion in a Quarter, Stock Drops 10% Despite Cloud Doubling</title>
+      <link>https://sabr-labs.com/article/alphabet-q3-2026-first-miss-four-years-negative-9b-free-cash-flow</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/alphabet-q3-2026-first-miss-four-years-negative-9b-free-cash-flow</guid>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>tech</category>
+      <category>Alphabet</category>
+      <category>Google</category>
+      <category>Earnings</category>
+      <category>Microsoft</category>
+      <category>Azure</category>
+      <category>AI Capex</category>
+      <description>Alphabet&apos;s Q3 was its first top-and-bottom-line miss in nearly four years, free cash flow went to negative $9.1 billion on capex and a TPU inventory build, and Microsoft&apos;s Azure beat the same evening made the contrast painful.</description>
+      <content:encoded><![CDATA[<p>Revenue up 25%. Google Cloud up 103%. A half-trillion-dollar run rate, per Sundar Pichai. And the stock fell around 10% after hours. Alphabet's third quarter is a lesson in what investors are actually grading right now, and it isn't growth.</p>
+<p>Start with the number that did the damage. Free cash flow for the quarter was negative $9.1 billion. Operating cash flow came in at $42.3 billion, but Alphabet spent $51.4 billion on property and equipment, and on the call management pointed to two more drags: a $5.2 billion cash payment on a 2018 European Commission fine and a build-up of inventory for TPU system sales. Inventory on the balance sheet went from $2.4 billion at year-end to $13.3 billion. Management says all of it is tied to committed contracts. That's probably true. It's also an awful lot of silicon sitting in a warehouse while the cash is already out the door.</p>
+<p>The headline miss was modest. Revenue of $127.6 billion against roughly $128.2 billion expected, per CNBC, and adjusted earnings of $2.67 a share against $3.02. GAAP diluted EPS was $2.12, dragged by an $8.7 billion loss on equity securities. Nearly four years without a miss on either line is a long streak, and breaking it on the same night the free cash flow line went red is a bad combination.</p>
+<p>Then there's capex guidance, which is where the 10% really came from. Alphabet held its 2026 range at $195 billion to $205 billion and said 2027 will increase significantly. No number. The market has been willing to fund the AI build-out as long as the spend had a visible ceiling. Telling investors the ceiling is higher but declining to say how much higher is the kind of thing that gets punished when free cash flow is already negative.</p>
+<p>Microsoft reported the same evening and got the opposite reaction. Revenue of $92.3 billion, up 19%, Azure growth of 48% in constant currency against its own 44% to 45% guide, and for the first time an actual dollar figure for Azure, around $33 billion. Shares rose about 3%. Microsoft is spending enormously too, with next-quarter capex guided above $50 billion, but it's showing the revenue line that the spend is supposed to produce. Alphabet's Cloud number is doing that job, and it still wasn't enough.</p>
+<p>The honest read is that Alphabet is now a hardware company in a way it never was before. TPU systems are a meaningful revenue contributor, which means inventory, working capital swings and lumpy cash flow are part of the model. That's fine if you're Nvidia and the market prices you that way. Alphabet is still priced like a software business with an ad machine attached, and this quarter is the first time the gap showed up in a number that can't be explained away.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Talos: KeyDrift Malware Hides in Cisco SD-WAN Controllers to Steal IPsec Keys</title>
+      <link>https://sabr-labs.com/article/talos-keydrift-uat-11473-cisco-sd-wan-ipsec-keys-volt-typhoon</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/talos-keydrift-uat-11473-cisco-sd-wan-ipsec-keys-volt-typhoon</guid>
+      <pubDate>Thu, 29 Oct 2026 08:40:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>SD-WAN</category>
+      <category>Talos</category>
+      <category>Volt Typhoon</category>
+      <category>Malware</category>
+      <category>APT</category>
+      <description>Cisco Talos says an APT it tracks as UAT-11473, with infrastructure overlapping Volt Typhoon, used CVE-2026-20127 to plant implants that hook vdaemon and siphon AES-256 data-plane key material off vSmart controllers.</description>
+      <content:encoded><![CDATA[<p>The implant doesn't steal your traffic. It steals the keys that protect your traffic, which is worse. Cisco Talos published a teardown on October 28 of a malware framework it calls KeyDrift, found on Catalyst SD-WAN controllers compromised through CVE-2026-20127, the CVSS 10.0 authentication bypass Cisco disclosed in February. Talos attributes the activity to a group it tracks as UAT-11473 and assesses with high confidence that the group's infrastructure overlaps with Volt Typhoon's Silent Train network.</p>
+<p>KeyDrift has two main pieces. PolyFlame gets injected into the vdaemon process by way of rsshd using ptrace, and a variant hides as the aaamgr service. It interposes socket and DTLS functions so it can take tasking in-band, and it can act as a relay, forwarding command-and-control traffic to other compromised peers. LittleFilch hooks SSL_read inside vdaemon on vSmart controllers and pulls a 32-byte field that Talos assesses to be the OMP-distributed AES-256 IPsec data-plane key, along with the peer's public IP and system IP.</p>
+<p>Think about what that means in an SD-WAN. vSmart distributes the keys every edge router uses to encrypt tunnels. An attacker sitting on that controller, reading those keys as they go by, can decrypt data-plane traffic anywhere in the fabric without ever touching an edge device. Records get RSA-encrypted, staged in /var/tmp/vdaemon.bin, and shipped out over UDP dressed up as DTLS 1.2 application-data records. On a controller that's supposed to be talking DTLS all day, that blends in.</p>
+<p>The victim list is the tell. Talos names space and satellite services, defense and aerospace technology, and policy research. That's not a ransomware crew's shopping list. It's the profile of a group collecting for a government, and the Volt Typhoon overlap, which Talos is careful to describe as infrastructure rather than a firm identity, points the same direction.</p>
+<p>CVE-2026-20127 itself is old news if you patched in February, and Talos previously said the bug had been exploited since at least 2023. The new information is what the attackers did after getting in. If your controllers were exposed before the patch, patching alone doesn't evict an implant that's already injected into vdaemon, and it doesn't rotate keys that were already read.</p>
+<p>Talos published Snort rules: SIDs 65938 and 65958 for the CVE, and 67387 through 67416 (Snort 2) or 7:44 through 7:73 (Snort 3) for the malware itself. File paths to hunt for include /tmp/system-vdaemon, /var/tmp/vdaemon.conf and /etc/sv/aaamgr/. No hardcoded IPs or domains were recovered, so there's no easy blocklist. If you find any of it, assume the IPsec keys are burned and rekey the fabric.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Cisco Patches Second ASA and FTD SSL VPN Zero-Day Since August</title>
+      <link>https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-76418-second-ssl-vpn-zero-day-october</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/cisco-asa-ftd-cve-2026-76418-second-ssl-vpn-zero-day-october</guid>
+      <pubDate>Thu, 29 Oct 2026 08:20:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Cisco</category>
+      <category>ASA</category>
+      <category>FTD</category>
+      <category>Zero-Day</category>
+      <category>VPN</category>
+      <category>Patch Now</category>
+      <description>CVE-2026-76418 lets an unauthenticated attacker reload any ASA or FTD firewall running remote-access SSL VPN with secondary authentication, Cisco says it&apos;s being exploited, and there&apos;s no workaround.</description>
+      <content:encoded><![CDATA[<p>Cisco shipped fixes Wednesday evening for a firewall bug attackers were already using. CVE-2026-76418 is a logic error in the Remote Access SSL VPN service on Secure Firewall ASA and FTD. An unauthenticated remote attacker can force the device to reload. No VPN login needed, no user interaction, just a reachable webvpn interface and the right configuration on the other side. Cisco scored it 8.6 and says PSIRT became aware of active exploitation sometime in October.</p>
+<p>The configuration that matters is secondary authentication on a tunnel group. If webvpn is enabled on at least one interface and any tunnel group, including DefaultWEBVPNGroup, has secondary authentication configured, you're exposed. The tunnel-group-list setting changes which groups an attacker can reach but doesn't make you safe. Cloud-delivered Firewall, cloud FMC, Secure Access and Secure FMC aren't affected.</p>
+<p>This is the second time since August that someone has found a way to crash these boxes through the VPN service. CVE-2026-20349, also 8.6, was an HTTP request handling flaw in the same service and was also exploited before Cisco knew about it. Cisco never said who was behind that one. It hasn't said who's behind this one either.</p>
+<p>Two unattributed DoS zero-days in the same service inside three months is a pattern, not a coincidence. Somebody is spending real effort on knocking Cisco edge firewalls offline, and a reload on a remote-access VPN concentrator is not a minor nuisance. For a lot of organizations that's every remote worker dropping at once, and if the attacker can do it on a loop, it's an outage.</p>
+<p>Fixed ASA releases are 9.16.4.104, 9.18.4.96, 9.20.4.50, 9.22.3.200, 9.23.1.48, 9.24.1.27 and 9.24.10.1. Fixed FTD releases are 7.0.11, 7.2.13, 7.4.9, 7.6.7, 7.7.14, 10.0.3 and 10.1.1. Cisco lists no workaround. The only mitigations are to remove secondary authentication from affected tunnel groups or disable the tunnel group list, and Cisco notes both lower your security posture. That's a bad trade for most shops, so plan the upgrade instead.</p>
+<p>One practical note. If you patched for CVE-2026-20349 in August and assumed the VPN service was clean, that patch doesn't cover this. Check your running version against the list above, and if you've seen unexplained reloads on an ASA or FTD this month, that's your indicator.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>CISA Puts a CVSS 2.7 ESXi Logging Bug on KEV After China-Linked Zero-Day Use</title>
+      <link>https://sabr-labs.com/article/vmware-esxi-cve-2026-41709-logging-bypass-warp-panda-cisa-kev</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/vmware-esxi-cve-2026-41709-logging-bypass-warp-panda-cisa-kev</guid>
+      <pubDate>Thu, 29 Oct 2026 08:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>VMware</category>
+      <category>ESXi</category>
+      <category>CISA KEV</category>
+      <category>CrowdStrike</category>
+      <category>China</category>
+      <category>Broadcom</category>
+      <description>CVE-2026-41709 lets an ESXi admin run operations that never hit the logs, CrowdStrike says WARP PANDA used it as a zero-day inside U.S. law firms, and federal agencies have until November 11 to patch.</description>
+      <content:encoded><![CDATA[<p>A CVSS 2.7 bug just landed on CISA's Known Exploited Vulnerabilities list, and that score is the whole point of the story. CVE-2026-41709 is an insufficient-logging flaw in VMware ESX. An attacker who already holds administrator access can perform certain operations on the hypervisor without those operations being recorded. Broadcom rated it Low, fixed it in VMSA-2026-0006 back on July 29, and credited Ian Barton of CrowdStrike for the find. Nobody would have put it at the top of a patch queue.</p>
+<p>CrowdStrike's 2026 Legal Threat Landscape Report explains why it belongs there. The firm says WARP PANDA, a China-nexus espionage group that nearly always goes after U.S.-based law firms, exploited the flaw as a zero-day in several intrusions, as late as early 2026. The group had already planted malware in victims' vCenter environments. The logging bypass wasn't the way in. It was the way to stay quiet once inside.</p>
+<p>That's an unusual profile for a KEV entry. Most catalog additions are remote code execution or auth bypass, the bugs that get an attacker in. This one is pure anti-forensics. If your incident response plan assumes ESXi audit logs are a reliable record of what an admin did, this bug breaks that assumption for anyone who got admin credentials by other means. Which, for a group that lives in vCenter, is the normal case.</p>
+<p>Neither Broadcom nor CrowdStrike has said which operations go unlogged. The advisory doesn't list them, and the KEV entry doesn't describe the observed exploitation. Broadcom's advisory page still doesn't mention in-the-wild use at all. That's a gap defenders deserve to have filled, because without it you can't know which log sources to cross-check against.</p>
+<p>The fix is straightforward. Broadcom's fixed builds are ESXi80U3j-25429389 for 8.0, ESXi-9.0.2.0100-25595025 for 9.0, and ESXi-9.1.0.0-25370933 for 9.1. VMware Cloud Foundation and Telco Cloud Platform have separate guidance, and anyone still on 7.0 extended support has to go through Broadcom support. There is no workaround. CISA's deadline for federal agencies is November 11, 2026, and the KEV entry lists ransomware use as unknown.</p>
+<p>If you run ESXi and skipped the July advisory because the headline CVEs didn't apply to you, go back and look. VMSA-2026-0006 also carried two 9.8 vCenter bugs and a 9.3 VMXNET3 escape, so a host that's missing this patch is probably missing those too. And if you've had any vCenter or ESXi compromise this year, treat the hypervisor logs from that window as incomplete rather than clean.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Genie 4 Adds Native Audio and Live Scene Edits, for Trusted Testers Only</title>
       <link>https://sabr-labs.com/article/deepmind-genie-4-world-model-native-audio-trusted-testers-no-specs</link>
@@ -933,131 +1058,6 @@
 <p>Payloads so far are boring but telling: an XMRig-based Monero miner and a proxy tool called myawesomeproxy, which turns your home connection into someone else's exit node. That second one is the bigger problem. Residential proxies are exactly what credential stuffers and fraud crews pay for, and your IP is the one that shows up in the logs.</p>
 <p>Plex is a weird category of software. It's consumer-grade, but plenty of it runs on NAS boxes and homelab servers sitting next to real work data, often with port 32400 forwarded straight to the internet for remote streaming. And NAS package managers don't always pull Plex updates automatically, which Plex itself warned about. Six weeks of patch availability means nothing if the update never reached the box.</p>
 <p>Check your version in Settings, then General. If it's 1.43.2 or older, update now, and if it was exposed while unpatched, look for unfamiliar processes, high CPU and new files in the Plex plug-in directories before you assume you got lucky. CISA hasn't added these CVEs to KEV, but with public code and confirmed in-the-wild use, that's a formality.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Disney Is Hiring Most of Bankrupt Character.AI&apos;s Staff, Not Its Chatbots</title>
-      <link>https://sabr-labs.com/article/disney-hires-character-ai-staff-bankruptcy</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/disney-hires-character-ai-staff-bankruptcy</guid>
-      <pubDate>Tue, 20 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Disney</category>
-      <category>Character.AI</category>
-      <category>Bankruptcy</category>
-      <category>Acquihire</category>
-      <category>AI Chatbots</category>
-      <description>A bankruptcy filing shows Disney offering jobs to at least 60 Character.AI employees, worth about $60 million a year in pay, alongside a $20 million stalking-horse bid for a slice of the startup&apos;s technology.</description>
-      <content:encoded><![CDATA[<p>Character.AI filed for Chapter 11 last week. Now we know who gets the people. According to a court filing first reported by Bloomberg, Disney has agreed to offer jobs to at least 60 Character.AI employees, most of the company's remaining workforce, with an estimated $60 million in combined annual compensation. The filing says the "vast majority" of those offered have already accepted.</p>
-<p>Disney is also the stalking-horse bidder for some of the company's assets at $20 million. Reporting on the term sheet describes a non-exclusive, perpetual license to code behind Character.AI's training, safety and serving systems, plus a handful of patents. What it reportedly doesn't include matters more: user data, conversation logs, training data, finished models, the brand and the consumer app. Rival bids can still come in before a proposed auction in late November, and a bankruptcy judge has to sign off.</p>
-<p>So Disney is buying a team and an inference stack, not a chatbot company. That fits. Karandeep Anand, Character.AI's former CEO, recently became Disney's first CTO, and a studio sitting on the most valuable character IP on the planet has obvious reasons to want people who know how to run millions of persona conversations cheaply.</p>
-<p>It also tells you what Disney didn't want. Character.AI's filing blames high costs along with "potential litigation-related liabilities and regulatory engagement." The company faces a wrongful-death lawsuit over a teenager's suicide and a Texas attorney general investigation into child safety. Leaving the user data and the consumer product behind is a clean way to keep that baggage out of a family-entertainment brand.</p>
-<p>This is the second time Character.AI's talent has been peeled off without a traditional acquisition. In 2024, Google paid to license its technology and rehired founders Noam Shazeer and Daniel De Freitas. The pattern is getting familiar across AI: the people and the code walk out the door, while the liabilities stay with the shell.</p>
-<p>The open question is what happens to the users still chatting with Character.AI bots today. Nothing in the filing commits anyone to keeping the app running.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>DHS Orders DeepSeek, and Anything Built on It, Off Federal Civilian IT</title>
-      <link>https://sabr-labs.com/article/dhs-fascsa-order-bans-deepseek-federal-civilian-agencies</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/dhs-fascsa-order-bans-deepseek-federal-civilian-agencies</guid>
-      <pubDate>Tue, 20 Oct 2026 10:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>DeepSeek</category>
-      <category>DHS</category>
-      <category>FASCSA</category>
-      <category>Federal Government</category>
-      <category>AI Policy</category>
-      <category>Supply Chain</category>
-      <description>A Homeland Security order published in today&apos;s Federal Register uses the 2018 supply chain security law to bar DeepSeek products from civilian agency purchases and force removal of DeepSeek and third-party tools built on its models.</description>
-      <content:encoded><![CDATA[<p>The federal government just moved past "please don't use DeepSeek" to a binding order. A notice published in the Federal Register on October 20 (document 2026-21447) records an order from the Secretary of Homeland Security that excludes products and services from Hangzhou DeepSeek Artificial Intelligence Co. and its affiliates from federal civilian agency procurements, and requires agencies to rip out what they already have.</p>
-<p>The clause that matters is the second one. Removal doesn't stop at DeepSeek's own apps and API. It also covers third-party products and services developed using DeepSeek implementations. That's a much wider net, because DeepSeek's open-weight models have been folded into a lot of software that doesn't put the name on the box.</p>
-<p>The legal hook is the Federal Acquisition Supply Chain Security Act of 2018 (41 U.S.C. 1321-1328). Under FASCSA, the interagency Federal Acquisition Security Council reviews a vendor and recommends action, and then DHS, the Pentagon or the Director of National Intelligence issues an order for its slice of government. DHS covers civilian agencies, so this one doesn't directly bind the Defense Department or the intelligence community. The notice says the order followed review of the council's recommendation "and affiliated evidence," without spelling out what that evidence is.</p>
-<p>It's only the second public FASCSA order we know of. The first, from ODNI in September 2025, targeted Swiss backup vendor Acronis. Going after a model maker is a different kind of target, and the public notice leaves the hardest question unanswered: does an open-weight DeepSeek model, downloaded and run on an agency's own air-gapped hardware, count as a DeepSeek product? The order text itself sits in scanned pages, and the summary doesn't say.</p>
-<p>That ambiguity is the real burden here. Agencies now have to find every tool, plug-in and vendor platform with a DeepSeek model somewhere in the stack, and plenty of software vendors don't disclose which base models they fine-tuned. Expect a round of contractor questionnaires asking exactly that.</p>
-<p>If you sell software to civilian agencies, start building that answer now. A model bill of materials was a nice-to-have last week. For federal sales, it isn't anymore.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>ClickFix Crews Are Abusing a Signed Siemens App to Sideload Malware</title>
-      <link>https://sabr-labs.com/article/siemens-software-center-cve-2026-110936-clickfix-romulus</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/siemens-software-center-cve-2026-110936-clickfix-romulus</guid>
-      <pubDate>Tue, 20 Oct 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Siemens</category>
-      <category>CVE-2026-110936</category>
-      <category>ClickFix</category>
-      <category>DLL Sideloading</category>
-      <category>Malware</category>
-      <description>Siemens says CVE-2026-110936, a DLL sideloading flaw in Software Center 3.5.8.7 fixed in 4.0.9.8, is being exploited by the Romulus ClickFix operation to run malware behind a genuinely signed Siemens executable.</description>
-      <content:encoded><![CDATA[<p>The executable is real, it's signed by Siemens, and it hasn't been touched. That's the whole trick. Attackers running ClickFix campaigns are dropping a genuine copy of Siemens Software Center next to a malicious DLL called archive.dll, and the signed program loads it without checking.</p>
-<p>Siemens tracks the bug as CVE-2026-110936 in advisory SSA-580366, scored 8.4 under CVSS 4.0. Software Center 3.5.8.7, the current release when the advisory went out on October 15, loads helper files from its own folder without verifying them. Version 4.0.9.8 fixes it, and existing installs pick up the update automatically the next time they launch. Siemens updated the advisory on October 17 and posted an active-exploitation notice on October 19. Huntress researcher Jose Oregon reported the flaw.</p>
-<p>Siemens is clear that none of its systems or update channels were breached. The malicious installer, AllMyBasic.msi, circulates outside official channels and has been tied to Romulus, a ClickFix delivery backend that Forescout's Vedere Labs uncovered during an incident investigation. Forescout describes it as reusable infrastructure rather than a single malware server, and nobody has named the operator.</p>
-<p>The lure end is grim in a very 2026 way. The Hacker News, citing Huntress, reports that some victims came in through malicious ChatGPT Custom GPTs that pointed them at fake ClickFix pages. From there it's the usual routine: paste a PowerShell command, an MSI drops, the signed Siemens binary launches and pulls in the attacker's DLL. Payloads reported so far include LegionLoader, which grabs data from Chrome, and a remote access trojan.</p>
-<p>For defenders, hash-based blocking is useless here because the executable is legitimate. Hunt for SiemensSoftwareCenter.exe running out of AppData\Local\Programs, especially right after msiexec, and on machines with no business reason to have Siemens industrial software at all. If you do run Software Center, open it so the 4.0.9.8 update applies.</p>
-<p>This is also a decent argument for application control that cares about path and parent process, not just a valid signature. Signed-binary sideloading isn't new, and it keeps working because "is it signed?" is still the question too many tools stop at.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>China-Linked Armory Castle Hit BeyondTrust Remote Support as a Zero-Day</title>
-      <link>https://sabr-labs.com/article/beyondtrust-remote-support-cve-2026-102764-armory-castle</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/beyondtrust-remote-support-cve-2026-102764-armory-castle</guid>
-      <pubDate>Mon, 19 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>BeyondTrust</category>
-      <category>Zero-Day</category>
-      <category>CVE-2026-102764</category>
-      <category>China</category>
-      <category>UNC5221</category>
-      <category>CISA KEV</category>
-      <description>BeyondTrust&apos;s CVE-2026-102764 (CVSS 9.3) was exploited from August 29 by a China-nexus group Mandiant tracks as Armory Castle, and CISA&apos;s federal patch deadline is today.</description>
-      <content:encoded><![CDATA[<p>Attackers had root on BeyondTrust Remote Support appliances for more than a month before anyone knew the bug existed. BeyondTrust's advisory BT26-05, published October 15, covers CVE-2026-102764, a flaw in how an internal messaging component validates where messages come from. It lets an unauthenticated remote attacker perform file operations on the appliance. BeyondTrust scores it 9.3 under CVSS 4.0.</p>
-<p>Every Remote Support version up to and including 26.2.3 is affected. The BT26-05-RS patch applies to 24.3.1 through 26.2.3, so anyone running something older has to upgrade first and then patch. SaaS customers were patched by October 9. Self-hosted appliances without automatic updates are on you.</p>
-<p>BeyondTrust says the first exploitation it can find dates to August 29, against one BeyondTrust-hosted instance and one self-hosted appliance. Google's Mandiant and Threat Intelligence Group attribute the activity to Armory Castle, the China-nexus espionage cluster formerly tracked as UNC5221 (CrowdStrike calls it Warp Panda). That's the same crew with a long résumé of edge-device zero-days, Ivanti most famously.</p>
-<p>The post-exploitation playbook is what should worry you. According to Mandiant, the attackers escalated to root, dropped a PHP webshell called Sawfly for encrypted command and control, ran a SOCKS5 tunneler called Bareclaw, harvested credentials, wiped system and web server logs, and then used stolen admin credentials to move into downstream systems. They also pulled internal documents out through Remote Support's own file transfer feature.</p>
-<p>Think about what a remote support appliance actually is: a box that holds privileged access to a large share of your endpoints, by design. Owning it is close to owning the help desk. That's why this one matters more than its file-operations description suggests.</p>
-<p>CISA added the CVE to its Known Exploited Vulnerabilities catalog on October 16 and gave federal agencies until today, October 19, to remediate. A three-day window tells you how seriously the agency is taking it.</p>
-<p>If you run self-hosted Remote Support, confirm BT26-05-RS is applied, then assume compromise if the appliance was internet-facing between late August and your patch date. Rotate any credentials stored in or used through it, check for missing or truncated logs (log deletion was part of the playbook), and hunt for the Sawfly and Bareclaw indicators Mandiant published.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>PEERSTITCH: One Hacked FortiManager Exposed 500+ FortiGates at a Telecom MSP</title>
-      <link>https://sabr-labs.com/article/peerstitch-fortigate-implant-fortimanager-telecom-msp</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/peerstitch-fortigate-implant-fortimanager-telecom-msp</guid>
-      <pubDate>Mon, 19 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Fortinet</category>
-      <category>FortiGate</category>
-      <category>PEERSTITCH</category>
-      <category>Unit 42</category>
-      <category>MSP</category>
-      <category>Firewall</category>
-      <description>Unit 42 traced a two-year intrusion that chained FortiJump (CVE-2024-47575) and FortiOS CVE-2025-61624 into a memory-only implant hiding inside FortiGate&apos;s own logging and VPN daemons.</description>
-      <content:encoded><![CDATA[<p>A single FortiManager box handed attackers the configurations, keys and credentials for more than 500 FortiGate firewalls. That's the core finding in Palo Alto Networks Unit 42's October 14 write-up on PEERSTITCH, an implant it found at a telecommunications managed service provider. Many of those firewalls sat in front of the MSP's customers, not the MSP itself.</p>
-<p>The intrusion started back in September 2024 with CVE-2024-47575, the FortiJump bug that gave unauthenticated command execution on FortiManager and was widely exploited that fall. After a long dwell period, the attackers came back for the firewalls. They used CVE-2025-61624, a FortiOS path traversal flaw (Fortinet advisory FG-IR-26-122) that lets an authenticated read-write admin write or delete arbitrary files, to get root on the underlying OS.</p>
-<p>Then came PEERSTITCH. It's an ARM64 Linux injector that ptrace-attaches to two legitimate FortiGate processes, miglogd (logging) and iked (IPsec key exchange), and patches their memory. There's no binary left on disk, no listening port, and no direct outbound connection to flag. Unit 42 also found the attackers abusing an ACME DNS-01 challenge path in Apache's mod_md to run commands, which ended in an SSH reverse shell.</p>
-<p>Unit 42 tracks the cluster as CL-STA-0954, overlapping with what Mandiant calls UNC5820, and says parts of the activity resemble suspected nation-state intrusions. It stops short of naming a country, and so will we.</p>
-<p>Here's the uncomfortable part. CVE-2025-61624 is scored medium, 5.4 by Fortinet and 6.5 by NVD, because it needs admin credentials. That math falls apart when an attacker already stole every admin credential from your management plane. Severity scores rate bugs in isolation; attackers chain them.</p>
-<p>If you manage FortiGates through FortiManager, patch FortiOS (7.4.10 and 7.6.5 or later on those branches, per Fortinet's advisory for older trains), and rotate every credential, pre-shared key and certificate that ever lived in FortiManager if it was exposed during the FortiJump window. Unit 42 published a YARA rule plus hunting guidance: look for anonymous 16 KB RWX memory regions inside miglogd and iked, unexpected writes to /proc/<pid>/mem, and '../../' sequences in auto-script objects. A firmware update won't evict stolen secrets.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>BAE Systems Incident Has Stopped U.S. Bankruptcy Notices Since October 9</title>
-      <link>https://sabr-labs.com/article/bae-systems-incident-bankruptcy-noticing-center-down</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/bae-systems-incident-bankruptcy-noticing-center-down</guid>
-      <pubDate>Mon, 19 Oct 2026 10:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>BAE Systems</category>
-      <category>U.S. Courts</category>
-      <category>Bankruptcy</category>
-      <category>Third-Party Risk</category>
-      <category>Incident Response</category>
-      <description>A security incident at contractor BAE Systems took the federal judiciary&apos;s Bankruptcy Noticing Center offline ten days ago, and neither BAE nor the courts has given a restoration date or said whether data was taken.</description>
-      <content:encoded><![CDATA[<p>For ten days, the federal bankruptcy system hasn't been able to tell anyone anything. The Bankruptcy Noticing Center, which produces and mails the paper and electronic notices for every U.S. bankruptcy court, went dark late on October 9 after what its operator, BAE Systems, calls a security incident.</p>
-<p>The Administrative Office of the U.S. Courts says the incident halted notice production and distribution outright. The public-facing sites are down too: bnc.uscourts.gov, bankruptcynotices.uscourts.gov, notices.uscourts.gov and the National Creditor Registration Service. BAE told reporters the problem is "isolated to the BNC system" and that it's investigating and working to restore operations.</p>
-<p>That's about all anyone has said. Neither BAE nor the courts has described what kind of incident this is, whether ransomware is involved, or whether any data left the building. As of the latest reporting, there's no restoration date.</p>
-<p>The silence is a problem, because the BNC isn't some back-office print shop. It handles the notices that trigger creditor meetings, filing deadlines and discharge orders, and the underlying case data includes Social Security numbers, account details and income records for people at their most financially exposed. If that data was touched, debtors are exactly the population scammers love to target.</p>
-<p>Courts are improvising. Some judges have extended deadlines tied to notice; at least one in the Eastern District of Texas pushed active motions to stay out by 30 days. Expect more of that patchwork until the system's back.</p>
-<p>There's a broader lesson here, too. The judiciary outsourced a single national chokepoint to a defense contractor, and when that contractor had a bad day, every bankruptcy court in the country lost its voice at once. Concentration risk doesn't show up in a vendor questionnaire until it shows up in your docket.</p>
-<p>If you're a creditor, debtor or practitioner with an active case, don't assume silence means nothing's happening. Check the individual court's website and PACER directly for orders and deadlines, and treat any unexpected call or email about a bankruptcy case with suspicion until the courts say what, if anything, was exposed.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
