@@ -6,9 +6,53 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 13:20:00 GMT</lastBuildDate>
-    <pubDate>Thu, 29 Oct 2026 13:20:00 GMT</pubDate>
+    <lastBuildDate>Thu, 29 Oct 2026 23:37:02 GMT</lastBuildDate>
+    <pubDate>Thu, 29 Oct 2026 23:37:02 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Binance Hot Wallets Drained of $3 Billion or More in Suspected Key Compromise</title>
+      <link>https://sabr-labs.com/article/binance-hot-wallet-drain-3-billion-eip-7702-key-compromise</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/binance-hot-wallet-drain-3-billion-eip-7702-key-compromise</guid>
+      <pubDate>Thu, 29 Oct 2026 23:30:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Binance</category>
+      <category>Crypto</category>
+      <category>EIP-7702</category>
+      <category>Hot Wallet</category>
+      <category>Tether</category>
+      <category>Circle</category>
+      <category>Exchange Hack</category>
+      <description>An EIP-7702 delegation signed with a Binance hot-wallet key let an attacker sweep 167,000 ETH and more than $1.6 billion in USDT in a single transaction, Tether and Circle froze roughly $2 billion in flight, and if the tallies hold this is the largest crypto theft on record.</description>
+      <content:encoded><![CDATA[<p>At 20:24 UTC on Wednesday a single transaction moved 167,464 ETH and 63 other tokens, including about $1.6 billion in USDT, out of the Binance hot wallet labelled Binance 14. Two minutes later another 28,000 ETH left Binance 16. Fifteen minutes after that, 780 million USDC left Hot Wallet 34. By 21:04 the sweeps had stopped and analysts were arguing about whether the total was $2.8 billion, $3.3 billion or $3.55 billion. Binance hasn't offered a number. CoinDesk's high-end estimate runs to $5.7 billion across chains, though that includes movements nobody has firmly tied to the attacker.</p>
+<p>Whatever the final figure, it's at least double Bybit's $1.46 billion from February 2025, which the FBI pinned on North Korea and which was, until Wednesday, the largest crypto theft ever. Nobody has attributed this one. Binance says it's investigating a potential security issue. One analyst has said it looks like Lazarus. That's a guess so far.</p>
+<p>The mechanism is the detail that matters. Four minutes before the sweep, a transaction set an EIP-7702 delegation on Binance 14, pointing the wallet at a contract the attacker had deployed at 15:59 UTC from an address funded with 0.1 ETH out of Tornado Cash the day before. EIP-7702 has been live since Ethereum's Pectra upgrade in May 2025. It lets an ordinary wallet temporarily act like a smart contract, and it requires a signature from that wallet's private key. There is no version of this where a bug in a contract did it. Someone signed with the Binance 14 key, and the contract they delegated to only accepts calls from the Tornado-funded address. One researcher counted fifty delegations in the single transaction.</p>
+<p>The stablecoin issuers moved fast. Paolo Ardoino said Tether froze about $1.57 billion in USDT. Jeremy Allaire said Circle froze more than $800 million in USDC. On-chain, about $975 million USDT and $823 million USDC are visibly blacklisted at the main receiving address, so the verifiable frozen total is closer to $1.8 billion than the $2.4 billion implied by the two CEOs' posts. The ETH is a different story. Nobody can freeze 195,000 ETH, and the attacker had already started moving it to fresh addresses by 20:39.</p>
+<p>Changpeng Zhao posted at 21:15 UTC: 'User funds are safe! It does look like a hack on Binance.' Co-founder Yi He added SAFU, the emergency fund Binance set up in 2018 and used to cover a 7,000 BTC hot-wallet theft in 2019. Binance's official statement nine minutes later was softer, acknowledging reports of a potential security issue and saying user funds are completely safe. Spokesperson Ross O'Leary told TechCrunch withdrawals were temporarily suspended on multiple networks as a precaution. As of 23:21 UTC, BTC, ETH and Ethereum-based USDT and USDC withdrawals were open again. Solana, XRP and several other networks were still paused, which Binance described as wallet maintenance.</p>
+<p>Two things don't sit right. 'User funds are safe' and 'we haven't confirmed a hack' are being said in the same hour by the same company, and a $3 billion hole is roughly the size of the entire SAFU fund depending on the day's prices. Zhao, who no longer runs the exchange, said he expects all user funds to be fully covered. That's an expectation from a shareholder, not a commitment from the company. Until Binance publishes a loss figure and says in its own words that it will absorb it, the reassurance is doing a lot of work.</p>
+<p>BNB dropped about 6%. The broader market sold off overnight. If you hold assets on Binance, the practical question isn't whether your balance shows correctly, it's whether you can withdraw it on the network you need, and for several networks the answer right now is no.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Polymarket Halts Trading After a Vendor Monitoring Script Drained About $2.7M</title>
+      <link>https://sabr-labs.com/article/polymarket-debugbear-script-drainer-2-7m-cancel-only-mode</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/polymarket-debugbear-script-drainer-2-7m-cancel-only-mode</guid>
+      <pubDate>Thu, 29 Oct 2026 20:00:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Polymarket</category>
+      <category>Supply Chain</category>
+      <category>DebugBear</category>
+      <category>Crypto</category>
+      <category>Web Security</category>
+      <category>Polygon</category>
+      <description>A third-party real-user-monitoring script loaded on polymarket.com was swapped for a drainer that sold positions and pushed funds out through Polymarket&apos;s own relayer, hitting roughly 700 wallets before the exchange went cancel-only for about an hour.</description>
+      <content:encoded><![CDATA[<p>Polymarket went into cancel-only mode at 18:05 UTC on Wednesday, which is the polite way of saying it pulled the plug while users watched their positions get sold out from under them. By the time trading resumed around 19:00 UTC, on-chain trackers had counted roughly $2.7 million gone from about 700 wallets. Polymarket's statement was short: one of its third-party providers was compromised, and the matter has been referred to law enforcement. It did not name the provider.</p>
+<p>Researchers did. Hudson Rock and others traced the drainer to a JavaScript file served from DebugBear's CDN, the real-user-monitoring embed Polymarket loaded on its homepage. DebugBear posted on X that it was impacted by an ongoing security incident and told customers to remove its embed code. A Polymarket production build timestamped 17:59 UTC carried the note 'remove debugbear rum script.' Neither company has published a post-mortem, so the exact point of compromise on DebugBear's side is still their story to tell.</p>
+<p>The mechanism is what makes this worth reading even if you've never touched a prediction market. The script didn't steal keys. It didn't need to. It read local storage and React state to find the live trading client, then sent properly signed EIP-712 batches through Polymarket's own relayer to unwrap balances and route them to a hard-coded attacker address. For accounts that log in by email, it placed fill-and-kill sells at 97% of market, then 50%, then the minimum tick, dumping whatever it could into whoever was on the other side. Arkham tracked the attacker wallet swapping USDC.e for POL and holding about $2.65 million in it afterward. Everything happened on Polygon.</p>
+<p>Polymarket's U.S. platform, the CFTC-regulated one, wasn't touched, according to a person familiar who spoke to CNBC. The halt covered the international site only. Polymarket says every affected trader will be fully reimbursed. No mechanism or timeline for that yet.</p>
+<p>This is the second time this year a vendor script on Polymarket's frontend has turned into a drainer. In June it was a different third party. A page that signs transactions on behalf of logged-in users cannot safely load arbitrary JavaScript from a vendor's CDN, and a monitoring script is arbitrary JavaScript with full DOM access. Subresource integrity doesn't help when the vendor is expected to update the file. A content security policy that limits what the script can talk to would have made the exfiltration harder, but the sells went through Polymarket's legitimate relayer, so even that is a partial answer.</p>
+<p>The fix that actually works is boring: no third-party scripts on any page where a session can move money. Serve performance monitoring from your own origin or don't serve it at all. Polymarket learned that in June and loaded another one anyway.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Anthropic&apos;s Unreleased Claude Built Working Exploits for Five Major Platforms</title>
       <link>https://sabr-labs.com/article/anthropic-frontier-red-team-unreleased-model-five-exploit-chains</link>
@@ -1015,49 +1059,6 @@
 <p>The same filing explains why Anthropic can contemplate that. Revenue for the first half of 2026 was $16.3 billion, up from $1.1 billion a year earlier, and against full-year 2025 revenue of $4.6 billion. The headline net loss of $80.7 billion for the half is mostly an accounting artifact: about $72 billion of it comes from revaluing convertible notes and other instruments as the company's valuation rose. Actual cash burn was closer to $9 billion in six months, which is still more than Anthropic spent in all of 2025. The IPO is reportedly targeting a valuation of up to $2 trillion.</p>
 <p>Here's the skeptical read. Noncancelable means noncancelable. These are decade-long obligations priced against a revenue curve that has gone from one billion to sixteen billion in a year and is assumed to keep bending upward. The commitments are also concentrated in a small number of counterparties, several of which (Amazon, Google) are also investors and competitors, and one of which (Nscale) has had a rough few months. Microsoft walked away from anchoring Nscale's Loughton site in the UK over grid delays and reportedly from Monarch itself shortly after signing a letter of intent. Investors have pushed back on Nscale's roughly $30 billion IPO valuation.</p>
 <p>Whether that's a problem depends entirely on whether demand holds. Anthropic is betting $450 billion to $750 billion that it does. The filing will be public soon enough, and the commitments footnote is the first thing worth reading.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Stolen ConnectWise Backup Secret Opened 300+ Microsoft 365 Tenants</title>
-      <link>https://sabr-labs.com/article/connectwise-cloud-backup-stolen-m365-secret-huntress</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/connectwise-cloud-backup-stolen-m365-secret-huntress</guid>
-      <pubDate>Tue, 20 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>ConnectWise</category>
-      <category>SkyKick</category>
-      <category>Microsoft 365</category>
-      <category>MSP</category>
-      <category>Supply Chain</category>
-      <category>Entra ID</category>
-      <description>A compromised Microsoft 365 app secret for ConnectWise Cloud Backup (formerly SkyKick) let an attacker into hundreds of customer tenants, and ConnectWise has shut off Cloud Backup, SaaS Security and Cloud Management while it investigates.</description>
-      <content:encoded><![CDATA[<p>If you're an MSP, the app you trusted to back up your clients' Microsoft 365 data has been used to break into them. ConnectWise suspended its Cloud Backup service, the product it picked up when it bought SkyKick, on October 17 after an attacker got hold of a Microsoft 365 API secret belonging to the app and used it to sign into customer tenants.</p>
-<p>Huntress raised the alarm first. Its initial count was 162 tenants with confirmed unauthorized sign-ins as of October 16. A later update put the number at almost 1,000 Entra tenants seeing sign-in attempts from the attacker's infrastructure, with more than 300 of them succeeding.</p>
-<p>The worrying part is what the attacker did once inside. In one partner tenant, the ConnectWise Cloud Management MS Teams app added itself to the Global Administrator role, then planted fresh client secrets on two other applications. One of those was a Huntress app unique to that partner. That's textbook persistence: even after ConnectWise kills its own apps, the attacker still holds working credentials on things you didn't think to check.</p>
-<p>Huntress says password spraying started around October 13 and 14, with the privilege grab happening early on October 15 UTC. It also saw a separate, targeted wave against 16 tenants in policy, national security, trade and critical-minerals sectors, which reads a lot more like espionage than smash-and-grab. ConnectWise says it "cannot discuss threat actor attribution at this time," and nobody else has named a group yet.</p>
-<p>ConnectWise's own messaging has leaned on reassurance. The company says existing backup archives remain encrypted and isolated, and that the outage on its own doesn't mean an MSP or client was compromised. Both may be true. But ConnectWise also admits it has no visibility into the tenants its apps had access to, which puts the cleanup squarely on partners. And Huntress points out that Microsoft Graph directory reads don't leave an audit trail, so a clean-looking sign-in log isn't proof of a clean tenant.</p>
-<p>Here's the to-do list. Disable (don't delete) every ConnectWise and SkyKick service principal, including the Cloud Backup app ID 506e08f9-6e9a-4da4-942b-a099a03644ae, and leave them off until ConnectWise confirms credentials are rotated. Audit client secrets and certificates on every enterprise app and app registration added since October 13 and remove anything you didn't create. Look for ConnectWise apps holding privileged directory roles, block the 144.172.64.0/24 addresses Huntress published, and remember that tokens issued before you disabled anything can stay valid until they expire.</p>
-<p>Third-party apps with tenant-wide Graph permissions are effectively the new domain admin, and most shops still don't inventory them. If this week sends you hunting through Enterprise Applications for the first time, you're not alone.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Plex2Shell: Unpatched Plex Servers Are Being Hijacked to Mine Monero</title>
-      <link>https://sabr-labs.com/article/plex2shell-plex-media-server-exploited-cryptominer</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/plex2shell-plex-media-server-exploited-cryptominer</guid>
-      <pubDate>Tue, 20 Oct 2026 11:30:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>cyber</category>
-      <category>Plex</category>
-      <category>Plex2Shell</category>
-      <category>RCE</category>
-      <category>Cryptominer</category>
-      <category>Homelab</category>
-      <category>Patch Now</category>
-      <description>A public exploit for a four-bug Plex Media Server chain (CVE-2026-96652, -96654, -96655, -96656) was weaponized within a day, and anyone still on 1.43.2 or earlier is exposed to unauthenticated code execution.</description>
-      <content:encoded><![CDATA[<p>It took about a day. A researcher published a full write-up and proof-of-concept for "Plex2Shell" on October 16, and by October 17 a honeypot was catching attackers using it to drop cryptominers on Plex Media Server.</p>
-<p>Plex2Shell chains four bugs: CVE-2026-96652, CVE-2026-96654, CVE-2026-96655 and CVE-2026-96656. Reporting describes them as a pair of server-side request forgery flaws (one in the transcoder), a URL injection in plugin calls, and an arbitrary file write that executes when loaded. Strung together, they give an unauthenticated attacker code execution on an internet-exposed server with whatever privileges the Plex service runs under.</p>
-<p>The fix isn't new. The bugs were reported to Plex on July 27, confirmed with a bounty on August 4, and patched on September 1. Plex's forum advisory covers Media Server 1.43.2 and earlier and told owners to update "without delay." Security reporting puts the first safe build at 1.43.3.10861.</p>
-<p>Payloads so far are boring but telling: an XMRig-based Monero miner and a proxy tool called myawesomeproxy, which turns your home connection into someone else's exit node. That second one is the bigger problem. Residential proxies are exactly what credential stuffers and fraud crews pay for, and your IP is the one that shows up in the logs.</p>
-<p>Plex is a weird category of software. It's consumer-grade, but plenty of it runs on NAS boxes and homelab servers sitting next to real work data, often with port 32400 forwarded straight to the internet for remote streaming. And NAS package managers don't always pull Plex updates automatically, which Plex itself warned about. Six weeks of patch availability means nothing if the update never reached the box.</p>
-<p>Check your version in Settings, then General. If it's 1.43.2 or older, update now, and if it was exposed while unpatched, look for unfamiliar processes, high CPU and new files in the Plex plug-in directories before you assume you got lucky. CISA hasn't added these CVEs to KEV, but with public code and confirmed in-the-wild use, that's a formality.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
