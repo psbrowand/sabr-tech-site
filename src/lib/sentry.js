@@ -6,8 +6,8 @@
 // sessions are recorded.
 //
 // The DSN is public by design (every browser sees it). It defaults to the
-// "sabr-labs.com marketing site" client key on the sabr-learning-labs Sentry
-// project; a VITE_SENTRY_DSN build env var in Vercel overrides it. Only
+// site's own Sentry project, sabr-labs-site; a VITE_SENTRY_DSN build env var
+// in Vercel overrides it. Only
 // production builds report, and only errors from sabr-labs.com or *.vercel.app.
 //
 // Release and environment use the system env vars Vercel exposes to Vite
@@ -17,7 +17,7 @@
 import * as Sentry from '@sentry/react';
 
 const DEFAULT_DSN =
-  'https://ea05a0ae5b6c88515991838ae38872e6@o4511236936630272.ingest.us.sentry.io/4511236963762176';
+  'https://3cec9f8e99ced58f0a577f3ae2c2f807@o4511236936630272.ingest.us.sentry.io/4512343182213120';
 const DSN = import.meta.env.VITE_SENTRY_DSN || DEFAULT_DSN;
 
 // Vercel's env if the build exposes it, else judge by hostname: anything
