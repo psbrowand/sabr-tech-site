@@ -5,7 +5,7 @@ import { writeFile, mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
-  toPhoto, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
+  toPhoto, matchesQuery, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
 } from '../pick-photos.mjs';
 import { photoQueriesFor } from '../lib/photo-queries.mjs';
 import { photoUrl, photoSrcSet, photoPage, PHOTO_WIDTHS } from '../../src/lib/articlePhoto.js';
@@ -18,6 +18,9 @@ async function test(name, fn) {
 
 const TODAY = '2026-10-30';
 const UP = 'https://upload.wikimedia.org/wikipedia/commons/';
+const THUMB = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/';
+// Commons tags every URL it returns like this (seen Oct 2026).
+const UTM = (kind) => `?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=${kind}`;
 
 // A fake Commons file page as the API returns it (formatversion=2).
 function page(name, { index = 1, w = 4000, h = 2250, mime = 'image/jpeg', license = 'CC BY-SA 4.0',
@@ -28,8 +31,8 @@ function page(name, { index = 1, w = 4000, h = 2250, mime = 'image/jpeg', licens
     title: `File:${name}`,
     index,
     imageinfo: [{
-      url: `${UP}${hash}/${file}`,
-      thumburl: `${UP}thumb/${hash}/${file}/1280px-${file}`,
+      url: `${UP}${hash}/${file}${UTM('original')}`,
+      thumburl: `${THUMB}${hash}/${file}/1280px-${file}${UTM('thumbnail')}`,
       descriptionurl: `https://commons.wikimedia.org/wiki/File:${file}`,
       width: w, height: h, mime,
       extmetadata: {
@@ -86,7 +89,7 @@ await test('accepts a good landscape CC BY-SA jpeg and builds the record', () =>
 });
 
 await test('rejects graphics, people, restricted, non-free and odd files', () => {
-  const opts = { query: 'q', tier: 'qi', today: TODAY };
+  const opts = { query: 'rack', tier: 'qi', today: TODAY };
   const cases = [
     [page('Logo of acme.jpg'), 'subject words'],
     [page('Portrait of a CEO.jpg'), 'subject words'],
@@ -103,9 +106,30 @@ await test('rejects graphics, people, restricted, non-free and odd files', () =>
   const odd = page('Rack.jpg');
   odd.imageinfo[0].thumburl = odd.imageinfo[0].thumburl.replace('1280px-', 'lossy-page1-1280px-');
   assert.equal(toPhoto(odd, opts).reject, 'odd thumbnail url');
+  // A small original comes back as its own "thumbnail", which can't be resized.
+  const unscaled = page('Rack.jpg');
+  unscaled.imageinfo[0].thumburl = unscaled.imageinfo[0].url.replace('original', 'thumbnail_unscaled');
+  assert.equal(toPhoto(unscaled, opts).reject, 'odd thumbnail url');
+  // The older thumbnail host is still accepted.
+  const old = page('Rack.jpg');
+  old.imageinfo[0].thumburl = old.imageinfo[0].thumburl.replace(THUMB, `${UP}thumb/`);
+  assert.ok(toPhoto(old, opts).photo);
+  assert.doesNotMatch(toPhoto(old, opts).photo.path, /utm|\?/);
   // Unrated photos need 2000px; public domain needs no author.
   assert.equal(toPhoto(page('Rack.jpg', { w: 1800, h: 1000 }), { ...opts, tier: 'any' }).reject, 'too small');
   assert.ok(toPhoto(page('Rack.jpg', { artist: '', license: 'Public domain' }), opts).photo);
+});
+
+await test('rejects photos that do not show what was searched for', () => {
+  const opts = { tier: 'qi', today: TODAY };
+  const dining = page('Dining room in Schloss.jpg', { desc: 'A dining room with a long table' });
+  assert.equal(toPhoto(dining, { ...opts, query: 'server room' }).reject, 'off topic');
+  assert.ok(toPhoto(page('139 Server Room 01.jpg', { desc: '' }), { ...opts, query: 'server room' }).photo);
+  assert.ok(matchesQuery('data center', 'Inside a datacenter in Frankfurt'));
+  assert.ok(matchesQuery('ethernet cables', 'Ethernet_cable_bundle'));
+  assert.ok(matchesQuery('chain and padlock', 'Old padlock on a chain'));
+  assert.ok(matchesQuery('cleanroom semiconductor wafer', 'Semiconductor cleanroom'), 'three words: one may be missing');
+  assert.ok(!matchesQuery('rocket launch', 'Launch of a sailing boat'));
 });
 
 await test('queries go from specific to broad and are stable per slug', () => {
@@ -184,12 +208,12 @@ await test('fails instead of marking misses when nothing fits anywhere', async (
 });
 
 await test('verify drops photos whose file is gone or changed', async () => {
-  const keep = toPhoto(page('Keep me.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;
-  const gone = toPhoto(page('Gone now.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;
-  const moved = toPhoto(page('Moved file.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;
+  const keep = toPhoto(page('Keep me.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const gone = toPhoto(page('Gone now.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const moved = toPhoto(page('Moved file.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const photos = { keep, gone, moved, miss: { none: TODAY } };
   const existing = new Map([
-    ['File:Keep_me.jpg', `${UP}${keep.path}`],
+    ['File:Keep_me.jpg', `${UP}${keep.path}${UTM('original')}`],
     ['File:Moved_file.jpg', `${UP}0/00/Other.jpg`],
   ]);
   const res = await verifyPhotos({ photos, client: quietClient(fakeFetch({ existing })), log: () => {} });
@@ -199,7 +223,7 @@ await test('verify drops photos whose file is gone or changed', async () => {
 
 await test('serialized file round-trips and is sorted', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'photos-'));
-  const p = toPhoto(page('Round "trip" é.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;
+  const p = toPhoto(page('Round "trip" é.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const file = join(dir, 'p.js');
   await writeFile(file, serializePhotos({ zeta: p, alpha: { none: TODAY } }));
   const back = await loadPhotos(file);
@@ -210,7 +234,7 @@ await test('serialized file round-trips and is sorted', async () => {
 console.log('articlePhoto');
 
 await test('builds only standard widths below the original', () => {
-  const p = toPhoto(page('Wide shot.jpg', { w: 1700, h: 1000 }), { query: 'q', tier: 'qi', today: TODAY }).photo;
+  const p = toPhoto(page('Wide shot.jpg', { w: 1700, h: 1000 }), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const set = photoSrcSet(p);
   assert.match(set, /500px-Wide_shot\.jpg 500w, .*960w, .*1280w$/);
   assert.doesNotMatch(set, /1920/);

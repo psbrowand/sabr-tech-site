@@ -36,6 +36,13 @@ export const PHOTOS_PATH = join(REPO_ROOT, 'src', 'data', 'articlePhotos.js');
 const API = 'https://commons.wikimedia.org/w/api.php';
 const USER_AGENT = 'SabrLabsNewsPhotos/1.0 (https://sabr-labs.com; https://github.com/psbrowand/sabr-tech-site)';
 const UPLOAD_PREFIX = 'https://upload.wikimedia.org/wikipedia/commons/';
+// Commons serves thumbnails from thumb.wikimedia.org now; older responses used
+// upload.wikimedia.org/.../thumb/. Both are accepted.
+const THUMB_PREFIXES = [
+  'https://thumb.wikimedia.org/wikipedia/commons/thumb/',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/',
+];
+const STOPWORDS = new Set(['a', 'an', 'and', 'the', 'of', 'in', 'on', 'at', 'for', 'with', 'from', 'to']);
 const MIN_WIDTH = 1600;          // the article page shows the photo up to ~800px wide at 2x
 const MIN_WIDTH_UNRATED = 2000;  // stricter for photos not rated Quality Images
 const MIN_RATIO = 1.3;           // landscape only: covers are 16:9
@@ -96,12 +103,18 @@ export function photoKey(p) {
   return p && p.path ? decodeURIComponent(p.path).toLowerCase() : null;
 }
 
+// Drops the query string Commons adds (utm_source=… etc.).
+function bareUrl(url) {
+  return String(url).split(/[?#]/)[0];
+}
+
 // Explicit `image` URLs on articles count as used too.
 function imageUrlKey(url) {
-  const s = String(url);
-  if (!s.startsWith(UPLOAD_PREFIX)) return s.split('?')[0].toLowerCase();
+  const s = bareUrl(url);
+  const thumb = THUMB_PREFIXES.find((p) => s.startsWith(p));
+  if (!thumb && !s.startsWith(UPLOAD_PREFIX)) return s.toLowerCase();
   // .../commons/a/ab/Name.jpg or .../commons/thumb/a/ab/Name.jpg/1280px-Name.jpg
-  const rest = s.slice(UPLOAD_PREFIX.length).replace(/^thumb\//, '').split('?')[0];
+  const rest = s.slice((thumb || UPLOAD_PREFIX).length);
   const m = rest.match(/^([0-9a-f]\/[0-9a-f]{2}\/[^/]+)/);
   return m ? decodeURIComponent(m[1]).toLowerCase() : rest.toLowerCase();
 }
@@ -199,6 +212,24 @@ function shorten(s, max) {
   return cut.slice(0, cut.lastIndexOf(' ') > max * 0.6 ? cut.lastIndexOf(' ') : cut.length).trim() + '…';
 }
 
+// Commons search matches words loosely (a search for "server room" also finds
+// paintings of dining rooms), so the photo's own title or description must
+// name the search words. Words are compared by a short stem, so "cables"
+// matches "cable" and "data center" matches "datacenter".
+function stem(word) {
+  let w = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (w.length > 3 && w.endsWith('s')) w = w.slice(0, -1);
+  return w.slice(0, 5);
+}
+
+export function matchesQuery(query, text) {
+  const words = cleanQuery(query).split(' ').filter((w) => w && !STOPWORDS.has(w)).map(stem).filter(Boolean);
+  if (!words.length) return true;
+  const hay = String(text).toLowerCase().replace(/[_\-]+/g, ' ').replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, '');
+  const hits = words.filter((w) => hay.includes(w)).length;
+  return words.length <= 2 ? hits === words.length : hits >= words.length - 1;
+}
+
 // Returns the record to store, or null with the reason it was rejected.
 export function toPhoto(page, { query, tier, today }) {
   const ii = page.imageinfo?.[0];
@@ -219,18 +250,20 @@ export function toPhoto(page, { query, tier, today }) {
   const title = String(page.title || '').replace(/^File:/, '').replace(/\.jpe?g$/i, '');
   const description = val('ImageDescription');
   if (REJECT_WORDS.test(title) || REJECT_WORDS.test(description)) return { reject: 'subject words' };
+  if (!matchesQuery(query, [title, description, val('ObjectName')].join(' '))) return { reject: 'off topic' };
 
   let author = val('Artist');
   if (/^unknown/i.test(author)) author = '';
   if (!author && !/^(cc0|public domain|pd\b|pdm)/i.test(license)) return { reject: 'no author for attribution' };
 
-  if (typeof ii.url !== 'string' || !ii.url.startsWith(UPLOAD_PREFIX)) return { reject: 'unexpected url' };
-  const path = ii.url.slice(UPLOAD_PREFIX.length);
+  if (typeof ii.url !== 'string' || !bareUrl(ii.url).startsWith(UPLOAD_PREFIX)) return { reject: 'unexpected url' };
+  const path = bareUrl(ii.url).slice(UPLOAD_PREFIX.length);
   if (!/^[0-9a-f]\/[0-9a-f]{2}\/[^/?#]+$/.test(path)) return { reject: 'unexpected path' };
   const file = path.split('/').pop();
   // The thumbnail URL must follow the standard pattern, so other standard
   // widths can be built from the path alone.
-  if (ii.thumburl !== `${UPLOAD_PREFIX}thumb/${path}/1280px-${file}`) return { reject: 'odd thumbnail url' };
+  const thumb = bareUrl(ii.thumburl || '');
+  if (!THUMB_PREFIXES.some((p) => thumb === `${p}${path}/1280px-${file}`)) return { reject: 'odd thumbnail url' };
 
   const photo = {
     path,
@@ -378,7 +411,7 @@ export async function verifyPhotos({ photos, client, log = console.log }) {
     for (const slug of batch) {
       const asked = titleOf(slug);
       const url = urlByTitle.get(normalized.get(asked) || asked);
-      if (url !== `${UPLOAD_PREFIX}${photos[slug].path}`) {
+      if (!url || bareUrl(url) !== `${UPLOAD_PREFIX}${photos[slug].path}`) {
         log(`✗ ${slug}: ${photos[slug].path} ${url ? 'changed' : 'is gone'}, dropping it`);
         delete photos[slug];
         dropped++;
@@ -408,13 +441,32 @@ async function main() {
 
   if (opt('--explain')) {
     // Shows why each result for one search is accepted or rejected.
+    const query = cleanQuery(opt('--explain'));
+    let firstOk = null;
     for (const tier of ['qi', 'any']) {
-      const { pages } = await searchCommons(client, cleanQuery(opt('--explain')), tier);
+      const { pages } = await searchCommons(client, query, tier);
       console.log(`\n${tier}: ${pages.length} results`);
       for (const page of pages.slice(0, 12)) {
-        const r = toPhoto(page, { query: 'x', tier, today });
+        const r = toPhoto(page, { query, tier, today });
+        if (r.photo && !firstOk) firstOk = r.photo;
         const ii = page.imageinfo?.[0] || {};
         console.log(`  ${r.photo ? 'OK ' : 'NO '} ${page.title}  ${r.reject || ''}\n      ${ii.mime} ${ii.width}x${ii.height} lic=${JSON.stringify(ii.extmetadata?.LicenseShortName?.value)} restr=${JSON.stringify(ii.extmetadata?.Restrictions?.value)}\n      url=${ii.url}\n      thumb=${ii.thumburl}`);
+      }
+    }
+    // Checks that the thumbnail URLs the site builds actually load.
+    if (firstOk) {
+      const file = firstOk.path.split('/').pop();
+      for (const prefix of THUMB_PREFIXES) {
+        for (const w of [500, 960, 1280, 1920]) {
+          const u = `${prefix}${firstOk.path}/${w}px-${file}`;
+          try {
+            const res = await fetch(u, { method: 'GET', headers: { 'User-Agent': USER_AGENT }, redirect: 'manual' });
+            console.log(`thumb ${res.status} ${res.headers.get('content-type') || ''} ${res.headers.get('location') || ''} ${u}`);
+            await res.body?.cancel();
+          } catch (e) {
+            console.log(`thumb error ${e.message} ${u}`);
+          }
+        }
       }
     }
     return;

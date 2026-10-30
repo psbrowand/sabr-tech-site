@@ -240,8 +240,9 @@ function scanArticles(src) {
 // photo count as one. Wikimedia thumbnails count as their original file.
 function imageKey(url) {
   let s = String(url).split('?')[0].replace(/\/+$/, '');
-  const m = s.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons\/)thumb\/([0-9a-f]\/[0-9a-f]{2}\/[^/]+)\/[^/]+$/);
-  if (m) s = m[1] + m[2];
+  // A Commons thumbnail (on either host) counts as its original file.
+  const m = s.match(/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\/thumb\/([0-9a-f]\/[0-9a-f]{2}\/[^/]+)\/[^/]+$/);
+  if (m) s = `https://upload.wikimedia.org/wikipedia/commons/${m[1]}`;
   try { s = decodeURI(s); } catch { /* keep as is */ }
   return s.toLowerCase();
 }
