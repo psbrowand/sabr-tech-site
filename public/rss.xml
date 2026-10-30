@@ -6,9 +6,31 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Oct 2026 23:37:02 GMT</lastBuildDate>
-    <pubDate>Thu, 29 Oct 2026 23:37:02 GMT</pubDate>
+    <lastBuildDate>Fri, 30 Oct 2026 00:52:05 GMT</lastBuildDate>
+    <pubDate>Fri, 30 Oct 2026 00:52:05 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>PHP2Shell Hits Palo Alto Firewalls: 24 Rooted via Exposed Admin Pages</title>
+      <link>https://sabr-labs.com/article/php2shell-pan-os-firewalls-rooted-fragnesia-chain</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/php2shell-pan-os-firewalls-rooted-fragnesia-chain</guid>
+      <pubDate>Fri, 30 Oct 2026 00:52:05 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>PHP2Shell</category>
+      <category>Palo Alto Networks</category>
+      <category>PAN-OS</category>
+      <category>Fragnesia</category>
+      <category>Unit 42</category>
+      <category>Patch Now</category>
+      <description>Palo Alto Networks confirms attackers are exploiting the PHP2Shell flaws against internet-exposed PAN-OS management interfaces, and Dream Security says one campaign chained them with the Fragnesia kernel bug to get root on 24 firewalls.</description>
+      <content:encoded><![CDATA[<p>The PHP2Shell bugs have found the worst possible home: firewall admin pages. Palo Alto Networks updated its advisory for CVE-2026-109618 on October 29 to say active exploitation has been observed against PAN-OS management interfaces exposed to the internet, and Unit 42 says it has verified a campaign that turned that access into root.</p>
+<p>That campaign was first written up by Dream Security. According to Dream, the operators found about 19,000 internet-facing PAN-OS firewalls, narrowed the list to 240 targets in the U.S., Japan, Taiwan and South Korea, and rooted 24 of them. They got in through PHP2Shell (CVE-2026-109618 and CVE-2026-109619, both 9.2 under CVSS 4.0), then escalated with Fragnesia, the Linux kernel privilege escalation tracked as CVE-2026-46300. A 25th system, an internal firewall management server, fell later through a reverse SSH tunnel.</p>
+<p>On 22 of the 24 rooted boxes, the attackers planted a webshell and stopped there. The other two are the scary part. Dream describes the attackers pivoting to domain controllers and GlobalProtect, decrypting an LDAP service account password from the management server, enumerating Active Directory and pulling private keys off the firewall filesystem. Attempts at SAML key extraction and backdoor accounts were seen, but Dream couldn't confirm they worked.</p>
+<p>Attribution is soft. Dream says multiple indicators point to a China-nexus operation but names no group, and it reports that Unit 42 tracks the activity as CL-UNK-1280, a Chinese-speaking actor working in UTC+8. Palo Alto says only about 0.02% of its installed base had an internet-facing management interface and was hit, and that each of those customers has been contacted.</p>
+<p>Fixes are out for nearly every supported branch: 12.2.4-h1, 12.1.10-h3, 11.2.16-h1, 11.1.16-h4 and 10.2.18-h13 are the top-of-branch targets, with hotfixes for older maintenance trains listed in the advisory. As of Thursday, the only one still pending was 11.1.7-h12, due October 30. Panorama is affected too. Prisma Access and Cloud NGFW are not.</p>
+<p>It's worth saying plainly: this whole chain depends on a management interface that anyone on the internet can reach. Palo Alto has been telling customers to lock that down for years, and this is the latest PAN-OS management bug to punish the people who didn't.</p>
+<p>What to do now: pull internet access to the management interface and restrict it to trusted internal IPs or a jump box, then patch PAN-OS and Panorama to a fixed build. If your admin page was exposed at any point since the flaws were disclosed on October 21, hunt for compromise before you trust a clean upgrade. Dream's indicators include a webshell at /unauth/php/change_password.php, a persistence directory at /usr/local/lib/.panops/, unexpected systemd services and rc.local boot hooks, and outbound reverse SSH tunnels. If you find any of it, assume the device's keys and any service account credentials it held are burned, and rotate them.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Binance Hot Wallets Drained of $3 Billion or More in Suspected Key Compromise</title>
       <link>https://sabr-labs.com/article/binance-hot-wallet-drain-3-billion-eip-7702-key-compromise</link>
@@ -1039,26 +1061,6 @@
 <p>The bigger story is the line item that didn't exist at this scale a year ago. SpaceX's AI unit, built on the xAI acquisition it closed in February and has since renamed SpaceXSI, booked $7.6 billion in the quarter, more than nine times the prior year. Most of that is renting compute to other labs. Anthropic has agreed to pay nearly $45 billion over three years, and Google is paying $920 million a month through mid-2029. SpaceX is now, by revenue, as much a data center landlord as a launch company.</p>
 <p>That's also the merger logic Musk offered: AI software, chip design, robotics, and connectivity overlap between the two companies. Tesla already put about $2 billion into a SpaceX AI subsidiary in January. The pieces are being arranged in public, one related-party transaction at a time, and the special committees are the governance answer to a question investors have been asking since the SpaceX IPO.</p>
 <p>What the committees can't change is the arithmetic of a majority-of-all-outstanding vote at Tesla, where a large retail base and index funds that often abstain make any threshold hard. Musk knows this, which is probably why he said it out loud.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anthropic Is Near a Second $45B Nscale Deal. Its Compute Tab Could Hit $750B</title>
-      <link>https://sabr-labs.com/article/anthropic-nscale-second-45-billion-deal-750-billion-compute</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/anthropic-nscale-second-45-billion-deal-750-billion-compute</guid>
-      <pubDate>Wed, 21 Oct 2026 10:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Nscale</category>
-      <category>Data Centers</category>
-      <category>AI Infrastructure</category>
-      <category>IPO</category>
-      <description>Bloomberg and CNBC report a second 460 MW West Virginia deal is days from signing, while the Journal&apos;s read of Anthropic&apos;s draft IPO filing shows $450 billion in noncancelable cloud commitments already on the books.</description>
-      <content:encoded><![CDATA[<p>Anthropic is close to signing a second roughly $45 billion compute deal with Nscale, according to Bloomberg and CNBC, covering another 460-megawatt building at the Monarch campus in West Virginia. The first Monarch deal, struck in August, was about the same size. If this one closes in the coming days as reported, a single data center operator with an unfinished IPO will be holding around $90 billion of Anthropic's forward spending.</p>
-<p>Neither company has commented, and the reporting hedges that terms could still change. Treat it as likely, not done.</p>
-<p>The deal matters less on its own than as a data point in a number the Wall Street Journal pulled from Anthropic's draft IPO prospectus this week. The filing shows roughly $450 billion in noncancelable cloud commitments over the next decade: about $111 billion to Google Cloud, $110 billion to Amazon Web Services, and $31 billion to Microsoft, with the rest spread across other providers. Add the deals still being negotiated, Nscale among them, and the Journal's total reaches as much as $750 billion. For scale, SpaceX disclosed Tuesday that Anthropic alone has agreed to pay it nearly $45 billion over three years for compute.</p>
-<p>The same filing explains why Anthropic can contemplate that. Revenue for the first half of 2026 was $16.3 billion, up from $1.1 billion a year earlier, and against full-year 2025 revenue of $4.6 billion. The headline net loss of $80.7 billion for the half is mostly an accounting artifact: about $72 billion of it comes from revaluing convertible notes and other instruments as the company's valuation rose. Actual cash burn was closer to $9 billion in six months, which is still more than Anthropic spent in all of 2025. The IPO is reportedly targeting a valuation of up to $2 trillion.</p>
-<p>Here's the skeptical read. Noncancelable means noncancelable. These are decade-long obligations priced against a revenue curve that has gone from one billion to sixteen billion in a year and is assumed to keep bending upward. The commitments are also concentrated in a small number of counterparties, several of which (Amazon, Google) are also investors and competitors, and one of which (Nscale) has had a rough few months. Microsoft walked away from anchoring Nscale's Loughton site in the UK over grid delays and reportedly from Monarch itself shortly after signing a letter of intent. Investors have pushed back on Nscale's roughly $30 billion IPO valuation.</p>
-<p>Whether that's a problem depends entirely on whether demand holds. Anthropic is betting $450 billion to $750 billion that it does. The filing will be public soon enough, and the commitments footnote is the first thing worth reading.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

@@ -27,6 +27,58 @@
 
 export const articles = [
   {
+    id: 687,
+    slug: "php2shell-pan-os-firewalls-rooted-fragnesia-chain",
+    title: "PHP2Shell Hits Palo Alto Firewalls: 24 Rooted via Exposed Admin Pages",
+    summary: "Palo Alto Networks confirms attackers are exploiting the PHP2Shell flaws against internet-exposed PAN-OS management interfaces, and Dream Security says one campaign chained them with the Fragnesia kernel bug to get root on 24 firewalls.",
+    body: [
+      "The PHP2Shell bugs have found the worst possible home: firewall admin pages. Palo Alto Networks updated its advisory for CVE-2026-109618 on October 29 to say active exploitation has been observed against PAN-OS management interfaces exposed to the internet, and Unit 42 says it has verified a campaign that turned that access into root.",
+      "That campaign was first written up by Dream Security. According to Dream, the operators found about 19,000 internet-facing PAN-OS firewalls, narrowed the list to 240 targets in the U.S., Japan, Taiwan and South Korea, and rooted 24 of them. They got in through PHP2Shell (CVE-2026-109618 and CVE-2026-109619, both 9.2 under CVSS 4.0), then escalated with Fragnesia, the Linux kernel privilege escalation tracked as CVE-2026-46300. A 25th system, an internal firewall management server, fell later through a reverse SSH tunnel.",
+      "On 22 of the 24 rooted boxes, the attackers planted a webshell and stopped there. The other two are the scary part. Dream describes the attackers pivoting to domain controllers and GlobalProtect, decrypting an LDAP service account password from the management server, enumerating Active Directory and pulling private keys off the firewall filesystem. Attempts at SAML key extraction and backdoor accounts were seen, but Dream couldn't confirm they worked.",
+      "Attribution is soft. Dream says multiple indicators point to a China-nexus operation but names no group, and it reports that Unit 42 tracks the activity as CL-UNK-1280, a Chinese-speaking actor working in UTC+8. Palo Alto says only about 0.02% of its installed base had an internet-facing management interface and was hit, and that each of those customers has been contacted.",
+      "Fixes are out for nearly every supported branch: 12.2.4-h1, 12.1.10-h3, 11.2.16-h1, 11.1.16-h4 and 10.2.18-h13 are the top-of-branch targets, with hotfixes for older maintenance trains listed in the advisory. As of Thursday, the only one still pending was 11.1.7-h12, due October 30. Panorama is affected too. Prisma Access and Cloud NGFW are not.",
+      "It's worth saying plainly: this whole chain depends on a management interface that anyone on the internet can reach. Palo Alto has been telling customers to lock that down for years, and this is the latest PAN-OS management bug to punish the people who didn't.",
+      "What to do now: pull internet access to the management interface and restrict it to trusted internal IPs or a jump box, then patch PAN-OS and Panorama to a fixed build. If your admin page was exposed at any point since the flaws were disclosed on October 21, hunt for compromise before you trust a clean upgrade. Dream's indicators include a webshell at /unauth/php/change_password.php, a persistence directory at /usr/local/lib/.panops/, unexpected systemd services and rc.local boot hooks, and outbound reverse SSH tunnels. If you find any of it, assume the device's keys and any service account credentials it held are burned, and rotate them.",
+    ],
+    category: "cyber",
+    tags: [
+      "PHP2Shell",
+      "Palo Alto Networks",
+      "PAN-OS",
+      "Fragnesia",
+      "Unit 42",
+      "Patch Now",
+    ],
+    author: "Sam Browand",
+    publishedAt: "2026-10-30T00:52:05Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Palo Alto Networks: CVE-2026-109618 advisory",
+        desc: "Exploitation status, affected PAN-OS and Panorama builds, fixed versions and mitigations",
+        url: "https://security.paloaltonetworks.com/CVE-2026-109618",
+      },
+      {
+        name: "Unit 42: Threat Brief on CVE-2026-109618 and CVE-2026-109619",
+        desc: "Verification of the PAN-OS exploitation campaign, CL-UNK-1280 tracking and affected share of customers",
+        url: "https://unit42.paloaltonetworks.com/cve-2026-109618-cve-2026-109619/",
+      },
+      {
+        name: "Dream Security: Chained PHP2Shell exploit roots 25 servers",
+        desc: "Original research on the PHP2Shell and Fragnesia chain, targeting numbers, post-exploitation and indicators",
+        url: "https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers",
+      },
+      {
+        name: "The Hacker News",
+        desc: "Coverage of the exploitation, Fragnesia KEV status and interim mitigations",
+        url: "https://thehackernews.com/2026/10/attackers-exploit-php2shell-flaws-in.html",
+      },
+    ],
+  },
+  {
     id: 685,
     slug: "polymarket-debugbear-script-drainer-2-7m-cancel-only-mode",
     title: "Polymarket Halts Trading After a Vendor Monitoring Script Drained About $2.7M",
