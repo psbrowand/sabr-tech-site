@@ -57,7 +57,7 @@ const LICENSE_OK = /^(cc0|public domain|pd\b|pdm|cc[ -]by(-sa)?[ -]\d(\.\d)?)/i;
 
 // Words in a file's title or description that mean it isn't a usable cover:
 // graphics and documents, identifiable people, and anything grim.
-const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte|cosplay|cosplayers?|expo|convention)\b/i;
+const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte|cosplay|cosplayers?|expo|convention|paintings?|painted|drawings?|illustrations?|renderings?|renders?|artwork|engravings?|lithograph|sketch(es)?|doodles?|cartoons?|clipart|advert(isement)?s?|ad|ads|visits?|visiting|trial|human|humans)\b/i;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -232,20 +232,25 @@ export function matchesQuery(query, text) {
   return words.length <= 2 ? hits === words.length : hits >= words.length - 1;
 }
 
-// The file name must name the search words, or the description must say
-// them together as a phrase. Descriptions ramble, so scattered words there
-// prove little (a bird photo's caption can mention a "patch" and a "panel").
-export function matchesPhoto(query, title, description) {
-  if (matchesQuery(query, title)) return true;
-  const words = cleanQuery(query).split(' ').filter((w) => w && !STOPWORDS.has(w)).map(singular).filter(Boolean);
-  if (!words.length) return true;
-  const tokens = String(description).toLowerCase().split(/[^a-z0-9]+/)
-    .filter((w) => w && !STOPWORDS.has(w)).map(singular);
-  const phrase = words.join(' ');
-  for (let i = 0; i + words.length <= tokens.length; i++) {
-    if (tokens.slice(i, i + words.length).join(' ') === phrase) return true;
-  }
-  return words.length > 1 && tokens.join(' ').includes(words.join(''));
+// The file name must name the search words. Descriptions ramble: a photo of
+// a person at an event can mention "Starlink satellite dish" in passing, and
+// a bird photo's caption can mention a "patch" and a "panel".
+export function matchesPhoto(query, title) {
+  return matchesQuery(query, title);
+}
+
+// Photos from one shoot share a name apart from numbers ("Kraken
+// Supercomputer (4100441969)", "... (4101198172)"). Two from the same series
+// look like a repeat on the news page, so each series is used at most twice.
+export const MAX_PER_SERIES = 2;
+export function seriesKey(p) {
+  const file = decodeURIComponent(String(p.path || '').split('/').pop()).toLowerCase();
+  return file
+    .replace(/\.jpe?g$/, '')
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/\b(img|dsc|dscn|dscf|p)[_ -]?\d+\b/g, ' ')
+    .replace(/[^a-z]+/g, ' ')
+    .trim();
 }
 
 // Commons descriptions are sometimes license text or an uploader's note
@@ -283,7 +288,8 @@ export function toPhoto(page, { query, tier, today }) {
   const title = String(page.title || '').replace(/^File:/, '').replace(/\.jpe?g$/i, '');
   const description = val('ImageDescription');
   if (REJECT_WORDS.test(title) || REJECT_WORDS.test(description)) return { reject: 'subject words' };
-  if (!matchesPhoto(query, title, [description, val('ObjectName')].join(' . '))) return { reject: 'off topic' };
+  if (!matchesPhoto(query, title)) return { reject: 'off topic' };
+  if (/google art project|\bwga\d+|\bnga\b/i.test(title)) return { reject: 'artwork' };
 
   let author = val('Artist');
   if (/^unknown/i.test(author)) author = '';
@@ -337,6 +343,10 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
     if (k) used.add(k);
   }
   for (const a of articles) if (a.image) used.add(imageUrlKey(a.image));
+  const series = new Map(); // seriesKey → times used
+  const bump = (p) => series.set(seriesKey(p), (series.get(seriesKey(p)) || 0) + 1);
+  const seriesFull = (p) => (series.get(seriesKey(p)) || 0) >= MAX_PER_SERIES;
+  for (const p of Object.values(photos)) if (p.path) bump(p);
 
   const todo = articles
     .filter((a) => needsPhoto(a, photos[a.slug], today))
@@ -388,7 +398,7 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
       outer: for (const query of photoQueriesFor(article)) {
         for (const tier of ['qi', 'any']) {
           for await (const cand of candidatesFor(cleanQuery(query), tier)) {
-            if (!used.has(photoKey(cand))) {
+            if (!used.has(photoKey(cand)) && !seriesFull(cand)) {
               choice = cand;
               break outer;
             }
@@ -403,6 +413,7 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
     }
     if (choice) {
       used.add(photoKey(choice));
+      bump(choice);
       photos[article.slug] = choice;
       picked.push({ slug: article.slug, photo: choice });
       log(`✓ ${article.slug}\n    ${choice.path}  [${choice.q}]  ${choice.license}, ${choice.author}`);

@@ -5,7 +5,7 @@ import { writeFile, mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
-  toPhoto, matchesQuery, matchesPhoto, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
+  toPhoto, matchesQuery, matchesPhoto, seriesKey, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
 } from '../pick-photos.mjs';
 import { photoQueriesFor } from '../lib/photo-queries.mjs';
 import { photoUrl, photoSrcSet, photoPage, PHOTO_WIDTHS } from '../../src/lib/articlePhoto.js';
@@ -132,9 +132,10 @@ await test('rejects photos that do not show what was searched for', () => {
   assert.ok(!matchesQuery('rocket launch', 'Launch of a sailing boat'));
   assert.ok(!matchesQuery('fingerprint', 'Fingerposts at Tirolerkogel'), 'whole words only');
   assert.ok(!matchesQuery('server room', 'Serverless rooms'), 'whole words only');
-  assert.ok(matchesPhoto('padlock', 'Liebesschloss', 'Love padlocks in Moscow'), 'one word may come from the description');
-  assert.ok(matchesPhoto('chain and padlock', 'Old door', 'An old door locked with a chain and a padlock'));
-  assert.ok(!matchesPhoto('patch panel', 'Poecile montanus', 'a bird that lost habitat patches, per a panel of experts'));
+  // Only the file name counts: captions mention things in passing.
+  assert.ok(!matchesPhoto('starlink satellite dish', 'NYC court trial 2024-04-22 139'));
+  assert.ok(matchesPhoto('chain and padlock', 'Padlock and chain on an old shed'));
+  assert.equal(toPhoto(page('Peter DeWint - Building a Hayrick - Google Art Project.jpg'), { ...opts, query: 'google building' }).reject, 'artwork');
 });
 
 await test('skips weapons and people at work, and writes readable alt text', () => {
@@ -144,6 +145,21 @@ await test('skips weapons and people at work, and writes readable alt text', () 
   assert.ok(toPhoto(page('Rack.jpg', { desc: 'A third-party rack of servers' }), opts).photo);
   const junk = toPhoto(page('IBM rack internals (8531003630).jpg', { desc: 'CC0 waiver: To the extent possible under law' }), opts).photo;
   assert.equal(junk.alt, 'IBM rack internals');
+});
+
+await test('uses at most two photos from one series', async () => {
+  // Every search returns the same shoot, numbered differently.
+  const f = async (url) => {
+    const p = Object.fromEntries(new URL(url).searchParams);
+    const off = Number(p.gsroffset);
+    const pages = Array.from({ length: 5 }, (_, i) => page(`Padlock shoot (${4100000 + off + i}).jpg`, { index: i + 1 }));
+    return { ok: true, status: 200, headers: { get: () => null }, json: async () => ({ query: { pages } }) };
+  };
+  const photos = {};
+  const articles = Array.from({ length: 4 }, (_, i) => art(`s-${i}`));
+  const res = await pickPhotos({ articles, photos, client: quietClient(f), today: TODAY, log: () => {} });
+  assert.equal(res.picked.length, 2);
+  assert.equal(seriesKey(res.picked[0].photo), 'padlock shoot');
 });
 
 await test('queries go from specific to broad and are stable per slug', () => {
@@ -222,13 +238,13 @@ await test('fails instead of marking misses when nothing fits anywhere', async (
 });
 
 await test('verify drops photos whose file is gone or changed', async () => {
-  const keep = toPhoto(page('Keep me.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
-  const gone = toPhoto(page('Gone now.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
-  const moved = toPhoto(page('Moved file.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const keep = toPhoto(page('Keep rack.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const gone = toPhoto(page('Gone rack.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const moved = toPhoto(page('Moved rack.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const photos = { keep, gone, moved, miss: { none: TODAY } };
   const existing = new Map([
-    ['File:Keep_me.jpg', `${UP}${keep.path}${UTM('original')}`],
-    ['File:Moved_file.jpg', `${UP}0/00/Other.jpg`],
+    ['File:Keep_rack.jpg', `${UP}${keep.path}${UTM('original')}`],
+    ['File:Moved_rack.jpg', `${UP}0/00/Other.jpg`],
   ]);
   const res = await verifyPhotos({ photos, client: quietClient(fakeFetch({ existing })), log: () => {} });
   assert.equal(res.dropped, 2);
@@ -237,7 +253,7 @@ await test('verify drops photos whose file is gone or changed', async () => {
 
 await test('serialized file round-trips and is sorted', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'photos-'));
-  const p = toPhoto(page('Round "trip" é.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const p = toPhoto(page('Round "trip" rack é.jpg'), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const file = join(dir, 'p.js');
   await writeFile(file, serializePhotos({ zeta: p, alpha: { none: TODAY } }));
   const back = await loadPhotos(file);
@@ -248,14 +264,14 @@ await test('serialized file round-trips and is sorted', async () => {
 console.log('articlePhoto');
 
 await test('builds only standard widths below the original', () => {
-  const p = toPhoto(page('Wide shot.jpg', { w: 1700, h: 1000 }), { query: 'rack', tier: 'qi', today: TODAY }).photo;
+  const p = toPhoto(page('Wide rack.jpg', { w: 1700, h: 1000 }), { query: 'rack', tier: 'qi', today: TODAY }).photo;
   const set = photoSrcSet(p);
-  assert.match(set, /500px-Wide_shot\.jpg 500w, .*960w, .*1280w$/);
+  assert.match(set, /500px-Wide_rack\.jpg 500w, .*960w, .*1280w$/);
   assert.doesNotMatch(set, /1920/);
-  assert.match(photoUrl(p, 1280), /\/thumb\/.+\/1280px-Wide_shot\.jpg$/);
+  assert.match(photoUrl(p, 1280), /\/thumb\/.+\/1280px-Wide_rack\.jpg$/);
   assert.match(photoUrl(p, 5000), /1280px-/);
   for (const m of set.matchAll(/(\d+)px-/g)) assert.ok(PHOTO_WIDTHS.includes(Number(m[1])));
-  assert.equal(photoPage(p), 'https://commons.wikimedia.org/wiki/File:Wide_shot.jpg');
+  assert.equal(photoPage(p), 'https://commons.wikimedia.org/wiki/File:Wide_rack.jpg');
 });
 
 console.log(`\n${passed} passed${process.exitCode ? ', some FAILED' : ''}`);
