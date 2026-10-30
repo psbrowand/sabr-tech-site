@@ -6,9 +6,30 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 00:52:05 GMT</lastBuildDate>
-    <pubDate>Fri, 30 Oct 2026 00:52:05 GMT</pubDate>
+    <lastBuildDate>Fri, 30 Oct 2026 03:09:47 GMT</lastBuildDate>
+    <pubDate>Fri, 30 Oct 2026 03:09:47 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Binance Says It Will Cover All Hack Losses, Freezes Deposits and Withdrawals</title>
+      <link>https://sabr-labs.com/article/binance-will-cover-all-losses-deposits-withdrawals-suspended-3-billion-frozen</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/binance-will-cover-all-losses-deposits-withdrawals-suspended-3-billion-frozen</guid>
+      <pubDate>Fri, 30 Oct 2026 03:09:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Binance</category>
+      <category>Crypto</category>
+      <category>Exchange Hack</category>
+      <category>Tether</category>
+      <category>Circle</category>
+      <category>SAFU</category>
+      <description>Binance now says in its own name that it will absorb every loss from Thursday&apos;s hot-wallet drain, but it also reversed the partial reopening and suspended all deposits and withdrawals while it reports about $3 billion of the stolen assets frozen.</description>
+      <content:encoded><![CDATA[<p>Binance has put the promise in writing. In a post on its official X account early Friday UTC, the exchange said: "Binance will cover all losses. As a precaution, all deposits and withdrawals are temporarily suspended while our team conducts security checks, freezes funds, and works with law enforcement." Co-founder Yi He said the same in a separate statement: Binance will cover all hacking losses.</p>
+<p>That closes the gap we flagged in our first report. Until now the only person saying users would be made whole was Changpeng Zhao, who no longer runs the company and was speaking as a shareholder. Now it's the company itself.</p>
+<p>The catch is access. Late Thursday, Binance had reopened BTC, ETH and Ethereum-based USDT and USDC withdrawals while other networks stayed paused. The new statement shuts everything, deposits included, with no date for reopening. Binance says it will resume once the issue is fully resolved and that it will publish a detailed report on the cause and timeline when its investigation ends.</p>
+<p>On the recovery side, Binance said Thursday that $2.54 billion of the affected assets had been frozen, then updated that to about $3 billion verified, adding that it will only share confirmed figures. Tether froze roughly $1.57 billion in USDT and Circle more than $800 million in USDC, per their CEOs. Yi He also credited Ripple with freezing about $200 million and World Liberty Financial, with custodian BitGo, with about $27 million in stablecoins. Binance has still not published a total loss figure. Outside estimates range from Blockaid's $3.3 billion in suspicious outflows to as much as $5.8 billion from Coinbase's Conor Grogan, and those aren't confirmed losses.</p>
+<p>What's still unknown matters more than what's new. Nobody has attributed the theft, and Binance hasn't explained how an attacker got a signature from a hot-wallet key. The roughly 195,000 ETH that moved can't be frozen the way stablecoins can, so whatever Binance ends up covering will lean heavily on that ETH.</p>
+<p>If you hold funds on Binance, nothing you do right now gets them out, so don't fall for anyone offering to. Binance itself warned users to watch for scams, and a frozen exchange is prime bait for fake support accounts and phishing sites promising early withdrawals. Wait for the reopening notice on Binance's own channels, and check that any link you click actually goes to binance.com.</p>]]></content:encoded>
+    </item>
     <item>
       <title>PHP2Shell Hits Palo Alto Firewalls: 24 Rooted via Exposed Admin Pages</title>
       <link>https://sabr-labs.com/article/php2shell-pan-os-firewalls-rooted-fragnesia-chain</link>
@@ -1040,27 +1061,6 @@
 <p>The price is steep by Salesforce's own numbers. The company said it's paying roughly five times Braze's expected fiscal 2028 revenue, and outside estimates put it near eight times trailing revenue. Salesforce says it expects the deal to add to growth but dilute profitability in the near term, and that it doesn't need debt to fund it. Fiscal 2027 guidance is unchanged. The deal closes in fiscal 2028, which starts in February, and only after Braze shareholders and regulators sign off.</p>
 <p>Regulators are the open question. Salesforce and Braze are two of the larger vendors of brand-to-consumer messaging, and consolidation in martech has gone mostly unchallenged for years. This is a big enough check, in a category with few remaining independents, that someone in Washington or Brussels may at least ask.</p>
 <p>For teams running Braze today, nothing changes for at least four months. After that, expect the Salesforce sales motion to show up in your renewal conversation.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>SpaceX and Tesla Boards Form Merger Committees as SpaceX Posts a $4.4B Quarter</title>
-      <link>https://sabr-labs.com/article/spacex-tesla-special-committees-merger-q3-profit</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/spacex-tesla-special-committees-merger-q3-profit</guid>
-      <pubDate>Wed, 21 Oct 2026 11:10:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>SpaceX</category>
-      <category>Tesla</category>
-      <category>Elon Musk</category>
-      <category>Merger</category>
-      <category>Earnings</category>
-      <category>Starlink</category>
-      <description>Musk confirmed on SpaceX&apos;s first earnings call as a public company that independent directors at both firms are studying a combination he isn&apos;t allowed to negotiate, while SpaceX&apos;s AI compute business grew ninefold.</description>
-      <content:encoded><![CDATA[<p>Elon Musk spent part of SpaceX's first earnings call as a public company explaining why he can't be in the room. Both the SpaceX and Tesla boards have formed special committees of independent directors to study a merger, he said Tuesday, and because he's a conflicted party under securities rules, he isn't on either one and isn't part of the talks. He called the whole thing an odd Kabuki dance. He also said he thinks it's a good idea.</p>
-<p>The committees exist because shareholders asked for them. No terms have been agreed, Musk said, and there's no guarantee any will be. A deal would need approval from a majority of all Tesla shares outstanding, not just the shares that vote, which he described as quite a high hurdle. Anyone treating the merger as a certainty is overstating it, in his words. The market shrugged at the caveats: SpaceX shares rose between 5% and 8% after hours depending on which report you read.</p>
-<p>The numbers underneath the call explain why the question keeps coming up. SpaceX booked $14.6 billion in third-quarter revenue, up 161% from a year ago, and a $4.4 billion profit against a $1.1 billion loss in the same quarter last year. Starlink did $5.2 billion of that, up 69%, on 13.6 million consumer subscribers, though average monthly revenue per subscriber slipped to $69 from $83 as the service pushes into cheaper markets.</p>
-<p>The bigger story is the line item that didn't exist at this scale a year ago. SpaceX's AI unit, built on the xAI acquisition it closed in February and has since renamed SpaceXSI, booked $7.6 billion in the quarter, more than nine times the prior year. Most of that is renting compute to other labs. Anthropic has agreed to pay nearly $45 billion over three years, and Google is paying $920 million a month through mid-2029. SpaceX is now, by revenue, as much a data center landlord as a launch company.</p>
-<p>That's also the merger logic Musk offered: AI software, chip design, robotics, and connectivity overlap between the two companies. Tesla already put about $2 billion into a SpaceX AI subsidiary in January. The pieces are being arranged in public, one related-party transaction at a time, and the special committees are the governance answer to a question investors have been asking since the SpaceX IPO.</p>
-<p>What the committees can't change is the arithmetic of a majority-of-all-outstanding vote at Tesla, where a large retail base and index funds that often abstain make any threshold hard. Musk knows this, which is probably why he said it out loud.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>

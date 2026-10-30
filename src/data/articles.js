@@ -27,6 +27,55 @@
 
 export const articles = [
   {
+    id: 688,
+    slug: "binance-will-cover-all-losses-deposits-withdrawals-suspended-3-billion-frozen",
+    title: "Binance Says It Will Cover All Hack Losses, Freezes Deposits and Withdrawals",
+    summary: "Binance now says in its own name that it will absorb every loss from Thursday's hot-wallet drain, but it also reversed the partial reopening and suspended all deposits and withdrawals while it reports about $3 billion of the stolen assets frozen.",
+    body: [
+      "Binance has put the promise in writing. In a post on its official X account early Friday UTC, the exchange said: \"Binance will cover all losses. As a precaution, all deposits and withdrawals are temporarily suspended while our team conducts security checks, freezes funds, and works with law enforcement.\" Co-founder Yi He said the same in a separate statement: Binance will cover all hacking losses.",
+      "That closes the gap we flagged in our first report. Until now the only person saying users would be made whole was Changpeng Zhao, who no longer runs the company and was speaking as a shareholder. Now it's the company itself.",
+      "The catch is access. Late Thursday, Binance had reopened BTC, ETH and Ethereum-based USDT and USDC withdrawals while other networks stayed paused. The new statement shuts everything, deposits included, with no date for reopening. Binance says it will resume once the issue is fully resolved and that it will publish a detailed report on the cause and timeline when its investigation ends.",
+      "On the recovery side, Binance said Thursday that $2.54 billion of the affected assets had been frozen, then updated that to about $3 billion verified, adding that it will only share confirmed figures. Tether froze roughly $1.57 billion in USDT and Circle more than $800 million in USDC, per their CEOs. Yi He also credited Ripple with freezing about $200 million and World Liberty Financial, with custodian BitGo, with about $27 million in stablecoins. Binance has still not published a total loss figure. Outside estimates range from Blockaid's $3.3 billion in suspicious outflows to as much as $5.8 billion from Coinbase's Conor Grogan, and those aren't confirmed losses.",
+      "What's still unknown matters more than what's new. Nobody has attributed the theft, and Binance hasn't explained how an attacker got a signature from a hot-wallet key. The roughly 195,000 ETH that moved can't be frozen the way stablecoins can, so whatever Binance ends up covering will lean heavily on that ETH.",
+      "If you hold funds on Binance, nothing you do right now gets them out, so don't fall for anyone offering to. Binance itself warned users to watch for scams, and a frozen exchange is prime bait for fake support accounts and phishing sites promising early withdrawals. Wait for the reopening notice on Binance's own channels, and check that any link you click actually goes to binance.com.",
+    ],
+    category: "cyber",
+    tags: ["Binance", "Crypto", "Exchange Hack", "Tether", "Circle", "SAFU"],
+    author: "Sam Browand",
+    publishedAt: "2026-10-30T03:09:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Binance on X",
+        desc: "Binance's statement that it will cover all losses and has suspended deposits and withdrawals",
+        url: "https://x.com/binance/status/2115960292115124558",
+      },
+      {
+        name: "Hackread",
+        desc: "Binance's update on about $3 billion verified frozen and the outside loss estimates",
+        url: "https://hackread.com/binance-probes-5-billion-crypto-hack-3-billion-frozen/",
+      },
+      {
+        name: "AsiaOne",
+        desc: "Yi He's pledge and the frozen amounts by Tether, Circle, Ripple and World Liberty Financial",
+        url: "https://www.asiaone.com/money/binance-hacked-32b-assets-frozen-security-incident",
+      },
+      {
+        name: "Al Jazeera",
+        desc: "Binance's $2.54 billion frozen figure and statements on the investigation",
+        url: "https://www.aljazeera.com/economy/2026/10/30/binance-says-2-54bn-in-crypto-funds-frozen-amid-potential-security-issue",
+      },
+      {
+        name: "Bloomingbit",
+        desc: "Report on the compensation pledge, the full suspension and the promised incident report",
+        url: "https://en.bloomingbit.io/feed/news/123259",
+      },
+    ],
+  },
+  {
     id: 687,
     slug: "php2shell-pan-os-firewalls-rooted-fragnesia-chain",
     title: "PHP2Shell Hits Palo Alto Firewalls: 24 Rooted via Exposed Admin Pages",
