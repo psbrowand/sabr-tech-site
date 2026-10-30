@@ -26,7 +26,7 @@ const ICONS = [
   'landmark', 'scale', 'gavel', 'trending-up', 'chart-line', 'banknote', 'smartphone', 'globe',
   'eye', 'eye-off', 'rocket', 'satellite', 'satellite-dish', 'orbit', 'earth', 'telescope',
   'graduation-cap', 'award', 'book-open', 'atom', 'car', 'monitor', 'code', 'terminal', 'radar',
-  'radio-tower', 'git-branch', 'file-warning', 'siren', 'wallet', 'bitcoin',
+  'radio-tower', 'git-branch', 'file-warning', 'siren', 'wallet', 'bitcoin', 'badge-check', 'clipboard-check', 'trophy', 'notebook-pen',
 ];
 
 const toKey = (name) => name.replace(/-([a-z])/g, (_, c) => c.toUpperCase());

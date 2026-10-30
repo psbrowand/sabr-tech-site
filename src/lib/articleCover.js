@@ -51,7 +51,7 @@ const GLYPH_RULES = [
   [/starship|rocket|booster|in orbit|reaches orbit|spacex|blue origin|\bnasa\b|artemis|\besa\b|isro|skyroot/, ['rocket', 'rocket', 'orbit', 'earth']],
   [/satellite|starlink|kuiper/, ['satellite', 'satelliteDish']],
   [/telescope|webb|hubble|asteroid|mars|moon|lunar|planet|astronom/, ['telescope', 'earth']],
-  [/certification|exam|comptia|\bccnp|\bccna|isc2|cissp|security\+|\bexam\b|study guide/, ['graduationCap', 'award', 'bookOpen']],
+  [/certification|exam|comptia|\bccnp|\bccna|isc2|cissp|security\+|\bexam\b|study guide/, ['graduationCap', 'award', 'bookOpen', 'badgeCheck', 'clipboardCheck', 'trophy', 'notebookPen']],
   [/regulation|policy|\blaw\b|lawsuit|court|antitrust|government|congress|\beu\b|ftc|\bsec\b|export control|\bban\b/, ['landmark', 'scale', 'gavel']],
   [/iphone|android|smartphone|mobile|pixel|galaxy/, ['smartphone']],
   [/browser|chrome|firefox|safari|web security|wordpress/, ['globe']],
@@ -66,7 +66,7 @@ const CATEGORY_FALLBACK = {
   ai: ['sparkles', 'brain', 'brainCircuit'],
   tech: ['cpu', 'monitor', 'code'],
   space: ['rocket', 'orbit', 'earth'],
-  learning: ['bookOpen', 'graduationCap', 'award'],
+  learning: ['bookOpen', 'graduationCap', 'award', 'badgeCheck', 'clipboardCheck', 'notebookPen'],
 };
 
 // Patterns each category leans toward (first entries are the most likely).
@@ -310,6 +310,33 @@ function glyphMarkup(name, x, y, size, color) {
   return `<g transform="translate(${r1(x)} ${r1(y)}) scale(${r1(scale)})" fill="none" stroke="${color}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${inner}</g>`;
 }
 
+const TILTABLE = new Set(['rocket', 'satellite', 'orbit', 'bug', 'fish', 'keyRound', 'package', 'sparkles', 'car']);
+
+function glyphLayer({ layout, glyphName, glyphColor, tileX, tileY, tile, roundTile, tilt, echoAngle, id }) {
+  const cx = tileX + tile / 2;
+  const cy = tileY + tile / 2;
+  const rotated = (markup) => (tilt ? `<g transform="rotate(${tilt} ${r1(cx)} ${r1(cy)})">${markup}</g>` : markup);
+
+  if (layout === 'halo') {
+    const size = 220;
+    return `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="190" fill="none" stroke="${glyphColor}" stroke-opacity="0.25" stroke-width="2"/>`
+      + `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="240" fill="none" stroke="${glyphColor}" stroke-opacity="0.12" stroke-width="2" stroke-dasharray="6 14"/>`
+      + `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="150" fill="${glyphColor}" fill-opacity="0.10"/>`
+      + rotated(glyphMarkup(glyphName, cx - size / 2, cy - size / 2, size, glyphColor));
+  }
+
+  const size = 170;
+  let out = '';
+  if (layout === 'echo') {
+    const big = 560;
+    out += `<g opacity="0.10" transform="rotate(${echoAngle} ${W / 2} ${H / 2})">${glyphMarkup(glyphName, W / 2 - big / 2, H / 2 - big / 2, big, glyphColor)}</g>`;
+  }
+  out += `<rect x="${r1(tileX)}" y="${r1(tileY)}" width="${tile}" height="${tile}" rx="${roundTile ? tile / 2 : 56}" fill="url(#${id}tile)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>`
+    + `<circle cx="${r1(cx)}" cy="${r1(cy)}" r="120" fill="${glyphColor}" fill-opacity="0.12"/>`
+    + rotated(glyphMarkup(glyphName, cx - size / 2, cy - size / 2, size, glyphColor));
+  return out;
+}
+
 // ── Public API ───────────────────────────────────────────────────────────────
 
 /**
@@ -331,16 +358,21 @@ export function articleCoverSvg(article, { label = true } = {}) {
   const patternColor = rand() < 0.7 ? pal.accent : pal.alt;
   const glyphName = coverGlyphName(article, rand);
 
-  // Glyph sits in a glass tile on the left or right third.
   // Kept inside the middle ~64% of the width so square thumbnails, which crop
-  // the sides, still show the whole tile.
+  // the sides, still show the whole glyph.
   const onRight = rand() < 0.55;
   const tile = 300;
   const tileX = onRight ? W - tile - between(rand, 230, 290) : between(rand, 230, 290);
   const tileY = (H - tile) / 2 + between(rand, -50, 50);
-  const glyphSize = 170;
   const glyphColor = rand() < 0.65 ? pal.accent : pal.alt;
   const roundTile = rand() < 0.35;
+  // Three layouts so covers with the same topic glyph still look different
+  // side by side: a glass tile, a bare glyph with halo rings, or a tile over
+  // a huge faint echo of the glyph.
+  const layout = pick(rand, ['tile', 'tile', 'halo', 'echo']);
+  // Objects with no natural "up" get a slight tilt for extra variety.
+  const tilt = TILTABLE.has(glyphName) ? r1(between(rand, -28, 28)) : 0;
+  const echoAngle = r1(between(rand, -20, 20));
 
   const id = `c${seed.toString(36)}`;
   const pattern = PATTERNS[patternName](rand, patternColor, pal.alt, id);
@@ -360,9 +392,7 @@ export function articleCoverSvg(article, { label = true } = {}) {
     + `<rect width="${W}" height="${H}" fill="url(#${id}glow)"/>`
     + `<g>${pattern}</g>`
     + `<rect width="${W}" height="${H}" fill="url(#${id}fade)"/>`
-    + `<rect x="${r1(tileX)}" y="${r1(tileY)}" width="${tile}" height="${tile}" rx="${roundTile ? tile / 2 : 56}" fill="url(#${id}tile)" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>`
-    + `<circle cx="${r1(tileX + tile / 2)}" cy="${r1(tileY + tile / 2)}" r="120" fill="${glyphColor}" fill-opacity="0.12"/>`
-    + glyphMarkup(glyphName, tileX + (tile - glyphSize) / 2, tileY + (tile - glyphSize) / 2, glyphSize, glyphColor)
+    + glyphLayer({ layout, glyphName, glyphColor, tileX, tileY, tile, roundTile, tilt, echoAngle, id })
     + labelMarkup
     + `</svg>`;
 }
