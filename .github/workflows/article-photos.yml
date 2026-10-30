@@ -5,7 +5,7 @@ name: Article photos
 
 on:
   push:
-    branches: [main, claude/project-thread-5717lu]
+    branches: [main]
     paths:
       - src/data/articles.js
       - scripts/pick-photos.mjs

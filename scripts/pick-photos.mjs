@@ -57,7 +57,7 @@ const LICENSE_OK = /^(cc0|public domain|pd\b|pdm|cc[ -]by(-sa)?[ -]\d(\.\d)?)/i;
 
 // Words in a file's title or description that mean it isn't a usable cover:
 // graphics and documents, identifiable people, and anything grim.
-const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte|cosplay|cosplayers?|expo|convention|paintings?|painted|drawings?|illustrations?|renderings?|renders?|artwork|engravings?|lithograph|sketch(es)?|doodles?|cartoons?|clipart|advert(isement)?s?|ad|ads|visits?|visiting|trial|human|humans)\b/i;
+const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte|cosplay|cosplayers?|expo|convention|paintings?|painted|drawings?|illustrations?|renderings?|renders?|artwork|engravings?|lithograph|sketch(es)?|doodles?|cartoons?|clipart|advert(isement)?s?|ad|ads|visits?|visiting|trial|human|humans|artists?|gen|general|secretary|officials?|agents?|agencies|alongside|smuggling)\b/i;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -289,7 +289,7 @@ export function toPhoto(page, { query, tier, today }) {
   const description = val('ImageDescription');
   if (REJECT_WORDS.test(title) || REJECT_WORDS.test(description)) return { reject: 'subject words' };
   if (!matchesPhoto(query, title)) return { reject: 'off topic' };
-  if (/google art project|\bwga\d+|\bnga\b/i.test(title)) return { reject: 'artwork' };
+  if (/google art project|\bwga\d+|\bnga\b|\bmet dp\d+/i.test(title)) return { reject: 'artwork' };
 
   let author = val('Artist');
   if (/^unknown/i.test(author)) author = '';
