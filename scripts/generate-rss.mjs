@@ -14,6 +14,7 @@
 import { writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
+import { bodyToHtml, bodyToPlain } from '../src/lib/articleBody.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -42,8 +43,11 @@ function articleUrl(slug) {
 
 function itemXml(article) {
   const url = articleUrl(article.slug);
-  const body = Array.isArray(article.body) ? article.body.join('\n\n') : String(article.body || '');
-  const description = article.summary || body.slice(0, 400);
+  const description = article.summary || bodyToPlain(article.body).slice(0, 400);
+  const keyPoints = Array.isArray(article.keyPoints) && article.keyPoints.length
+    ? `<p><strong>Key points</strong></p>\n${bodyToHtml([article.keyPoints.map((k) => `- ${k}`).join('\n')])}\n`
+    : '';
+  const content = (keyPoints + bodyToHtml(article.body)).replaceAll(']]>', ']]&gt;');
   const categories = []
     .concat(article.category ? [article.category] : [])
     .concat(Array.isArray(article.tags) ? article.tags : []);
@@ -57,7 +61,7 @@ function itemXml(article) {
     article.author ? `      <author>noreply@sabr-labs.com (${xmlEscape(article.author)})</author>` : '',
     ...categories.map((c) => `      <category>${xmlEscape(c)}</category>`),
     `      <description>${xmlEscape(description)}</description>`,
-    `      <content:encoded><![CDATA[${body.split('\n\n').map((p) => `<p>${p}</p>`).join('\n')}]]></content:encoded>`,
+    `      <content:encoded><![CDATA[${content}]]></content:encoded>`,
     '    </item>',
   ]
     .filter(Boolean)

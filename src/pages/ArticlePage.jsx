@@ -16,7 +16,8 @@ import RelatedArticles          from '../components/articles/RelatedArticles';
 import ArticleProductCTA        from '../components/articles/ArticleProductCTA';
 import NewsletterSignup         from '../components/newsletter/NewsletterSignup';
 import ArticleCard              from '../components/articles/ArticleCard';
-import ArticleImage from '../components/articles/ArticleImage';
+import ArticleImage             from '../components/articles/ArticleImage';
+import ArticleBody, { KeyPoints } from '../components/articles/ArticleBody';
 
 // ── Share buttons ─────────────────────────────────────────────────────────────
 function ShareButtons({ title, url }) {
@@ -58,18 +59,6 @@ function ShareButtons({ title, url }) {
         <Link2 className="w-3.5 h-3.5" />
       </button>
     </div>
-  );
-}
-
-// ── Pull quote ────────────────────────────────────────────────────────────────
-function PullQuote({ text }) {
-  return (
-    <blockquote className="my-8 relative pl-6 border-l-4 border-cyan-500 bg-cyan-500/5 rounded-r-xl pr-6 py-5">
-      <div className="absolute top-3 left-2 text-4xl text-cyan-500/30 font-black leading-none select-none">"</div>
-      <p className="text-slate-200 text-base sm:text-lg font-medium leading-relaxed italic">
-        {text}
-      </p>
-    </blockquote>
   );
 }
 
@@ -116,9 +105,9 @@ export default function ArticlePage() {
         Back
       </button>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,740px)_280px] lg:justify-between gap-10">
         {/* Main article column */}
-        <div>
+        <div className="min-w-0">
           {/* Category + flags */}
           <div className="flex items-center gap-3 mb-4 flex-wrap">
             <CategoryBadge category={article.category} size="sm" />
@@ -175,18 +164,9 @@ export default function ArticlePage() {
             />
           </div>
 
-          {/* Article body */}
-          <div className="article-prose">
-            {article.body.map((para, i) => (
-              <div key={i}>
-                <p>{para}</p>
-                {/* Insert pull quote after 2nd paragraph */}
-                {i === 1 && article.body.length > 3 && (
-                  <PullQuote text={para.split('.')[0] + '.'} />
-                )}
-              </div>
-            ))}
-          </div>
+          {/* Key points + article body */}
+          <KeyPoints points={article.keyPoints} />
+          <ArticleBody body={article.body} />
 
           {/* Product CTA — peak-attention conversion bridge into the app. */}
           <ArticleProductCTA article={article} />

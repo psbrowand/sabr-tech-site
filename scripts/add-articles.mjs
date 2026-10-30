@@ -27,6 +27,7 @@
 import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkBody, bodyToPlain } from '../src/lib/articleBody.js';
 
 const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..');
 const ARTICLES_PATH = join(REPO_ROOT, 'src', 'data', 'articles.js');
@@ -248,6 +249,11 @@ function validate(a, label) {
   if (!Array.isArray(a.body) || a.body.length < 2 || !a.body.every((p) => typeof p === 'string' && p.trim())) {
     fail(`${label}: "body" must be an array of at least 2 non-empty strings`);
   }
+  const { errors, warnings } = checkBody(a.body, a.keyPoints);
+  if (errors.length > 0) {
+    fail(`${label}: body formatting problems (see ARTICLE_STYLE_GUIDE.md, "Formatting the body"):\n  - ${errors.join('\n  - ')}`);
+  }
+  for (const w of warnings) console.warn(`[add-articles] note for ${label}: ${w}`);
   if (!VALID_CATEGORIES.has(a.category)) {
     fail(`${label}: category "${a.category}" must be one of ${[...VALID_CATEGORIES].join(', ')}`);
   }
@@ -273,7 +279,7 @@ function validate(a, label) {
 
 function normalize(a, id) {
   const body = a.body;
-  const words = body.join(' ').split(/\s+/).filter(Boolean).length;
+  const words = bodyToPlain(body).split(/\s+/).filter(Boolean).length;
   const readingTime = typeof a.readingTime === 'number' && a.readingTime > 0
     ? a.readingTime
     : Math.max(3, Math.ceil(words / 200));
@@ -284,6 +290,7 @@ function normalize(a, id) {
     slug: a.slug,
     title: a.title,
     summary: a.summary,
+    ...(a.keyPoints ? { keyPoints: a.keyPoints } : {}),
     body,
     category: a.category,
     tags: a.tags,

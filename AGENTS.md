@@ -21,7 +21,7 @@ You are running the **"Sabr daily news"** routine. Your job is to research the d
 Per article, in order:
 
 1. Pick the story. Use WebSearch / WebFetch to gather the facts (CVE numbers, names, dates, quotes). **Summarize each fetched page to a few bullets in your own notes and drop the raw body.**
-2. Draft the article in prose per `ARTICLE_STYLE_GUIDE.md` — 4–8 paragraphs, varied lengths, opinion where earned.
+2. Draft the article per `ARTICLE_STYLE_GUIDE.md`: short paragraphs, subheads and lists where the story has sections or parallel items, 2-4 `keyPoints`, opinion where earned.
 3. `Write` to `scripts/drafts/YYYY-MM-DD/NN-slug.json` (where `NN` is a zero-padded ordinal — `01`, `02`, etc. — so the script inserts them in your intended order).
 4. Move to the next article. **Do not** hold all drafted articles in memory to write in a batch; write each one the moment it's ready.
 
@@ -40,9 +40,16 @@ Then verify with `git diff src/data/articles.js` and `git status`, then commit w
   "slug": "kebab-case-unique",              // lowercase, digits, hyphens only; must not collide with an existing slug
   "title": "Headline",
   "summary": "One-sentence subhead for cards.",
-  "body": [                                  // array of paragraph strings, minimum 2
-    "Paragraph one.",
-    "Paragraph two.",
+  "keyPoints": [                             // 2-4 one-line takeaways, shown in a "Key points" box
+    "What happened, in one line.",
+    "Who's affected / what it means.",
+    "What to do."
+  ],
+  "body": [                                  // one block per entry; see "Body format" below
+    "Lede paragraph: what happened.",
+    "Short paragraph, 1-3 sentences.",
+    "## Specific subhead",
+    "- List item\n- List item\n- List item",
     "..."
   ],
   "category": "cyber",                       // one of: tech | cyber | ai | space | learning
@@ -60,6 +67,20 @@ Then verify with `git diff src/data/articles.js` and `git status`, then commit w
 }
 ```
 
+### Body format
+
+Articles render like a real news site, not a wall of text. Each `body` entry is one block:
+
+| Entry | Renders as |
+|---|---|
+| `"Plain text."` | a paragraph (one line, no `\n`) |
+| `"## Subhead"` | a section subhead (`### ` for a minor one) |
+| `"- item\n- item"` | a bulleted list (every line starts `- `) |
+| `"1. step\n2. step"` | a numbered list |
+| `"> Quoted words."` | a pull quote |
+
+Inline anywhere: `**bold**`, `` `code` ``, `[link text](https://...)`. The first entry must be a paragraph (the lede). Read "Formatting the body" in `ARTICLE_STYLE_GUIDE.md` for when to use each. `add-articles.mjs` rejects malformed blocks (unbalanced `**`, a list mixed into a paragraph, a subhead first or last, non-https links) and prints non-fatal notes for style misses (no `keyPoints`, a 90+ word paragraph, 6+ paragraphs with no subhead). Fix the notes too.
+
 The script **auto-assigns `id`** (next integer after the current max). Do not include an `id` in drafts.
 
 ### Images
@@ -76,7 +97,8 @@ Validation errors print to stderr with the offending draft's filename. Common ca
 
 - **Slug already exists** → pick a different slug, or the story was already covered.
 - **Slug not URL-safe** → lowercase, digits, hyphens only. No spaces, no punctuation.
-- **`body` too short** → minimum 2 non-empty paragraphs.
+- **`body` too short** → minimum 2 non-empty paragraphs (subheads and lists don't count).
+- **Body formatting problems** → the message names the `body[N]` entry and what's wrong; see Body format above.
 - **Bad category** → must be `tech | cyber | ai | space | learning`.
 - **Bad `publishedAt`** → must be a parseable ISO date string.
 
