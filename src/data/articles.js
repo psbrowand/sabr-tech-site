@@ -29,6 +29,55 @@
 
 export const articles = [
   {
+    id: 689,
+    slug: "binance-hack-devops-engineer-laptop-6-3-billion",
+    title: "Binance Blames Hacked Engineer Laptop, Puts Theft at About $6.3 Billion",
+    summary: "Binance's first findings say an attacker used a compromised DevOps engineer's laptop to reach a service container and push unauthorized withdrawals, with no sign of a leaked wallet key and an estimated total impact of around $6.3 billion.",
+    keyPoints: [
+      "Binance's initial findings say a compromised DevOps engineer's laptop let an attacker into a service container that submitted unauthorized withdrawals.",
+      "Its own estimate of the total impact is around $6.3 billion, with about $3 billion frozen onchain so far.",
+      "No private key leak found, per Binance, which points at abuse of its signing pipeline rather than stolen keys.",
+      "As of that update, deposits and withdrawals were suspended; ignore anyone offering early access to your funds.",
+    ],
+    body: [
+      "A compromised laptop is the first explanation Binance has offered for the largest crypto theft on record. In a post on its official X account early Friday UTC, the exchange said its initial investigation suggests a compromised DevOps engineer's laptop gave an attacker access to a service container, which was then used to submit unauthorized withdrawal transactions.",
+      "Binance also put a number on it for the first time. It estimates the total impact at around $6.3 billion, above the roughly $5.8 billion that outside trackers had been citing and Chainalysis's estimate of about $5.9 billion, per Cointelegraph's live coverage.",
+      "## No leaked key, says Binance",
+      "The exchange said it has found no evidence of any wallet private key leak. That matters because Thursday's main sweep ran through an EIP-7702 delegation on a hot wallet, and that kind of transaction needs a valid signature from the wallet's key.",
+      "Put the two together and the likely story is that the attacker never held the key. They got inside the machinery that asks for signatures and had it approve withdrawals on their behalf. Blockaid floated exactly that theory hours earlier, suspecting a compromise of signing infrastructure rather than a stolen key. Binance hasn't spelled it out, and it calls these findings preliminary.",
+      "If it holds, it's an uncomfortable lesson for every exchange. Cold storage and key ceremonies don't help much when an engineer's endpoint can reach a container that's trusted to request hot-wallet signatures.",
+      "## Where the money stands",
+      "Binance says about $3 billion has been frozen onchain with help from partners, and it has revoked the affected address authorization, according to Bitcoin.com. Frozen isn't the same as recovered. First Digital said it froze FDUSD tied to the attack, adding to earlier freezes by Tether, Circle, Ripple and others.",
+      "The company repeated that losses will be covered from its SAFU fund and company funds. As of that update, deposits and withdrawals were suspended. Co-CEO Yi He said withdrawals will come back once the security scan is complete, and Binance has promised a proof-of-reserves update and a full technical post-mortem. Nobody has been named as the attacker.",
+      "**What to do now:** if you hold funds on Binance, there's nothing to do but wait for the reopening notice on Binance's own channels. Treat any message offering early withdrawals or account recovery as a scam. If you run exchange or treasury infrastructure, check which engineer endpoints can reach anything that requests signatures, and whether a single laptop could do it alone.",
+    ],
+    category: "cyber",
+    tags: ["Binance", "Crypto", "Exchange Hack", "Endpoint Security", "SAFU"],
+    author: "Sam Browand",
+    publishedAt: "2026-10-30T04:50:00Z",
+    readingTime: 3,
+    featured: false,
+    trending: true,
+    breaking: true,
+    sources: [
+      {
+        name: "Binance on X",
+        desc: "Binance's initial findings: compromised DevOps engineer's laptop, no evidence of a private key leak, about $6.3B estimated impact",
+        url: "https://x.com/binance/status/2115993361517891592",
+      },
+      {
+        name: "Bitcoin.com News",
+        desc: "Binance's first findings, the $3B frozen figure, SAFU coverage and next steps",
+        url: "https://news.bitcoin.com/security/binance-releases-first-6-3b-hack-findings-reports-no-key-leak-evidence/",
+      },
+      {
+        name: "Cointelegraph",
+        desc: "Live timeline including Chainalysis's estimate, Blockaid's signing-infrastructure theory and First Digital's FDUSD freeze",
+        url: "https://cointelegraph.com/news/binance-linked-wallet-faces-possible-exploit-blockchain-researcher-warns",
+      },
+    ],
+  },
+  {
     id: 688,
     slug: "binance-will-cover-all-losses-deposits-withdrawals-suspended-3-billion-frozen",
     title: "Binance Says It Will Cover All Hack Losses, Freezes Deposits and Withdrawals",
@@ -568,7 +617,7 @@ export const articles = [
     readingTime: 3,
     featured: false,
     trending: true,
-    breaking: true,
+    breaking: false,
     sources: [
       {
         name: "CISA alert, October 27",
@@ -1701,7 +1750,7 @@ export const articles = [
     publishedAt: "2026-10-23T08:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1745,7 +1794,7 @@ export const articles = [
     publishedAt: "2026-10-23T09:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1841,7 +1890,7 @@ export const articles = [
     publishedAt: "2026-10-23T11:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {
@@ -1929,7 +1978,7 @@ export const articles = [
     publishedAt: "2026-10-23T13:00:00Z",
     readingTime: 3,
     featured: false,
-    trending: true,
+    trending: false,
     breaking: false,
     sources: [
       {

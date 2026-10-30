@@ -6,9 +6,35 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 03:48:59 GMT</lastBuildDate>
-    <pubDate>Fri, 30 Oct 2026 03:48:59 GMT</pubDate>
+    <lastBuildDate>Fri, 30 Oct 2026 14:24:02 GMT</lastBuildDate>
+    <pubDate>Fri, 30 Oct 2026 14:24:02 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Binance Blames Hacked Engineer Laptop, Puts Theft at About $6.3 Billion</title>
+      <link>https://sabr-labs.com/article/binance-hack-devops-engineer-laptop-6-3-billion</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/binance-hack-devops-engineer-laptop-6-3-billion</guid>
+      <pubDate>Fri, 30 Oct 2026 04:50:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Binance</category>
+      <category>Crypto</category>
+      <category>Exchange Hack</category>
+      <category>Endpoint Security</category>
+      <category>SAFU</category>
+      <description>Binance&apos;s first findings say an attacker used a compromised DevOps engineer&apos;s laptop to reach a service container and push unauthorized withdrawals, with no sign of a leaked wallet key and an estimated total impact of around $6.3 billion.</description>
+      <content:encoded><![CDATA[<p><strong>Key points</strong></p>
+<ul><li>Binance's initial findings say a compromised DevOps engineer's laptop let an attacker into a service container that submitted unauthorized withdrawals.</li><li>Its own estimate of the total impact is around $6.3 billion, with about $3 billion frozen onchain so far.</li><li>No private key leak found, per Binance, which points at abuse of its signing pipeline rather than stolen keys.</li><li>As of that update, deposits and withdrawals were suspended; ignore anyone offering early access to your funds.</li></ul>
+<p>A compromised laptop is the first explanation Binance has offered for the largest crypto theft on record. In a post on its official X account early Friday UTC, the exchange said its initial investigation suggests a compromised DevOps engineer's laptop gave an attacker access to a service container, which was then used to submit unauthorized withdrawal transactions.</p>
+<p>Binance also put a number on it for the first time. It estimates the total impact at around $6.3 billion, above the roughly $5.8 billion that outside trackers had been citing and Chainalysis's estimate of about $5.9 billion, per Cointelegraph's live coverage.</p>
+<h2>No leaked key, says Binance</h2>
+<p>The exchange said it has found no evidence of any wallet private key leak. That matters because Thursday's main sweep ran through an EIP-7702 delegation on a hot wallet, and that kind of transaction needs a valid signature from the wallet's key.</p>
+<p>Put the two together and the likely story is that the attacker never held the key. They got inside the machinery that asks for signatures and had it approve withdrawals on their behalf. Blockaid floated exactly that theory hours earlier, suspecting a compromise of signing infrastructure rather than a stolen key. Binance hasn't spelled it out, and it calls these findings preliminary.</p>
+<p>If it holds, it's an uncomfortable lesson for every exchange. Cold storage and key ceremonies don't help much when an engineer's endpoint can reach a container that's trusted to request hot-wallet signatures.</p>
+<h2>Where the money stands</h2>
+<p>Binance says about $3 billion has been frozen onchain with help from partners, and it has revoked the affected address authorization, according to Bitcoin.com. Frozen isn't the same as recovered. First Digital said it froze FDUSD tied to the attack, adding to earlier freezes by Tether, Circle, Ripple and others.</p>
+<p>The company repeated that losses will be covered from its SAFU fund and company funds. As of that update, deposits and withdrawals were suspended. Co-CEO Yi He said withdrawals will come back once the security scan is complete, and Binance has promised a proof-of-reserves update and a full technical post-mortem. Nobody has been named as the attacker.</p>
+<p><strong>What to do now:</strong> if you hold funds on Binance, there's nothing to do but wait for the reopening notice on Binance's own channels. Treat any message offering early withdrawals or account recovery as a scam. If you run exchange or treasury infrastructure, check which engineer endpoints can reach anything that requests signatures, and whether a single laptop could do it alone.</p>]]></content:encoded>
+    </item>
     <item>
       <title>Binance Says It Will Cover All Hack Losses, Freezes Deposits and Withdrawals</title>
       <link>https://sabr-labs.com/article/binance-will-cover-all-losses-deposits-withdrawals-suspended-3-billion-frozen</link>
@@ -1177,28 +1203,6 @@
 <p>Fixed builds span four PAN-OS branches. On 12.1 you need 12.1.4-h6 or 12.1.7; on 11.2, 11.2.4-h17, 11.2.7-h14, 11.2.10-h7, or 11.2.12; on 11.1, 11.1.4-h33, 11.1.6-h32, 11.1.7-h6, 11.1.10-h25, 11.1.13-h5, or 11.1.15; on 10.2, 10.2.7-h34, 10.2.10-h36, 10.2.13-h21, 10.2.16-h7, or 10.2.18-h6. Prisma Access needs 11.2.7-h13 or 10.2.10-h36. Cloud NGFW and Panorama aren't affected. If you can't patch, use a dedicated certificate for authentication override cookies or turn the override options off entirely in the portal and gateway config.</p>
 <p>Patching isn't the whole job. ReliaQuest's warning is that access established before remediation survives it. Terminate every active GlobalProtect session after you upgrade, then go through the connection logs for anything you don't recognize.</p>
 <p>Unit 42 specifically flags sessions from hosts named &quot;kali,&quot; which tells you how little effort some of these operators bother with. ReliaQuest expects the exploitation to run at least another three months, because the install base that hasn't patched in five months isn't going to start now.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Salesforce Pays $5.66B for Braze to Fix the Marketing Cloud It Already Owns</title>
-      <link>https://sabr-labs.com/article/salesforce-acquires-braze-5-66-billion</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/salesforce-acquires-braze-5-66-billion</guid>
-      <pubDate>Wed, 21 Oct 2026 11:40:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Salesforce</category>
-      <category>Braze</category>
-      <category>Acquisition</category>
-      <category>Martech</category>
-      <category>Agentforce</category>
-      <description>Braze shareholders get $47.50 a share in cash, Braze keeps its brand and CEO, and the deal won&apos;t close before Salesforce&apos;s next fiscal year.</description>
-      <content:encoded><![CDATA[<p>$47.50 a share, all cash, about $5.66 billion in enterprise value. That's what Salesforce agreed Monday to pay for Braze, the customer engagement platform that sends the push notifications, in-app messages, SMS, WhatsApp, and email that brands like Instacart, Venmo, Canva, and Dairy Queen fire at their customers. Braze stock jumped around 50% on the news, which tells you roughly how far below that price it had been trading.</p>
-<p>Salesforce already sells this. Marketing Cloud has been in the portfolio since the ExactTarget deal in 2013, and the company has spent a decade bolting acquisitions onto it. Buying Braze is an admission that the real-time, event-driven side of the product never caught up with the specialists.</p>
-<p>Braze was built on a streaming architecture that reacts to what a user just did inside an app, and that's precisely the capability Salesforce needs if Agentforce is going to do anything useful in consumer marketing beyond drafting copy.</p>
-<p>The official framing is that Braze complements all four layers of the Salesforce stack: Data 360, Customer 360, Agentforce, and SIForce. Strip the branding and it means Braze's decisioning engine gets wired to Salesforce's customer data and agent layer. Braze will keep its name and CEO Bill Magnuson stays on with his leadership team. It has about 2,770 customers and 15 offices.</p>
-<p>The price is steep by Salesforce's own numbers. The company said it's paying roughly five times Braze's expected fiscal 2028 revenue, and outside estimates put it near eight times trailing revenue.</p>
-<p>Salesforce says it expects the deal to add to growth but dilute profitability in the near term, and that it doesn't need debt to fund it. Fiscal 2027 guidance is unchanged. The deal closes in fiscal 2028, which starts in February, and only after Braze shareholders and regulators sign off.</p>
-<p>Regulators are the open question. Salesforce and Braze are two of the larger vendors of brand-to-consumer messaging, and consolidation in martech has gone mostly unchallenged for years. This is a big enough check, in a category with few remaining independents, that someone in Washington or Brussels may at least ask.</p>
-<p>For teams running Braze today, nothing changes for at least four months. After that, expect the Salesforce sales motion to show up in your renewal conversation.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
