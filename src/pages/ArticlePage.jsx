@@ -17,6 +17,7 @@ import ArticleProductCTA        from '../components/articles/ArticleProductCTA';
 import NewsletterSignup         from '../components/newsletter/NewsletterSignup';
 import ArticleCard              from '../components/articles/ArticleCard';
 import ArticleImage             from '../components/articles/ArticleImage';
+import PhotoCredit              from '../components/articles/PhotoCredit';
 import ArticleBody, { KeyPoints } from '../components/articles/ArticleBody';
 
 // ── Share buttons ─────────────────────────────────────────────────────────────
@@ -155,14 +156,18 @@ export default function ArticlePage() {
           </div>
 
           {/* Featured image */}
-          <div className="rounded-xl overflow-hidden aspect-video mb-8 bg-slate-800">
-            <ArticleImage
-              article={article}
-              label
-              loading="eager"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <figure className="mb-8">
+            <div className="rounded-xl overflow-hidden aspect-video bg-slate-800">
+              <ArticleImage
+                article={article}
+                label
+                loading="eager"
+                sizes="(min-width: 1024px) 760px, 100vw"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <PhotoCredit article={article} className="mt-2 text-right" />
+          </figure>
 
           {/* Key points + article body */}
           <KeyPoints points={article.keyPoints} />

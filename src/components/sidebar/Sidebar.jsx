@@ -85,6 +85,7 @@ function RecentPosts() {
             <div className="flex-shrink-0 w-14 h-12 rounded-lg overflow-hidden bg-slate-800">
               <ArticleImage
                 article={a}
+                sizes="112px"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
             </div>

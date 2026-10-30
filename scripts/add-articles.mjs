@@ -28,6 +28,7 @@ import { readFile, writeFile, readdir, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkBody, bodyToPlain } from '../src/lib/articleBody.js';
+import { articlePhotos } from '../src/data/articlePhotos.js';
 
 const REPO_ROOT = resolve(fileURLToPath(import.meta.url), '..', '..');
 const ARTICLES_PATH = join(REPO_ROOT, 'src', 'data', 'articles.js');
@@ -60,6 +61,10 @@ try {
 
   const current = await readFile(ARTICLES_PATH, 'utf8');
   const { maxId, existingSlugs, existingImages } = scanArticles(current);
+  // Wikimedia photos already picked for other articles count as used too.
+  for (const p of Object.values(articlePhotos)) {
+    if (p.path) existingImages.add(imageKey(`https://upload.wikimedia.org/wikipedia/commons/${p.path}`));
+  }
 
   const prepared = [];
   let nextId = maxId + 1;
@@ -81,7 +86,7 @@ try {
     if (draft.image !== undefined) {
       const key = imageKey(draft.image);
       if (existingImages.has(key)) {
-        fail(`${label}: image is already used by another article. Remove "image" (a unique cover is generated automatically) or use a photo no other article has.`);
+        fail(`${label}: image is already used by another article. Remove "image" (a unique photo is picked automatically) or use a photo no other article has.`);
       }
       existingImages.add(key);
     }
@@ -232,9 +237,14 @@ function scanArticles(src) {
 }
 
 // Compare images without query strings, so ?w=800 and ?w=1200 of the same
-// photo count as one.
+// photo count as one. Wikimedia thumbnails count as their original file.
 function imageKey(url) {
-  return String(url).split('?')[0].replace(/\/+$/, '').toLowerCase();
+  let s = String(url).split('?')[0].replace(/\/+$/, '');
+  // A Commons thumbnail (on either host) counts as its original file.
+  const m = s.match(/^https:\/\/(?:upload|thumb)\.wikimedia\.org\/wikipedia\/commons\/thumb\/([0-9a-f]\/[0-9a-f]{2}\/[^/]+)\/[^/]+$/);
+  if (m) s = `https://upload.wikimedia.org/wikipedia/commons/${m[1]}`;
+  try { s = decodeURI(s); } catch { /* keep as is */ }
+  return s.toLowerCase();
 }
 
 function validate(a, label) {
@@ -266,6 +276,12 @@ function validate(a, label) {
   if (a.image !== undefined && (typeof a.image !== 'string' || !/^https:\/\/\S+$/.test(a.image))) {
     fail(`${label}: "image" must be an https URL if present (or leave it out for a generated cover)`);
   }
+  if (a.photoQuery !== undefined) {
+    const ok = Array.isArray(a.photoQuery)
+      && a.photoQuery.length >= 1 && a.photoQuery.length <= 4
+      && a.photoQuery.every((q) => typeof q === 'string' && q.trim().length >= 3 && q.length <= 60);
+    if (!ok) fail(`${label}: "photoQuery" must be an array of 1-4 short search phrases (3-60 characters each), e.g. ["server room", "padlock"]`);
+  }
   if (a.sources !== undefined) {
     if (!Array.isArray(a.sources)) fail(`${label}: "sources" must be an array if present`);
     a.sources.forEach((s, i) => {
@@ -295,6 +311,7 @@ function normalize(a, id) {
     category: a.category,
     tags: a.tags,
     ...(a.image ? { image: a.image } : {}),
+    ...(a.photoQuery ? { photoQuery: a.photoQuery.map((q) => q.trim()) } : {}),
     author: a.author,
     publishedAt: a.publishedAt,
     readingTime,
