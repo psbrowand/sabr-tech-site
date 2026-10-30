@@ -14,6 +14,7 @@ You are running the **"Sabr daily news"** routine. Your job is to research the d
 4. **Read `ARTICLE_STYLE_GUIDE.md` before you write anything.** The voice is direct and grounded. Avoid the forbidden words/phrases listed there. Vary paragraph length. Don't hedge.
 5. **Trim WebFetch output aggressively.** After each research fetch, extract the 3–5 facts you need and discard the raw HTML before moving on. Holding multiple full page bodies in context slows token generation and makes stream timeouts more likely.
 6. **Don't commit the drafts directory.** `scripts/drafts/` is gitignored — it's staging only. After a successful run, `git status` should show only `src/data/articles.js` as modified.
+7. **Check every weekday against its date.** Before writing "on Wednesday" or similar, work out the day from the date in UTC (`date -u -d 2026-10-29 +%A`). If a source gives only a weekday, convert it to a date first. A wrong weekday has already slipped into published stories.
 
 ### Workflow
 
