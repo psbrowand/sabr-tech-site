@@ -16,9 +16,12 @@
 //                  lines, "> pull quote" (see src/lib/articleBody.js)
 //   category     — "tech" | "cyber" | "ai" | "space" | "learning"
 //   tags         — string[]
-//   image        — optional; omit it. Every article gets a unique generated
-//                  cover (src/lib/articleCover.js). Only set a real photo
-//                  that no other article uses.
+//   photoQuery   — optional; 1–4 photo search phrases for the automatic
+//                  Wikimedia Commons photo (scripts/pick-photos.mjs)
+//   image        — optional; omit it. Every article gets a unique photo
+//                  (data/articlePhotos.js) or, until then, a generated cover
+//                  (src/lib/articleCover.js). Only set a real photo that no
+//                  other article uses.
 //   author       — author name
 //   publishedAt  — ISO date string
 //   readingTime  — minutes

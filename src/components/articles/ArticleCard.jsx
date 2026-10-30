@@ -18,6 +18,7 @@ export default function ArticleCard({ article, variant = 'default', className = 
         <div className="flex-shrink-0 w-16 h-14 rounded-lg overflow-hidden bg-slate-800">
           <ArticleImage
             article={article}
+            sizes="160px"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
@@ -40,6 +41,7 @@ export default function ArticleCard({ article, variant = 'default', className = 
         <div className="flex-shrink-0 w-32 sm:w-40 h-24 rounded-lg overflow-hidden bg-slate-800">
           <ArticleImage
             article={article}
+            sizes="160px"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>

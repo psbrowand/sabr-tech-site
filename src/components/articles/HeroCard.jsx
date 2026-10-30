@@ -20,6 +20,7 @@ export default function HeroCard({ article }) {
       <ArticleImage
         article={article}
         loading="eager"
+        sizes="100vw"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
 

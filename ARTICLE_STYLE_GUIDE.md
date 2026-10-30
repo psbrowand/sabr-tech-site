@@ -169,8 +169,8 @@ Every article is an object in `src/data/articles.js` with:
   ],
   category: "tech" | "cyber" | "ai" | "space" | "learning",
   tags: ["3–6 relevant tags"],
-  // image: omit. A unique cover is generated per article (see AGENTS.md > Images).
-  // Only set one for a verified photo of this story that no other article uses.
+  photoQuery: ["1-4 photo search phrases", "objects or places, no people"], // optional, see AGENTS.md > Images
+  // image: omit. A unique photo is picked automatically (see AGENTS.md > Images).
   author: "Sam Browand", // unless a guest byline
   publishedAt: "2026-MM-DDTHH:MM:SSZ", // ISO UTC
   readingTime: <optional; add-articles computes it from word count>,
@@ -214,7 +214,7 @@ When a Claude Code routine drafts a new article, run this checklist before addin
 8. **Uniqueness:** does this article say something other outlets didn't already say yesterday? If no, either find the angle or skip it.
 9. **Sources:** 3–5, all real URLs, primary sources first.
 10. **Schema fields:** id is the next integer, slug is unique, publishedAt is ISO UTC, category is one of the five valid values.
-11. **Images:** no `image` field (the cover is generated). Never reuse another article's image URL. Most specific tag first.
+11. **Images:** no `image` field (a unique photo is picked automatically). Add `photoQuery` with 1-4 concrete phrases a photo search would match ("electrical substation", "nvidia graphics card"), naming objects or places, never people. Most specific tag first.
 
 ## 12. What to avoid, condensed
 

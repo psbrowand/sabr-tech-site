@@ -1,0 +1,86 @@
+# Picks a unique Wikimedia Commons photo for every article that needs one and
+# commits src/data/articlePhotos.js back to the branch (which redeploys the
+# site). See scripts/pick-photos.mjs. No keys or secrets are needed.
+name: Article photos
+
+on:
+  push:
+    branches: [main, claude/project-thread-5717lu]
+    paths:
+      - src/data/articles.js
+      - scripts/pick-photos.mjs
+      - scripts/lib/photo-queries.mjs
+      - .github/workflows/article-photos.yml
+  schedule:
+    - cron: '23 * * * *'   # hourly: works through the backlog, retries misses
+    - cron: '41 3 * * 1'   # weekly: also drops photos deleted from Commons
+  workflow_dispatch:
+    inputs:
+      max:
+        description: Most articles to handle this run
+        default: '400'
+      verify:
+        description: Also re-check existing photos
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: article-photos-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Test the picker (offline)
+        run: node scripts/tests/pick-photos.test.mjs
+
+      - name: Pick photos
+        id: pick
+        env:
+          VERIFY: ${{ github.event.schedule == '41 3 * * 1' || inputs.verify == true }}
+          MAX: ${{ inputs.max || '400' }}
+        run: |
+          args="--max $MAX"
+          if [ "$VERIFY" = "true" ]; then args="$args --verify"; fi
+          # A failed run still saves the photos it picked; report it after committing.
+          node scripts/pick-photos.mjs $args | tee pick.log || echo "failed=true" >> "$GITHUB_OUTPUT"
+          echo "picked=$(grep -c '^✓' pick.log || true)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        env:
+          BRANCH: ${{ github.ref_name }}
+          PICKED: ${{ steps.pick.outputs.picked }}
+        run: |
+          if git diff --quiet -- src/data/articlePhotos.js; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          # Never push a file the site can't import.
+          node --input-type=module -e "const m = await import('./src/data/articlePhotos.js'); if (typeof m.articlePhotos !== 'object') process.exit(1);"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/articlePhotos.js
+          git commit -m "content: article photos (${PICKED:-0} picked)" \
+            --author "psbrowand <50391472+psbrowand@users.noreply.github.com>"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" && exit 0
+            sleep $((i * 5))
+          done
+          echo "Could not push after 5 tries." && exit 1
+
+      - name: Report a failed pick run
+        if: steps.pick.outputs.failed == 'true'
+        run: |
+          echo "The picker stopped early (see the Pick photos step). Photos picked before that were saved."
+          exit 1

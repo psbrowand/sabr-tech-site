@@ -21,6 +21,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
+import { photoFor, photoUrl } from '../src/lib/articlePhoto.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT     = join(__dirname, '..');
@@ -28,9 +29,13 @@ const DIST     = join(ROOT, 'dist');
 const SITE_URL = 'https://sabr-labs.com';
 const LOGO_URL = `${SITE_URL}/sabr-logo.png`;
 
-// An article's own image if it has one, else its generated cover PNG
-// (rendered on request by api/cover.mjs).
-const articleImageUrl = (a) => a.image || `${SITE_URL}/covers/${a.slug}.png`;
+// An article's own image if it has one, then its Wikimedia Commons photo,
+// else its generated cover PNG (rendered on request by api/cover.mjs).
+const articleImageUrl = (a) => {
+  if (a.image) return a.image;
+  const photo = photoFor(a);
+  return photo ? photoUrl(photo, 1280) : `${SITE_URL}/covers/${a.slug}.png`;
+};
 
 const LANDING_ONLY_RE =
   /[ \t]*<!-- prerender:landing-only:start[\s\S]*?prerender:landing-only:end -->\n?/;

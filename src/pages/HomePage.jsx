@@ -93,6 +93,7 @@ function AISpotlight() {
           <div className="relative aspect-video lg:aspect-auto lg:flex-1 overflow-hidden bg-slate-800">
             <ArticleImage
               article={main}
+              sizes="(min-width: 1024px) 66vw, 100vw"
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/90 via-transparent to-transparent" />

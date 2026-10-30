@@ -56,7 +56,8 @@ Then verify with `git diff src/data/articles.js` and `git status`, then commit w
   "tags": ["Tag1", "Tag2"],
   "author": "Sam Browand",
   "publishedAt": "2026-04-21T08:00:00Z",     // ISO 8601
-                                             // no "image": every article gets a unique generated cover (see Images below)
+  "photoQuery": ["server rack", "padlock"],   // optional, 1-4 photo search phrases (see Images below)
+                                             // no "image": a unique photo is picked automatically (see Images below)
   "featured": false,                         // optional
   "trending": false,                         // optional
   "breaking": false,                         // optional
@@ -85,11 +86,18 @@ The script **auto-assigns `id`** (next integer after the current max). Do not in
 
 ### Images
 
-**Leave `image` out of drafts.** The site draws a unique cover for every article from its slug, category, tags and title (`src/lib/articleCover.js`): a category color, a background pattern and a topic icon (a bug for a CVE, a CPU for chips, a rocket for launches). Social previews get the same cover as a PNG from `/covers/<slug>.png` (`api/cover.mjs`). Nothing to pick, nothing to verify.
+**Leave `image` out of drafts.** Every article gets a real photo picked automatically from Wikimedia Commons, never one another article uses, with a credit line under it on the article page. Until a photo is picked (or when nothing good matches), the article shows its unique generated cover (`src/lib/articleCover.js`), so nothing ever looks broken.
 
-- Do **not** copy an Unsplash URL from another article. Reused stock photos are why many articles once shared the same picture.
-- Good tags make good covers: put the most specific topic tag first (`Ransomware`, `Zero-Day`, `Semiconductors`, `SpaceX`, `CompTIA`), because the first tag also labels the cover on the article page.
-- Only add `image` for a real photo of this specific story that you can verify exists and that no other article uses. `add-articles.mjs` rejects an image already used by another article.
+How it works: after each push to `main` that changes `src/data/articles.js`, and hourly, the GitHub Action `.github/workflows/article-photos.yml` runs `scripts/pick-photos.mjs`. It searches Commons (Quality Images first), keeps only free-licensed (CC0, public domain, CC BY, CC BY-SA), landscape, high-resolution JPEG photos with no people or graphics, and commits the picks to `src/data/articlePhotos.js`. That redeploys the site within a minute or two of publishing. Cloud sessions can't reach Commons, so never run the picker yourself and **never edit `src/data/articlePhotos.js`**; only the Action writes it.
+
+**Add `photoQuery` to every draft**: 1-4 short search phrases for the photo you'd want, most specific first. They are the biggest lever on photo quality.
+
+- Name concrete, photographable things: `"electrical substation"`, `"nvidia graphics card"`, `"falcon 9 launch"`, `"server rack"`, `"padlock"`, `"united states capitol"`.
+- Never people (no CEOs, no "hacker", no names): a stranger's face next to a breach story misrepresents them, and the picker rejects people photos anyway.
+- Skip abstractions Commons can't photograph (`"cybersecurity"`, `"zero-day"`, `"AI"`). Picture what a photographer would actually shoot.
+- Without `photoQuery`, the picker falls back to phrases built from the tags and title, so good tags still matter: put the most specific topic tag first (`Ransomware`, `Semiconductors`, `SpaceX`, `CompTIA`). The first tag also labels the generated cover.
+
+Only add `image` for a real photo of this specific story that you can verify exists and that no other article uses. `add-articles.mjs` rejects an image already used by another article or already picked from Commons. Do **not** copy an Unsplash or other stock URL from anywhere.
 
 ### If the script refuses
 
