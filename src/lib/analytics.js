@@ -12,6 +12,13 @@
 //   4. cert_card_click          — A launch-cert card clicked
 //   5. pricing_cta_click        — Tier "Start X" button clicked
 //   6. bottom_cta_click         — Bottom-of-page "Create free account"
+//   7. pricing_viewed           — Pricing section scrolled into view
+//   8. plan_clicked             — A plan's button clicked (tier, billing)
+//
+// Vercel only stores custom events on Pro/Enterprise plans; on Hobby the
+// calls are dropped and only page views are recorded. Plan buttons also
+// carry ?plan=&from= to the app's /register, which records the sign-up
+// with that plan in its own database.
 //
 // The actual signup-complete event lives on the learning-app side
 // (app.sabr-labs.com) and is tracked in that project's analytics — true
@@ -34,6 +41,10 @@ export const EVENTS = {
   DEMO_LAB_COMPLETED:  'demo_lab_completed',
   DEMO_LAB_CTA_CLICK:  'demo_lab_cta_click',
   COMPARE_CTA_CLICK:   'compare_cta_click',
+  // Sign-up funnel. Same names the app sends, so the two projects line up:
+  // pricing_viewed → plan_clicked → (app) signup_started → signup_completed.
+  PRICING_VIEWED:      'pricing_viewed',
+  PLAN_CLICKED:        'plan_clicked',
   // End-of-article → product CTA. The conversion bridge from buyer-intent
   // content (esp. learning articles) into the app/free trial.
   ARTICLE_CTA_CLICK:   'article_cta_click',

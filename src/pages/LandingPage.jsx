@@ -14,7 +14,7 @@
 // Match: index.css design tokens — container-site, btn-primary, btn-ghost, card,
 //        hover-glow, section-label, text-gradient-cyan, fade-in-up animation.
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Target, BookOpen, Users, BarChart3,
@@ -184,8 +184,31 @@ const TESTIMONIALS = [
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
+// Register link for a plan button, tagged so the app can attribute the sign-up.
+function planHref(href, name) {
+  const url = new URL(href);
+  url.searchParams.set('plan', name.toLowerCase());
+  url.searchParams.set('from', 'site_pricing');
+  return url.toString();
+}
+
 export default function LandingPage() {
   const [annual, setAnnual] = useState(false);
+  const pricingRef = useRef(null);
+
+  // pricing_viewed once per page load, when half the section is on screen.
+  useEffect(() => {
+    const el = pricingRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return undefined;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        track(EVENTS.PRICING_VIEWED, {});
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="overflow-x-hidden">
@@ -533,7 +556,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── 5. PRICING ── */}
-      <section id="pricing" className="py-20 sm:py-24 border-t border-white/[0.06] scroll-mt-20">
+      <section id="pricing" ref={pricingRef} className="py-20 sm:py-24 border-t border-white/[0.06] scroll-mt-20">
         <div className="container-site">
           <FadeIn>
             <div className="text-center mb-10">
@@ -617,8 +640,12 @@ export default function LandingPage() {
                     </ul>
 
                     <a
-                      href={href}
-                      onClick={() => track(EVENTS.PRICING_CTA_CLICK, { tier: name, billing: annual ? 'annual' : 'monthly', price_usd: displayPrice })}
+                      href={planHref(href, name)}
+                      onClick={() => {
+                        const billing = annual ? 'annual' : 'monthly';
+                        track(EVENTS.PRICING_CTA_CLICK, { tier: name, billing, price_usd: displayPrice });
+                        track(EVENTS.PLAN_CLICKED, { tier: name.toLowerCase(), billing });
+                      }}
                       target="_blank"
                       rel="noopener"
                       className={`text-center text-sm font-semibold py-2.5 rounded-xl transition-all duration-200 ${
