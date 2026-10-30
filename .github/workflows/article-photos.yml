@@ -45,6 +45,10 @@ jobs:
       - name: Test the picker (offline)
         run: node scripts/tests/pick-photos.test.mjs
 
+      - name: Sample search (diagnostics)
+        continue-on-error: true
+        run: node scripts/pick-photos.mjs --explain "server room"
+
       - name: Pick photos
         id: pick
         env:

@@ -175,6 +175,14 @@ await test('waits and retries when Commons search says it is too busy', async ()
   assert.ok(n >= 2);
 });
 
+await test('fails instead of marking misses when nothing fits anywhere', async () => {
+  const photos = {};
+  const articles = Array.from({ length: 25 }, (_, i) => art(`none-${i}`));
+  const res = await pickPhotos({ articles, photos, client: quietClient(fakeFetch({ perQuery: 0 })), today: TODAY, log: () => {} });
+  assert.ok(res.error);
+  assert.deepEqual(photos, {});
+});
+
 await test('verify drops photos whose file is gone or changed', async () => {
   const keep = toPhoto(page('Keep me.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;
   const gone = toPhoto(page('Gone now.jpg'), { query: 'q', tier: 'qi', today: TODAY }).photo;

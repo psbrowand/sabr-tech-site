@@ -280,6 +280,8 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
   // Search results are shared across articles in one run: many stories use
   // the same topic phrases, so this keeps request counts low.
   const cache = new Map(); // `${tier}|${query}` → { candidates: [], next, pagesFetched }
+  const rejects = new Map(); // reason → count, printed at the end to tune filters
+  let seen = 0;
   async function* candidatesFor(query, tier) {
     const key = `${tier}|${query}`;
     let entry = cache.get(key);
@@ -297,11 +299,17 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
       for (const page of pages) {
         const r = toPhoto(page, { query, tier, today });
         if (r.photo) entry.candidates.push(r.photo);
+        else {
+          const why = r.reject.replace(/ \(.*$|".*$/, '');
+          rejects.set(why, (rejects.get(why) || 0) + 1);
+        }
+        seen++;
       }
     }
   }
 
   const picked = [];
+  const misses = [];
   let missed = 0;
   let error = null;
   for (const article of todo) {
@@ -333,10 +341,21 @@ export async function pickPhotos({ articles, photos, client, max = Infinity, tod
       picked.push({ slug: article.slug, photo: choice });
       log(`✓ ${article.slug}\n    ${choice.path}  [${choice.q}]  ${choice.license}, ${choice.author}`);
     } else {
-      photos[article.slug] = { none: today };
       missed++;
+      misses.push(article.slug);
       log(`· ${article.slug}: no unused match, keeps its generated cover`);
     }
+  }
+  if (rejects.size) {
+    log(`\nChecked ${seen} search results. Rejected: ${[...rejects].sort((a, b) => b[1] - a[1]).map(([k, n]) => `${k} ${n}`).join(', ')}`);
+  }
+  // Nothing at all fitting across many articles points at a broken filter or
+  // API change, not at a lack of photos: don't mark them, fail loudly instead.
+  if (picked.length === 0 && misses.length >= 20 && !error) {
+    error = new Error(`no photo fit any of ${misses.length} articles; not marking them as misses`);
+    log(error.message);
+  } else {
+    for (const slug of misses) photos[slug] = { none: today };
   }
   return { picked, missed, considered: todo.length, error };
 }
@@ -387,6 +406,19 @@ async function main() {
   const before = serializePhotos(photos);
   const client = makeClient();
 
+  if (opt('--explain')) {
+    // Shows why each result for one search is accepted or rejected.
+    for (const tier of ['qi', 'any']) {
+      const { pages } = await searchCommons(client, cleanQuery(opt('--explain')), tier);
+      console.log(`\n${tier}: ${pages.length} results`);
+      for (const page of pages.slice(0, 12)) {
+        const r = toPhoto(page, { query: 'x', tier, today });
+        const ii = page.imageinfo?.[0] || {};
+        console.log(`  ${r.photo ? 'OK ' : 'NO '} ${page.title}  ${r.reject || ''}\n      ${ii.mime} ${ii.width}x${ii.height} lic=${JSON.stringify(ii.extmetadata?.LicenseShortName?.value)} restr=${JSON.stringify(ii.extmetadata?.Restrictions?.value)}\n      url=${ii.url}\n      thumb=${ii.thumburl}`);
+      }
+    }
+    return;
+  }
   if (flag('--verify')) {
     const { dropped, checked } = await verifyPhotos({ photos, client });
     console.log(`Verified ${checked} photos, dropped ${dropped}.`);
