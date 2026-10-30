@@ -57,7 +57,7 @@ const LICENSE_OK = /^(cc0|public domain|pd\b|pdm|cc[ -]by(-sa)?[ -]\d(\.\d)?)/i;
 
 // Words in a file's title or description that mean it isn't a usable cover:
 // graphics and documents, identifiable people, and anything grim.
-const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte)\b/i;
+const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte|cosplay|cosplayers?|expo|convention)\b/i;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -232,6 +232,22 @@ export function matchesQuery(query, text) {
   return words.length <= 2 ? hits === words.length : hits >= words.length - 1;
 }
 
+// The file name must name the search words, or the description must say
+// them together as a phrase. Descriptions ramble, so scattered words there
+// prove little (a bird photo's caption can mention a "patch" and a "panel").
+export function matchesPhoto(query, title, description) {
+  if (matchesQuery(query, title)) return true;
+  const words = cleanQuery(query).split(' ').filter((w) => w && !STOPWORDS.has(w)).map(singular).filter(Boolean);
+  if (!words.length) return true;
+  const tokens = String(description).toLowerCase().split(/[^a-z0-9]+/)
+    .filter((w) => w && !STOPWORDS.has(w)).map(singular);
+  const phrase = words.join(' ');
+  for (let i = 0; i + words.length <= tokens.length; i++) {
+    if (tokens.slice(i, i + words.length).join(' ') === phrase) return true;
+  }
+  return words.length > 1 && tokens.join(' ').includes(words.join(''));
+}
+
 // Commons descriptions are sometimes license text or an uploader's note
 // rather than a description; the file name reads better as alt text then.
 function altText(description, title) {
@@ -267,7 +283,7 @@ export function toPhoto(page, { query, tier, today }) {
   const title = String(page.title || '').replace(/^File:/, '').replace(/\.jpe?g$/i, '');
   const description = val('ImageDescription');
   if (REJECT_WORDS.test(title) || REJECT_WORDS.test(description)) return { reject: 'subject words' };
-  if (!matchesQuery(query, [title, description, val('ObjectName')].join(' '))) return { reject: 'off topic' };
+  if (!matchesPhoto(query, title, [description, val('ObjectName')].join(' . '))) return { reject: 'off topic' };
 
   let author = val('Artist');
   if (/^unknown/i.test(author)) author = '';

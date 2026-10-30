@@ -48,7 +48,7 @@ export const TOPIC_QUERIES = [
   [/phishing|social engineering|smishing|vishing|clickfix|\bbec\b|email security/, ['fishing hook', 'email inbox', 'computer keyboard', 'telephone']],
   [/infostealer|malware|trojan|botnet|backdoor|\brat\b|worm|spyware|wiper|rootkit/, ['computer code', 'trojan horse', 'hard disk drive', 'computer virus']],
   [/breach|leak|exposed|stolen data|data theft|shinyhunters|identity theft|records/, ['server room', 'hard disk drive', 'data center', 'filing cabinet']],
-  [/credential|password|authentication|\bmfa\b|identity|active directory|\bsso\b|okta|passkey|oauth/, ['keys', 'yubikey', 'padlock', 'door lock']],
+  [/credential|password|authentication|\bmfa\b|identity|active directory|\bsso\b|okta|passkey|oauth/, ['house keys', 'yubikey', 'padlock', 'door lock']],
   [/\bot security|\bics\b|scada|critical infrastructure|energy|power grid|utility|manufacturing|water/, ['electrical substation', 'power plant', 'control room', 'factory', 'power lines']],
   [/healthcare|hospital/, ['hospital corridor', 'hospital']],
   [/privacy|surveillance|tracking|biometric|facial recognition/, ['surveillance camera', 'cctv camera', 'security camera']],

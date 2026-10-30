@@ -5,7 +5,7 @@ import { writeFile, mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import {
-  toPhoto, matchesQuery, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
+  toPhoto, matchesQuery, matchesPhoto, pickPhotos, verifyPhotos, serializePhotos, loadPhotos, makeClient, photoKey, needsPhoto,
 } from '../pick-photos.mjs';
 import { photoQueriesFor } from '../lib/photo-queries.mjs';
 import { photoUrl, photoSrcSet, photoPage, PHOTO_WIDTHS } from '../../src/lib/articlePhoto.js';
@@ -132,6 +132,9 @@ await test('rejects photos that do not show what was searched for', () => {
   assert.ok(!matchesQuery('rocket launch', 'Launch of a sailing boat'));
   assert.ok(!matchesQuery('fingerprint', 'Fingerposts at Tirolerkogel'), 'whole words only');
   assert.ok(!matchesQuery('server room', 'Serverless rooms'), 'whole words only');
+  assert.ok(matchesPhoto('padlock', 'Liebesschloss', 'Love padlocks in Moscow'), 'one word may come from the description');
+  assert.ok(matchesPhoto('chain and padlock', 'Old door', 'An old door locked with a chain and a padlock'));
+  assert.ok(!matchesPhoto('patch panel', 'Poecile montanus', 'a bird that lost habitat patches, per a panel of experts'));
 });
 
 await test('skips weapons and people at work, and writes readable alt text', () => {
