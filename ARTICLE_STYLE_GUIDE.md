@@ -10,7 +10,9 @@ If you're a Claude Code routine generating a daily article, read this top to bot
 
 A working tech person. Could be a SOC analyst, a network engineer, a dev, an IT manager, a student studying for Security+. They're smart, pressed for time, and have read a thousand tech articles that all sound the same. They do not need jargon explained to them, but they do appreciate when we call out what actually matters.
 
-Not for: executives who want takeaway bullets. Not for: absolute beginners. We respect the reader's literacy.
+Not for: absolute beginners. We respect the reader's literacy.
+
+They skim before they commit. Most will read the headline, the summary, the Key points box and the subheads, then decide whether the body is worth their time. Write so that pass alone tells them what happened and what to do.
 
 ## 2. The voice in two words
 
@@ -30,9 +32,9 @@ Specifically:
 
 The single worst signal of AI writing in our current article set is that every article has exactly five paragraphs, each doing the same job. Break this.
 
-**Target: 4–8 paragraphs, variable.** Some stories are three paragraphs. Some are eight. A breaking cyber incident might be tight and fast. A policy explainer might need room to breathe. Let the story dictate.
+**Target: about 250–550 words, variable.** A breaking cyber incident might be tight and fast. A policy explainer might need room to breathe. Let the story dictate.
 
-**Vary paragraph length.** Mix short punchy ones (1–2 sentences) with longer ones (4–5 sentences). A one-sentence paragraph lands hard — use it when you want emphasis.
+**Keep paragraphs short.** This is how BleepingComputer, TechCrunch and The Verge read: one idea per paragraph, 1–3 sentences, rarely more than ~60 words. Mix one-sentence paragraphs with two- and three-sentence ones. A one-sentence paragraph lands hard; use it when you want emphasis. A 90+ word paragraph is a wall; split it.
 
 **What each article needs (not necessarily in order):**
 
@@ -43,6 +45,36 @@ The single worst signal of AI writing in our current article set is that every a
 - What to watch for next — but only if there's something concrete, not filler
 
 **Do NOT force every beat into every article.** If there's no skeptical angle, don't manufacture one. If the "what's next" is generic, cut it.
+
+## 3a. Formatting the body
+
+The site renders each `body` entry as one block. Use structure to make the story scannable, not to decorate it.
+
+| Entry | Renders as | Use it for |
+|---|---|---|
+| `"Plain text."` | paragraph | almost everything |
+| `"## Subhead"` | section subhead | splitting a story into 2–3 sections |
+| `"- item\n- item"` | bulleted list | 3+ parallel items: affected versions, fixed builds, IOCs, specs, a lineup |
+| `"1. step\n2. step"` | numbered list | steps the reader should take in order |
+| `"> Quoted words."` | pull quote | one real quote that earns the spotlight, at most once |
+
+Inline: `**bold**`, `` `code` ``, `[text](https://...)`.
+
+**Key points.** Every article gets a `keyPoints` array: 2–4 one-line takeaways, shown in a box above the body. Each is a specific fact or action ("Patch to 7.2.1 or later; 6.x has no fix yet"), not a teaser or a restatement of the headline. Order: what happened, why it matters or who's affected, what to do. Same voice rules as the body.
+
+**Lede.** The first entry is always a paragraph that says what happened. Never open with a subhead, list or quote.
+
+**Subheads.** Use 1–3 `## ` subheads once a story runs past about six paragraphs; short breaking pieces can skip them. Make them specific and plain: "Fixed builds", "What the attackers did with root", "What to do now". Never "Background", "Conclusion", "The bottom line" or a clever pun. No period at the end, under ~60 characters, no two in a row, never last.
+
+**Lists.** When a sentence starts listing more than three parallel things (versions, products, indicators, steps), make it a list instead, introduced by a short sentence ending in a colon. Keep items short, no closing periods on fragments. Don't turn an argument into bullets; reasoning stays in prose.
+
+**Bold lead-ins.** For an action paragraph, start with a bold run-in: `**What to do now:** patch, then...`. Use at most two per article. Don't bold random phrases for emphasis.
+
+**Code.** Wrap commands, file paths, config keys, package names and endpoints in backticks: `` `/etc/passwd` ``, `` `server.fs.deny` ``. Not CVE IDs, product names or versions in prose.
+
+**Links.** The Sources list stays the main citation. You may also link the primary source inline the first time you cite it (`according to [Palo Alto's advisory](https://...)`), using only URLs that are also real sources you read. No links to other articles on this site, no link farms.
+
+**Cyber stories** usually take this shape: lede, what's known, `## Who's affected` or `## Fixed builds` with a list, the skeptical beat, `## What to do now` with a numbered list. Tech and AI stories usually need fewer subheads and lists; use them where the story has a lineup, specs or steps.
 
 ## 4. Sentence rhythm
 
@@ -127,10 +159,13 @@ Every article is an object in `src/data/articles.js` with:
   slug: "kebab-case-url-slug",
   title: "Headline — ideally under 80 chars, conversational not clickbait",
   summary: "One sentence subhead that actually tells you something, not a tease.",
+  keyPoints: ["2–4 one-line takeaways", "shown in a Key points box above the body"],
   body: [
-    "Paragraph 1 string.",
-    "Paragraph 2 string.",
-    // 4–8 paragraphs total, variable length
+    "Lede paragraph string.",
+    "Short paragraph string.",
+    "## Specific subhead",
+    "- list item\n- list item\n- list item",
+    // short paragraphs, subheads and lists per section 3a
   ],
   category: "tech" | "cyber" | "ai" | "space" | "learning",
   tags: ["3–6 relevant tags"],
@@ -138,7 +173,7 @@ Every article is an object in `src/data/articles.js` with:
   // Only set one for a verified photo of this story that no other article uses.
   author: "Sam Browand", // unless a guest byline
   publishedAt: "2026-MM-DDTHH:MM:SSZ", // ISO UTC
-  readingTime: <1–2 min per paragraph, rounded>,
+  readingTime: <optional; add-articles computes it from word count>,
   featured: <true only for the day's top story>,
   trending: <true for ~3–4 recent stories>,
   breaking: <true only for active-incident cyber or major industry news>,
@@ -169,7 +204,7 @@ Every article is an object in `src/data/articles.js` with:
 
 When a Claude Code routine drafts a new article, run this checklist before adding it to `articles.js`:
 
-1. **Paragraph count:** 4–8, not 5.
+1. **Shape:** no paragraph over ~70 words; paragraphs vary in length; `keyPoints` has 2–4 specific lines; subheads and lists used where section 3a calls for them; first entry is a paragraph.
 2. **Em-dash count:** no more than 2 in the entire body.
 3. **Opener:** does not start with "[Company] announced today."
 4. **Closer:** does not end with a quote trying to sound profound.
@@ -184,6 +219,7 @@ When a Claude Code routine drafts a new article, run this checklist before addin
 ## 12. What to avoid, condensed
 
 - No five-paragraph default structure
+- No walls of text: no 90+ word paragraphs, no long stories without subheads, no comma-separated lists of five versions
 - No em dashes as punctuation habit
 - No "landscape / ecosystem / paradigm" vocabulary
 - No suspiciously precise stats without a source

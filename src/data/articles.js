@@ -11,7 +11,9 @@
 //   slug         — URL-safe identifier  (used in /article/:slug)
 //   title        — headline
 //   summary      — one-sentence subheadline shown in cards
-//   body         — array of paragraph strings (article body)
+//   keyPoints    — optional; 2–4 one-line takeaways shown in a box above the body
+//   body         — array of block strings: paragraphs, "## Subhead", "- list"
+//                  lines, "> pull quote" (see src/lib/articleBody.js)
 //   category     — "tech" | "cyber" | "ai" | "space" | "learning"
 //   tags         — string[]
 //   image        — optional; omit it. Every article gets a unique generated
@@ -80,14 +82,30 @@ export const articles = [
     slug: "php2shell-pan-os-firewalls-rooted-fragnesia-chain",
     title: "PHP2Shell Hits Palo Alto Firewalls: 24 Rooted via Exposed Admin Pages",
     summary: "Palo Alto Networks confirms attackers are exploiting the PHP2Shell flaws against internet-exposed PAN-OS management interfaces, and Dream Security says one campaign chained them with the Fragnesia kernel bug to get root on 24 firewalls.",
+    keyPoints: [
+      "Attackers are exploiting PHP2Shell (CVE-2026-109618 and CVE-2026-109619) against PAN-OS management interfaces exposed to the internet.",
+      "Dream Security says 24 of 240 targeted firewalls were rooted by chaining the bugs with the Fragnesia Linux kernel flaw.",
+      "Fixed builds are out for nearly every supported branch. Panorama is affected; Prisma Access and Cloud NGFW are not.",
+      "Take the management interface off the internet, patch, then hunt for compromise.",
+    ],
     body: [
       "The PHP2Shell bugs have found the worst possible home: firewall admin pages. Palo Alto Networks updated its advisory for CVE-2026-109618 on October 29 to say active exploitation has been observed against PAN-OS management interfaces exposed to the internet, and Unit 42 says it has verified a campaign that turned that access into root.",
-      "That campaign was first written up by Dream Security. According to Dream, the operators found about 19,000 internet-facing PAN-OS firewalls, narrowed the list to 240 targets in the U.S., Japan, Taiwan and South Korea, and rooted 24 of them. They got in through PHP2Shell (CVE-2026-109618 and CVE-2026-109619, both 9.2 under CVSS 4.0), then escalated with Fragnesia, the Linux kernel privilege escalation tracked as CVE-2026-46300. A 25th system, an internal firewall management server, fell later through a reverse SSH tunnel.",
-      "On 22 of the 24 rooted boxes, the attackers planted a webshell and stopped there. The other two are the scary part. Dream describes the attackers pivoting to domain controllers and GlobalProtect, decrypting an LDAP service account password from the management server, enumerating Active Directory and pulling private keys off the firewall filesystem. Attempts at SAML key extraction and backdoor accounts were seen, but Dream couldn't confirm they worked.",
+      "That campaign was first written up by Dream Security. According to Dream, the operators found about 19,000 internet-facing PAN-OS firewalls, narrowed the list to 240 targets in the U.S., Japan, Taiwan and South Korea, and rooted 24 of them.",
+      "They got in through PHP2Shell (CVE-2026-109618 and CVE-2026-109619, both 9.2 under CVSS 4.0), then escalated with Fragnesia, the Linux kernel privilege escalation tracked as CVE-2026-46300. A 25th system, an internal firewall management server, fell later through a reverse SSH tunnel.",
+      "## What the attackers did with root",
+      "On 22 of the 24 rooted boxes, the attackers planted a webshell and stopped there. The other two are the scary part.",
+      "Dream describes the attackers pivoting to domain controllers and GlobalProtect, decrypting an LDAP service account password from the management server, enumerating Active Directory and pulling private keys off the firewall filesystem. Attempts at SAML key extraction and backdoor accounts were seen, but Dream couldn't confirm they worked.",
       "Attribution is soft. Dream says multiple indicators point to a China-nexus operation but names no group, and it reports that Unit 42 tracks the activity as CL-UNK-1280, a Chinese-speaking actor working in UTC+8. Palo Alto says only about 0.02% of its installed base had an internet-facing management interface and was hit, and that each of those customers has been contacted.",
-      "Fixes are out for nearly every supported branch: 12.2.4-h1, 12.1.10-h3, 11.2.16-h1, 11.1.16-h4 and 10.2.18-h13 are the top-of-branch targets, with hotfixes for older maintenance trains listed in the advisory. As of Thursday, the only one still pending was 11.1.7-h12, due October 30. Panorama is affected too. Prisma Access and Cloud NGFW are not.",
+      "## Fixed builds",
+      "Fixes are out for nearly every supported branch. These are the top-of-branch targets, with hotfixes for older maintenance trains listed in the advisory:",
+      "- 12.2.4-h1\n- 12.1.10-h3\n- 11.2.16-h1\n- 11.1.16-h4\n- 10.2.18-h13",
+      "As of Thursday, the only one still pending was 11.1.7-h12, due October 30. Panorama is affected too. Prisma Access and Cloud NGFW are not.",
+      "## What to do now",
       "It's worth saying plainly: this whole chain depends on a management interface that anyone on the internet can reach. Palo Alto has been telling customers to lock that down for years, and this is the latest PAN-OS management bug to punish the people who didn't.",
-      "What to do now: pull internet access to the management interface and restrict it to trusted internal IPs or a jump box, then patch PAN-OS and Panorama to a fixed build. If your admin page was exposed at any point since the flaws were disclosed on October 21, hunt for compromise before you trust a clean upgrade. Dream's indicators include a webshell at /unauth/php/change_password.php, a persistence directory at /usr/local/lib/.panops/, unexpected systemd services and rc.local boot hooks, and outbound reverse SSH tunnels. If you find any of it, assume the device's keys and any service account credentials it held are burned, and rotate them.",
+      "1. Pull internet access to the management interface and restrict it to trusted internal IPs or a jump box.\n2. Patch PAN-OS and Panorama to a fixed build.\n3. If your admin page was exposed at any point since the flaws were disclosed on October 21, hunt for compromise before you trust a clean upgrade.",
+      "Dream's indicators include:",
+      "- A webshell at `/unauth/php/change_password.php`\n- A persistence directory at `/usr/local/lib/.panops/`\n- Unexpected systemd services and `rc.local` boot hooks\n- Outbound reverse SSH tunnels",
+      "If you find any of it, assume the device's keys and any service account credentials it held are burned, and rotate them.",
     ],
     category: "cyber",
     tags: [
