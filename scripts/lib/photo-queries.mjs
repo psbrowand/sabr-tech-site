@@ -38,8 +38,8 @@ export const ENTITY_QUERIES = [
   [/\bmeta\b|facebook|instagram|whatsapp/, ['meta headquarters menlo park', 'facebook headquarters', 'smartphone']],
   [/\bcisco\b|fortinet|palo alto|pan-os|check point|netscaler|citrix|sonicwall|juniper|sd-wan|\bvpn\b|firewall|router/, ['network switch', 'patch panel', 'ethernet cables', 'server rack']],
   [/wordpress|\bphp\b|website|web server/, ['web server', 'computer code']],
-  [/linux/, ['linux terminal', 'tux penguin', 'computer code']],
-  [/github|gitlab|\bnpm\b|pypi|open source|supply chain|package|devops|devsecops/, ['computer code', 'source code', 'programmer laptop']],
+  [/linux/, ['linux terminal', 'computer code']],
+  [/github|gitlab|\bnpm\b|pypi|open source|supply chain|package|devops|devsecops/, ['computer code', 'programmer laptop', 'laptop computer']],
 ];
 
 // Story topics, ordered most specific first.
@@ -48,7 +48,7 @@ export const TOPIC_QUERIES = [
   [/phishing|social engineering|smishing|vishing|clickfix|\bbec\b|email security/, ['fishing hook', 'email inbox', 'computer keyboard', 'telephone']],
   [/infostealer|malware|trojan|botnet|backdoor|\brat\b|worm|spyware|wiper|rootkit/, ['computer code', 'trojan horse', 'hard disk drive', 'computer virus']],
   [/breach|leak|exposed|stolen data|data theft|shinyhunters|identity theft|records/, ['server room', 'hard disk drive', 'data center', 'filing cabinet']],
-  [/credential|password|authentication|\bmfa\b|identity|active directory|\bsso\b|okta|passkey|oauth/, ['keys', 'security key', 'fingerprint', 'padlock']],
+  [/credential|password|authentication|\bmfa\b|identity|active directory|\bsso\b|okta|passkey|oauth/, ['keys', 'yubikey', 'padlock', 'door lock']],
   [/\bot security|\bics\b|scada|critical infrastructure|energy|power grid|utility|manufacturing|water/, ['electrical substation', 'power plant', 'control room', 'factory', 'power lines']],
   [/healthcare|hospital/, ['hospital corridor', 'hospital']],
   [/privacy|surveillance|tracking|biometric|facial recognition/, ['surveillance camera', 'cctv camera', 'security camera']],
@@ -59,7 +59,7 @@ export const TOPIC_QUERIES = [
   [/quantum/, ['quantum computer', 'dilution refrigerator']],
   [/earnings|\bipo\b|funding|valuation|stock|nasdaq|revenue|acquisition|acquire|\bm&a\b|venture capital|markets|layoff/, ['nasdaq marketsite', 'new york stock exchange', 'stock ticker', 'wall street']],
   [/regulation|policy|\blaw\b|lawsuit|court|antitrust|government|congress|\beu\b|ftc|\bsec\b|export control|\bban\b/, ['united states capitol', 'supreme court building', 'gavel', 'european parliament']],
-  [/rocket|launch|booster|orbit|blue origin|\besa\b|isro/, ['rocket launch', 'launch pad']],
+  [/rocket|launch|booster|orbit|blue origin|\besa\b|isro/, ['rocket launch', 'launch pad', 'space shuttle launch']],
   [/satellite|kuiper/, ['satellite', 'satellite dish']],
   [/telescope|webb|hubble|asteroid|mars|moon|lunar|planet|astronom/, ['telescope', 'milky way', 'moon', 'observatory']],
   [/certification|exam|comptia|\bccnp|\bccna|isc2|cissp|security\+|study guide|career/, ['library study', 'books', 'laptop notebook', 'classroom computers']],

@@ -130,6 +130,17 @@ await test('rejects photos that do not show what was searched for', () => {
   assert.ok(matchesQuery('chain and padlock', 'Old padlock on a chain'));
   assert.ok(matchesQuery('cleanroom semiconductor wafer', 'Semiconductor cleanroom'), 'three words: one may be missing');
   assert.ok(!matchesQuery('rocket launch', 'Launch of a sailing boat'));
+  assert.ok(!matchesQuery('fingerprint', 'Fingerposts at Tirolerkogel'), 'whole words only');
+  assert.ok(!matchesQuery('server room', 'Serverless rooms'), 'whole words only');
+});
+
+await test('skips weapons and people at work, and writes readable alt text', () => {
+  const opts = { query: 'rack', tier: 'qi', today: TODAY };
+  assert.equal(toPhoto(page('Rack rocket launcher.jpg'), opts).reject, 'subject words');
+  assert.equal(toPhoto(page('Technician at server rack.jpg'), opts).reject, 'subject words');
+  assert.ok(toPhoto(page('Rack.jpg', { desc: 'A third-party rack of servers' }), opts).photo);
+  const junk = toPhoto(page('IBM rack internals (8531003630).jpg', { desc: 'CC0 waiver: To the extent possible under law' }), opts).photo;
+  assert.equal(junk.alt, 'IBM rack internals');
 });
 
 await test('queries go from specific to broad and are stable per slug', () => {

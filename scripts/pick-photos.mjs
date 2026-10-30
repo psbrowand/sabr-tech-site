@@ -57,7 +57,7 @@ const LICENSE_OK = /^(cc0|public domain|pd\b|pdm|cc[ -]by(-sa)?[ -]\d(\.\d)?)/i;
 
 // Words in a file's title or description that mean it isn't a usable cover:
 // graphics and documents, identifiable people, and anything grim.
-const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with)\b/i;
+const REJECT_WORDS = /\b(logos?|icons?|maps?|diagrams?|charts?|graphs?|screenshots?|screen shot|flags?|coat of arms|emblems?|seals?|insignia|signatures?|posters?|banners?|infographic|scans?|scanned|documents?|letters?|stamps?|covers?|portraits?|headshots?|mugshots?|selfies?|crowds?|protests?|riots?|weapons?|guns?|rifles?|corpses?|dead|nude|naked|blood|accidents?|crash(ed|es)?|wreck|funeral|speaking|speech|speaker|keynote|interview|press conference|ceo|president|minister|senator|congressman|congresswoman|mr|mrs|ms|dr|sir|man|woman|men|women|boy|girl|child|children|people|person|family|wedding|team photo|group photo|meeting with|technicians?|workers?|engineers?|staff|employees?|students?|visitors?|tourists?|launchers?|missiles?|artillery|military|army|soldiers?|tanks?|warships?|bombs?|festival|concert|cafe|latte)\b/i;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -214,20 +214,37 @@ function shorten(s, max) {
 
 // Commons search matches words loosely (a search for "server room" also finds
 // paintings of dining rooms), so the photo's own title or description must
-// name the search words. Words are compared by a short stem, so "cables"
-// matches "cable" and "data center" matches "datacenter".
-function stem(word) {
-  let w = word.toLowerCase().replace(/[^a-z0-9]/g, '');
-  if (w.length > 3 && w.endsWith('s')) w = w.slice(0, -1);
-  return w.slice(0, 5);
+// name the search words as whole words. Plurals count ("cables" matches
+// "cable"), and so does a run-together spelling ("datacenter").
+function singular(word) {
+  const w = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+  return w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w;
 }
 
 export function matchesQuery(query, text) {
-  const words = cleanQuery(query).split(' ').filter((w) => w && !STOPWORDS.has(w)).map(stem).filter(Boolean);
+  const words = cleanQuery(query).split(' ').filter((w) => w && !STOPWORDS.has(w)).map(singular).filter(Boolean);
   if (!words.length) return true;
-  const hay = String(text).toLowerCase().replace(/[_\-]+/g, ' ').replace(/[^a-z0-9 ]/g, '').replace(/\s+/g, '');
-  const hits = words.filter((w) => hay.includes(w)).length;
+  const tokens = String(text).toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).map(singular);
+  const have = new Set(tokens);
+  for (let i = 0; i + 1 < tokens.length; i++) have.add(tokens[i] + tokens[i + 1]);
+  if (have.has(words.join(''))) return true;
+  const hits = words.filter((w) => have.has(w)).length;
   return words.length <= 2 ? hits === words.length : hits >= words.length - 1;
+}
+
+// Commons descriptions are sometimes license text or an uploader's note
+// rather than a description; the file name reads better as alt text then.
+function altText(description, title) {
+  const fromTitle = title
+    .replace(/_/g, ' ')
+    .replace(/\s*\((?:\d+|cropped|unsplash)\)\s*/gi, ' ')
+    .replace(/\s*[-–]?\s*(?:IMG|DSC|P)_?\d+\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const d = description.trim();
+  const boilerplate = /waiver|copyright|licen[cs]e|all rights|public domain|\bcc[- ]?(by|0)\b|https?:|free picture/i;
+  if (d.split(/\s+/).length >= 3 && !boilerplate.test(d)) return d;
+  return fromTitle || d;
 }
 
 // Returns the record to store, or null with the reason it was rejected.
@@ -271,7 +288,7 @@ export function toPhoto(page, { query, tier, today }) {
     h: ii.height,
     author: shorten(author || 'Unknown author', 80),
     license: shorten(license, 40),
-    alt: shorten(description || title.replace(/_/g, ' '), 140),
+    alt: shorten(altText(description, title), 140),
     q: query,
     at: today,
   };
