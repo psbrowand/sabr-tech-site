@@ -58,7 +58,7 @@ try {
   if (drafts.length === 0) fail(`No article drafts found at: ${inputArg}`);
 
   const current = await readFile(ARTICLES_PATH, 'utf8');
-  const { maxId, existingSlugs } = scanArticles(current);
+  const { maxId, existingSlugs, existingImages } = scanArticles(current);
 
   const prepared = [];
   let nextId = maxId + 1;
@@ -73,6 +73,17 @@ try {
       continue;
     }
     existingSlugs.add(draft.slug);
+
+    // Covers are generated per article, so an explicit image is optional. If a
+    // draft brings one, it must be a photo no other article already uses:
+    // recycled stock photos are what made the news pages look repetitive.
+    if (draft.image !== undefined) {
+      const key = imageKey(draft.image);
+      if (existingImages.has(key)) {
+        fail(`${label}: image is already used by another article. Remove "image" (a unique cover is generated automatically) or use a photo no other article has.`);
+      }
+      existingImages.add(key);
+    }
 
     const article = normalize(draft, nextId++);
     prepared.push({ label, article });
@@ -211,7 +222,18 @@ function scanArticles(src) {
   while ((m = slugRe.exec(src)) !== null) {
     existingSlugs.add(m[1]);
   }
-  return { maxId, existingSlugs };
+  const existingImages = new Set();
+  const imageRe = /^\s*image:\s*["']([^"']+)["']/gm;
+  while ((m = imageRe.exec(src)) !== null) {
+    existingImages.add(imageKey(m[1]));
+  }
+  return { maxId, existingSlugs, existingImages };
+}
+
+// Compare images without query strings, so ?w=800 and ?w=1200 of the same
+// photo count as one.
+function imageKey(url) {
+  return String(url).split('?')[0].replace(/\/+$/, '').toLowerCase();
 }
 
 function validate(a, label) {
@@ -234,6 +256,9 @@ function validate(a, label) {
   }
   if (Number.isNaN(Date.parse(a.publishedAt))) {
     fail(`${label}: publishedAt "${a.publishedAt}" is not a parseable ISO date`);
+  }
+  if (a.image !== undefined && (typeof a.image !== 'string' || !/^https:\/\/\S+$/.test(a.image))) {
+    fail(`${label}: "image" must be an https URL if present (or leave it out for a generated cover)`);
   }
   if (a.sources !== undefined) {
     if (!Array.isArray(a.sources)) fail(`${label}: "sources" must be an array if present`);
@@ -262,7 +287,7 @@ function normalize(a, id) {
     body,
     category: a.category,
     tags: a.tags,
-    image: a.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80',
+    ...(a.image ? { image: a.image } : {}),
     author: a.author,
     publishedAt: a.publishedAt,
     readingTime,

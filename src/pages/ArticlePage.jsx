@@ -16,6 +16,7 @@ import RelatedArticles          from '../components/articles/RelatedArticles';
 import ArticleProductCTA        from '../components/articles/ArticleProductCTA';
 import NewsletterSignup         from '../components/newsletter/NewsletterSignup';
 import ArticleCard              from '../components/articles/ArticleCard';
+import ArticleImage from '../components/articles/ArticleImage';
 
 // ── Share buttons ─────────────────────────────────────────────────────────────
 function ShareButtons({ title, url }) {
@@ -166,9 +167,10 @@ export default function ArticlePage() {
 
           {/* Featured image */}
           <div className="rounded-xl overflow-hidden aspect-video mb-8 bg-slate-800">
-            <img
-              src={article.image}
-              alt={article.title}
+            <ArticleImage
+              article={article}
+              label
+              loading="eager"
               className="w-full h-full object-cover"
             />
           </div>
