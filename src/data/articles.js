@@ -526,7 +526,7 @@ export const articles = [
     id: 673,
     slug: "magento-polyshell-cve-2026-48356-cisa-kev-seven-months-after-attacks",
     title: "Magento's PolyShell Lands on CISA KEV, Seven Months After Attacks Began",
-    summary: "CISA added CVE-2026-48356 to the Known Exploited Vulnerabilities list on Monday with a November 10 deadline, long after Sansec watched attackers plant PHP backdoors on most of the Magento stores it monitors.",
+    summary: "CISA added CVE-2026-48356 to the Known Exploited Vulnerabilities list on Tuesday with a November 10 deadline, long after Sansec watched attackers plant PHP backdoors on most of the Magento stores it monitors.",
     body: [
       "Sansec warned the Magento world about PolyShell on March 17. Attackers started using it two days later. By mid-April, more than 80% of the stores Sansec protects had seen malicious PHP uploads aimed at the bug. On October 27, CISA finally put it on the Known Exploited Vulnerabilities catalog.",
       "The flaw is CVE-2026-48356, an unrestricted file upload in Adobe Commerce and Magento Open Source that Adobe scores at CVSS 9.3. An unauthenticated attacker calls the REST guest-cart route, the one at /V1/guest-carts/{cartId}/items, and attaches a file as a custom product option. Magento writes it to pub/media/custom_options/quote/ after checking only that it starts with a valid image header. So the attackers send a polyglot: a file with a real GIF or PNG header and PHP code behind it, typically named something like index.php. On a stock nginx install from the 2.0 through 2.2 era, or any non-stock config that hands .php files under media to FastCGI, that upload executes.",

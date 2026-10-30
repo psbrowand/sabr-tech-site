@@ -6,8 +6,8 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 03:40:57 GMT</lastBuildDate>
-    <pubDate>Fri, 30 Oct 2026 03:40:57 GMT</pubDate>
+    <lastBuildDate>Fri, 30 Oct 2026 03:42:25 GMT</lastBuildDate>
+    <pubDate>Fri, 30 Oct 2026 03:42:25 GMT</pubDate>
     <ttl>60</ttl>
     <item>
       <title>Binance Says It Will Cover All Hack Losses, Freezes Deposits and Withdrawals</title>
@@ -337,7 +337,7 @@
       <category>CVE-2026-48356</category>
       <category>Web Skimming</category>
       <category>Brotli</category>
-      <description>CISA added CVE-2026-48356 to the Known Exploited Vulnerabilities list on Monday with a November 10 deadline, long after Sansec watched attackers plant PHP backdoors on most of the Magento stores it monitors.</description>
+      <description>CISA added CVE-2026-48356 to the Known Exploited Vulnerabilities list on Tuesday with a November 10 deadline, long after Sansec watched attackers plant PHP backdoors on most of the Magento stores it monitors.</description>
       <content:encoded><![CDATA[<p>Sansec warned the Magento world about PolyShell on March 17. Attackers started using it two days later. By mid-April, more than 80% of the stores Sansec protects had seen malicious PHP uploads aimed at the bug. On October 27, CISA finally put it on the Known Exploited Vulnerabilities catalog.</p>
 <p>The flaw is CVE-2026-48356, an unrestricted file upload in Adobe Commerce and Magento Open Source that Adobe scores at CVSS 9.3. An unauthenticated attacker calls the REST guest-cart route, the one at /V1/guest-carts/{cartId}/items, and attaches a file as a custom product option. Magento writes it to pub/media/custom_options/quote/ after checking only that it starts with a valid image header. So the attackers send a polyglot: a file with a real GIF or PNG header and PHP code behind it, typically named something like index.php. On a stock nginx install from the 2.0 through 2.2 era, or any non-stock config that hands .php files under media to FastCGI, that upload executes.</p>
 <p>Adobe fixed it in Magento 2.4.9 on May 12 and backported the fix to the 2.4.4 through 2.4.8 lines in security bulletin APSB26-73 on July 14. Those are the "2026-jul" builds. Anything older than those on any branch is still exposed.</p>
