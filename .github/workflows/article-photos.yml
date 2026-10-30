@@ -40,7 +40,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Test the picker (offline)
         run: node scripts/tests/pick-photos.test.mjs
@@ -51,6 +51,7 @@ jobs:
           VERIFY: ${{ github.event.schedule == '41 3 * * 1' || inputs.verify == true }}
           MAX: ${{ inputs.max || '400' }}
         run: |
+          set -o pipefail
           args="--max $MAX"
           if [ "$VERIFY" = "true" ]; then args="$args --verify"; fi
           # A failed run still saves the photos it picked; report it after committing.

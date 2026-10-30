@@ -58,7 +58,7 @@ function fakeFetch({ perQuery = 3, failAfter = Infinity, existing = null } = {})
         : { title: t, imageinfo: [{ url: existing.get(t) }] }));
       return { ok: true, status: 200, headers: { get: () => null }, json: async () => ({ query: { pages } }) };
     }
-    const q = p.gsrsearch.split(' filetype:')[0];
+    const q = p.gsrsearch.replace(/ (filetype:bitmap|incategory:Quality_images)$/, '');
     const tier = p.gsrsearch.includes('Quality_images') ? 'QI' : 'any';
     const off = Number(p.gsroffset);
     const pages = Array.from({ length: perQuery }, (_, i) => page(`${tier} ${q} ${off + i}.jpg`, { index: i + 1 }));
@@ -147,7 +147,7 @@ await test('keeps earlier picks when the API starts failing mid-run', async () =
   const articles = [art('a', { publishedAt: '2026-10-29T00:00:00Z' }), art('b', { publishedAt: '2026-10-28T00:00:00Z' }),
     art('c', { publishedAt: '2026-10-27T00:00:00Z' }), art('d', { publishedAt: '2026-10-26T00:00:00Z' })];
   const photos = {};
-  const client = makeClient({ fetchImpl: f, gapMs: 0, log: () => {} });
+  const client = makeClient({ fetchImpl: f, gapMs: 0, log: () => {}, backoffMs: 0 });
   // Make retries instant for the test.
   const realSetTimeout = globalThis.setTimeout;
   globalThis.setTimeout = (fn) => realSetTimeout(fn, 0);
@@ -159,6 +159,20 @@ await test('keeps earlier picks when the API starts failing mid-run', async () =
   } finally {
     globalThis.setTimeout = realSetTimeout;
   }
+});
+
+await test('waits and retries when Commons search says it is too busy', async () => {
+  let n = 0;
+  const busyOnce = async (url) => {
+    n++;
+    if (n === 1) return { ok: true, status: 200, headers: { get: () => null }, json: async () => ({ error: { code: 'cirrussearch-too-busy-error', info: 'busy' } }) };
+    return fakeFetch({ perQuery: 1 })(url);
+  };
+  const photos = {};
+  const res = await pickPhotos({ articles: [art('busy')], photos, client: makeClient({ fetchImpl: busyOnce, gapMs: 0, log: () => {}, backoffMs: 0 }), today: TODAY, log: () => {} });
+  assert.equal(res.error, null);
+  assert.equal(res.picked.length, 1);
+  assert.ok(n >= 2);
 });
 
 await test('verify drops photos whose file is gone or changed', async () => {

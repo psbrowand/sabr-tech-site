@@ -108,12 +108,15 @@ function imageUrlKey(url) {
 
 // ── Commons API ──────────────────────────────────────────────────────────────
 
-export function makeClient({ fetchImpl = globalThis.fetch, gapMs = REQUEST_GAP_MS, log = console.log } = {}) {
+// API errors that mean "slow down and try again" rather than "bad request".
+const RETRYABLE = new Set(['maxlag', 'cirrussearch-too-busy-error', 'ratelimited', 'internal_api_error_DBQueryTimeoutError']);
+
+export function makeClient({ fetchImpl = globalThis.fetch, gapMs = REQUEST_GAP_MS, log = console.log, backoffMs = 15_000 } = {}) {
   let last = 0;
   let requests = 0;
   async function call(params) {
     const qs = new URLSearchParams({ format: 'json', formatversion: '2', maxlag: '5', ...params });
-    for (let attempt = 1; attempt <= 4; attempt++) {
+    for (let attempt = 1; attempt <= 5; attempt++) {
       const wait = last + gapMs - Date.now();
       if (wait > 0) await sleep(wait);
       last = Date.now();
@@ -134,10 +137,10 @@ export function makeClient({ fetchImpl = globalThis.fetch, gapMs = REQUEST_GAP_M
       }
       if (!res.ok) throw new Error(`Commons API HTTP ${res.status}`);
       const body = await res.json();
-      if (body.error?.code === 'maxlag') {
-        const retry = Number(res.headers?.get?.('retry-after')) || 5;
-        log(`  servers lagged, waiting ${retry}s`);
-        await sleep(retry * 1000);
+      if (RETRYABLE.has(body.error?.code)) {
+        const retryMs = (Number(res.headers?.get?.('retry-after')) * 1000) || backoffMs * attempt;
+        log(`  ${body.error.code}, waiting ${Math.round(retryMs / 1000)}s (attempt ${attempt})`);
+        await sleep(retryMs);
         continue;
       }
       if (body.error) throw new Error(`Commons API error: ${body.error.code} ${body.error.info || ''}`);
@@ -148,9 +151,11 @@ export function makeClient({ fetchImpl = globalThis.fetch, gapMs = REQUEST_GAP_M
   return { call, get requests() { return requests; } };
 }
 
+// Kept light on purpose: extra search keywords make Commons' search slower
+// and more likely to refuse with "too busy". Size, type and license are
+// checked locally in toPhoto() instead.
 function searchString(query, tier) {
-  const base = `${query} filetype:bitmap filemime:image/jpeg filew:>${tier === 'qi' ? MIN_WIDTH - 1 : MIN_WIDTH_UNRATED - 1}`;
-  return tier === 'qi' ? `${base} incategory:Quality_images` : base;
+  return tier === 'qi' ? `${query} incategory:Quality_images` : `${query} filetype:bitmap`;
 }
 
 export async function searchCommons(client, query, tier, offset = 0) {
