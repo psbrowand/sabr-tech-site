@@ -6,9 +6,67 @@
     <atom:link href="https://sabr-labs.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>Breaking cybersecurity, AI, and technology news — curated daily for professionals.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:28:13 GMT</lastBuildDate>
-    <pubDate>Fri, 30 Oct 2026 14:28:13 GMT</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2026 00:53:43 GMT</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2026 00:53:43 GMT</pubDate>
     <ttl>60</ttl>
+    <item>
+      <title>Fake Claude Code Update on Cursor&apos;s Marketplace Planted an SSH Backdoor</title>
+      <link>https://sabr-labs.com/article/trojanized-claude-code-extension-cursor-marketplace-ssh-backdoor</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/trojanized-claude-code-extension-cursor-marketplace-ssh-backdoor</guid>
+      <pubDate>Sat, 31 Oct 2026 00:52:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>Supply Chain</category>
+      <category>Claude Code</category>
+      <category>Cursor</category>
+      <category>VS Code Extensions</category>
+      <category>Backdoor</category>
+      <description>For about 11 hours on Thursday, Cursor&apos;s extension marketplace served a tampered build of Anthropic&apos;s Claude Code extension that added an attacker SSH key, tried to open a reverse tunnel and set persistence on developer machines.</description>
+      <content:encoded><![CDATA[<p><strong>Key points</strong></p>
+<ul><li>Claude Code extension builds 2.1.312 and 2.1.313 on Cursor's marketplace were malicious between 2:27 a.m. and 1:35 p.m. PT on October 29, per Cursor.</li><li>The loader adds an SSH key labeled svc-telemetry, tries to tunnel to 134.209.82[.]225 and beacons host details, including the names of secret-looking env vars.</li><li>If you installed or auto-updated in that window, treat the machine as compromised and rotate credentials from a clean system.</li></ul>
+<p>Developers who let Cursor auto-update their extensions on Thursday may have pulled a backdoor dressed up as Anthropic's Claude Code. Cursor confirmed that a maliciously modified build of the extension sat in its extension marketplace from about 2:27 a.m. to 1:35 p.m. PT on October 29.</p>
+<p>Cursor says Anthropic didn't build the bad versions, 2.1.312 and 2.1.313. Nobody has said yet how the attacker got an update published under the legitimate <code>anthropic.claude-code</code> ID, and that's the part that should worry every editor marketplace.</p>
+<h2>What the loader does</h2>
+<p>OpenSourceMalware, which published the first analysis, found a 66-line loader inserted in front of the real extension code. It runs as soon as the extension loads. You don't have to open a Claude chat. It then:</p>
+<ul><li>Appends an attacker key labeled <code>svc-telemetry</code> to <code>~/.ssh/authorized_keys</code></li><li>Tries to enable SSH and open a reverse tunnel to 134.209.82[.]225</li><li>Beacons hostname, username, OS, Git email and the names (not values) of up to 40 env vars containing KEY, TOKEN, SECRET, PASS, AWS or GCP</li><li>Persists via a LaunchAgent on macOS, a scheduled task on Windows or an <code>@reboot</code> crontab entry on Linux</li></ul>
+<p>Cursor says the SSH enable step would fail unless Cursor was running with admin rights. The key, the persistence and the beacon still land. Cursor also warns that uninstalling the extension may not be enough, because the payload drops standalone persistence scripts that keep running.</p>
+<p>OpenSourceMalware and The Hacker News say no second-stage payload has been seen. That's less reassuring than it sounds: an env var list naming your AWS and CI tokens is a shopping list for whoever comes back through that tunnel.</p>
+<h2>What's confirmed and what isn't</h2>
+<p>Cursor puts the exposure at no more than 5,000 users, according to The Hacker News. Cursor pulled the build, shut its marketplace down as a precaution, rotated keys and worked with the hosting provider to take the attacker's server offline. The Hacker News reports it will contact affected users directly.</p>
+<p>The accounts don't fully line up yet. Cursor's notice, revised Friday morning, names 2.1.312 and 2.1.313 on macOS and Windows; earlier reports named only 2.1.313. OpenSourceMalware says its sample came from Open VSX, while The Hacker News, after a correction, says there's no evidence the bad build reached Open VSX or Microsoft's marketplace. OpenSourceMalware also says its analysis doesn't show Anthropic's own release was compromised.</p>
+<p>The Hacker News reports Anthropic has published 2.1.314 to Open VSX and Microsoft's marketplace. None of the reports so far carry a statement from the company.</p>
+<h2>What to do now</h2>
+<ol><li>Check whether 2.1.312 or 2.1.313 came from Cursor's marketplace during the window, and look for <code>svc-telemetry</code> in <code>~/.ssh/authorized_keys</code>.</li><li>Hunt for <code>~/Library/LaunchAgents/com.apple.sysmond.plist</code>, a <code>SysMon</code> scheduled task, the files <code>~/.config/.smt</code> and <code>~/.config/.smtk</code>, and traffic to 134.209.82[.]225 on ports 22 or 8099.</li><li>Isolate any hit, remove the key and persistence, and consider a rebuild.</li><li>Rotate cloud, CI and Git credentials reachable from that machine, using a different, trusted system.</li><li>Update to 2.1.314 or later.</li></ol>]]></content:encoded>
+    </item>
+    <item>
+      <title>Attackers Poll WordPress Sites to Catch Updates Mid-Flight for RCE</title>
+      <link>https://sabr-labs.com/article/wordpress-7-1-4-upgrade-window-race-rce-attacks</link>
+      <guid isPermaLink="true">https://sabr-labs.com/article/wordpress-7-1-4-upgrade-window-race-rce-attacks</guid>
+      <pubDate>Sat, 31 Oct 2026 00:50:00 GMT</pubDate>
+      <author>noreply@sabr-labs.com (Sam Browand)</author>
+      <category>cyber</category>
+      <category>WordPress</category>
+      <category>RCE</category>
+      <category>Race Condition</category>
+      <category>PHP</category>
+      <category>Patch Now</category>
+      <description>Wordfence blocked nearly 63,000 attempts in a day against a WordPress core race condition, fixed in 7.1.4 on Wednesday, that lets an anonymous visitor reach the installer while a full-package upgrade is unpacking.</description>
+      <content:encoded><![CDATA[<p><strong>Key points</strong></p>
+<ul><li>A race condition in WordPress core upgrades, affecting 4.7 through 7.1.3, can give an unauthenticated attacker code execution during the update window.</li><li>Wordfence says it blocked 62,969 attacks in 24 hours; reports so far describe attempts, not confirmed break-ins.</li><li>Update to 7.1.4 or your branch's backport, and deny web access to wp-content/upgrade/.</li></ul>
+<p>Attackers are camping on WordPress sites and waiting for them to update. Wordfence says it blocked 62,969 attempts in 24 hours against a core race condition that WordPress fixed in 7.1.4 on Wednesday, October 28.</p>
+<p>The bug lives in full-package core upgrades. WordPress unpacked the new release, installer included, into a predictable folder under <code>wp-content/upgrade/</code> that the web server would happily serve. Its cleanup routine also deleted the <code>index.php</code> that normally blocks directory listing.</p>
+<p>That leaves a few seconds where a complete WordPress copy sits at a guessable, browsable path. Per Patchstack, an attacker who reaches it in time can run the installer against a database they control. Wordfence says that can progress to PHP code execution. No account and no user interaction needed.</p>
+<h2>Why the narrow window isn't comforting</h2>
+<p>Patchstack rates the attack complexity high and says it wouldn't call the bug practical to exploit. Fair enough for one site. But the window opens on every full core update, and Wordfence's Alex Thomas says two of the biggest attack sources polled small groups of sites for roughly 14.5 hours. That's exactly how you win a race: keep showing up.</p>
+<p>There's an ugly irony, too. The fix is an update, and an update is exactly when you're exposed. That's a good reason to lock down the upgrade folder at the web server before you patch, not after.</p>
+<p>None of the reports so far describe a confirmed break-in. The volume says attackers think it's worth trying anyway.</p>
+<h2>Affected and fixed versions</h2>
+<p>The Hacker News reports versions 4.7 through 7.1.3 are affected, and Patchstack traces the vulnerable code back to WordPress 2.8. Fixed releases include:</p>
+<ul><li>7.1.4 for the current branch</li><li>7.0.8 and 6.9.11</li><li>6.8.12 and 6.7.11</li><li>Backports down to 4.7.39</li><li>4.6 and older get nothing</li></ul>
+<p>Patchstack counts 22 vulnerabilities across 17 advisories in this release, so 21 more beyond this one. Most are stored XSS in blocks and the Interactivity API. WordPress also refreshed its bundled root certificates after the eMudhra revocation.</p>
+<h2>What to do now</h2>
+<ol><li>Confirm every site you run is on 7.1.4 or its branch's backport. Don't assume auto-updates fired.</li><li>Deny web requests to <code>wp-content/upgrade/</code> at the web server (nginx or Apache), not in a plugin, and make sure the folder isn't listable. Patchstack notes a PHP firewall can't stop this one: the staged copy loads WordPress from its own files, and the official zip ships no mu-plugins folder, so the site's firewall never runs.</li><li>Search access logs for requests to PHP files under <code>wp-content/upgrade/</code>.</li><li>Check for admin accounts, plugins or PHP files you don't recognize.</li></ol>]]></content:encoded>
+    </item>
     <item>
       <title>Binance Heist Pinned on North Korea&apos;s TraderTraitor as More Breaches Surface</title>
       <link>https://sabr-labs.com/article/binance-hack-tradertraitor-north-korea-more-breach-points</link>
@@ -1182,54 +1240,6 @@
 <p>That matches where DeepSeek has said its compute is going, and it means the repo is more immediately useful to a Chinese cloud running Ascend than to a US startup with a rack of H100s.</p>
 <p>The pricing context is why anyone outside the inference-kernel crowd cares. OpenRouter lists V4.1-Flash at $0.035 per million input tokens and $0.12 per million output. OpenAI's GPT-6 Astra is listed at $10 and $50 for the same. That's not a like-for-like comparison, since the models aren't in the same class, but it's the gap DeepSeek is pointing at when it talks about lowering compute costs.</p>
 <p>The benchmarks DeepInfer publishes are prefill and decode Pareto curves measured on 4 and 64 SM100 GPUs respectively, with no absolute throughput numbers in the text, so treat the efficiency claims as directional until someone outside DeepSeek reproduces them.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenAI&apos;s GPT-6 Models Land on Google Cloud, the Last Hyperscaler Without Them</title>
-      <link>https://sabr-labs.com/article/openai-gpt-6-models-google-cloud-model-garden-private-preview</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/openai-gpt-6-models-google-cloud-model-garden-private-preview</guid>
-      <pubDate>Thu, 22 Oct 2026 12:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>OpenAI</category>
-      <category>Google Cloud</category>
-      <category>GPT-6</category>
-      <category>Vertex AI</category>
-      <category>Enterprise AI</category>
-      <category>Cloud</category>
-      <description>GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are in private preview in Google Cloud&apos;s Model Garden, billed on the customer&apos;s existing Google invoice, with general availability promised in the coming weeks.</description>
-      <content:encoded><![CDATA[<p>Google Cloud now sells OpenAI. As of October 21, GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are available in Model Garden as a private preview for selected enterprise customers, with OpenAI saying general availability is weeks away. Everyone else can fill in an interest form.</p>
-<p>The models are positioned the way OpenAI positions them elsewhere: Astra for demanding coding, computer-use and research work, Sol as the cheaper option with most of Astra's capability, Luna for fast, high-volume routine tasks.</p>
-<p>Eligible customers can hit them through the API today and can point local Codex CLI and Codex Desktop sessions at Google's inference. Gemini for business and the Antigravity coding environment get them later. Zero Data Retention and Confidential Compute are listed as coming soon, which enterprise security teams will correctly read as &quot;not yet.&quot;</p>
-<p>The commercial mechanics matter more than the model list. Usage lands on the customer's existing Google Cloud invoice, draws down committed spend, and counts toward Flexible Savings Plans alongside Gemini and Anthropic usage. That's the whole pitch: a procurement team that already has a Google commit no longer needs a separate OpenAI contract to use GPT-6.</p>
-<p>Michael Gerstenhaber, VP of product management at Google Cloud, framed it as matching each workload to the right model. Google's own post goes further and claims it's now the only hyperscaler offering all three leading closed-source model families.</p>
-<p>That claim is Google's, and it's narrowly true. Microsoft sells OpenAI and, more recently, Anthropic. AWS sells Anthropic and has carried OpenAI models since summer 2025. Neither sells Gemini.</p>
-<p>GPT models were Azure-only for years because of Microsoft's investment. That exclusivity has been eroding for a while, first with AWS and now with Google, and Google was the obvious last stop.</p>
-<p>The more interesting question is what Microsoft gets out of the relationship now that its position as OpenAI's exclusive cloud is fully gone. The answer is probably the revenue share and the Azure consumption, which were always the point, but the marketing story is over.</p>
-<p>For developers already on Vertex AI, the practical change is a model switch rather than a platform switch. For OpenAI, it's distribution into the accounts Google has been winning with Gemini. Watch the per-token pricing when GA lands. Google hasn't published any yet, and whether GPT-6 on Google costs the same as GPT-6 on OpenAI's own API will tell you who's subsidizing whom.</p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Tesla&apos;s Q3: Flat Revenue, Profit Down 43%, and Capex at Half of Plan</title>
-      <link>https://sabr-labs.com/article/tesla-q3-2026-earnings-flat-revenue-profit-down-capex-half-plan</link>
-      <guid isPermaLink="true">https://sabr-labs.com/article/tesla-q3-2026-earnings-flat-revenue-profit-down-capex-half-plan</guid>
-      <pubDate>Thu, 22 Oct 2026 11:00:00 GMT</pubDate>
-      <author>noreply@sabr-labs.com (Sam Browand)</author>
-      <category>tech</category>
-      <category>Tesla</category>
-      <category>Earnings</category>
-      <category>EVs</category>
-      <category>Optimus</category>
-      <category>Robotaxi</category>
-      <category>Capex</category>
-      <description>Tesla booked $28.05 billion in revenue and $787 million in GAAP net income for the quarter, with AI and Optimus spending outrunning gross profit and nine-month capex at $13 billion against a full-year guide of more than $25 billion.</description>
-      <content:encoded><![CDATA[<p>Tesla's third quarter was flat on top and down hard underneath. Revenue came in at $28.05 billion, essentially unchanged from a year ago and in line with what Wall Street expected. GAAP net income fell 43% to $787 million, or 22 cents a share. Operating income dropped 56% to $718 million, a 2.6% operating margin, which the company attributes to AI and Optimus spending growing faster than gross profit.</p>
-<p>The margin story is better than the profit story. Total gross margin rose to 19.6% from 18.0% a year ago, and automotive gross margin excluding regulatory credits climbed to 18.1% from 15.4%. Those credits, which propped up many a Tesla quarter, shrank 73% to $113 million.</p>
-<p>Services and other revenue grew 33% to $4.61 billion. Energy generation and storage went the other way, down 16% to $2.88 billion even as deployments rose 10% to 13.7 GWh, which means pricing in that business is sliding.</p>
-<p>Deliveries were 486,532, down about 2% year over year. Production was 464,391.</p>
-<p>Tesla's explanation for the flat volume is new: battery availability &quot;continued to be the limiting factor in increasing auto volumes in the quarter.&quot; That's a supply constraint. Falling average selling prices are a demand signal. Both showing up in the same quarter doesn't quite add up, and the shareholder letter doesn't try to reconcile them.</p>
-<p>Then there's capex. Tesla spent $4.73 billion in the quarter, down from $5.79 billion in Q2, bringing the nine-month total to $13.01 billion. Management guided the year to &quot;more than $25 billion&quot; and didn't update that number.</p>
-<p>Either the fourth quarter absorbs roughly $12 billion of spending, or a chunk of the 2026 plan (Optimus production lines, Cybercab capacity, the Terafab chip project) is quietly sliding into 2027. The lower spend is also why free cash flow looks respectable at $1.53 billion; it's still down 62% from a year ago.</p>
-<p>Two line items below the operating line are worth noting. Tesla's bitcoin holdings produced a $288 million unrealized gain, and its SpaceX equity stake produced a $142 million unrealized loss, which together added about $146 million to GAAP net income. Strip them out and the quarter is thinner still.</p>
-<p>On the autonomy side, the robotaxi fleet passed nearly 2 million cumulative unsupervised miles by quarter end, with Cybercab joining the Austin service about a month ago. FSD active subscriptions hit 1.74 million, up 67%, though that count includes upfront purchases, so it isn't a recurring-revenue number. The quarter reads as a company whose car business is treading water while its board and its CEO are busy on another question entirely: the SpaceX combination both companies' special committees are now studying.</p>]]></content:encoded>
     </item>
   </channel>
 </rss>
