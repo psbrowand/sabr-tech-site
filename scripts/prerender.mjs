@@ -22,6 +22,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, join } from 'node:path';
 import { photoFor, photoUrl } from '../src/lib/articlePhoto.js';
+import { jsonLdScript } from './lib/json-ld.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT     = join(__dirname, '..');
@@ -84,11 +85,7 @@ function renderHead(template, page) {
 
   if (page.jsonLd) {
     const blocks = (Array.isArray(page.jsonLd) ? page.jsonLd : [page.jsonLd])
-      .map((obj) =>
-        `    <script type="application/ld+json">\n` +
-        `    ${JSON.stringify(obj)}\n` +
-        `    </script>\n`
-      )
+      .map(jsonLdScript)
       .join('');
     html = html.replace('</head>', `${blocks}  </head>`);
   }
