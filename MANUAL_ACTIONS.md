@@ -1,6 +1,6 @@
 # Manual actions for Sam — sabr-labs.com (`sabr-tech-site`)
 
-Everything here needs a dashboard or a human decision. The code fixes are already shipped (see `SECURITY_REVIEW.md`). Ordered by priority.
+Everything here needs a dashboard or a human decision. The code fixes are on branch `security/artex-hardening` (PR #16; see `SECURITY_REVIEW.md`). Ordered by priority.
 
 ## Do first (blocks a code fix from being complete)
 
