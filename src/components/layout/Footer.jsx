@@ -4,6 +4,7 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Github, Rss, Zap, Mail, ArrowRight, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import Honeypot, { honeypotValue } from '../ui/Honeypot';
 
 const APP_ORIGIN = import.meta.env.VITE_APP_ORIGIN || 'https://app.sabr-labs.com';
 
@@ -56,6 +57,7 @@ export default function Footer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const company = honeypotValue(e.currentTarget);
     const trimmed = email.trim();
     if (!trimmed || submitting) return;
     setSubmitting(true);
@@ -64,7 +66,7 @@ export default function Footer() {
       const res = await fetch('/api/newsletter-subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmed }),
+        body: JSON.stringify({ email: trimmed, company }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
@@ -107,7 +109,7 @@ export default function Footer() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex gap-2">
+                <form onSubmit={handleSubmit} className="flex gap-2 relative">
                   <div className="relative flex-1">
                     <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
                     <input
@@ -127,6 +129,7 @@ export default function Footer() {
                     {submitting ? 'Subscribing…' : 'Subscribe'}
                     {!submitting && <ArrowRight className="w-4 h-4" />}
                   </button>
+                  <Honeypot />
                 </form>
               )}
               {error && (

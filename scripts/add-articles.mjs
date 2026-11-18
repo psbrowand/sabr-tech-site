@@ -289,6 +289,7 @@ function validate(a, label) {
       for (const k of ['name', 'desc', 'url']) {
         if (!s[k] || typeof s[k] !== 'string') fail(`${label}: sources[${i}].${k} is required`);
       }
+      if (!/^https:\/\/\S+$/.test(s.url)) fail(`${label}: sources[${i}].url must be an https URL`);
     });
   }
 }

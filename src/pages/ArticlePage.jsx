@@ -19,6 +19,7 @@ import ArticleCard              from '../components/articles/ArticleCard';
 import ArticleImage             from '../components/articles/ArticleImage';
 import PhotoCredit              from '../components/articles/PhotoCredit';
 import ArticleBody, { KeyPoints } from '../components/articles/ArticleBody';
+import { safeHref }             from '../lib/safeHref';
 
 // ── Share buttons ─────────────────────────────────────────────────────────────
 function ShareButtons({ title, url }) {
@@ -203,7 +204,7 @@ export default function ArticlePage() {
                     <span className="text-xs text-slate-700 font-mono mt-0.5 w-5 flex-shrink-0">[{i + 1}]</span>
                     <div className="min-w-0">
                       <a
-                        href={src.url}
+                        href={safeHref(src.url)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 font-semibold text-cyan-400 hover:text-cyan-300 transition-colors duration-200 break-all"

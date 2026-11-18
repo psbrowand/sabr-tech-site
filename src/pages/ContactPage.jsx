@@ -1,5 +1,6 @@
 // ContactPage.jsx — Contact form and information
 import { useState } from 'react';
+import Honeypot, { honeypotValue } from '../components/ui/Honeypot';
 import { Mail, Shield, AlertTriangle, MessageSquare, Send, Globe, Twitter, Linkedin, CheckCircle } from 'lucide-react';
 
 const contactTypes = [
@@ -31,6 +32,7 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const company = honeypotValue(e.currentTarget);
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
@@ -46,6 +48,7 @@ export default function ContactPage() {
           email: form.email,
           subject: `[${form.type}] ${form.subject}`,
           message: form.message,
+          company,
         }),
       });
       if (!res.ok) {
@@ -91,7 +94,7 @@ export default function ContactPage() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="card p-6 sm:p-8 space-y-6" noValidate>
+            <form onSubmit={handleSubmit} className="card p-6 sm:p-8 space-y-6 relative" noValidate>
               {/* Contact type */}
               <div>
                 <label className="block text-xs text-slate-400 mb-2 font-medium">
@@ -178,6 +181,7 @@ export default function ContactPage() {
                 {status === 'loading' ? 'Sending…' : 'Send Message'}
                 {status !== 'loading' && <Send className="w-4 h-4" />}
               </button>
+              <Honeypot />
             </form>
           )}
         </div>

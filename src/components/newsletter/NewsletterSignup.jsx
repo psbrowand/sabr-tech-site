@@ -11,6 +11,7 @@
 // rate-limiting, and duplicate-signup idempotency on the server.
 // ─────────────────────────────────────────────────────────────────────────────
 import { useState } from 'react';
+import Honeypot, { honeypotValue } from '../ui/Honeypot';
 import { Mail, ArrowRight, Zap, Shield, Bell, Cpu } from 'lucide-react';
 
 const perks = [
@@ -26,6 +27,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const company = honeypotValue(e.currentTarget);
     const trimmed = email.trim();
     if (!trimmed) return;
     setStatus('loading');
@@ -35,7 +37,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
       const res = await fetch('/api/newsletter-subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmed }),
+        body: JSON.stringify({ email: trimmed, company }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
@@ -67,7 +69,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
             <p className="text-slate-500 text-xs mt-1">See you tomorrow morning.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-2">
+          <form onSubmit={handleSubmit} className="space-y-2 relative">
             <input
               type="email"
               value={email}
@@ -84,6 +86,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
               {status === 'loading' ? 'Subscribing…' : 'Get Free Briefing'}
               {status !== 'loading' && <ArrowRight className="w-3.5 h-3.5" />}
             </button>
+            <Honeypot />
           </form>
         )}
         <p className="text-[11px] text-slate-700 text-center mt-2">No spam. Unsubscribe anytime.</p>
@@ -113,7 +116,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
                 <p className="text-slate-500 text-xs mt-1">First issue lands tomorrow.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-2">
+              <form onSubmit={handleSubmit} className="space-y-2 relative">
                 <input
                   type="email"
                   value={email}
@@ -130,6 +133,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
                   {status === 'loading' ? 'Subscribing…' : 'Subscribe Free'}
                   {status !== 'loading' && <ArrowRight className="w-4 h-4" />}
                 </button>
+                <Honeypot />
               </form>
             )}
           </div>
@@ -189,7 +193,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative">
             <div className="relative flex-1">
               <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 pointer-events-none" />
               <input
@@ -209,6 +213,7 @@ export default function NewsletterSignup({ compact = false, inline = false }) {
               {status === 'loading' ? 'Subscribing…' : 'Subscribe Free'}
               {status !== 'loading' && <ArrowRight className="w-4 h-4" />}
             </button>
+            <Honeypot />
           </form>
         )}
 
