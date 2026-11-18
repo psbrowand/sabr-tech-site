@@ -113,3 +113,33 @@ SPA routes (`src/App.jsx`) plus 719 prerendered HTML files: `/`, `/news`, `/tech
 3. `/api/user/signout` is a cross-origin credentialed POST: confirm CSRF protection or an origin check.
 4. `/api/public/qod` sends an `answerHash` to the browser. With four options, a plain hash is brute-forceable. It must be an HMAC with a server secret, and `/qod/check` should be rate-limited.
 5. Stripe webhook (`src/app/api/webhooks/stripe/route.ts`): signature verification and idempotency, per the brief.
+
+---
+
+## Status after fixes (branch `security/artex-hardening`)
+
+| ID | Status | Commit |
+|---|---|---|
+| F-01 | Fixed in code. Route now 401s for everyone until Sam sets `CRON_SECRET` (MANUAL_ACTIONS) | `security(high)` |
+| F-02 | Fixed in code. Beehiiv double opt-in + Firewall rule pending (MANUAL_ACTIONS) | `security(high)` |
+| F-03 | Fixed: `scripts/lib/json-ld.mjs` | `security(medium)` |
+| F-04 | Fixed: email fields HTML-escaped | `security(high)` |
+| F-05 | Fixed in code (honeypot + per-IP limiter). Firewall rule pending | `security(high)` |
+| F-06 | Fixed: enforced CSP, `frame-ancestors 'none'`, `X-Frame-Options: DENY` | `security(medium)` |
+| F-07 | Fixed: react-router-dom 7.18.5; `npm audit --omit=dev` is clean | `security(medium)` |
+| F-08 | Fixed: validator + `src/lib/safeHref.js` | `security(medium)` |
+| F-09 | Fixed: actions pinned to SHAs, `contents: write` scoped to the job | `security(low)` |
+| F-10 | Fixed: `.github/dependabot.yml` (npm + actions) | `security(low)` |
+| F-11 | Fixed: only status/error codes logged | `security(high)` |
+| F-12, F-13 | MANUAL_ACTIONS | — |
+
+**Tests:** `npm test` runs 14 photo-picker and 17 API-security tests (cron fail-closed / wrong token / method, email escaping, no reactivation, no enumeration, honeypots, rate limits, fixed recipient, JSON-LD breakout, https-only links).
+
+**Preview verification:** CSP header live with zero violations on `/`, `/news`, an article page, `/try` (lab iframe), `/qod`, `/contact`, `/newsletter`. Fonts, images and the iframe all load. Cron returns 401 unauthenticated and 405 for POST.
+
+### Remaining risks and notes
+- **The in-app limiter is per instance.** A distributed botnet gets past it. The Vercel Firewall rule is the real control.
+- **The `picomatch` ReDoS advisory** remains in build-time tooling (Tailwind 3 → chokidar/micromatch). It isn't shipped and takes no untrusted input. Clearing it needs Tailwind 4, a major upgrade left out of this pass.
+- **The Vercel preview toolbar** (`vercel.live`) is now blocked by CSP on preview deployments. Production never loads it. If Sam wants preview comments back, allow `https://vercel.live` in `script-src`/`connect-src`/`frame-src` for previews only.
+- **Pre-existing and unrelated to these changes:** some Wikimedia thumbnails fail to render in the browser on production as well as the preview (they load via curl). Worth a separate look.
+- **PR grouping:** the brief prefers one PR per severity. This site is small and the fixes share files (`daily-briefing.mjs` holds both F-01 and F-04), so they ship as one PR with one commit per severity, each revertable on its own.
