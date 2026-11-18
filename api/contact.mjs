@@ -6,7 +6,10 @@
 // visitor's address via the Reply-To header.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { clientIp, createRateLimiter, honeypotTripped, logAbuse } from './_lib/abuse.mjs';
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const allow = createRateLimiter({ limit: 5, windowMs: 10 * 60 * 1000 });
 
 function escape(value) {
   return String(value)
@@ -39,6 +42,17 @@ export default async function handler(req, res) {
     }
   }
   body = body ?? {};
+
+  // Bots that fill the hidden field get a fake success so they don't retry.
+  if (honeypotTripped(body)) {
+    logAbuse('contact', 'honeypot', req);
+    return res.status(200).json({ ok: true });
+  }
+  if (!allow(clientIp(req))) {
+    logAbuse('contact', 'rate-limited', req);
+    res.setHeader('Retry-After', '600');
+    return res.status(429).json({ error: 'Too many messages. Please try again in a few minutes.' });
+  }
 
   const name = typeof body.name === 'string' ? body.name.trim().slice(0, 200) : '';
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase().slice(0, 254) : '';
@@ -92,13 +106,13 @@ export default async function handler(req, res) {
 
     if (!resendRes.ok) {
       const errBody = await resendRes.json().catch(() => ({}));
-      console.error('[contact] resend error', resendRes.status, errBody);
+      console.error('[contact] resend error', resendRes.status, errBody?.name || '');
       return res.status(502).json({ error: 'We couldn\'t deliver your message right now. Please try again.' });
     }
 
     return res.status(200).json({ ok: true });
   } catch (err) {
-    console.error('[contact] exception', err);
+    console.error('[contact] exception', err?.name || 'Error', err?.message || '');
     return res.status(502).json({ error: 'We couldn\'t deliver your message right now. Please try again.' });
   }
 }

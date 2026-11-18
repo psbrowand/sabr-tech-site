@@ -2,9 +2,11 @@
 // /api/newsletter-subscribe — Vercel serverless endpoint
 //
 // POST { email, source? } → creates a subscription on the configured Beehiiv
-// publication. We send { email, reactivate_existing: true, send_welcome_email:
-// true, utm_source: source ?? "sabr-labs.com" } so re-subscribes after a prior
-// unsubscribe work without an error.
+// publication with { email, reactivate_existing: false, send_welcome_email:
+// true, utm_source }. Reactivation stays off because this form is
+// unauthenticated: anyone could otherwise re-subscribe an address whose owner
+// unsubscribed. Responses never reveal whether an address is already on the
+// list.
 //
 // No Beehiiv SDK — a single REST call keeps cold starts tiny.
 //
@@ -13,7 +15,10 @@
 // transactional email for the rest of the site.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { clientIp, createRateLimiter, honeypotTripped, logAbuse } from './_lib/abuse.mjs';
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const allow = createRateLimiter({ limit: 5, windowMs: 10 * 60 * 1000 });
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -43,6 +48,16 @@ export default async function handler(req, res) {
   }
   body = body ?? {};
 
+  if (honeypotTripped(body)) {
+    logAbuse('newsletter-subscribe', 'honeypot', req);
+    return res.status(200).json({ ok: true });
+  }
+  if (!allow(clientIp(req))) {
+    logAbuse('newsletter-subscribe', 'rate-limited', req);
+    res.setHeader('Retry-After', '600');
+    return res.status(429).json({ error: 'Too many attempts. Please try again in a few minutes.' });
+  }
+
   const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
   if (!EMAIL_RE.test(email) || email.length > 254) {
     return res.status(400).json({ error: 'Please enter a valid email.' });
@@ -65,7 +80,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           email,
-          reactivate_existing: true,
+          reactivate_existing: false,
           send_welcome_email: true,
           utm_source: source,
           // Beehiiv supports referral tracking; leave blank for now.
@@ -83,15 +98,15 @@ export default async function handler(req, res) {
       (errBody && typeof errBody.error === 'string' && errBody.error) ||
       '';
     if (/already|exist|duplicate/i.test(message)) {
-      return res.status(200).json({ ok: true, alreadySubscribed: true });
+      return res.status(200).json({ ok: true });
     }
 
-    console.error('[newsletter-subscribe] beehiiv error', beehiivRes.status, errBody);
+    console.error('[newsletter-subscribe] beehiiv error', beehiivRes.status, errBody?.status || errBody?.code || '');
     return res
       .status(502)
       .json({ error: "We couldn't subscribe you right now. Please try again." });
   } catch (err) {
-    console.error('[newsletter-subscribe] exception', err);
+    console.error('[newsletter-subscribe] exception', err?.name || 'Error', err?.message || '');
     return res
       .status(502)
       .json({ error: "We couldn't subscribe you right now. Please try again." });

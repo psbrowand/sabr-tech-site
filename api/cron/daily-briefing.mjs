@@ -14,20 +14,28 @@
 //
 // Auth: the Vercel cron runner sends `Authorization: Bearer ${CRON_SECRET}`
 // when CRON_SECRET is set in project env. Manual HTTP callers need the same.
+// With no CRON_SECRET configured every request is rejected: this route mails
+// the whole subscriber list, so it must never be open.
 // ─────────────────────────────────────────────────────────────────────────────
 
+import { createHash, timingSafeEqual } from 'node:crypto';
 import { articles as allArticles } from '../../src/data/articles.js';
 
 const SITE_URL = 'https://sabr-labs.com';
 const BEEHIIV_BASE = 'https://api.beehiiv.com/v2';
 const TOP_NEWS_COUNT = 5;
 
-function isAuthed(req) {
-  const expected = process.env.CRON_SECRET;
-  if (!expected) return true; // dev / no-secret mode
-  const header = req.headers.authorization || req.headers.Authorization || '';
-  return header === `Bearer ${expected}`;
+const sha256 = (s) => createHash('sha256').update(String(s)).digest();
+
+export function isAuthed(req, secret = process.env.CRON_SECRET) {
+  if (!secret) return false;
+  const header = req.headers.authorization || '';
+  // Hash both sides so the comparison is constant-time regardless of length.
+  return timingSafeEqual(sha256(header), sha256(`Bearer ${secret}`));
 }
+
+const escapeHtml = (s) =>
+  String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function dayOfYear(date = new Date()) {
   const start = Date.UTC(date.getUTCFullYear(), 0, 0);
@@ -92,14 +100,16 @@ function articleUrl(slug) {
   return `${SITE_URL}/article/${encodeURIComponent(slug)}`;
 }
 
-function buildHtml({ topNews, certPick, dateLabel }) {
+// Article text is LLM-written from web research, so every field is escaped
+// before it goes into subscriber inboxes.
+export function buildHtml({ topNews, certPick, dateLabel }) {
   // Keep HTML small and email-client-safe. Beehiiv will wrap this with the
   // publication header/footer + unsubscribe link automatically.
   const storyBlock = (a, i) => `
     <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #1f2937;">
-      <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px;">Story ${i + 1} · ${a.category}</div>
-      <h2 style="font-size:20px;line-height:1.3;margin:0 0 8px;color:#f1f5f9;"><a href="${articleUrl(a.slug)}" style="color:#f1f5f9;text-decoration:none;">${a.title}</a></h2>
-      <p style="margin:0 0 10px;color:#cbd5e1;font-size:15px;line-height:1.5;">${a.summary || ''}</p>
+      <div style="font-size:12px;color:#64748b;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px;">Story ${i + 1} · ${escapeHtml(a.category)}</div>
+      <h2 style="font-size:20px;line-height:1.3;margin:0 0 8px;color:#f1f5f9;"><a href="${articleUrl(a.slug)}" style="color:#f1f5f9;text-decoration:none;">${escapeHtml(a.title)}</a></h2>
+      <p style="margin:0 0 10px;color:#cbd5e1;font-size:15px;line-height:1.5;">${escapeHtml(a.summary)}</p>
       <a href="${articleUrl(a.slug)}" style="color:#22d3ee;font-size:14px;text-decoration:none;">Read the full story →</a>
     </div>`;
 
@@ -107,8 +117,8 @@ function buildHtml({ topNews, certPick, dateLabel }) {
     ? `
     <div style="margin-top:32px;padding:20px;border-radius:12px;background:#0f172a;border:1px solid rgba(52,211,153,0.25);">
       <div style="font-size:12px;color:#34d399;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px;">Cert Spotlight</div>
-      <h2 style="font-size:20px;line-height:1.3;margin:0 0 8px;color:#f1f5f9;"><a href="${articleUrl(certPick.slug)}" style="color:#f1f5f9;text-decoration:none;">${certPick.title}</a></h2>
-      <p style="margin:0 0 10px;color:#cbd5e1;font-size:15px;line-height:1.5;">${certPick.summary || ''}</p>
+      <h2 style="font-size:20px;line-height:1.3;margin:0 0 8px;color:#f1f5f9;"><a href="${articleUrl(certPick.slug)}" style="color:#f1f5f9;text-decoration:none;">${escapeHtml(certPick.title)}</a></h2>
+      <p style="margin:0 0 10px;color:#cbd5e1;font-size:15px;line-height:1.5;">${escapeHtml(certPick.summary)}</p>
       <a href="${articleUrl(certPick.slug)}" style="color:#34d399;font-size:14px;text-decoration:none;">Read more →</a>
     </div>`
     : '';
@@ -116,7 +126,7 @@ function buildHtml({ topNews, certPick, dateLabel }) {
   return `
     <div style="font-family:Inter,Arial,sans-serif;max-width:640px;margin:0 auto;color:#f1f5f9;background:#080c18;padding:32px 24px;">
       <div style="font-size:13px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:6px;">Sabr Daily Briefing</div>
-      <h1 style="font-size:26px;line-height:1.2;margin:0 0 24px;font-weight:900;color:#f1f5f9;">${dateLabel}</h1>
+      <h1 style="font-size:26px;line-height:1.2;margin:0 0 24px;font-weight:900;color:#f1f5f9;">${escapeHtml(dateLabel)}</h1>
       ${topNews.map(storyBlock).join('')}
       ${certBlock}
       <p style="margin:32px 0 0;font-size:13px;color:#64748b;">Read all of today's stories at <a href="${SITE_URL}" style="color:#22d3ee;">sabr-labs.com</a>.</p>
@@ -166,7 +176,12 @@ async function publishToBeehiiv({ subject, html, subtitle }) {
 }
 
 export default async function handler(req, res) {
+  if (req.method !== 'GET') {
+    res.setHeader('Allow', 'GET');
+    return res.status(405).json({ error: 'Method not allowed.' });
+  }
   if (!isAuthed(req)) {
+    if (!process.env.CRON_SECRET) console.error('[daily-briefing] CRON_SECRET not set — refusing all requests');
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
@@ -203,6 +218,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true, subject, postId: result?.data?.id ?? null });
   } catch (err) {
     console.error('[daily-briefing] failed', err);
-    return res.status(500).json({ error: String(err.message || err) });
+    return res.status(500).json({ error: 'Briefing failed. See function logs.' });
   }
 }
